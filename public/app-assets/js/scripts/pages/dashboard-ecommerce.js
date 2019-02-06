@@ -10,13 +10,13 @@
     // Area chart
 // ------------------------------
 $(window).on("load", function(){
-    $('#recent-buyers').perfectScrollbar({
-        wheelPropagation: true
-    });
+    // $('#recent-buyers').perfectScrollbar({
+    //     wheelPropagation: true
+    // });
     /********************************************
     *               PRODUCTS SALES              *
     ********************************************/
-    
+
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     Morris.Area({
         element: 'products-sales',
@@ -106,7 +106,7 @@ $(window).on("load", function(){
         hideHover: 'auto',
         lineColors: ['#00B5B8', '#FA8E57', '#F25E75']
     });
-    
+
     /********************************************
     *               Monthly Sales               *
     ********************************************/
@@ -131,35 +131,35 @@ $(window).on("load", function(){
         barColors: ['#00B5B8'],
         hideHover: 'auto',
     });
-    
+
     /************************************************************
     *               Social Cards Content Slider                 *
     ************************************************************/
-    // RTL Support
-    var rtl = false;
-    if($('html').data('textdirection') == 'rtl'){
-        rtl = true;
+    // ltr Support
+    var ltr = false;
+    if($('html').data('textdirection') == 'ltr'){
+        ltr = true;
     }
-    if(rtl === true)
-        $(".tweet-slider").attr('dir', 'rtl');
-    if(rtl === true)
-        $(".fb-post-slider").attr('dir', 'rtl');
+    if(ltr === true)
+        $(".tweet-slider").attr('dir', 'ltr');
+    if(ltr === true)
+        $(".fb-post-slider").attr('dir', 'ltr');
 
     // Tweet Slider
-    $(".tweet-slider").unslider({
-        autoplay: true,
-        delay:3500,
-        arrows: false,
-        nav: false,
-        infinite: true
-    });
+    // $(".tweet-slider").unslider({
+    //     autoplay: true,
+    //     delay:3500,
+    //     arrows: false,
+    //     nav: false,
+    //     infinite: true
+    // });
 
-    // FB Post Slider
-    $(".fb-post-slider").unslider({
-        autoplay: true,
-        delay:4500,
-        arrows: false,
-        nav: false,
-        infinite: true
-    });
+    // // FB Post Slider
+    // $(".fb-post-slider").unslider({
+    //     autoplay: true,
+    //     delay:4500,
+    //     arrows: false,
+    //     nav: false,
+    //     infinite: true
+    // });
 });
