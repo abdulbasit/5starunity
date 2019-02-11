@@ -18,7 +18,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
-
+//start of admin routes
 Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
 
     // Authentication Routes...
@@ -30,6 +30,10 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
     // Password Reset Routes...
     Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+    Route::get('users', 'UserController@index')->name('users');
+    Route::get('user/create', 'UserController@create')->name('user.create');
+
 });
+//end of admin routes

@@ -1,11 +1,11 @@
-@extends('layouts.apps')
+@extends('admin.layouts.apps')
 
 @section('content')
-
     <div class="content-wrapper">
         <div class="content-header row">
         </div>
         <div class="content-body">
+        <!-- Stats -->
         <div class="row">
             <div class="col-xl-3 col-lg-6 col-12">
             <div class="card">
@@ -670,5 +670,4 @@
         <!--/ Basic Horizontal Timeline -->
         </div>
     </div>
-
 @endsection
