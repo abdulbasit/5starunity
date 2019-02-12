@@ -1,0 +1,226 @@
+/* jQuery Countdown styles 1.6.3. */
+.hasCountdown {
+	/*
+	border: 1px solid #ccc;
+	background-color: #eee;
+	*/
+}
+.countdown_rtl {
+	direction: rtl;
+}
+.countdown_holding span {
+	color: #888;
+}
+.countdown_row {
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+}
+.countdown_show1 .countdown_section {
+	width: 98%;
+}
+.countdown_show2 .countdown_section {
+	width: 48%;
+}
+.countdown_show3 .countdown_section {
+	width: 32.5%;
+}
+.countdown_show4 .countdown_section {
+	width: 24.5%;
+}
+.countdown_show5 .countdown_section {
+	width: 19.5%;
+}
+.countdown_show6 .countdown_section {
+	width: 16.25%;
+}
+.countdown_show7 .countdown_section {
+	width: 14%;
+}
+.countdown_section {
+	display: block;
+	float: left;
+	font-size: 75%;
+	text-align: center;
+}
+.countdown_amount {
+	font-size: 200%;
+}
+.countdown_descr {
+	display: block;
+	width: 100%;
+}
+
+
+
+/*CUSTOM*/
+
+/***Backgound colors and size***/
+/*******************************/
+#counter, #counterlive, .zaCounter {
+	/*background: #95D713;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2) inset;*/
+	display: block;
+    height: 60px;
+	/*min-width:280px;*/
+    position: relative;
+}
+
+ .zaCounter {
+ 	float:left;
+ 	width:250px;
+ 	margin-left:0px;
+ 	margin-top:20px;
+ }
+
+/***Header text color, family and size***/
+/****************************************/
+#counter h3, .zaCounter h3 {
+	padding: 14px 0 0 18px;
+	font-size: 24px;
+    line-height: 32px;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	text-transform:uppercase;
+	color:#ffffff;
+}
+
+
+#counterlive {
+    text-align: center;
+    width: 300px;
+}
+
+#startIn {
+	position: absolute;
+	left:8px;
+	top:-25px;
+	font-size: 24px;
+    line-height: 32px;
+	color:#000;
+}
+
+#countdown, .zaCountdown {
+	background:url("bg.png") no-repeat scroll 7px 6px transparent;
+	font-family: helvetica;
+	width:232px;
+	position: absolute;
+	top: 5px;
+	left: 0px;
+}
+
+ .zaCountdown {
+ 	background:url("bg2.png") no-repeat scroll 7px 6px transparent;
+	font-family: helvetica;
+	width:320px;
+ 	left:0px;
+ 	top:10px;
+ }
+
+#livelink {
+	position:relative;
+	top: 50px;
+	text-align:center;
+}
+
+#livelink a {
+	color:#ffffff;
+	font-size: 18px;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	text-transform:uppercase;
+}
+#livelink a:hover {
+	background:none;
+	text-decoration:none;
+}
+
+#livelink span {
+	color:#ffffff;
+	font-size: 12px;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	text-transform:uppercase;
+}
+
+#countdown div, .zaCountdown div, #countdown span, .zaCountdown span {
+	float: left;
+}
+#day {
+	font-size:30px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 0 0 0 11px;
+	line-height:48px;
+	width:35px;
+	text-align:right;
+	display:block;
+	float: left;
+	height:40px;
+}
+#days-span {
+	font-size:10px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 25px 0 0 4px;
+}
+.zaCountdown #days-span {
+	font-size:10px;
+	letter-spacing: -1px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 25px 0 0 4px;
+}
+#hours {
+	font-size:30px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 0px 0 0 14px;
+	line-height:48px;
+	width:35px;
+	text-align:right;
+}
+#hours-span {
+	font-size:10px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 25px 0 0 6px;
+}
+#minutes {
+	font-size:30px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 0px 0 0 14px;
+	line-height:48px;
+	width:35px;
+	text-align:right;
+}
+#minutes-span {
+	font-size:10px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 25px 0 0 4px;
+}
+#seconds {
+	font-size:30px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 0px 0 0 14px;
+	line-height:48px;
+	width:35px;
+	text-align:right;
+}
+#seconds-span {
+	font-size:10px;
+	color:#ffffff;
+	text-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 25px 0 0 4px;
+}
+#counter #date, .zaCounter #date {
+	position: absolute;
+	bottom: 15px;
+	font-family: helvetica;
+	font-size:11px;
+	color:#ffffff;
+	left: 18px;
+}
+

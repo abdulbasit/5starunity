@@ -1,0 +1,29 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00a9ac;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.5px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>Artboard 3 copy 7</title>
+  <g>
+    <circle class="cls-1" cx="16.5" cy="16.5" r="16"/>
+    <g>
+      <path class="cls-2" d="M12.16,15V10a4.34,4.34,0,0,1,8.68,0v.6"/>
+      <path class="cls-3" d="M8.7,14.55V26.14H24.3V14.55Zm8.55,8.58a.75.75,0,0,1-1.5,0V17.57a.75.75,0,0,1,1.5,0Z"/>
+    </g>
+  </g>
+</svg>

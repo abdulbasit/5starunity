@@ -34,6 +34,14 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
 
     Route::get('users', 'UserController@index')->name('users');
     Route::get('user/create', 'UserController@create')->name('user.create');
+    Route::get('user/documents', 'UserController@documents')->name('user.documents');
 
+    //products routes
+    Route::get('products', 'ProductController@index')->name('products');
+    Route::get('product/create', 'ProductController@create')->name('product.create');
+    Route::get('product/category/create', 'ProductController@createCategories')->name('product.category.create');
+    Route::get('product/categories', 'ProductController@categories')->name('product.categories');
+    //Lottries routes
+    Route::get('lotteries', 'LottryController@index')->name('lotteries');
+    Route::get('lottery/create', 'LottryController@create')->name('lottery.create');
 });
-//end of admin routes

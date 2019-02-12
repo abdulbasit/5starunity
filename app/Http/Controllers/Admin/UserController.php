@@ -16,4 +16,8 @@ class UserController extends Controller
     {
         return view('admin.users.create');
     }
+    public function documents()
+    {
+        return view('admin.users.documents');
+    }
 }
