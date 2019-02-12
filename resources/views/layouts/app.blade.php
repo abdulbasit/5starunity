@@ -327,25 +327,17 @@
                                             <i class="fa fa-youtube-play" aria-hidden="true"></i>
                                         </a>
                                     </li>
-
-
                                 </ul>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
         <div class="investoren_support_div" data-toggle="modal" data-target="#KontactForm" id="BtnInvestorenSupport">
             <span>Investor Support</span>
             <img src="graphics/layout/LiveChat.svg" class="iconSupport">
         </div>
-
-
-
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/jquery.bcSwipe.min.js')}}"></script>
     <script src="{{ asset('frontend/code/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src='{{ asset('frontend/code/scrollReveal/scrollReveal.js')}}'></script>
