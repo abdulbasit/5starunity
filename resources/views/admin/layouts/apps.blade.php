@@ -284,8 +284,8 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                       <ul class="menu-content">
                             <li><a class="menu-item" href="{{ route('admin.product.create') }}">Add New Product</a></li>
                             <li><a class="menu-item" href="{{ route('admin.products') }}">Product Listing</a></li>
-                            <li><a class="menu-item" href="{{ route('admin.product.category.create') }}">Add New Categories</a></li>
-                            <li><a class="menu-item" href="{{ route('admin.product.categories') }}">Product Categories</a></li>
+                            {{-- <li><a class="menu-item" href="{{ route('admin.product.category.create') }}">Add New Categories</a></li>
+                            <li><a class="menu-item" href="{{ route('admin.product.categories') }}">Product Categories</a></li> --}}
                        </ul>
                         </li>
                         <li><a class="menu-item" href="#"><i class="ft-layout"></i>Lotteries</a>

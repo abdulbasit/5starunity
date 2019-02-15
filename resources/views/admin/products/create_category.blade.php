@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-content collpase show">
                       <div class="card-body">
-                        <form class="form form-horizontal">
+                        <form class="form form-horizontal" method="post" action="product/save/categories">
                           <div class="form-body">
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1">Parent Category</label>
