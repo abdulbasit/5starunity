@@ -54,10 +54,10 @@ class ProductController extends Controller
             $image->getMimeType();
             //Move Uploaded File
             $destinationPath  = public_path('uploads/pro_images/');
-            $imageName = time().$i.$product_id->id.'_5starunity.'.$image->getClientOriginalExtension();
+            $imageName = time().$i.'_5starunity.'.$image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
 
-            $product_id = Product_images::create([
+            $product_images = Product_images::create([
                 "pro_id" =>$product_id->id,
                 "pro_image"=>$imageName,
                 "created_at"=>Carbon::now(),
