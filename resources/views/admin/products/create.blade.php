@@ -40,7 +40,7 @@
                 <div class="col-md-12">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title" id="horz-layout-basic">Create New User</h4>
+                      <h4 class="card-title" id="horz-layout-basic">Create New Product</h4>
                       <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collpase show">

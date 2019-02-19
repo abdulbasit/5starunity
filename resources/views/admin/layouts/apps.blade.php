@@ -13,7 +13,7 @@
   rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <!-- Styles -->
@@ -312,7 +312,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
         </p>
     </footer>
 
-
+    <script src="{{ asset('app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
 
     <!-- BEGIN VENDOR JS-->
     <script src="{{ asset('app-assets/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
@@ -325,7 +325,6 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     <!-- BEGIN STACK JS-->
     <script src="{{ asset('app-assets/js/core/app-menu.js')}}" type="text/javascript"></script>
     <script src="{{ asset('app-assets/js/core/app.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
     <!-- END STACK JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}" type="text/javascript"></script>

@@ -3,3 +3,26 @@
 @import url("../fonts/font-awesome/css/font-awesome.min.css");
 @import url("../fonts/flag-icon-css/css/flag-icon.min.css");
 @import url("../vendors/css/extensions/pace.css");
+#drpDwn a{
+    color: #1e2122;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 0px !important;
+    box-shadow: none
+}
+.imgDel
+{
+    width: 20px;
+    height: 24px;
+    position: relative;
+    z-index: 100;
+    top: -6px;
+    float: right;
+    left: -11px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: white
+}
+.imgDel a{
+    color: red;
+}

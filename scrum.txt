@@ -1,0 +1,8 @@
+scrum
+
+epic
+main epic -  lottery of things 
+
+front end 
+backend payment system 
+lottreies

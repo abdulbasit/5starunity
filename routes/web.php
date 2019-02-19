@@ -39,9 +39,13 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
     //products routes
     Route::get('products', 'ProductController@index')->name('products');
     Route::get('product/create', 'ProductController@create')->name('product.create');
+    Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
     Route::get('product/category/create', 'ProductController@createCategories')->name('product.category.create');
     Route::get('product/categories', 'ProductController@categories')->name('product.categories');
     Route::post('product/save', 'ProductController@saveProduct')->name('product.save');
+    Route::post('product/delete_photo', 'ProductController@deletePhoto')->name('product.delete_photo');
+    Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
+    Route::get('product/delete/{id}', 'ProductController@delete')->name('product.delete');
     //Lottries routes
     Route::get('lotteries', 'LottryController@index')->name('lotteries');
     Route::get('lottery/create', 'LottryController@create')->name('lottery.create');
