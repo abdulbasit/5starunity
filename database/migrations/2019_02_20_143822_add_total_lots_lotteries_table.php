@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductImagesTable extends Migration
+class AddTotalLotsLotteriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateProductImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::table('lotteries', function (Blueprint $table) {
+            $table->integer('total_lotteries')->nullable();
         });
     }
 
@@ -26,6 +25,8 @@ class CreateProductImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_images');
+        Schema::table('lotteries', function (Blueprint $table) {
+            $table->dropColumn('total_lotteries');
+        });
     }
 }

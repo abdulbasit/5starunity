@@ -11,30 +11,47 @@
                 <div class="col-md-12">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title" id="horz-layout-basic">Create New Category</h4>
+                      <h4 class="card-title" id="horz-layout-basic">Create New Lottery</h4>
                       <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collpase show">
                       <div class="card-body">
                         <form class="form form-horizontal">
                           <div class="form-body">
+
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput1"> Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="name" class="form-control" placeholder="Category Name"  name="name">
+                                </div>
+                            </div>
+
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1">Parent Category</label>
                               <div class="col-md-9">
                                 <select id="state" name="state" class="form-control">
-                                    <option value="none" selected="" disabled="">Interested in</option>
-                                    <option value="design">design</option>
-                                    <option value="development">development</option>
-                                    <option value="illustration">illustration</option>
-                                    <option value="branding">branding</option>
-                                    <option value="video">video</option>
+                                    @foreach($products as $product)
+                                        <option value="{{$product->id}}">{{$product->pro_name}}</option>
+                                    @endforeach
                                 </select>
                               </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput1">Category Name</label>
+                                <label class="col-md-3 label-control" for="projectinput1">Lot Amount</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="name" class="form-control" placeholder="Complete Name"  name="name">
+                                    <input type="text" id="lot_amount" class="form-control" placeholder="Enter Lottery Amount"  name="lot_amount">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput1">Min Lots</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="min_lot" class="form-control" placeholder="Enter Min Lottery"  name="min_lot">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput1">Max Lots</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="max_lot" class="form-control" placeholder="Enter Max Lottery"  name="max_lot">
                                 </div>
                             </div>
                           </div>
