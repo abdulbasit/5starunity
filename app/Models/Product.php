@@ -15,5 +15,6 @@ class Product extends Model
     {
         return $this->belongsTo('App\Models\Product_images');
     }
+
     protected $dates = ['deleted_at'];
 }

@@ -17,7 +17,6 @@
 <body>
     <br />
     <br />
-    <br />
     <div id="app">
       <div class="app-content content">
         @yield('content')

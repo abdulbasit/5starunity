@@ -20,64 +20,61 @@
                     </div>
                     <div class="card-content collpase show">
                       <div class="card-body">
-                        <form class="form form-horizontal" method="post" action="/admin/lottery/save">
+                        <form class="form form-horizontal" method="post" action="/admin/lottery/update/{{$lottery->id}}">
                             @csrf
                             <div class="form-body">
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1"> Title</label>
                                 <div class="col-md-9">
-                                    <input required="required" type="text" id="name" class="form-control" placeholder="Lot Title"  name="name">
+                                <input type="text" id="name" value="{{$lottery->name}}" class="form-control" placeholder="Lot Title"  name="name">
                                 </div>
                             </div>
                             <div class="form-group row">
-                              <label class="col-md-3 label-control" for="projectinput1">Product</label>
+                              <label class="col-md-3 label-control" for="projectinput1">Parent Category</label>
                               <div class="col-md-9">
-                                <select required="required" id="pro_id" name="pro_id" class="form-control">
+                                <select id="pro_id" name="pro_id" class="form-control">
                                     @foreach($products as $product)
-                                        <option pro-price="{{$product->pro_price}}" value="{{$product->id}}">{{$product->pro_name}}</option>
+                                        <option {{old('pro_status',$product->pro_id)==$lottery->product->id? 'selected':''}}value="{{$product->id}}">{{$product->pro_name}}</option>
                                     @endforeach
                                 </select>
                               </div>
                             </div>
-                            <div class="form-group row" style="display:none" id="price">
-                              <label class="col-md-3 label-control" for="projectinput1">Product Price</label>
-                              <div class="col-md-6">
-                                <input required="required" type="text" readonly="readonly" id="pro_price" class="form-control" placeholder=""  name="pro_price">
-                              </div>
-                              <div class="col-md-3">
-                                  <input required="required" type="text" id="factor" value="" class="form-control" placeholder="Enter factor eg.(2.3)"  name="factor">
-                                  <small class="text-muted"  style="position: relative">Enter your factor amount</small>
-                              </div>
+                            <div class="form-group row" id="price">
+                                <label class="col-md-3 label-control" for="projectinput1">Product Price</label>
+                                <div class="col-md-6">
+                                    <input required="required" type="text" value="{{$lottery->product->pro_price}}" readonly="readonly" id="pro_price" class="form-control" placeholder=""  name="pro_price">
+                                </div>
+                                <div class="col-md-3">
+                                    <input required="required" type="text" id="factor" value="{{$lottery->factor_amount}}" class="form-control" placeholder="Enter factor eg.(2.3)"  name="factor">
+                                    <small class="text-muted"  style="position: relative">Enter your factor amount</small>
+                                </div>
                             </div>
-                            <div class="form-group row" style="margin: 0px">
+                            <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Lot Amount</label>
                                 <div class="col-md-6">
-                                    <input required="required" type="text" onchange="getAmount()" id="lot_amount" class="form-control" placeholder="Enter Lottery Amount"  name="lot_amount">
+                                    <input type="text" value="{{$lottery->lot_amount}}" onchange="getAmount()" id="lot_amount" class="form-control" placeholder="Enter Lottery Amount"  name="lot_amount">
                                 </div>
                                 <div class="col-md-3" style="top:30px; position: relative">
-                                    <input required="required" type="text" id="one_lot" class="form-control" placeholder="One Lot Amount.."  name="one_lot_amount" style="border:0px" readonly="readonly">
+                                    <input type="text" value="{{$lottery->one_lot_amount}}" id="one_lot" class="form-control" placeholder="One Lot Amount.."  name="one_lot_amount" style="border:0px" readonly="readonly">
                                     <small class="text-muted"  style=" position: relative">One lot cost will be.</small>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Total Lots</label>
                                 <div class="col-md-6">
-                                    <input required="required" type="text" onchange="getAmount()" id="total_lots" class="form-control" placeholder="Total Contestents eg.(10)"  name="total_lots">
-                                </div>
-                                <div class="col-md-3">
-                                    {{-- <input type="text" id="total_lots" class="form-control" placeholder="Total Lots"  name="total_lots" style="border:0px" readonly="readonly"> --}}
+                                    <input type="text" value="{{$lottery->total_lots}}" onchange="getAmount()" id="total_lots" class="form-control" placeholder="Total Contestents eg.(10)"  name="total_lots">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Min Lots</label>
                                 <div class="col-md-9">
-                                    <input required="required" type="text" id="min_lot" class="form-control" placeholder="Enter Min Lottery"  name="min_lot">
+                                    <input type="text" value="{{$lottery->min_lot_amount}}" id="min_lot" class="form-control" placeholder="Enter Min Lottery"  name="min_lot">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Max Lots</label>
                                 <div class="col-md-9">
-                                    <input required="required" type="text" id="max_lot" class="form-control" placeholder="Enter Max Lottery"  name="max_lot">
+                                    <input type="text" value="{{$lottery->max_lot_amount}}" id="max_lot" class="form-control" placeholder="Enter Max Lottery"  name="max_lot">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -88,24 +85,24 @@
                                         <span class="fa fa-calendar-o"></span>
                                     </span>
                                     </div>
-                                    <input required="required" type='text' class="form-control pickadate-select-year" placeholder="Select Start Date" id="start_date" name="start_date" />
+                                    <input type='text' value="{{$lottery->start_date}}" class="form-control pickadate-select-year" placeholder="Select Start Date" id="start_date" name="start_date" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput1">End Date</label>
-                                <div class="input-group col-md-9">
-                                    <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <span class="fa fa-calendar-o"></span>
-                                    </span>
+                                    <label class="col-md-3 label-control" for="projectinput1">End Date</label>
+                                    <div class="input-group col-md-9">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <span class="fa fa-calendar-o"></span>
+                                        </span>
+                                        </div>
+                                        <input type='text' value="{{$lottery->end_date}}" class="form-control pickadate-select-year" placeholder="Select Start Date" name="end_date" />
                                     </div>
-                                    <input required="required" type='text' class="form-control pickadate-select-year" placeholder="Select Start Date" name="end_date" />
                                 </div>
-                            </div>
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="address">Description</label>
                                 <div class="col-md-9">
-                                  <textarea required="required" id="desc" rows="5" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea>
+                                  <textarea id="desc" rows="5" class="form-control" name="desc" placeholder="Provide Complete Description..">{{$lottery->description}}</textarea>
                                 </div>
                               </div>
                           </div>
@@ -124,7 +121,6 @@
                 </div>
               </div>
             </section>
-            <!-- // Basic form layout section end -->
           </div>
         </div>
 
@@ -149,17 +145,5 @@ function getAmount(){
     var totalLots = amount/totalLots;
     $("#one_lot").val(totalLots.toFixed(2));
 }
-$("#pro_id").change(function(){
-  var option = $('option:selected', this).attr('pro-price');
-  $("#price").fadeIn(function (){
-    $("#pro_price").val(option);
-  });
-});
-$("#factor").change(function(){
-  var factor = $(this).val();
-  var pro_price = $("#pro_price").val();
-  var lotAmount = pro_price*factor;
-  $("#lot_amount").val(lotAmount);
-});
 </script>
 @endsection

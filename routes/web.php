@@ -35,6 +35,7 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
     Route::get('users', 'UserController@index')->name('users');
     Route::get('user/create', 'UserController@create')->name('user.create');
     Route::get('user/documents', 'UserController@documents')->name('user.documents');
+    Route::get('logout', 'Auth\AdminLoginController@logout');
 
     //products routes
     Route::get('products', 'ProductController@index')->name('products');
@@ -49,4 +50,9 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
     //Lottries routes
     Route::get('lotteries', 'LottryController@index')->name('lotteries');
     Route::get('lottery/create', 'LottryController@create')->name('lottery.create');
+    Route::post('lottery/save', 'LottryController@save')->name('lottery.save');
+    Route::get('lottery/edit/{id}', 'LottryController@edit')->name('lottery.edit');
+    Route::post('lottery/update/{id}', 'LottryController@update')->name('lottery.update');
+    Route::get('lottery/delete/{id}', 'LottryController@delete')->name('lottery.delete');
+    Route::get('lottery/detail/{id}', 'LottryController@detail')->name('lottery.detail');
 });

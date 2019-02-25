@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTotalLotsLotteriesTable extends Migration
+class AddCategoryForColumnCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddTotalLotsLotteriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('lotteries', function (Blueprint $table) {
-            $table->float('one_lot_amount')->nullable();
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('category_for')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class AddTotalLotsLotteriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('lotteries', function (Blueprint $table) {
-            $table->dropColumn('one_lot_amount');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->removeColumn('category_for');
         });
     }
 }

@@ -52,13 +52,13 @@
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1"> Name</label>
                               <div class="col-md-9">
-                                <input type="text" id="name" class="form-control" placeholder="Complete Name"  name="name">
+                                <input type="text" id="name" required="required" class="form-control" placeholder="Complete Name"  name="name">
                               </div>
                             </div>
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput3">Price</label>
                               <div class="col-md-9">
-                                <input type="text" id="price" class="form-control" placeholder="Product Price" name="price">
+                                <input type="text" id="price" required="required" class="form-control" placeholder="Product Price" name="price">
                               </div>
                             </div>
                             <div class="form-group row">

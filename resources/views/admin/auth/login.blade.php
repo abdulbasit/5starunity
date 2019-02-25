@@ -2,7 +2,12 @@
 
 @section('content')
 <div class="container">
+    <div class="text-center">
+        <img class="" src="{{ asset('images/logo-5starunity.png')}}">
+    </div>
+    <br />
     <div class="row justify-content-center">
+
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Admin Login') }}</div>

@@ -20,7 +20,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-success" id="yes">Yes</button>
+                    <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
                 </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                                     </button>
                                     <div class="dropdown-menu arrow " id="options">
                                         <a class="dropdown-item" href="{{ route('admin.product.edit',$product->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                        <a data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                        <a data-id="{{$product->id}}" onclick="deleteFunction({{$product->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                     </div>
                                 </div>
                             </div>
@@ -99,16 +99,24 @@
           </div>
         </div>
       </section>
-
      </div>
   </div>
-
 @endsection
 @section('script')
 <script>
-$("#yes").click(function(){
-    window.location.href = "{{ route('admin.product.delete',$product->id) }}";
-})
-
+    function deleteFunction(id)
+    {
+        // var id = $(this).attr("data-id");
+        $("#yes").attr("delete-id",id);
+    }
+    // $("#delete").click(function(){
+    //     alert('dd');
+    //     var id = $(this).attr("data-id");
+    //     $("#yes").attr("delete-id",id);
+    // });
+    $("#yes").click(function(){
+        var id = $(this).attr("delete-id");
+        window.location.href = "product/delete/"+id;
+    });
 </script>
 @endsection

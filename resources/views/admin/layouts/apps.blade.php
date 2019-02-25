@@ -35,21 +35,24 @@
     <!-- END Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/datatable/datatables.min.css')}}"/>
     <!-- END VENDOR CSS-->
+    @yield('style')
 </head>
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar"
 data-open="click" data-menu="vertical-menu" data-col="2-columns">
     <div id="app">
         <!-- fixed-top-->
-
         <nav class="navbar navbar-default header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-dark navbar-shadow">
                 <div class="navbar-wrapper">
-                  <div class="navbar-header">
+                  <div class="navbar-header" style="padding:0px">
                     <ul class="nav navbar-nav flex-row">
-                      <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
-                      <li class="nav-item">
-                        <a class="navbar-brand" href="index.html">
-                          <img class="brand-logo" alt="stack admin logo" src="../../../app-assets/images/logo/stack-logo-light.png">
-                          <h2 class="brand-text">Stack</h2>
+                      <li class="nav-item mobile-menu d-md-none mr-auto">
+                          <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#">
+                              <i class="ft-menu font-large-1"></i>
+                          </a>
+                      </li>
+                      <li class="nav-item" style="background-color:white; width:100%; text-align:center">
+                        <a class="navbar-brand" href="index.html" style="padding-bottom:6px; padding-top:0px">
+                          <img class="brand-logo" alt="5Starunity" src="{{ asset('images/logo-5starunity.png')}}" width="150">
                         </a>
                       </li>
                       <li class="nav-item d-md-none">
@@ -57,7 +60,6 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                       </li>
                     </ul>
                   </div>
-
                   <div class="navbar-container content">
                     <div class="collapse navbar-collapse" id="navbar-mobile">
                       <ul class="nav navbar-nav mr-auto float-left">
@@ -255,7 +257,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                             <a class="dropdown-item" href="user-cards.html"><i class="ft-check-square"></i> Task</a>
                             <a class="dropdown-item" href="chat-application.html"><i class="ft-message-square"></i> Chats</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="login-with-bg-image.html"><i class="ft-power"></i> Logout</a>
+                            <a class="dropdown-item" href="/admin/logout"><i class="ft-power"></i> Logout</a>
                           </div>
                         </li>
                       </ul>
@@ -295,6 +297,15 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                             </li>
                           </ul>
                         </li>
+                        <li>
+                            <a class="menu-item" href="#"><i class="ft-layout"></i>Blog</a>
+                            <ul class="menu-content">
+                              <li><a class="menu-item" href="{{ route('admin.lottery.create') }}">Add New Category</a></li>
+                              <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Category Listings</a>
+                              <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Add New Blog</a></li>
+                              <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Blog Listing</a></li>
+                            </ul>
+                          </li>
                       </ul>
                     </li>
                   </ul>
@@ -331,15 +342,15 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     <!-- END PAGE LEVEL JS-->
     @yield('script')
     <script>
-        $(document).ready(function() {
-            $(".dropdown-user").click(function () {
-                setTimeout(function (){
-                    $(".dropdown-user").addClass("show");
-                    $(".dropdown-menu-right").addClass("show");
-                    $(".dropdown-user-link").attr("aria-expanded",true);
-                },100)
-            });
-        });
+        // $(document).ready(function() {
+        //     $(".dropdown-user").click(function () {
+        //         setTimeout(function (){
+        //             $(".dropdown-user").addClass("show");
+        //             $(".dropdown-menu-right").addClass("show");
+        //             $(".dropdown-user-link").attr("aria-expanded",true);
+        //         },100)
+        //     });
+        // });
     </script>
 
 </body>

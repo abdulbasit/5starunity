@@ -26,3 +26,15 @@
 .imgDel a{
     color: red;
 }
+.navBtn
+{
+    background-color: #16D39A !important;
+    color: white;
+    text-align: left
+}
+.navBtn:hover
+{
+    background-color: #16D39A !important;
+    color: white;
+    text-align: left
+}
