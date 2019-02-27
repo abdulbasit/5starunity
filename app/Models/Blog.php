@@ -8,13 +8,20 @@ class Blog extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'name','description','pro_id','lot_amount','min_lot_amount',
-        'max_lot_amount','start_date','end_date','one_lot_amount','factor_amount','total_lots'
+        'title','description','seo_title','seo_meta','seo_meta_des',
+        'cat_id','post_img','status','allow_cooments','post_author','post_name'
     ];
-
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category','cat_id');
+    }
     public function product()
     {
         return $this->belongsTo('App\Models\Product','pro_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\Admin','post_author');
     }
     protected $dates = ['deleted_at'];
 

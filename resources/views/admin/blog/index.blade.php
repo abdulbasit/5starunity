@@ -34,8 +34,8 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Lotteries Listing
-                <a href="lottery/create" class="btn btn-social pull-right navBtn">
+                <h4 class="card-title">Blog Listing
+                <a href="blog/create" class="btn btn-social pull-right navBtn">
                     <span class="ft-plus"></span>
                     <span class="pl-1 pr-1">Create</span>
                 </a>
@@ -50,6 +50,7 @@
                         <th>Title</th>
                         <th>Category</th>
                         <th>Status</th>
+                        <th>Author</th>
                         <th>Created at</th>
                         <th>Updated at</th>
                         <th>Action</th>
@@ -62,18 +63,21 @@
                                 {{$blodData->id}}
                             </td>
                             <td>
-                                {{$blodData->name}}
+                                {{$blodData->title}}
                             </td>
                             <td>
-                                @if($blodData->Status==0)
+                                {{$blodData->category->name}}
+                            </td>
+                            <td>
+                                @if($blodData->status==0)
                                     Active
                                 @else
                                     <span class="badge badge-danger">
                                         Disabled
                                     </span>
                                 @endif
-
                             </td>
+                            <td>{{$blodData->created_at}}</td>
                             <td>{{$blodData->created_at}}</td>
                             <td>{{$blodData->updated_at}}</td>
                             <td>

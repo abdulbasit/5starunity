@@ -300,7 +300,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                             <ul class="menu-content">
                               <li><a class="menu-item" href="{{ route('admin.blog.category.create') }}">Add New Category</a></li>
                               <li><a class="menu-item" href="{{ route('admin.blog.category') }}">Category Listings</a>
-                              <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Add New Blog</a></li>
+                              <li><a class="menu-item" href="{{ route('admin.blog.create') }}">Add New Blog</a></li>
                               <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
                             </ul>
                           </li>
@@ -315,9 +315,8 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     </div>
     <footer class="footer footer-static footer-dark navbar-border">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-            <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2018 <a class="text-bold-800 grey darken-2" href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
-            target="_blank">PIXINVENT </a>, All rights reserved. </span>
-            <span class="float-md-right d-block d-md-inline-block d-none d-lg-block">Hand-crafted & Made with <i class="ft-heart pink"></i></span>
+            <span class="float-md-left d-block d-md-inline-block">Copyright &copy; 2018 <a class="text-bold-800 grey darken-2" href="https://5starunity.com"target="_blank"> 5STARUNITY </a>, All rights reserved. </span>
+            <span class="float-md-right d-block d-md-inline-block d-none d-lg-block">Powerd by <a class="text-bold-800 grey darken-2" href="http://xnowad.com">XNOWAD.COM</a></span>
         </p>
     </footer>
 
@@ -337,6 +336,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     <!-- END STACK JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="{{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('app-assets/nicEdit.js')}}" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
     @yield('script')
 

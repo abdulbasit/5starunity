@@ -58,6 +58,8 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
 
     //Blog categories routes
     Route::get('blog', 'BlogController@index')->name('blog');
+    Route::get('blog/create', 'BlogController@create')->name('blog.create');
+    Route::post('blog/save', 'BlogController@saveBlog')->name('blog.save');
     //Blog categories routes
     Route::get('blog/category', 'BlogController@category')->name('blog.category');
     Route::get('blog/category/create', 'BlogController@createCategory')->name('blog.category.create');

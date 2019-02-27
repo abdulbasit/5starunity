@@ -64,7 +64,7 @@
                                 {{$cats->name}}
                             </td>
                             <td>
-                                @if($cats->Status==0)
+                                @if($cats->status==0)
                                     Active
                                 @else
                                     <span class="badge badge-danger">
@@ -73,6 +73,7 @@
                                 @endif
 
                             </td>
+
                             <td>{{$cats->created_at}}</td>
                             <td>{{$cats->updated_at}}</td>
                             <td>
