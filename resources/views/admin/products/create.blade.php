@@ -1,7 +1,25 @@
 @extends('admin.layouts.apps')
 
 @section('content')
-
+<div class="content-wrapper">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header bg-danger white">
+                    <h4 class="modal-title">Warning</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                <p id="modalText"></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn grey btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+      </div>
         <div class="content-wrapper">
           <div class="content-header row">
             {{-- <div class="content-header-left col-md-6 col-12 mb-2">
@@ -102,4 +120,18 @@
           </div>
         </div>
 
+@endsection
+@section('script')
+<script>
+$("#price").change(function(){
+    var price = $(this).val();
+    if(price == 0)
+    {
+        $("#modalText").html('Price must be greater then 0!');
+        $("#myModal").modal();
+        $(this).val("");
+        $(this).focus();
+    }
+});
+</script>
 @endsection

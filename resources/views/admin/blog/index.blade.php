@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this Lottery ?</p>
+                    <p>Are you suer you want to delete this Blog ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -46,28 +46,36 @@
                   <table class="table table-striped table-bordered zero-configuration" id="usersT">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Product Name</th>
-                        <th>Lot Amount</th>
-                        <th>Total Lots</th>
-                        <th>One Lot Amount</th>
+                        <th>#ID</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Created at</th>
+                        <th>Updated at</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($lotteries as $lotData)
+                        @foreach($blogs as $blodData)
                         <tr>
                             <td>
-                                <a href="lottery/detail/{{$lotData->id}}">
-                                    {{$lotData->name}}
-                                </a>
+                                {{$blodData->id}}
                             </td>
                             <td>
-                               {{$lotData->product->pro_name}}
+                                {{$blodData->name}}
                             </td>
-                            <td>{{$lotData->lot_amount}}</td>
-                            <td>{{$lotData->total_lots}}</td>
-                            <td>{{$lotData->one_lot_amount}}</td>
+                            <td>
+                                @if($blodData->Status==0)
+                                    Active
+                                @else
+                                    <span class="badge badge-danger">
+                                        Disabled
+                                    </span>
+                                @endif
+
+                            </td>
+                            <td>{{$blodData->created_at}}</td>
+                            <td>{{$blodData->updated_at}}</td>
                             <td>
                                 <div class="col-sm-3 col-6">
                                     <div class="btn-group mr-1 mb-1">
@@ -75,8 +83,8 @@
                                         Action
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
-                                            <a class="dropdown-item" href="{{ route('admin.lottery.edit',$lotData->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                            <a data-id="{{$lotData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                            <a class="dropdown-item" href="{{ route('admin.blog.category.edit',$blodData->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                            <a data-id="{{$blodData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,11 +94,11 @@
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th>Name</th>
-                        <th>Product Name</th>
-                        <th>Lot Amount</th>
-                        <th>Total Lots</th>
-                        <th>One Lot Amount</th>
+                        <th>#ID</th>
+                        <th>Category Name</th>
+                        <th>Status</th>
+                        <th>Created at</th>
+                        <th>Updated at</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
@@ -112,7 +120,7 @@ $("#delete").click(function(){
 });
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
-    window.location.href = "lottery/delete/"+id;
+    window.location.href = "/admin/blog/category/delete/"+id;
 })
 </script>
 @endsection

@@ -284,11 +284,9 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                     </li>
                     <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Products</span></a>
                       <ul class="menu-content">
-                            <li><a class="menu-item" href="{{ route('admin.product.create') }}">Add New Product</a></li>
-                            <li><a class="menu-item" href="{{ route('admin.products') }}">Product Listing</a></li>
-                            {{-- <li><a class="menu-item" href="{{ route('admin.product.category.create') }}">Add New Categories</a></li>
-                            <li><a class="menu-item" href="{{ route('admin.product.categories') }}">Product Categories</a></li> --}}
-                       </ul>
+                        <li><a class="menu-item" href="{{ route('admin.product.create') }}">Add New Product</a></li>
+                        <li><a class="menu-item" href="{{ route('admin.products') }}">Product Listing</a></li>
+                      </ul>
                         </li>
                         <li><a class="menu-item" href="#"><i class="ft-layout"></i>Lotteries</a>
                           <ul class="menu-content">
@@ -300,10 +298,10 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                         <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Blog</a>
                             <ul class="menu-content">
-                              <li><a class="menu-item" href="{{ route('admin.lottery.create') }}">Add New Category</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Category Listings</a>
+                              <li><a class="menu-item" href="{{ route('admin.blog.category.create') }}">Add New Category</a></li>
+                              <li><a class="menu-item" href="{{ route('admin.blog.category') }}">Category Listings</a>
                               <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Add New Blog</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Blog Listing</a></li>
+                              <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
                             </ul>
                           </li>
                       </ul>
@@ -341,17 +339,6 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     <script src="{{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
     @yield('script')
-    <script>
-        // $(document).ready(function() {
-        //     $(".dropdown-user").click(function () {
-        //         setTimeout(function (){
-        //             $(".dropdown-user").addClass("show");
-        //             $(".dropdown-menu-right").addClass("show");
-        //             $(".dropdown-user-link").attr("aria-expanded",true);
-        //         },100)
-        //     });
-        // });
-    </script>
 
 </body>
 </html>

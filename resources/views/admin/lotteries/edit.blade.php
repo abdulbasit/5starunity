@@ -7,7 +7,24 @@
 @section('content')
 
         <div class="content-wrapper">
-
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-danger white">
+                        <h4 class="modal-title">Warning</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <p id="modalText"></p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn grey btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
           <div class="content-body">
             <!-- Basic form layout section start -->
             <section id="horizontal-form-layouts">
@@ -96,7 +113,7 @@
                                             <span class="fa fa-calendar-o"></span>
                                         </span>
                                         </div>
-                                        <input type='text' value="{{$lottery->end_date}}" class="form-control pickadate-select-year" placeholder="Select Start Date" name="end_date" />
+                                        <input type='text' id="end_date" value="{{$lottery->end_date}}" class="form-control pickadate-select-year" placeholder="Select Start Date" name="end_date" />
                                     </div>
                                 </div>
                             <div class="form-group row">
@@ -145,5 +162,38 @@ function getAmount(){
     var totalLots = amount/totalLots;
     $("#one_lot").val(totalLots.toFixed(2));
 }
+$("#start_date").change(function(){
+     var date = $(this).val();
+     var requested_date = Date.parse(date);
+    //  alert(requested_date);
+    var today = moment().format('D MMM, YYYY');
+    var current_date = Date.parse(today)
+
+    if(requested_date < current_date)
+    {
+        $("#modalText").html('Start date must be grater then or equal to current date!');
+        $("#myModal").modal();
+        $(this).val(today);
+    }
+});
+$("#end_date").change(function(){
+     var date1 = $(this).val();
+     var date2 = $("#start_date").val();
+     if(date2=="")
+     {
+        $("#modalText").html('Please select start date first!');
+        $("#myModal").modal();
+        $(this).val("");
+     }
+     var end_date = Date.parse(date1);
+     var start_date = Date.parse(date2);
+     var today = moment().format('D MMM, YYYY');
+    if(end_date < start_date)
+    {
+        $("#modalText").html('End date must be grater then or equal to start date!');
+        $("#myModal").modal();
+        $(this).val(today);
+    }
+});
 </script>
 @endsection

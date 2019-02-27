@@ -7,7 +7,24 @@
 @section('content')
 
         <div class="content-wrapper">
-
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header bg-danger white">
+                        <h4 class="modal-title">Warning</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <p id="modalText"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn grey btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           <div class="content-body">
             <!-- Basic form layout section start -->
             <section id="horizontal-form-layouts">
@@ -32,7 +49,7 @@
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1">Product</label>
                               <div class="col-md-9">
-                                <select required="required" id="pro_id" name="pro_id" class="form-control">
+                                <select required="required" onchange="getProPrice()" id="pro_id" name="pro_id" class="form-control">
                                     @foreach($products as $product)
                                         <option pro-price="{{$product->pro_price}}" value="{{$product->id}}">{{$product->pro_name}}</option>
                                     @endforeach
@@ -99,7 +116,7 @@
                                         <span class="fa fa-calendar-o"></span>
                                     </span>
                                     </div>
-                                    <input required="required" type='text' class="form-control pickadate-select-year" placeholder="Select Start Date" name="end_date" />
+                                    <input required="required" type='text' class="form-control pickadate-select-year" placeholder="Select Start Date" name="end_date" id="end_date" />
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -149,17 +166,55 @@ function getAmount(){
     var totalLots = amount/totalLots;
     $("#one_lot").val(totalLots.toFixed(2));
 }
-$("#pro_id").change(function(){
-  var option = $('option:selected', this).attr('pro-price');
+$("#start_date").change(function(){
+     var date = $(this).val();
+     var requested_date = Date.parse(date);
+    //  alert(requested_date);
+    var today = moment().format('D MMM, YYYY');
+    var current_date = Date.parse(today)
+
+    if(requested_date < current_date)
+    {
+        $("#modalText").html('Start date must be grater then or equal to current date!');
+        $("#myModal").modal();
+        $(this).val(today);
+    }
+});
+$("#end_date").change(function(){
+     var date1 = $(this).val();
+     var date2 = $("#start_date").val();
+     if(date2=="")
+     {
+        $("#modalText").html('Please select start date first!');
+        $("#myModal").modal();
+        $(this).val("");
+     }
+     var end_date = Date.parse(date1);
+     var start_date = Date.parse(date2);
+
+    var current_date = Date.parse(today)
+    if(end_date < start_date)
+    {
+        $("#modalText").html('End date must be grater then or equal to start date!');
+        $("#myModal").modal();
+        $(this).val(today);
+    }
+});
+
+function getProPrice(){
+  var option = $('option:selected', "#pro_id").attr('pro-price');
   $("#price").fadeIn(function (){
     $("#pro_price").val(option);
   });
-});
+}
 $("#factor").change(function(){
   var factor = $(this).val();
   var pro_price = $("#pro_price").val();
   var lotAmount = pro_price*factor;
   $("#lot_amount").val(lotAmount);
+});
+$( document ).ready(function() {
+    getProPrice();
 });
 </script>
 @endsection

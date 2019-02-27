@@ -55,4 +55,14 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
     Route::post('lottery/update/{id}', 'LottryController@update')->name('lottery.update');
     Route::get('lottery/delete/{id}', 'LottryController@delete')->name('lottery.delete');
     Route::get('lottery/detail/{id}', 'LottryController@detail')->name('lottery.detail');
+
+    //Blog categories routes
+    Route::get('blog', 'BlogController@index')->name('blog');
+    //Blog categories routes
+    Route::get('blog/category', 'BlogController@category')->name('blog.category');
+    Route::get('blog/category/create', 'BlogController@createCategory')->name('blog.category.create');
+    Route::post('blog/category/save', 'BlogController@saveCategory');
+    Route::get('blog/category/delete/{id}', 'BlogController@deleteCategory');
+    Route::get('blog/category/edit/{id}', 'BlogController@edit')->name('blog.category.edit');
+    Route::post('blog/category/update/{id}', 'BlogController@updateCategory');
 });

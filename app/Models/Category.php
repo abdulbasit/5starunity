@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-class Cateogry extends Eloquent
+use Illuminate\Database\Eloquent\SoftDeletes;
+class Category extends Model
 {
+    use SoftDeletes;
     protected $guard = 'admin';
     /**
      * The attributes that are mass assignable.
@@ -13,15 +15,7 @@ class Cateogry extends Eloquent
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password',
+        'name', 'detail', 'status', 'category_for',
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $dates = ['deleted_at'];
 }
