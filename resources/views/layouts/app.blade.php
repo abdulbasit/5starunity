@@ -43,20 +43,20 @@
                     <div class="container">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                                    <span class="sr-only">Toggle navigation</span>
+                                <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="en/index.html">
-                                <div class="navbar-logo-holder"></div>
+                                {{-- <div class="navbar-logo-holder"></div> --}}
                             </a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li  ><a href="en/investments.html">Invest</a></li>
-                                <li  ><a href="en/angel-club.html">Angel Club</a></li>
-                                <li ><a href="en/for-founders.html">For startups</a></li>
+                                <li  ><a href="en/investments.html">LOTTERY of THINGS</a></li>
+                                <li  ><a href="en/angel-club.html">ERFINDER / GRUNDER</a></li>
+                                <li ><a href="en/for-founders.html">PARTNER</a></li>
                                 <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu">
                                         <div class="row nopadding">
@@ -77,11 +77,12 @@
                                     </div>
                                 </li>
                             </ul>
-
+                            <ul class="nav pull-left">
+                                <li><a class="navbar-brand" href="en/index.html"><div class="navbar-logo-holder"></div></a></li>
+                            </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                                        <li><a class="login uppercase" id="LoginForm" href="#" data-toggle="modal" data-form="login" data-target="#myLogin">Log In</a></li>
-                                    <li><a class="register uppercase" id="RegisterForm" href="#" data-toggle="modal" data-target="#myLogin">Sign Up</a></li>
-
+                                <li><a class="login uppercase" id="LoginForm" href="#" data-toggle="modal" data-form="login" data-target="#myLogin">Log In</a></li>
+                                <li><a class="register uppercase" id="RegisterForm" href="#" data-toggle="modal" data-target="#myLogin">Sign Up</a></li>
                                 <li><a href="en.html" class="uppercase language-link no_padding_right bold-text">EN</a></li>
                                 <li class="lang-separator hidden-xs hidden-sm">|</li>
                                 <li><a href="en.html" class="uppercase language-link no_padding_left ">DE</a></li>

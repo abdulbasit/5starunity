@@ -66,7 +66,7 @@
                                 {{$blodData->title}}
                             </td>
                             <td>
-                                {{$blodData->category->name}}
+                                {{$blodData->category['name']}}
                             </td>
                             <td>
                                 @if($blodData->status==0)
@@ -87,7 +87,7 @@
                                         Action
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
-                                            <a class="dropdown-item" href="{{ route('admin.blog.category.edit',$blodData->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                            <a class="dropdown-item" href="{{ route('admin.blog.edit',$blodData->id) }}"><i class="ft-edit green"></i> Edit </a>
                                             <a data-id="{{$blodData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                         </div>
                                     </div>
@@ -97,14 +97,16 @@
                         @endforeach
                     </tbody>
                     <tfoot>
-                      <tr>
-                        <th>#ID</th>
-                        <th>Category Name</th>
-                        <th>Status</th>
-                        <th>Created at</th>
-                        <th>Updated at</th>
-                        <th>Action</th>
-                      </tr>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Author</th>
+                            <th>Created at</th>
+                            <th>Updated at</th>
+                            <th>Action</th>
+                        </tr>
                     </tfoot>
                   </table>
                 </div>
@@ -124,7 +126,7 @@ $("#delete").click(function(){
 });
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
-    window.location.href = "/admin/blog/category/delete/"+id;
+    window.location.href = "/admin/blog/delete/"+id;
 })
 </script>
 @endsection

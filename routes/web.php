@@ -60,11 +60,16 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
     Route::get('blog', 'BlogController@index')->name('blog');
     Route::get('blog/create', 'BlogController@create')->name('blog.create');
     Route::post('blog/save', 'BlogController@saveBlog')->name('blog.save');
+    Route::get('blog/delete/{id}', 'BlogController@delete');
+    Route::get('blog/edit/{id}', 'BlogController@edit')->name('blog.edit');
+    Route::post('blog/delete_photo', 'BlogController@deletePhoto')->name('blog.delete_photo');
+    Route::post('blog/update/{id}', 'BlogController@updateBlog')->name('blog.update');
+    Route::post('blog/update/image', 'BlogController@upload_editor_image')->name('blog.update.image');
     //Blog categories routes
     Route::get('blog/category', 'BlogController@category')->name('blog.category');
     Route::get('blog/category/create', 'BlogController@createCategory')->name('blog.category.create');
     Route::post('blog/category/save', 'BlogController@saveCategory');
     Route::get('blog/category/delete/{id}', 'BlogController@deleteCategory');
-    Route::get('blog/category/edit/{id}', 'BlogController@edit')->name('blog.category.edit');
+    Route::get('blog/category/edit/{id}', 'BlogController@editCategory')->name('blog.category.edit');
     Route::post('blog/category/update/{id}', 'BlogController@updateCategory');
 });

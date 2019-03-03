@@ -16,6 +16,13 @@ class BlogController extends Controller
         $blogs = Blog::with('category')->get();
         return view('admin.blog.index',compact('blogs'));
     }
+    public function edit($id)
+    {
+        $category = Category::all();
+        $blog = Blog::find($id);
+        // dd($blog->title);
+        return view('admin.blog.edit_blog',compact('blog','category'));
+    }
     public function create()
     {
         $category = Category::all();
@@ -25,6 +32,42 @@ class BlogController extends Controller
     {
         $category = Category::all();
         return view('admin.blog.category',compact('category'));
+    }
+    public function delete($id)
+    {
+        $blogPost = Blog::where('id',$id);
+        $blogPost->delete();
+        return redirect('admin/blog');
+    }
+    public function upload_editor_image()
+    {
+        return 'ddd';
+    }
+    public function updateBlog($id,Request $request)
+    {
+        // $pdo->query("SET wait_timeout=1200;");
+         ini_set('wait_timeout', '12000');
+         ini_set('memory_limit', '100192M');
+        $blogPost = Blog::find($id);
+        $file = $request->file('image');
+        if ($file!="") {
+            $destinationPath = public_path('uploads/blog/');
+            $imageName = time().'_5starunity.'.$file->getClientOriginalExtension();
+            $file->move($destinationPath, $imageName);
+            $blogPost->post_img = $imageName;
+        }
+            $blogPost->title=$request->get("title");
+            $blogPost->description=$request->get("desc");
+            $blogPost->seo_title = $request->get('mtitle');
+            $blogPost->seo_meta = $request->get('mtags');
+            $blogPost->seo_meta_des = $request->get('mdesc');
+            $blogPost->cat_id = $request->get('category');
+            $blogPost->status = $request->get("status");
+            $blogPost->allow_cooments = "0";
+            // $blogPost->post_author"=>Auth::guard('admin')->user()->id,
+            $blogPost->post_name = str_replace(" ","-", strtolower($request->get("mtitle")));
+            $blogPost->save();
+            return redirect('admin/blog');
     }
     public function saveBlog(Request $request)
     {
@@ -69,7 +112,7 @@ class BlogController extends Controller
         ]);
         return redirect('admin/blog/category');
     }
-    public function edit($id)
+    public function editCategory($id)
     {
         $category = Category::find($id);
         return view('admin.blog.edit_category',compact('category'));

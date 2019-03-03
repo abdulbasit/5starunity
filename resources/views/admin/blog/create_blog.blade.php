@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image.css')}}">
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/table.css')}}">
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/video.css')}}">
+<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image_manager.css')}}">
+<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image.css')}}">
 <style>
 .fr-box.fr-basic .fr-element
 {
@@ -127,25 +129,47 @@
 @endsection
 @section('script')
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/froala_editor.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/align.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/froala_editor.min.js')}}" ></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/char_counter.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/code_beautifier.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/code_view.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/colors.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/draggable.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/emoticons.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/entities.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/file.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/font_size.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/font_family.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/fullscreen.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/image.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/image_manager.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/line_breaker.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/inline_style.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/link.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/lists.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/paragraph_format.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/paragraph_style.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/quick_insert.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/quote.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/table.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/video.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/save.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/url.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/entities.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/video.min.js')}}"></script>
 <script>
     $(function(){
-        $('#desc')
-        .on('froalaEditor.initialized')
-        .froalaEditor({enter: $.FroalaEditor.ENTER_P, placeholderText: null})
-    });
+          $('#desc').froalaEditor()
+            .on('froalaEditor.image.beforeUpload', function (e, editor, files) {
+              if (files.length) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                  var result = e.target.result;
+                  editor.image.insert(result, null, null, editor.image.get());
+                };
+                reader.readAsDataURL(files[0]);
+              }
+
+              return false;
+            })
+        });
 </script>
 @endsection

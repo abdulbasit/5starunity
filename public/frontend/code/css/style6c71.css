@@ -12670,7 +12670,7 @@ button {
 }
 .co_navbar .navbar-default .navbar-brand .navbar-logo-holder {
   width: 230px;
-  height: 40px;
+  height: 60px;
   box-sizing: border-box;
   background-position: left top;
   background-repeat: no-repeat;
@@ -12941,7 +12941,10 @@ button {
 .co_navbar .navbar-transparent:hover .navbar-logo-holder,
 .co_navbar .navbar-transparent.navbar-open .navbar-logo-holder,
 .co_navbar .navbar-transparent .navbar-collapse.in .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_black.png");
+    background-image: url("../../../images/logo-5starunity.png");
+    background-size: 171px;
+    margin: auto 0;
+    background-position: center !important;
 }
 .co_navbar .navbar-transparent:hover .navbar-nav li a,
 .co_navbar .navbar-transparent.navbar-open .navbar-nav li a,
@@ -12976,7 +12979,10 @@ button {
   background-color: #000;
 }
 .co_navbar .navbar-transparent .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_white.png");
+    background-image: url("../../../images/logo-5starunity.png");
+    background-size: 171px;
+    margin: auto 0;
+    background-position: center !important;
 }
 .co_navbar .navbar-transparent .dropdown-menu {
   background-color: #fff !important;
@@ -13000,7 +13006,7 @@ button {
   }
 }
 .co_navbar .navbar-white .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_black.png") !important;
+  background-image: url("../../../images/logo-5starunity.png") !important;
 }
 .co_navbar .navbar-white .navbar-nav li a {
   color: #000 !important;
@@ -13147,7 +13153,7 @@ button {
   background-color: #000 !important;
 }
 .co_navbar .navbar-text-black .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_black.png");
+  background-image: url("../../../images/logo-5starunity.png");
 }
 #emailNotifBar {
   font-size: 14px;
@@ -29400,7 +29406,7 @@ span.appears {
   left: 0;
   /*background-color:rgba(0,0,0,0.30) !important;*/
   background-color: rgba(70, 104, 109, 0.8);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: normal;
   margin-bottom: 0;
@@ -29445,7 +29451,7 @@ span.appears {
 }
 @media (min-width: 1301px) {
   .newLayout .navbar-default.new_header .navbar-brand {
-    padding-top: 10px;
+    padding-top: 0px !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1300px) {
@@ -29535,7 +29541,7 @@ span.appears {
   text-transform: uppercase;
 }
 .newLayout .navbar-default .navbar-nav li a {
-  color: #fff;
+  color: #000;
   font-weight: 400;
   line-height: 30px;
   margin-top: 16px;
@@ -29590,7 +29596,7 @@ span.appears {
   }
 }
 .newLayout .navbar-default .navbar-nav li .register {
-  border: 1px solid #fff;
+  border: 1px solid #000;
   /*background-color:rgba(0,0,0,0.35);*/
 }
 @media (max-width: 992px) {
@@ -35064,7 +35070,7 @@ a.btn-default-new-layout-small {
   -webkit-transform: skewY(-3deg);
   transform: skewY(-3deg);
   /*
-	@media (min-width: @screen-xs-max) and (max-width: @screen-sm-max) {   
+	@media (min-width: @screen-xs-max) and (max-width: @screen-sm-max) {
 		height:1160px;
 	}
 	*/

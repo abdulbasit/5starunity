@@ -12941,7 +12941,7 @@ button {
 .co_navbar .navbar-transparent:hover .navbar-logo-holder,
 .co_navbar .navbar-transparent.navbar-open .navbar-logo-holder,
 .co_navbar .navbar-transparent .navbar-collapse.in .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_black.png");
+  background-image: url("../../../images/logo-5starunity.png");
 }
 .co_navbar .navbar-transparent:hover .navbar-nav li a,
 .co_navbar .navbar-transparent.navbar-open .navbar-nav li a,
@@ -12976,7 +12976,7 @@ button {
   background-color: #000;
 }
 .co_navbar .navbar-transparent .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_white.png");
+  background-image: url("../../../images/logo-5starunity.png");
 }
 .co_navbar .navbar-transparent .dropdown-menu {
   background-color: #fff !important;
@@ -13000,7 +13000,7 @@ button {
   }
 }
 .co_navbar .navbar-white .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_black.png") !important;
+  background-image: url("../../../images/logo-5starunity.png") !important;
 }
 .co_navbar .navbar-white .navbar-nav li a {
   color: #000 !important;
@@ -13045,7 +13045,7 @@ button {
   background-color: #000 !important;
 }
 .co_navbar .navbar-black .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_white.png") !important;
+  background-image: url("../../../images/logo-5starunity.png") !important;
 }
 .co_navbar .navbar-black .navbar-nav li a {
   color: #fff !important;
@@ -13090,7 +13090,7 @@ button {
   background-color: #5b8b9b !important;
 }
 .co_navbar .navbar-blue .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_white.png") !important;
+  background-image: url("../../../images/logo-5starunity.png") !important;
 }
 .co_navbar .navbar-blue .navbar-nav li a {
   color: #fff !important;
@@ -13147,7 +13147,7 @@ button {
   background-color: #000 !important;
 }
 .co_navbar .navbar-text-black .navbar-logo-holder {
-  background-image: url("../../graphics/elements/companisto_website_logo_black.png");
+  background-image: url("../../../images/logo-5starunity.png");
 }
 #emailNotifBar {
   font-size: 14px;
@@ -35064,7 +35064,7 @@ a.btn-default-new-layout-small {
   -webkit-transform: skewY(-3deg);
   transform: skewY(-3deg);
   /*
-	@media (min-width: @screen-xs-max) and (max-width: @screen-sm-max) {   
+	@media (min-width: @screen-xs-max) and (max-width: @screen-sm-max) {
 		height:1160px;
 	}
 	*/
