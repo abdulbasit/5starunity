@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\BlogUpdateCounter;
 use App\Models\Blog;
 use Image;
 use Carbon\Carbon;
 use Auth;
+use DB;
 class BlogController extends Controller
 {
 
@@ -39,16 +41,15 @@ class BlogController extends Controller
         $blogPost->delete();
         return redirect('admin/blog');
     }
-    public function upload_editor_image()
-    {
-        return 'ddd';
-    }
     public function updateBlog($id,Request $request)
     {
         // $pdo->query("SET wait_timeout=1200;");
          ini_set('wait_timeout', '12000');
          ini_set('memory_limit', '100192M');
         $blogPost = Blog::find($id);
+        $blog_counter = BlogUpdateCounter::create([
+            "blog_id"=>$id
+        ]);
         $file = $request->file('image');
         if ($file!="") {
             $destinationPath = public_path('uploads/blog/');
@@ -63,6 +64,7 @@ class BlogController extends Controller
             $blogPost->seo_meta_des = $request->get('mdesc');
             $blogPost->cat_id = $request->get('category');
             $blogPost->status = $request->get("status");
+            $blogPost->short_desc = $request->get('short_desc');
             $blogPost->allow_cooments = "0";
             // $blogPost->post_author"=>Auth::guard('admin')->user()->id,
             $blogPost->post_name = str_replace(" ","-", strtolower($request->get("mtitle")));
@@ -77,7 +79,6 @@ class BlogController extends Controller
         $imageName = time().'_5starunity.'.$file->getClientOriginalExtension();
         $file->move($destinationPath, $imageName);
 
-
         $lottery_id = Blog::create([
             "title" => $request->get("title"),
             "description"=>$request->get("desc"),
@@ -88,9 +89,11 @@ class BlogController extends Controller
             "post_img"=>$imageName,
             "status"=>$request->get("status"),
             "allow_cooments"=>"0",
+            "short_desc"=>$request->get("short_desc"),
             "post_author"=>Auth::guard('admin')->user()->id,
             "post_name"=>str_replace(" ","-", strtolower($request->get("mtitle")))
         ]);
+        return redirect('admin/blog');
     }
     public function createCategory()
     {

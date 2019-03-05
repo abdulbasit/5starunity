@@ -62,6 +62,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="address">Short Description</label>
+                                    <div class="col-md-9">
+                                        <textarea required="required" id="short_desc" rows="5" class="form-control" name="short_desc" placeholder="Provide Short Description.."></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label class="col-md-3 label-control" for="address">Description</label>
                                     <div class="col-md-9">
                                         <textarea required="required" id="desc" rows="12" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea>

@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900|Open+Sans:300,300i,400,600,600i,700,700i,800,800i|Oswald:200,300,400,500,600,700|Lato:100,400,300,300italic,400italic,700,700italic,900italic,900|Kalam:300,400,700|Roboto+Condensed|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('frontend/code/css/fonts/font-awesome/css/font-awesome.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/code/jquery-ui/jquery-ui.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/code/jquery-ui/jquery-ui.theme.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/code/css/style6c71.css?ver=1549632172')}}" />
@@ -82,7 +83,7 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a class="login uppercase" id="LoginForm" href="#" data-toggle="modal" data-form="login" data-target="#myLogin">Log In</a></li>
-                                <li><a class="register uppercase" id="RegisterForm" href="#" data-toggle="modal" data-target="#myLogin">Sign Up</a></li>
+                                <li><a class="register uppercase" id="RegisterForm" href="#" data-toggle="modal" data-target="#myLogin">Register</a></li>
                                 <li><a href="en.html" class="uppercase language-link no_padding_right bold-text">EN</a></li>
                                 <li class="lang-separator hidden-xs hidden-sm">|</li>
                                 <li><a href="en.html" class="uppercase language-link no_padding_left ">DE</a></li>
@@ -453,7 +454,18 @@
 	if ($(window).width() > 500) {
 		$('.footerAcc').removeAttr('data-toggle');
 	}
-
+</script>
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+      $(".navbar").css('top','0');
+  } else {
+    $(".navbar").css('top','-100px');
+  }
+  prevScrollpos = currentScrollPos;
+}
 </script>
 </body>
 </html>

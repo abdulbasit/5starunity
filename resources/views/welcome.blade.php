@@ -19,25 +19,30 @@
     <section>
 
             <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; width: 1140px; height: 442px; overflow: hidden;">
-                    <!-- Loading Screen -->
-                    <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
-                    </div>
+                <!-- Loading Screen -->
+                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                    <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
+                </div>
 
-                    <!-- Slides Container -->
-                    <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1140px; height: 442px;
-                    overflow: hidden;">
-                        <div>
-                            <img data-u="image" src="{{ URL::to('/') }}/images/001.png" />
-                            <span></span>
-                        </div>
-                        <div>
-                            <img data-u="image" src="{{ URL::to('/') }}/images/002.png" />
-                        </div>
-                        <div>
-                            <img data-u="image" src="{{ URL::to('/') }}/images/003.png" />
-                        </div>
+                <!-- Slides Container -->
+                <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1140px; height: 442px;
+                overflow: hidden; top:60px">
+                    <div>
+                        <img data-u="image" src="{{ URL::to('/') }}/images/slide1.png" />
+                        <span></span>
                     </div>
+                    <div>
+                        <img data-u="image" src="{{ URL::to('/') }}/images/slide2.png" />
+                    </div>
+                    <div>
+                        <img data-u="image" src="{{ URL::to('/') }}/images/001.png" />
+                        <span></span>
+                    </div>
+                    <div>
+                        <img data-u="image" src="{{ URL::to('/') }}/images/002.png" />
+                        <span></span>
+                    </div>
+                </div>
 
                     <!--#region Bullet Navigator Skin Begin -->
                     <!-- Help: https://www.jssor.com/development/slider-with-bullet-navigator.html -->

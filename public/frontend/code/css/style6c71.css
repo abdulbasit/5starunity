@@ -7,6 +7,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+@font-face {
+    font-family: "Calibari-normal";
+    src: url("fonts/calibri/Calibri-normal.ttf");
+    }
 body {
   margin: 0;
 }
@@ -12687,10 +12691,11 @@ button {
   }
 }
 .co_navbar .navbar-default li a {
-  font-family: "Open Sans", sans-serif !important;
+  font-family: Calibari-normal !important;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  font-size:14px !important
 }
 @media (max-width: 1200px) {
   .co_navbar .navbar-default li a {
@@ -12926,7 +12931,7 @@ button {
   border-right: none;
 }
 .co_navbar .navbar-transparent {
-  background-color: transparent !important;
+  background-color: transparent ;
 }
 @media (max-width: 991px) {
   .co_navbar .navbar-transparent.navbar-open {
@@ -29549,7 +29554,6 @@ span.appears {
   padding-top: 0;
   padding-bottom: 0;
   font-size: 15px;
-  font-family: 'Roboto Condensed', sans-serif;
   border-radius: 4px;
   padding-right: 15px;
   padding-left: 15px;
@@ -46471,3 +46475,19 @@ div.right_tools {
   text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+.navbar-nav li:first-child a
+{
+    border:solid 1px #000000 !important
+}
+.navbar {
+    background-color: white !important;
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+  }

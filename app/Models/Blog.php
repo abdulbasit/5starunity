@@ -9,7 +9,7 @@ class Blog extends Model
     use SoftDeletes;
     protected $fillable = [
         'title','description','seo_title','seo_meta','seo_meta_des',
-        'cat_id','post_img','status','allow_cooments','post_author','post_name'
+        'cat_id','post_img','status','allow_cooments','post_author','post_name','short_desc','tags'
     ];
     public function category()
     {
