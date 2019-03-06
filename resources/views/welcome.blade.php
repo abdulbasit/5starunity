@@ -43,23 +43,6 @@
                         <span></span>
                     </div>
                 </div>
-
-                    <!--#region Bullet Navigator Skin Begin -->
-                    <!-- Help: https://www.jssor.com/development/slider-with-bullet-navigator.html -->
-                    <style>
-                        .jssorb031 {position:absolute;}
-                        .jssorb031 .i {position:absolute;cursor:pointer;}
-                        .jssorb031 .i .b {fill:#000;fill-opacity:0.5;stroke:#fff;stroke-width:1200;stroke-miterlimit:10;stroke-opacity:0.3;}
-                        .jssorb031 .i:hover .b {fill:#fff;fill-opacity:.7;stroke:#000;stroke-opacity:.5;}
-                        .jssorb031 .iav .b {fill:#fff;stroke:#000;fill-opacity:1;}
-                        .jssorb031 .i.idn {opacity:.3;}
-
-                        .jssora051 {display:block;position:absolute;cursor:pointer;}
-                        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
-                        .jssora051:hover {opacity:.8;}
-                        .jssora051.jssora051dn {opacity:.5;}
-                        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
-                    </style>
                     <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
                         <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                             <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
@@ -77,42 +60,56 @@
     </section>
     <section class="homepage-howitworks">
         <div class="container">
-            <div class="section-title">Investing together in innovation</div>
+            <div class="section-title">Innovativ Erfinder und Gründer unterstützen!</div>
             <div class="section-subtitle">
-                 Companisto is the investment platform for startups and growth companies. Business angels and investors join forces to invest venture capital in groundbreaking innovations, promising companies, and ideas that make history.        </div>
-        </div>
+                    Ideeller Hauptzweck des 5starUnity e.V. ist es, Menschen zu ermöglichen Ihre Ideen zu verwirklichen undzum Wohle der Allgemeinheit eine Verbesserung zu realisieren.
+                    Zur Unterstützung erfolgsversprechender Unternehmungen, die Geschichte schreiben könnten,
+                    bieten wir Ihnen hier die Möglichkeit zu spenden!
+                    Jeder Spender wird mit kostenfreien Talern belohnt und hat im Gegenzug die Chance in unserer Lottery of Things
+                    sein Wunschobjekt zu gewinnen - notariell beglaubigt.
+
+            </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-1 col-md-10">
                     <div class="row circles-holder">
                         <div class="col-md-4 c_dist">
-                            <div class="circle c_st">
-                                <div class="circle_icon">
-                                    <img src="{{ asset('frontend/graphics/layout/icon-left-top.png')}}" alt="" />
-                                </div>
-                                <div class="circle_text">
-                                    Selection
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 c_dist">
-                            <div class="circle c_nd">
-                                <div class="circle_icon">
-                                    <img src="{{ asset('frontend/graphics/layout/icon-mid-top.png')}}" alt="" />
-                                </div>
-                                <div class="circle_text">
-                                    Investment
+                            <div class="circle c_nd circle1st">
+                                <div class="circle c_st">
+                                    <div class="circle_icon">
+                                        <span class="circle_counter">#1</span>
+                                        <span class="circle_text">
+                                            Register
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 c_dist">
-                            <div class="circle c_rd">
-                                <div class="circle_icon">
-                                    <img src="{{ asset('frontend/graphics/layout/icon-right-top.png')}}" alt="" />
+                            <div class="circle c_nd circle1st">
+                                <div class="circle c_nd">
+                                    <div class="circle_icon">
+                                        <span class="circle_counter">#2</span>
+                                        <span class="circle_text">
+                                            Donate
+                                        </span>
+                                    </div>
+                                    {{-- <div class="circle_text">
+                                        Investment
+                                    </div> --}}
                                 </div>
-                                <div class="circle_text">
-                                    Yield opportunity
+                            </div>
+                        </div>
+                        <div class="col-md-4 c_dist">
+                            <div class="circle c_nd circle1st">
+                                <div class="circle c_rd">
+                                    <div class="circle_icon">
+                                        <span class="circle_counter">#3</span>
+                                        <span class="circle_text">
+                                            Lottery of Things
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +119,7 @@
 
             <div class="row">
                 <div class="col-xs-12 button-container">
-                    <a href="en/investments.html" class="btn layoutV2-btn">Invest with just a few clicks </a>
+                    <a href="#" class="btn layoutV2-btn">Register your self</a>
                 </div>
             </div>
         </div>
@@ -133,624 +130,276 @@
             <div class="section-title padding-title">Popular Investments</div>
         </div>
 
-        <div class="container-fluid no-padding">
-            <script src="{{ asset('frontend/code/jquery_touchwipe/jquery.touchwipe.1.1.1.js')}}"></script>
-
-
-     <div class="ps_parent_circles">
-        <div class="ps_circles">
-            <i class="fa fa-circle circle" data-position="1"></i>
-        </div>
-    </div>
-
-
-    <div class="ps_main_parent">
-        <div class="ps_main_view_holder" id="ps_main_view">
-
-            <div class="ps_main_view_content" data-uri="">
-                <div class="ps_main_view_fade">
-
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="ps_main_view_cofinancing"></div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-7 col-sm-8">
-                            <div class="ps_main_view_title"></div>
-                            <div class="ps_main_view_city"></div>
-                        </div>
-                        <div class="col-xs-5 col-sm-4">
-                            <div class="ps_main_view_logo" >
-                                <img src="#" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-8 startups_descriptions">
-                            <div class="ps_main_view_img">
-                                <img src="#" />
-                                <div class="banderoleWrapper extended_banderole"><div class="banderole extendedFlagNew"><h5>Extended</h5></div></div>
-                                <div class="banderoleWrapper ending_banderole"><div class="banderole endingFlagNew"><h5>Ending Soon</h5></div></div>
-                                <div class="ps_main_view_desc"></div>
-                                <div class="ps_main_view_title_info">
-                                    <span class="ps_info_box btn btn-xs  button_blue">NEW</span>
-                                    <span class="ps_info_box btn btn-xs button_gray">shares</span>
-                                    <span class="ps_info_box btn btn-xs button_black">Equity</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-lg-4 startups_financial_info">
-                            <div class="ps_main_view_gmbh">
-                                <div class="ps_main_info_row">
-                                    <p>Companisto Wertpapier GmbH</p>
-                                    <div class="ps_main_info_label">Mediator</div>
-                                </div>
-                                <div class="ps_main_info_row">
-                                    <p class="ps_main_wkn_code"></p>
-                                    <div class="ps_main_info_label">WKN</div>
-                                </div>
-                                <div class="ps_main_info_row">
-                                    <p class="ps_main_isin_code"></p>
-                                    <div class="ps_main_info_label">ISIN</div>
-                                </div>
-                            </div>
-
-                            <div class="ps_main_details_goal_and_time">
-                                <span class="ps_goal"></span>
-                                <span class="ps_left_time"></span>
-                            </div>
-
-                                <div class=" col-xs-12 ps_main_progress progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-
-                            <div class="ps_main_details first-detail">
-                                <span class="ps_total_invested"></span>
-                                <div class="ps_main_details_t">
-                                    <span class="ps_main_invested_text"></span>
-                                </div>
-                            </div>
-
-                            <div class="ps_main_details ps_main_details_reserved" data-html="true" data-toggle="tooltip" data-placement="left" title="">
-                                <span class="ps_procent"></span>
-                                <div class="ps_main_details_t">
-                                    <span class="percentage_or_reserved_text"></span>
-                                </div>
-                            </div>
-
-                            <div class="ps_main_details last-detail">
-                                <span class="ps_companists"></span>
-                                <div class="ps_main_details_t ">
-                                    Companists
-                                </div>
-                            </div>
-
-
-                            <!--<div class="ps_main_footer_text">
-
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
+        <div class="ps_parent_circles">
+            <div class="ps_circles">
+                <i class="fa fa-circle circle" data-position="1"></i>
             </div>
         </div>
+        <div class="container listing_container" id="list_startups">
+                <div class="row row_for_mobile">
+                    <link href="../code/scripts/countdown/jquery.countdown.css" rel="stylesheet" type="text/css" />
+                    <script type="text/javascript" src="../code/scripts/countdown/jquery.countdown.js"></script>
+                                <script type="text/javascript" src="../code/scripts/countdown/jquery.countdown-de.js"></script>
 
-    </div>
-
-
-    <div class="ps" id="ps">
-        <ul style='display:none'>
-
-                                    <li class="ps-li" data-id="122"
-                    data-counter-startup="1"
-                    data-name="vanilla bean"
-                    data-img="assets/1546954124_profile%20teaser_856x400.png"
-                    data-invested="&euro; 116,250"
-                    data-text-invested="Invested"
-                    data-companists="137"
-                    data-logo="assets/1546954124_LOGO_white%20400x400px.png"
-                    data-goal="&euro; 500,000"
-                    data-goal-text="Goal"
-                    data-days-left="36 Days left"
-                    data-is-ameria=""
-                    data-is-ending-soon=""
-                    data-is-extended=""
-                    data-is-ameria=""
-                    data-cofinancing=""
-                    data-co-amount=""
-                    data-cofinancing-cond="no"
-                    data-city="Regensburg, DE"
-                    data-co-amount-text="Co-financed"
-                    data-perc="23%"
-                    data-wkn-code=""
-                    data-isin-code=""
-                    data-perc-text="of financing goal"
-                    data-total-progress="0"
-                    data-footer-text=""
-                    data-name-url="vanilla-bean"
-                    data-tooltip-text1=""
-                    data-tooltip-text2=""
-                    data-tooltip-text3=""
-                    data-desc="The world’s first packaging-free restaurant delivery service – CO&lt;sub&gt;2&lt;/sub&gt;-free and 100% vegan."
-                    data-hide-timeleft="">
-                    <img id="startup-image-122" src='assets/1546954124_profile%20teaser_856x400.png'>
-                    <div class="text-center ps-startup-name"><strong>vanilla bean</strong></div>
-                    <div class="text-center ps-startup-invested">Invested: &euro; 116,250</div>
-
-                </li>
-
-        </ul>
-    </div>
-
-    <script>
-        if (vld_components === undefined){
-            var vld_components = {};
-        }
-
-        $(window).on("resize", function(){
-            var window_width = $(window).width() > 1920 ? 1920 : $(window).width();
-            var width = window_width / 3;
-            $("#ps").find("ul li").css("width", width + "px");
-        });
-
-        vld_components.ps_slider = function(config_object){
-            this.items_container         = config_object.items_container;
-            this.main_view               = config_object.main_view;
-            this.main_parent             = config_object.main_parent;
-            this.slide_speed             = config_object.slide_speed;
-            this.controls                = config_object.controls;
-            this.circles                 = config_object.circles;
-            this.homepage                = config_object.homepage;
-            this.mouseover               = false;
-            this.animation_progress      = false;
-            this.init();
-        };
-
-        vld_components.ps_slider.prototype.init = function(){
-            var window_width = $(window).width() > 1920 ? 1920 : $(window).width();
-            var width        = window_width / 3;
-            this.items_container.find("ul li").css("width", width + "px");
-
-            this.updateData();
-            this.items_container.find("ul li").on("click", function(e){
-                this.element_click_function(e, "");
-            }.bind(this));
-
-            /*********************************************************
-                Click on left or right arrow to move slider
-            *********************************************************/
-            /*this.controls.find(".ps-left").on("click", function(e){
-                this.element_click_function(e, "");
-            }.bind(this));
-            this.controls.find(".ps-right").on("click", function(e){
-                this.element_click_function(e, "");
-            }.bind(this));*/
-            /******************************************************************************************/
-            /******************************************************************************************/
-
-
-            /*******************************************************************************************
-                When click the circle indicator, color the right circle and display the right startup
-                - click circle and get the number
-                - check if number of current startup is the same with the clciked startup number
-                - if the numbers are not the same, get all li , make loop and search the li with clicked ID
-                - get all info about clicked startup from data attributes , go to main div and display info
-            ********************************************************************************************/
-            this.circles.find("i:nth-child(2)").append("<div class='current'></div>");
-            this.circles.find("i:nth-child(2)").addClass("color_current_indicator");
-
-            this.circles.find("i").on("click", function(e){
-                var target              = e.target;
-                var nr_indicator        = parseInt(target.getAttribute('data-position'));
-                var nr_current_startup  = this.main_view.attr('data-nr-startup');
-
-                this.colorRightIndicatorWhenClicked(target, nr_indicator);
-
-                if(nr_indicator != nr_current_startup) {
-                    this.items_container.find('ul li').each(function(e, item) {
-                        var nr_start = $(item).attr('data-counter-startup');
-
-                        if(nr_start == nr_indicator) {
-                            this.updateDataWhenSelectIndicators(null, $(item));
-                        }
-                    }.bind(this));
-                }
-            }.bind(this));
-
-
-            vld_components.ps_slider.prototype.colorRightIndicatorWhenClicked = function(current_indicator,nr_indicator){
-                this.circles.find('i').each(function(e, item) {
-                    if($(item).attr('data-position') != nr_indicator) {
-                        $(this).removeClass('color_current_indicator');
-                    }
-                });
-                $(current_indicator).addClass('color_current_indicator');
-            };
-            /******************************************************************************************/
-            /******************************************************************************************/
-
-
-
-            /**************************************
-                 Swipe left and right on mobile --- ( !it's a library)
-            ***************************************/
-            var that = this;
-            $("body").touchwipe({
-                 wipeLeft: function(e) { that.element_click_function(e, "left"); },
-                 wipeRight: function(e) { that.element_click_function(e, "right"); },
-                 min_move_x: 20,
-                 preventDefaultEvents: true
-            });
-            /****************************************************/
-            /****************************************************/
-
-
-            /*****************************************************
-                If default is autoslide
-                - when mouse is over , stop autoslide
-                - when mouse is out , start autoslide
-            ********************************************************/
-                this.items_container.on("mouseover", function(){
-                    this.mouseover = true;
-                }.bind(this));
-
-                this.items_container.on("mouseout", function(){
-                    this.mouseover = false;
-                }.bind(this));
-
-                this.main_view.on("mouseover", function(){
-                    this.mouseover = true;
-                }.bind(this));
-
-                this.main_view.on("mouseout", function(){
-                    this.mouseover = false;
-                }.bind(this));
-
-                // Default autoslide
-                var total_items  = this.items_container.find("ul li");
-                if(total_items.length > 1) {
-                    this.timer();
-                }
-            /********************************************************/
-            /********************************************************/
-
-        };
-
-
-        /************************************************************************************
-            Animat startup to left or right
-        ***************************************************************************************/
-        vld_components.ps_slider.prototype.element_click_function = function(e, direction){
-            this.animation_progress = true;
-            if(direction === "") {
-                direction = e.pageX < $(window).width() / 2 ? "left" : "right";
-            }
-
-
-            this.items_container.find("ul").animate(
-                {
-                    left: direction === "right" ? "-=680px" : "+=680px"
-                }, {
-                    "duration": 250,
-                    "easing": "linear",
-                    "complete": function () {
-                        this.items_container.find("ul").css({
-                            left: direction === "right" ? "+=680px" : "-=680px"
-                        });
-
-                        if (direction === "left") {
-                            var last_child = this.items_container.find("ul li:last-of-type");
-                            this.items_container.find("ul").prepend(last_child);
-                        }
-
-                        if(direction === "right") {
-                            var first_child = this.items_container.find("ul li:first-of-type");
-                            this.items_container.find("ul").append(first_child);
-
-                        }
-
-                        this.updateData();
-                        this.animation_progress = false;
-                    }.bind(this)
-                }
-            );
-
-            this.move_slider_indicators(direction);
-        };
-
-        /***********************************************************************************************************/
-        /***********************************************************************************************************/
-
-
-
-        /************************************************************************************
-            Move circle indicator when click the startup to change it and color the current indicator
-        ***************************************************************************************/
-        vld_components.ps_slider.prototype.move_slider_indicators = function(direction){
-            var position        = this.circles.find("i .current").parent().attr('data-position'); //get position of current i
-            var count_circles   =  this.circles.find("i").length; //get count circles indicators
-
-            this.circles.find("i .current").parent().removeClass('color_current_indicator');
-
-            this.circles.find('i:nth-child('+position+')').find('.current').remove(); //delete current class from current last indicator
-
-            // if thecurrent indicators is the last and you wsant to go to the next , check if position is the last and fo to the first child
-            if(direction == 'right') {
-                if(position == count_circles) {
-                    this.circles.find("i:first-child").append("<div class='current'></div>");
-                    this.circles.find("i:first-child").addClass('color_current_indicator');
-                } else {
-                     this.circles.find("i:nth-child(" + position + ")").next().append("<div class='current'></div>"); // go to the next indicators and add the class
-                     this.circles.find("i:nth-child(" + position + ")").next().addClass('color_current_indicator');
-                }
-            } else {
-                if(position == 1) {
-                    this.circles.find("i:last-child").append("<div class='current'></div>");
-                    this.circles.find("i:last-child").addClass('color_current_indicator');
-                } else {
-                    this.circles.find("i:nth-child(" + position + ")").prev().append("<div class='current'></div>"); // go to the next indicators and add the class
-                    this.circles.find("i:nth-child(" + position + ")").prev().addClass('color_current_indicator');
-                }
-            }
-        };
-        /***********************************************************************************************************/
-        /***********************************************************************************************************/
-
-
-
-        /**********************************************************
-            Timer for autoslider
-        ******************************************************/
-            vld_components.ps_slider.prototype.timer = function(){
-                var interval = setInterval(function(){
-                    if(this.mouseover === false) {
-                        this.element_click_function(null, "right");
-                    }
-                }.bind(this), this.slide_speed);
-            };
-        /***********************************************************/
-        /***********************************************************/
-
-
-
-        /*****************************************************************************************************
-            When click a circle indicator --- display data about choosed startup for that circle in the main div
-        *******************************************************************************************************/
-        vld_components.ps_slider.prototype.updateDataWhenSelectIndicators = function(e, selected_li){
-            this.main_view.find(".ps_main_view_fade").hide();
-
-            if(selected_li.attr("data-is-ameria") == true) {
-                this.main_parent.find('.ps_main_view_holder').removeClass('ps_main_view_rest_startups');
-                this.circles.find('.ps_circles').removeClass('ps_circles_not_main_view');
-                this.homepage.find('.button-container').removeClass('button_container_not_main_view');
-
-                $('.ps_main_details_reserved').tooltip("enable").tooltip("show").css('cursor','help');
-
-                this.main_view.find('.startups_descriptions').removeClass('col-lg-8').addClass('col-lg-6');
-                this.main_view.find('.startups_financial_info').removeClass('col-lg-4').addClass('col-lg-6');
-                this.main_view.find('.ps_main_details').addClass('inline_details');
-                this.main_view.find('.ps_main_details .first-detail').addClass('detail-border-right');
-                this.main_view.find('.ps_main_details .last-detail').addClass('detail-border-left');
-                this.main_view.find('.ps_main_details').addClass('inline_details');
-                this.main_view.find('.ps_main_view_gmbh').css('display','block');
-                this.main_view.find('.ps_main_progress').css('display','block');
-                this.main_view.find('.ps_main_progress div').attr('aria-valuenow', selected_li.attr("data-total-progress")).css('width', selected_li.attr("data-total-progress")+'%');
-                this.main_view.find('.ps_main_progress div').html(selected_li.attr("data-total-progress")+"%");
-                this.main_view.find('.ps_main_details_goal_and_time').addClass('remove_goal_padding');
-                this.main_view.find('.ps_main_details_reserved span').addClass('add_display_block');
-                this.main_view.find('.ps_main_details_reserved div').addClass('add_display_inline_block');
-                this.main_view.find('.ps_main_details_reserved sup').css('display','inline-block');
-               //this.main_view.find('.ps_main_footer_text').css('display','block').html(current_item.attr("data-footer-text"));
-                this.main_view.find('.ps_main_view_content').addClass('active- equity_campaign').attr('data-uri', 'https://www.companisto-investments.de/en/investment/ameriaag');
-                this.main_view.find('.ps_main_view_content').removeAttr('onClick');
-                this.main_view.find('.ps_main_view_title_info').css('display','block');
-                this.main_view.find('.ps_main_details_reserved').attr('data-original-title',selected_li.attr("data-tooltip-text1")+' <br />'+selected_li.attr("data-tooltip-text2")+'<br />'+selected_li.attr("data-tooltip-text3"));
-                this.main_view.find(".ps_left_time").css('display','none');
-
-                if(selected_li.attr("data-is-ending-soon") == true) {
-                    this.main_view.find('.ending_banderole').css('display','block');
-                }
-                else {
-                    this.main_view.find('.ending_banderole').css('display','none');
-                }
-                if(selected_li.attr("data-is-extended") == true) {
-                    this.main_view.find('.extended_banderole').css('display','block');
-                }
-                else {
-                    this.main_view.find('.extended_banderole').css('display','none');
-                }
-
-
-            } else {
-                this.main_parent.find('.ps_main_view_holder').addClass('ps_main_view_rest_startups');
-                this.circles.find('.ps_circles').addClass('ps_circles_not_main_view');
-                this.homepage.find('.button-container').addClass('button_container_not_main_view');
-
-                var url_name    = selected_li.attr("data-name-url");
-                var url_startup = 'https://www.companisto.com/en/investment/'+url_name;
-
-                this.main_view.find('.startups_descriptions').removeClass('col-lg-6').addClass('col-lg-8');
-                this.main_view.find('.startups_financial_info').removeClass('col-lg-6').addClass('col-lg-4');
-                this.main_view.find('.ps_main_details').removeClass('inline_details');
-                this.main_view.find('.ps_main_view_gmbh').css('display','none');
-                this.main_view.find('.ps_main_progress').css('display','none');
-                this.main_view.find('.ps_main_details_goal_and_time').removeClass('remove_goal_padding');
-                this.main_view.find('.ps_main_details_reserved span').removeClass('add_display_block');
-                this.main_view.find('.ps_main_details_reserved div').removeClass('add_display_inline_block');
-                this.main_view.find('.ps_main_details_reserved sup').css('display','none');
-                this.main_view.find('.ps_main_view_title_info').css('display','none');
-                this.main_view.find('.ps_main_details .first-detail').removeClass('detail-border-right');
-                this.main_view.find('.ps_main_details .last-detail').removeClass('detail-border-left');
-                this.main_view.find('.ps_main_view_content').removeClass('active- equity_campaign');
-                this.main_view.find('.ps_main_view_content').attr('onClick', 'window.location.href = "'+url_startup+'"');
-
-
-                if(selected_li.attr("data-hide-timeleft") == true){
-                    this.main_view.find(".ps_left_time").css('display','none');
-                } else {
-                    this.main_view.find(".ps_left_time").css('display','inline-block').html("<i class='fa fa-clock-o ps_time_icon' aria-hidden='true' style=''></i>"+" "+selected_li.attr("data-days-left"));
-                }
-
-
-                this.main_view.find('.ps_main_details_reserved').removeAttr("data-original-title");
-                this.main_view.find('.ps_main_details_reserved').tooltip("disable").tooltip("hide").css('cursor','pointer');
-                this.main_view.find('.ending_banderole').css('display','none');
-                this.main_view.find('.extended_banderole').css('display','none');
-            }
-            this.main_view.attr('data-nr-startup',selected_li.attr("data-counter-startup"));
-
-
-            this.main_view.find(".ps_main_view_title").html(selected_li.attr("data-name"));
-            this.main_view.find(".ps_main_view_img").find("img").attr("src", selected_li.attr("data-img"));
-            this.main_view.find(".ps_main_view_logo").find("img").attr("src", selected_li.attr("data-logo"));
-            this.main_view.find(".ps_main_view_desc").html(selected_li.attr("data-desc"));
-            this.main_view.find(".ps_total_invested").html(selected_li.attr("data-invested"));
-            this.main_view.find(".ps_main_invested").html(selected_li.attr("data-text-invested"));
-            this.main_view.find(".ps_companists").html(selected_li.attr("data-companists"));
-            this.main_view.find(".ps_procent").html(selected_li.attr("data-perc"));
-            this.main_view.find(".percentage_or_reserved_text").html(selected_li.attr("data-perc-text"));
-            this.main_view.find(".ps_main_view_city").html(selected_li.attr("data-city"));
-            this.main_view.find(".ps_goal").html(selected_li.attr("data-goal-text")+": "+selected_li.attr("data-goal"));
-            this.main_view.find(".ps_main_wkn_code").html(selected_li.attr("data-wkn-code"));
-            this.main_view.find(".ps_main_isin_code").html(selected_li.attr("data-isin-code"));
-            this.main_view.find(".ps_main_invested_text").html(selected_li.attr("data-text-invested"));
-
-            this.main_view.find(".ps_main_view_fade").fadeIn(250);
-        }
-        /********************************************************************************************
-        *********************************************************************************************/
-
-
-        vld_components.ps_slider.prototype.updateData = function(e){
-            this.main_view.find(".ps_main_view_fade").hide();
-            var total_items  = this.items_container.find("ul li");
-
-            if(total_items.length > 1) {
-                var current_item = this.items_container.find("ul li:nth-of-type(2)");
-            } else {
-                var current_item = this.items_container.find("ul li:nth-of-type(1)");
-            }
-
-
-            /* Check if Ameria is the main startup */
-
-            if(current_item.attr("data-is-ameria") == true) {
-                this.main_parent.find('.ps_main_view_holder').removeClass('ps_main_view_rest_startups');
-                this.circles.find('.ps_circles').removeClass('ps_circles_not_main_view');
-                this.homepage.find('.button-container').removeClass('button_container_not_main_view');
-
-                $('.ps_main_details_reserved').tooltip("enable").tooltip("show").css('cursor','help');
-
-                this.main_view.find('.startups_descriptions').removeClass('col-lg-8').addClass('col-lg-6');
-                this.main_view.find('.startups_financial_info').removeClass('col-lg-4').addClass('col-lg-6');
-                this.main_view.find('.ps_main_details').addClass('inline_details');
-                this.main_view.find('.ps_main_details .first-detail').addClass('detail-border-right');
-                this.main_view.find('.ps_main_details .last-detail').addClass('detail-border-left');
-                this.main_view.find('.ps_main_details').addClass('inline_details');
-                this.main_view.find('.ps_main_view_gmbh').css('display','block');
-                this.main_view.find('.ps_main_progress').css('display','block');
-                this.main_view.find('.ps_main_progress div').attr('aria-valuenow', current_item.attr("data-total-progress")).css('width', current_item.attr("data-total-progress")+'%');
-                this.main_view.find('.ps_main_progress div').html(current_item.attr("data-total-progress")+"%");
-                this.main_view.find('.ps_main_details_goal_and_time').addClass('remove_goal_padding');
-                this.main_view.find('.ps_main_details_reserved span').addClass('add_display_block');
-                this.main_view.find('.ps_main_details_reserved div').addClass('add_display_inline_block');
-                this.main_view.find('.ps_main_details_reserved sup').css('display','inline-block');
-               //this.main_view.find('.ps_main_footer_text').css('display','block').html(current_item.attr("data-footer-text"));
-                this.main_view.find('.ps_main_view_content').addClass('active- equity_campaign').attr('data-uri', 'https://www.companisto-investments.de/en/investment/ameriaag');
-                this.main_view.find('.ps_main_view_content').removeAttr('onClick');
-                this.main_view.find('.ps_main_view_title_info').css('display','block');
-                this.main_view.find('.ps_main_details_reserved').attr('data-original-title',current_item.attr("data-tooltip-text1")+' <br />'+current_item.attr("data-tooltip-text2")+'<br />'+current_item.attr("data-tooltip-text3"));
-                this.main_view.find(".ps_left_time").css('display','none');
-
-                if(current_item.attr("data-is-ending-soon") == true) {
-                    this.main_view.find('.ending_banderole').css('display','block');
-                }
-                else {
-                    this.main_view.find('.ending_banderole').css('display','none');
-                }
-                if(current_item.attr("data-is-extended") == true) {
-                    this.main_view.find('.extended_banderole').css('display','block');
-                }
-                else {
-                    this.main_view.find('.extended_banderole').css('display','none');
-                }
-
-
-            } else {
-                this.main_parent.find('.ps_main_view_holder').addClass('ps_main_view_rest_startups');
-                this.circles.find('.ps_circles').addClass('ps_circles_not_main_view');
-                this.homepage.find('.button-container').addClass('button_container_not_main_view');
-
-                var url_name    = current_item.attr("data-name-url");
-                var url_startup = 'https://www.companisto.com/en/investment/'+url_name;
-
-                this.main_view.find('.startups_descriptions').removeClass('col-lg-6').addClass('col-lg-8');
-                this.main_view.find('.startups_financial_info').removeClass('col-lg-6').addClass('col-lg-4');
-                this.main_view.find('.ps_main_details').removeClass('inline_details');
-                this.main_view.find('.ps_main_view_gmbh').css('display','none');
-                this.main_view.find('.ps_main_progress').css('display','none');
-                this.main_view.find('.ps_main_details_goal_and_time').removeClass('remove_goal_padding');
-                this.main_view.find('.ps_main_details_reserved span').removeClass('add_display_block');
-                this.main_view.find('.ps_main_details_reserved div').removeClass('add_display_inline_block');
-                this.main_view.find('.ps_main_details_reserved sup').css('display','none');
-                this.main_view.find('.ps_main_view_title_info').css('display','none');
-                this.main_view.find('.ps_main_details .first-detail').removeClass('detail-border-right');
-                this.main_view.find('.ps_main_details .last-detail').removeClass('detail-border-left');
-                this.main_view.find('.ps_main_view_content').removeClass('active- equity_campaign');
-                this.main_view.find('.ps_main_view_content').attr('onClick', 'window.location.href = "'+url_startup+'"');
-
-                if(current_item.attr("data-hide-timeleft") == true){
-                    this.main_view.find(".ps_left_time").css('display','none');
-                } else {
-                    this.main_view.find(".ps_left_time").css('display','inline-block').html("<i class='fa fa-clock-o ps_time_icon' aria-hidden='true' style=''></i>"+" "+current_item.attr("data-days-left"));
-                }
-
-                this.main_view.find('.ps_main_details_reserved').removeAttr("data-original-title");
-                this.main_view.find('.ps_main_details_reserved').tooltip("disable").tooltip("hide").css('cursor','pointer');
-                this.main_view.find('.ending_banderole').css('display','none');
-                this.main_view.find('.extended_banderole').css('display','none');
-            }
-            this.main_view.attr('data-nr-startup',current_item.attr("data-counter-startup"));
-
-
-            this.main_view.find(".ps_main_view_title").html(current_item.attr("data-name"));
-            this.main_view.find(".ps_main_view_img").find("img").attr("src", current_item.attr("data-img"));
-            this.main_view.find(".ps_main_view_logo").find("img").attr("src", current_item.attr("data-logo"));
-            this.main_view.find(".ps_main_view_desc").html(current_item.attr("data-desc"));
-            this.main_view.find(".ps_total_invested").html(current_item.attr("data-invested"));
-            this.main_view.find(".ps_main_invested").html(current_item.attr("data-text-invested"));
-            this.main_view.find(".ps_companists").html(current_item.attr("data-companists"));
-            this.main_view.find(".ps_procent").html(current_item.attr("data-perc"));
-            this.main_view.find(".percentage_or_reserved_text").html(current_item.attr("data-perc-text"));
-            this.main_view.find(".ps_main_view_city").html(current_item.attr("data-city"));
-            this.main_view.find(".ps_goal").html(current_item.attr("data-goal-text")+": "+current_item.attr("data-goal"));
-            this.main_view.find(".ps_main_wkn_code").html(current_item.attr("data-wkn-code"));
-            this.main_view.find(".ps_main_isin_code").html(current_item.attr("data-isin-code"));
-            this.main_view.find(".ps_main_invested_text").html(current_item.attr("data-text-invested"));
-
-            this.main_view.find(".ps_main_view_fade").fadeIn(250);
-        };
-
-        $(function(){
-            new vld_components.ps_slider({
-                items_container: $("#ps"),
-                main_view: $("#ps_main_view"),
-                main_parent: $(".ps_main_parent"),
-                controls: $("#ps_parent_buttons"),
-                circles: $(".ps_parent_circles"),
-                homepage: $(".homepage-popular-startups"),
-                slide_speed: 5000
-            });
-        });
-    </script>
-
-
-        </div>
+                    <span id="total_pages" data-total="111"></span>
 
+
+
+
+
+
+
+
+
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes " data-uri="https://www.companisto.com/de/investment/vanilla-bean"
+                             itemscope itemtype="http://schema.org/Product">
+
+
+                    <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
+                    <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
+                        <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html"
+                                                >
+
+
+                                                </div>
+                        </a>
+                        <div itemprop="logo" class="st_logo lazy" data-src="https://www.companisto.com/assets/1546954124_LOGO_white%20400x400px.png"
+                                        ></div>
+                        <div class="row content_info">
+                            <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
+                                <h2 class="mb-5px">vanilla bean</h2>
+                            </a>
+                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Regensburg, DE</span>
+
+                            <p itemprop="description">
+                                <a href="investment/vanilla-bean.html" title="vanilla bean">
+                                    Der weltweit erste verpackungsfreie Restaurant-Lieferdienst – CO2-frei und 100% vegan.                    </a>
+                            </p>
+
+                            <span class="typeStartupBg"><span></span></span>            </div>
+                        <div class="row finance_info">
+                            <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
+                                                        Ziel:
+
+                                    500.000 &euro;                                    </div>
+                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
+
+
+                                                                <div class="block_time_left">
+                                            <i class="fa fa-clock-o time_icon" aria-hidden="true" style="font-size: 18px;vertical-align: middle;color:#5b8b9b;padding-bottom: 2px;"></i>
+                                            noch 36 Tage                            </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="row progress_info nopadding">
+                                                                            <div class="col-xs-12 progress canInvest">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">23%</div>
+                                        </div>
+                                                                            <div class="col-xs-6 block_details borderRightgrey">
+
+                                        <strong>116.250 &euro;</strong>
+
+                                    Investiert                    </div>
+                                                    <div class="col-xs-6 block_details">
+                                    <strong>137</strong>Companisten                    </div>
+
+                                        </div>
+                                    <div class="footer_startup ">
+
+                                JETZT INVESTIEREN                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no " data-uri="investments.html"
+                             itemscope itemtype="http://schema.org/Product">
+
+
+                    <meta itemprop="image" content="../assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg"></meta>
+                    <div class="content_startup_blok  " href="investments.html">
+                        <a itemprop="url" title="WEISSENHAUS" href="investments.html">
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg" title="WEISSENHAUS" href="investments.html"
+                                                >
+
+
+                                                </div>
+                        </a>
+                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1535040283_weissenhaus.jpg"
+                                        ></div>
+                        <div class="row content_info">
+                            <a itemprop="url" title="WEISSENHAUS" href="investments.html">
+                                <h2 class="mb-5px">WEISSENHAUS</h2>
+                            </a>
+                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Weissenhaus, DE</span>
+
+                            <p itemprop="description">
+                                <a href="investments.html" title="WEISSENHAUS">
+                                    Das WEISSENHAUS Grand Village Resort & Spa am Meer ist ein privat geführtes...                    </a>
+                            </p>
+
+                            <span class="typeStartupBg"><span></span></span>            </div>
+                        <div class="row finance_info">
+                            <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
+                                                        Ziel:
+
+                                    7.500.000 &euro;                                    </div>
+                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
+
+
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="row progress_info nopadding">
+                                                                            <div class="col-xs-12 progress">
+                                            <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
+                                        </div>
+                                                                            <div class="col-xs-6 block_details borderRightgrey">
+
+                                        <strong>7.500.000 &euro;</strong>
+
+                                    Investiert                    </div>
+                                                    <div class="col-xs-6 block_details">
+                                    <strong>1641</strong>Companisten                    </div>
+
+                                        </div>
+                                    <div class="footer_startup footer_startup_gray">
+
+                                Abgeschlossen                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no equity_campaign" data-uri="https://www.companisto-investments.de/de/investment/ameriaag"
+                             itemscope itemtype="http://schema.org/Product">
+
+
+                    <meta itemprop="image" content="../assets/1543691113_ameria_startup_image.png"></meta>
+                    <div class="content_startup_blok  " href="https://www.companisto-investments.de/de/investment/ameriaag">
+                        <a itemprop="url" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag">
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1543691113_ameria_startup_image.png" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag"
+                                                >
+
+
+                                                </div>
+                        </a>
+                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1527151902_ameria.jpg"
+                                        ></div>
+                        <div class="row content_info">
+                            <a itemprop="url" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag">
+                                <h2 class="mb-5px">AMERIA AG</h2>
+                            </a>
+                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Heidelberg, DE</span>
+
+                            <p itemprop="description">
+                                <a href="https://www.companisto-investments.de/de/investment/ameriaag" title="AMERIA AG">
+                                    Eigenkapital-Beteiligungen – Erste Aktienemission über Companisto....                    </a>
+                            </p>
+                                                            <div class="title_info">
+                                <span class="info_box box_gray">aktien</span>
+                                <span class="info_box box_black">Eigenkapital</span>
+                            </div>
+
+                            <span class="typeStartupBg"><span></span></span>            </div>
+                        <div class="row finance_info">
+                            <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
+                                                        Ziel:
+
+                                    5.500.000 &euro;                                    </div>
+                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
+
+
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="row progress_info nopadding">
+                                                                            <div class="col-xs-12 progress">
+                                            <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
+                                        </div>
+                                                                            <div class="col-xs-6 block_details borderRightgrey">
+                                                                <strong>5.500.000 &euro;</strong>
+
+                                    Investiert                    </div>
+                                                    <div class="col-xs-6 block_details">
+                                    <strong>850</strong>Companisten                    </div>
+
+                                        </div>
+                                    <div class="footer_startup footer_startup_gray">
+
+                                Abgeschlossen                            </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no " data-uri="investment/replicate.html"
+                             itemscope itemtype="http://schema.org/Product">
+
+
+                    <meta itemprop="image" content="../assets/1502361611_2017-08-10_replicate-profile_v3_1000x400px.jpg"></meta>
+                    <div class="content_startup_blok  " href="investment/replicate.html">
+                        <a itemprop="url" title="REPLICATE® System" href="investment/replicate.html">
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1502361611_2017-08-10_replicate-profile_v3_1000x400px.jpg" title="REPLICATE® System" href="investment/replicate.html"
+                                                >
+
+
+                                                        <div class="co_financing">
+                                        Co-finanzierung                        </div>
+                                                </div>
+                        </a>
+                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1502187945_2017-08-08_replicate_profile-graphics_logo_V2.jpg"
+                                        ></div>
+                        <div class="row content_info">
+                            <a itemprop="url" title="REPLICATE® System" href="investment/replicate.html">
+                                <h2 class="mb-5px">REPLICATE® System</h2>
+                            </a>
+                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Berlin, DE</span>
+
+                            <p itemprop="description">
+                                <a href="investment/replicate.html" title="REPLICATE® System">
+                                    Mit dem REPLICATE® System der NDI AG wird die Versorgung von Zahnlücken für den...                    </a>
+                            </p>
+
+                            <span class="typeStartupBg"><span></span></span>            </div>
+                        <div class="row finance_info">
+                            <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
+                                                        Ziel:
+
+                                    2.500.000 &euro;                                    </div>
+                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
+
+
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="row progress_info nopadding">
+
+                                        <div class="col-xs-12 progress_completed">
+                                            <div class="progress-bar progress_completed" role="progressbar" aria-valuenow="140" aria-valuemin="0" aria-valuemax="100" style="width:100%">140%</div>
+                                        </div>
+
+                                                                           <div class="col-xs-4 block_details borderRightgrey">
+
+                                        <strong>3.500.000 &euro;</strong>
+
+                                    Investiert                    </div>
+                                                        <div class="col-xs-4 block_details borderRightgrey">
+                                        <strong>1 M €</strong>Co-finanziert                        </div>
+                                                    <div class="col-xs-4 block_details">
+                                    <strong>2276</strong>Companisten                    </div>
+
+                                        </div>
+                                    <div class="footer_startup footer_startup_gray">
+
+                                Abgeschlossen                            </div>
+                    </div>
+                </div>
+            <script>
+                $('.large-tooltip').tooltip();
+            </script>
+                </div>
+            </div>
         <div class="row">
             <div class="col-xs-12 button-container">
                 <a href="en/investments.html" class="btn layoutV2-btn">Current investment opportunities</a>

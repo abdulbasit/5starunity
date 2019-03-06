@@ -4997,7 +4997,6 @@ a.thumbnail.active {
 .progress {
   overflow: hidden;
   height: 21px;
-  margin-bottom: 21px;
   background-color: #f5f5f5;
   border-radius: 0px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -15276,11 +15275,10 @@ section.homepage-howitworks .section-subtitle {
   }
 }
 section.homepage-howitworks .circles-holder {
-  background-image: url('../../graphics/layout/circle-path.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  min-height: 435px;
+  /* min-height: 435px; */
 }
 @media (max-width: 1200px) {
   section.homepage-howitworks .circles-holder {
@@ -15288,12 +15286,21 @@ section.homepage-howitworks .circles-holder {
     min-height: 360px;
   }
 }
+.circle1st
+{
+    border: solid 20px #eaeaea !important;
+}
+.circle1st:hover
+{
+    border: solid 20px #e4e2e2 !important;
+}
 section.homepage-howitworks .circles-holder .circle {
-  width: 260px;
-  height: 260px;
-  border-radius: 175px;
-  background-color: #fff;
-  margin-top: 90px;
+    width: 200px;
+    height: 200px;
+    border-radius: 175px;
+    background-color: whitesmoke;
+    border: solid 20px lightgray;
+    display:table
 }
 @media (max-width: 992px) {
   section.homepage-howitworks .circles-holder .circle {
@@ -15314,24 +15321,78 @@ section.homepage-howitworks .circles-holder .circle {
     height: 200px;
   }
 }
+.circle_text
+{
+    width:100%;
+    position:absolute;
+    height:100%;
+    left:0px;
+    font-size:14px;
+    color:black;
+    -webkit-transition: color 1s, font-size 1s;
+    -moz-transition: color 1s, font-size 1s;
+    -o-transition: color 1s, font-size 1s;
+    transition: color 1s, font-size 1s;
+
+}
+.circle_text:hover
+{
+   font-size:25px !important
+}
 section.homepage-howitworks .circles-holder .circle .circle_icon {
-  padding-top: 50px;
+    position: relative;
+    width: 100% !important;
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    font-size:25px;
+    color:#e4e4e4;
+    font-size:60px
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   section.homepage-howitworks .circles-holder .circle .circle_icon {
-    padding-top: 62px;
+    position: relative;
+    width: 100% !important;
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    color:#e4e4e4
   }
 }
 @media (max-width: 750px) {
   section.homepage-howitworks .circles-holder .circle .circle_icon {
-    padding-left: 15px;
+    position: relative;
+    width: 100% !important;
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    color:#e4e4e4
   }
 }
 @media (max-width: 400px) {
   section.homepage-howitworks .circles-holder .circle .circle_icon {
     padding-top: 36px;
     padding-left: 10px;
+    position: relative;
+    width: 100% !important;
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal;
+    color:#e4e4e4
   }
+    .circle_counter
+    {
+        position:relative;
+        top:-17px
+    }
 }
 section.homepage-howitworks .circles-holder .circle .circle_icon img {
   width: 100px;
@@ -15371,7 +15432,7 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
   }
 }
 section.homepage-howitworks .circles-holder .c_st {
-  margin-left: 35px;
+  /* margin-left: 35px; */
 }
 @media (max-width: 1200px) {
   section.homepage-howitworks .circles-holder .c_st {
@@ -15379,7 +15440,7 @@ section.homepage-howitworks .circles-holder .c_st {
   }
 }
 section.homepage-howitworks .circles-holder .c_nd {
-  margin-left: 18px;
+
 }
 @media (max-width: 1200px) {
   section.homepage-howitworks .circles-holder .c_nd {
@@ -46475,14 +46536,6 @@ div.right_tools {
   text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
-
-
-
-
-.navbar-nav li:first-child a
-{
-    border:solid 1px #000000 !important
-}
 .navbar {
     background-color: white !important;
     position: fixed !important;
@@ -46491,3 +46544,38 @@ div.right_tools {
     display: block;
     transition: top 0.3s;
   }
+  .jssorb031 {position:absolute;}
+  .jssorb031 .i {position:absolute;cursor:pointer;}
+  .jssorb031 .i .b {fill:#000;fill-opacity:0.5;stroke:#fff;stroke-width:1200;stroke-miterlimit:10;stroke-opacity:0.3;}
+  .jssorb031 .i:hover .b {fill:#fff;fill-opacity:.7;stroke:#000;stroke-opacity:.5;}
+  .jssorb031 .iav .b {fill:#fff;stroke:#000;fill-opacity:1;}
+  .jssorb031 .i.idn {opacity:.3;}
+
+  .jssora051 {display:block;position:absolute;cursor:pointer;}
+  .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+  .jssora051:hover {opacity:.8;}
+  .jssora051.jssora051dn {opacity:.5;}
+  .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+  .card {
+    transition: 0.3s;
+    width: 40%;
+    float:left;
+    border:solid 1px #ccc;
+  }
+  .card-body
+  {
+      margin:5px
+  }
+  .card_margin
+  {
+      margin-left:20px
+  }
+  .container {
+    padding: 2px 16px;
+  }
+
+
+.border-radius-zero
+{
+    border-radius:0px !important
+}
