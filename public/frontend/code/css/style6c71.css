@@ -15559,7 +15559,7 @@ section.homepage-popular-startups .preinvestFlagNew {
 }
 @media (min-width: 1200px) {
   section.homepage-popular-startups .section-title {
-    padding-bottom: 240px;
+    /* padding-bottom: 240px; */
   }
 }
 @media (max-width: 500px) {
@@ -16626,8 +16626,6 @@ section.homepage-popular-startups .button-container {
   }
 }
 section.homepage-statistics {
-  padding-top: 80px;
-  padding-bottom: 80px;
 }
 @media (max-width: 500px) {
   section.homepage-statistics {
@@ -17062,12 +17060,20 @@ section.all-startups-background {
   position: relative;
   background-size: cover;
   height: 600px;
-  background-image: url(../../graphics/layout/startups_new_colaj.jpg);
+  background-image: url(../../graphics/layout/003.png);
   background-position: top center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.text-left
+{
+    text-align:left !important
+}
+.blb_text
+{
+    color:#fff
 }
 @media (max-width: 768px) {
   section.all-startups-background {
@@ -46579,3 +46585,59 @@ div.right_tools {
 {
     border-radius:0px !important
 }
+html, body {
+    font-family: Open Sans;
+    font-size: 18px;
+    line-height: 28px;
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    letter-spacing: -15px;
+    font-family: Open Sans;
+    color: white;
+    text-align: center;
+    font-size: 200px;
+    font-weight: 800;
+    line-height: 200px;
+  }
+
+  .MainContainer {
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .ContentContainer {
+    position: relative;
+    display: block;
+    background-color: white;
+    z-index: 1;
+  }
+
+  .Content {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 75px 0;
+  }
+
+  p {
+    margin: 75px 0;
+  }
+
+  .ParallaxContainer {
+    display: flex;
+    flex: 1 0 auto;
+    position: relative;
+    z-index: -1;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(-1px) scale(2);
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/sakura.png);
+    background-color: rgb(250,228, 216);
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');

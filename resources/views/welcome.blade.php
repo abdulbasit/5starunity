@@ -137,35 +137,16 @@
         </div>
         <div class="container listing_container" id="list_startups">
                 <div class="row row_for_mobile">
-                    <link href="../code/scripts/countdown/jquery.countdown.css" rel="stylesheet" type="text/css" />
-                    <script type="text/javascript" src="../code/scripts/countdown/jquery.countdown.js"></script>
-                                <script type="text/javascript" src="../code/scripts/countdown/jquery.countdown-de.js"></script>
-
                     <span id="total_pages" data-total="111"></span>
-
-
-
-
-
-
-
-
-
                 <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes " data-uri="https://www.companisto.com/de/investment/vanilla-bean"
                              itemscope itemtype="http://schema.org/Product">
-
-
                     <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
                     <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
                         <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html"
-                                                >
-
-
-                                                </div>
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html">
+                        </div>
                         </a>
-                        <div itemprop="logo" class="st_logo lazy" data-src="https://www.companisto.com/assets/1546954124_LOGO_white%20400x400px.png"
-                                        ></div>
+                        <div itemprop="logo" class="st_logo lazy" data-src="https://www.companisto.com/assets/1546954124_LOGO_white%20400x400px.png"></div>
                         <div class="row content_info">
                             <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
                                 <h2 class="mb-5px">vanilla bean</h2>
@@ -176,54 +157,43 @@
                                 <a href="investment/vanilla-bean.html" title="vanilla bean">
                                     Der weltweit erste verpackungsfreie Restaurant-Lieferdienst – CO2-frei und 100% vegan.                    </a>
                             </p>
-
-                            <span class="typeStartupBg"><span></span></span>            </div>
+                            <span class="typeStartupBg"><span></span></span>
+                        </div>
                         <div class="row finance_info">
                             <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                        Ziel:
-
-                                    500.000 &euro;                                    </div>
+                                                        Ziel: 500.000 &euro;
+                            </div>
                             <div class="col-xs-5 col-sm-6 block_finance_right text-right">
-
-
-                                                                <div class="block_time_left">
-                                            <i class="fa fa-clock-o time_icon" aria-hidden="true" style="font-size: 18px;vertical-align: middle;color:#5b8b9b;padding-bottom: 2px;"></i>
-                                            noch 36 Tage                            </div>
-
-
+                                <div class="block_time_left">
+                                    <i class="fa fa-clock-o time_icon" aria-hidden="true" style="font-size: 18px;vertical-align: middle;color:#5b8b9b;padding-bottom: 2px;"></i>
+                                    noch 36 Tage
+                                </div>
                             </div>
                         </div>
 
                         <div class="row progress_info nopadding">
-                                                                            <div class="col-xs-12 progress canInvest">
-                                            <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">23%</div>
-                                        </div>
-                                                                            <div class="col-xs-6 block_details borderRightgrey">
-
-                                        <strong>116.250 &euro;</strong>
-
-                                    Investiert                    </div>
-                                                    <div class="col-xs-6 block_details">
-                                    <strong>137</strong>Companisten                    </div>
-
-                                        </div>
-                                    <div class="footer_startup ">
-
-                                JETZT INVESTIEREN                            </div>
+                            <div class="col-xs-12 progress canInvest">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">23%</div>
+                            </div>
+                            <div class="col-xs-6 block_details borderRightgrey">
+                                <strong>116.250 &euro;</strong>
+                                Investiert
+                            </div>
+                            <div class="col-xs-6 block_details">
+                                <strong>137</strong>Companisten
+                            </div>
+                        </div>
+                        <div class="footer_startup ">
+                            JETZT INVESTIEREN
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no " data-uri="investments.html"
                              itemscope itemtype="http://schema.org/Product">
-
-
                     <meta itemprop="image" content="../assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg"></meta>
                     <div class="content_startup_blok  " href="investments.html">
                         <a itemprop="url" title="WEISSENHAUS" href="investments.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg" title="WEISSENHAUS" href="investments.html"
-                                                >
-
-
-                                                </div>
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg" title="WEISSENHAUS" href="investments.html"></div>
                         </a>
                         <div itemprop="logo" class="st_logo lazy" data-src="../assets/1535040283_weissenhaus.jpg"
                                         ></div>
@@ -238,175 +208,89 @@
                                     Das WEISSENHAUS Grand Village Resort & Spa am Meer ist ein privat geführtes...                    </a>
                             </p>
 
-                            <span class="typeStartupBg"><span></span></span>            </div>
+                            <span class="typeStartupBg"><span></span></span>
+                        </div>
                         <div class="row finance_info">
                             <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                        Ziel:
-
-                                    7.500.000 &euro;                                    </div>
+                                                        Ziel: 7.500.000 &euro;
+                            </div>
                             <div class="col-xs-5 col-sm-6 block_finance_right text-right">
-
-
                                     <i class="fa fa-check" aria-hidden="true"></i>
-
                             </div>
                         </div>
 
                         <div class="row progress_info nopadding">
-                                                                            <div class="col-xs-12 progress">
-                                            <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
-                                        </div>
-                                                                            <div class="col-xs-6 block_details borderRightgrey">
-
-                                        <strong>7.500.000 &euro;</strong>
-
-                                    Investiert                    </div>
-                                                    <div class="col-xs-6 block_details">
-                                    <strong>1641</strong>Companisten                    </div>
-
-                                        </div>
-                                    <div class="footer_startup footer_startup_gray">
-
-                                Abgeschlossen                            </div>
+                            <div class="col-xs-12 progress">
+                                <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
+                            </div>
+                            <div class="col-xs-6 block_details borderRightgrey">
+                                <strong>7.500.000 &euro;</strong>
+                                    Investiert
+                                </div>
+                            <div class="col-xs-6 block_details">
+                                <strong>1641</strong>Companisten
+                            </div>
+                        </div>
+                        <div class="footer_startup footer_startup_gray">
+                            WIN NOW
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no equity_campaign" data-uri="https://www.companisto-investments.de/de/investment/ameriaag"
-                             itemscope itemtype="http://schema.org/Product">
-
-
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no equity_campaign" data-uri="https://www.companisto-investments.de/de/investment/ameriaag" itemscope itemtype="http://schema.org/Product">
                     <meta itemprop="image" content="../assets/1543691113_ameria_startup_image.png"></meta>
                     <div class="content_startup_blok  " href="https://www.companisto-investments.de/de/investment/ameriaag">
                         <a itemprop="url" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1543691113_ameria_startup_image.png" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag"
-                                                >
-
-
-                                                </div>
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1543691113_ameria_startup_image.png" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag"></div>
                         </a>
-                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1527151902_ameria.jpg"
-                                        ></div>
+                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1527151902_ameria.jpg"></div>
                         <div class="row content_info">
                             <a itemprop="url" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag">
                                 <h2 class="mb-5px">AMERIA AG</h2>
                             </a>
                             <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Heidelberg, DE</span>
-
                             <p itemprop="description">
                                 <a href="https://www.companisto-investments.de/de/investment/ameriaag" title="AMERIA AG">
                                     Eigenkapital-Beteiligungen – Erste Aktienemission über Companisto....                    </a>
                             </p>
-                                                            <div class="title_info">
+                            <div class="title_info">
                                 <span class="info_box box_gray">aktien</span>
                                 <span class="info_box box_black">Eigenkapital</span>
                             </div>
-
-                            <span class="typeStartupBg"><span></span></span>            </div>
+                            <span class="typeStartupBg"><span></span></span>
+                        </div>
                         <div class="row finance_info">
                             <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                        Ziel:
-
-                                    5.500.000 &euro;                                    </div>
+                                Ziel:5.500.000 &euro;
+                            </div>
                             <div class="col-xs-5 col-sm-6 block_finance_right text-right">
-
-
                                     <i class="fa fa-check" aria-hidden="true"></i>
-
                             </div>
                         </div>
-
                         <div class="row progress_info nopadding">
-                                                                            <div class="col-xs-12 progress">
-                                            <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
-                                        </div>
-                                                                            <div class="col-xs-6 block_details borderRightgrey">
-                                                                <strong>5.500.000 &euro;</strong>
-
-                                    Investiert                    </div>
-                                                    <div class="col-xs-6 block_details">
-                                    <strong>850</strong>Companisten                    </div>
-
-                                        </div>
-                                    <div class="footer_startup footer_startup_gray">
-
-                                Abgeschlossen                            </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no " data-uri="investment/replicate.html"
-                             itemscope itemtype="http://schema.org/Product">
-
-
-                    <meta itemprop="image" content="../assets/1502361611_2017-08-10_replicate-profile_v3_1000x400px.jpg"></meta>
-                    <div class="content_startup_blok  " href="investment/replicate.html">
-                        <a itemprop="url" title="REPLICATE® System" href="investment/replicate.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1502361611_2017-08-10_replicate-profile_v3_1000x400px.jpg" title="REPLICATE® System" href="investment/replicate.html"
-                                                >
-
-
-                                                        <div class="co_financing">
-                                        Co-finanzierung                        </div>
-                                                </div>
-                        </a>
-                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1502187945_2017-08-08_replicate_profile-graphics_logo_V2.jpg"
-                                        ></div>
-                        <div class="row content_info">
-                            <a itemprop="url" title="REPLICATE® System" href="investment/replicate.html">
-                                <h2 class="mb-5px">REPLICATE® System</h2>
-                            </a>
-                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Berlin, DE</span>
-
-                            <p itemprop="description">
-                                <a href="investment/replicate.html" title="REPLICATE® System">
-                                    Mit dem REPLICATE® System der NDI AG wird die Versorgung von Zahnlücken für den...                    </a>
-                            </p>
-
-                            <span class="typeStartupBg"><span></span></span>            </div>
-                        <div class="row finance_info">
-                            <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                        Ziel:
-
-                                    2.500.000 &euro;                                    </div>
-                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
-
-
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-
+                            <div class="col-xs-12 progress">
+                                <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
+                            </div>
+                            <div class="col-xs-6 block_details borderRightgrey">
+                                <strong>5.500.000 &euro;</strong>
+                                    Investiert
+                                </div>
+                            <div class="col-xs-6 block_details">
+                                <strong>850</strong>Companisten
                             </div>
                         </div>
-
-                        <div class="row progress_info nopadding">
-
-                                        <div class="col-xs-12 progress_completed">
-                                            <div class="progress-bar progress_completed" role="progressbar" aria-valuenow="140" aria-valuemin="0" aria-valuemax="100" style="width:100%">140%</div>
-                                        </div>
-
-                                                                           <div class="col-xs-4 block_details borderRightgrey">
-
-                                        <strong>3.500.000 &euro;</strong>
-
-                                    Investiert                    </div>
-                                                        <div class="col-xs-4 block_details borderRightgrey">
-                                        <strong>1 M €</strong>Co-finanziert                        </div>
-                                                    <div class="col-xs-4 block_details">
-                                    <strong>2276</strong>Companisten                    </div>
-
-                                        </div>
-                                    <div class="footer_startup footer_startup_gray">
-
-                                Abgeschlossen                            </div>
+                        <div class="footer_startup footer_startup_gray">
+                            WIN NOW
+                        </div>
                     </div>
                 </div>
-            <script>
-                $('.large-tooltip').tooltip();
-            </script>
                 </div>
             </div>
         <div class="row">
             <div class="col-xs-12 button-container">
-                <a href="en/investments.html" class="btn layoutV2-btn">Current investment opportunities</a>
+                <a href="en/investments.html" class="btn layoutV2-btn">VIEW ALL LOTTERY OF THINGS</a>
             </div>
         </div>
     </section>
-
     <section class="homepage-news">
         <div class="container">
             <div class="section-title">News</div>
@@ -415,12 +299,9 @@
         <div class="container">
             <canvas id="hidden-canvas2" style="display:none"></canvas>
             <div class="row">
-
-
-                                            <div class="col-sm-4">
-                                                                <div id="news-1" class="news-block  news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548851982-teaser-800x600px_.jpg)'                         onclick="window.location = 'de/article/article-2766.html';"
-                        >
+                <div class="col-sm-4">
+                    <div id="news-1" class="news-block  news-block-image"
+                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548851982-teaser-800x600px_.jpg)' onclick="window.location = 'de/article/article-2766.html';">
                             <div class="news-date">
                                 <strong>News</strong> | 30 January, 2019                        </div>
                             <div class="news-title">
@@ -429,14 +310,9 @@
                             <div class="news-brief ">
                                 vanilla bean crosses the investment threshold. vanilla bean uses current examples to show that it makes economic sense to invest in the vegan market.                        </div>
                         </div>
-
-                                        </div>
-
-
-                                            <div class="col-sm-4">
-                                                                <div id="news-2" class="news-block  "
-                                                     onclick="window.location = 'de/article/article-2764.html';"
-                        >
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="news-2" class="news-block " onclick="window.location = 'de/article/article-2764.html';">
                             <div class="news-date">
                                 <strong>News</strong> | 24 January, 2019                        </div>
                             <div class="news-title">
@@ -445,14 +321,10 @@
                             <div class="news-brief ">
                                 With movelo, Rydies has gained another partner to expand its employee mobility services.                        </div>
                         </div>
-
-                                        </div>
-
-
-                                            <div class="col-sm-4">
-                                                                <div id="news-3" class="news-block  news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548324240_teaser-800x600px_.png)'                         onclick="window.location = 'de/article/article-2762.html';"
-                        >
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="news-3" class="news-block  news-block-image"
+                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548324240_teaser-800x600px_.png)' onclick="window.location = 'de/article/article-2762.html';">
                             <div class="news-date">
                                 <strong>News</strong> | 24 January, 2019                        </div>
                             <div class="news-title">
@@ -461,30 +333,22 @@
                             <div class="news-brief ">
                                 A few days ago, the StadtFarm was visited by a high-profile visitor: the Australian Minister of Agriculture came to find out about our water-conserving AquaTerraPonik technology.                        </div>
                         </div>
-
-                                        </div>
-
-
-                            <div class="col-sm-8">
-                                        <div id="news-4" class="news-block news-block-large news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548240207_teaser-800x600px_.jpg)'                         onclick="window.location = 'de/article/article-2763.html';"
-                        >
+                    </div>
+                    <div class="col-sm-8">
+                        <div id="news-4" class="news-block news-block-large news-block-image"
+                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548240207_teaser-800x600px_.jpg)' onclick="window.location = 'de/article/article-2763.html';">
                             <div class="news-date">
-                                <strong>News</strong> | 23 January, 2019                        </div>
+                                <strong>News</strong> | 23 January, 2019
+                            </div>
                             <div class="news-title">
                                 vanilla bean gets off to a strong start<br />
                             </div>
                             <div class="news-brief news-brief-large">
                                 vanilla bean has launched its campaign successfully. Detailed information on financial planning is available. You can also watch the recording of the video conference.                        </div>
                         </div>
-
-                                        </div>
-
-
-                                            <div class="col-sm-4">
-                                                                <div id="news-5" class="news-block  "
-                                                     onclick="window.location = 'de/article/article-2759.html';"
-                        >
+                    </div>
+                    <div class="col-sm-4">
+                        <div id="news-5" class="news-block  " onclick="window.location = 'de/article/article-2759.html';">
                             <div class="news-date">
                                 <strong>News</strong> | 17 January, 2019                        </div>
                             <div class="news-title">
@@ -493,25 +357,20 @@
                             <div class="news-brief ">
                                 There are just 7 days left for an investment in Rydies' urban mobility solution. We look back at milestones reached during the campaign.                        </div>
                         </div>
-
-
-
-                                                                    <div id="news-6" class="news-block  news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1547715727-befood-AG-update%207teaser-800x600px_.jpg)'                         onclick="window.location = 'de/article/article-2760.html';"
-                        >
+                        <div id="news-6" class="news-block  news-block-image"
+                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1547715727-befood-AG-update%207teaser-800x600px_.jpg)'  onclick="window.location = 'de/article/article-2760.html';">
                             <div class="news-date">
-                                <strong>News</strong> | 17 January, 2019                        </div>
+                                <strong>News</strong> | 17 January, 2019
+                            </div>
                             <div class="news-title">
                                 BE Food approaches the home stretch with a new look<br />
                             </div>
                             <div class="news-brief ">
                                 The StadtFarm gets a whole new look to stand out in retail. Additionally, our campaign is approaching its final spurt with big leaps!                        </div>
                         </div>
+                    </div>
 
-                                        </div>
-
-                                                </div>
-
+                </div>
                 <div class="row">
                     <div class="col-xs-12 button-container">
                         <a href="de/news.html" class="btn layoutV2-btn">View all news</a>
@@ -536,227 +395,21 @@
     </section>
 
     <section class="homepage-statistics">
-        <div class="container">
-            <div class="section-title">Companisto in figures</div>
-        </div>
 
+
+    </section>
+    <section class="all-startups-background">
+        <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.7);"></div>
+        <div class="row">
             <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="stats-icon-block">
-                        <img src="{{ asset('frontend/graphics/layout/companist_homepages.png')}}" class="stats-icon">
-                        <h4>94,236</h4>
-                        <p class="grey_75">Companists</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="stats-icon-block">
-                        <img src="{{ asset('frontend/graphics/layout/invested_homepage.png')}}" class="stats-icon">
-                        <h4>
-                             <span>&euro;</span> 60,300,992                    </h4>
-                        <p class="grey_75">Invested</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="stats-icon-block">
-                        <img src="{{ asset('frontend/graphics/layout/exits_homepage.png')}}" class="stats-icon">
-                        <h4>5 Exits</h4>
-                        <p class="grey_75">Sold startups</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="stats-icon-block">
-                        <img src="{{ asset('frontend/graphics/layout/jobs_homepage.png')}}" class="stats-icon">
-                        <h4 class="grey">1154</h4>
-                        <p class="grey_75">New jobs</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="stats-icon-block">
-                        <img src="{{ asset('frontend/graphics/layout/rounds-of-financing_homepage.png')}}" class="stats-icon">
-                        <h4 class="grey">117</h4>
-                        <p class="grey_75">rounds of financing</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="stats-icon-block">
-                        <img src="{{ asset('frontend/graphics/layout/payments_homepage.png')}}" class="stats-icon">
-                        <h4 class="grey">
-                             <span>&euro;</span> 4,716,812                    </h4>
-                        <p class="grey_75">in payments to Companists</p>
-                    </div>
+                <div class="col-xs-12 button-container text-left">
+                        Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
                 </div>
             </div>
-        </div>
-    </section>
+       </div>
+   </section>
 
-    <!-- ANGEL CLUB SECTION  -->
-    <section class="homepage-angel-club container-fluid">
-        <div class="container">
-            <div class="row row-angel-club">
-                <div class="col-md-6 col-sm-12 col-xs-12 column-angel-club">
-                    <div class="description-angel-club">The Companisto Angel Club is a special area for affluent investors and business angels on Companisto. Members are given the opportunity to participate in companies at preferential conditions.</div>
-                    <img src="{{ asset('frontend/graphics/layout/angel_club_companisto_logo_2_white.png')}}" class="logo-angel-club"/>
-                </div>
-                <div class="col-md-5 col-md-offset-2 col-sm-12 col-xs-12 column-angel-club centering-column">
-                    <a href="en/angel-club.html" class="btn layoutV2-btn-angel-club">Learn more</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="homepage-testimonials">
-        <div class="container">
-            <div class="section-title">What our investors say</div>
-        </div>
-
-        <div class="container homepage-testimonials-large-devices">
-            <div class="row item active">
-                <div class="col-md-4 col-xs-12">
-                    <div class="testimonial-box">
-                        <div class="carousel-caption">
-                            <div class="who">
-                                <img class="lazy" src="{{ asset('frontend/graphics/layout/testimonial_pic_color_1_new_homepage.png')}}"><br />
-                            </div>
-                            <p>
-                                “Easy, straight-forward, and everything explained.<br/> Investing this way is fun.”
-                            </p>
-                            <div class="who-name">
-                                <strong>Hans-Peter P.</strong> <br/>
-                                <i>Investor</i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-xs-12">
-                    <div class="testimonial-box">
-                        <div class="carousel-caption">
-                            <div class="who">
-                                <img class="lazy" src="{{ asset('frontend/graphics/layout/testimonial_pic_color_2_new_homepage.png')}}"><br />
-                            </div>
-                            <p>
-                                “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.“
-                            </p>
-                            <div class="who-name">
-                                <strong>Michael H.</strong> <br/>
-                                <i>Investor</i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-xs-12">
-                    <div class="testimonial-box">
-                        <div class="carousel-caption text-center">
-                            <div class="who">
-                                <img class="lazy" src="{{ asset('frontend/graphics/layout/testimonial_pic_color_3_new_homepage.png')}}"><br />
-                            </div>
-                            <p>
-                                “A good selection of startups; realistic financial goals; honest company information; good updates.”
-                            </p>
-                            <div class="who-name">
-                                <strong>Gerhard H.</strong> <br/>
-                                <i>Investor</i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="container homepage-testimonials-small-devices">
-            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-
-                    <div class="row item active">
-                        <div class="col-xs-12">
-                            <div class="testimonial-box">
-                                <div class="carousel-caption">
-                                    <div class="who">
-                                        <img class="lazy" src="{{ asset('frontend/graphics/layout/testimonial_pic_color_1_new_homepage.png')}}"><br />
-                                    </div>
-                                    <p>
-                                        “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.”
-                                    </p>
-                                    <div class="who-name">
-                                        <strong>Hans-Peter P.</strong> <br/>
-                                        <i>Investor</i>
-                                    </div>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row item">
-                        <div class="col-xs-12">
-                            <div class="testimonial-box">
-                                <div class="carousel-caption text-center">
-                                    <div class="who">
-                                        <img class="lazy" src="{{ asset('frontend/graphics/layout/testimonial_pic_color_2_new_homepage.png')}}"><br />
-                                    </div>
-                                    <p>
-                                        “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.”
-                                    </p>
-                                    <div class="who-name">
-                                        <strong>Michael H.</strong> <br/>
-                                        <i>Investor</i>
-                                    </div>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row item">
-                        <div class="col-xs-12">
-                            <div class="testimonial-box">
-                                <div class="carousel-caption text-center">
-                                    <div class="who">
-                                        <img class="lazy" src="{{ asset('frontend/graphics/layout/testimonial_pic_color_3_new_homepage.png')}}"><br />
-                                    </div>
-                                    <p>
-                                        “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.”
-                                    </p>
-                                    <div class="who-name">
-                                        <strong>Gerhard H.</strong> <br/>
-                                        <i>Investor</i>
-                                    </div>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel2" data-slide="prev" style="margin-left: -150px;color: #434343;">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel2" data-slide="next" style="margin-right: -150px;color: #434343;">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel2" data-slide-to="1"></li>
-                </ol>
-            </div>
-        </div>
-    </section>
-
-    <section class="homepage-newsletter">
+    <section class="homepage-newsletter ContentContainer">
         <div class="container-fluid newsletter-wrapper">
             <div class="container">
                 <div class="row">
@@ -775,23 +428,13 @@
                             </form>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-lg-offset-2 col-md-4 hidden-xs hidden-sm newsletter-img">
-                        <img src="{{ asset('frontend/graphics/layout/telefon-subscribe-down.png')}}"  alt=""/>
-                        <img src="{{ asset('frontend/graphics/layout/tel-mockup-en.png')}}"  alt=""/>                </div>
+                    <div class="col-lg-6 col-md-4 hidden-xs hidden-sm newsletter-img">
+                        <img style="width:100%" src="{{ asset('images/slide4.png')}}"  alt=""/>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="all-startups-background">
-         <div class="row">
-            <div class="col-xs-12 button-container">
-                <a href="en/investments.html" class="btn layoutV2-btn">Current investment opportunities</a>
-            </div>
-        </div>
-    </section>
-
     <div class="modal newModalVideo fade" id="video_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
