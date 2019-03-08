@@ -11,6 +11,14 @@ html {
     font-family: "Calibari-normal";
     src: url("fonts/calibri/Calibri-normal.ttf");
     }
+@font-face {
+    font-family: "open-sans-light";
+    src: url("fonts/open-sans/OpenSans-Light.ttf");
+    }
+@font-face {
+    font-family: "open-sans-regular";
+    src: url("fonts/open-sans/OpenSans-Regular.ttf");
+    }
 body {
   margin: 0;
 }
@@ -46639,5 +46647,26 @@ html, body {
     background: url(https://www.toptal.com/designers/subtlepatterns/patterns/sakura.png);
     background-color: rgb(250,228, 216);
   }
-
+.leftText
+{
+    font-size:44px;
+    text-transform:uppercase;
+    font-family:"open-sans-light"
+}
+.via-5star p
+{
+    font-size:15px;
+    margin:0px;
+    font-family:"open-sans-regular"
+}
+.v-icons
+{
+    margin-top: 67px;
+}
+.v-icons span
+{
+    font-size:48px;
+    font-weight:normal;
+    font-family:"open-sans-light"
+}
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');

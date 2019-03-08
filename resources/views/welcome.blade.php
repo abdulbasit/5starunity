@@ -124,6 +124,59 @@
             </div>
         </div>
     </section>
+    <section class="all-startups-background">
+        <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+        <div class="row">
+            <div class="container-fluid">
+                <div class="col-xs-4 button-container text-left">
+                    <h2 class="leftText">Via 5Starunity</h2>
+                </div>
+                <div class="col-xs-4 button-container text-left">
+                    <div class="row">
+                        <div class="col-xs-2 v-icons">
+                            <span>
+                                §
+                            </span>
+                        </div>
+                        <div class="col-xs-10 via-5star">
+                            <p>
+                                Add Text: Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                            </p>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-2 v-icons">
+                            <span>
+                                §
+                            </span>
+                        </div>
+                        <div class="col-xs-10 via-5star">
+                            <p>
+                                Add Text: Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xs-4 button-container text-left">
+                    <div class="row">
+                        <div class="col-xs-2 v-icons">
+                            <span>
+                                §
+                            </span>
+                        </div>
+                        <div class="col-xs-10 via-5star">
+                            <p>
+                                Add Text: Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+   </section>
 
     <section class="homepage-popular-startups">
         <div class="container-fluid">
@@ -146,7 +199,6 @@
                             <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html">
                         </div>
                         </a>
-                        <div itemprop="logo" class="st_logo lazy" data-src="https://www.companisto.com/assets/1546954124_LOGO_white%20400x400px.png"></div>
                         <div class="row content_info">
                             <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
                                 <h2 class="mb-5px">vanilla bean</h2>
@@ -184,7 +236,7 @@
                             </div>
                         </div>
                         <div class="footer_startup ">
-                            JETZT INVESTIEREN
+                            WIN NOW
                         </div>
                     </div>
                 </div>
@@ -195,8 +247,6 @@
                         <a itemprop="url" title="WEISSENHAUS" href="investments.html">
                             <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg" title="WEISSENHAUS" href="investments.html"></div>
                         </a>
-                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1535040283_weissenhaus.jpg"
-                                        ></div>
                         <div class="row content_info">
                             <a itemprop="url" title="WEISSENHAUS" href="investments.html">
                                 <h2 class="mb-5px">WEISSENHAUS</h2>
@@ -236,46 +286,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no equity_campaign" data-uri="https://www.companisto-investments.de/de/investment/ameriaag" itemscope itemtype="http://schema.org/Product">
-                    <meta itemprop="image" content="../assets/1543691113_ameria_startup_image.png"></meta>
-                    <div class="content_startup_blok  " href="https://www.companisto-investments.de/de/investment/ameriaag">
-                        <a itemprop="url" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1543691113_ameria_startup_image.png" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag"></div>
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no " data-uri="investments.html"
+                             itemscope itemtype="http://schema.org/Product">
+                    <meta itemprop="image" content="../assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg"></meta>
+                    <div class="content_startup_blok  " href="investments.html">
+                        <a itemprop="url" title="WEISSENHAUS" href="investments.html">
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg" title="WEISSENHAUS" href="investments.html"></div>
                         </a>
-                        <div itemprop="logo" class="st_logo lazy" data-src="../assets/1527151902_ameria.jpg"></div>
                         <div class="row content_info">
-                            <a itemprop="url" title="AMERIA AG" href="https://www.companisto-investments.de/de/investment/ameriaag">
-                                <h2 class="mb-5px">AMERIA AG</h2>
+                            <a itemprop="url" title="WEISSENHAUS" href="investments.html">
+                                <h2 class="mb-5px">WEISSENHAUS</h2>
                             </a>
-                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Heidelberg, DE</span>
+                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Weissenhaus, DE</span>
+
                             <p itemprop="description">
-                                <a href="https://www.companisto-investments.de/de/investment/ameriaag" title="AMERIA AG">
-                                    Eigenkapital-Beteiligungen – Erste Aktienemission über Companisto....                    </a>
+                                <a href="investments.html" title="WEISSENHAUS">
+                                    Das WEISSENHAUS Grand Village Resort & Spa am Meer ist ein privat geführtes...                    </a>
                             </p>
-                            <div class="title_info">
-                                <span class="info_box box_gray">aktien</span>
-                                <span class="info_box box_black">Eigenkapital</span>
-                            </div>
+
                             <span class="typeStartupBg"><span></span></span>
                         </div>
                         <div class="row finance_info">
                             <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                Ziel:5.500.000 &euro;
+                                                        Ziel: 7.500.000 &euro;
                             </div>
                             <div class="col-xs-5 col-sm-6 block_finance_right text-right">
                                     <i class="fa fa-check" aria-hidden="true"></i>
                             </div>
                         </div>
+
                         <div class="row progress_info nopadding">
                             <div class="col-xs-12 progress">
                                 <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
                             </div>
                             <div class="col-xs-6 block_details borderRightgrey">
-                                <strong>5.500.000 &euro;</strong>
+                                <strong>7.500.000 &euro;</strong>
                                     Investiert
                                 </div>
                             <div class="col-xs-6 block_details">
-                                <strong>850</strong>Companisten
+                                <strong>1641</strong>Companisten
                             </div>
                         </div>
                         <div class="footer_startup footer_startup_gray">
@@ -398,16 +447,7 @@
 
 
     </section>
-    <section class="all-startups-background">
-        <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.7);"></div>
-        <div class="row">
-            <div class="container">
-                <div class="col-xs-12 button-container text-left">
-                        Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
-                </div>
-            </div>
-       </div>
-   </section>
+
 
     <section class="homepage-newsletter ContentContainer">
         <div class="container-fluid newsletter-wrapper">
