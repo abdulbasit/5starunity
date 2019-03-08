@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/main', function () {
-    return view('welcome');
-});
+// Route::get('/main', function () {
+//     return view('welcome');
+// });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home1', 'HomeController@index')->name('home1');
+
+
+// Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index')->name('home');
 //start of admin routes
 Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
 
