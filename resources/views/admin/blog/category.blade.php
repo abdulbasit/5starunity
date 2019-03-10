@@ -34,7 +34,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Lotteries Listing
+                <h4 class="card-title">Category Listing
                 <a href="lottery/create" class="btn btn-social pull-right navBtn">
                     <span class="ft-plus"></span>
                     <span class="pl-1 pr-1">Create</span>
