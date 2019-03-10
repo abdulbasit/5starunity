@@ -1,6 +1,7 @@
 @extends('admin.layouts.apps')
 
 @section('content')
+
         <div class="content-wrapper">
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="form-group">
@@ -34,46 +35,41 @@
                 <div class="col-md-12">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title" id="horz-layout-basic">Create New Category</h4>
+                      <h4 class="card-title" id="horz-layout-basic">Create New Testimonials</h4>
                       <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collpase show">
                       <div class="card-body">
-                        <form class="form form-horizontal" method="post" action="/admin/blog/category/save">
+                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="/admin/testimonials/save">
                             @csrf
                           <div class="form-body">
                             <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput1">Category Name</label>
+                                <label class="col-md-3 label-control" for="projectinput1">Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="name" class="form-control" placeholder="Complete Name"  name="name" value="">
+                                    <input type="text" id="name" class="form-control" placeholder="Complete Name"  name="name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput1">Description</label>
+                                <div class="col-md-9">
+                                    <textarea required="required" id="desc" rows="5" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput1">Image</label>
+                                <div class="col-md-9">
+                                    <input type="file" name="image" id="image">
                                 </div>
                             </div>
                           </div>
-                          <div class="form-group row">
-                                <label class="col-md-3 label-control" for="address">Description</label>
-                                <div class="col-md-9">
-                                  <textarea required="required" id="desc" rows="5" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea>
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                    <label class="col-md-3 label-control" for="projectinput1">Status</label>
-                                    <div class="col-md-9">
-                                      <select id="status" name="status" class="form-control">
-                                          <option value="0">Active</option>
-                                          <option value="1">Disabled</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                          </div>
-                          <div class="form-actions pull-right">
+                          <div class="form-actions pull-rigth">
                             <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
                               <i class="ft-x"></i> Cancel
                             </button>
                             <button type="submit" class="btn btn-primary">
                               <i class="fa fa-check-square-o"></i> Save
                             </button>
-                            <br />
-                        </div>
+                          </div>
                         </form>
                       </div>
                     </div>
@@ -84,11 +80,12 @@
             <!-- // Basic form layout section end -->
           </div>
         </div>
+
 @endsection
 @section('script')
 <script>
     $("#yes").click(function(){
-        window.location.href = "/admin/blog/category"
+        window.location.href = "/admin/testimonials"
     });
 </script>
 @endsection

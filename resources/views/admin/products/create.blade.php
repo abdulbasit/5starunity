@@ -1,55 +1,34 @@
 @extends('admin.layouts.apps')
 
 @section('content')
-<div class="content-wrapper">
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header bg-danger white">
-                    <h4 class="modal-title">Warning</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                <p id="modalText"></p>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn grey btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-            </div>
-        </div>
-      </div>
+
         <div class="content-wrapper">
           <div class="content-header row">
-            {{-- <div class="content-header-left col-md-6 col-12 mb-2">
-              <h3 class="content-header-title mb-0">Horizontal Forms</h3>
-              <div class="row breadcrumbs-top">
-                <div class="breadcrumb-wrapper col-12">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#">Form Layouts</a>
-                    </li>
-                    <li class="breadcrumb-item active"><a href="#">Horizontal Forms</a>
-                    </li>
-                  </ol>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <!-- Modal -->
+                        <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header bg-danger white">
+                                <h4 class="modal-title" id="myModalLabel11">Warning!</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you suer you want to cancel this ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
+                                <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div> --}}
-            {{-- <div class="content-header-right col-md-6 col-12">
-              <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                <div class="btn-group" role="group">
-                  <button class="btn btn-outline-primary dropdown-toggle dropdown-menu-right" id="btnGroupDrop1"
-                  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ft-settings icon-left"></i> Settings</button>
-                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1"><a class="dropdown-item" href="card-bootstrap.html">Bootstrap Cards</a>
-                    <a class="dropdown-item" href="component-buttons-extended.html">Buttons Extended</a>
-                  </div>
-                </div>
-                <a class="btn btn-outline-primary" href="full-calender-basic.html"><i class="ft-mail"></i></a>
-                <a class="btn btn-outline-primary" href="timeline-center.html"><i class="ft-pie-chart"></i></a>
-              </div>
-            </div> --}}
           </div>
           <div class="content-body">
             <!-- Basic form layout section start -->
@@ -102,7 +81,7 @@
                             </div>
                           </div>
                           <div class="form-actions pull-right">
-                            <button type="button" class="btn btn-warning mr-1">
+                            <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
                               <i class="ft-x"></i> Cancel
                             </button>
                             <button type="submit" class="btn btn-primary">
@@ -123,6 +102,9 @@
 @endsection
 @section('script')
 <script>
+    $("#yes").click(function(){
+        window.location.href = "/admin/products"
+    });
 $("#price").change(function(){
     var price = $(this).val();
     if(price == 0)

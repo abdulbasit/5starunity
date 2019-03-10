@@ -15264,7 +15264,7 @@ section.homepage-howitworks {
   }
 }
 section.homepage-howitworks .section-title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 32px;
   padding-bottom: 40px;
 }
@@ -15275,7 +15275,7 @@ section.homepage-howitworks .section-title {
 }
 section.homepage-howitworks .section-subtitle {
   padding-bottom: 60px;
-  font-size: 22px;
+  /* font-size: 22px; */
 }
 @media (max-width: 500px) {
   section.homepage-howitworks .section-subtitle {
@@ -15296,18 +15296,17 @@ section.homepage-howitworks .circles-holder {
 }
 .circle1st
 {
-    border: solid 20px #eaeaea !important;
+    /* border: solid 20px #eaeaea !important; */
+    border:solid 20px #7781bd !important
 }
-.circle1st:hover
-{
-    border: solid 20px #e4e2e2 !important;
-}
+
 section.homepage-howitworks .circles-holder .circle {
     width: 200px;
     height: 200px;
     border-radius: 175px;
     background-color: whitesmoke;
-    border: solid 20px lightgray;
+    /* border: solid 20px lightgray; */
+    border: solid 20px #e6c75f;
     display:table
 }
 @media (max-width: 992px) {
@@ -15357,7 +15356,8 @@ section.homepage-howitworks .circles-holder .circle .circle_icon {
     line-height: normal;
     font-size:25px;
     color:#e4e4e4;
-    font-size:60px
+    font-size:60px;
+    background-size: 100%;
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   section.homepage-howitworks .circles-holder .circle .circle_icon {
@@ -17075,6 +17075,17 @@ section.all-startups-background {
   align-items: center;
   justify-content: center;
 }
+section.sfslf-background {
+    position: relative;
+    background-size: cover;
+    height: 600px;
+    background-image: url(../../graphics/layout/0041.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 .text-left
 {
     text-align:left !important
@@ -17105,6 +17116,20 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 .button-container {
   margin: 40px 0 0 0;
   text-align: center;
+}
+.button-container-heading
+{
+    margin-top:136px !important;
+}
+.button-announce-heading
+{
+    position:relative;
+    color:white;
+    left:50px
+}
+.button-container3rd
+{
+    margin-top:100px !important
 }
 .layoutV2-btn {
   font-size: 16px;
@@ -46631,9 +46656,9 @@ html, body {
     padding: 75px 0;
   }
 
-  p {
+  /* p {
     margin: 75px 0;
-  }
+  } */
 
   .ParallaxContainer {
     display: flex;

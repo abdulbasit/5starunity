@@ -7,6 +7,35 @@
 @section('content')
 
         <div class="content-wrapper">
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <!-- Modal -->
+                        <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header bg-danger white">
+                                <h4 class="modal-title" id="myModalLabel11">Warning!</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you suer you want to cancel this ?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
+                                <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
                   <!-- Modal content-->
@@ -127,7 +156,7 @@
                               </div>
                           </div>
                           <div class="form-actions">
-                            <button type="button" class="btn btn-warning mr-1">
+                            <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
                               <i class="ft-x"></i> Cancel
                             </button>
                             <button type="submit" class="btn btn-primary">
@@ -157,6 +186,9 @@
   <script src="{{ asset('app-assets/js/scripts/pickers/dateTime/bootstrap-datetime.js')}}" type="text/javascript"></script>
   <script src="{{ asset('app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js')}}"  type="text/javascript"></script>
 <script>
+$("#yes").click(function(){
+    window.location.href = "/admin/lotteries"
+});
 function getAmount(){
     var amount = $("#lot_amount").val();
     var totalLots = $("#total_lots").val();
@@ -164,7 +196,7 @@ function getAmount(){
         return false;
 
     var totalLots = amount/totalLots;
-    $("#one_lot").val(totalLots.toFixed(2));
+    $("#one_lot").val(totalLots.toFixed(0));
 }
 $("#start_date").change(function(){
      var date = $(this).val();
@@ -211,7 +243,7 @@ $("#factor").change(function(){
   var factor = $(this).val();
   var pro_price = $("#pro_price").val();
   var lotAmount = pro_price*factor;
-  $("#lot_amount").val(lotAmount);
+  $("#lot_amount").val(lotAmount.toFixed(0));
 });
 $( document ).ready(function() {
     getProPrice();

@@ -105,17 +105,6 @@
     </div>
 
 
-
-    <div id="Notice">
-            <div class="container border">
-                <div class="row">
-                    <div class="col-xs-12 NoticeTitle grey_75 text-center">
-                        <h6>Please note</h6>
-                        The acquisition of this asset involves considerable risks and can lead to the complete loss of the assets used. The expected yield is not guaranteed and may turn out to be lower.			</div>
-                </div>
-            </div>
-        </div>
-
         <div id="defaultFooter">
 
             <div class="modal KontactModal fade" id="KontactForm" tabindex="-1" role="dialog" aria-labelledby="KontactFormLabel">
@@ -169,132 +158,12 @@
 
             <div id="followUsWrapNew" style="background: transparent !important;">
             </div>
-            <div id="footerNew" class="panel-group">
-                <div class="mask">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 panel-default footerCol">
 
-                                <div class="larger footerAcc" id="titlefooterKontakt" data-toggle="collapse" data-parent="#footerKontakt" href="#footerKontakt" aria-expanded="true" aria-controls="footerKontakt">
-                                    Contact Us                            <span class="arrow_footer">
-                                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div id="footerKontakt" class="customer_relations panel-collapse collapse in" role="tabpanel">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="text-left">
-                                                <div class="custom_relations_detail">If you have any questions about investing on Companisto, please contact our service team:</div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row nopadding">
-
-                                            <div class="col-md-12 nopadding">
-                                                                                        <div class="email2"><br/><i class="fa fa-envelope" aria-hidden="true"></i><script type="text/javascript">eTd('companisto.com', 'service');</script></div><br/>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-xs-12">
-                                                <div class="details_about_customer_relations">
-                                                    <p class="toll_free_service">Phone number for investors</p>
-                                                    <p>
-                                                        <span class="glyphicon glyphicon-earphone"></span> <strong>0800 - 100 267 0 (DE/Toll-free)</strong><br />
-                                                        <span class="glyphicon glyphicon-earphone"></span> <strong> +49(0)30 3464914 93</strong><br />
-                                                    </p>
-
-                                                    <p>We are available <strong>Monday through Friday</strong> between <strong>9 a.m. – 7 p.m. </strong></p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 panel-default footerCol">
-
-
-                                <div class="larger footerAcc" id="titlefooterInvetoren" data-toggle="collapse" data-parent="#footerInvetoren" href="#footerInvetoren" aria-expanded="true" aria-controls="footerInvetoren">
-                                    For investors                            <span class="arrow_footer">
-                                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div id="footerInvetoren" class="panel-collapse collapse in" role="tabpanel">
-                                    <div class="panel-body">
-                                        <a href="de/why-invest.html">Why invest?</a>
-                                        <a href="de/faq.html">FAQ for Investors</a>
-                                        <a href="en/angel-club.html">Angel Club</a>
-                                        <a href="de/recommend-friend.html">Refer a Friend</a>
-                                        <a href="de/vib.html">Investments Information Sheets</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 panel-default footerCol">
-                                <div class="larger footerAcc" id="titlefooterCompanisto2"  data-toggle="collapse" data-parent="#footerCompanisto2" href="#footerCompanisto2" aria-expanded="true" aria-controls="footerCompanisto2">
-                                    Companisto
-                                    <span class="arrow_footer">
-                                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div id="footerCompanisto2" class="panel-collapse collapse in" role="tabpanel">
-                                    <div class="panel-body">
-                                        <a href="de/about.html">About Us</a>
-                                        <a href="de/press.html">Media Info</a>
-                                        <a href="de/career.html">Career</a>
-                                        <a href="de/page/netiquette.html">Netiquette</a>
-                                        <a href="de/page/zahlungsdetails.html">Payment Details</a>
-                                        <a href="de/partnerprogramm.html">Partner Program</a>
-                                        <a href="de/voucher-terms-and-conditions.html">Voucher terms and conditions</a>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 panel-default footerCol">
-
-                                <div class="larger footerAcc" id="titlefooterCompanies" data-toggle="collapse" data-parent="#footerCompanies" href="#footerCompanies" aria-expanded="true" aria-controls="footerCompanies">
-                                    For companies                            <span class="arrow_footer">
-                                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-
-                                <div id="footerCompanies" class="panel-collapse collapse in" role="tabpanel">
-                                    <div class="panel-body">
-                                        <a href="en/for-founders.html">Apply for financing</a>
-                                        <a href="de/how-it-works.html">Investment Model</a>
-                                        <a href="de/faq.html#startup-questions">FAQ for Companies</a>
-                                        <div class="footer-address-details">
-                                            Companisto GmbH<br/>
-                                            Köpenicker Str. 154<br/>
-                                            10997 Berlin
-                                        </div>
-                                        <a href="https://www.bundesverband-crowdfunding.de/transparenzsiegel/" target="_blank">
-                                            <img class="logo-crowdfunding" src="graphics/layout/bvcf_transparenzsiegel_2019-300x300.png">
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="footerBottomBar">
                 <div class="container border">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 BottomText grey_75 text-center">
-                            <a style="text-decoration: none;cursor: default !important;">&copy; 2011 - 2019 Companisto</a>
+                            <a style="text-decoration: none;cursor: default !important;">&copy; <?php echo date('Y') ?> 5Starunity</a>
                             <a href="de/page/business-terms.html">Terms and Conditions</a>
                             <a href="de/page/privacy-policy.html">Privacy Policy</a>
                             <a href="de/page/impressum.html">Legal Notice</a>
@@ -328,6 +197,11 @@
                                     <li><a target="_blank" href="http://www.youtube.com/companisto" title="Follow Companisto on YouTube">
                                             <i class="fa fa-youtube-play" aria-hidden="true"></i>
                                         </a>
+                                    </li><br />
+                                    <li>
+                                        <font color="black">
+                                        Designed and Developed by <font color="blue">Xnowad.com</font>
+                                        </font>
                                     </li>
                                 </ul>
                             </div>

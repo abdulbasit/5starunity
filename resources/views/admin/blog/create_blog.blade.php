@@ -22,6 +22,31 @@
 @endsection
 @section('content')
         <div class="content-wrapper">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="form-group">
+                    <!-- Modal -->
+                    <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header bg-danger white">
+                            <h4 class="modal-title" id="myModalLabel11">Warning!</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you suer you want to cancel this ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
+                            <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
           <div class="content-body">
             <!-- Basic form layout section start -->
             <section id="horizontal-form-layouts">
@@ -114,7 +139,7 @@
 
                             </div>
                             <div class="form-actions pull-right">
-                                <button type="button" class="btn btn-warning mr-1">
+                                <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
                                 <i class="ft-x"></i> Cancel
                                 </button>
                                 <button type="submit" class="btn btn-primary">
@@ -162,6 +187,9 @@
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/url.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/video.min.js')}}"></script>
 <script>
+$("#yes").click(function(){
+    window.location.href = "/admin/blog"
+});
     $(function(){
           $('#desc').froalaEditor()
             .on('froalaEditor.image.beforeUpload', function (e, editor, files) {

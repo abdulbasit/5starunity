@@ -60,13 +60,9 @@
     </section>
     <section class="homepage-howitworks">
         <div class="container">
-            <div class="section-title">Innovativ Erfinder und Gründer unterstützen!</div>
+            <div class="section-title">Innovative inventors and founders need your support</div>
             <div class="section-subtitle">
-                    Ideeller Hauptzweck des 5starUnity e.V. ist es, Menschen zu ermöglichen Ihre Ideen zu verwirklichen undzum Wohle der Allgemeinheit eine Verbesserung zu realisieren.
-                    Zur Unterstützung erfolgsversprechender Unternehmungen, die Geschichte schreiben könnten,
-                    bieten wir Ihnen hier die Möglichkeit zu spenden!
-                    Jeder Spender wird mit kostenfreien Talern belohnt und hat im Gegenzug die Chance in unserer Lottery of Things
-                    sein Wunschobjekt zu gewinnen - notariell beglaubigt.
+                The main idea of the 5starUnity e.V. is to enable people to realize their ideas				 for the benefit and improvement of the general public.To support promising businesses that can write history, we offer you the opportunity to donate! Each donor is rewarded with free TALERS ( COINS) and in return has the chance in to win their dream item  from our Lottery of Thinga- Legal and  notarized.
 
             </div>
 
@@ -118,7 +114,7 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 button-container">
+                <div class="col-xs-12 button-container ">
                     <a href="#" class="btn layoutV2-btn">Register your self</a>
                 </div>
             </div>
@@ -128,8 +124,8 @@
         <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div>
         <div class="row">
             <div class="container-fluid">
-                <div class="col-xs-4 button-container text-left">
-                    <h2 class="leftText">Via 5Starunity</h2>
+                <div class="col-xs-4 button-container text-left button-container-heading">
+                    <h2 class="leftText">Why 5Starunity?</h2>
                 </div>
                 <div class="col-xs-4 button-container text-left">
                     <div class="row">
@@ -140,7 +136,7 @@
                         </div>
                         <div class="col-xs-10 via-5star">
                             <p>
-                                Add Text: Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                                Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. <br /> 100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
                             </p>
                         </div>
 
@@ -149,38 +145,39 @@
                     <div class="row">
                         <div class="col-xs-2 v-icons">
                             <span>
-                                §
+                                <i class="fa fa-lightbulb-o" style="font-weight:normal"></i>
                             </span>
                         </div>
                         <div class="col-xs-10 via-5star">
                             <p>
-                                Add Text: Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                                Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder, garantiert zielgerichtete und innovative Entwicklungen. <br /> Aus den zu erwartenden Rückflüssen kann wiederum erneut Hilfesuchenden unter die Arme gegriffen werden.
+
                             </p>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-xs-4 button-container text-left">
+                <div class="col-xs-4 button-container text-left button-container3rd">
                     <div class="row">
                         <div class="col-xs-2 v-icons">
                             <span>
-                                §
+                                <i class="fa fa-trophy"></i>
                             </span>
                         </div>
                         <div class="col-xs-10 via-5star">
                             <p>
-                                Add Text: Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. (\n)100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                                Lottery of Things - You Win!  <br /> Durch den innovativen Charakter des Zweckbetriebs erhalten Sie für jeden gespendeten Euro einen Taler, welchen Sie nun in diversen Verlosungen einsetzen können.  <br /> Wir versichern, notariell nachgewiesen, dass jedes Produkt an einen realen Spender übermittelt wird.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
        </div>
-   </section>
+    </section>
 
     <section class="homepage-popular-startups">
         <div class="container-fluid">
-            <div class="section-title padding-title">Popular Investments</div>
+            <div class="section-title padding-title">Favourite products from our donors & your chances for great WINS </div>
         </div>
 
         <div class="ps_parent_circles">
@@ -215,12 +212,12 @@
                             <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
                                                         Ziel: 500.000 &euro;
                             </div>
-                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
+                            {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
                                 <div class="block_time_left">
                                     <i class="fa fa-clock-o time_icon" aria-hidden="true" style="font-size: 18px;vertical-align: middle;color:#5b8b9b;padding-bottom: 2px;"></i>
                                     noch 36 Tage
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="row progress_info nopadding">
@@ -240,99 +237,106 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no " data-uri="investments.html"
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes " data-uri="https://www.companisto.com/de/investment/vanilla-bean"
                              itemscope itemtype="http://schema.org/Product">
-                    <meta itemprop="image" content="../assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg"></meta>
-                    <div class="content_startup_blok  " href="investments.html">
-                        <a itemprop="url" title="WEISSENHAUS" href="investments.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg" title="WEISSENHAUS" href="investments.html"></div>
+                    <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
+                    <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
+                        <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html">
+                        </div>
                         </a>
                         <div class="row content_info">
-                            <a itemprop="url" title="WEISSENHAUS" href="investments.html">
-                                <h2 class="mb-5px">WEISSENHAUS</h2>
+                            <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
+                                <h2 class="mb-5px">vanilla bean</h2>
                             </a>
-                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Weissenhaus, DE</span>
+                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Regensburg, DE</span>
 
                             <p itemprop="description">
-                                <a href="investments.html" title="WEISSENHAUS">
-                                    Das WEISSENHAUS Grand Village Resort & Spa am Meer ist ein privat geführtes...                    </a>
+                                <a href="investment/vanilla-bean.html" title="vanilla bean">
+                                    Der weltweit erste verpackungsfreie Restaurant-Lieferdienst – CO2-frei und 100% vegan.                    </a>
                             </p>
-
                             <span class="typeStartupBg"><span></span></span>
                         </div>
                         <div class="row finance_info">
                             <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                        Ziel: 7.500.000 &euro;
+                                                        Ziel: 500.000 &euro;
                             </div>
-                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                            </div>
+                            {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
+                                <div class="block_time_left">
+                                    <i class="fa fa-clock-o time_icon" aria-hidden="true" style="font-size: 18px;vertical-align: middle;color:#5b8b9b;padding-bottom: 2px;"></i>
+                                    noch 36 Tage
+                                </div>
+                            </div> --}}
                         </div>
 
                         <div class="row progress_info nopadding">
-                            <div class="col-xs-12 progress">
-                                <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
+                            <div class="col-xs-12 progress canInvest">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">23%</div>
                             </div>
                             <div class="col-xs-6 block_details borderRightgrey">
-                                <strong>7.500.000 &euro;</strong>
-                                    Investiert
-                                </div>
+                                <strong>116.250 &euro;</strong>
+                                Investiert
+                            </div>
                             <div class="col-xs-6 block_details">
-                                <strong>1641</strong>Companisten
+                                <strong>137</strong>Companisten
                             </div>
                         </div>
-                        <div class="footer_startup footer_startup_gray">
+                        <div class="footer_startup ">
                             WIN NOW
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-no " data-uri="investments.html"
+                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes " data-uri="https://www.companisto.com/de/investment/vanilla-bean"
                              itemscope itemtype="http://schema.org/Product">
-                    <meta itemprop="image" content="../assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg"></meta>
-                    <div class="content_startup_blok  " href="investments.html">
-                        <a itemprop="url" title="WEISSENHAUS" href="investments.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1535029843_weissenhaus_profile%20teaser_856x400_V1.jpg" title="WEISSENHAUS" href="investments.html"></div>
+                    <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
+                    <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
+                        <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
+                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html">
+                        </div>
                         </a>
                         <div class="row content_info">
-                            <a itemprop="url" title="WEISSENHAUS" href="investments.html">
-                                <h2 class="mb-5px">WEISSENHAUS</h2>
+                            <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
+                                <h2 class="mb-5px">vanilla bean</h2>
                             </a>
-                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Weissenhaus, DE</span>
+                            <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Regensburg, DE</span>
 
                             <p itemprop="description">
-                                <a href="investments.html" title="WEISSENHAUS">
-                                    Das WEISSENHAUS Grand Village Resort & Spa am Meer ist ein privat geführtes...                    </a>
+                                <a href="investment/vanilla-bean.html" title="vanilla bean">
+                                    Der weltweit erste verpackungsfreie Restaurant-Lieferdienst – CO2-frei und 100% vegan.                    </a>
                             </p>
-
                             <span class="typeStartupBg"><span></span></span>
                         </div>
                         <div class="row finance_info">
                             <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                        Ziel: 7.500.000 &euro;
+                                                        Ziel: 500.000 &euro;
                             </div>
-                            <div class="col-xs-5 col-sm-6 block_finance_right text-right">
-                                    <i class="fa fa-check" aria-hidden="true"></i>
-                            </div>
+                            {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
+                                <div class="block_time_left">
+                                    <i class="fa fa-clock-o time_icon" aria-hidden="true" style="font-size: 18px;vertical-align: middle;color:#5b8b9b;padding-bottom: 2px;"></i>
+                                    noch 36 Tage
+                                </div>
+                            </div> --}}
                         </div>
 
                         <div class="row progress_info nopadding">
-                            <div class="col-xs-12 progress">
-                                <div class="progress-bar progress-bar-funded" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%</div>
+                            <div class="col-xs-12 progress canInvest">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">23%</div>
                             </div>
                             <div class="col-xs-6 block_details borderRightgrey">
-                                <strong>7.500.000 &euro;</strong>
-                                    Investiert
-                                </div>
+                                <strong>116.250 &euro;</strong>
+                                Investiert
+                            </div>
                             <div class="col-xs-6 block_details">
-                                <strong>1641</strong>Companisten
+                                <strong>137</strong>Companisten
                             </div>
                         </div>
-                        <div class="footer_startup footer_startup_gray">
+                        <div class="footer_startup ">
                             WIN NOW
                         </div>
                     </div>
                 </div>
-                </div>
+
+
             </div>
         <div class="row">
             <div class="col-xs-12 button-container">
@@ -342,7 +346,7 @@
     </section>
     <section class="homepage-news">
         <div class="container">
-            <div class="section-title">News</div>
+            <div class="section-title">News, Blogs and more …</div>
         </div>
 
         <div class="container">
@@ -443,11 +447,126 @@
             </script>
     </section>
 
-    <section class="homepage-statistics">
-
-
+    <section class="sfslf-background">
+        <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+        <div class="row">
+            <div class="container-fluid">
+                <div class="col-xs-12 button-container text-left button-announce-heading">
+                    <font size="5">
+                        Listening is a soft but basic expression of good behaviour.<br />
+                        <span class="pull-right">(Thaddäus Troll (1914 - 1980, Writer)</span>
+                    </font>
+                </div>
+            </div>
+       </div>
     </section>
+    <section class="homepage-testimonials">
+        <div class="container">
+            <div class="section-title">What our donors say</div>
+        </div>
 
+        <div class="container homepage-testimonials-large-devices">
+            <div class="row item active">
+                <div class="col-md-4 col-xs-12">
+                    <div class="testimonial-box">
+                        <div class="carousel-caption">
+                            <div class="who">
+                                <img class="lazy" src="https://d7ctj7he4ckvr.cloudfront.net/graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
+                            </div>
+                            <p>
+                                “Easy, straight-forward, and everything explained.<br/> Investing this way is fun.”
+                            </p>
+                            <div class="who-name">
+                                <strong>Hans-Peter P.</strong> <br/>
+                                <i>Donor</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-12">
+                    <div class="testimonial-box">
+                        <div class="carousel-caption">
+                            <div class="who">
+                                <img class="lazy" src="https://d7ctj7he4ckvr.cloudfront.net/graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
+                            </div>
+                            <p>
+                                “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.“
+                            </p>
+                            <div class="who-name">
+                                <strong>Michael H.</strong> <br/>
+                                <i>Donor</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-12">
+                    <div class="testimonial-box">
+                        <div class="carousel-caption text-center">
+                            <div class="who">
+                                <img class="lazy" src="https://d7ctj7he4ckvr.cloudfront.net/graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
+                            </div>
+                            <p>
+                                “A good selection of startups; realistic financial goals; honest company information; good updates.”
+                            </p>
+                            <div class="who-name">
+                                <strong>Gerhard H.</strong> <br/>
+                                <i>Donor</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container homepage-testimonials-small-devices">
+            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                    <div class="row item active">
+                        <div class="col-xs-12">
+                            <div class="testimonial-box">
+                                <div class="carousel-caption">
+                                    <div class="who">
+                                        <img class="lazy" src="graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
+                                    </div>
+                                    <p>
+                                        “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.”
+                                    </p>
+                                    <div class="who-name">
+                                        <strong>Hans-Peter P.</strong> <br/>
+                                        <i>Donor</i>
+                                    </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel2" data-slide="prev" style="margin-left: -150px;color: #434343;">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel2" data-slide="next" style="margin-right: -150px;color: #434343;">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel2" data-slide-to="1"></li>
+                </ol>
+            </div>
+        </div>
+    </section>
 
     <section class="homepage-newsletter ContentContainer">
         <div class="container-fluid newsletter-wrapper">
@@ -455,7 +574,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7 col-sm-12 newsletter-text">
                         <h2>Don’t miss our new investment opportunities</h2>
-                        <p>Click and subscribe to our weekly newsletter for all the latest investment news and start-ups</p>
+                        <p>Click and subscribe to our weekly newsletter for all the latest donation news.</p>
 
                         <div class="newsletter-input">
                             <form name="newsletter-form-home" method="get" action="https://www.companisto.com/en/newsletter-subscribe">

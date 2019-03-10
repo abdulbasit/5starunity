@@ -75,4 +75,11 @@ Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], functio
     Route::get('blog/category/delete/{id}', 'BlogController@deleteCategory');
     Route::get('blog/category/edit/{id}', 'BlogController@editCategory')->name('blog.category.edit');
     Route::post('blog/category/update/{id}', 'BlogController@updateCategory');
+    //Testimonial routes
+    Route::get('testimonials', 'TestimonialController@index')->name('testimonials');
+    Route::get('testimonials/create', 'TestimonialController@create')->name('testimonials.create');
+    Route::post('testimonials/save', 'TestimonialController@save');
+    Route::get('testimonials/edit/{id}', 'TestimonialController@edit')->name('testimonial.edit');
+    Route::post('testimonials/update/{id}', 'TestimonialController@update')->name('testimonials.update');
+    Route::get('testimonials/delete/{id}', 'TestimonialController@delete')->name('testimonials.delete');
 });

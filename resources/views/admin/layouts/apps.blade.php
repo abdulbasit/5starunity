@@ -304,6 +304,13 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                               <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
                             </ul>
                           </li>
+                          <li>
+                            <a class="menu-item" href="#"><i class="ft-layout"></i>Donors</a>
+                            <ul class="menu-content">
+                              <li><a class="menu-item" href="{{ route('admin.testimonials') }}">Donors Listing</a></li>
+                              <li><a class="menu-item" href="{{ route('admin.testimonials.create') }}">Add Donors</a></li>
+                            </ul>
+                          </li>
                       </ul>
                     </li>
                   </ul>
