@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,25 +11,18 @@
 |
 */
 
-Route::get('/main', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
 Route::get('home1', 'HomeController@index')->name('home1');
 
-
-// Route::get('/home', 'HomeController@index');
-// Route::get('/home', 'HomeController@index')->name('home');
-
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
-    // Password Reset Routes...
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('logout', 'Auth\LoginController@logout');
+    Route::group(['prefix' =>'client','namespace'=>'Client','as' => 'client.'], function () {
 
-
-//start of admin routes
-
+    });
 Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
 
     // Authentication Routes...

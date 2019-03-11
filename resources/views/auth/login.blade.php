@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <br />
+    {{ Session::get('test') }}
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="card-header text-center"><h3>{{ __('Login') }}</h3></div>

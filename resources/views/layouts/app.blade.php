@@ -87,8 +87,27 @@
                                 <li><a class="navbar-brand" href="en/index.html"><div class="navbar-logo-holder"></div></a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="login uppercase" href="{{ route('login') }}">Log In</a></li>
-                                <li><a class="register uppercase">Register</a></li>
+
+                                @if(!Auth::guard('client')->check())
+                                    <li><a class="login uppercase" href="{{ route('login') }}">Log In</a></li>
+                                    <li><a class="register uppercase" href="{{ route('register') }}">Register</a></li>
+                                @else
+                                <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu">
+                                        <div class="row nopadding">
+                                            <div class="col-md-12 nopadding text-left">
+                                                <div class="list_nav">
+                                                    <ul>
+                                                        <li><a href="en/how-it-works.html">My Profile</a></li>
+                                                        <li><a href="en/academy.html">MY VAULT</a></li>
+                                                        <li><a href="/logout">LOG OUT </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                @endif
                                 <li><a href="en.html" class="uppercase language-link no_padding_right bold-text">EN</a></li>
                                 <li class="lang-separator hidden-xs hidden-sm">|</li>
                                 <li><a href="en.html" class="uppercase language-link no_padding_left ">DE</a></li>
