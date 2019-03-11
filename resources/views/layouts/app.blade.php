@@ -39,7 +39,7 @@
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 </head>
 <body class="newLayout">
-        <div class="co_navbar">
+        <div class="co_navbar" style="height: 80px">
                 <nav class="navbar navbar-default new_header navbar-transparent absolute-positioning ">
                     <div class="container">
                         <div class="navbar-header">
@@ -87,8 +87,8 @@
                                 <li><a class="navbar-brand" href="en/index.html"><div class="navbar-logo-holder"></div></a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="login uppercase" id="LoginForm" href="#" data-toggle="modal" data-form="login" data-target="#myLogin">Log In</a></li>
-                                <li><a class="register uppercase" id="RegisterForm" href="#" data-toggle="modal" data-target="#myLogin">Register</a></li>
+                                <li><a class="login uppercase" href="{{ route('login') }}">Log In</a></li>
+                                <li><a class="register uppercase">Register</a></li>
                                 <li><a href="en.html" class="uppercase language-link no_padding_right bold-text">EN</a></li>
                                 <li class="lang-separator hidden-xs hidden-sm">|</li>
                                 <li><a href="en.html" class="uppercase language-link no_padding_left ">DE</a></li>
@@ -98,17 +98,13 @@
                 </nav>
             </div>
 
-<div class="modal LoginModal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myLoginLabel">
-    <div class="modal-dialog" role="document" id="contentToLoad">
 
-    </div>
-</div>
     <div id="app">
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-
+    @yield('footer')
 
         <div id="defaultFooter">
 
@@ -221,119 +217,7 @@
         </div>
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/jquery.bcSwipe.min.js')}}"></script>
     <script src="{{ asset('frontend/code/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<script src='{{ asset('frontend/code/scrollReveal/scrollReveal.js')}}'></script>
-<script>
-	var config = {
-		vFactor: 0.50
-	}
 
-	$(document).ready(function(){
-		if (typeof scrollReveal !== 'undefined') {
-			window.sr = new scrollReveal( config );
-		}
-	});
-</script>
-
-
-
-
-<style>
-    .register-overlay .LoginModal.main-row {
-        background-color:#5b8b9b !important;
-    }
-
-    #register_btn_modal_register_overlay{
-        color:#5b8b9b !important;
-    }
-
-    #register_btn_modal_register_overlay .fa {
-
-            color:#5b8b9b !important;
-
-    }
-
-    #register_btn_modal_register_overlay:hover .fa{
-        color:#fff !important;
-    }
-
-    #register_btn_modal_register_overlay:hover{
-        color:#fff !important;
-    }
-
-    .form-control{
-        border-radius:0;
-    }
-</style>
-
-
-
-
-
-	<!--End of Zopim Live Chat Script-->
-	<script>
-	$(window).on('load',function(){
-			});
-	$('#myLogin').on('show.bs.modal', function (event) {
-		var what = $(event.relatedTarget).attr('id');
-		loadLoginForm(what);
-	});
-
-	// Empty modal content on close
-	$(document).on('hide.bs.modal', '#myLogin', function (e) {
-		$("#contentToLoad").empty();
-	});
-
-	function loadLoginForm(what){
-		//var what = what.replace('_load', '');
-		$.ajax({
-			url: "https://www.companisto.com/en/login-ajax",
-			data: { what: what },
-			type: "GET",
-			success: function(data){
-				$("#contentToLoad").html(data);
-			}
-		});
-	}
-
-	function CloseVideoloadLoginFromExternal() {
-		$('#video_modal').modal('hide');
-		loadLoginFromExternal();
-	}
-
-	function loadLoginFromExternal() {
-		$('#myLogin').modal('show');
-		var what = 'RegisterForm';		loadLoginForm(what);
-	}
-
-	function loadLoginPopup(){
-		$('#myLogin').modal('show');
-		var what = 'LoginForm';
-		loadLoginForm(what);
-	}
-	function loadRegisterPopup() {
-		$('#myLogin').modal('show');
-		var what = 'RegisterForm';
-		loadLoginForm(what);
-	}
-
-		// Unveil images script
-	!function(t){t.fn.unveil=function(i,e){var n,r=t(window),o=i||0,u=window.devicePixelRatio>1?"data-src-retina":"data-src",s=this;function l(){var i=s.filter(function(){var i=t(this);if(!i.is(":hidden")){var e=r.scrollTop(),n=e+r.height(),u=i.offset().top;return u+i.height()>=e-o&&u<=n+o}});n=i.trigger("unveil"),s=s.not(n)}return this.one("unveil",function(){var t=this.getAttribute(u);(t=t||this.getAttribute("data-src"))&&("IMG"===this.tagName?this.setAttribute("src",t):this.style.backgroundImage="url("+t+")","function"==typeof e&&e.call(this))}),r.on("scroll.unveil resize.unveil lookup.unveil click.unveil",l),l(),this}}(window.jQuery);
-
-
-	$(document).ready(function() {
-		$(".lazy").unveil(300);
-	});
-
-
-	$('.larger').on('click', function () {
-		$($(this).data('target')).collapse('toggle');
-	});
-
-	// Toogle footer menu accordion only on mobile
-	if ($(window).width() > 500) {
-		$('.footerAcc').removeAttr('data-toggle');
-	}
-</script>
 <script>
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
