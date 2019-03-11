@@ -1602,6 +1602,7 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
+
 .row {
   margin-left: -15px;
   margin-right: -15px;
@@ -1769,6 +1770,7 @@ pre code {
   margin-left: 0%;
 }
 @media (min-width: 768px) {
+
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
@@ -2085,6 +2087,16 @@ pre code {
   }
 }
 @media (min-width: 1200px) {
+    section.sfslf-background {
+
+        height:600px !important;
+      }
+    .button-container-heading {
+        margin-top: 183px !important;
+    }
+    .button-container3rd {
+        margin-top: 144px !important;
+    }
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
@@ -4423,11 +4435,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
-  border-color: #fff;
+  border-color: #000;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #fff;
+  background-color: #000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #3db472;
@@ -12988,7 +13000,7 @@ button {
 .co_navbar .navbar-transparent:hover .icon-bar,
 .co_navbar .navbar-transparent.navbar-open .icon-bar,
 .co_navbar .navbar-transparent .navbar-collapse.in .icon-bar {
-  background-color: #000;
+  background-color: #fff;
 }
 .co_navbar .navbar-transparent .navbar-logo-holder {
     background-image: url("../../../images/logo-5starunity.png");
@@ -15450,15 +15462,15 @@ section.homepage-howitworks .circles-holder .c_st {
 section.homepage-howitworks .circles-holder .c_nd {
 
 }
-@media (max-width: 1200px) {
-  section.homepage-howitworks .circles-holder .c_nd {
-    margin-left: unset;
-  }
-}
+
 section.homepage-howitworks .circles-holder .c_rd {
   margin-left: 0;
 }
 @media (max-width: 1200px) {
+    section.homepage-howitworks .circles-holder .c_nd {
+        margin-left: unset;
+      }
+
   section.homepage-howitworks .circles-holder .c_rd {
     margin-left: unset;
   }
@@ -15473,9 +15485,30 @@ section.homepage-popular-startups {
   min-height: 700px;
 }
 @media (max-width: 500px) {
+    #app
+    {
+        margin-top:60px !important
+    }
+    .hidden-xs
+    {
+        display:none
+    }
+
+    .button-container-heading
+    {
+        margin-top:0 !important;
+    }
+    .button-container3rd {
+        margin-top: 20px !important;
+    }
   section.homepage-popular-startups {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+  .section.sfslf-background
+  {
+      height:300px !important;
+      font-size:12px
   }
 }
 section.homepage-popular-startups .banderoleWrapper {
@@ -17067,22 +17100,22 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input .input-group-b
 section.all-startups-background {
   position: relative;
   background-size: cover;
-  height: 600px;
+  height: auto;
   background-image: url(../../graphics/layout/003.png);
   background-position: top center;
   background-repeat: no-repeat;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
 }
 section.sfslf-background {
     position: relative;
     background-size: cover;
-    height: 600px;
     background-image: url(../../graphics/layout/0041.jpg);
     background-position: top center;
     background-repeat: no-repeat;
     display: flex;
+    height:250px;
     align-items: center;
     justify-content: center;
   }
@@ -17095,9 +17128,9 @@ section.sfslf-background {
     color:#fff
 }
 @media (max-width: 768px) {
-  section.all-startups-background {
+  /* section.all-startups-background {
     height: 300px;
-  }
+  } */
 }
 section.all-startups-background .button-container {
   color: #fff;
@@ -17119,7 +17152,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 }
 .button-container-heading
 {
-    margin-top:136px !important;
+    margin-top:183px ;
 }
 .button-announce-heading
 {
@@ -17129,7 +17162,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 }
 .button-container3rd
 {
-    margin-top:100px !important
+    margin-top:144px
 }
 .layoutV2-btn {
   font-size: 16px;
@@ -29533,7 +29566,8 @@ span.appears {
   }
 }
 .newLayout .navbar-default .navbar-brand {
-  padding: 16px;
+  padding: 0px;
+  padding-top:0px !important
 }
 @media (max-width: 1200px) {
   .newLayout .navbar-default .navbar-brand {

@@ -43,15 +43,20 @@
                 <nav class="navbar navbar-default new_header navbar-transparent absolute-positioning ">
                     <div class="container">
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <div class="col-xs-10 hidden-lg">
+                                <a class="navbar-brand" href="en/index.html">
+                                    <div class="navbar-logo-holder"></div>
+                                </a>
+                            </div>
+                            <div class="col-xs-2">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:black">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="en/index.html">
-                                {{-- <div class="navbar-logo-holder"></div> --}}
-                            </a>
+
+                            </div>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
@@ -78,7 +83,7 @@
                                     </div>
                                 </li>
                             </ul>
-                            <ul class="nav pull-left">
+                            <ul class="nav pull-left hidden-xs">
                                 <li><a class="navbar-brand" href="en/index.html"><div class="navbar-logo-holder"></div></a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">

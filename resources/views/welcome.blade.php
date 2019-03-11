@@ -124,10 +124,12 @@
         <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div>
         <div class="row">
             <div class="container-fluid">
-                <div class="col-xs-4 button-container text-left button-container-heading">
+                <div class="col-lg-4 col-sm-6 col-xs-12 button-container text-left button-container-heading">
                     <h2 class="leftText">Why 5Starunity?</h2>
                 </div>
-                <div class="col-xs-4 button-container text-left">
+                <div class="col-lg-4 col-xs-12 col-sm-6 button-container text-left">
+                    <br />
+                    <br />
                     <div class="row">
                         <div class="col-xs-2 v-icons">
                             <span>
@@ -157,7 +159,7 @@
 
                     </div>
                 </div>
-                <div class="col-xs-4 button-container text-left button-container3rd">
+                <div class="col-lg-4 col-xs-12 col-sm-6 button-container text-left button-container3rd">
                     <div class="row">
                         <div class="col-xs-2 v-icons">
                             <span>
@@ -518,9 +520,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
         <div class="container homepage-testimonials-small-devices">
             <div id="myCarousel2" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
@@ -545,10 +545,7 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
                 <!-- Left and right controls -->
                 <a class="left carousel-control" href="#myCarousel2" data-slide="prev" style="margin-left: -150px;color: #434343;">
                     <span class="glyphicon glyphicon-chevron-left"></span>
