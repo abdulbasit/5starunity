@@ -1,24 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
-{{-- <section class="homepage-header">
-        <div class="container-fluid no-padding">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-
-                    <div class="header-title">
-                     MAKING INNOVATION POSSIBLE                </div>
-                    <div class="play-button-holder" id="play_big_video" data-toggle="modal" data-target="#video_modal">
-                        <img src="{{ asset('frontend/graphics/layout/play-btn-normal-new-home.png')}}" onmouseover="this.src='graphics/layout/play_v1_white2.png';" onmouseout="this.src='graphics/layout/play-btn-normal-new-home.png';" class="play-button">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <section>
 
-            <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; width: 1140px; height: 442px; overflow: hidden;">
+            <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto; width: 1140px; height: 442px; overflow: hidden; margin-top:-65px">
                 <!-- Loading Screen -->
                 <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
                     <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="../svg/loading/static-svg/spin.svg" />
