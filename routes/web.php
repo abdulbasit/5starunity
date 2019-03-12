@@ -20,10 +20,12 @@ Route::get('home1', 'HomeController@index')->name('home1');
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
     Route::get('logout', 'Auth\LoginController@logout');
-    Route::group(['prefix' =>'client','namespace'=>'Client','as' => 'client.'], function () {
 
+    Route::group(['middleware' => ['auth:client']], function () {
+        Route::get('profile', 'UserController@index')->name('profile');
     });
-Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
+
+    Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
 
     // Authentication Routes...
     Route::get('/', function () {

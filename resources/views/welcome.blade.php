@@ -180,8 +180,9 @@
                     <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
                     <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
                         <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html">
-                        </div>
+                            <div class="stratup_img lazy" data-src="" title="vanilla bean" href="investment/vanilla-bean.html">
+                                <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/1546954124_profile.png">
+                            </div>
                         </a>
                         <div class="row content_info">
                             <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
@@ -229,8 +230,9 @@
                     <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
                     <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
                         <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html">
-                        </div>
+                            <div class="stratup_img lazy" data-src="" title="vanilla bean" href="investment/vanilla-bean.html">
+                                <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/1546954124_profile.png">
+                            </div>
                         </a>
                         <div class="row content_info">
                             <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
@@ -278,8 +280,9 @@
                     <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
                     <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
                         <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
-                            <div class="stratup_img lazy" data-src="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png" title="vanilla bean" href="investment/vanilla-bean.html">
-                        </div>
+                            <div class="stratup_img lazy" data-src="" title="vanilla bean" href="investment/vanilla-bean.html">
+                                <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/1546954124_profile.png">
+                            </div>
                         </a>
                         <div class="row content_info">
                             <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
@@ -458,7 +461,7 @@
                     <div class="testimonial-box">
                         <div class="carousel-caption">
                             <div class="who">
-                                <img class="lazy" src="https://d7ctj7he4ckvr.cloudfront.net/graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
+                                <img class="lazy" src="{{ URL::to('/') }}/assets/testimonial_pic_color_1_new_homepage.png"><br />
                             </div>
                             <p>
                                 “Easy, straight-forward, and everything explained.<br/> Investing this way is fun.”
@@ -475,7 +478,7 @@
                     <div class="testimonial-box">
                         <div class="carousel-caption">
                             <div class="who">
-                                <img class="lazy" src="https://d7ctj7he4ckvr.cloudfront.net/graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
+                                    <img class="lazy" src="{{ URL::to('/') }}/assets/testimonial_pic_color_1_new_homepage.png"><br />
                             </div>
                             <p>
                                 “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.“
@@ -492,7 +495,7 @@
                     <div class="testimonial-box">
                         <div class="carousel-caption text-center">
                             <div class="who">
-                                <img class="lazy" src="https://d7ctj7he4ckvr.cloudfront.net/graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
+                                    <img class="lazy" src="{{ URL::to('/') }}/assets/testimonial_pic_color_1_new_homepage.png"><br />
                             </div>
                             <p>
                                 “A good selection of startups; realistic financial goals; honest company information; good updates.”
