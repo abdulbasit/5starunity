@@ -46730,7 +46730,7 @@ html, body {
 }
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
 .invalid-feedback
-{
+{  
     color:red;
     font-size:14px
 }

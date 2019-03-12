@@ -39,6 +39,7 @@ class LoginController extends Controller
         return redirect('/');
       }
       // if unsuccessful, then redirect back to the login with the form data
+
       return redirect()->back()->withInput($request->only('email', 'remember'));
     }
 
