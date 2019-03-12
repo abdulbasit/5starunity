@@ -193,28 +193,28 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 BottomFollow-us grey_75 text-center">
                             <div id="follow-us-footer">
                                 <ul>
-                                    <li><a target="_blank" href="https://www.linkedin.com/company/companisto" title="Follow Companisto on Linkedin">
+                                    <li><a target="_blank" href="#" title="Follow Companisto on Linkedin">
                                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="http://www.facebook.com/Companisto" title="Follow Companisto on facebook">
+                                    <li><a target="_blank" href="#" title="Follow Companisto on facebook">
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="https://twitter.com/Companisto" title="Follow Companisto on Twitter">
+                                    <li><a target="_blank" href="#" title="Follow Companisto on Twitter">
                                             <i class="fa fa-twitter" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="https://www.instagram.com/companis.to/" title="Follow Companisto on instagram">
+                                    <li><a target="_blank" href="#" title="Follow Companisto on instagram">
                                             <i class="fa fa-instagram" aria-hidden="true"></i>
                                         </a>
                                     </li>
 
-                                    <li><a target="_blank" href="https://www.xing.com/companies/companistogmbh" title="Follow Companisto on XING">
+                                    <li><a target="_blank" href="#" title="Follow Companisto on XING">
                                             <i class="fa fa-xing" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="http://www.youtube.com/companisto" title="Follow Companisto on YouTube">
+                                    <li><a target="_blank" href="#" title="Follow Companisto on YouTube">
                                             <i class="fa fa-youtube-play" aria-hidden="true"></i>
                                         </a>
                                     </li><br />
