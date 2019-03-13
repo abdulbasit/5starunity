@@ -27,7 +27,7 @@
     <script src="{{ asset('frontend/code/jquery-ui/jquery.ui.touch-punch.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/site-scripts7031.js?v=1548947668')}}"></script>
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/login-register.js')}}"></script>
-
+    @yield('style')
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
@@ -193,31 +193,38 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 BottomFollow-us grey_75 text-center">
                             <div id="follow-us-footer">
                                 <ul>
-                                    <li><a target="_blank" href="#" title="Follow Companisto on Linkedin">
+                                    <li>
+                                        <a target="_blank" href="#" title="Follow Companisto on Linkedin">
                                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="#" title="Follow Companisto on facebook">
+                                    <li>
+                                        <a target="_blank" href="#" title="Follow Companisto on facebook">
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="#" title="Follow Companisto on Twitter">
+                                    <li>
+                                        <a target="_blank" href="#" title="Follow Companisto on Twitter">
                                             <i class="fa fa-twitter" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="#" title="Follow Companisto on instagram">
+                                    <li>
+                                        <a target="_blank" href="#" title="Follow Companisto on instagram">
                                             <i class="fa fa-instagram" aria-hidden="true"></i>
                                         </a>
                                     </li>
 
-                                    <li><a target="_blank" href="#" title="Follow Companisto on XING">
+                                    <li>
+                                        <a target="_blank" href="#" title="Follow Companisto on XING">
                                             <i class="fa fa-xing" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                    <li><a target="_blank" href="#" title="Follow Companisto on YouTube">
+                                    <li>
+                                        <a target="_blank" href="#" title="Follow Companisto on YouTube">
                                             <i class="fa fa-youtube-play" aria-hidden="true"></i>
                                         </a>
-                                    </li><br />
+                                    </li>
+                                    <br />
                                     <li>
                                         <font color="black">
                                         Designed and Developed by <font color="blue">Xnowad.com</font>
@@ -236,7 +243,7 @@
         </div>
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/jquery.bcSwipe.min.js')}}"></script>
     <script src="{{ asset('frontend/code/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-
+    @yield('script')
 <script>
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
