@@ -84,7 +84,7 @@
                                 </li>
                             </ul>
                             <ul class="nav pull-left hidden-xs">
-                                <li><a class="navbar-brand" href="en/index.html"><div class="navbar-logo-holder"></div></a></li>
+                                <li><a class="navbar-brand" href="/"><div class="navbar-logo-holder"></div></a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
 

@@ -70,36 +70,37 @@ input[type='file']
 {
     height: 40px;
 }
+label.error {
+    right: 10px;
+    width: 100%;
+    text-align: right;
+}
 </style>
 @endsection
 @section('content')
 <div class="main">
-
         <div class="container">
             <h2 class="text-center">Sign up to great new account </h2>
             <br />
-            <form method="POST" id="signup-form" class="signup-form" action="{{ route('register') }}">
-                    @csrf
+            <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data" action="{{ route('register.save') }}">
+                @csrf
                 <h3>
                     <span class="title_text">Account Infomation</span>
                 </h3>
                 <fieldset>
                     <div class="fieldset-content">
                         <div class="row">
-                            <div class="col-lg-4 col-xs-12 form-group">
-                                <label for="name" class="form-label">Complete Name</label>
-                                <input required="required" type="text" value="{{ old('name') }}" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" placeholder="User Name" />
-                            </div>
-                            <div class="col-lg-4 col-xs-12 form-group">
-                                <label for="name" class="form-label">Complete Name</label>
-                                <input required="required" type="text" value="{{ old('name') }}" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" placeholder="User Name" />
+                            <div class="col-lg-9 col-xs-12 form-group">
+                                <label for="name" class="form-label" style="width:340px">Complete Name</label>
+                                <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname" placeholder="First Name" />
+                                <input required="required" type="text" value="{{ old('lname') }}" class="form-control{{ $errors->has('lname') ? ' is-invalid' : '' }}" name="lname" id="lname" placeholder="Last Name" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-9 col-xs-12 form-group">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  id="email" placeholder="Your Email" />
-                            </div>
+                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-9 col-xs-12 form-group form-password">
@@ -124,7 +125,6 @@ input[type='file']
                     <span class="title_text">Personal Information</span>
                 </h3>
                 <fieldset>
-
                     <div class="fieldset-content">
                         <div class="row">
                             <div class="col-lg-10 col-xs-12 form-group">
@@ -144,17 +144,16 @@ input[type='file']
                             <label for="country" class="form-label">Country</label>
                             <div class="row" style="width:100%">
                                 <div class="col-lg-3 col-xs-12">
-                                <select name="country" id="country" class="form-control" required="required">
-                                    <option value="">Country</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="USA">America</option>
+                                <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required">
+                                    <option >----Select Country----</option>
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->country->id}}">{{$country->country->name}}</option>
+                                    @endforeach
                                 </select>
                                 </div>
                                 <div class="col-lg-3 col-xs-12">
                                     <select name="state" id="state" class="form-control" required="required">
-                                        <option value="">State</option>
-                                        <option value="Australia">Australia</option>
-                                        <option value="USA">America</option>
+                                        <option value="">----Select State----</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-3 col-xs-12">
@@ -167,6 +166,12 @@ input[type='file']
                             <div class="col-lg-10 col-xs-12 form-select">
                                 <label for="country" class="form-label">Postal Code </label>
                                 <input required="required" type="text" class="form-control" name="postal_code" id="postal_code" placeholder="Postal Code" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-xs-12 form-select">
+                                <label for="country" class="form-label">Contact Number </label>
+                                <input required="required" type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" />
                             </div>
                         </div>
                         <div class="row">
@@ -189,51 +194,11 @@ input[type='file']
                 </h3>
                 <fieldset>
                     <div class="fieldset-content">
-                        {{-- <div class="form-radio">
-                            <label for="payment_type">Payment Type</label>
-                            <div class="form-radio-flex">
-                                <input type="radio" name="payment_type" id="payment_visa" value="payment_visa" checked="checked" />
-                                <label for="payment_visa"><img src="images/icon-visa.png" alt=""></label>
-
-                                <input type="radio" name="payment_type" id="payment_master" value="payment_master" />
-                                <label for="payment_master"><img src="images/icon-master.png" alt=""></label>
-
-                                <input type="radio" name="payment_type" id="payment_paypal" value="payment_paypal" />
-                                <label for="payment_paypal"><img src="images/icon-paypal.png" alt=""></label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="credit_card" class="form-label">Credit Card</label>
-                                <input type="text" name="credit_card" id="credit_card" />
-                            </div>
-                            <div class="form-group">
-                                <label for="cvc" class="form-label">CVC</label>
-                                <input type="text" name="cvc" id="cvc" />
-                            </div>
-                        </div>
-                        <div class="form-date">
-                            <label for="expiry_date">Expiration Date</label>
-                            <div class="form-flex">
-                                <div class="form-date-item">
-                                    <select id="expiry_date" name="expiry_date"></select>
-                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                                </div>
-                                <div class="form-date-item">
-                                    <select id="expiry_year" name="expiry_year"></select>
-                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="name_of_card" class="form-label">Name of card</label>
-                            <input type="text" name="name_of_card" id="name_of_card" />
-                        </div> --}}
                         <div class="row">
                             <div class="col-lg-10 col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label" style="width:145px">Resident Proof</label>
                                 <div class="form-file" id="resd_proof">
-                                    <input type="file" multiple="multiple" name="resident_proof" id="resident_proof" class="custom-file-input form-control" />
+                                    <input type="file" multiple="multiple" name="resident_proof[]" id="resident_proof" class="custom-file-input form-control" />
                                     <span id='val' class="resImg"></span>
                                     <span id='button'>Select File</span>
                                 </div>
@@ -243,7 +208,7 @@ input[type='file']
                             <div class="col-lg-10 col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label" style="width:145px">Identity Proof</label>
                                 <div class="form-file" id="id_prrof">
-                                    <input type="file" multiple="multiple" name="identity_card"  id="identity_card" class="custom-file-input form-control" />
+                                    <input type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" />
                                     <span id='val' class="idImg"></span>
                                     <span id='button'>Select File</span>
                                 </div>
@@ -339,30 +304,18 @@ input[type='file']
 <script src="{{ asset('frontend/wizard-form/vendor/jquery.pwstrength/jquery.pwstrength.js')}}"></script>
 <script src="{{ asset('frontend/wizard-form/js/main.js')}}"></script>
 <script>
-today = new Date()
-past = new Date(2010,05,01) // remember this is equivalent to 06 01 2010
-//dates in js are counted from 0, so 05 is june
-
-function calcDate(date1,date2) {
-    var diff = Math.floor(date1.getTime() - date2.getTime());
-    var day = 1000 * 60 * 60 * 24;
-
-    var days = Math.floor(diff/day);
-    var months = Math.floor(days/31);
-    var years = Math.floor(months/12);
-
-    var message = date2.toDateString();
-    message += " was "
-    message += days + " days "
-    message += months + " months "
-    message += years + " years ago \n"
-
-    return message
-    }
-
-
-a = calcDate(today,past)
-console.log(a) // returns Tue Jun 01 2010 was 1143 days 36 months 3 years ago
+function getCountrySates()
+{
+    var country_id = $( "#country option:selected" ).attr('value');
+    $.ajax({
+        method: "POST",
+        url: "ajax/states",
+        data: { "_token": "{{ csrf_token() }}",country_id: country_id}
+        })
+        .done(function( msg ) {
+           $("#state").html(msg);
+        });
+}
 </script>
 @endsection
 @endsection

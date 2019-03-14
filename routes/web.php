@@ -15,19 +15,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
+
+Route::get('mail/send', 'MailController@send');
+Auth::routes(['verify' => true]);
+
 Route::get('home1', 'HomeController@index')->name('home1');
+
 
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
     Route::get('logout', 'Auth\LoginController@logout');
+    Route::get('register', 'Auth\RegisterController@index')->name('register');
+    Route::post('register/save', 'Auth\RegisterController@create')->name('register.save');
+    Route::get('email/verification/{token}', 'Auth\RegisterController@verify_email');
+    Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');
 
     Route::group(['middleware' => ['auth:client']], function () {
-        Route::get('profile', 'UserController@index')->name('profile');
+        Route::get('profile', 'UserController@index')->name('profile')->middleware('verified');
     });
+
+
+
 
     Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
 
-    // Authentication Routes...
+
+    //site settings
+
+    Route::get('settings', 'AdminController@index')->name('settings');
+    Route::post('settings/save', 'AdminController@saveSettings')->name('settings.save');
+
+        // Authentication Routes...
     Route::get('/', function () {
         return redirect(route("admin.login"));
     });

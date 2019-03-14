@@ -5,6 +5,24 @@
     <br />
     {{ Session::get('test') }}
     <div class="row">
+        @if ($message = Session::get('info'))
+            <div class="alert alert-info alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ $message }}
+            </div>
+        @endif
+        @if ($message = Session::get('error'))
+            <div class="alert alert-danger alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ $message }}
+            </div>
+        @endif
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ $message }}
+            </div>
+        @endif
         <div class="col-lg-8 col-lg-offset-2">
             <div class="card-header text-center"><h3>{{ __('Login') }}</h3></div>
             <br />

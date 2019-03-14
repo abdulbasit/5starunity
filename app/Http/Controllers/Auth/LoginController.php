@@ -28,7 +28,8 @@ class LoginController extends Controller
       // Validate the form data
       $this->validate($request, [
         'email'   => 'required|email',
-        'password' => 'required'
+        'password' => 'required',
+        'status'=>'in:0'
       ]);
 
       // Attempt to log the user in

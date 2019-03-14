@@ -253,9 +253,9 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                             <span class="user-name">{{Auth::guard('admin')->user()->fname}} {{Auth::guard('admin')->user()->lname}}</span>
                           </a>
                           <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="user-profile.html"><i class="ft-user"></i> Edit Profile</a>
-                            <a class="dropdown-item" href="email-application.html"><i class="ft-mail"></i> My Inbox</a>
-                            <a class="dropdown-item" href="user-cards.html"><i class="ft-check-square"></i> Task</a>
-                            <a class="dropdown-item" href="chat-application.html"><i class="ft-message-square"></i> Chats</a>
+                            <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
+                            <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
+                            <a class="dropdown-item" href="{{ route('admin.settings') }}"><i class="ft-settings"></i>Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/admin/logout"><i class="ft-power"></i> Logout</a>
                           </div>

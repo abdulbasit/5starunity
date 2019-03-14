@@ -95,7 +95,10 @@
             return form.valid();
         },
         onFinished: function(event, currentIndex) {
-            alert('Sumited');
+            setTimeout(function (){
+                $( "#signup-form" ).submit();
+            },2000);
+
         },
         // onInit : function (event, currentIndex) {
         //     event.append('demo');

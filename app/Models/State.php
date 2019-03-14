@@ -4,20 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-class User extends Authenticatable implements MustVerifyEmail
+class State extends Authenticatable
 {
-    use Notifiable;
-    // protected $guard = 'admin';
+    protected $guard = 'client';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password', 'role','email_verified_at',
-    ];
+
+    public function country()
+    {
+        return $this->belongsTo('App\Models\Country','country_id');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
