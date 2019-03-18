@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Mail\RegistrationEmail;
 use Illuminate\Support\Facades\Mail;
+use Auth;
 class RegisterController extends Controller
 {
 
@@ -190,8 +191,38 @@ class RegisterController extends Controller
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         return view('usr_profile.edit_profile',compact('userInfo','route'));
     }
-    public function immage_upload()
+    public function ajaxImage(Request $request)
     {
 
+        if ($request->isMethod('get'))
+            return view('ajax_image_upload');
+        else {
+            $userId = Auth::guard('client')->user()->id;
+            $validator = Validator::make($request->all(),
+                [
+                    'file' => 'image',
+                ],
+                [
+                    'file.image' => 'The file must be an image (jpeg, png, bmp, gif, or svg)'
+                ]);
+            if ($validator->fails())
+                return array(
+                    'fail' => true,
+                    'errors' => $validator->errors()
+                );
+            $extension = $request->file('file')->getClientOriginalExtension();
+            $dir = 'uploads/users/profile_pic';
+            $filename =  time()."_5star_profile".'.'.$extension;
+            $request->file('file')->move($dir, $filename);
+            $userData = UserProfile::where('user_id',$userId)->first();
+            $userData->profile_picture =$filename;
+            $userData->save();
+            return $filename;
+        }
+    }
+
+    public function deleteImage($filename)
+    {
+        File::delete('uploads/users/profile_pic/' . $filename);
     }
 }

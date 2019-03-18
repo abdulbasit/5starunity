@@ -1,25 +1,28 @@
-<div class="col-lg-4 col-md-6 col-sm-12">
-    <div class="form-group">
+
         <!-- Modal -->
-        <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header bg-danger white">
-                <h4 class="modal-title" id="myModalLabel11">Warning!</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+<div class="modal fade text-left" id="pic_change" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
             <div class="modal-body">
-                <p>Are you suer you want to delete this product ?</p>
+                <div class="row">
+                    <div style="width:200px;height: 200px; border: 1px solid whitesmoke ;text-align: center;position: relative" id="image">
+                        <img width="100%" height="100%" id="preview_image" src="{{asset('images/noimage.jpg')}}"/>
+                        <i id="loading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="position: absolute;left: 40%;top: 40%;display: none"></i>
+                    </div>
+                    <p>
+                        <a href="javascript:changeProfile()" style="text-decoration: none;">
+                            <i class="glyphicon glyphicon-edit"></i> Change
+                        </a>&nbsp;&nbsp;
+                        {{-- <a href="javascript:removeFile()" style="color: red;text-decoration: none;">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            Remove
+                        </a> --}}
+                    </p>
+                    <input type="file" id="file" style="display: none"/>
+                    <input type="hidden" id="file_name"/>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
-                <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
-            </div>
-            </div>
-        </div>
         </div>
     </div>
 </div>
@@ -28,9 +31,9 @@
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
             @if($userInfo['user_profile']->profile_picture=="")
-                <img class="img-responsive" width="50" src="{{ URL::to('/') }}/frontend/graphics/icons/avatar-placeholder.png">
+                <img class="img-responsive" id="prfl_picture" width="50" src="{{ URL::to('/') }}/frontend/graphics/icons/avatar-placeholder.png">
             @else
-                <img class="img-responsive" width="50" src="{{ URL::to('/') }}/uploads/users/profile_pic/{{$userInfo['user_profile']->profile_picture}}">
+                <img class="img-responsive" id="prfl_picture" width="50" src="{{ URL::to('/') }}/uploads/users/profile_pic/{{$userInfo['user_profile']->profile_picture}}">
             @endif
             <div class="change_pic"><a href="#">Edit Picture</a></div>
         </div>
@@ -68,30 +71,3 @@
         <!-- END MENU -->
     </div>
 </div>
-@section('script')
-<script>
-var agent_id = $(this).data('id');
-
-$('form').submit(function(event) {
-    event.preventDefault();
-    $.ajax
-    ({
-        url: '{{ url('/immage_upload') }}',
-        type: 'POST',
-        data: {
-            "_method": 'POST',
-            "image": $('input[name=image]').val()
-        },
-        success: function(result)
-        {
-            location.reload();
-        },
-        error: function(data)
-        {
-            console.log(data);
-        }
-    });
-
-});
-</script>
-@endsection

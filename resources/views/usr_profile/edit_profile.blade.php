@@ -16,26 +16,42 @@ function getCountrySates()
 }
 </script>
 @endsection
+@section('style')
+    <style>
+        .rowSpacing
+        {
+            margin-bottom: 10px !important
+        }
+    </style>
+@endsection
 <div class="container">
     <div class="row profile">
-        @include('../layouts.user_menu') 
+        @include('../layouts.user_menu')
 		<div class="col-md-9 prof">
             <div class="profile-content">
                 <div class="row profile-body">
                     <div class="col-lg-9 col-xs-12">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Name</div>
-                            <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="name" value="{{$userInfo['user_data']->name}}"></div>
+                        <div class="row rowSpacing">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">First Name</div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">
+                                <input class="form-control" type="text" name="fname" value="{{explode(" ",$userInfo['user_data']->name)[0]}}">
+                            </div>
                         </div>
-                        <div class="row">
+                        <div class="row rowSpacing">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Last Name</div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">
+                                <input class="form-control" type="text" name="lname" value="{{explode(" ",$userInfo['user_data']->name)[1]}}">
+                            </div>
+                        </div>
+                        {{-- <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Email Address</div>
                             <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" disabled="disabled" name="name" value="{{$userInfo['user_data']->email}}"></div>
-                        </div>
-                        <div class="row">
+                        </div> --}}
+                        <div class="row rowSpacing">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Date of birth </div>
                             <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="name" value="{{date('d-m-Y', strtotime($userInfo['user_profile']->dob))}}"></div>
                         </div>
-                        <div class="row">
+                        <div class="row rowSpacing">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Country</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">
                                 <select name="country" id="country" class="form-control " onchange="getCountrySates()">
@@ -45,7 +61,7 @@ function getCountrySates()
                                 </select>
                             </div>
                       </div>
-                      <div class="row">
+                      <div class="row rowSpacing">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">State</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">
                                 <select name="sates" id="sates" class="form-control">
@@ -55,27 +71,34 @@ function getCountrySates()
                                 </select>
                             </div>
                       </div>
-                      <div class="row">
+                      <div class="row rowSpacing">
                         <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">City</div>
                         <div class="col-lg-8 col-md-6 col-xs-12">
-                            <input type="text" name="city" class="form-control" id="city" value="{{$userInfo['user_profile']->city}}">`
+                            <input type="text" name="city" class="form-control" id="city" value="{{$userInfo['user_profile']->city}}">
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row rowSpacing">
                         <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Postal Code</div>
                         <div class="col-lg-8 col-md-6 col-xs-12">
                             <input type="text" name="postal_code" class="form-control" id="postal_code" value="{{$userInfo['user_profile']->postal_code}}">
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row rowSpacing">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Contact Number</div>
                             <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="contact" id="contact" value="{{$userInfo['user_profile']->user_contact}}"></div>
                         </div>
-                        <div class="row">
+                        <div class="row rowSpacing">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Address </div>
                             <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="address" id="address" value="{{$userInfo['user_profile']->address}}"></div>
                         </div>
-                        
+                        <div class="row rowSpacing">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Street </div>
+                            <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="street" id="street" value="{{$userInfo['user_profile']->address}}"></div>
+                        </div>
+                        <div class="row rowSpacing">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">House Number </div>
+                            <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="house" id="house" value="{{$userInfo['user_profile']->address}}"></div>
+                        </div>
                     </div>
                     <div class="col-lg-3 col-xs-12"></div>
                 </div>
