@@ -10,7 +10,7 @@ class UserProfile extends Authenticatable
 
     protected $fillable = [
         'user_id', 'dob', 'address', 'country','state',
-        'city','postal_code','profile_picture','user_contact'
+        'city','postal_code','profile_picture','user_contact','street','house_number'
     ];
 
     public function user()

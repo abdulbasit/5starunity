@@ -48,9 +48,7 @@
             <div class="section-title">Innovative inventors and founders need your support</div>
             <div class="section-subtitle">
                 The main idea of the 5starUnity e.V. is to enable people to realize their ideas				 for the benefit and improvement of the general public.To support promising businesses that can write history, we offer you the opportunity to donate! Each donor is rewarded with free TALERS ( COINS) and in return has the chance in to win their dream item  from our Lottery of Thinga- Legal and  notarized.
-
             </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-1 col-md-10">

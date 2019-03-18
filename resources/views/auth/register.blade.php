@@ -11,6 +11,9 @@
     font-size: 13px;
     font-weight: normal;
 }
+label{
+    width:175px !important
+}
 .actions ul li a
 {
     border: solid 1px #000;
@@ -91,8 +94,19 @@ label.error {
                     <div class="fieldset-content">
                         <div class="row">
                             <div class="col-lg-9 col-xs-12 form-group">
-                                <label for="name" class="form-label" style="width:340px">Complete Name</label>
+                                <label for="fname" class="form-label">First Name</label>
                                 <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname" placeholder="First Name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-9 col-xs-12 form-group">
+                                <label for="mname" class="form-label">Middle Name</label>
+                                <input type="text" value="{{ old('mname') }}" class="form-control{{ $errors->has('mname') ? ' is-invalid' : '' }}" name="mname" id="mname" placeholder="Middle Name" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-9 col-xs-12 form-group">
+                                <label for="lname" class="form-label">Last Name</label>
                                 <input required="required" type="text" value="{{ old('lname') }}" class="form-control{{ $errors->has('lname') ? ' is-invalid' : '' }}" name="lname" id="lname" placeholder="Last Name" />
                             </div>
                         </div>
@@ -134,44 +148,61 @@ label.error {
                             <div class="error_msg" id="dobMsg"></div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
-                                <label for="address" class="form-label">Address</label>
-                                <input required="required" type="text" class="form-control" name="address" id="address" placeholder="Address" />
-                            </div>
-                        </div>
-                        <div class="row">
-                        <div class="form-select">
-                            <label for="country" class="form-label">Country</label>
-                            <div class="row" style="width:100%">
-                                <div class="col-lg-3 col-xs-12">
-                                <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required">
-                                    <option >----Select Country----</option>
-                                    @foreach($countries as $country)
-                                        <option value="{{$country->country->id}}">{{$country->country->name}}</option>
-                                    @endforeach
-                                </select>
-                                </div>
-                                <div class="col-lg-3 col-xs-12">
-                                    <select name="state" id="state" class="form-control" required="required">
-                                        <option value="">----Select State----</option>
+                            <div class="form-select">
+                                <label for="country" class="form-label">Country</label>
+                                <div class="row" style="width:100%">
+                                    <div class="col-lg-5 col-xs-12">
+                                    <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required">
+                                        <option >----Select Country----</option>
+                                        @foreach($countries as $country)
+                                            <option value="{{$country->country->id}}">{{$country->country->name}}</option>
+                                        @endforeach
                                     </select>
-                                </div>
-                                <div class="col-lg-3 col-xs-12">
-                                    <input required="required" type="text" class="form-control" name="city" id="city" placeholder="City" />
+                                    </div>
+                                    <div class="col-lg-4 col-xs-12 no-padding">
+                                        <select name="state" id="state" class="form-control" required="required">
+                                            <option value="">----Select State----</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-select">
-                                <label for="country" class="form-label">Postal Code </label>
-                                <input required="required" type="text" class="form-control" name="postal_code" id="postal_code" placeholder="Postal Code" />
+                            <div class="form-select">
+                                <label for="country" class="form-label">Postal Code / City </label>
+                                <div class="row" style="width:100%">
+                                    <div class="col-lg-4 col-xs-12 no-padding">
+                                        <input required="required" type="text" class="form-control" name="city" id="city" placeholder="City" />
+                                    </div>
+                                    <div class="col-lg-5 col-xs-12">
+                                        <input required="required" type="text" class="form-control" name="postal_code" id="postal_code" placeholder="Postal Code" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-10 col-xs-12 form-select">
                                 <label for="country" class="form-label">Contact Number </label>
                                 <input required="required" type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 col-xs-12 form-group">
+                                <label for="address" class="form-label">Address</label>
+                                <input required="required" type="text" class="form-control" name="address" id="address" placeholder="Address" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-select">
+                                <label for="country" class="form-label">House # / Street # </label>
+                                <div class="row" style="width:100%">
+                                    <div class="col-lg-5 col-xs-12">
+                                        <input required="required" type="text" class="form-control" name="hnumber" id="hnumber" placeholder="Enter House Number" />
+                                    </div>
+                                    <div class="col-lg-4 col-xs-12 no-padding">
+                                        <input required="required" type="text" class="form-control" name="street_n" id="street_n" placeholder="Enter Street Number" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row">

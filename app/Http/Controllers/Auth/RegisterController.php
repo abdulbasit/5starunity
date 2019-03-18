@@ -65,12 +65,14 @@ class RegisterController extends Controller
         $phone = $request->get('phone');
         $verificatation = md5(Carbon::now());
 
-        $emailCheck = User::where('email',$request->get('email'))->first();
-        if($emailCheck->email == $request->get('email'))
+        $emailCheck = User::where('email',$request->get('email'))->count();
+        if($emailCheck>0)
             return redirect()->route('login')->with('error','Email already registered!');
 
         $user_id = User::create([
-            'name' => $request->get('fname')." ".$request->get('lname'),
+            'name' => $request->get('fname'),
+            'middle_name' => $request->get('mname'),
+            'last_name' => $request->get('lname'),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password')),
             'role' => '0',
@@ -108,7 +110,9 @@ class RegisterController extends Controller
             'postal_code'=>$postal_code,
             'profile_picture'=>$imageName,
             'user_contact'=>$phone,
-            'created_at'=>"2019-03-14"
+            'created_at'=>"2019-03-14",
+            "street"=>$request->get('street_n'),
+            "house_number"=>$request->get('hnumber')
         ]);
 
         $resProofImg = public_path('uploads/users/documents_proofs/res_proof');
