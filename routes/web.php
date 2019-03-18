@@ -15,19 +15,41 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
+
+Route::get('mail/send', 'MailController@send');
+Auth::routes(['verify' => true]);
+
 Route::get('home1', 'HomeController@index')->name('home1');
+
 
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
     Route::get('logout', 'Auth\LoginController@logout');
+    Route::get('register', 'Auth\RegisterController@index')->name('register');
+    Route::post('register/save', 'Auth\RegisterController@create')->name('register.save');
+    Route::get('email/verification/{token}', 'Auth\RegisterController@verify_email');
+    Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');
 
+    //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {
-        Route::get('profile', 'UserController@index')->name('profile');
+        Route::get('profile', 'UserController@index')->name('profile')->middleware('verified');
+        Route::get('account-settings', 'UserController@profileUpdate')->name('account-settings');
+        Route::get('profile-image', 'UserController@immage_upload')->name('profile-image');
+        Route::match(['get', 'post'], 'ajax-image-upload', 'Auth\RegisterController@ajaxImage');
     });
+
+
+
 
     Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
 
-    // Authentication Routes...
+
+    //site settings
+
+    Route::get('settings', 'AdminController@index')->name('settings');
+    Route::post('settings/save', 'AdminController@saveSettings')->name('settings.save');
+
+        // Authentication Routes...
     Route::get('/', function () {
         return redirect(route("admin.login"));
     });
@@ -39,8 +61,13 @@ Route::get('home1', 'HomeController@index')->name('home1');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
     Route::get('users', 'UserController@index')->name('users');
+    Route::get('user/edit', 'UserController@index')->name('user.edit');
     Route::get('user/create', 'UserController@create')->name('user.create');
-    Route::get('user/documents', 'UserController@documents')->name('user.documents');
+    Route::get('user/documents/{id}', 'UserController@userDocuments')->name('user.documents');
+    Route::get('user/documents/approve/{id}', 'UserController@approve')->name('user.documents.approve');
+    Route::post('user/documents/cancel/{id}', 'UserController@cancel')->name('user.documents.cancel');
+    Route::get('user/documents/download/{id}', 'UserController@download')->name('user.documents.download');
+    Route::get('user/status/{id}/{status}', 'UserController@update_status')->name('user.status');
     Route::get('logout', 'Auth\AdminLoginController@logout');
 
     //products routes

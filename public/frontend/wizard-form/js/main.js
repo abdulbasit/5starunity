@@ -60,7 +60,7 @@
                 today = new Date()
                 past = new Date(dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]);
                 ageDiff = calcDate(today,past)
-                if(ageDiff<18)
+                if(ageDiff<=18)
                 {
                     $("#dob").addClass('form_error');
                     $("#dobMsg").html('You must be 18+');
@@ -95,7 +95,10 @@
             return form.valid();
         },
         onFinished: function(event, currentIndex) {
-            alert('Sumited');
+            setTimeout(function (){
+                $( "#signup-form" ).submit();
+            },2000);
+
         },
         // onInit : function (event, currentIndex) {
         //     event.append('demo');
