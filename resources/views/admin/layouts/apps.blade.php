@@ -19,6 +19,7 @@
     <!-- Styles -->
     <!-- BEGIN VENDOR CSS-->
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/vendors.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/font-awesome/css/font-awesome.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/extensions/unslider.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/weather-icons/climacons.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/meteocons/style.css')}}">
@@ -279,7 +280,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                       <ul class="menu-content">
                         <li><a class="menu-item" href="{{ route('admin.user.create') }}">Add New User</a></li>
                         <li><a class="menu-item" href="{{ route('admin.users') }}">User Listing</a></li>
-                        <li><a class="menu-item" href="{{ route('admin.user.documents') }}">User Documents</a></li>
+                        {{-- <li><a class="menu-item" href="{{ route('admin.user.documents') }}">User Documents</a></li> --}}
                       </ul>
                     </li>
                     <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Products</span></a>

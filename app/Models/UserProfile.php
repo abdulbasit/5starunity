@@ -17,4 +17,12 @@ class UserProfile extends Authenticatable
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
+    public function country_name()
+    {
+        return $this->belongsTo('App\Models\Country','country');
+    }
+    public function state_name()
+    {
+        return $this->belongsTo('App\Models\State','state');
+    }
 }

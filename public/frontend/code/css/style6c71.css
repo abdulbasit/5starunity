@@ -1928,7 +1928,19 @@ pre code {
     margin-left: 0%;
   }
 }
+.green
+{
+    color:green !important
+}
 @media (min-width: 992px) {
+    .pr_heading
+    {
+        text-align:right
+    }
+    .prof
+    {
+        margin-top:150px
+    }
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
@@ -2087,6 +2099,14 @@ pre code {
   }
 }
 @media (min-width: 1200px) {
+    .pr_heading
+    {
+        text-align:right
+    }
+    .prof
+    {
+        margin-top:200px
+    }
     section.sfslf-background {
 
         height:600px !important;
@@ -15474,8 +15494,7 @@ section.homepage-howitworks .circles-holder .c_rd {
 
   section.homepage-howitworks .circles-holder .c_rd {
     margin-left: unset;
-  }
-
+}
 }
 section.homepage-popular-startups {
   font-family: "open_sans", sans-serif;
@@ -16226,6 +16245,7 @@ section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_
     padding-top: 25px;
     padding-bottom: 22px;
   }
+
 }
 @media (max-width: 750px) {
   section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_view_content .ps_main_view_desc {
@@ -46761,11 +46781,35 @@ html, body {
     padding: 20px 0 10px 0;
     background: #fff;
   }
+  .change_pic
+  {
+    width:90%; 
+    height:25px; 
+    text-align:center; 
+    font-size:12px; 
+    margin-top:-25px; 
+    background-color:rgb(255,255,255,0.8); 
+    position:absolute
+  }
+  .change_pic:hover
+  {
+    width:90%; 
+    height:25px; 
+    text-align:center; 
+    font-size:12px; 
+    margin-top:-25px; 
+    background-color:white; 
+    position:absolute
+  }
+  .change_pic a
+  {
+      color:blue
+  }
   .profile-userpic img {
     float: none;
     margin: 0 auto;
     width: 50%;
-    height: 50%;
+    height: 132px;
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
@@ -46858,4 +46902,3 @@ html, body {
 {
     border:0px
 }
-

@@ -98,8 +98,7 @@
                                             <div class="col-md-12 nopadding text-left">
                                                 <div class="list_nav">
                                                     <ul>
-                                                        <li><a href="en/how-it-works.html">My Profile</a></li>
-                                                        <li><a href="en/academy.html">MY VAULT</a></li>
+                                                        <li><a href="{{route('profile')}}">My Profile</a></li>
                                                         <li><a href="/logout">LOG OUT </a></li>
                                                     </ul>
                                                 </div>

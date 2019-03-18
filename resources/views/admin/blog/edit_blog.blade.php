@@ -228,7 +228,7 @@ $("#price").change(function(){
 <script>
     $(function() {
       $('#desc').froalaEditor({
-          alert('dd');
+        //   alert('dd');
         // Set the file upload URL.
         imageUploadURL: '/blog/update/image/',
 

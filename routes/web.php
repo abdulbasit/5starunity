@@ -30,8 +30,11 @@ Route::get('home1', 'HomeController@index')->name('home1');
     Route::get('email/verification/{token}', 'Auth\RegisterController@verify_email');
     Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');
 
+    //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {
         Route::get('profile', 'UserController@index')->name('profile')->middleware('verified');
+        Route::get('account-settings', 'UserController@profileUpdate')->name('account-settings');
+        Route::get('profile-image', 'UserController@immage_upload')->name('profile-image');
     });
 
 
@@ -57,8 +60,13 @@ Route::get('home1', 'HomeController@index')->name('home1');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
     Route::get('users', 'UserController@index')->name('users');
+    Route::get('user/edit', 'UserController@index')->name('user.edit');
     Route::get('user/create', 'UserController@create')->name('user.create');
-    Route::get('user/documents', 'UserController@documents')->name('user.documents');
+    Route::get('user/documents/{id}', 'UserController@userDocuments')->name('user.documents');
+    Route::get('user/documents/approve/{id}', 'UserController@approve')->name('user.documents.approve');
+    Route::post('user/documents/cancel/{id}', 'UserController@cancel')->name('user.documents.cancel');
+    Route::get('user/documents/download/{id}', 'UserController@download')->name('user.documents.download');
+    Route::get('user/status/{id}/{status}', 'UserController@update_status')->name('user.status');
     Route::get('logout', 'Auth\AdminLoginController@logout');
 
     //products routes

@@ -122,14 +122,14 @@ class RegisterController extends Controller
             $product_images = UserDocument::create([
                 "user_id" => $user_id->id,
                 "res_proof"=>$res_poroof,
-                "status"=>'0',
+                "status"=>'1',
                 'updated_at'=>Carbon::now(),
                 'created_at'=>Carbon::now(),
                 "type"=>'res'
             ]);
         }
 
-        $idProofImg = public_path('uploads/users/documents_proofs/id_proor');
+        $idProofImg = public_path('uploads/users/documents_proofs/id_proof');
         foreach ($identity_card as $identity_proofImage)
         {
             $identity_proofImage->getClientOriginalName();
@@ -145,7 +145,7 @@ class RegisterController extends Controller
             $product_images = UserDocument::create([
                 "user_id" => $user_id->id,
                 "res_proof"=>$id_proofImg,
-                "status"=>'0',
+                "status"=>'1',
                 "type"=>'identity',
                 'updated_at'=>Carbon::now(),
                 'created_at'=>Carbon::now(),
@@ -179,5 +179,19 @@ class RegisterController extends Controller
         $objDemo->receiver = $mailData['email_address'];
 
         Mail::to($mailData['email_address'])->send(new RegistrationEmail($objDemo));
+    }
+    public function profileUpdate()
+    {
+        $route='update-profile';
+        $userId = Auth::guard('client')->user()->id;
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        return view('usr_profile.edit_profile',compact('userInfo','route'));
+    }
+    public function immage_upload()
+    {
+
     }
 }
