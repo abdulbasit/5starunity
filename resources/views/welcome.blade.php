@@ -17,7 +17,7 @@
                         <span></span>
                     </div>
                     <div>
-                        <img data-u="image" src="{{ URL::to('/') }}/images/slide2.png" />
+                        <img data-u="image" src="{{ URL::to('/') }}/images/slide2.jpg" />
                     </div>
                     <div>
                         <img data-u="image" src="{{ URL::to('/') }}/images/001.png" />

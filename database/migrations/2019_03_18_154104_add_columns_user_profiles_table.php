@@ -14,10 +14,12 @@ class AddColumnsUserProfilesTable extends Migration
     public function up()
     {
         Schema::table('user_profiles', function (Blueprint $table) {
-            $table->string('middle_name')->nullable();
-            $table->string('last_name')->nullable();
             $table->string('street')->nullable();
             $table->string('house_number')->nullable();
+        });
+        Schema::table('user_profiles', function (Blueprint $table) {
+            $table->string('middle_name')->nullable();
+            $table->string('last_name')->nullable();
         });
     }
 
