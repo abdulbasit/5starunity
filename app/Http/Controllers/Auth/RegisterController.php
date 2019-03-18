@@ -140,8 +140,8 @@ class RegisterController extends Controller
             $identity_proofImage->getMimeType();
 
             //Move Uploaded File
-            $id_proofImg = time().'_5star_id_proof.'.$identity_proofImage->getClientOriginalExtension();
-            $identity_proofImage->move($idProofImg, $res_poroof);
+           $id_proofImg = time().'_5star_id_proof.'.$identity_proofImage->getClientOriginalExtension();
+            $identity_proofImage->move($idProofImg, $id_proofImg);
 
             $product_images = UserDocument::create([
                 "user_id" => $user_id->id,
