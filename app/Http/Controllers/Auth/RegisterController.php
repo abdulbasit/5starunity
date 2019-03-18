@@ -65,6 +65,10 @@ class RegisterController extends Controller
         $phone = $request->get('phone');
         $verificatation = md5(Carbon::now());
 
+        $emailCheck = User::where('email',$request->get('email'))->first();
+        if($emailCheck->email == $request->get('email'))
+            return redirect()->route('login')->with('error','Email already registered!');
+
         $user_id = User::create([
             'name' => $request->get('fname')." ".$request->get('lname'),
             'email' => $request->get('email'),
