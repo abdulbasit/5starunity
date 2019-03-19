@@ -36,6 +36,7 @@ Route::get('home1', 'HomeController@index')->name('home1');
         Route::get('account-settings', 'UserController@profileUpdate')->name('account-settings');
         Route::get('profile-image', 'UserController@immage_upload')->name('profile-image');
         Route::match(['get', 'post'], 'ajax-image-upload', 'Auth\RegisterController@ajaxImage');
+        Route::post('profile-update', 'UserController@update')->name('profile-update');
     });
 
 

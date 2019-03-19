@@ -6,6 +6,12 @@
     <div class="row profile">
         @include('../layouts.user_menu')
 		<div class="col-md-9 prof">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ $message }}
+                </div>
+            @endif
             <div class="profile-content">
                 <div class="row profile-body">
                     <div class="col-lg-9 col-xs-12">
@@ -30,7 +36,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Name</div>
-                            <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_data']->name}}</div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_data']->name." ".$userInfo['user_data']->middle_name." ".$userInfo['user_data']->last_name}}</div>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Email Address</div>
