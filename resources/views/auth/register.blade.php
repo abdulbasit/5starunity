@@ -7,6 +7,13 @@
     height: auto !important;
 
 }
+help{
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: #888;
+}
 .label {
     font-size: 13px;
     font-weight: normal;
@@ -313,7 +320,7 @@ label.error {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
+                            <div class="col-lg-10 col-xs-12 form-group" style="margin-bottom:0px">
                                 <label for="profile_pic" class="form-label" style="width:145px">Identity Proof <font color="red"> *</font></label>
                                 <div class="form-file" id="id_prrof">
                                     <input type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" />
@@ -321,6 +328,10 @@ label.error {
                                     <span id='button2'>Select File</span>
                                 </div>
                             </div>
+                            <help >
+                                    Only Identity proof: Passport/ National ID card:
+                                    you can select  multiple images: Front page, back page
+                            </help>
                         </div>
                     </div>
                     <div class="fieldset-footer">
@@ -421,7 +432,7 @@ function getCountrySates()
 function calcAge()
 {
     var dateOfBirth = $("#dob").val();
-    dateOfBirth = dateOfBirth.split('-');
+    dateOfBirth = dateOfBirth.split('.');
     // dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]
     var age = calculateAge(dateOfBirth[1], dateOfBirth[0], dateOfBirth[2]);
     if(age<18)

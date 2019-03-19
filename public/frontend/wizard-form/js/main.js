@@ -84,7 +84,7 @@
             //     }
 
             var dateOfBirth = $("#dob").val();
-            dateOfBirth = dateOfBirth.split('-');
+            dateOfBirth = dateOfBirth.split('.');
             // dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]
             var age = calculateAgeValidate(dateOfBirth[1], dateOfBirth[0], dateOfBirth[2]);
             if(age<18)
@@ -102,25 +102,21 @@
                 $("#dob-error").html(' ');
                 $("#dob").removeClass('error');
             }
-
-            if(form.valid()===false)
-                {
-                    if($("#resident_proof").val()=="")
-                        {
-                            $("#resd_proof").addClass('form_error');
-                        }
-                        if($("#identity_card").val()=="")
-                        {
-                            $("#id_prrof").addClass('form_error');
-                        }
-                    return false;
-                }
+            if($("#identity_card").val()=="")
+            {
+                $("#id_prrof").addClass('form_error');
+                return false;
+            }
+            else{
+                $("#id_prrof").removeClass('form_error');
+            }
             return form.valid();
         },
         onFinished: function(event, currentIndex) {
+            $(".actions ul li:nth-child(2) a").html('Waite...')
             setTimeout(function (){
                 $( "#signup-form" ).submit();
-            },2000);
+            },1000);
 
         },
         // onInit : function (event, currentIndex) {
