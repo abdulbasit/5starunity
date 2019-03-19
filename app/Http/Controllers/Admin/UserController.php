@@ -25,12 +25,13 @@ class UserController extends Controller
         $document_status = UserDocument::where('id',$id)->first();
         $document_status->status ="0";
         $document_status->save();
-        return redirect('admin/user/documents');
+        return redirect('admin/user/documents/'.$document_status->user_id);
     }
     public function cancel($id,Request $request)
     {
+
         $document_status = UserDocument::where('id',$id)->first();
-        $document_status->status ="0";
+        $document_status->status ="1";
         $document_status->notes =$request->get('notes');
         $document_status->save();
     }

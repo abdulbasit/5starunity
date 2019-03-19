@@ -91,11 +91,18 @@
                             {{date('d-m-Y H:i:s', strtotime($documents->created_at))}}
                         </td>
                         <td>
-                            @if($documents->status=='0')
-                                <a href="{{ route('admin.user.documents.approve',$documents->id) }}"><i class="fa fa-check"></i> Approve</a>
-                            @else
-                                <a onclick="cancel({{$documents->id}})" class="red" href="#"><i class="fa fa-times"></i>  Cancel</a>
-                            @endif
+                            <div class="col-sm-3 col-6">
+                                <div class="btn-group mr-1 mb-1">
+                                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Action
+                                    </button>
+                                    <div class="dropdown-menu arrow " id="options">
+                                        <a class="dropdown-item"  href="{{ route('admin.user.documents.approve',$documents->id) }}"><i class="fa fa-check"></i> Approve</a>
+                                        <a class="dropdown-item"  onclick="cancel({{$documents->id}})" class="red" href="#"><i class="fa fa-times"></i>  Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                       </tr>
                       @endforeach
@@ -137,7 +144,7 @@
             $('#info').modal('hide');
             setTimeout(function(){
                 location.reload();
-            },3000);
+            },1000);
         });
     });
     function cancel(id)
