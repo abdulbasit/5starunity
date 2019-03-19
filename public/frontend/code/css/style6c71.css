@@ -19,6 +19,10 @@ html {
     font-family: "open-sans-regular";
     src: url("fonts/open-sans/OpenSans-Regular.ttf");
     }
+
+.validateSuccess{
+    border:solid 1px green
+}
 body {
   margin: 0;
 }

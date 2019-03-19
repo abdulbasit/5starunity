@@ -92,6 +92,7 @@
 @endsection
 @section('script')
 <script>
+
 $("#usersT").DataTable();
 </script>
 @endsection

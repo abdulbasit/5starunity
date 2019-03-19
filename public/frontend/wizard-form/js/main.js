@@ -55,32 +55,54 @@
                 $("#state").removeClass('form_error');
                 $("#country").removeClass('form_error');
 
-                var dateOfBirth = $("#dob").val();
-
-                dateOfBirth = dateOfBirth.split('-');
-                today = new Date()
-                past = new Date(dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]);
-                ageDiff = calcDate(today,past)
-                if(ageDiff<=18)
-                {
-                    $("#dob").addClass('form_error');
-                    $("#dobMsg").html('You must be 18+');
-                    return false;
-                }
-                else
-                {
-                    $("#dob").removeClass('form_error');
-                    $("#dobMsg").html('');
-                }
-
-
             // console.log(form.steps("getCurrentIndex"));
             return form.valid();
         },
         onFinishing: function(event, currentIndex)
         {
+
             form.validate().settings.ignore = ":disabled";
             console.log(currentIndex);
+
+            // var dateOfBirth = $("#dob").val();
+
+            //     dateOfBirth = dateOfBirth.split('-');
+            //     today = new Date()
+            //     past = new Date(dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]);
+            //     ageDiff = calcDate(today,past)
+
+            //     if(ageDiff<=18)
+            //     {
+            //         $("#dob").addClass('form_error');
+            //         $("#dobMsg").html('You must bee 18+');
+            //         return false;
+            //     }
+            //     else
+            //     {
+            //         $("#dob").removeClass('form_error');
+            //         $("#dobMsg").html('');
+            //     }
+
+            var dateOfBirth = $("#dob").val();
+            dateOfBirth = dateOfBirth.split('-');
+            // dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]
+            var age = calculateAgeValidate(dateOfBirth[1], dateOfBirth[0], dateOfBirth[2]);
+            if(age<18)
+            {
+                setTimeout(function(){
+                    $("#dob").addClass('error');
+                    $("#dob-error").css('display','block');
+                    $("#dob-error").html('You must be 18+');
+                },1000);
+                return false;
+            }
+            else
+            {
+                $("#dob-error").css('display','none');
+                $("#dob-error").html(' ');
+                $("#dob").removeClass('error');
+            }
+
             if(form.valid()===false)
                 {
                     if($("#resident_proof").val()=="")
@@ -161,5 +183,21 @@
         return years
         }
 
+function calculateAgeValidate(birthMonth, birthDay, birthYear) {
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
+    var currentMonth = currentDate.getMonth();
+    var currentDay = currentDate.getDate();
+    var calculatedAge = currentYear - birthYear;
+
+    if (currentMonth < birthMonth - 1) {
+        calculatedAge--;
+    }
+    if (birthMonth - 1 == currentMonth && currentDay < birthDay)
+    {
+        calculatedAge--;
+    }
+        return calculatedAge;
+}
 
 })(jQuery);

@@ -248,7 +248,8 @@ label.error {
                         <div class="row">
                             <div class="col-lg-10 col-xs-12 form-group">
                                 <label for="dob" class="form-label">Date of Birth <font color="red"> *</font></label>
-                                <input required="required" type="text" class="form-control" name="dob" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" />
+                                <label id="dob-error" class="error" for="dob" style="display: none;"></label>
+                                <input onchange="calcAge()" required="required" type="text" class="form-control" name="dob" id="dob" placeholder="Date of Birth (DD.MM.YYYY)" />
                             </div>
                             <div class="error_msg" id="dobMsg"></div>
                         </div>
@@ -417,6 +418,43 @@ function getCountrySates()
            $("#state").html(msg);
         });
 }
+function calcAge()
+{
+    var dateOfBirth = $("#dob").val();
+    dateOfBirth = dateOfBirth.split('-');
+    // dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]
+    var age = calculateAge(dateOfBirth[1], dateOfBirth[0], dateOfBirth[2]);
+    if(age<18)
+    {
+        setTimeout(function(){
+            $("#dob").addClass('error');
+            $("#dob-error").css('display','block');
+            $("#dob-error").html('You must be 18+');
+        },1000);
+    }
+    else
+    {
+        $("#dob-error").css('display','none');
+        $("#dob-error").html(' ');
+        $("#dob").removeClass('error');
+    }
+}
+function calculateAge(birthMonth, birthDay, birthYear) {
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
+    var currentMonth = currentDate.getMonth();
+    var currentDay = currentDate.getDate();
+    var calculatedAge = currentYear - birthYear;
+
+    if (currentMonth < birthMonth - 1) {
+        calculatedAge--;
+    }
+    if (birthMonth - 1 == currentMonth && currentDay < birthDay)
+    {
+        calculatedAge--;
+    }
+        return calculatedAge;
+    }
 </script>
 @endsection
 @endsection
