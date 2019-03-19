@@ -11,6 +11,7 @@
                 {
                     $("#country").addClass('form_error');
                 }
+
             element.before(error);
         },
         rules: {

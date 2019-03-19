@@ -25,11 +25,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($userData as $user)
+                        @foreach($userData as $i=>$user)
                       <tr>
-                        <td>{{$user->name}}</td>
+                        <td>{{$user->name}} {{$user->middle_name}} {{$user->last_name}} </td>
                         <td>{{$user->email}}</td>
-                        <td>{{date('d-m-Y ', strtotime($userData[0]->userProfile->dob))}}</td>
+                        <td>{{date('d-m-Y ', strtotime($userData[$i]->userProfile->dob))}}</td>
                         <td>
                             @if($user->status=="0" && $user->verification=="")
                                <span class="badge badge-primary"> Active</span>
@@ -87,10 +87,8 @@
           </div>
         </div>
       </section>
-
      </div>
   </div>
-
 @endsection
 @section('script')
 <script>

@@ -29,6 +29,8 @@ Route::get('home1', 'HomeController@index')->name('home1');
     Route::post('register/save', 'Auth\RegisterController@create')->name('register.save');
     Route::get('email/verification/{token}', 'Auth\RegisterController@verify_email');
     Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');
+    Route::post('check_email', 'Auth\RegisterController@check_email');
+    Route::post('check_email', 'Auth\RegisterController@check_email')->name('check_email');
 
     //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {

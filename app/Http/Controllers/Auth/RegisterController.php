@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use App\Mail\RegistrationEmail;
 use Illuminate\Support\Facades\Mail;
 use Auth;
+use DB;
 class RegisterController extends Controller
 {
 
@@ -115,28 +116,28 @@ class RegisterController extends Controller
             "house_number"=>$request->get('hnumber')
         ]);
 
-        $resProofImg = public_path('uploads/users/documents_proofs/res_proof');
-        foreach ($resident_proof as $resident_proofImage)
-        {
-            $resident_proofImage->getClientOriginalName();
-            $resident_proofImage->getClientOriginalExtension();
-            $resident_proofImage->getRealPath();
-            $resident_proofImage->getSize();
-            $resident_proofImage->getMimeType();
+        // $resProofImg = public_path('uploads/users/documents_proofs/res_proof');
+        // foreach ($resident_proof as $resident_proofImage)
+        // {
+        //     $resident_proofImage->getClientOriginalName();
+        //     $resident_proofImage->getClientOriginalExtension();
+        //     $resident_proofImage->getRealPath();
+        //     $resident_proofImage->getSize();
+        //     $resident_proofImage->getMimeType();
 
-            //Move Uploaded File
-            $res_poroof = time().'_5star_res_proof.'.$resident_proofImage->getClientOriginalExtension();
-            $resident_proofImage->move($resProofImg, $res_poroof);
+        //     //Move Uploaded File
+        //     $res_poroof = time().'_5star_res_proof.'.$resident_proofImage->getClientOriginalExtension();
+        //     $resident_proofImage->move($resProofImg, $res_poroof);
 
-            $product_images = UserDocument::create([
-                "user_id" => $user_id->id,
-                "res_proof"=>$res_poroof,
-                "status"=>'1',
-                'updated_at'=>Carbon::now(),
-                'created_at'=>Carbon::now(),
-                "type"=>'res'
-            ]);
-        }
+        //     $product_images = UserDocument::create([
+        //         "user_id" => $user_id->id,
+        //         "res_proof"=>$res_poroof,
+        //         "status"=>'1',
+        //         'updated_at'=>Carbon::now(),
+        //         'created_at'=>Carbon::now(),
+        //         "type"=>'res'
+        //     ]);
+        // }
 
         $idProofImg = public_path('uploads/users/documents_proofs/id_proof');
         foreach ($identity_card as $identity_proofImage)
@@ -178,6 +179,13 @@ class RegisterController extends Controller
             return redirect()->route('login')->with('error','Sorry. No Record Found! ');
         }
 
+    }
+    public function check_email(Request $request)
+    {
+
+         $emailCheck = User::where('email',$request->get('email'))->count();
+         if($emailCheck>0)
+            echo  $response = "error";
     }
     public function mailSend($mailData)
     {
