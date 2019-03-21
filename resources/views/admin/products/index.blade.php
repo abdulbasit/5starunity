@@ -44,6 +44,7 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Price</th>
+                        <th>Product Class</th>
                         <th>Created at</th>
                         <th>Status</th>
                         <th>Options</th>
@@ -55,6 +56,13 @@
                         <td>{{$product->id}}</td>
                         <td>{{$product->pro_name}}</td>
                         <td>{{$product->pro_price}}</td>
+                        <td>
+                            @if($product->pro_class=="")
+                                Not defined
+                            @else
+                                {{$product->pro_class}}
+                            @endif
+                        </td>
                         <td>{{$product->created_at}}</td>
                         <td>
                             @if($product->pro_status==0)
@@ -87,6 +95,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Price</th>
+                            <th>Product Class</th>
                             <th>Created at</th>
                             <th>Status</th>
                             <th>Options</th>

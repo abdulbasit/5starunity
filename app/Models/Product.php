@@ -8,12 +8,15 @@ class Product extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'pro_name', 'pro_detail', 'pro_status', 'pro_price',
+        'pro_name', 'pro_detail', 'pro_status', 'pro_price','pro_class'
     ];
-
     public function product_images()
     {
         return $this->belongsTo('App\Models\Product_images');
+    }
+    public function pro_classification()
+    {
+        return $this->belongsTo('App\Models\ProClassification');
     }
 
     protected $dates = ['deleted_at'];

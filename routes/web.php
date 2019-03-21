@@ -75,6 +75,7 @@ Route::get('home1', 'HomeController@index')->name('home1');
 
     //products routes
     Route::get('products', 'ProductController@index')->name('products');
+    Route::post('ajax/check_class', 'ProductController@check_class')->name('ajax.check_class');
     Route::get('product/create', 'ProductController@create')->name('product.create');
     Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
     Route::get('product/category/create', 'ProductController@createCategories')->name('product.category.create');

@@ -54,9 +54,11 @@
                             </div>
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput3">Price</label>
-                              <div class="col-md-9">
-                                <input type="text" id="price" required="required" class="form-control" placeholder="Product Price" name="price">
+                              <div class="col-md-6">
+                                <input type="text" id="price" onchange="check_class()" required="required" class="form-control" placeholder="Product Price" name="price">
                               </div>
+                                <input type="hidden" id="class_id" name="class_id" value="">
+                              <div class="col-md-3" id="product_class" style="padding-top:10px"></div>
                             </div>
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput4">Status</label>
@@ -115,5 +117,47 @@ $("#price").change(function(){
         $(this).focus();
     }
 });
+function check_class()
+{
+    var price = $("#price").val();
+
+    if(price=="" || price < 200)
+    {
+        $("#price").val("");
+        $("#price").css('border','solid 1px red');
+        $("#product_class").css('color','red');
+        $('#product_class').html('Price must be greater then 200');
+        return false;
+    }
+
+    $("#price").removeAttr('style');
+    $("#product_class").css('color','black');
+
+    if(price>= 200 && price<=1499)
+    {
+        $('#product_class').html('Class 1 Product');
+        $("#class_id").val(1);
+    }
+    else if(price >= 1500 && price <= 3999)
+    {
+        $('#product_class').html('Class 2 Product');
+        $("#class_id").val(2);
+    }
+    else if(price >= 4000 && price <= 7999)
+    {
+        $('#product_class').html('Class 3 Product');
+        $("#class_id").val(3);
+    }
+    else if(price >= 8000 && price <= 15999)
+    {
+        $('#product_class').html('Class 4 Product');
+        $("#class_id").val(4);
+    }
+    else
+    {
+        $('#product_class').html('Class 5 Product');
+        $("#class_id").val(5);
+    }
+}
 </script>
 @endsection

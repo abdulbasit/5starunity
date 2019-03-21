@@ -7,7 +7,9 @@ use Auth;
 use Image;
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\ProClassification;
 use App\Models\Product_images;
+use DB;
 class ProductController extends Controller
 {
     public function index()
@@ -44,6 +46,7 @@ class ProductController extends Controller
         $product->pro_status=$request->get("status");
         $product->pro_price=$request->get("price");
         $product->updated_at=Carbon::now();
+        $product->pro_class=$request->get('class_id');
         $product->save();
 
         $data = $request->all();
@@ -60,15 +63,6 @@ class ProductController extends Controller
                 $image->getRealPath();
                 $image->getSize();
                 $image->getMimeType();
-                //Move Uploaded File
-
-
-                // $thumbName = time().$i.'_5starunity_thumb.'.$image->getClientOriginalExtension();
-                // Image::make($file)->widen(100)->greyscale()->response();
-                // ->insert('public/watermark.png');
-
-                // $image->move($thumbnailPath, $thumbName);
-
                 $imageName = time().$i.'_5starunity.'.$image->getClientOriginalExtension();
                 $image->move($destinationPath, $imageName);
 
@@ -103,6 +97,7 @@ class ProductController extends Controller
             "pro_price"=>$request->get("price"),
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now(),
+            "pro_class"=>$request->get('class_id')
         ]);
         $data = $request->all();
         $file = $request->file('images');
@@ -118,14 +113,6 @@ class ProductController extends Controller
             $image->getSize();
             $image->getMimeType();
             //Move Uploaded File
-
-
-            // $thumbName = time().$i.'_5starunity_thumb.'.$image->getClientOriginalExtension();
-            // Image::make($file)->widen(100)->greyscale()->response();
-            // ->insert('public/watermark.png');
-
-            // $image->move($thumbnailPath, $thumbName);
-
             $imageName = time().$i.'_5starunity.'.$image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
 
@@ -138,5 +125,4 @@ class ProductController extends Controller
         }
         return redirect('admin/product/create');
     }
-
 }
