@@ -135,27 +135,27 @@ function check_class()
 
     if(price>= 200 && price<=1499)
     {
-        $('#product_class').html('Class 1 Product');
+        $('#product_class').html('<strong>Product Class 1</strong>');
         $("#class_id").val(1);
     }
     else if(price >= 1500 && price <= 3999)
     {
-        $('#product_class').html('Class 2 Product');
+        $('#product_class').html('<strong>Product Class 2</strong>');
         $("#class_id").val(2);
     }
     else if(price >= 4000 && price <= 7999)
     {
-        $('#product_class').html('Class 3 Product');
+        $('#product_class').html('<strong>Product Class 3</strong>');
         $("#class_id").val(3);
     }
     else if(price >= 8000 && price <= 15999)
     {
-        $('#product_class').html('Class 4 Product');
+        $('#product_class').html('<strong>Product Class 4</strong>');
         $("#class_id").val(4);
     }
     else
     {
-        $('#product_class').html('Class 5 Product');
+        $('#product_class').html('<strong>Product Class 5 </strong>');
         $("#class_id").val(5);
     }
 }

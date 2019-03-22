@@ -102,21 +102,21 @@
                         </div>
                         <div class="col-md-3">
                             <input required="required" value="2.5" type="text" id="factor" class="form-control" placeholder="Enter factor eg.(2.3)"  name="factor" readonly="readonly">
-                            <small class="text-muted"  style="position: relative">Enter your factor amount</small>
+                            <small class="text-muted"  style="position: relative">Factor</small>
                         </div>
                     </div>
                     <div class="form-group row" style="margin: 0px">
-                        <label class="col-md-3 label-control" for="projectinput1">Lot Amount</label>
+                        <label class="col-md-3 label-control" for="projectinput1">Total Lot Amount (€)</label>
                         <div class="col-md-6">
                             <input readonly="readonly" required="required" type="text" onchange="getAmount()" id="lot_amount" class="form-control" placeholder="Enter Lottery Amount"  name="lot_amount">
                         </div>
                         <div class="col-md-3" style="top:30px; position: relative">
                             <input required="required" type="text" id="one_lot"  class="form-control" placeholder="One Lot Amount.."  name="one_lot_amount" style="border:0px" readonly="readonly">
-                            <small class="text-muted"  style=" position: relative">One lot cost will be.</small>
+                            <small class="text-muted"  style=" position: relative">Taler per lot </small>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-3 label-control" for="projectinput1">Total Lots</label>
+                        <label class="col-md-3 label-control" for="projectinput1">Max No. of Lots</label>
                         <div class="col-md-6">
                             <input readonly="readonly" required="required" type="text" onchange="getAmount()" id="total_lots" class="form-control" placeholder="Total Contestents eg.(10)"  name="total_lots">
                         </div>
