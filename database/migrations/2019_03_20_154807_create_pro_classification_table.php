@@ -14,12 +14,12 @@ class CreateProClassificationTable extends Migration
     {
         Schema::create('pro_classifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('class');
-            $table->float('min_price');
-            $table->float('max_price');
-            $table->float('factor');
-            $table->integer('per_lot_amount');
-            $table->float('coins_per_lot');
+            $table->integer('class')->nullable();
+            $table->float('min_price')->nullable();
+            $table->float('max_price')->nullable();
+            $table->float('factor')->nullable();
+            $table->integer('per_lot_amount')->nullable();
+            $table->float('coins_per_lot')->nullable();
             $table->timestamps();
         });
         DB::table('pro_classifications')->insert(
