@@ -16,6 +16,10 @@ class Lottery extends Model
     {
         return $this->belongsTo('App\Models\Product','pro_id');
     }
+    public function lottery_contestent()
+    {
+        return $this->hasMany('App\Models\LotteryContestent','lottery_id');
+    }
     protected $dates = ['deleted_at'];
 
 }

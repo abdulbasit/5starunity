@@ -12,8 +12,9 @@ class Product extends Model
     ];
     public function product_images()
     {
-        return $this->belongsTo('App\Models\Product_images');
+        return $this->hasMany('App\Models\Product_images','pro_id');
     }
+
     public function pro_classification()
     {
         return $this->belongsTo('App\Models\ProClassification');

@@ -226,7 +226,7 @@
                                     <br />
                                     <li>
                                         <font color="black">
-                                        Designed and Developed by <font color="blue">Xnowad.com</font>
+                                            Designed and Developed by <a href="https:://www.xnowad.com" target="_blank"><font color="blue" size="4">Xnowad.com</font></a>
                                         </font>
                                     </li>
                                 </ul>

@@ -11,9 +11,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('mail/send', 'MailController@send');

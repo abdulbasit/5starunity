@@ -3,27 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Product;
+use App\Models\Product_images;
+use App\Models\Lottery;
+use App\Models\LotteryContestent;
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware(['auth', 'verified']);
+        // $this->middleware('auth');
+        // $this->middleware(['auth', 'verified']);
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('welcome');
+        $lotteryData = Lottery::with('product','lottery_contestent')->get();
+        return view('welcome',compact('lotteryData'));
     }
 }
