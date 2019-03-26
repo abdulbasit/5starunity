@@ -1,6 +1,6 @@
 @extends('admin.layouts.apps')
 @section('style')
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/froala_editor.css')}}">
+{{-- <link rel="stylesheet" href="{{ asset('app-assets/editor/css/froala_editor.css')}}">
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/froala_style.css')}}">
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/code_view.css')}}">
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image_manager.css')}}">
@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/table.css')}}">
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/video.css')}}">
 <link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image_manager.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image.css')}}">
+<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image.css')}}"> --}}
 <style>
 .fr-box.fr-basic .fr-element
 {
@@ -95,7 +95,8 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control" for="address">Description</label>
                                     <div class="col-md-9">
-                                        <textarea required="required" id="desc" rows="12" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea>
+                                        <textarea id="summernote" name="desc"></textarea>
+                                        {{-- <textarea required="required" id="desc" rows="12" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea> --}}
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -154,11 +155,25 @@
                 </div>
               </div>
             </section>
+
             <!-- // Basic form layout section end -->
           </div>
         </div>
 @endsection
 @section('script')
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 300
+    });
+</script>
+
+
+{{--
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/froala_editor.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/froala_editor.min.js')}}" ></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/char_counter.min.js')}}"></script>
@@ -185,7 +200,7 @@
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/table.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/save.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/url.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/video.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/video.min.js')}}"></script> --}}
 <script>
 $("#yes").click(function(){
     window.location.href = "/admin/blog"

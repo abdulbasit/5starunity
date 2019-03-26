@@ -164,6 +164,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Waavi\Translation\TranslationServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
