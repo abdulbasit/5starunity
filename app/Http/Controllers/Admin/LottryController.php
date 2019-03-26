@@ -57,7 +57,7 @@ class LottryController extends Controller
         $lottery = Lottery::find($id);
         $lottery->name=$request->get("name");
         $lottery->description=$request->get("desc");
-        $lottery->pro_id=$id;
+        $lottery->pro_id=$request->get("pro_id");
         $lottery->lot_amount=$request->get("lot_amount");
         $lottery->min_lot_amount=$request->get("min_lot");
         $lottery->max_lot_amount=$request->get("max_lot");

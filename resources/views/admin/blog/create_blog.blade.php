@@ -198,12 +198,18 @@ $("#yes").click(function(){
                 reader.onload = function (e) {
                   var result = e.target.result;
                   editor.image.insert(result, null, null, editor.image.get());
+                  console.log(files);
                 };
+                // console.log(files[0]);
                 reader.readAsDataURL(files[0]);
               }
 
               return false;
             })
         });
+
+
+
 </script>
+
 @endsection

@@ -80,9 +80,9 @@
                                             <label class="col-md-3 label-control" for="projectinput4">Status</label>
                                             <div class="col-md-9">
                                                 <select id="status" name="status" class="form-control">
-                                    <option value="0" {{old('pro_status',$productInfo->pro_status)=="0"? 'selected':''}}>Active</option>
-                                    <option value="1" {{old('pro_status',$productInfo->pro_status)=="1"? 'selected':''}}>InActive</option>
-                                </select>
+                                                    <option value="0" {{old('pro_status',$productInfo->pro_status)=="0"? 'selected':''}}>Active</option>
+                                                    <option value="1" {{old('pro_status',$productInfo->pro_status)=="1"? 'selected':''}}>InActive</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">

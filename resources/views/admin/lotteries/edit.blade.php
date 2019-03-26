@@ -1,5 +1,19 @@
 @extends('admin.layouts.apps')
 @section('style')
+<style>
+    .product_class{
+        color: #888888;
+        width: 100%;
+        padding-top: 5px;
+        float: left;
+        text-align: left;
+        font-weight: bold
+    }
+    .green
+    {
+        color:#8eea00 !important
+    }
+</style>
 <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/pickers/daterange/daterangepicker.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/pickers/datetime/bootstrap-datetimepicker.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/pickers/pickadate/pickadate.css')}}">
@@ -47,11 +61,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                              <label class="col-md-3 label-control" for="projectinput1">Parent Category</label>
+                              <label class="col-md-3 label-control" for="projectinput1">Product  </label>
                               <div class="col-md-9">
-                                <select id="pro_id" name="pro_id" class="form-control">
+
+                                <select id="pro_id" name="pro_id" class="form-control" onchange="getProPrice()">
                                     @foreach($products as $product)
-                                        <option {{old('pro_status',$product->pro_id)==$lottery->product->id? 'selected':''}}value="{{$product->id}}">{{$product->pro_name}}</option>
+                                        <option {{old('id',$product->id)==$lottery->product->id? 'selected':''}} pro-price="{{$product->pro_price}}" value="{{$product->id}}">{{$product->pro_name}}</option>
                                     @endforeach
                                 </select>
                               </div>
@@ -60,16 +75,17 @@
                                 <label class="col-md-3 label-control" for="projectinput1">Product Price</label>
                                 <div class="col-md-6">
                                     <input required="required" type="text" value="{{$lottery->product->pro_price}}" readonly="readonly" id="pro_price" class="form-control" placeholder=""  name="pro_price">
+                                    <span class="product_class" id="product_class"></span>
                                 </div>
                                 <div class="col-md-3">
-                                    <input required="required" type="text" id="factor" value="{{$lottery->factor_amount}}" class="form-control" placeholder="Enter factor eg.(2.3)"  name="factor">
+                                    <input readonly="readonly" required="required" type="text" id="factor" value="{{$lottery->factor_amount}}" class="form-control" placeholder="Enter factor eg.(2.3)"  name="factor">
                                     <small class="text-muted"  style="position: relative">Enter your factor amount</small>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Lot Amount</label>
                                 <div class="col-md-6">
-                                    <input type="text" value="{{$lottery->lot_amount}}" onchange="getAmount()" id="lot_amount" class="form-control" placeholder="Enter Lottery Amount"  name="lot_amount">
+                                    <input readonly="readonly" type="text" value="{{$lottery->lot_amount}}" onchange="getAmount()" id="lot_amount" class="form-control" placeholder="Enter Lottery Amount"  name="lot_amount">
                                 </div>
                                 <div class="col-md-3" style="top:30px; position: relative">
                                     <input type="text" value="{{$lottery->one_lot_amount}}" id="one_lot" class="form-control" placeholder="One Lot Amount.."  name="one_lot_amount" style="border:0px" readonly="readonly">
@@ -79,10 +95,10 @@
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Total Lots</label>
                                 <div class="col-md-6">
-                                    <input type="text" value="{{$lottery->total_lots}}" onchange="getAmount()" id="total_lots" class="form-control" placeholder="Total Contestents eg.(10)"  name="total_lots">
+                                    <input readonly="readonly" type="text" value="{{$lottery->total_lots}}" onchange="getAmount()" id="total_lots" class="form-control" placeholder="Total Contestents eg.(10)"  name="total_lots">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            {{-- <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Min Lots</label>
                                 <div class="col-md-9">
                                     <input type="text" value="{{$lottery->min_lot_amount}}" id="min_lot" class="form-control" placeholder="Enter Min Lottery"  name="min_lot">
@@ -93,7 +109,7 @@
                                 <div class="col-md-9">
                                     <input type="text" value="{{$lottery->max_lot_amount}}" id="max_lot" class="form-control" placeholder="Enter Max Lottery"  name="max_lot">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Start Date</label>
                                 <div class="input-group col-md-9">
@@ -195,5 +211,74 @@ $("#end_date").change(function(){
         $(this).val(today);
     }
 });
+$( document ).ready(function() {
+    getProPrice();
+});
+function getProPrice(){
+
+    var option = $('option:selected', "#pro_id").attr('pro-price');
+    $("#price").fadeIn(function (){
+    $("#pro_price").val(option);
+    setTimeout(function (){
+        //factor reactions add here on page load
+        var factor = $("#factor").val();
+        var pro_price = $("#pro_price").val();
+        var lotAmount = pro_price*factor;
+        $("#lot_amount").val(lotAmount.toFixed(0));
+        //check product class
+        check_class();
+    },1000);
+    });
+}
+function check_class()
+{
+
+    var price = $("#pro_price").val();
+    if(price=="" || price < 200)
+    {
+        alert('dd');
+        // $("#pro_price").val("");
+        $("#pro_price").css('border','solid 1px red');
+        $("#product_class").css('color','red');
+        $('#product_class').html('Price must be greater then 200');
+        return false;
+    }
+
+    $("#pro_price").removeAttr('style');
+    $("#product_class").css('color','black');
+
+    if(price>= 200 && price<=1499)
+    {
+        $('#product_class').html('Product Class: <span class="green">1 </span>, Coins Per lot: <span id="coins" class="green">1</span>');
+        $("#class_id").val(1);
+    }
+    else if(price >= 1500 && price <= 3999)
+    {
+        $('#product_class').html('Product Class: <span class="green">2</span>, Coins Per lot: <span  id="coins" class="green">2</span>');
+        $("#class_id").val(2);
+    }
+    else if(price >= 4000 && price <= 7999)
+    {
+        $('#product_class').html('Product Class: <span class="green">3</span>, Coins Per lot: <span  id="coins" class="green">4</span>');
+        $("#class_id").val(3);
+    }
+    else if(price >= 8000 && price <= 15999)
+    {
+        $('#product_class').html('Product Class: <span class="green">4</span>, Coins Per lot: <span  id="coins" class="green">8</span>');
+        $("#class_id").val(4);
+    }
+    else
+    {
+        $('#product_class').html('Product Class: <span class="green">4</span>, Coins Per lot: <span  id="coins" class="green">12</span>');
+        $("#class_id").val(5);
+    }
+    setTimeout(function(){
+        var lot_amount = $("#lot_amount").val();
+        var coins = $("#coins").text();
+        var total_lots = lot_amount/coins;
+        $("#one_lot").val(coins);
+        $("#total_lots").val(total_lots.toFixed(0));
+    },500);
+}
 </script>
 @endsection

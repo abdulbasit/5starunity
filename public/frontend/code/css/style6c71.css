@@ -2107,19 +2107,24 @@ pre code {
     {
         text-align:right
     }
+    #why5star
+    {
+        margin-top:120px
+    }
     .prof
     {
         margin-top:180px
     }
+
     section.sfslf-background {
 
         height:600px !important;
       }
     .button-container-heading {
-        margin-top: 183px !important;
+        margin-top: 255px !important;
     }
     .button-container3rd {
-        margin-top: 144px !important;
+        margin-top: 210px !important;
     }
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
@@ -15624,9 +15629,9 @@ section.homepage-popular-startups .preinvestFlagNew {
   background: #429AB0;
 }
 @media (min-width: 1200px) {
-  section.homepage-popular-startups .section-title {
+  /* section.homepage-popular-startups .section-title {
     padding-bottom: 240px;
-  }
+  } */
   .all-startups-background
   {
       height:650px !important;
