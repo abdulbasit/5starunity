@@ -1,4 +1,4 @@
-{{--
+
 @extends('layouts.app')
 @section('content')
 
@@ -174,4 +174,4 @@
     <!--googleon: all--></div>        </div>
         </div>
     </div>
-@endsection --}}
+@endsection
