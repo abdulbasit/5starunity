@@ -15,7 +15,7 @@ class LottryController extends Controller
     public function index()
     {
         $lotteries = Lottery::with('product')->get();
-        dd($lotteries);
+        dd($lotteries[0]->product);
         return view('admin.lotteries.index',compact('lotteries'));
     }
     public function create()
