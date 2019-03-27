@@ -16,7 +16,6 @@ class CreateBlogsCommentsTable extends Migration
         Schema::create('blog_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->text('comment')->nullable();
-            $table->integer('user_id');
             $table->boolean('status')->default(1);
             $table->boolean('helpfull')->nullable();
             $table->softDeletes();
