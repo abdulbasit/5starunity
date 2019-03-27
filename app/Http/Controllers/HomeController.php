@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function index()
     {
         $lotteryData = Lottery::with('product','lottery_contestent')->get();
+        dd($lotteryData[0]->product->product_images[0]);
         return view('welcome',compact('lotteryData'));
     }
 }

@@ -171,7 +171,7 @@
         <div class="container listing_container" id="list_startups">
                 <div class="row row_for_mobile">
                 <span id="total_pages" data-total="111"></span>
-                @foreach($lotteryData as $lottery)
+                @foreach($lotteryData as $i=>$lottery)
                     <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes " data-uri="https://www.companisto.com/de/investment/vanilla-bean"
                                 itemscope itemtype="http://schema.org/Product">
                         <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
@@ -189,14 +189,14 @@
 
                                 <p itemprop="description">
                                     <a class="lot_desc" href="investment/vanilla-bean.html" title="{{$lottery->name}}">
-                                        {{$lottery->description}} {{$lottery->product->product_images[0]->pro_image}}
+                                        {{$lottery->description}}
                                     </a>
                                 </p>
                                 <span class="typeStartupBg"><span></span></span>
                             </div>
                             <div class="row finance_info">
                                 <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                            Ziel: {{$lottery->lot_amount}} &euro;
+                                    Ziel: {{$lottery->lot_amount}} &euro;
                                 </div>
                                 {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
                                     <div class="block_time_left">

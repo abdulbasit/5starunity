@@ -166,7 +166,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
 <script>
     $('#summernote').summernote({
-        placeholder: 'Hello stand alone ui',
+        placeholder: '',
         tabsize: 2,
         height: 300
     });
