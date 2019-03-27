@@ -19,10 +19,6 @@ class AddBlogIdBlogCommentsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
-        Schema::table('blogs', function (Blueprint $table) {
-            $table->unsignedInteger('cat_id');
-            $table->foreign('cat_id')->references('id')->on('categories');
-        });
     }
 
     /**
@@ -37,9 +33,6 @@ class AddBlogIdBlogCommentsTable extends Migration
             $table->dropForeign('blog_comments_blog_id_foreign');
             $table->dropForeign('blog_comments_user_id_foreign');
         });
-        Schema::table('blogs', function (Blueprint $table) {
-            Schema::enableForeignKeyConstraints();
-            $table->dropForeign('categories_cat_id_foreign');
-        });
+
     }
 }
