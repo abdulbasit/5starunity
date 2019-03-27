@@ -43,6 +43,10 @@ class BlogController extends Controller
     }
     public function updateBlog($id,Request $request)
     {
+        ini_set('memory_limit', '100192M');
+        ini_set("post_max_size","6G");
+        ini_set("upload_max_filesize","4G");
+        $file = $request->file('image');
         // $pdo->query("SET wait_timeout=1200;");
          ini_set('wait_timeout', '12000');
          ini_set('memory_limit', '100192M');
@@ -73,8 +77,10 @@ class BlogController extends Controller
     }
     public function saveBlog(Request $request)
     {
+        ini_set('memory_limit', '100192M');
+        ini_set("post_max_size","10024M");
+        ini_set("upload_max_filesize","20024M");
         $file = $request->file('image');
-
         $destinationPath = public_path('uploads/blog/');
         $imageName = time().'_5starunity.'.$file->getClientOriginalExtension();
         $file->move($destinationPath, $imageName);
