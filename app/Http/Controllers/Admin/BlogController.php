@@ -99,7 +99,7 @@ class BlogController extends Controller
             "post_author"=>Auth::guard('admin')->user()->id,
             "post_name"=>str_replace(" ","-", strtolower($request->get("mtitle")))
         ]);
-        // return redirect('admin/blog');
+        return redirect('admin/blog');
     }
     public function createCategory()
     {
