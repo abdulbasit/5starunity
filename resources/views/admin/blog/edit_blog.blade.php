@@ -101,6 +101,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control" for="address">Description</label>
                                     <div class="col-md-9">
+
                                         <textarea id="summernote" name="desc">{{$blog->description}}</textarea>
                                         {{-- <textarea required="required" id="desc" rows="12" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea> --}}
                                     </div>

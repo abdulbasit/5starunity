@@ -15,6 +15,10 @@ class Blog extends Model
     {
         return $this->belongsTo('App\Models\Category','cat_id');
     }
+    public function blog_comments()
+    {
+        return $this->hasMany('App\Models\BlogComment');
+    }
     public function product()
     {
         return $this->belongsTo('App\Models\Product','pro_id');

@@ -8,6 +8,7 @@ use App\Models\Product_images;
 use App\Models\Lottery;
 use App\Models\LotteryContestent;
 use App\Models\Blog;
+use App\Models\BlogComment;
 use App\Models\Testimonial;
 class BlogController extends Controller
 {
@@ -19,15 +20,17 @@ class BlogController extends Controller
     }
     public function index()
     {
-        $lotteryData = Lottery::with('product','lottery_contestent')->get();
-        $blogData = Blog::select('blogs.id as blog_id','title','short_desc','post_img','blogs.created_at as blog_creted_at')
-        ->with('category')
+        $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
         ->orderBy('blogs.id', 'DESC')
-        ->paginate(2);
-        // $blogData = Blog::with('category')
-        // ->orderBy('blogs.id', 'DESC')
-        // ->get();
-        $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
-        return view('blog.index',compact('lotteryData','blogData','testimonialData'));
+        ->paginate(12);
+        return view('blog.index',compact('blogData'));
+    }
+    public function blogDetail($slug)
+    {
+        $id = explode("-",$slug);
+        $offest = count($id)-1;
+        $id = $id[$offest];
+        $blogPostData = Blog::with('blog_comments')->find($id);
+        return view('blog.detail',compact('blogPostData'));
     }
 }

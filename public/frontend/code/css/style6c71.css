@@ -17729,6 +17729,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 }
 .sidebarComment .commentTitle {
   font-weight: bold;
+  font-size:14px;
   display: block;
   margin: 5px 0;
   color: #000;
@@ -46917,3 +46918,15 @@ html, body {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+.page-link
+{
+    background-color:#efefef !important;
+    margin-left:1px;
+}
+.page-link:hover
+{
+    background-color:black !important;
+    margin-left:1px;
+    color:white !important
+}
+
