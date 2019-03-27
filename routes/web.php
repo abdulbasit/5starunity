@@ -15,6 +15,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 //     return view('welcome');
 // });
 Route::get('/', 'HomeController@index');
+Route::get('news', 'BlogController@index')->name('news');
 Auth::routes();
 
 Route::get('mail/send', 'MailController@send');

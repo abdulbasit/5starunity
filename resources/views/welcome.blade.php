@@ -239,85 +239,61 @@
         <div class="container">
             <canvas id="hidden-canvas2" style="display:none"></canvas>
             <div class="row">
-                <div class="col-sm-4">
-                    <div id="news-1" class="news-block  news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548851982-teaser-800x600px_.jpg)' onclick="window.location = 'de/article/article-2766.html';">
-                            <div class="news-date">
-                                <strong>News</strong> | 30 January, 2019                        </div>
-                            <div class="news-title">
-                                Why vanilla bean focuses on vegan offerings<br />
+                @foreach($blogData as $i=>$blog)
+                    @if($i<=2)
+                        <div class="col-sm-4">
+                            <div id="news-{{$i}}" class="news-block  news-block-image"
+                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'de/article/article-2762.html';">
+                                <div class="news-date">
+                                    <strong>News</strong> | {{\Carbon\Carbon::parse($blog->created_at)->toFormattedDateString()}}
+                                </div>
+                                <div class="news-title">
+                                    {{$blog->title}}<br />
+                                </div>
+                                <div class="news-brief ">
+                                    {{$blog->short_desc}}
+                                </div>
                             </div>
-                            <div class="news-brief ">
-                                vanilla bean crosses the investment threshold. vanilla bean uses current examples to show that it makes economic sense to invest in the vegan market.                        </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div id="news-2" class="news-block " onclick="window.location = 'de/article/article-2764.html';">
-                            <div class="news-date">
-                                <strong>News</strong> | 24 January, 2019                        </div>
-                            <div class="news-title">
-                                Rydies acquires new customers – movelo and EBIKE HOLIDAYS<br />
+                    @elseif($i==3)
+                        <div class="col-sm-8">
+                            <div id="news-{{$i}}" class="news-block news-block-large news-block-image"
+                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'de/article/article-2763.html';">
+                                <div class="news-date">
+                                    <strong>News</strong> | {{\Carbon\Carbon::parse($blog->created_at)->toFormattedDateString()}}
+                                </div>
+                                <div class="news-title">
+                                    {{$blog->title}}<br />
+                                </div>
+                                <div class="news-brief news-brief-large">
+                                    {{$blog->short_desc}}
+                                </div>
                             </div>
-                            <div class="news-brief ">
-                                With movelo, Rydies has gained another partner to expand its employee mobility services.                        </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div id="news-3" class="news-block  news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548324240_teaser-800x600px_.png)' onclick="window.location = 'de/article/article-2762.html';">
-                            <div class="news-date">
-                                <strong>News</strong> | 24 January, 2019                        </div>
-                            <div class="news-title">
-                                BE Food and StadtFarm arouse international interest<br />
+                    @else
+                        <div class="col-sm-4">
+                            <div id="news-{{$i}}" class="news-block  news-block-image"
+                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'de/article/article-2762.html';">
+                                <div class="news-date">
+                                    <strong>News</strong> | {{\Carbon\Carbon::parse($blog->created_at)->toFormattedDateString()}}
+                                </div>
+                                <div class="news-title">
+                                    {{$blog->title}}<br />
+                                </div>
+                                <div class="news-brief ">
+                                    {{$blog->short_desc}}
+                                </div>
                             </div>
-                            <div class="news-brief ">
-                                A few days ago, the StadtFarm was visited by a high-profile visitor: the Australian Minister of Agriculture came to find out about our water-conserving AquaTerraPonik technology.                        </div>
                         </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div id="news-4" class="news-block news-block-large news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1548240207_teaser-800x600px_.jpg)' onclick="window.location = 'de/article/article-2763.html';">
-                            <div class="news-date">
-                                <strong>News</strong> | 23 January, 2019
-                            </div>
-                            <div class="news-title">
-                                vanilla bean gets off to a strong start<br />
-                            </div>
-                            <div class="news-brief news-brief-large">
-                                vanilla bean has launched its campaign successfully. Detailed information on financial planning is available. You can also watch the recording of the video conference.                        </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div id="news-5" class="news-block  " onclick="window.location = 'de/article/article-2759.html';">
-                            <div class="news-date">
-                                <strong>News</strong> | 17 January, 2019                        </div>
-                            <div class="news-title">
-                                Rydies in the final spurt - a look at the highlights<br />
-                            </div>
-                            <div class="news-brief ">
-                                There are just 7 days left for an investment in Rydies' urban mobility solution. We look back at milestones reached during the campaign.                        </div>
-                        </div>
-                        <div id="news-6" class="news-block  news-block-image"
-                            style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(assets/1547715727-befood-AG-update%207teaser-800x600px_.jpg)'  onclick="window.location = 'de/article/article-2760.html';">
-                            <div class="news-date">
-                                <strong>News</strong> | 17 January, 2019
-                            </div>
-                            <div class="news-title">
-                                BE Food approaches the home stretch with a new look<br />
-                            </div>
-                            <div class="news-brief ">
-                                The StadtFarm gets a whole new look to stand out in retail. Additionally, our campaign is approaching its final spurt with big leaps!                        </div>
-                        </div>
-                    </div>
-
+                    @endif
+                @endforeach
                 </div>
                 <div class="row">
                     <div class="col-xs-12 button-container">
-                        <a href="de/news.html" class="btn layoutV2-btn">View all news</a>
+                        <a href="{{ route('news') }}" class="btn layoutV2-btn">View all news</a>
                     </div>
                 </div>
             </div>
-
             <script>
                 $(function(){
 
@@ -354,56 +330,24 @@
 
         <div class="container homepage-testimonials-large-devices">
             <div class="row item active">
+                @foreach($testimonialData as $testimonial)
                 <div class="col-md-4 col-xs-12">
                     <div class="testimonial-box">
                         <div class="carousel-caption">
                             <div class="who">
-                                <img class="lazy" src="{{ URL::to('/') }}/assets/testimonial_pic_color_1_new_homepage.png"><br />
+                                <img class="lazy" src="{{ URL::to('/') }}/uploads/testimonials/{{$testimonial->image}}"><br />
                             </div>
                             <p>
-                                “Easy, straight-forward, and everything explained.<br/> Investing this way is fun.”
+                                    {{$testimonial->detail}}
                             </p>
                             <div class="who-name">
-                                <strong>Hans-Peter P.</strong> <br/>
+                                <strong> {{$testimonial->name}} </strong> <br/>
                                 <i>Donor</i>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4 col-xs-12">
-                    <div class="testimonial-box">
-                        <div class="carousel-caption">
-                            <div class="who">
-                                    <img class="lazy" src="{{ URL::to('/') }}/assets/testimonial_pic_color_1_new_homepage.png"><br />
-                            </div>
-                            <p>
-                                “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.“
-                            </p>
-                            <div class="who-name">
-                                <strong>Michael H.</strong> <br/>
-                                <i>Donor</i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-xs-12">
-                    <div class="testimonial-box">
-                        <div class="carousel-caption text-center">
-                            <div class="who">
-                                    <img class="lazy" src="{{ URL::to('/') }}/assets/testimonial_pic_color_1_new_homepage.png"><br />
-                            </div>
-                            <p>
-                                “A good selection of startups; realistic financial goals; honest company information; good updates.”
-                            </p>
-                            <div class="who-name">
-                                <strong>Gerhard H.</strong> <br/>
-                                <i>Donor</i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="container homepage-testimonials-small-devices">
