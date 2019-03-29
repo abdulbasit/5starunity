@@ -16,12 +16,13 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 // });
 Route::get('/', 'HomeController@index');
 Route::get('news', 'BlogController@index')->name('news');
-Route::get('{slug}', 'BlogController@blogDetail');
+
 Auth::routes();
 
 Route::get('mail/send', 'MailController@send');
 Auth::routes(['verify' => true]);
-
+// Route::get('{slug}', 'BlogController@blogDetail');
+Route::get('article/{slug}', 'BlogController@blogDetail');
 Route::get('home1', 'HomeController@index')->name('home1');
 
 
@@ -42,6 +43,8 @@ Route::get('home1', 'HomeController@index')->name('home1');
         Route::get('profile-image', 'UserController@immage_upload')->name('profile-image');
         Route::match(['get', 'post'], 'ajax-image-upload', 'Auth\RegisterController@ajaxImage');
         Route::post('profile-update', 'UserController@update')->name('profile-update');
+
+        Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
     });
 
 

@@ -22,6 +22,7 @@ class UserController extends Controller
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        // dd($userProfile['country_name']->name);
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         // dd($userInfo['user_profile']);

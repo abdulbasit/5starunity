@@ -243,7 +243,7 @@
                     @if($i<=2)
                         <div class="col-sm-4">
                             <div id="news-{{$i}}" class="news-block  news-block-image"
-                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'de/article/article-2762.html';">
+                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'article/{{$blog->post_name}}-{{$blog->id}}';">
                                 <div class="news-date">
                                     <strong>News</strong> | {{\Carbon\Carbon::parse($blog->created_at)->toFormattedDateString()}}
                                 </div>
@@ -258,7 +258,7 @@
                     @elseif($i==3)
                         <div class="col-sm-8">
                             <div id="news-{{$i}}" class="news-block news-block-large news-block-image"
-                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'de/article/article-2763.html';">
+                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'article/{{$blog->post_name}}-{{$blog->id}}';">
                                 <div class="news-date">
                                     <strong>News</strong> | {{\Carbon\Carbon::parse($blog->created_at)->toFormattedDateString()}}
                                 </div>
@@ -273,7 +273,7 @@
                     @else
                         <div class="col-sm-4">
                             <div id="news-{{$i}}" class="news-block  news-block-image"
-                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'de/article/article-2762.html';">
+                                style='background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url({{ URL::to('/') }}/uploads/blog/{{$blog->post_img}})' onclick="window.location = 'article/{{$blog->post_name}}-{{$blog->id}}';">
                                 <div class="news-date">
                                     <strong>News</strong> | {{\Carbon\Carbon::parse($blog->created_at)->toFormattedDateString()}}
                                 </div>

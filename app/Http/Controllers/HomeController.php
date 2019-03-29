@@ -20,8 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         $lotteryData = Lottery::with('product','lottery_contestent')->get();
-        $blogData = Blog::with('category')
-        ->select('blogs.id as blog_id','title','short_desc','post_img','blogs.created_at as blog_creted_at')
+        $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
         ->orderBy('blogs.id', 'DESC')
         ->get();
         $testimonialData = Testimonial::orderBy('id', 'DESC')->get();

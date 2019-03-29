@@ -9714,7 +9714,7 @@ a.inline {
   margin-bottom: 10px;
   padding: 10px;
   color: #778084;
-  border: 2px solid #00a9ac;
+  border: 2px solid #000;
 }
 .addComment .avatar {
   display: block;
@@ -9957,7 +9957,6 @@ new comment styles
   padding-top: 10px;
   padding-right: 70px;
   padding-left: 28px;
-  background: url('../../graphics/icons/quote.png') top left no-repeat;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -34145,9 +34144,9 @@ a.btn-default-new-layout-small {
   color: #fff;
 }
 .btn-new-layout-ghost-bggreen {
-  border: 1px solid #00a9ac;
-  color: #fff;
-  background-color: #00a9ac;
+  border: 1px solid #000;
+  color: #000;
+  background-color: #fff;
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
@@ -34155,14 +34154,14 @@ a.btn-default-new-layout-small {
 .btn-new-layout-ghost-bggreen:focus,
 .btn-new-layout-ghost-bggreen:active,
 .btn-new-layout-ghost-bggreen.active {
-  background-color: transparent;
-  color: #00a9ac;
-  border: 1px solid #00a9ac;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
 }
 .btn-new-layout-ghost-bggreen:hover {
-  background-color: transparent;
-  color: #00a9ac;
-  border: 1px solid #00a9ac;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
 }
 .btn-new-layout-ghost-bgtirquoise {
   border: 1px solid #00a9ac;
@@ -46929,4 +46928,86 @@ html, body {
     margin-left:1px;
     color:white !important
 }
-
+.error_msg
+{
+    border:solid 2px red !important;
+    color:red
+}
+/*font Awesome http://fontawesome.io*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+/*Comment List styles*/
+.comment-list .row {
+  margin-bottom: 0px;
+}
+.comment-list .panel .panel-heading {
+  padding: 4px 15px;
+  position: absolute;
+  border:none;
+  /*Panel-heading border radius*/
+  border-top-right-radius:0px;
+  top: 1px;
+}
+.comment-list .panel .panel-heading.right {
+  border-right-width: 0px;
+  /*Panel-heading border radius*/
+  border-top-left-radius:0px;
+  right: 16px;
+}
+.comment-list .panel .panel-heading .panel-body {
+  padding-top: 6px;
+}
+.comment-list figcaption {
+  /*For wrapping text in thumbnail*/
+  word-wrap: break-word;
+}
+/* Portrait tablets and medium desktops */
+@media (min-width: 768px) {
+  .comment-list .arrow:after, .comment-list .arrow:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
+    border-left: 0;
+  }
+  /*****Left Arrow*****/
+  /*Outline effect style*/
+  .comment-list .panel.arrow.left:before {
+    left: 0px;
+    top: 30px;
+    /*Use boarder color of panel*/
+    border-right-color: inherit;
+    border-width: 16px;
+  }
+  /*Background color effect*/
+  .comment-list .panel.arrow.left:after {
+    left: 1px;
+    top: 31px;
+    /*Change for different outline color*/
+    border-right-color: #FFFFFF;
+    border-width: 15px;
+  }
+  /*****Right Arrow*****/
+  /*Outline effect style*/
+  .comment-list .panel.arrow.right:before {
+    right: -16px;
+    top: 30px;
+    /*Use boarder color of panel*/
+    border-left-color: inherit;
+    border-width: 16px;
+  }
+  /*Background color effect*/
+  .comment-list .panel.arrow.right:after {
+    right: -14px;
+    top: 31px;
+    /*Change for different outline color*/
+    border-left-color: #FFFFFF;
+    border-width: 15px;
+  }
+}
+.comment-list .comment-post {
+  margin-top: 6px;
+}

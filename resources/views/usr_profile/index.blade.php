@@ -48,9 +48,9 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Country</div>
-                            <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_profile']['country_name']->name}},{{$userInfo['user_profile']['state_name']->name}}, {{$userInfo['user_profile']->city}}, {{$userInfo['user_profile']->postal_code}}</div>
-                      </div>
-                      <div class="row">
+                            <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_profile']['country_name']->name}}, {{$userInfo['user_profile']->city}}, {{$userInfo['user_profile']->postal_code}}</div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Contact Number</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_profile']->user_contact}}</div>
                         </div>

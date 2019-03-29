@@ -236,7 +236,6 @@ function check_class()
     var price = $("#pro_price").val();
     if(price=="" || price < 200)
     {
-        alert('dd');
         // $("#pro_price").val("");
         $("#pro_price").css('border','solid 1px red');
         $("#product_class").css('color','red');

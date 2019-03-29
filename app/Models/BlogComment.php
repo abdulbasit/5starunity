@@ -8,7 +8,7 @@ class BlogComment extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'id','comment','user_id','status','helpfull'
+        'id','comment','user_id','status','helpfull','blog_id'
     ];
     public function blog()
     {
