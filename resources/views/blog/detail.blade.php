@@ -41,12 +41,12 @@
                 @else
                     <h3>Bemerkungen</h3>
                     <div class="row addComment " id="addCommentMain" style="display: block;">
-                        <div class="col-sm-2 col-md-1">
+                        {{-- <div class="col-sm-2 col-md-1">
                             <div class="avatar" style="background-image:url();"></div>
-                        </div>
-                        <div class="col-sm-10 col-md-11">
+                        </div> --}}
+                        <div class="col-xs-12">
                             <form class="message-field" action="#" method="post" id="addCommForm">
-                                <textarea name="comment" id="postCommentBox" placeholder="Enter your message here"></textarea>
+                                <textarea name="comment" id="postCommentBox" placeholder="Geben Sie hier Ihre Nachricht ein"></textarea>
                                 <input type="hidden" name="post_id" id="post_id" value="{{$blogPostData->id}}">
                                 <span id="cmnt_msg" class="red" style="display:none; color:red">Required Field</span>
                                 <button type="button" onclick="sumbit_comment()" class="btn-default-new-layout-small btn-new-layout-ghost-bggreen pull-right">Submit</button>
@@ -57,25 +57,28 @@
                         <div class="row">
                           <div class="col-md-8">
                               <section class="comment-list">
-                                @foreach($blogPostData->blog_comments as $comments)
+                                @foreach($commentsData as $i=>$comments)
                                     <!-- First Comment -->
                                     <article class="row">
                                     <div class="col-md-2 col-sm-2 hidden-xs">
                                         <figure class="thumbnail">
-                                        <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                                        {{-- <figcaption class="text-center">username</figcaption> --}}
+                                            @if($commentsData[$i]->user->userProfile->profile_picture=="")
+                                                <img class="img-responsive" id="prfl_picture" src="{{ URL::to('/') }}/frontend/graphics/profile_avtar.png">
+                                            @else
+                                                <img class="img-responsive" id="prfl_picture"  src="{{ URL::to('/') }}/uploads/users/profile_pic/{{$commentsData[$i]->user->userProfile->profile_picture}}">
+                                            @endif
                                         </figure>
                                     </div>
                                     <div class="col-md-10 col-sm-10">
                                         <div class="panel panel-default arrow left">
                                         <div class="panel-body">
                                             <header class="text-left">
-                                            <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                                            <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
+                                            <div class="comment-user"><i class="fa fa-user"></i> {{$blogPostData->blog_comments[$i]->user->name." ".$blogPostData->blog_comments[$i]->user->middle_name." ".$blogPostData->blog_comments[$i]->user->last_name}}</div>
+                                            <time class="comment-date" datetime="{{\Carbon\Carbon::parse($comments->created_at)->format('d-m-Y H:i:s')}}"><i class="fa fa-clock-o"></i> {{\Carbon\Carbon::parse($comments->created_at)->toFormattedDateString()}}</time>
                                             </header>
                                             <div class="comment-post">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                {{$comments->comment}}
                                             </p>
                                             </div>
                                             {{-- <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p> --}}

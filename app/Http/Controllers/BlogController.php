@@ -33,8 +33,10 @@ class BlogController extends Controller
         $id = explode("-",$slug);
         $offest = count($id)-1;
         $id = $id[$offest];
-        $blogPostData = Blog::find($id);
-        return view('blog.detail',compact('blogPostData'));
+        $blogPostData = Blog::with('blog_comments','user')->find($id);
+        $commentsData = array_reverse(array_sort($blogPostData->blog_comments));
+
+        return view('blog.detail',compact('blogPostData','commentsData'));
     }
     public function post_comment(Request $request)
     {

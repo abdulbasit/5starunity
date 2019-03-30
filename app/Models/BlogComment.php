@@ -14,6 +14,9 @@ class BlogComment extends Model
     {
         return $this->belongsTo('App\Models\Blog');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User','user_id');
+    }
     protected $dates = ['deleted_at'];
-
 }
