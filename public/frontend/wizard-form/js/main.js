@@ -46,16 +46,15 @@
             previous: 'Previous',
             next: 'Next',
             finish: 'Submit',
-            current: ''
+            current: '1'
         },
         titleTemplate: '<div class="title"><span class="number">#index#</span>#title#</div>',
         onStepChanging: function(event, currentIndex, newIndex)
         {
+
             form.validate().settings.ignore = ":disabled,:hidden";
                 $("#state").removeClass('form_error');
                 $("#country").removeClass('form_error');
-
-            // console.log(form.steps("getCurrentIndex"));
             return form.valid();
         },
         onFinishing: function(event, currentIndex)
@@ -64,24 +63,6 @@
             form.validate().settings.ignore = ":disabled";
             console.log(currentIndex);
 
-            // var dateOfBirth = $("#dob").val();
-
-            //     dateOfBirth = dateOfBirth.split('-');
-            //     today = new Date()
-            //     past = new Date(dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]);
-            //     ageDiff = calcDate(today,past)
-
-            //     if(ageDiff<=18)
-            //     {
-            //         $("#dob").addClass('form_error');
-            //         $("#dobMsg").html('You must bee 18+');
-            //         return false;
-            //     }
-            //     else
-            //     {
-            //         $("#dob").removeClass('form_error');
-            //         $("#dobMsg").html('');
-            //     }
 
             var dateOfBirth = $("#dob").val();
             dateOfBirth = dateOfBirth.split('.');
@@ -115,6 +96,7 @@
         onFinished: function(event, currentIndex) {
             $(".actions ul li:nth-child(2) a").html('Waite...')
             setTimeout(function (){
+                // if()
                 $( "#signup-form" ).submit();
             },1000);
 

@@ -9,6 +9,7 @@ use App\Models\Lottery;
 use App\Models\LotteryContestent;
 use App\Models\Blog;
 use App\Models\BlogComment;
+use App\Models\Category;
 use App\Models\Testimonial;
 use Carbon\Carbon;
 use Auth;
@@ -22,7 +23,16 @@ class BlogController extends Controller
     }
     public function index()
     {
+
+            $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
+            ->orderBy('blogs.id', 'DESC')
+            ->paginate(12);
+            return view('blog.index',compact('blogData'));
+    }
+    public function cat_blogs($cat_id)
+    {
         $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
+        ->where('cat_id',$cat_id)
         ->orderBy('blogs.id', 'DESC')
         ->paginate(12);
         return view('blog.index',compact('blogData'));
@@ -34,9 +44,10 @@ class BlogController extends Controller
         $offest = count($id)-1;
         $id = $id[$offest];
         $blogPostData = Blog::with('blog_comments','user')->find($id);
+        $categories = Category::where('category_for','blog')->get();
         $commentsData = array_reverse(array_sort($blogPostData->blog_comments));
 
-        return view('blog.detail',compact('blogPostData','commentsData'));
+        return view('blog.detail',compact('blogPostData','commentsData','categories'));
     }
     public function post_comment(Request $request)
     {

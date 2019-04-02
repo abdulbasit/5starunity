@@ -93,7 +93,18 @@
                       </div>
                 @endif
             </div>
-
+            <div class="col-lg-4 col-xs-12 categories">
+                <h4>Categories</h4>
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        @foreach($categories as $category)
+                        <li class="">
+                            <a href="/cat-news/{{$category->id}}">{{$category->name}} </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
 @endsection
 @section('script')
 <script>

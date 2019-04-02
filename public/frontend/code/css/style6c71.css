@@ -2111,6 +2111,13 @@ pre code {
     {
         margin-top:120px
     }
+    .categories{
+        margin-top:150px
+    }
+    .categories h4
+    {
+        text-align:center
+    }
     .prof
     {
         margin-top:180px
@@ -46930,7 +46937,7 @@ html, body {
 }
 .error_msg
 {
-    border:solid 2px red !important;
+    /* border:solid 2px red !important; */
     color:red
 }
 /*font Awesome http://fontawesome.io*/

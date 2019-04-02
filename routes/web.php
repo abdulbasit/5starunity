@@ -16,7 +16,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 // });
 Route::get('/', 'HomeController@index');
 Route::get('news', 'BlogController@index')->name('news');
-
+Route::get('cat-news/{cat_id}', 'BlogController@cat_blogs')->name('cat-news');
 Auth::routes();
 
 Route::get('mail/send', 'MailController@send');
