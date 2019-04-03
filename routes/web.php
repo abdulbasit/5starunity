@@ -19,12 +19,13 @@ Route::get('news', 'BlogController@index')->name('news');
 Route::get('cat-news/{cat_id}', 'BlogController@cat_blogs')->name('cat-news');
 Auth::routes();
 
-Route::get('mail/send', 'MailController@send');
-Auth::routes(['verify' => true]);
-// Route::get('{slug}', 'BlogController@blogDetail');
-Route::get('article/{slug}', 'BlogController@blogDetail');
-Route::get('home1', 'HomeController@index')->name('home1');
+    Route::get('mail/send', 'MailController@send');
+    Auth::routes(['verify' => true]);
+    Route::get('article/{slug}', 'BlogController@blogDetail');
+    Route::get('home1', 'HomeController@index')->name('home1');
 
+    Route::get('lotteries', 'LotteryController@index');
+    Route::get('lottery/detail/{id}', 'LotteryController@detail');
 
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');

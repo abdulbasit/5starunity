@@ -162,7 +162,6 @@
         <div class="container-fluid">
             <div class="section-title padding-title">Favourite products from our donors & your chances for great WINS </div>
         </div>
-
         <div class="ps_parent_circles">
             <div class="ps_circles">
                 <i class="fa fa-circle circle" data-position="1"></i>
@@ -172,23 +171,21 @@
                 <div class="row row_for_mobile">
                 <span id="total_pages" data-total="111"></span>
                 @foreach($lotteryData as $i=>$lottery)
-                    <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes " data-uri="https://www.companisto.com/de/investment/vanilla-bean"
-                                itemscope itemtype="http://schema.org/Product">
-                        <meta itemprop="image" content="https://www.companisto.com/assets/1546954124_profile%20teaser_856x400.png"></meta>
-                        <div class="content_startup_blok current_investment " href="investment/vanilla-bean.html">
-                            <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
-                                <div class="stratup_img lazy" data-src="" title="vanilla bean" href="investment/vanilla-bean.html" style="overflow:hidden; height:100px">
+                    <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
+                        <div class="content_startup_blok current_investment ">
+                            <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->id}}">
+                                <div class="stratup_img lazy" data-src="" title="vanilla bean" style="overflow:hidden; height:100px">
                                     <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{$lottery->product->product_images[0]->pro_image}}">
                                 </div>
                             </a>
                             <div class="row content_info">
-                                <a itemprop="url" title="vanilla bean" href="investment/vanilla-bean.html">
+                                <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->id}}">
                                     <h2 class="mb-5px">{{$lottery->name}}</h2>
                                 </a>
                                 {{-- <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Regensburg, DE</span> --}}
 
                                 <p itemprop="description">
-                                    <a class="lot_desc" href="investment/vanilla-bean.html" title="{{$lottery->name}}">
+                                    <a class="lot_desc" href="/lottery/detail/{{$lottery->id}}" title="{{$lottery->name}}">
                                         {{$lottery->description}}
                                     </a>
                                 </p>
@@ -205,19 +202,26 @@
                                     </div>
                                 </div> --}}
                             </div>
-
                             <div class="row progress_info nopadding">
                                 <div class="col-xs-12 progress canInvest">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" style="width:23%">23%</div>
+                                        <?php
+                                        $total = $lottery->one_lot_amount*$lottery->lottery_contestent->count();
+                                        $progressBar = round($total/$lottery->lot_amount*100,0);
+                                        // */100
+                                        ?>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressBar ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressBar ?>%"><?php echo $progressBar ?>%</div>
                                 </div>
                                 <div class="col-xs-6 block_details borderRightgrey">
-                                    <strong>116.250 &euro;</strong>
+                                <strong>{{$lottery->one_lot_amount*$lottery->lottery_contestent->count()}}
+
+                                    &euro;</strong>
                                     Investiert
                                 </div>
                                 <div class="col-xs-6 block_details">
                                     <strong>{{$lottery->lottery_contestent->count()}}</strong>Companisten
                                 </div>
                             </div>
+
                             <div class="footer_startup ">
                                 WIN NOW
                             </div>
@@ -226,8 +230,8 @@
                 @endforeach
             </div>
         <div class="row">
-            <div class="col-xs-12 button-container">
-                <a href="en/investments.html" class="btn layoutV2-btn">VIEW ALL LOTTERY OF THINGS</a>
+            <div class="col-xs-12 button-container" style="margin:0px">
+                <a href="/lotteries" class="btn layoutV2-btn">VIEW ALL LOTTERY OF THINGS</a>
             </div>
         </div>
     </section>

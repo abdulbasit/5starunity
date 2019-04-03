@@ -46,7 +46,7 @@
             previous: 'Previous',
             next: 'Next',
             finish: 'Submit',
-            current: '1'
+            current: ''
         },
         titleTemplate: '<div class="title"><span class="number">#index#</span>#title#</div>',
         onStepChanging: function(event, currentIndex, newIndex)
@@ -179,3 +179,16 @@ function calculateAgeValidate(birthMonth, birthDay, birthYear) {
 }
 
 })(jQuery);
+function scollPos() {
+    var div = document.getElementById("terms").scrollTop;
+    if(div>4000)
+    {
+        var checkbox='';
+        $("#remsCheck").remove();
+        $(".actions").append('<div id="remsCheck"> </div>');
+        checkbox='Terms & Conditions<input type="checkbox" id="terms_check" name="terms_check">';
+        $("#remsCheck").html(checkbox);
+    }
+
+    // document.getElementById("pos").innerHTML = div;
+}

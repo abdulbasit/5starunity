@@ -9,7 +9,7 @@ use App\Models\Lottery;
 use App\Models\LotteryContestent;
 use App\Models\Blog;
 use App\Models\Testimonial;
-class HomeController extends Controller
+class LotteryController extends Controller
 {
 
     public function __construct()
@@ -19,12 +19,14 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $lotteryData = Lottery::with('product','lottery_contestent')->limit('3')->get();
-        $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
-        ->orderBy('blogs.id', 'DESC')
-        ->limit('6')
-        ->get();
+        $lotteryData = Lottery::with('product','lottery_contestent')->paginate(18);
         $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
-        return view('welcome',compact('lotteryData','blogData','testimonialData'));
+        return view('lotteries.index',compact('lotteryData','testimonialData'));
+    }
+    public function detail($id)
+    {
+        $lotteryData = Lottery::find($id);
+        return view('lotteries.detail',compact('lotteryData'));
+
     }
 }
