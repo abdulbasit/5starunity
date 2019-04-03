@@ -196,7 +196,7 @@ label.error {
 }
 .terms_cond
 {
-    height: 180px;
+    height: 400px;
     overflow: auto;
 }
 .actions
@@ -365,7 +365,7 @@ label.error {
                 <fieldset>
                     <div class="fieldset-content">
                         <div class="row">
-                            <div class="col-lg-12 col-xs-12 terms_cond" id="terms" onscroll="scollPos()">
+                            <div class="col-lg-12 col-xs-12 terms_cond" id="terms">
                                     Terms and Conditions
                                     (English Version)
 
@@ -577,6 +577,7 @@ function getCountrySates()
 }
 function calcAge()
 {
+
     var dateOfBirth = $("#dob").val();
     dateOfBirth = dateOfBirth.split('.');
     // dateOfBirth[2],dateOfBirth[1],dateOfBirth[0]
@@ -596,14 +597,16 @@ function calcAge()
         $("#dob").removeClass('error');
     }
 }
-function calculateAge(birthMonth, birthDay, birthYear) {
+function calculateAge(birthMonth, birthDay, birthYear)
+{
     var currentDate = new Date();
     var currentYear = currentDate.getFullYear();
     var currentMonth = currentDate.getMonth();
     var currentDay = currentDate.getDate();
     var calculatedAge = currentYear - birthYear;
 
-    if (currentMonth < birthMonth - 1) {
+    if (currentMonth < birthMonth - 1)
+    {
         calculatedAge--;
     }
     if (birthMonth - 1 == currentMonth && currentDay < birthDay)
@@ -611,7 +614,20 @@ function calculateAge(birthMonth, birthDay, birthYear) {
         calculatedAge--;
     }
         return calculatedAge;
-    }
+}
+function acceptTerms()
+{
+    if($("#terms_check").is(":checked")===true)
+        {
+            $(".actions ul li a").last().attr('href',"#finish");
+            $("#termsCondTxt").css('color','black');
+        }
+    else
+        {
+            $( ".actions ul li a" ).last().attr('href',"");
+            $("#termsCondTxt").css('color','red');
+        }
+}
 </script>
 @endsection
 @endsection

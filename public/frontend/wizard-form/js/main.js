@@ -52,6 +52,15 @@
         onStepChanging: function(event, currentIndex, newIndex)
         {
 
+            // console.log(newIndex);
+            if(newIndex==2)
+            {
+                scollPos();
+            }
+            else
+            {
+                $("#remsCheck").remove();
+            }
             form.validate().settings.ignore = ":disabled,:hidden";
                 $("#state").removeClass('form_error');
                 $("#country").removeClass('form_error');
@@ -59,7 +68,6 @@
         },
         onFinishing: function(event, currentIndex)
         {
-
             form.validate().settings.ignore = ":disabled";
             console.log(currentIndex);
 
@@ -180,15 +188,15 @@ function calculateAgeValidate(birthMonth, birthDay, birthYear) {
 
 })(jQuery);
 function scollPos() {
-    var div = document.getElementById("terms").scrollTop;
-    if(div>4000)
-    {
-        var checkbox='';
-        $("#remsCheck").remove();
-        $(".actions").append('<div id="remsCheck"> </div>');
-        checkbox='Terms & Conditions<input type="checkbox" id="terms_check" name="terms_check">';
-        $("#remsCheck").html(checkbox);
-    }
 
-    // document.getElementById("pos").innerHTML = div;
+    $( ".actions ul li" ).last().css('display','block');
+    $( ".actions ul li" ).last().attr('onclick','acceptTerms()');
+    $( ".actions ul li a" ).last().attr('href',"");
+    // console.log(ddd);
+    var checkbox='';
+    $("#remsCheck").remove();
+    $(".actions").append('<div id="remsCheck"> </div>');
+    checkbox='<span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="terms_check" name="terms_check"></span><span id="termsCondTxt" style="float:left; margin-right:10px; margin-top:8px">Terms & Conditions</span>';
+    $("#remsCheck").html(checkbox);
+
 }
