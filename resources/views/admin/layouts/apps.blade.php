@@ -312,6 +312,13 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                               <li><a class="menu-item" href="{{ route('admin.testimonials.create') }}">Add Donors</a></li>
                             </ul>
                           </li>
+                          <li>
+                            <a class="menu-item" href="#"><i class="ft-layout"></i>Sliders</a>
+                            <ul class="menu-content">
+                              <li><a class="menu-item" href="{{ route('admin.slider.create') }}">Add New Slider</a></li>
+                              <li><a class="menu-item" href="{{ route('admin.sliders') }}">Slider Listings</a>
+                            </ul>
+                          </li>
                       </ul>
                     </li>
                   </ul>
