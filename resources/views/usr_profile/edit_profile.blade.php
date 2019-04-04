@@ -70,7 +70,7 @@ function getCountrySates()
                                     </select>
                                 </div>
                         </div>
-                        <div class="row rowSpacing">
+                        {{-- <div class="row rowSpacing">
                                 <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">State</div>
                                 <div class="col-lg-8 col-md-6 col-xs-12">
                                     <select name="sates" id="sates" class="form-control">
@@ -79,7 +79,7 @@ function getCountrySates()
                                         @endforeach
                                     </select>
                                 </div>
-                        </div>
+                        </div> --}}
                         <div class="row rowSpacing">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">City</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">

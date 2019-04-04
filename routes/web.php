@@ -40,12 +40,15 @@ Auth::routes();
     //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {
         Route::get('profile', 'UserController@index')->name('profile')->middleware('verified');
+        Route::post('change-email', 'UserController@change_mail')->name('change-email');
+
         Route::get('account-settings', 'UserController@profileUpdate')->name('account-settings');
         Route::get('profile-image', 'UserController@immage_upload')->name('profile-image');
         Route::match(['get', 'post'], 'ajax-image-upload', 'Auth\RegisterController@ajaxImage');
         Route::post('profile-update', 'UserController@update')->name('profile-update');
 
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
+
     });
 
 

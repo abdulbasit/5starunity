@@ -27,6 +27,7 @@
     <script src="{{ asset('frontend/code/jquery-ui/jquery.ui.touch-punch.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/site-scripts7031.js?v=1548947668')}}"></script>
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/login-register.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/main.js')}}"></script>
     @yield('style')
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}

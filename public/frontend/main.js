@@ -1,0 +1,12 @@
+
+    function ValidateEmail(mail,div)
+    {
+
+     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+      {
+        return (true)
+      }
+        // $(div).html("You have entered an invalid email address!")
+        return 'error';
+    }
+

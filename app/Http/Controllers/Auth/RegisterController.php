@@ -194,7 +194,6 @@ class RegisterController extends Controller
         $objDemo->recevier_name = $mailData['user_name'];
         $objDemo->sender ="admin@xnowad.com";
         $objDemo->receiver = $mailData['email_address'];
-
         Mail::to($mailData['email_address'])->send(new RegistrationEmail($objDemo));
     }
     public function profileUpdate()
