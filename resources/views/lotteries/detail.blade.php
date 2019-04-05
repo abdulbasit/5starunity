@@ -33,14 +33,15 @@
 						<p class="product-description">
                             {{$lotteryData->description}}
                         </p>
-						<h4 class="price">Amount per lot: <span id="totalAmount" lot-amount="{{round($lotteryData->one_lot_amount,2)}}"> {{round($lotteryData->one_lot_amount,2)}} </span></h4>
+                        <h4 class="price">Amount per lot: <span  > {{round($lotteryData->one_lot_amount,0)}} </span></h4>
+						<h4 class="price"> Taler Required: <span id="totalAmount" lot-amount="{{round($lotteryData->one_lot_amount,0)}}"> {{round($lotteryData->one_lot_amount,2)}} </span></h4>
 						<p class="vote">
                             <strong><?php
                                 $total = $lotteryData->one_lot_amount*$lotteryData->lottery_contestent->count();
                                 echo $progressBar = round($total/$lotteryData->lot_amount*100,0);
                                 // */100
                                 ?>%</strong>
-                             of buyers enjoyed this product! </p>
+                             Of total amount donated </p>
                         <div class="row">
                             @if(!Auth::guard('client')->check())
                                 <div class="action col-xs-10 col-lg-8 no-padding">
@@ -48,6 +49,7 @@
                                 </div>
                                 <div class="action col-xs-10 col-lg-3">
                                     <input type="text" name="qty" id="qty" value="1" onkeypress='validate(event)' onchange="emptyQty()">
+                                    <span style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @else
                             <div class="action col-xs-10 col-lg-8 no-padding">
@@ -55,6 +57,7 @@
                                 </div>
                                 <div class="action col-xs-10 col-lg-3">
                                     <input type="text" name="qty" id="qty" value="1" onkeypress='validate(event)' onchange="emptyQty()">
+                                    <span style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @endif
                         </div>
