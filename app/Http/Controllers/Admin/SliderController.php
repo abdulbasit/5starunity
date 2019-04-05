@@ -36,5 +36,12 @@ class SliderController extends Controller
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now()
         ]);
+        return redirect('admin/sliders');
+    }
+    public function deleteSlider($id)
+    {
+        $sliderImage = Slider::where('id',$id);
+        $sliderImage->delete();
+        return redirect('/sliders');
     }
 }

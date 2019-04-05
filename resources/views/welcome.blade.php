@@ -12,21 +12,12 @@
                 <!-- Slides Container -->
                 <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1140px; height: 442px;
                 overflow: hidden; top:60px">
+                @foreach($sliderData as $slider)
                     <div>
-                        <img data-u="image" src="{{ URL::to('/') }}/images/slide1.png" />
+                        <img data-u="image" src="{{ URL::to('/') }}/uploads/slider/{{$slider->image}}" />
                         <span></span>
                     </div>
-                    <div>
-                        <img data-u="image" src="{{ URL::to('/') }}/images/slide2.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="{{ URL::to('/') }}/images/001.png" />
-                        <span></span>
-                    </div>
-                    <div>
-                        <img data-u="image" src="{{ URL::to('/') }}/images/002.png" />
-                        <span></span>
-                    </div>
+                @endforeach
                 </div>
                     <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
                         <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">

@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this testimonial ?</p>
+                    <p>Are you suer you want to delete this Slider ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -43,7 +43,7 @@
                       <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Detail</th>
+                        <th>Link</th>
                         <th>Created at</th>
                         <th>Image</th>
                         <th>Options</th>
@@ -54,9 +54,9 @@
                       <tr>
                         <td>{{$sliders->id}}</td>
                         <td>{{$sliders->name}}</td>
-                        <td>{{$sliders->detail}}</td>
+                        <th>{{$sliders->link}}</th>
                         <td>{{$sliders->created_at}}</td>
-                        <td><img width="30"  src="{{ URL::to('/') }}/uploads/testimonials/{{$sliders->image}}"></td>
+                        <td><img width="50" src="{{ URL::to('/') }}/uploads/slider/{{$sliders->image}}"></td>
                         <td>
                             <div class="col-sm-3 col-6">
                                 <div class="btn-group mr-1 mb-1">
@@ -65,7 +65,7 @@
                                     Action
                                     </button>
                                     <div class="dropdown-menu arrow " id="options">
-                                        <a class="dropdown-item" href="{{ route('admin.testimonial.edit',$sliders->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                        {{-- <a class="dropdown-item" href="{{ route('admin.testimonial.edit',$sliders->id) }}"><i class="ft-edit green"></i> Edit </a> --}}
                                         <a data-id="{{$sliders->id}}" onclick="deleteFunction({{$sliders->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
-                            <th>Detail</th>
+                            <th>Link</th>
                             <th>Created at</th>
                             <th>Image</th>
                             <th>Options</th>
@@ -102,7 +102,7 @@
     }
     $("#yes").click(function(){
         var id = $(this).attr("delete-id");
-        window.location.href = "testimonials/delete/"+id;
+        window.location.href = "slider/delete/"+id;
     });
 </script>
 @endsection

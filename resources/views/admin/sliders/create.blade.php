@@ -85,7 +85,7 @@
 @section('script')
 <script>
     $("#yes").click(function(){
-        window.location.href = "/admin/testimonials"
+        window.location.href = "/sliders"
     });
 </script>
 @endsection

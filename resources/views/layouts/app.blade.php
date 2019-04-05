@@ -61,22 +61,21 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li  ><a href="en/investments.html">LOTTERY of THINGS</a></li>
-                                <li  ><a href="en/angel-club.html">ERFINDER / GRUNDER</a></li>
-                                <li ><a href="en/for-founders.html">PARTNER</a></li>
+                                <li  ><a href="/lotteries">LOTTERY of THINGS</a></li>
+                                <li  ><a href="{{route('ceo')}}">ERFINDER / GRUNDER</a></li>
+                                <li ><a href="{{route('partner')}}">PARTNER</a></li>
                                 <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu">
                                         <div class="row nopadding">
                                             <div class="col-md-12 nopadding text-left">
                                                 <div class="list_nav">
                                                     <ul>
-                                                        <li><a href="en/how-it-works.html">How It <span>Works</span></a></li>
-                                                        <li><a href="en/academy.html">Investors'<span>Academy</span></a></li>
-                                                        <li><a href="en/blog.html">Blog</a></li>
-                                                        <li><a href="de/news.html">News</a></li>
-                                                        <li><a href="de/about.html">About Us</a></li>
-                                                        <li><a href="de/press.html">Media Info</a></li>
-                                                        <li><a href="de/contact-us.html">Contact Us</a></li>
+                                                        <li><a href="{{route('howitworks')}}">How It <span>Works</span></a></li>
+                                                        <li><a href="{{route('inventro.acadmy')}}">Investors'<span>Academy</span></a></li>
+                                                        <li><a href="{{route('news')}}">News</a></li>
+                                                        <li><a href="{{route('about-us')}}">About Us</a></li>
+                                                        <li><a href="{{route('media-info')}}">Media Info</a></li>
+                                                        <li><a href="{{route('contact-us')}}">Contact Us</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
