@@ -217,7 +217,7 @@ $("#start_date").change(function(){
 
     if(requested_date < current_date)
     {
-        $("#modalText").html('Start date must be grater then or equal to current date!');
+        $("#modalText").html('Start date must be grater than or equal current date!');
         $("#myModal").modal();
         $(this).val(today);
     }
@@ -225,6 +225,7 @@ $("#start_date").change(function(){
 $("#end_date").change(function(){
      var date1 = $(this).val();
      var date2 = $("#start_date").val();
+
      if(date2=="")
      {
         $("#modalText").html('Please select start date first!');
@@ -234,12 +235,13 @@ $("#end_date").change(function(){
      var end_date = Date.parse(date1);
      var start_date = Date.parse(date2);
 
-    var current_date = Date.parse(today)
-    if(end_date < start_date)
+    // var current_date = Date.parse(today)
+    if(end_date <= start_date)
     {
-        $("#modalText").html('End date must be grater then or equal to start date!');
+        $("#modalText").html('End date must be greater than start date!');
         $("#myModal").modal();
         $(this).val(today);
+        $("#end_date").val("")
     }
 });
 
@@ -316,9 +318,9 @@ function check_class()
         $('#product_class').html('Product Class: <span class="green">4</span>, Coins Per lot: <span  id="coins" class="green">8</span>');
         $("#class_id").val(4);
     }
-    else
+    else if(price >= 16000)
     {
-        $('#product_class').html('Product Class: <span class="green">4</span>, Coins Per lot: <span  id="coins" class="green">12</span>');
+        $('#product_class').html('Product Class: <span class="green">5</span>, Coins Per lot: <span  id="coins" class="green">12</span>');
         $("#class_id").val(5);
     }
     setTimeout(function(){

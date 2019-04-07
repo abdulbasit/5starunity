@@ -19,6 +19,10 @@ Route::get('news', 'BlogController@index')->name('news');
 Route::get('cat-news/{cat_id}', 'BlogController@cat_blogs')->name('cat-news');
 Auth::routes();
 
+
+    // Password Reset Routes...
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('mail/send', 'MailController@send');
     Auth::routes(['verify' => true]);
     Route::get('article/{slug}', 'BlogController@blogDetail');
@@ -72,8 +76,8 @@ Auth::routes();
         Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('login');
         Route::post('login', 'Auth\AdminLoginController@login');
         // Password Reset Routes...
-        Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-        Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::get('password/reset', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('password.request');
+        Route::post('password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('password.email');
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
         Route::get('users', 'UserController@index')->name('users');

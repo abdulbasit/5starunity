@@ -23,7 +23,7 @@
                 {{ $message }}
             </div>
         @endif
-        <div class="col-lg-8 col-lg-offset-2">
+        <div class="col-lg-8">
             <div class="card-header text-center"><h3>{{ __('Login') }}</h3></div>
             <br />
             <div class="card-body">
@@ -67,13 +67,13 @@
                                             {{ __('Login') }}
                                         </button>
                                     </div>
-                                    <div class="col-md-4 col-xs-12 no-padding pull-right">
+                                    {{-- <div class="col-md-4 col-xs-12 no-padding pull-right">
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                         @endif
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-3 col-xs-12 no-padding pull-right">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -90,6 +90,25 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="col-lg-3 extraBtns">
+
+            <div class="row">
+                <div class="col-xs-12 no-padding" style="margin-bottom:10px">
+                    <a class="btn btn-primary" style="width:100%" href="{{ route('register') }}">
+                        {{ __('Registrer your self ') }}
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-xs-12 no-padding">
+                        @if (Route::has('password.request'))
+                            <a class="btn btn-primary" style="width:100%" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        @endif
+                    </div>
+                </div>
         </div>
     </div>
 </div>

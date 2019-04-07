@@ -2108,6 +2108,10 @@ pre code {
         width:80% !important;
         float:left !important
     }
+    .extraBtns
+    {
+        margin-top:90px;
+    }
     #remsCheck
     {
         width: 205px;

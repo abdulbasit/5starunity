@@ -42,6 +42,6 @@ class SliderController extends Controller
     {
         $sliderImage = Slider::where('id',$id);
         $sliderImage->delete();
-        return redirect('/sliders');
+        return redirect('admin/sliders');
     }
 }

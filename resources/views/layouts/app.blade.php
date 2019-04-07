@@ -61,7 +61,7 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li  ><a href="/lotteries">LOTTERY of THINGS</a></li>
+                                <li  ><a href="/">LOTTERY of THINGS</a></li>
                                 <li  ><a href="{{route('ceo')}}">ERFINDER / GRUNDER</a></li>
                                 <li ><a href="{{route('partner')}}">PARTNER</a></li>
                                 <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>

@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="action col-xs-10 col-lg-3">
                                     <input type="text" name="qty" id="qty" value="1" onkeypress='validate(event)' onchange="emptyQty()">
-                                    <span style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
+                                    <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @else
                             <div class="action col-xs-10 col-lg-8 no-padding">
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="action col-xs-10 col-lg-3">
                                     <input type="text" name="qty" id="qty" value="1" onkeypress='validate(event)' onchange="emptyQty()">
-                                    <span style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
+                                    <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @endif
                         </div>
@@ -70,6 +70,7 @@
 @section('script')
     <script>
         function validate(evt) {
+
             var theEvent = evt || window.event;
 
             // Handle paste
@@ -90,6 +91,16 @@
                 var qty = $("#qty").val();
                 var lotAmount = $("#totalAmount").attr('lot-amount');
                 $("#totalAmount").html(lotAmount*qty);
+
+                if ((evt.which != 46 || qty.indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) {
+                    var int = qty.split(".");
+                        $("#lotSize").html('<font color="red"><b>Only round number</b></font>');
+                        $("#qty").val(int[0]);
+                }
+                else
+                {
+                    $("#lotSize").html('Enter no of lots');
+                }
             },300);
 
             // alert(qty);

@@ -331,7 +331,7 @@ label.error {
                         </div>
                         <div class="row">
                             <div class="col-lg-10 col-xs-12 form-group">
-                                <label for="profile_pic" class="form-label" style="width:145px">Select Avatar</label>
+                                <label for="profile_pic" class="form-label" style="width:130px">Select Avatar &nbsp; &nbsp;</label>
                                 <div class="form-file" id="id_card">
                                     <input type="file" name="profile_pic" id="profile_pic" class="custom-file-input form-control" />
                                     <span id='val'></span>

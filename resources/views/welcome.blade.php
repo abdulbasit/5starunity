@@ -14,8 +14,10 @@
                 overflow: hidden; top:60px">
                 @foreach($sliderData as $slider)
                     <div>
-                        <img data-u="image" src="{{ URL::to('/') }}/uploads/slider/{{$slider->image}}" />
-                        <span></span>
+                        <a href="{{$slider->link}}">
+                            <img data-u="image" src="{{ URL::to('/') }}/uploads/slider/{{$slider->image}}" />
+                            <span></span>
+                        </a>
                     </div>
                 @endforeach
                 </div>
@@ -322,14 +324,13 @@
         <div class="container">
             <div class="section-title">What our donors say</div>
         </div>
-
-        <div class="container homepage-testimonials-large-devices">
+        <div class="container">
             <div class="row item active">
                 @foreach($testimonialData as $testimonial)
                 <div class="col-md-4 col-xs-12">
                     <div class="testimonial-box">
                         <div class="carousel-caption">
-                            <div class="who">
+                            <div class="who" style="    border-radius: 1000px; width: 130px; height: 130px; overflow: hidden; margin-left: 25%;">
                                 <img class="lazy" src="{{ URL::to('/') }}/uploads/testimonials/{{$testimonial->image}}"><br />
                             </div>
                             <p>

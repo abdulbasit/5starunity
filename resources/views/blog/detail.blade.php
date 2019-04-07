@@ -128,7 +128,7 @@
         })
         .done(function( msg ) {
             $("#postCommentBox").val("");
-
+            location.reload();
         });
     }
 

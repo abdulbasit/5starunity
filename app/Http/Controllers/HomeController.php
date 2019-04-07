@@ -26,7 +26,7 @@ class HomeController extends Controller
         ->orderBy('blogs.id', 'DESC')
         ->limit('6')
         ->get();
-        $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
+        $testimonialData = Testimonial::orderBy('id', 'DESC')->limit('3')->get();
         return view('welcome',compact('lotteryData','blogData','testimonialData','sliderData'));
     }
     public function ceo()
