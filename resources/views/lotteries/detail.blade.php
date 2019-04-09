@@ -39,7 +39,6 @@
                             <strong><?php
                                 $total = $lotteryData->one_lot_amount*$lotteryData->lottery_contestent->count();
                                 echo $progressBar = round($total/$lotteryData->lot_amount*100,0);
-                                // */100
                                 ?>%</strong>
                              Of total amount donated </p>
                         <div class="row">
@@ -52,13 +51,17 @@
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @else
-                            <div class="action col-xs-10 col-lg-8 no-padding">
-                                    <button class="add-to-cart btn" type="button">Apply</button>
+                            {{-- success login --}}
+                                <div style="width:100%; color:red; font-size:14px; text-align:center; padding-bottom:7px" id="errorLots"></div>
+                                <input type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData->total_lots}}">
+                                <div class="action col-xs-10 col-lg-8 no-padding">
+                                    <button onclick="puchaseLottery()" class="add-to-cart btn" type="button">Apply</button>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3">
                                     <input type="text" name="qty" id="qty" value="1" onkeypress='validate(event)' onchange="emptyQty()">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
+
                             @endif
                         </div>
 					</div>
@@ -112,6 +115,30 @@
             var qty = $("#qty").val();
             if(qty=="")
                 $("#qty").val('1');
+        }
+        function puchaseLottery()
+        {
+            var totalAmount = $("#totalAmount").text();
+            var total_lots = $("#total_lots").val();
+            var qty = $("#qty").val();
+            if(qty > total_lots)
+                {
+
+                    $("#errorLots").html('Lots must be less than '+total_lots);
+                    return false;
+                }
+                else
+                {
+                    $.ajax({
+                        method: "POST",
+                        url: "{{route('lottery.purchase')}}",
+                        data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount }
+                    })
+                    .done(function( msg ) {
+                        $("#errorLots").html(msg);
+                    });
+                }
+
         }
     </script>
 @endsection

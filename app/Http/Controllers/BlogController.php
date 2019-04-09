@@ -13,6 +13,7 @@ use App\Models\Category;
 use App\Models\Testimonial;
 use Carbon\Carbon;
 use Auth;
+use Session;
 class BlogController extends Controller
 {
 
@@ -39,10 +40,11 @@ class BlogController extends Controller
     }
     public function blogDetail($slug)
     {
-        // dd('dd');
+
         $id = explode("-",$slug);
         $offest = count($id)-1;
         $id = $id[$offest];
+        Session::flash('route', 'article/'.$slug);
         $blogPostData = Blog::with('blog_comments','user')->find($id);
         $categories = Category::where('category_for','blog')->get();
         $commentsData = array_reverse(array_sort($blogPostData->blog_comments));

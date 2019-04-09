@@ -94,7 +94,7 @@
                 @endif
             </div>
             <div class="col-lg-4 col-xs-12 categories">
-                <h4>Categories</h4>
+                <h4 class="text-left">Categories</h4>
                 <div class="profile-usermenu">
                     <ul class="nav">
                         @foreach($categories as $category)

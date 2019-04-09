@@ -5,7 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use Route;
-
+use URL;
+use Session;
 class LoginController extends Controller
 {
 
@@ -25,6 +26,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
 
+        Session::flash('route', $request->get('pre-route'));
       // Validate the form data
       $this->validate($request, [
         'email'   => 'required|email',
@@ -37,7 +39,7 @@ class LoginController extends Controller
       if (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->password,'verification'=>"",'status'=>"0"], $request->remember)) {
         // if successful, then redirect to their intended location
         // return redirect()->intended(route('/home1'));
-        return redirect('/profile');
+        return redirect(Session::get('route'));
       }
       // if unsuccessful, then redirect back to the login with the form data
       return redirect()->route('login')->with('error','Invalid credentionals please try again with correct information! ');

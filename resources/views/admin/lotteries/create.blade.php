@@ -324,11 +324,11 @@ function check_class()
         $("#class_id").val(5);
     }
     setTimeout(function(){
-    var lot_amount = $("#lot_amount").val();
-    var coins = $("#coins").text();
-    var total_lots = lot_amount/coins;
-    $("#one_lot").val(coins);
-    $("#total_lots").val(total_lots.toFixed(0));
+        var lot_amount = $("#lot_amount").val();
+        var coins = $("#coins").text();
+        var total_lots = lot_amount/coins;
+        $("#one_lot").val(coins);
+        $("#total_lots").val(total_lots.toFixed(0));
   },500)
 }
 </script>

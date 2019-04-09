@@ -47,6 +47,7 @@ Auth::routes();
     Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');
     Route::post('check_email', 'Auth\RegisterController@check_email');
     Route::post('check_email', 'Auth\RegisterController@check_email')->name('check_email');
+    Route::get('kalarna', 'LotteryController@kalarna')->name('kalarna');
 
     //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {
@@ -59,6 +60,7 @@ Auth::routes();
         Route::post('profile-update', 'UserController@update')->name('profile-update');
 
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
+        Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
 
     });
 
