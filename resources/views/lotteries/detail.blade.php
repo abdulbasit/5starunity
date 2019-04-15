@@ -63,6 +63,13 @@
                                 </div>
 
                             @endif
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="8C6M6HC9ANYKJ">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+
                         </div>
 					</div>
 				</div>
@@ -121,24 +128,16 @@
             var totalAmount = $("#totalAmount").text();
             var total_lots = $("#total_lots").val();
             var qty = $("#qty").val();
-            if(qty > total_lots)
-                {
 
-                    $("#errorLots").html('Lots must be less than '+total_lots);
-                    return false;
-                }
-                else
-                {
-                    $.ajax({
-                        method: "POST",
-                        url: "{{route('lottery.purchase')}}",
-                        data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount }
-                    })
-                    .done(function( msg ) {
-                        $("#errorLots").html(msg);
-                    });
-                }
-
+            $.ajax({
+                method: "POST",
+                url: "{{route('lottery.purchase')}}",
+                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots }
+            })
+            .done(function( msg ) {
+                // alert(msg);
+                $("#errorLots").html(msg);
+            });
         }
     </script>
 @endsection

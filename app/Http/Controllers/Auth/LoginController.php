@@ -39,7 +39,10 @@ class LoginController extends Controller
       if (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->password,'verification'=>"",'status'=>"0"], $request->remember)) {
         // if successful, then redirect to their intended location
         // return redirect()->intended(route('/home1'));
-        return redirect(Session::get('route'));
+        if(Session::get('route')!="")
+            return redirect(Session::get('route'));
+        else
+            return redirect('/profile');
       }
       // if unsuccessful, then redirect back to the login with the form data
       return redirect()->route('login')->with('error','Invalid credentionals please try again with correct information! ');

@@ -9,7 +9,7 @@ class Vallet extends Model
     // protected $guard = 'admin';
 
     protected $fillable = [
-        'user_id', 'credit', 'available_balance'
+        'user_id', 'credit', 'balance','total_available_balance','pre_balance'
     ];
 
     public function user()

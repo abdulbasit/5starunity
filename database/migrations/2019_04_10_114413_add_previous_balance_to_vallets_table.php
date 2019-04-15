@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAvaialbleColumnToValletsTable extends Migration
+class AddPreviousBalanceToValletsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddAvaialbleColumnToValletsTable extends Migration
     public function up()
     {
         Schema::table('vallets', function (Blueprint $table) {
-            $table->string('available_balance');
+            $table->integer('pre_balance');
+            $table->integer('total_available_balance');
         });
     }
 
@@ -26,7 +27,8 @@ class AddAvaialbleColumnToValletsTable extends Migration
     public function down()
     {
         Schema::table('vallets', function (Blueprint $table) {
-            $table->removeColumn('balance');
+            $table->removeColumn('pre_balance');
+            $table->removeColumn('total_available_balance');
         });
     }
 }

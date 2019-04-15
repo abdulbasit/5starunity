@@ -12,7 +12,13 @@ use App\Models\Vallet;
 use Route;
 use Session;
 use Auth;
+use DB;
+use Carbon\Carbon;
 use App\Models\Testimonial;
+
+
+
+
 class LotteryController extends Controller
 {
 
@@ -38,20 +44,34 @@ class LotteryController extends Controller
         $qty = $request->get('qty');
         $user_id = Auth::guard('client')->user()->id;
         $amount = $request->get('amount');
-        $checkTotalCredit = Vallet::where('user_id',$user_id)->where('available_balance','>','0')->sum('available_balance');
-        if($checkTotalCredit>$amount)
-        {
-            $getTCreditList = Vallet::where('user_id',$user_id)->where('available_balance','>','0')->orderBy('available_balance','asc')->get();
-            $totalBalance = 0;
+        $total_lots = $request->get('total_lots');
 
-            foreach($getTCreditList as $balance)
-            {
-                if($balance->available_balance > $amount)
-                {
-                    echo $balance->available_balance."<br />";
-                }
-                // echo $amount;
-            }
+
+        if($qty > $total_lots)
+            return  "Lots must be less than".$total_lots;
+
+        $checkTotalCredit = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
+
+
+
+        if($checkTotalCredit->total_available_balance >= $amount)
+        {
+            $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
+            echo $balance = "-".$amount;
+
+            $previousBalance = $checkTotalCredit->total_available_balance;
+// DB::enableQueryLog();
+            $lottery_id = Vallet::create([
+                "user_id" => $user_id,
+                "credit"=>'0',
+                "balance"=>$balance,
+                "pre_balance"=> $previousBalance,
+                "total_available_balance"=>$remainingTotalBalance,
+                "created_at"=>Carbon::now(),
+                "updated_at"=>Carbon::now()
+            ]);
+// dd(DB::getQueryLog());
+
         }
         else
         {
@@ -61,19 +81,5 @@ class LotteryController extends Controller
 
         // if($amount>$totalBalance
     }
-    public function kalarna()
-    {
-        require(base_path() . '/vendor/autoload.php');
-        $merchantId = getenv('USERNAME') ?: 'PK08452_e7d971b33f20';
-        $sharedSecret = getenv('PASSWORD') ?: 'zJZvHMidbFnoqr1n';
-        $authorizationToken = getenv('AUTH_TOKEN') ?: 'authorizationToken';
 
-        $apiEndpoint = Transport\ConnectorInterface::EU_TEST_BASE_URL;
-
-        $connector = Klarna\Rest\Transport\Connector::create(
-            $merchantId,
-            $sharedSecret,
-            $apiEndpoint
-        );
-    }
 }

@@ -56,8 +56,8 @@
                     <i class="glyphicon glyphicon-cog"></i>
                     Account Settings </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li  class="@if($route=='wallet')active @endif">
+                    <a href="{{route('wallet')}}">
                     <i class="glyphicon glyphicon-credit-card"></i>
                     Wallet </a>
                 </li>

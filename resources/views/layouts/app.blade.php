@@ -29,6 +29,13 @@
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/login-register.js')}}"></script>
     <script type="text/javascript" src="{{ asset('frontend/main.js')}}"></script>
     @yield('style')
+    <style>
+    .newLayout .navbar-default .navbar-nav li .largeDropdown
+    {
+        border: solid 1px #000 !important;
+        box-shadow: 1px 6px 20px -5px #ccc !important;
+    }
+    </style>
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
