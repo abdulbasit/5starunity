@@ -118,6 +118,7 @@ class WalletController extends Controller
         try {
             // Take the payment
            $res= $payment->execute($execution, $apiContext);
+           dd($payment->getApprovalLink());
         } catch (Exception $e) {
             // Failed to take payment
         }
@@ -180,19 +181,18 @@ class WalletController extends Controller
 
             return $payment;
     }
-    public function credit_card(Request $request)
+    public function credit_card()
     {
-
         $value = Cache::get('key');
         $apiContext = new ApiContext(
             new OAuthTokenCredential(
-                env('PAYPAL_CLIENT_ID'),// ClientID
-                env('PAYPAL_SECRETE_ID')// ClientSecret
+                'AficHECouMmU57A3VrB7mCNGZLr_XGYUfo76jH9zlYdeLv8atTJADxoot0V_popoqfdbOwZLf83zPXpi',     // ClientID
+                'EPvvH-sgq8D6DnN_CyFUAYrlFYP4F4jaSXsAg7zfjK_HvB2s6Z2pHb5loqQrFmYR9fpYKaMGvw_sIBhX'      // ClientSecret
                 )
             );
-            // 4694416896479228
+        // return "Hello?";
         $card = new CreditCard();
-        $card->setType("visa")->setNumber("4012888888881881")->setExpireMonth("05")->setExpireYear("2024")->setCvv2("012")->setFirstName("Joe")->setLastName("Shopper");
+        $card->setType("visa")->setNumber("4694416896479228")->setExpireMonth("05")->setExpireYear("2024")->setCvv2("012")->setFirstName("Joe")->setLastName("Shopper");
         $fi = new FundingInstrument();
         $fi->setCreditCard($card);
         $payer = new Payer();
@@ -215,11 +215,11 @@ class WalletController extends Controller
         try {
             $payment->create($apiContext);
         } catch (Exception $ex) {
-            ResultPrinter::printError('Create Payment Using Credit Card. If 500 Exception, try creating a new Credit Card using <a href="https://ppmts.custhelp.com/app/answers/detail/a_id/750">Step 4, on this link</a>, and using it.', 'Payment', null, $request, $ex);
+            // ResultPrinter::printError('Create Payment Using Credit Card. If 500 Exception, try creating a new Credit Card using <a href="https://ppmts.custhelp.com/app/answers/detail/a_id/750">Step 4, on this link</a>, and using it.', 'Payment', null, $request, $ex);
             exit(1);
         }
-        ResultPrinter::printResult('Create Payment Using Credit Card', 'Payment', $payment->getId(), $request, $payment);
-        return $payment;
+        // ResultPrinter::printResult('Create Payment Using Credit Card', 'Payment', $payment->getId(), $request, $payment);
+        dd($payment);
     }
     public function donate()
     {

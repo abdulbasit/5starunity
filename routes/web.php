@@ -66,7 +66,6 @@ Auth::routes();
         Route::get('kalarna', 'WalletController@kalarna')->name('kalarna');
         Route::get('paypal', 'WalletController@paypal')->name('paypal');
         Route::get('credit_card', 'WalletController@credit_card')->name('credit_card');
-        Route::post('credit_card', 'WalletController@credit_card')->name('credit_card');
         Route::get('donated', 'WalletController@donated')->name('donated');
         Route::get('response', 'WalletController@response')->name('response');
     });
