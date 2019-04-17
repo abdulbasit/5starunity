@@ -57,7 +57,7 @@ class LotteryController extends Controller
         if($checkTotalCredit->total_available_balance >= $amount)
         {
             $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
-            echo $balance = "-".$amount;
+             $balance = "-".$amount;
 
             $previousBalance = $checkTotalCredit->total_available_balance;
 // DB::enableQueryLog();

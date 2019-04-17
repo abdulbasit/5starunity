@@ -46,8 +46,8 @@
                                 <div class="action col-xs-10 col-lg-8 no-padding">
                                     <a href="/login" class="add-to-cart btn" type="button">Apply</a>
                                 </div>
-                                <div class="action col-xs-10 col-lg-3">
-                                    <input type="text" name="qty" id="qty" value="1" onkeypress='validate(event)' onchange="emptyQty()">
+                                <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
+                                    <input type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @else
@@ -57,8 +57,8 @@
                                 <div class="action col-xs-10 col-lg-8 no-padding">
                                     <button onclick="puchaseLottery()" class="add-to-cart btn" type="button">Apply</button>
                                 </div>
-                                <div class="action col-xs-10 col-lg-3">
-                                    <input type="text" name="qty" id="qty" value="1" onkeypress='validate(event)' onchange="emptyQty()">
+                                <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
+                                    <input type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
 
@@ -79,44 +79,7 @@
 @endsection
 @section('script')
     <script>
-        function validate(evt) {
 
-            var theEvent = evt || window.event;
-
-            // Handle paste
-            if (theEvent.type === 'paste') {
-                key = event.clipboardData.getData('text/plain');
-            } else {
-            // Handle key press
-                var key = theEvent.keyCode || theEvent.which;
-                key = String.fromCharCode(key);
-            }
-            var regex = /[0-9]|\./;
-            if( !regex.test(key) ) {
-                theEvent.returnValue = false;
-                if(theEvent.preventDefault) theEvent.preventDefault();
-            }
-
-            setTimeout(function(){
-                var qty = $("#qty").val();
-                var lotAmount = $("#totalAmount").attr('lot-amount');
-                $("#totalAmount").html(lotAmount*qty);
-
-                if ((evt.which != 46 || qty.indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) {
-                    var int = qty.split(".");
-                        $("#lotSize").html('<font color="red"><b>Only round number</b></font>');
-                        $("#qty").val(int[0]);
-                }
-                else
-                {
-                    $("#lotSize").html('Enter no of lots');
-                }
-            },300);
-
-            // alert(qty);
-            if(qty=="")
-                $("#qty").val('1');
-        }
         function emptyQty()
         {
             var qty = $("#qty").val();

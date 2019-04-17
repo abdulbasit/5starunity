@@ -8,7 +8,6 @@
     height: 500px;
 }
 </style>
-
 @endsection
 <div class="container">
     <div class="row profile">
@@ -44,16 +43,16 @@
                 </div>
                 <div class="panel-body " id="paymentOptions" style="display:none">
                     <div id="paypal-button-container"></div>
-                    <form action="{{route('credit_card')}}" method="post">
+                    <form action="{{route('credit_card')}}" method="post" id="creditPForm">
                         @csrf
                     <div class="creditFormWrap">
                         <span class="pull-right paymehnt_close">Close</span>
-                        <label class="text-left col-lg-8 col-xs-12">
+                        <label class="text-left col-lg-8 col-xs-12" id="creditForm">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="form-group">
+                                    <div class="credit_warp">
                                         <label>CREDIT</label>
-                                        <input type="text" name="credit" id="credit" placeholder="Enter Amount e.g.(20 &euro;)" />
+                                        <input type="number" onkeypress="validate(event,'credit_warp')" name="credit" id="credit" placeholder="Enter Amount e.g.(20 &euro;)" />
                                     </div>
                                 </div>
                             </div>
@@ -61,47 +60,53 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="form-group">
+                                            <div class="">
                                                 <label>CARD NUMBER</label>
-                                                <div class="">
-                                                    <input type="text" id="card_number" name="card_number" class="" placeholder="Valid Card Number" />
+                                                <div class="card_number_wrap">
+                                                    <input type="text" onkeypress="validate(event,'card_number_wrap')" id="card_number" name="card_number" class="" placeholder="Valid Card Number" />
+                                                    <span id="error_card" ></span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-md-7">
-                                            <div class="form-group">
+                                            <div class="exp_wrap">
                                                 <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                                <input type="text" id="expiration" name="expiration" class="" placeholder="MM / YY" />
+                                                <input type="text" onkeypress="validate(event,'exp_wrap')" id="expiration" name="expiration" class="" placeholder="MM / YY" />
                                             </div>
                                         </div>
                                         <div class="col-xs-5 col-md-5 pull-right">
-                                            <div class="form-group">
+                                            <div class="cvv_wrap">
                                                 <label>CV CODE</label>
-                                                <input type="text" id="cvv" name="cvv" class="" placeholder="CVC" />
+                                                <input type="text" id="cvv" onkeypress="validate(event,'cvv_wrap')" name="cvv" class="" placeholder="CVC" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 col-md-7">
-                                            <div class="form-group">
+                                            <div class="fname_wrap">
                                                 <label>FIRST NAME</label>
-                                                <input type="text" id="fname" name="fname" class="" placeholder="First Name" />
+                                                <input type="text" onkeypress="validate(event,'fname_wrap')" id="fname" name="fname" class="" placeholder="First Name" />
                                             </div>
                                         </div>
                                         <div class="col-xs-5 col-md-5 pull-right">
-                                            <div class="form-group">
+                                            <div class="lname_wrap">
                                                 <label>LAST NAME</label>
-                                                <input type="text" id="lname" name="lname" class="" placeholder="Last Name" />
+                                                <input type="text" onkeypress="validate(event,'lname_wrap')" id="lname" name="lname" class="" placeholder="Last Name" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <div class="form-group">
-                                              <input type="submit" onclick="credit_card()" class="btnPurchaseCredit pull-right" value="Submit" />
+                                            <div class="">
+                                              <input type="button" onclick="credit_card()" class="btnPurchaseCredit pull-right" value="Submit" />
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div id="msg"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -150,8 +155,6 @@
             </div>
          </div>
     </div>
-
-
 </div>
 @endsection
 @section('script')
@@ -193,22 +196,42 @@ $(".paymehnt_close").click(function(){
 });
 function credit_card()
 {
+    $("#creditForm").css('opacity','0.5');
+    $("#creditPForm :input").prop("disabled", true);
 
-      var amount = $("#credit").val();
+
+      var credit = $("#credit").val();
       var card_number = $("#card_number").val();
       var expiration = $("#expiration").val();
       var cvv = $("#cvv").val();
       var fname = $("#fname").val();
       var lname = $("#lname").val();
+
+      var values = [credit,card_number,expiration,cvv,fname,card_type,lname ];
+      payment_form_validation(values);
       var card_type = GetCardType(card_number);
       $.ajax({
             method: "POST",
             url: "{{route('credit_card')}}",
-            data: { "_token": "{{ csrf_token() }}",amount: amount , card_number:card_number,expiration:expiration,
+            data: { "_token": "{{ csrf_token() }}",credit: credit , card_number:card_number,expiration:expiration,
                     cvv:cvv,fname:fname,card_type:card_type,lname:lname }
         }).done(function( msg ) {
-            console.log(msg)
-            // $("#errorLots").html(msg);
+            $("#creditForm").css('opacity','1');
+            $("#creditPForm :input").prop("disabled", false);
+            if(msg=='success')
+            {
+                $("#msg").html('Payment Success');
+                $("#msg").addClass('success_msg');
+            }
+            setTimeout(function(){
+                window.location="/wallet";
+             }, 1000);
+        }).fail(function() {
+
+            $("#creditForm").css('opacity','1');
+            $("#creditPForm :input").prop("disabled", false);
+            $("#msg").html('Payment Unsuccessfull. Please try with correct information!');
+            $("#msg").addClass('error_msg');
         });
 }
 </script>

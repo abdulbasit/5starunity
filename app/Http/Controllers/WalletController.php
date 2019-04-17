@@ -17,6 +17,7 @@ use DB;
 use Carbon\Carbon;
 use App\Models\User;
 
+
 use PayPal\Api\Amount;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\CreditCard;
@@ -32,9 +33,19 @@ use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Api\ResultPrinter;
 use Cache;
+use Config;
 class WalletController extends Controller
 {
+    private $_api_context;
 
+    public function __construct()
+    {
+
+        // setup PayPal api context
+        $paypal_conf = Config::get('paypal');
+        $this->_api_context = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
+        $this->_api_context->setConfig($paypal_conf['settings']);
+    }
     public function index()
     {
         $userId = Auth::guard('client')->user()->id;
@@ -45,7 +56,7 @@ class WalletController extends Controller
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         // dd($userInfo['user_profile']);
         $route='wallet';
-        $walletHistory = Vallet::where('credit','>','0')->get();
+        $walletHistory = Vallet::where('credit','>','0')->where('status','approved')->get();
         return view('wallet.index',compact('userInfo','route','walletHistory'));
     }
     public function kalarna()
@@ -181,45 +192,83 @@ class WalletController extends Controller
 
             return $payment;
     }
-    public function credit_card()
+    public function credit_card(Request $request)
     {
-        $value = Cache::get('key');
-        $apiContext = new ApiContext(
-            new OAuthTokenCredential(
-                'AficHECouMmU57A3VrB7mCNGZLr_XGYUfo76jH9zlYdeLv8atTJADxoot0V_popoqfdbOwZLf83zPXpi',     // ClientID
-                'EPvvH-sgq8D6DnN_CyFUAYrlFYP4F4jaSXsAg7zfjK_HvB2s6Z2pHb5loqQrFmYR9fpYKaMGvw_sIBhX'      // ClientSecret
-                )
-            );
+
+
+        $users_id = Auth::guard('client')->user()->id;
+        $checkTotalCredit = Vallet::where('user_id',$users_id)->orderBy('id','desc')->first();
+            if(!$checkTotalCredit)
+            {
+                $trans_id = Vallet::create([
+                    "user_id" => $users_id,
+                    "credit"=>$request->get('credit'),
+                    "balance"=>$request->get('credit'),
+                     "pre_balance"=> '0',
+                     "total_available_balance"=>$request->get('credit'),
+                     "created_at"=>Carbon::now(),
+                     "updated_at"=>Carbon::now(),
+                     "status"=>"pending"
+                ]);
+            }
+            else
+            {
+
+                $credit=$request->get('credit');
+                $previousBalance = $checkTotalCredit->total_available_balance;
+                $remainingTotalBalance = $checkTotalCredit->total_available_balance+$credit;
+                $balance = $credit;
+
+                DB::enableQueryLog();
+                $trans_id = Vallet::create([
+                    "user_id" => $users_id,
+                    "credit"=>$credit,
+                    "balance"=>$balance,
+                    "pre_balance"=> $previousBalance,
+                    "total_available_balance"=>$remainingTotalBalance,
+                    "created_at"=>Carbon::now(),
+                    "updated_at"=>Carbon::now(),
+                    "status"=>"pending"
+                ]);
+            // dd(DB::getQueryLog());
+            }
+
         // return "Hello?";
         $card = new CreditCard();
-        $card->setType("visa")->setNumber("4694416896479228")->setExpireMonth("05")->setExpireYear("2024")->setCvv2("012")->setFirstName("Joe")->setLastName("Shopper");
+        $expiration = explode("/",$request->get('expiration'));
+        // 4694416896479228
+        $card->setType("visa")->setNumber($request->get('card_number'))->setExpireMonth($expiration[0])->setExpireYear($expiration[1])->setCvv2($request->get('cvv'))->setFirstName($request->get('fname'))->setLastName($request->get('lname'));
         $fi = new FundingInstrument();
         $fi->setCreditCard($card);
         $payer = new Payer();
         $payer->setPaymentMethod("credit_card")->setFundingInstruments(array($fi));
         $item1 = new Item();
-        $item1->setName('Ground Coffee 40 oz')->setDescription('Ground Coffee 40 oz')->setCurrency('USD')->setQuantity(1)->setTax(0)->setPrice(20);
+        $item1->setName('5Starunity Credit Purcase')->setDescription('5Starunity Credit Purcase')->setCurrency('USD')->setQuantity(1)->setTax(0)->setPrice($request->get('credit'));
         //  $item2 = new Item();
         //  $item2->setName('Granola bars')->setDescription('Granola Bars with Peanuts')->setCurrency('USD')->setQuantity(5)->setTax(0.2)->setPrice(2);
         $itemList = new ItemList();
         $itemList->setItems(array($item1));
         $details = new Details();
-        $details->setShipping(0)->setTax(0)->setSubtotal(20);
+        $details->setShipping(0)->setTax(0)->setSubtotal($request->get('credit'));
         $amount = new Amount();
-        $amount->setCurrency("USD")->setTotal(20)->setDetails($details);
+        $amount->setCurrency("USD")->setTotal($request->get('credit'))->setDetails($details);
         $transaction = new Transaction();
         $transaction->setAmount($amount)->setItemList($itemList)->setDescription("Payment description")->setInvoiceNumber(uniqid());
         $payment = new Payment();
         $payment->setIntent("sale")->setPayer($payer)->setTransactions(array($transaction));
         $request = clone $payment;
         try {
-            $payment->create($apiContext);
+            $payment->create($this->_api_context);
+            $transStatus = Vallet::find($trans_id->id);
+            $transStatus->status='approved';
+            $transStatus->save();
+            echo 'success';
         } catch (Exception $ex) {
-            // ResultPrinter::printError('Create Payment Using Credit Card. If 500 Exception, try creating a new Credit Card using <a href="https://ppmts.custhelp.com/app/answers/detail/a_id/750">Step 4, on this link</a>, and using it.', 'Payment', null, $request, $ex);
-            exit(1);
+            $transStatus = Vallet::find($trans_id->id);
+            $transStatus->status='error';
+            $transStatus->save();
+            echo 'error';
         }
-        // ResultPrinter::printResult('Create Payment Using Credit Card', 'Payment', $payment->getId(), $request, $payment);
-        dd($payment);
     }
     public function donate()
     {
