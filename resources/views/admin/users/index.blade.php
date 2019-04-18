@@ -63,6 +63,7 @@
                                             <a class="dropdown-item" href="/admin/user/status/{{$user->id}}/2"><i class="ft-slash red"></i> Block </a>
                                         @endif
                                         <a class="dropdown-item" href="{{ route('admin.user.documents',$user->id) }}"><i class="ft-file-text green"></i> Documents  </a>
+                                        <a class="dropdown-item" href="{{ route('admin.user.credit.history',$user->id) }}"><i class="fa fa-credit-card"></i> Credit History  </a>
                                     </div>
                                 </div>
                             </div>

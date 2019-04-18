@@ -118,7 +118,9 @@ class WalletController extends Controller
         $execution = new PaymentExecution();
         $execution->setPayerId($_GET['PayerID']);
         try {
+
            $response= $payment->execute($execution, $this->_api_context);
+
            $type = 'payal';
            $payment_method = $response->payer->payment_method;
            $invoice_id = $response->transactions[0]->invoice_number;
@@ -205,6 +207,7 @@ class WalletController extends Controller
 
         try {
             $response = $payment->create($this->_api_context);
+
             $type = 'payal';
             $payment_method = $response->payer->payment_method;
             $invoice_id = $response->transactions[0]->invoice_number;

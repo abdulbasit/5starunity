@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserProfile;
+use App\Models\Vallet;
 use App\Models\UserDocument;
 use Auth;
 class UserController extends Controller
@@ -14,6 +15,11 @@ class UserController extends Controller
     {
         $userData = User::with('userProfile')->get();
         return view('admin.users.index',compact('userData'));
+    }
+    public function creditHistory($id)
+    {
+        $creditHistoryData = Vallet::where('user_id',$id)->where('status','approved')->orderBy('id','desc')->get();
+        return view('admin.users.credit_history',compact('creditHistoryData'));
     }
     public function userDocuments($id)
     {
