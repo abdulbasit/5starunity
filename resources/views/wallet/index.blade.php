@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 @section('style')
@@ -16,34 +15,50 @@
              <div class="row">
                 <h4 class="no-padding pull-left">Wallet</h4>
                 <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> + Purchase Credit </button>
-                <button id="viewHistory" class="btnPurchaseCredit pull-right" style="display:none" type="button"> Viwe History </button>
+                <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> Transactino Histroy  </button>
+                <button id="viewHistory" class="btnPurchaseCredit pull-right" style="display:none" type="button"> Credit History </button>
              </div>
             <div class="checkout-panel">
+                @if(Session::get('success')!="")
+                <div class="alert alert-success">
+                    <strong>Success!</strong> {{Session::get('success')}}
+                </div>
+
+                @endif
                 <div id="historyTable">
-                    <table class="table table-striped">
+                    <table class="table table-striped text-center">
                         <thead>
                         <tr>
-                            <th>Purchased Credit</th>
-                            <th>Balance</th>
-                            <th>Available Balance</th>
-                            <th>Purchased Date</th>
+                            <th class="text-center">Purchased Credit</th>
+                            {{-- <th class="text-center">Balance</th> --}}
+                            <th class="text-center">Available Balance</th>
+                            <th class="text-center">Purchased Date</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($walletHistory as $history)
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                                <td>john@example.com</td>
+                        @foreach($walletHistory as $key => $history)
+                            @if($key==0)
+                            <tr style="background-color:#fde9ec">
+                                <td>{{$history->credit}}</td>
+                                {{-- <td>{{$history->balance}}</td> --}}
+                                <td>{{$history->total_available_balance}}</td>
+                                <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
                             </tr>
+                            @else
+                            <tr>
+                                <td>{{$history->credit}}</td>
+                                {{-- <td>{{$history->balance}}</td> --}}
+                                <td>{{$history->total_available_balance}}</td>
+                                <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
+                            </tr>
+                            @endif
                         @endforeach
                         </tbody>
                     </table>
                 </div>
                 <div class="panel-body " id="paymentOptions" style="display:none">
                     <div id="paypal-button-container"></div>
-                    <form action="{{route('credit_card')}}" method="post" id="creditPForm">
+                    <form action="" method="post" id="creditPForm">
                         @csrf
                     <div class="creditFormWrap">
                         <span class="pull-right paymehnt_close">Close</span>
@@ -97,17 +112,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="">
-                                              <input type="button" onclick="credit_card()" class="btnPurchaseCredit pull-right" value="Submit" />
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div id="msg"></div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="">
+                                    <input id="payBtn" type="button" onclick="credit_card()" class="btnPurchaseCredit pull-right" value="Submit" />
                                     </div>
                                 </div>
                             </div>
@@ -179,15 +195,29 @@ $("#viewHistory").click(function(){
 });
 $(".method").click(function(){
     var paymentMethod = $(this).attr('id');
-    $(".method").removeClass('method-selected');
-    $(this).addClass('method-selected');
-    if(paymentMethod=='credit-card')
-    {
-        $(".creditFormWrap").fadeIn("slow",function(){
-            // alert('dd');
-        });
 
-    }
+        $(".method").removeClass('method-selected');
+        $(this).addClass('method-selected');
+        if(paymentMethod=='credit-card')
+        {
+            $(".creditFormWrap").fadeIn("slow",function(){
+                $("#payBtn").attr('type','button');
+                $("#payBtn").attr('onclick','credit_card()');
+                $("#creditCard").css('display','block');
+                $("#creditCard :input").prop("disabled", false);
+                $("#creditPForm :input").attr("action","");
+            });
+        }
+        else if(paymentMethod=='paypal')
+        {
+            $(".creditFormWrap").fadeIn("slow",function(){
+                $("#creditPForm").attr("action","/balance/purchase");
+                $("#creditCard").css('display','none');
+                $("#creditCard :input").prop("disabled", true);
+                $("#payBtn").attr('type','submit');
+                $("#payBtn").attr('onclick','');
+            });
+        }
 });
 $(".paymehnt_close").click(function(){
     $(".creditFormWrap").fadeOut("fast",function(){
