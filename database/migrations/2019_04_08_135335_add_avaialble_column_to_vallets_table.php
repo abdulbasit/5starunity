@@ -14,7 +14,7 @@ class AddAvaialbleColumnToValletsTable extends Migration
     public function up()
     {
         Schema::table('vallets', function (Blueprint $table) {
-            $table->string('available_balance');
+            $table->string('balance');
         });
     }
 
