@@ -9,6 +9,7 @@
     </style>
 @endsection
 @section('content')
+<input type="hidden" id="lottery_id" name="lottery_id" value="{{$lotteryData->id}}">
 <div class="container">
 		<div class="card">
 			<div class="container-fliud">
@@ -47,35 +48,50 @@
                                     <a href="/login" class="add-to-cart btn" type="button">Apply</a>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
-                                    <input type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
+                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @else
                             {{-- success login --}}
                                 <div style="width:100%; color:red; font-size:14px; text-align:center; padding-bottom:7px" id="errorLots"></div>
-                                <input type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData->total_lots}}">
+                                <input  type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData->total_lots}}">
                                 <div class="action col-xs-10 col-lg-8 no-padding">
                                     <button onclick="puchaseLottery()" class="add-to-cart btn" type="button">Apply</button>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
-                                    <input type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
+                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
-
                             @endif
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="8C6M6HC9ANYKJ">
-                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
-
                         </div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+    </div>
+
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Lottery Numbers</h4>
+            </div>
+            <div class="modal-body">
+            <p>Pleaase notedown your lottery numbers </p>
+            <div id="numbers"></div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
 @endsection
 @section('script')
     <script>
@@ -91,15 +107,35 @@
             var totalAmount = $("#totalAmount").text();
             var total_lots = $("#total_lots").val();
             var qty = $("#qty").val();
+            var lottery_id =$("#lottery_id").val();
 
             $.ajax({
                 method: "POST",
                 url: "{{route('lottery.purchase')}}",
-                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots }
-            })
-            .done(function( msg ) {
-                // alert(msg);
-                $("#errorLots").html(msg);
+                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots,lottery_id:lottery_id }
+            }).done(function( msg ) {
+                var obj = JSON.parse(msg);
+                if(obj.status=='success')
+                {
+                    $("#numbers").html("");
+                    $("#errorLots").css('color','green');
+                    $("#errorLots").html(obj.message);
+                    $("#myModal").modal();
+                    var number = obj.numbers.split(",");
+                    var arrayLength = number.length;
+                    var i=0;
+                    for (i=0;i<=arrayLength;i++) {
+                        if(number[i]!==undefined)
+                        {
+                            $("#numbers").append("<p> Lott Number "+(i+1)+": "+number[i]+"</p>");
+                        }
+                    }
+                }
+                else
+                {
+                    $("#errorLots").css('color','red');
+                    $("#errorLots").html(obj.message);
+                }
             });
         }
     </script>

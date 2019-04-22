@@ -9,7 +9,7 @@ class LotteryContestent extends Model
 
     use SoftDeletes;
     protected $fillable = [
-        'lottery_id','user_id','lot_number','status'
+        'lottery_id','user_id','lot_number','status','vallet_id'
     ];
 
     protected $dates = ['deleted_at'];

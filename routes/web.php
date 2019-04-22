@@ -63,13 +63,17 @@ Auth::routes();
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
 
         Route::get('wallet', 'WalletController@index')->name('wallet');
+        Route::get('wallet/filter/{type}', 'WalletController@index')->name('wallets.filter');
+
+
         Route::get('kalarna', 'WalletController@kalarna')->name('kalarna');
         Route::get('paypal', 'WalletController@paypal')->name('paypal');
         Route::post('credit_card', 'WalletController@credit_card')->name('credit_card');
         Route::post('balance/purchase', 'WalletController@donated')->name('balance.purchase');
         Route::get('response', 'WalletController@response')->name('response');
     });
-
+    Route::get('balance/capturePayment', 'WalletController@capturePayment')->name('balance.capturePayment');
+    Route::get('redirectBack', 'WalletController@redirectBack')->name('redirectBack');
 
 
 

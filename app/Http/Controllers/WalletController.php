@@ -46,17 +46,29 @@ class WalletController extends Controller
         $this->_api_context = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
-    public function index()
+    public function index($type="")
     {
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
-        // dd($userProfile['country_name']->name);
+       
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
-        // dd($userInfo['user_profile']);
+       
         $route='wallet';
-        $walletHistory = Vallet::where('credit','>','0')->where('status','approved')->where('credit','>','0')->orderBy('id','desc')->get();
+        if($type=="credit")
+        {
+            $walletHistory = Vallet::where('credit','>','0')->where('status','approved')->orderBy('id','desc')->get();
+        }
+        else if($type=="lots")
+        {
+            $walletHistory = Vallet::where('credit','0')->where('status','approved')->orderBy('id','desc')->get();
+        }
+        else
+        {
+            $walletHistory = Vallet::where('status','approved')->orderBy('id','desc')->get();
+        }
+        
         return view('wallet.index',compact('userInfo','route','walletHistory'));
     }
     public function kalarna()
@@ -139,7 +151,7 @@ class WalletController extends Controller
                         "total_available_balance"=>$amount,
                         "created_at"=>Carbon::now(),
                         "updated_at"=>Carbon::now(),
-                        "status"=>"pending"
+                        "status"=>"approved"
                    ]);
                }
                else
@@ -273,4 +285,115 @@ class WalletController extends Controller
             echo 'error';
         }
     }
+    public function capturePayment()
+    {
+        $payer = new Payer();
+        $payer->setPaymentMethod("paypal");
+        $item1 = new Item();
+        $item1->setName('Ground Coffee 40 oz')
+            ->setCurrency('USD')
+            ->setQuantity(1)
+            ->setPrice(7.5);
+        $item2 = new Item();
+        $item2->setName('Granola bars')
+            ->setCurrency('USD')
+            ->setQuantity(5)
+            ->setPrice(2);
+
+        $itemList = new ItemList();
+        $itemList->setItems(array($item1, $item2));
+        $details = new Details();
+        $details->setShipping(1.2)
+            ->setTax(1.3)
+            ->setSubtotal(17.50);
+        $amount = new Amount();
+        $amount->setCurrency("USD")
+            ->setTotal(20)
+            ->setDetails($details);
+        $transaction = new Transaction();
+        $transaction->setAmount($amount)
+            ->setItemList($itemList)
+            ->setDescription("Payment description")
+            ->setInvoiceNumber(uniqid());
+            $baseUrl = url('/');
+        $redirectUrls = new RedirectUrls();
+        $redirectUrls->setReturnUrl("$baseUrl/redirectBack?success=true")
+            ->setCancelUrl("$baseUrl/redirectBack?success=false");
+        $payment = new Payment();
+        $payment->setIntent("authorize")
+            ->setPayer($payer)
+            ->setRedirectUrls($redirectUrls)
+            ->setTransactions(array($transaction));
+        $request = clone $payment;
+        try {
+            $payment->create($this->_api_context);
+        } catch (Exception $ex) {
+            ResultPrinter::printError("Created Payment Authorization Using PayPal. Please visit the URL to Authorize.", "Payment", null, $request, $ex);
+            exit(1);
+        }
+        $approvalUrl = $payment->getApprovalLink();
+        ResultPrinter::printResult("Created Payment Authorization Using PayPal. Please visit the URL to Authorize.", "Payment", "<a href='$approvalUrl' >$approvalUrl</a>", $request, $payment);
+
+        return $payment;
+    }
+    public function redirectBack()
+    {
+        if (isset($_GET['success']) && $_GET['success'] == 'true') {
+
+                $paymentId = $_GET['paymentId'];
+                $payment = Payment::get($paymentId, $this->_api_context);
+
+                $execution = new PaymentExecution();
+                $execution->setPayerId($_GET['PayerID']);
+
+                $transaction = new Transaction();
+                $amount = new Amount();
+                $details = new Details();
+
+                $details->setShipping(2.2)
+                    ->setTax(1.3)
+                    ->setSubtotal(17.50);
+
+                $amount->setCurrency('USD');
+                $amount->setTotal(21);
+                $amount->setDetails($details);
+                $transaction->setAmount($amount);
+
+
+                $execution->addTransaction($transaction);
+
+                try {
+
+                    $result = $payment->execute($execution, $this->_api_context);
+
+
+                    ResultPrinter::printResult("Executed Payment", "Payment", $payment->getId(), $execution, $result);
+
+                    try {
+                        $payment = Payment::get($paymentId, $this->_api_context);
+                    } catch (Exception $ex) {
+
+
+                        ResultPrinter::printError("Get Payment", "Payment", null, null, $ex);
+                        exit(1);
+                    }
+                } catch (Exception $ex) {
+
+
+                    ResultPrinter::printError("Executed Payment", "Payment", null, null, $ex);
+                    exit(1);
+                }
+
+
+                ResultPrinter::printResult("Get Payment", "Payment", $payment->getId(), null, $payment);
+
+                return $payment;
+            } else {
+
+
+                ResultPrinter::printResult("User Cancelled the Approval", null);
+                exit;
+            }
+    }
+
 }

@@ -15,8 +15,24 @@
              <div class="row">
                 <h4 class="no-padding pull-left">Wallet</h4>
                 <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> + Purchase Credit </button>
-                <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> Transactino Histroy  </button>
-                <button id="viewHistory" class="btnPurchaseCredit pull-right" style="display:none" type="button"> Credit History </button>
+                <div class="dropdown show pull-right dropDownMenu">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter Results
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <ul>
+                            <li onclick="filter('all')">
+                                All
+                            </li>
+                            <li onclick="filter('lots')">
+                                Lots History
+                            </li>
+                            <li onclick="filter('credit')">
+                                Credit History 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
              </div>
             <div class="checkout-panel">
                 @if(Session::get('success')!="")
@@ -29,7 +45,8 @@
                     <table class="table table-striped text-center">
                         <thead>
                         <tr>
-                            <th class="text-center">Purchased Credit</th>
+                            <th class="text-center">Transaction Type </th>
+                            <th class="text-center">Transaction </th>
                             {{-- <th class="text-center">Balance</th> --}}
                             <th class="text-center">Available Balance</th>
                             <th class="text-center">Purchased Date</th>
@@ -39,16 +56,24 @@
                         @foreach($walletHistory as $key => $history)
                             @if($key==0)
                             <tr style="background-color:#fde9ec">
-                                <td>{{$history->credit}}</td>
-                                {{-- <td>{{$history->balance}}</td> --}}
-                                <td>{{$history->total_available_balance}}</td>
+                                @if($history->credit!='0')
+                                    <td>Credit Purchased</td>
+                                @else
+                                    <td>Lottery Purchases</td>
+                                @endif
+                                <td>{{$history->balance}}.00</td>
+                                <td>{{$history->total_available_balance}}.00</td>
                                 <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
                             </tr>
                             @else
                             <tr>
-                                <td>{{$history->credit}}</td>
-                                {{-- <td>{{$history->balance}}</td> --}}
-                                <td>{{$history->total_available_balance}}</td>
+                                @if($history->credit!='0')
+                                    <td>Credit Purchased</td>
+                                @else
+                                    <td>Lottery Purchases</td>
+                                @endif
+                                <td>{{$history->balance}}.00</td>
+                                <td>{{$history->total_available_balance}}.00</td>
                                 <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
                             </tr>
                             @endif
@@ -263,6 +288,10 @@ function credit_card()
             $("#msg").html('Payment Unsuccessfull. Please try with correct information!');
             $("#msg").addClass('error_msg');
         });
+}
+function filter(type)
+{
+    window.location="/wallet/filter/"+type
 }
 </script>
 @endsection

@@ -15,9 +15,7 @@ use Auth;
 use DB;
 use Carbon\Carbon;
 use App\Models\Testimonial;
-
-
-
+use function GuzzleHttp\json_encode;
 
 class LotteryController extends Controller
 {
@@ -46,40 +44,54 @@ class LotteryController extends Controller
         $amount = $request->get('amount');
         $total_lots = $request->get('total_lots');
 
+        $lottery_id = $request->lottery_id;
 
         if($qty > $total_lots)
-            return  "Lots must be less than".$total_lots;
+            return $response = json_encode(array("status"=>"error","message"=>"Lots must be less than".$total_lots));
 
         $checkTotalCredit = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
-
-
 
         if($checkTotalCredit->total_available_balance >= $amount)
         {
             $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
-             $balance = "-".$amount;
-
+            $balance = "-".$amount;
             $previousBalance = $checkTotalCredit->total_available_balance;
-// DB::enableQueryLog();
-            $lottery_id = Vallet::create([
+            $vallet_id = Vallet::create([
                 "user_id" => $user_id,
                 "credit"=>'0',
                 "balance"=>$balance,
                 "pre_balance"=> $previousBalance,
                 "total_available_balance"=>$remainingTotalBalance,
                 "created_at"=>Carbon::now(),
-                "updated_at"=>Carbon::now()
+                "updated_at"=>Carbon::now(),
+                "status"=>"approved"
             ]);
-// dd(DB::getQueryLog());
-
         }
         else
         {
-            return "Insufficiant Balance";
+            return $response = json_encode(array("status"=>"error","message"=>"Insufficiant Balance!"));
         }
+        $i=1;
+        $numbers = '';
+        $a = array("red");
+        for($i=1;$i<=$qty;$i++)
+        {
+            $lot_number = (rand(10000,1000));
+            $numbers.=$lot_number.",";
+            LotteryContestent::create([
+                "lottery_id" =>$lottery_id,
+                "user_id"=>$user_id,
+                "lot_number"=>$lot_number,
+                "status"=> '0',
+                "vallet_id"=>$vallet_id->id,
+                "created_at"=>Carbon::now(),
+                "updated_at"=>Carbon::now()
+            ]);
+            $lot_number="";
+        }
+        return $response = json_encode(array("status"=>"success","message"=>"Successfull",'numbers'=>rtrim($numbers,",")));
 
 
-        // if($amount>$totalBalance
     }
 
 }

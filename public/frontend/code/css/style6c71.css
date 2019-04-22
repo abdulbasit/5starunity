@@ -3518,6 +3518,27 @@ tbody.collapse.in {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
+.dropdown-menu ul
+{
+    padding:0px;
+    margin:0px
+}
+.dropdown-menu ul li
+{
+    list-style:none;
+    padding-left:10px;
+    cursor:pointer
+}
+.dropdown-menu ul li a{
+    text-decoration:none
+}
+.dropdown-menu ul li:hover
+{
+    list-style:none;
+    padding-left:10px;
+    background-color:#f1f1f1;
+    cursor:pointer
+}
 .dropdown-menu.pull-right {
   right: 0;
   left: auto;
@@ -47499,5 +47520,17 @@ input[type='password']:focus {
     background-repeat: no-repeat;
     background-position:right
 }
+.dropDownMenu{
+    border:solid 1px #000;
+    border-radius:5px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-right:5px
 
-
+}
+.dropDownMenu a{
+    color:black;
+    font-size:12px;
+    font-weight:bold;
+    text-transform: capitalize;
+}
