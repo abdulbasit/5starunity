@@ -5,8 +5,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserProfile;
+use App\Models\LotteryContestent;
 use App\Models\Vallet;
 use App\Models\UserDocument;
+use  App\Models\TransLog;
 use Auth;
 class UserController extends Controller
 {
@@ -16,10 +18,30 @@ class UserController extends Controller
         $userData = User::with('userProfile')->get();
         return view('admin.users.index',compact('userData'));
     }
-    public function creditHistory($id)
+    public function creditHistory($id,$type="")
     {
-        $creditHistoryData = Vallet::where('user_id',$id)->where('status','approved')->orderBy('id','desc')->get();
-        return view('admin.users.credit_history',compact('creditHistoryData'));
+        $user_id = $id;
+        $creditHistoryData = Vallet::where('user_id',$id)->where('status','approved');
+        if($type=='credit')
+        {
+            $creditHistoryData = $creditHistoryData->where('credit','>','0');
+        }
+        else if($type=='lottery')
+        {
+            $creditHistoryData = $creditHistoryData->where('credit','0');
+        }
+        $creditHistoryData = $creditHistoryData->orderBy('id','desc')->get();
+        return view('admin.users.credit_history',compact('creditHistoryData','user_id','type'));
+    }
+    public function transactionHistory($id)
+    {
+        $lotterData = LotteryContestent::where('vallet_id',$id)->get();
+        return view('admin.users.trans_history',compact('lotterData'));
+    }
+    public function transLog($id)
+    {
+        $transLog = TransLog::where('vallet_id',$id)->first();
+        return view('admin.users.trans_log',compact('transLog'));
     }
     public function userDocuments($id)
     {
