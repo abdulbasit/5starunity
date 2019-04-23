@@ -97,8 +97,11 @@ class LotteryController extends Controller
     public function userPurchasedLotteries()
     {
         $user_id = Auth::guard('client')->user()->id;
-        $lotteryData = LotteryContestent::where('user_id',$user_id)
+        $lotteryData = LotteryContestent::where('lottery_contestents.user_id',$user_id)
+                                        ->select('lottery_contestents.*','vallets.*')
+                                        ->leftjoin('vallets','vallets.id','lottery_contestents.vallet_id')
                                         ->groupBy('lottery_id')
+                                        ->selectRaw('COUNT(vallets.balance) as totalBalance')
                                         ->get();
         $route='lotteries';
         $userData = User::where('users.id',$user_id)->first();

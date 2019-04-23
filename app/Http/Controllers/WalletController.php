@@ -186,7 +186,9 @@ class WalletController extends Controller
            ]);
            Session::flash('success', "Payment Successfull!");
            return redirect('/wallet');
-        } catch (Exception $e) {
+        }
+        catch (Exception $e)
+        {
             // Failed to take payment
         }
     }

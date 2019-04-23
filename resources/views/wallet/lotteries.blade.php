@@ -25,6 +25,8 @@
                         <tr>
                             <th class="text-center">#</th>
                             <th class="text-center">Lottery Name </th>
+                            <th class="text-center">Total lots</th>
+                            <th class="text-center">Total Amount</th>
                             <th class="text-center">Purchased Date</th>
                             <th class="text-center">Detail</th>
                         </tr>
@@ -34,6 +36,8 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$lottery->lottery->name}}</td>
+                                <td>{{$lottery->totalBalance}}</td>
+                                <td>{{$lottery->totalBalance*$lottery->lottery->one_lot_amount}}</td>
                                 <td>{{Carbon\Carbon::parse($lottery->created_at)->toFormattedDateString()}}</td>
                                 <td><a href="{{route("lots.numbers",$lottery->lottery->id)}}">Detail</a></td>
                             </tr>
