@@ -8,6 +8,9 @@ use App\Models\Product_images;
 use App\Models\Lottery;
 use App\Models\LotteryContestent;
 use App\Models\Blog;
+use App\Models\UserDocument;
+use App\Models\UserProfile;
+use App\Models\User;
 use App\Models\Vallet;
 use Route;
 use Session;
@@ -90,8 +93,20 @@ class LotteryController extends Controller
             $lot_number="";
         }
         return $response = json_encode(array("status"=>"success","message"=>"Successfull",'numbers'=>rtrim($numbers,",")));
-
-
+    }
+    public function userPurchasedLotteries()
+    {
+        $user_id = Auth::guard('client')->user()->id;
+        $lotteryData = LotteryContestent::where('user_id',$user_id)
+                                        ->groupBy('lottery_id')
+                                        ->get();
+        $route='lotteries';
+        $userData = User::where('users.id',$user_id)->first();
+        $userDocuments = UserDocument::where('user_id',$user_id)->get();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$user_id)->first();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $userData = User::where('users.id',$user_id)->first();
+        return view('wallet.lotteries',compact('lotteryData','userData','userInfo','route'));
     }
 
 }

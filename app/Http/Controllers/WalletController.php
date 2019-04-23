@@ -51,10 +51,10 @@ class WalletController extends Controller
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
-       
+
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
-       
+
         $route='wallet';
         if($type=="credit")
         {
@@ -68,7 +68,7 @@ class WalletController extends Controller
         {
             $walletHistory = Vallet::where('status','approved')->orderBy('id','desc')->get();
         }
-        
+
         return view('wallet.index',compact('userInfo','route','walletHistory'));
     }
     public function kalarna()
@@ -388,12 +388,24 @@ class WalletController extends Controller
                 ResultPrinter::printResult("Get Payment", "Payment", $payment->getId(), null, $payment);
 
                 return $payment;
-            } else {
-
-
+            }
+            else
+            {
                 ResultPrinter::printResult("User Cancelled the Approval", null);
                 exit;
             }
     }
+    public function detail($id)
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
 
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+
+        $route='lotteries';
+        $lotteryDetail = LotteryContestent::where('lottery_id',$id)->where('user_id',$userId)->get();
+        return view('wallet.lottery_contents',compact('lotteryDetail','userInfo','route'));
+    }
 }

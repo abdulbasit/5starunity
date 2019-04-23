@@ -61,8 +61,8 @@
                     <i class="glyphicon glyphicon-credit-card"></i>
                     Wallet </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="@if($route=='lotteries')active @endif">
+                    <a href="{{route('lottery.user.purchased')}}">
                     <i class="glyphicon glyphicon-th-list"></i>
                     Purchased Lots </a>
                 </li>

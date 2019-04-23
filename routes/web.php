@@ -61,9 +61,11 @@ Auth::routes();
 
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
+        Route::get('lottery/user/purchased', 'LotteryController@userPurchasedLotteries')->name('lottery.user.purchased');
 
         Route::get('wallet', 'WalletController@index')->name('wallet');
         Route::get('wallet/filter/{type}', 'WalletController@index')->name('wallets.filter');
+        Route::get('lots/numbers/{id}', 'WalletController@detail')->name('lots.numbers');
 
 
         Route::get('kalarna', 'WalletController@kalarna')->name('kalarna');
