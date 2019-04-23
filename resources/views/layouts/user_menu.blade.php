@@ -46,10 +46,15 @@
         </div>
         <div class="profile-usermenu">
             <ul class="nav">
+                <li class="@if($route=='dashboard')active @endif">
+                    <a href="{{route('dashboard')}}">
+                    <i class="glyphicon glyphicon-home"></i>
+                    Dashboard </a>
+                </li>
                 <li class="@if($route=='profile')active @endif">
                     <a href="{{route('profile')}}">
-                    <i class="glyphicon glyphicon-home"></i>
-                    Overview </a>
+                    <i class="glyphicon glyphicon-user"></i>
+                    Profile </a>
                 </li>
                 <li class="@if($route=='update-profile') active @endif">
                     <a  href="{{route('account-settings')}}">

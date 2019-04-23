@@ -32,7 +32,6 @@
                         </thead>
                         <tbody>
                         @foreach($lotteryDetail as $key => $lottery)
-
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$lottery->lot_number}}</td>

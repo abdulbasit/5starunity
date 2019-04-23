@@ -100,4 +100,14 @@ class UserController extends Controller
         $obj->receiver = $mailData['email_address'];
         Mail::to($mailData['email_address'])->send(new ChangeMailEmail($obj));
     }
+    public function dashboard()
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='dashboard';
+        return view('usr_profile.dashboard',compact('userInfo','route'));
+    }
 }

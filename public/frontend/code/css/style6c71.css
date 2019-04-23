@@ -46724,7 +46724,7 @@ div.right_tools {
   .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
   .card {
     transition: 0.3s;
-    width: 40%;
+    /* width: 40%; */
     float:left;
     border:solid 1px #ccc;
   }
@@ -47117,10 +47117,16 @@ html, body {
               animation-duration: .3s; }
 
   .card {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background: #fff;
     padding: 3em;
     line-height: 1.5em; }
+.card_stats{
+    width:100%;
+    padding: 2em !important;
+    padding-bottom:10px !important
+
+}
 
   @media screen and (min-width: 997px) {
     .wrapper {
