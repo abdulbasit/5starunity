@@ -36,6 +36,7 @@
     <!-- END Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/tables/datatable/datatables.min.css')}}"/>
     <!-- END VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/style.css')}}">
     @yield('style')
 </head>
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar"
@@ -52,7 +53,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                           </a>
                       </li>
                       <li class="nav-item" style="background-color:white; width:100%; text-align:center">
-                        <a class="navbar-brand" href="index.html" style="padding-bottom:6px; padding-top:0px">
+                        <a class="navbar-brand" href="/admin" style="padding-bottom:6px; padding-top:0px">
                           <img class="brand-logo" alt="5Starunity" src="{{ asset('images/logo-5starunity.png')}}" width="150">
                         </a>
                       </li>
@@ -340,7 +341,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     <!-- BEGIN VENDOR JS-->
     <script src="{{ asset('app-assets/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
     <!-- BEGIN PAGE VENDOR JS-->
-
+    <script src="{{ asset('app-assets/vendors/js/charts/raphael-min.js')}}" type="text/javascript"></script>
     <script src="{{ asset('app-assets/vendors/js/charts/morris.min.js')}}" type="text/javascript"></script>
     <script src="{{ asset('app-assets/vendors/js/extensions/unslider-min.js')}}" type="text/javascript"></script>
     <script src="{{ asset('app-assets/vendors/js/timeline/horizontal-timeline.js')}}" type="text/javascript"></script>

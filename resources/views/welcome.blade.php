@@ -175,8 +175,6 @@
                                 <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->id}}">
                                     <h2 class="mb-5px">{{$lottery->name}}</h2>
                                 </a>
-                                {{-- <span class="grey_50 startupLocation"><i class="fa fa-map-marker" aria-hidden="true"></i> Regensburg, DE</span> --}}
-
                                 <p itemprop="description">
                                     <a class="lot_desc" href="/lottery/detail/{{$lottery->id}}" title="{{$lottery->name}}">
                                         {{$lottery->description}}

@@ -58,15 +58,15 @@ class WalletController extends Controller
         $route='wallet';
         if($type=="credit")
         {
-            $walletHistory = Vallet::where('credit','>','0')->where('status','approved')->orderBy('id','desc')->get();
+            $walletHistory = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
         }
         else if($type=="lots")
         {
-            $walletHistory = Vallet::where('credit','0')->where('status','approved')->orderBy('id','desc')->get();
+            $walletHistory = Vallet::where('credit','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
         }
         else
         {
-            $walletHistory = Vallet::where('status','approved')->orderBy('id','desc')->get();
+            $walletHistory = Vallet::where('status','approved')->where('user_id',$userId)->orderBy('id','desc')->get();
         }
 
         return view('wallet.index',compact('userInfo','route','walletHistory'));

@@ -38,6 +38,8 @@ class LotteryController extends Controller
     {
         Session::flash('route', 'lottery/detail/'.$id);
         $lotteryData = Lottery::find($id);
+        $lotteryData->views=$lotteryData->views+1;
+        $lotteryData->save();
         return view('lotteries.detail',compact('lotteryData'));
     }
     public function purchaseLottery(Request $request)
@@ -53,8 +55,7 @@ class LotteryController extends Controller
             return $response = json_encode(array("status"=>"error","message"=>"Lots must be less than".$total_lots));
 
         $checkTotalCredit = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
-
-        if($checkTotalCredit->total_available_balance >= $amount)
+        if($checkTotalCredit && $checkTotalCredit->total_available_balance >= $amount)
         {
             $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
             $balance = "-".$amount;

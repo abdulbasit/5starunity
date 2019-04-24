@@ -19,5 +19,9 @@ class LotteryContestent extends Model
     {
         return $this->belongsTo('App\Models\Vallet','vallet_id');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User','user_id');
+    }
     protected $dates = ['deleted_at'];
 }

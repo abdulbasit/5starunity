@@ -7,6 +7,7 @@ use Image;
 use Carbon\Carbon;
 use App\Models\Product;
 use App\Models\Lottery;
+use App\Models\LotteryContestent;
 use Auth;
 use DB;
 class LottryController extends Controller
@@ -78,7 +79,12 @@ class LottryController extends Controller
     }
     public function detail($id)
     {
-        $lotteryInfo='';
-        return view('admin.lotteries.lottery_detail',compact('lotteryInfo'));
+        $lotteryInfo=Lottery::find($id);
+        $totalContestents = LotteryContestent::where('lottery_id',$id)->count('id');
+        $lotterContestnets = LotteryContestent::select("lottery_contestents.*")->with('user')->where('lottery_id',$id)->groupBy('user_id')
+        ->selectRaw('COUNT(lottery_contestents.id) as totalApplies')
+        ->get();
+        // dd($lotterContestnets);
+        return view('admin.lotteries.lottery_detail',compact('lotteryInfo','lotterContestnets','totalContestents'));
     }
 }
