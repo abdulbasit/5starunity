@@ -209,7 +209,7 @@
                                     Investiert
                                 </div>
                                 <div class="col-xs-6 block_details">
-                                    <strong>{{$lottery->lottery_contestent->groupby('user_id')->count()}}</strong>Companisten
+                                    <strong>{{$lottery->lottery_contestent->groupby('user_id')->count()}}</strong>Lotteristen
                                 </div>
                             </div>
                             <a href="/lottery/detail/{{$lottery->id}}">

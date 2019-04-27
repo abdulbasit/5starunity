@@ -29,7 +29,7 @@
 								<span class="fa fa-star"></span>
 								<span class="fa fa-star"></span>
 							</div> --}}
-							<span class="review-no">{{$lotteryData->lottery_contestent->count()}} Participant</span>
+							<span class="review-no">{{$lotteryData->lottery_contestent->groupby('user_id')->count()}} Lotteristen</span>
 						</div>
 						<p class="product-description">
                             {{$lotteryData->description}}
