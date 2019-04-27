@@ -62,8 +62,8 @@ class LotteryController extends Controller
             $previousBalance = $checkTotalCredit->total_available_balance;
             $vallet_id = Vallet::create([
                 "user_id" => $user_id,
-                "credit"=>'0',
-                "balance"=>$balance,
+                "credit"=>'0.00',
+                "balance"=>$balance.".00",
                 "pre_balance"=> $previousBalance,
                 "total_available_balance"=>$remainingTotalBalance,
                 "created_at"=>Carbon::now(),

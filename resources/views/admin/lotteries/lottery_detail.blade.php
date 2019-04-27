@@ -28,18 +28,29 @@
                   </div>
                   <!-- project-info -->
                   <div id="project-info" class="card-body row">
-                    <div class="project-info-count col-lg-6 col-md-12">
+                    <div class="project-info-count col-lg-4 col-md-12">
                       <div class="project-info-icon">
                         <h2>{{$totalContestents}}</h2>
                         <div class="project-info-sub-icon">
-                          <span class="fa fa-user-o"></span>
+                          <span class="fa fa-list"></span>
                         </div>
                       </div>
                       <div class="project-info-text pt-1">
-                        <h5>Lottery Contestents</h5>
+                        <h5>Total Lots</h5>
                       </div>
                     </div>
-                    <div class="project-info-count col-lg-6 col-md-12">
+                    <div class="project-info-count col-lg-4 col-md-12">
+                        <div class="project-info-icon">
+                          <h2>{{$lotterContestnets->count()}}</h2>
+                          <div class="project-info-sub-icon">
+                            <span class="fa fa-user-o"></span>
+                          </div>
+                        </div>
+                        <div class="project-info-text pt-1">
+                          <h5>Lottery Contestants</h5>
+                        </div>
+                    </div>
+                    <div class="project-info-count col-lg-4 col-md-12">
                       <div class="project-info-icon">
                         <h2>{{$lotteryInfo->views}}</h2>
                         <div class="project-info-sub-icon">

@@ -14,7 +14,8 @@
          <div class="col-md-9 prof">
              <div class="row">
                 <h4 class="no-padding pull-left">Wallet</h4>
-                <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> + Purchase Credit </button>
+                <button id="buyLot" class="btnPurchaseCredit pull-right" type="button"> + Buy Lot </button>
+                <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> + Donate </button>
                 <div class="dropdown show pull-right dropDownMenu">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Filter Results
@@ -28,7 +29,7 @@
                                 Lots History
                             </li>
                             <li onclick="filter('credit')">
-                                Credit History 
+                                Credit History
                             </li>
                         </ul>
                     </div>
@@ -57,22 +58,22 @@
                             @if($key==0)
                             <tr style="background-color:#fde9ec">
                                 @if($history->credit!='0')
-                                    <td>Credit Purchased</td>
+                                    <td>Credit Donated</td>
                                 @else
-                                    <td>Lottery Purchases</td>
+                                    <td>Lottery Purchased</td>
                                 @endif
-                                <td>{{$history->balance}}.00</td>
-                                <td>{{$history->total_available_balance}}.00</td>
+                                <td>{{$history->balance}}</td>
+                                <td>{{$history->total_available_balance}}</td>
                                 <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
                             </tr>
                             @else
                             <tr>
                                 @if($history->credit!='0')
-                                    <td>Credit Purchased</td>
+                                    <td>Credit Donated</td>
                                 @else
-                                    <td>Lottery Purchases</td>
+                                    <td>Lottery Purchased</td>
                                 @endif
-                                <td>{{$history->balance}}.00</td>
+                                <td>{{$history->balance}}</td>
                                 <td>{{$history->total_available_balance}}.00</td>
                                 <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
                             </tr>
@@ -137,7 +138,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div id="msg"></div>
@@ -293,5 +293,8 @@ function filter(type)
 {
     window.location="/wallet/filter/"+type
 }
+$("#buyLot").click(function (){
+    window.location="/lotteries";
+})
 </script>
 @endsection

@@ -212,10 +212,11 @@
                                     <strong>{{$lottery->lottery_contestent->count()}}</strong>Companisten
                                 </div>
                             </div>
-
-                            <div class="footer_startup ">
-                                WIN NOW
-                            </div>
+                            <a href="/lottery/detail/{{$lottery->id}}">
+                                <div class="footer_startup ">
+                                    WIN NOW
+                                </div>
+                            </a>
                         </div>
                     </div>
                 @endforeach

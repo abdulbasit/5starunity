@@ -312,7 +312,7 @@ label.error {
                         </div>
                         <div class="row">
                             <div class="form-select">
-                                <label for="country" class="form-label">House # / Street # <font color="red"> *</font></label>
+                                <label for="country" class="form-label">House # / Flat # <font color="red"> *</font></label>
                                 <div class="row" style="width:100%">
                                     <div class="col-lg-5 col-xs-12">
                                         <input required="required" type="text" class="form-control" name="hnumber" id="hnumber" placeholder="Enter House Number" />
@@ -342,8 +342,8 @@ label.error {
                         <div class="row">
                             <div class="col-lg-10 col-xs-12 form-group" style="margin-bottom:0px">
                                 <label for="profile_pic" class="form-label" style="width:145px">Identity Proof <font color="red"> *</font></label>
-                                <div class="form-file" id="id_prrof">
-                                    <input type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" />
+                                <div class="form-file text-center" id="id_prrof">
+                                    <input required="required" type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" />
                                     <span id='val2' class="idImg"></span>
                                     <span id='button2'>Select File</span>
                                 </div>
@@ -546,7 +546,6 @@ function check_email()
             }
             else
             {
-
                 $("#validation").remove();
                 $(".actions ul li:nth-child(2) a").css({
                     'display': 'block',

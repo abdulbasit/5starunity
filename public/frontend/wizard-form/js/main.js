@@ -27,7 +27,11 @@
             email: {
                 required: true,
                 email : true
-            }
+            },
+            // identity_card: {
+            //     required: true,
+            //     email : true
+            // }
         },
         messages : {
             email: {
@@ -35,6 +39,14 @@
             }
         },
         onfocusout: function(element) {
+            if($("#identity_card").val()=="")
+            {
+                $("#id_prrof").css('boder',"solid 1px red");
+            }
+            else
+            {
+                $("#id_prrof").css("border","none")
+            }
             $(element).valid();
         },
     });
@@ -53,9 +65,13 @@
         {
 
             // console.log(newIndex);
-            if(newIndex==2)
+            if(newIndex==2 && $("#identity_card").val()!="")
             {
                 scollPos();
+            }
+            else if(newIndex==2 && $("#identity_card").val()=="")
+            {
+                $("#id_prrof").css('border','solid 1px red');
             }
             else
             {
@@ -91,6 +107,7 @@
                 $("#dob-error").html(' ');
                 $("#dob").removeClass('error');
             }
+            alert($("#identity_card").val());
             if($("#identity_card").val()=="")
             {
                 $("#id_prrof").addClass('form_error');
