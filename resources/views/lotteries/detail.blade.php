@@ -99,8 +99,13 @@
         function emptyQty()
         {
             var qty = $("#qty").val();
-            if(qty=="")
+            if(qty=="" || qty<=0)
+            {
+                $("#errorLots").css('color','red');
+                $("#errorLots").html("Minimum Lots Required = 1");
                 $("#qty").val('1');
+            }
+
         }
         function puchaseLottery()
         {
