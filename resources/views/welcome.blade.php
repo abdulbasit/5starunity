@@ -21,12 +21,12 @@
                     </div>
                 @endforeach
                 </div>
-                    <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                    <div id="left_arrow" data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
                         <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                             <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
                         </svg>
                     </div>
-                    <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                    <div id="right_arrow" data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
                         <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                             <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
                         </svg>
@@ -38,9 +38,17 @@
     </section>
     <section class="homepage-howitworks">
         <div class="container">
-            <div class="section-title">Innovative inventors and founders need your support</div>
+            <div class="section-title">{{ __('content.3steps')}}</div>
             <div class="section-subtitle">
-                The main idea of the 5starUnity e.V. is to enable people to realize their ideas				 for the benefit and improvement of the general public.To support promising businesses that can write history, we offer you the opportunity to donate! Each donor is rewarded with free TALERS ( COINS) and in return has the chance in to win their dream item  from our Lottery of Thinga- Legal and  notarized.
+                <p>
+                    {{ __('content.3steps_cont1')}}<br />
+                </p>
+                <p>
+                    {{ __('content.3steps_cont2')}}<br />
+                </p>
+                <p>
+                    {{ __('content.3steps_cont3')}}<br />
+                </p>
             </div>
         <div class="container">
             <div class="row">
@@ -52,7 +60,7 @@
                                     <div class="circle_icon">
                                         <span class="circle_counter">#1</span>
                                         <span class="circle_text">
-                                            Register
+                                            {{ __('menu.register')}}
                                         </span>
                                     </div>
                                 </div>
@@ -64,7 +72,7 @@
                                     <div class="circle_icon">
                                         <span class="circle_counter">#2</span>
                                         <span class="circle_text">
-                                            Donate
+                                            {{ __('menu.donate')}}
                                         </span>
                                     </div>
                                     {{-- <div class="circle_text">
@@ -91,7 +99,7 @@
 
             <div class="row">
                 <div class="col-xs-12 button-container ">
-                    <a href="#" class="btn layoutV2-btn">Register your self</a>
+                    <a href="#" class="btn layoutV2-btn">{{ __('menu.register_your_self')}}</a>
                 </div>
             </div>
         </div>
@@ -153,7 +161,7 @@
 
     <section class="homepage-popular-startups">
         <div class="container-fluid">
-            <div class="section-title padding-title">Favourite products from our donors & your chances for great WINS </div>
+            <div class="section-title padding-title"> {{ __('content.favt_products')}}</div>
         </div>
         <div class="ps_parent_circles">
             <div class="ps_circles">
@@ -184,7 +192,7 @@
                             </div>
                             <div class="row finance_info">
                                 <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                    Ziel: {{$lottery->lot_amount}} &euro;
+                                        {{ __('menu.number_of_lots')}} : {{$lottery->total_lots}}
                                 </div>
                                 {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
                                     <div class="block_time_left">
@@ -203,18 +211,18 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressBar ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressBar ?>%"><?php echo $progressBar ?>%</div>
                                 </div>
                                 <div class="col-xs-6 block_details borderRightgrey">
-                                <strong>{{$lottery->one_lot_amount*$lottery->lottery_contestent->count()}}
+                                <strong>{{$lottery->lottery_contestent->count()}}
 
-                                    &euro;</strong>
-                                    Investiert
+                                    </strong>
+                                    {{ __('menu.lots_bought')}}
                                 </div>
                                 <div class="col-xs-6 block_details">
-                                    <strong>{{$lottery->lottery_contestent->groupby('user_id')->count()}}</strong>Lotteristen
+                                    <strong>{{$lottery->lottery_contestent->groupby('user_id')->count()}}</strong>{{ __('menu.participants')}}
                                 </div>
                             </div>
                             <a href="/lottery/detail/{{$lottery->id}}">
                                 <div class="footer_startup ">
-                                    WIN NOW
+                                    {{ __('menu.win_now')}}
                                 </div>
                             </a>
                         </div>
@@ -223,7 +231,9 @@
             </div>
         <div class="row">
             <div class="col-xs-12 button-container" style="margin:0px">
-                <a href="/lotteries" class="btn layoutV2-btn">VIEW ALL LOTTERY OF THINGS</a>
+                <a href="/lotteries" class="btn layoutV2-btn">
+                    {{ __('menu.view_all_lotteries')}}
+                </a>
             </div>
         </div>
     </section>
@@ -484,6 +494,14 @@
                 $(window).bind("resize", ScaleSlider);
                 $(window).bind("orientationchange", ScaleSlider);
                 //responsive code end
+            });
+            $( document ).ready(function() {
+
+                setTimeout(function(){
+                    $("#left_arrow").parent().css('top',"87px ");
+                    $("#right_arrow").parent().css('top',"87px ");
+                 }, 3000);
+
             });
         </script>
 @endsection

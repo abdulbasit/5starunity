@@ -2,7 +2,8 @@
 @section('content')
 <section class="homepage-popular-startups">
         <div class="container-fluid">
-            <div class="section-title padding-title">Favourite products from our donors & your chances for great WINS </div>
+
+            <div class="section-title padding-title"> {{ __('content.favt_products')}} </div>
         </div>
 
         <div class="ps_parent_circles">
@@ -36,7 +37,7 @@
                             </div>
                             <div class="row finance_info">
                                 <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                    Ziel: {{$lottery->lot_amount}} &euro;
+                                        {{ __('menu.number_of_lots')}} : {{$lottery->total_lots}}
                                 </div>
                                 {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
                                     <div class="block_time_left">
@@ -55,17 +56,17 @@
                                     <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressBar ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressBar ?>%"><?php echo $progressBar ?>%</div>
                                 </div>
                                 <div class="col-xs-6 block_details borderRightgrey">
-                                <strong>{{$lottery->one_lot_amount*$lottery->lottery_contestent->count()}}
+                                <strong>{{$lottery->lottery_contestent->count()}}
 
-                                    &euro;</strong>
-                                    Investiert
+                                    </strong>
+                                    {{ __('menu.lots_bought')}}
                                 </div>
                                 <div class="col-xs-6 block_details">
-                                    <strong>{{$lottery->lottery_contestent->groupby('user_id')->count()}}</strong>Lotteristen
+                                    <strong>{{$lottery->lottery_contestent->groupby('user_id')->count()}}</strong>{{ __('menu.participants')}}
                                 </div>
                             </div>
                             <div class="footer_startup ">
-                                WIN NOW
+                                    {{ __('menu.win_now')}}
                             </div>
                         </div>
                     </div>

@@ -57,4 +57,8 @@ class HomeController extends Controller
     {
         return view('pages.contactus');
     }
+    public function lotteryThings()
+    {
+        return view('pages.lottery_things');
+    }
 }

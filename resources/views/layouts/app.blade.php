@@ -51,8 +51,8 @@
                 <nav class="navbar navbar-default new_header navbar-transparent absolute-positioning ">
                     <div class="container">
                         <div class="navbar-header">
-                            <div class="col-xs-10 hidden-lg">
-                                <a class="navbar-brand" href="en/index.html">
+                            <div class="col-xs-10">
+                                <a class="navbar-brand" href="/">
                                     <div class="navbar-logo-holder"></div>
                                 </a>
                             </div>
@@ -68,21 +68,21 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li  ><a href="/">LOTTERY of THINGS</a></li>
-                                <li  ><a href="{{route('ceo')}}">ERFINDER / GRUNDER</a></li>
-                                <li ><a href="{{route('partner')}}">PARTNER</a></li>
-                                <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <li  ><a href="/lotter-of-things">{{ __('menu.lottery_things')}}</a></li>
+                                <li  ><a href="{{route('ceo')}}">{{ __('menu.erfinder')}}</a></li>
+                                <li ><a href="{{route('partner')}}">{{ __('menu.partner')}}</a></li>
+                                <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ __('menu.more')}}&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu">
                                         <div class="row nopadding">
                                             <div class="col-md-12 nopadding text-left">
                                                 <div class="list_nav">
                                                     <ul>
-                                                        <li><a href="{{route('howitworks')}}">How It <span>Works</span></a></li>
-                                                        <li><a href="{{route('inventro.acadmy')}}">Investors'<span>Academy</span></a></li>
-                                                        <li><a href="{{route('news')}}">News</a></li>
-                                                        <li><a href="{{route('about-us')}}">About Us</a></li>
-                                                        <li><a href="{{route('media-info')}}">Media Info</a></li>
-                                                        <li><a href="{{route('contact-us')}}">Contact Us</a></li>
+                                                        <li><a href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
+                                                        <li><a href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
+                                                        <li><a href="{{route('news')}}">{{ __('menu.latest')}}</a></li>
+                                                        <li><a href="{{route('ceo')}}">{{ __('menu.ceo')}}</a></li>
+                                                        <li><a href="{{route('media-info')}}">{{ __('menu.press')}}</a></li>
+                                                        <li><a href="{{route('contact-us')}}">{{ __('menu.contact')}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -91,12 +91,12 @@
                                 </li>
                             </ul>
                             <ul class="nav pull-left hidden-xs">
-                                <li><a class="navbar-brand" href="/"><div class="navbar-logo-holder"></div></a></li>
+                                {{-- <li><a class="navbar-brand" href="/"><div class="navbar-logo-holder"></div></a></li> --}}
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 @if(!Auth::guard('client')->check())
                                     <li><a class="login uppercase" href="{{ route('login') }}">Log In</a></li>
-                                    <li><a class="register uppercase" href="{{ route('register') }}">Register</a></li>
+                                    <li><a class="register uppercase" href="{{ route('register') }}">{{ __('menu.register')}}</a></li>
                                 @else
                                 <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu" style="padding:0px !important; padding-bottom:7px !important">
@@ -113,9 +113,9 @@
                                     </div>
                                 </li>
                                 @endif
-                                <li><a href="en.html" class="uppercase language-link no_padding_right bold-text">EN</a></li>
+                                <li><a href="en.html" class="uppercase language-link no_padding_left bold-text">DE</a></li>
                                 <li class="lang-separator hidden-xs hidden-sm">|</li>
-                                <li><a href="en.html" class="uppercase language-link no_padding_left ">DE</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#exampleModal" class="uppercase language-link no_padding_right ">EN</a></li>
                             </ul>
                         </div>
                     </div>
@@ -123,6 +123,26 @@
             </div>
 
 
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    {{-- <div class="modal-header">
+                    <h5 class="modal-title">Notice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div> --}}
+                    <div class="modal-body">
+                       <h2 class="text-center">Comig Soon...</h2>
+                    </div>
+                    {{-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> --}}
+                </div>
+                </div>
+            </div>
     <div id="app">
         <main class="py-4">
             @yield('content')
