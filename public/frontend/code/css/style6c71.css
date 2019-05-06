@@ -24,6 +24,7 @@ html {
     border:solid 1px green
 }
 body {
+    font-family: "Open Sans", sans-serif !important;
   margin: 0;
 }
 article,
@@ -17153,6 +17154,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
   font-weight: bold;
   margin-bottom: 40px;
   margin-top: 0px;
+  font-family: "Open Sans", sans-serif;
 }
 @media (max-width: 500px) {
   section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
@@ -17162,6 +17164,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
 section.homepage-newsletter .newsletter-wrapper .newsletter-text p {
   font-size: 18px;
   margin-bottom: 0px;
+  font-family: "Open Sans", sans-serif;
 }
 section.homepage-newsletter .newsletter-wrapper .newsletter-input {
   padding-top: 60px;
@@ -17187,6 +17190,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input .input-group-b
   font-weight: 400;
   font-size: 16px;
   text-transform: none;
+  font-family: "Open Sans", sans-serif;
 }
 section.all-startups-background {
   position: relative;
@@ -29920,6 +29924,11 @@ span.appears {
 .newLayout .navbar-default .navbar-nav li .largeDropdown .list_nav ul li {
   border-radius: 0;
 }
+.newLayout .navbar-default .navbar-nav li .largeDropdown .list_nav ul li:hover
+{
+    background-color:#fff !important;
+
+}
 .newLayout .navbar-default .navbar-nav li .largeDropdown .list_nav ul li a {
   margin-top: 0;
   margin-bottom: 0;
@@ -29932,9 +29941,10 @@ span.appears {
   font-size: 16px;
 }
 .newLayout .navbar-default .navbar-nav li .largeDropdown .list_nav ul li a:hover {
-  border-radius: 0;
-  border:1px solid #fff !important;
-  background-color:#eee !important
+  border-radius: 1000px;
+  border:1px solid #000 !important;
+  /* background-color:#eee !important */
+
 }
 .newLayout .navbar-default .navbar-nav li .langDropdown {
   min-width: 50px !important;
@@ -47540,3 +47550,17 @@ input[type='password']:focus {
     font-weight:bold;
     text-transform: capitalize;
 }
+.editProf
+{
+    border: solid 1px #000;
+    padding: 10px;
+    color:black;
+    border-radius:100px
+}
+.editProf:hover
+{
+    background-color:black;
+    color:white;
+    text-decoration:none
+}
+

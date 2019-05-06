@@ -1,11 +1,36 @@
 
 @extends('layouts.app')
 @section('content')
-
+@section('style')
+<style>
+#paymentOptions
+{
+    height: 500px;
+}
+.my-card
+{
+    position: relative;
+    top: 35px;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    width: 75px;
+    height: 75px;
+    padding: 0px;
+    text-align: center;
+    padding-top: 22px;
+    left: 50%;
+    box-shadow: 1px 5px 7px #CCC;
+    margin-left: -35px
+}
+</style>
+@endsection
 <div class="container">
     <div class="row profile">
         @include('../layouts.user_menu')
-		<div class="col-md-9 prof">
+		<div class="col-md-9 prof" style="margin-top:0px">
             @if ($message = Session::get('success'))
                 <div class="alert alert-success alert-block">
                     <button type="button" class="close" data-dismiss="alert">×</button>
@@ -13,10 +38,54 @@
                 </div>
             @endif
             <div class="profile-content">
-                <div class="row profile-body">
+
+                    <div id="historyTable">
+                            {{-- <h3>Your Lots</h3> --}}
+                            <div class="" style="background:none">
+                                <div class="row w-100">
+                                    <div class="col-md-4">
+                                        <div class="card border-info shadow text-info p-3 my-card" >
+                                            <span class="fa fa-money" aria-hidden="true"></span>
+                                        </div>
+                                        <div class="card border-info mx-sm-1 p-3 card_stats">
+                                            <div style="margin-top: 15px; float: left; width: 100%;">
+                                                <div class="text-info text-center col-xs-12">Available Balance</div>
+                                                <div class="text-info text-center col-xs-12"> &euro; {{$available_balance->total_available_balance}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-info shadow text-info p-3 my-card" >
+                                            <span class="fa fa-bar-chart" aria-hidden="true"></span>
+                                        </div>
+                                        <div class="card border-info mx-sm-1 p-3 card_stats">
+                                            <div style="margin-top: 15px; float: left; width: 100%;">
+                                                <div class="text-info text-center col-xs-12">Purchased Lots</div>
+                                                <div class="text-info text-center col-xs-12">{{$purchasedLots->count()}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card border-info shadow text-info p-3 my-card" >
+                                            <span class="fa fa-minus-square-o" aria-hidden="true"></span>
+                                        </div>
+                                        <div class="card border-info mx-sm-1 p-3 card_stats">
+                                            <div style="margin-top: 15px; float: left; width: 100%;">
+                                                <div class="text-info text-center col-xs-12">
+                                                    Total Spent
+                                                </div>
+                                                <div class="text-info text-center col-xs-12"> &euro; {{$spent}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                 <br />
+                 <div class="row profile-body">
                     <div class="col-lg-9 col-xs-12">
                         <div class="row text-right">
-                            <a href="{{route('account-settings')}}">Edit Profile</a>
+                            <a class="editProf" href="{{route('account-settings')}}">Edit Profile</a>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Profile Status</div>

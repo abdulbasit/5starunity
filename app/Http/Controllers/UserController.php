@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Vallet;
 use App\Models\Country;
 use App\Models\AllowedCountry;
 use App\Models\State;
@@ -22,7 +23,16 @@ class UserController extends Controller
     }
     public function index()
     {
+        $spent = 0;
         $userId = Auth::guard('client')->user()->id;
+        $available_balance =$walletHistory = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
+        $purchasedLots = Vallet::where('balance','<','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
+
+        foreach($purchasedLots as $spneMoney)
+        {
+            // str_replace("-","",$spneMoney->balance);
+            $spent+=str_replace("-","",$spneMoney->balance);
+        }
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
         // dd($userProfile['country_name']->name);
@@ -30,7 +40,7 @@ class UserController extends Controller
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         // dd($userInfo['user_profile']);
         $route='profile';
-        return view('usr_profile.index',compact('userInfo','route'));
+        return view('usr_profile.index',compact('userInfo','route','available_balance','purchasedLots','spent'));
     }
     public function profileUpdate()
     {

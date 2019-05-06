@@ -32,7 +32,7 @@
     <style>
     .newLayout .navbar-default .navbar-nav li .largeDropdown
     {
-        border: solid 1px #000 !important;
+        /* border: solid 1px #000 !important; */
         box-shadow: 1px 6px 20px -5px #ccc !important;
     }
     </style>
@@ -113,7 +113,7 @@
                                     </div>
                                 </li>
                                 @endif
-                                <li><a href="en.html" class="uppercase language-link no_padding_left bold-text">DE</a></li>
+                                <li><a href="/" class="uppercase language-link no_padding_left bold-text">DE</a></li>
                                 <li class="lang-separator hidden-xs hidden-sm">|</li>
                                 <li><a href="#" data-toggle="modal" data-target="#exampleModal" class="uppercase language-link no_padding_right ">EN</a></li>
                             </ul>
