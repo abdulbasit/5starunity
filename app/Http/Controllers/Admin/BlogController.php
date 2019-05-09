@@ -32,7 +32,7 @@ class BlogController extends Controller
     }
     public function category()
     {
-        $category = Category::all();
+        $category = Category::where("category_for",'blog')->get();
         return view('admin.blog.category',compact('category'));
     }
     public function delete($id)

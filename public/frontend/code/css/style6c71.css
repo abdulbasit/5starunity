@@ -29939,6 +29939,7 @@ span.appears {
   border-radius: 0;
   text-transform: none;
   font-size: 16px;
+  text-transform:uppercase
 }
 .newLayout .navbar-default .navbar-nav li .largeDropdown .list_nav ul li a:hover {
   border-radius: 1000px;

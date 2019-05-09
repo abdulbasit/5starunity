@@ -286,6 +286,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                     </li>
                     <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Products</span></a>
                       <ul class="menu-content">
+                        <li><a class="menu-item" href="{{ route('admin.product.category') }}">Categories</a></li>
                         <li><a class="menu-item" href="{{ route('admin.product.create') }}">Add New Product</a></li>
                         <li><a class="menu-item" href="{{ route('admin.products') }}">Product Listing</a></li>
                       </ul>

@@ -7,6 +7,7 @@ use Auth;
 use Image;
 use Carbon\Carbon;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\ProClassification;
 use App\Models\Product_images;
 use DB;
@@ -16,6 +17,32 @@ class ProductController extends Controller
     {
         $products= Product::all();
         return view('admin.products.index',compact('products'));
+    }
+    public function category()
+    {
+        $proCategory = Category::where('category_for','pro')->get();
+        return view('admin.products.category_index',compact('proCategory'));
+    }
+    public function addCategory()
+    {
+        // $proCategory = Category::where('category_for','pro')->get();
+        return view('admin.products.pro_category');
+    }
+    public function saveCategory(Request $request)
+    {
+        // dd($request->get("name"));
+        $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
+        $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
+        $lottery_id = Category::create([
+            "name" => $request->get("name"),
+            "detail"=>$request->get("desc"),
+            "parent_id"=>'0',
+            "status"=>$request->get('status'),
+            "created_at"=>Carbon::now(),
+            "updated_at"=>Carbon::now(),
+            "category_for"=>"pro"
+        ]);
+        return redirect('admin/product/category');
     }
     public function create()
     {

@@ -122,6 +122,9 @@ Auth::routes();
         Route::post('product/delete_photo', 'ProductController@deletePhoto')->name('product.delete_photo');
         Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
         Route::get('product/delete/{id}', 'ProductController@delete')->name('product.delete');
+        Route::get('product/category', 'ProductController@category')->name('product.category');
+        Route::get('product/add/category', 'ProductController@addCategory')->name('product.add.category');
+        Route::post('product/category/save', 'ProductController@saveCategory')->name('product.category.save');
         //Lottries routes
         Route::get('lotteries', 'LottryController@index')->name('lotteries');
         Route::get('lottery/create', 'LottryController@create')->name('lottery.create');
