@@ -15,44 +15,20 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products= Product::all();
+        $products= Product::join('categories','cat_id','categories.id')->get();
         return view('admin.products.index',compact('products'));
-    }
-    public function category()
-    {
-        $proCategory = Category::where('category_for','pro')->get();
-        return view('admin.products.category_index',compact('proCategory'));
-    }
-    public function addCategory()
-    {
-        // $proCategory = Category::where('category_for','pro')->get();
-        return view('admin.products.pro_category');
-    }
-    public function saveCategory(Request $request)
-    {
-        // dd($request->get("name"));
-        $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
-        $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
-        $lottery_id = Category::create([
-            "name" => $request->get("name"),
-            "detail"=>$request->get("desc"),
-            "parent_id"=>'0',
-            "status"=>$request->get('status'),
-            "created_at"=>Carbon::now(),
-            "updated_at"=>Carbon::now(),
-            "category_for"=>"pro"
-        ]);
-        return redirect('admin/product/category');
     }
     public function create()
     {
-        return view('admin.products.create');
+        $category = Category::where("category_for",'pro')->get();
+        return view('admin.products.create',compact('category'));
     }
     public function edit($id)
     {
+        $category = Category::where("category_for",'pro')->get();
         $productInfo = Product::find($id);
         $productImgs = Product_images::where('pro_id',$id)->get();
-        return view('admin.products.edit',compact('productInfo','productImgs'));
+        return view('admin.products.edit',compact('productInfo','productImgs','category'));
     }
     public function deletePhoto(Request $request)
     {
@@ -74,6 +50,7 @@ class ProductController extends Controller
         $product->pro_price=$request->get("price");
         $product->updated_at=Carbon::now();
         $product->pro_class=$request->get('class_id');
+        $product->cat_id=$request->get('category');
         $product->save();
 
         $data = $request->all();
@@ -124,32 +101,37 @@ class ProductController extends Controller
             "pro_price"=>$request->get("price"),
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now(),
-            "pro_class"=>$request->get('class_id')
+            "pro_class"=>$request->get('class_id'),
+            "cat_id"=>$request->get('category')
         ]);
         $data = $request->all();
         $file = $request->file('images');
-        $i=0;
-        $thumbnailPath = public_path('uploads/pro_thumbnail/');
-        $destinationPath  = public_path('uploads/pro_images/');
-        foreach($file as $image)
+        if($file)
         {
-            $i++;
-            $image->getClientOriginalName();
-            $image->getClientOriginalExtension();
-            $image->getRealPath();
-            $image->getSize();
-            $image->getMimeType();
-            //Move Uploaded File
-            $imageName = time().$i.'_5starunity.'.$image->getClientOriginalExtension();
-            $image->move($destinationPath, $imageName);
+            $i=0;
+            $thumbnailPath = public_path('uploads/pro_thumbnail/');
+            $destinationPath  = public_path('uploads/pro_images/');
+            foreach($file as $image)
+            {
+                $i++;
+                $image->getClientOriginalName();
+                $image->getClientOriginalExtension();
+                $image->getRealPath();
+                $image->getSize();
+                $image->getMimeType();
+                //Move Uploaded File
+                $imageName = time().$i.'_5starunity.'.$image->getClientOriginalExtension();
+                $image->move($destinationPath, $imageName);
 
-            $product_images = Product_images::create([
-                "pro_id" =>$product_id->id,
-                "pro_image"=>$imageName,
-                "created_at"=>Carbon::now(),
-                "updated_at"=>Carbon::now()
-            ]);
+                $product_images = Product_images::create([
+                    "pro_id" =>$product_id->id,
+                    "pro_image"=>$imageName,
+                    "created_at"=>Carbon::now(),
+                    "updated_at"=>Carbon::now()
+                ]);
+            }
         }
+
         return redirect('admin/product/create');
     }
 }

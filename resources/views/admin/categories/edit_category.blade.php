@@ -1,9 +1,7 @@
 @extends('admin.layouts.apps')
 
 @section('content')
-
         <div class="content-wrapper">
-
           <div class="content-body">
             <!-- Basic form layout section start -->
             <section id="horizontal-form-layouts">
@@ -16,36 +14,41 @@
                     </div>
                     <div class="card-content collpase show">
                       <div class="card-body">
-                        <form class="form form-horizontal" method="post" action="product/save/categories">
+                        <form class="form form-horizontal" method="post" action="/admin/category/update/{{$category->id}}">
+                            @csrf
                           <div class="form-body">
-                            <div class="form-group row">
-                              <label class="col-md-3 label-control" for="projectinput1">Parent Category</label>
-                              <div class="col-md-9">
-                                <select id="state" name="state" class="form-control">
-                                    <option value="none" selected="" disabled="">Interested in</option>
-                                    <option value="design">design</option>
-                                    <option value="development">development</option>
-                                    <option value="illustration">illustration</option>
-                                    <option value="branding">branding</option>
-                                    <option value="video">video</option>
-                                </select>
-                              </div>
-                            </div>
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Category Name</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="name" class="form-control" placeholder="Complete Name"  name="name">
+                                    <input type="text" id="name" class="form-control" placeholder="Complete Name"  name="name" value="{{$category->name}}">
                                 </div>
                             </div>
                           </div>
-                          <div class="form-actions">
+                          <div class="form-group row">
+                                <label class="col-md-3 label-control" for="address">Description</label>
+                                <div class="col-md-9">
+                                  <textarea required="required" id="desc" rows="5" class="form-control" name="desc" placeholder="Provide Complete Description..">{{$category->detail}}</textarea>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Status</label>
+                                    <div class="col-md-9">
+                                      <select id="status" name="status" class="form-control">
+                                          <option value="0" {{old('pro_status',$category->pro_status)=="0"? 'selected':''}}>Active</option>
+                                          <option value="1" {{old('pro_status',$category->pro_status)=="1"? 'selected':''}}>Disabled</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                          </div>
+                          <div class="form-actions pull-right">
                             <button type="button" class="btn btn-warning mr-1">
                               <i class="ft-x"></i> Cancel
                             </button>
                             <button type="submit" class="btn btn-primary">
                               <i class="fa fa-check-square-o"></i> Save
                             </button>
-                          </div>
+                            <br />
+                        </div>
                         </form>
                       </div>
                     </div>
@@ -56,5 +59,4 @@
             <!-- // Basic form layout section end -->
           </div>
         </div>
-
 @endsection

@@ -52,14 +52,26 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title" id="horz-layout-basic">Edit Product</h4>
+
                             <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                         </div>
                         <div class="card-content collpase show">
                             <div class="card-body">
                                 <form class="form form-horizontal" method="post" action="/admin/product/update/{{$productInfo->id}}" enctype="multipart/form-data">
                                     @csrf
+
                                     <div class="form-body">
                                         <h4 class="form-section"><i class="ft-user"></i> Product Info</h4>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 label-control" for="projectinput4">Category</label>
+                                            <div class="col-md-9">
+                                                <select id="category" name="category" class="form-control">
+                                                    @foreach($category as $cat)
+                                                        <option {{old('cat_id',$productInfo->cat_id)==$cat->id? 'selected':''}} value="{{$cat->id}}">{{$cat->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="form-group row">
                                             <label class="col-md-3 label-control" for="projectinput1"> Name</label>
                                             <div class="col-md-9">

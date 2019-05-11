@@ -45,6 +45,7 @@
                         <th>Name</th>
                         <th>Price</th>
                         <th>Product Class</th>
+                        <th>Category</th>
                         <th>Created at</th>
                         <th>Status</th>
                         <th>Options</th>
@@ -63,6 +64,7 @@
                                 {{$product->pro_class}}
                             @endif
                         </td>
+                        <td>{{$product->name}}</td>
                         <td>{{$product->created_at}}</td>
                         <td>
                             @if($product->pro_status==0)
@@ -96,6 +98,7 @@
                             <th>Name</th>
                             <th>Price</th>
                             <th>Product Class</th>
+                            <th>Category</th>
                             <th>Created at</th>
                             <th>Status</th>
                             <th>Options</th>

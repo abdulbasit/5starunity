@@ -35,7 +35,7 @@
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title">Category Listing
-                <a href="lottery/create" class="btn btn-social pull-right navBtn">
+                <a href="/admin/category/create/{{$categoryFor}}" class="btn btn-social pull-right navBtn">
                     <span class="ft-plus"></span>
                     <span class="pl-1 pr-1">Create</span>
                 </a>
@@ -83,9 +83,10 @@
                                         Action
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
-                                            <a class="dropdown-item" href="{{ route('admin.blog.category.edit',$cats->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                            <a data-id="{{$cats->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                            <a class="dropdown-item" href="{{ route('admin.category.edit',$cats->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                            <a onclick="deleteCategory({{$cats->id}})" id="delete"  class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                         </div>
+                                        {{-- data-toggle="modal" data-backdrop="false" data-target="#info" --}}
                                     </div>
                                 </div>
                             </td>
@@ -114,13 +115,14 @@
 @endsection
 @section('script')
 <script>
-$("#delete").click(function(){
-    var id = $(this).attr('data-id');
+function deleteCategory(id)
+{
     $("#yes").attr('delete-id',id);
-});
+    $('#info').modal('show');
+}
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
-    window.location.href = "/admin/blog/category/delete/"+id;
+    window.location.href = "/admin/category/delete/"+id+"/"+"{{$categoryFor}}";
 })
 </script>
 @endsection

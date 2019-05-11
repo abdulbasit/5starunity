@@ -111,13 +111,18 @@ Auth::routes();
 
         Route::get('logout', 'Auth\AdminLoginController@logout');
 
+        Route::get('category/create/{type}', 'CategoryController@addCategory');
+        Route::get('category/edit/category/{id}', 'CategoryController@editCategory')->name('category.edit');
+        Route::get('categories/{type}', 'CategoryController@index')->name('categories');
+        Route::post('category/save', 'CategoryController@saveCategory');
+        Route::get('category/delete/{id}/{type}', 'CategoryController@delete');
+        Route::post('category/update/{id}', 'CategoryController@updateCategory');
+
         //products routes
         Route::get('products', 'ProductController@index')->name('products');
         Route::post('ajax/check_class', 'ProductController@check_class')->name('ajax.check_class');
         Route::get('product/create', 'ProductController@create')->name('product.create');
         Route::get('product/edit/{id}', 'ProductController@edit')->name('product.edit');
-        Route::get('product/category/create', 'ProductController@createCategories')->name('product.category.create');
-        Route::get('product/categories', 'ProductController@categories')->name('product.categories');
         Route::post('product/save', 'ProductController@saveProduct')->name('product.save');
         Route::post('product/delete_photo', 'ProductController@deletePhoto')->name('product.delete_photo');
         Route::post('product/update/{id}', 'ProductController@update')->name('product.update');
@@ -144,12 +149,7 @@ Auth::routes();
         Route::post('blog/update/{id}', 'BlogController@updateBlog')->name('blog.update');
         Route::post('blog/update/image', 'BlogController@upload_editor_image')->name('blog.update.image');
         //Blog categories routes
-        Route::get('blog/category', 'BlogController@category')->name('blog.category');
-        Route::get('blog/category/create', 'BlogController@createCategory')->name('blog.category.create');
-        Route::post('blog/category/save', 'BlogController@saveCategory');
-        Route::get('blog/category/delete/{id}', 'BlogController@deleteCategory');
-        Route::get('blog/category/edit/{id}', 'BlogController@editCategory')->name('blog.category.edit');
-        Route::post('blog/category/update/{id}', 'BlogController@updateCategory');
+
         //Testimonial routes
         Route::get('testimonials', 'TestimonialController@index')->name('testimonials');
         Route::get('testimonials/create', 'TestimonialController@create')->name('testimonials.create');

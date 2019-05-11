@@ -286,7 +286,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                     </li>
                     <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Products</span></a>
                       <ul class="menu-content">
-                        <li><a class="menu-item" href="{{ route('admin.product.category') }}">Categories</a></li>
+                        <li><a class="menu-item" href="{{ route('admin.categories','pro') }}">Categories</a></li>
                         <li><a class="menu-item" href="{{ route('admin.product.create') }}">Add New Product</a></li>
                         <li><a class="menu-item" href="{{ route('admin.products') }}">Product Listing</a></li>
                       </ul>
@@ -301,10 +301,9 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                         <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Blog</a>
                             <ul class="menu-content">
-                              <li><a class="menu-item" href="{{ route('admin.blog.category.create') }}">Add New Category</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.blog.category') }}">Category Listings</a>
-                              <li><a class="menu-item" href="{{ route('admin.blog.create') }}">Add New Blog</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
+                                <li><a class="menu-item" href="{{ route('admin.categories','blog') }}">Categories</a></li>
+                                <li><a class="menu-item" href="{{ route('admin.blog.create') }}">Add New Blog</a></li>
+                                <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
                             </ul>
                           </li>
                           <li>

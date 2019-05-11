@@ -47,6 +47,16 @@
                           <div class="form-body">
                             <h4 class="form-section"><i class="ft-user"></i> Product Info</h4>
                             <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput4">Category</label>
+                                <div class="col-md-9">
+                                    <select id="category" name="category" class="form-control">
+                                       @foreach($category as $cat)
+                                            <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                       @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1"> Name</label>
                               <div class="col-md-9">
                                 <input type="text" id="name" required="required" class="form-control" placeholder="Complete Name"  name="name">
