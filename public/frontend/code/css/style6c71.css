@@ -16808,7 +16808,7 @@ section.homepage-news .news-block {
   margin-bottom: 25px;
   cursor: pointer;
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
 }
 @media (max-width: 769px) {
   section.homepage-news .news-block {
@@ -17019,7 +17019,7 @@ section.homepage-testimonials .testimonial-box .carousel-caption p {
   font-family: "open_sans", sans-serif;
   color: #000;
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
 }
 section.homepage-testimonials .testimonial-box .carousel-caption .who {
   color: #000;
@@ -38591,7 +38591,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .content_info p a {
   color: #434343;
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 @media (max-width: 1000px) {
   .listing_container .startup_blok .content_startup_blok .content_info p a {
