@@ -3116,7 +3116,8 @@ fieldset[disabled] .btn {
 .btn-default {
   color: #333;
   background-color: #fff;
-  border-color: #ccc;
+  /* border-color: #ccc; */
+  font-family:"Open Sans", sans-serif !important
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -3125,8 +3126,8 @@ fieldset[disabled] .btn {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+  /* background-color: #e6e6e6; */
+  /* border-color: #adadad; */
 }
 .btn-default:active,
 .btn-default.active,
@@ -47564,4 +47565,9 @@ input[type='password']:focus {
     color:white;
     text-decoration:none
 }
-
+.menubtn
+{
+    letter-spacing: 0px;
+    margin-top: 14px;
+    font-size: 14px;
+}

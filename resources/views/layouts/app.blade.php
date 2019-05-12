@@ -19,6 +19,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ asset('frontend/code/css/fonts/font-awesome/css/font-awesome.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/code/jquery-ui/jquery-ui.min.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.css">
     <link rel="stylesheet" href="{{ asset('frontend/code/jquery-ui/jquery-ui.theme.min.css')}}" />
     <link rel="stylesheet" href="{{ asset('frontend/code/css/style6c71.css?ver=1549632172')}}" />
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/jquery-1.11.2.min.js')}}"></script>
@@ -28,6 +29,7 @@
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/site-scripts7031.js?v=1548947668')}}"></script>
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/login-register.js')}}"></script>
     <script type="text/javascript" src="{{ asset('frontend/main.js')}}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.js"></script>
     @yield('style')
     <style>
     .newLayout .navbar-default .navbar-nav li .largeDropdown
@@ -71,23 +73,16 @@
                                 <li  ><a href="/lotter-of-things">{{ __('menu.lottery_things')}}</a></li>
                                 <li  ><a href="{{route('ceo')}}">{{ __('menu.erfinder')}}</a></li>
                                 <li ><a href="{{route('partner')}}">{{ __('menu.partner')}}</a></li>
-                                <li class="dropdown" id="bigmenu"> <a href="#" id="morebtn" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ __('menu.more')}}&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu">
-                                        <div class="row nopadding">
-                                            <div class="col-md-12 nopadding text-left">
-                                                <div class="list_nav">
-                                                    <ul>
-                                                        <li><a href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
-                                                        <li><a href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
-                                                        <li><a href="{{route('news')}}">{{ __('menu.latest')}}</a></li>
-                                                        <li><a href="{{route('ceo')}}">{{ __('menu.ceo')}}</a></li>
-                                                        <li><a href="{{route('media-info')}}">{{ __('menu.press')}}</a></li>
-                                                        <li><a href="{{route('contact-us')}}">{{ __('menu.contact')}}</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <li class="dropdown" id="bigmenu">
+                                    <button class="btn btn-default dropdown-toggle menubtn" type="button" data-toggle="dropdown" data-hover="dropdown">{{ __('menu.more')}} <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
+                                        <li><a href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
+                                        <li><a href="{{route('news')}}">{{ __('menu.latest')}}</a></li>
+                                        <li><a href="{{route('ceo')}}">{{ __('menu.ceo')}}</a></li>
+                                        <li><a href="{{route('media-info')}}">{{ __('menu.press')}}</a></li>
+                                        <li><a href="{{route('contact-us')}}">{{ __('menu.contact')}}</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <ul class="nav pull-left hidden-xs">
@@ -280,14 +275,6 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
-$( "#morebtn" ).hover(
-  function() {
-    $(this).click();
-  }, function() {
-    $(this).click();
-  }
-);
-//
 </script>
 </body>
 </html>
