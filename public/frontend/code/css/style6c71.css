@@ -12793,11 +12793,11 @@ button {
   }
 }
 .co_navbar .navbar-default li a {
-  font-family: Calibari-normal !important;
+  font-family:  "Open Sans", sans-serif !important;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  font-size:16px !important
+  font-size:14px !important
 }
 @media (max-width: 1200px) {
   .co_navbar .navbar-default li a {
