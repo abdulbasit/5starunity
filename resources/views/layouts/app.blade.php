@@ -71,7 +71,7 @@
                                 <li  ><a href="/lotter-of-things">{{ __('menu.lottery_things')}}</a></li>
                                 <li  ><a href="{{route('ceo')}}">{{ __('menu.erfinder')}}</a></li>
                                 <li ><a href="{{route('partner')}}">{{ __('menu.partner')}}</a></li>
-                                <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ __('menu.more')}}&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <li class="dropdown" id="bigmenu"> <a href="#" id="morebtn" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ __('menu.more')}}&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu">
                                         <div class="row nopadding">
                                             <div class="col-md-12 nopadding text-left">
@@ -280,6 +280,14 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
+$( "#morebtn" ).hover(
+  function() {
+    $(this).click();
+  }, function() {
+    $(this).click();
+  }
+);
+//
 </script>
 </body>
 </html>

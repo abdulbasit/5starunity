@@ -3093,7 +3093,7 @@ select[multiple].form-group-lg .form-control {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  /* color: #333; */
+  color: #333 !important;
   text-decoration: none;
 }
 .btn:active,
@@ -17017,7 +17017,7 @@ section.homepage-testimonials .testimonial-box {
 }
 section.homepage-testimonials .testimonial-box .carousel-caption p {
   font-family: "open_sans", sans-serif;
-  color: #000;
+  color: #333;
   text-align: left;
   font-size: 16px;
 }
@@ -17162,7 +17162,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
   }
 }
 section.homepage-newsletter .newsletter-wrapper .newsletter-text p {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 0px;
   font-family: "Open Sans", sans-serif;
 }
@@ -17261,7 +17261,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 }
 .layoutV2-btn {
   font-size: 16px;
-  color: #000;
+  color: #333;
   text-transform: none;
   border: 1px solid #000;
   border-radius: 50px;
@@ -29776,7 +29776,7 @@ span.appears {
   text-transform: uppercase;
 }
 .newLayout .navbar-default .navbar-nav li a {
-  color: #000;
+  color: #333;
   font-weight: 400;
   line-height: 30px;
   margin-top: 16px;
@@ -33431,7 +33431,7 @@ span.appears {
   font-size: 16px;
 }
 #footerBottomBar .BottomText a {
-  color: #000;
+  color: #333;
   padding-right: 20px;
   padding-left: 20px;
   border-right: 1px solid #dedede;
@@ -38589,7 +38589,7 @@ html {
   }
 }
 .listing_container .startup_blok .content_startup_blok .content_info p a {
-  color: #434343;
+  color: #333;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
 }
