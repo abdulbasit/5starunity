@@ -204,7 +204,7 @@
                             <div class="row progress_info nopadding">
                                 <div class="col-xs-12 progress canInvest">
                                         <?php
-                                        $total = $lottery->one_lot_amount*$lottery->lottery_contestent->count();
+                                       $total = $lottery->one_lot_amount*$lottery->lottery_contestent->count();
                                         $progressBar = round($total/$lottery->lot_amount*100,0);
                                         // */100
                                         ?>

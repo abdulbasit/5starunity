@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use DB;
 class Lottery extends Model
 {
     use SoftDeletes;
@@ -19,6 +20,15 @@ class Lottery extends Model
     public function lottery_contestent()
     {
         return $this->hasMany('App\Models\LotteryContestent','lottery_id');
+    }
+    public function getTotalLotsAttribute($id)
+    {
+        return $count = LotteryContestent::where('lottery_id',  $id)->count();
+
+    }
+    public function getTotalContestentsAttribute($id)
+    {
+        return $count = LotteryContestent::where('lottery_id',  $id)->groupBy('user_id')->count();
     }
     protected $dates = ['deleted_at'];
 

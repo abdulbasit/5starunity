@@ -51,7 +51,7 @@
 <body class="newLayout">
         <div class="co_navbar" style="height: 80px">
                 <nav class="navbar navbar-default new_header navbar-transparent absolute-positioning ">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="navbar-header">
                             <div class="col-xs-10">
                                 <a class="navbar-brand" href="/">
@@ -109,7 +109,7 @@
                                 </li>
                                 @endif
                                 <li><a href="/" class="uppercase language-link no_padding_left bold-text">DE</a></li>
-                                <li class="lang-separator hidden-xs hidden-sm">|</li>
+                                <li class="lang-separator hidden-xs hidden-sm" style="margin-top:20px">|</li>
                                 <li><a href="#" data-toggle="modal" data-target="#exampleModal" class="uppercase language-link no_padding_right ">EN</a></li>
                             </ul>
                         </div>
