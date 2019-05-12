@@ -9,11 +9,11 @@
 </div>
 <div class="container">
     <div class="row profile">
-         <div class="col-md-9">
-            <div class="checkout-panel">
-                <h4>
+         <div class="col-md-12">
+            <div class="checkout-panel text-center">
+                <div class="section-title">
                     Mit SPENDEN in die Zukunft tolle Lieblingsprodukte gewinnen
-                </h4>
+                </div>
                 <p>Ihre Spenden helfen zukunftsorientierten Unternehmen, Start-Ups, Entwicklern und Gründern dabei, diverse Konzepte / Produkte zu gestalten / realisieren.</p>
                 <p>Wir möchten Sie auf unseren Vorstellungsseiten der ERFINDER / GRÜNDER transparent über bereits erfolgte Unterstützungen informieren.</p>
                 <p>Neben der emotionalen Befriedigung geleisteter Hilfen ist ein weiterer Vorteil Ihrer Spende, dass Sie mit 5starUnity-Talern belohnt werden und nun die Möglichkeit besitzen, nachfolgende Sachpreise gewinnen zu können. </p>
