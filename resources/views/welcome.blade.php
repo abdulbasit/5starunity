@@ -412,7 +412,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="E-mail address">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default" onclick="document.getElementsByName('newsletter-form-home')[0].submit();"> Subscribe</button>
+                                        <button type="button" class="btn btn-default subscribeBtn" onclick="document.getElementsByName('newsletter-form-home')[0].submit();"> Subscribe</button>
                                     </span>
                                 </div>
                             </form>

@@ -17183,6 +17183,14 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input input {
   height: 52px;
   margin-top: 1px;
 }
+.subscribeBtn
+{
+    color:white !important
+}
+.subscribeBtn:hover
+{
+    color:white !important
+}
 section.homepage-newsletter .newsletter-wrapper .newsletter-input .input-group-btn button {
   color: #fff;
   background-color: #000;
