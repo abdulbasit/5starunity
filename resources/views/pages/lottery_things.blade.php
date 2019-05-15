@@ -19,10 +19,13 @@
                 <p>Neben der emotionalen Befriedigung geleisteter Hilfen ist ein weiterer Vorteil Ihrer Spende, dass Sie mit 5starUnity-Talern belohnt werden und nun die Möglichkeit besitzen, nachfolgende Sachpreise gewinnen zu können. </p>
                 <p>Lieblingsprodukte suchen, 5starUnity-Taler in Lose tauschen und mit ein wenig Fortuna, bei der anwaltlich beglaubigten Ziehung, tolle Gewinne erlangen.</p>
 
-                <div class="section-title">Aktuellste und beliebteste Produkte unserer Spender</div>
+                {{-- <div class="section-title">Aktuellste und beliebteste Produkte unserer Spender</div> --}}
                 <section class="homepage-popular-startups">
                         <div class="container-fluid">
-                            <div class="section-title padding-title"> {{ __('content.favt_products')}}</div>
+                            <div class="section-title padding-title">
+                                    Aktuellste und beliebteste Produkte unserer Spender
+                                {{-- {{ __('content.favt_products')}} --}}
+                            </div>
                         </div>
                         <div class="ps_parent_circles">
                             <div class="ps_circles">
@@ -97,6 +100,7 @@
                     </section>
          </div>
     </div>
+</div>
 </div>
 <div class="container-fluid">
     <div class="row">

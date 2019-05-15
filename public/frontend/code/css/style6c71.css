@@ -13052,7 +13052,7 @@ button {
     background-image: url("../../../images/logo-5starunity.png");
     background-size: 171px;
     margin: auto 0;
-    background-position: center !important;
+    /* background-position: center !important; */
 }
 .co_navbar .navbar-transparent:hover .navbar-nav li a,
 .co_navbar .navbar-transparent.navbar-open .navbar-nav li a,
@@ -13090,7 +13090,7 @@ button {
     background-image: url("../../../images/logo-5starunity.png");
     background-size: 171px;
     margin: auto 0;
-    background-position: center !important;
+    /* background-position: center !important; */
 }
 .co_navbar .navbar-transparent .dropdown-menu {
   background-color: #fff !important;
@@ -17207,7 +17207,7 @@ section.all-startups-background {
 section.sfslf-background {
     position: relative;
     background-size: cover;
-    background-image: url(../../graphics/layout/0041.jpg);
+    background-image: url(../../graphics/layout/3er43s.jpeg);
     background-position: top center;
     background-repeat: no-repeat;
     display: flex;

@@ -321,10 +321,10 @@
         <div class="row">
             <div class="container-fluid">
                 <div class="col-xs-12 button-container text-left button-announce-heading">
-                    <font size="5">
+                    {{-- <font size="5">
                         Listening is a soft but basic expression of good behaviour.<br />
                         <span class="pull-right">(Thaddäus Troll (1914 - 1980, Writer)</span>
-                    </font>
+                    </font> --}}
                 </div>
             </div>
        </div>
