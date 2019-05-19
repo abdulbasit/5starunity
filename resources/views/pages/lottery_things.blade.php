@@ -105,7 +105,7 @@
 <div class="container-fluid">
     <div class="row">
         <div id="historyTable">
-            <img src="{{URL::to('/') }}/images/1554660749_5starunity.jpg"}} style="width:100%" />
+            <img src="{{URL::to('/') }}/images/2019-05-13---Kind-mit-Pokal-inkl.jpg"}} style="width:100%" />
         </div>
     </div>
 
