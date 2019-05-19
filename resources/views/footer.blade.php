@@ -57,7 +57,7 @@
             <div class="container border">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 BottomText grey_75 text-center">
-                        <a style="text-decoration: none;cursor: default !important;">&copy; <?php echo date('Y') ?> 5Starunity</a>
+                        <a style="text-decoration: none;cursor: default !important;">&copy; <?php echo date('Y') ?> 5starUnity e.V.</a>
                         <a href="de/page/business-terms.html">Terms and Conditions</a>
                         <a href="de/page/privacy-policy.html">Privacy Policy</a>
                         <a href="de/page/impressum.html">Legal Notice</a>
@@ -104,10 +104,10 @@
             </div>
         </div>
     </div>
-    <div class="investoren_support_div" data-toggle="modal" data-target="#KontactForm" id="BtnInvestorenSupport">
+    {{-- <div class="investoren_support_div" data-toggle="modal" data-target="#KontactForm" id="BtnInvestorenSupport">
         <span>Investor Support</span>
         <img src="graphics/layout/LiveChat.svg" class="iconSupport">
-    </div>
+    </div> --}}
 <script type="text/javascript" src="{{ asset('frontend/code/scripts/jquery.bcSwipe.min.js')}}"></script>
 <script src="{{ asset('frontend/code/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src='{{ asset('frontend/code/scrollReveal/scrollReveal.js')}}'></script>

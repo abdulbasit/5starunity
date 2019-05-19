@@ -21,7 +21,10 @@ return [
     "lots_bought"=> "VERGEBENE LOSE",
     "participants"=>"TEILNEHMER",
     "win_now" => "HOLEN SIE SICH JETZT IHR LOS",
-    "view_all_lotteries"=>"ALLE PREISE DER LOTTERY OF THINGS ANZEIGEN "
+    "view_all_lotteries"=>"ALLE PREISE DER LOTTERY OF THINGS ANZEIGEN ",
+    "terms"=>"Allgemeine Nutzungsbedingungen",
+    "privacy"=>"Datenschutzerklärung",
+    "legal_notice"=>"Impressum"
 
 ];
 ?>

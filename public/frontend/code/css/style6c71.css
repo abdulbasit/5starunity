@@ -6929,7 +6929,7 @@ a.inline {
   margin-left: 1px;
 }
 .loginPage_short .switch_to {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-top: 1px solid #ccc;
   padding-top: 30px;
@@ -7044,7 +7044,7 @@ a.inline {
   color: #fff;
 }
 #earlyAccessLogin .ea_switch_to {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   padding-top: 0px;
 }
@@ -7115,7 +7115,7 @@ a.inline {
   line-height: 20px;
 }
 #earlyAccessLogin .btn-lightbrwn {
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Open Sans", sans-serif;
   font-weight: bold !important;
   color: #fff;
@@ -7238,7 +7238,7 @@ a.inline {
 #angelclubNotice .NoticeTitle {
   padding-bottom: 65px;
   padding-top: 45px;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
 }
 #angelclubNotice .NoticeTitle h6 {
@@ -7441,7 +7441,7 @@ a.inline {
   margin-top: 10px;
 }
 .faq_page .search_container .faq__notfound {
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   display: none;
   padding: 10px;
@@ -7588,12 +7588,12 @@ a.inline {
 }
 @media (max-width: 768px) {
   .faq_page .accordion .accordion-heading .accordion-toggle {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .faq_page .accordion .accordion-body {
   border-bottom: 1px solid #ececec;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
 }
 @media (max-width: 768px) {
@@ -7848,7 +7848,7 @@ a.inline {
   border: 1px solid #0e9a8b;
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   min-width: 70px;
   text-transform: none;
@@ -8370,7 +8370,7 @@ a.inline {
 #accordion_overview .feedback_and_statistic_for_content .results_for_feedback .sugestion-text {
   padding-left: 10px;
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
 }
 @media (max-width: 991px) {
@@ -8991,7 +8991,7 @@ a.inline {
 }
 @media (max-width: 480px) {
   .register-overlay .LoginModal .modal-footer {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .register-overlay .LoginModal form {
@@ -10276,7 +10276,7 @@ new comment styles
   padding: 0;
   height: 28px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 19px;
   font-weight: 400;
   display: inline-block;
@@ -10309,7 +10309,7 @@ new comment styles
   width: 18px;
   margin-top: 4px;
   pointer-events: none;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
   text-align: left;
 }
@@ -10536,7 +10536,7 @@ new comment styles
   height: 36px;
   padding: 0;
   line-height: 36px;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   font-family: Trebuchet, Arial, sans-serif;
   font-weight: bold;
@@ -11053,7 +11053,7 @@ new comment styles
 .exit-calculator-block .calc_2 .bolder,
 .exit-calculator-block .results_row .bolder {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
 }
 .exit-calculator-block .calc_1 .input_form,
 .exit-calculator-block .calc_2 .input_form,
@@ -13635,7 +13635,7 @@ button {
 }
 @media (max-width: 992px) {
   #bannerWrap .banner_button {
-    font-size: 16px;
+    font-size: 18px;
     position: relative;
     right: 0;
     left: 0;
@@ -13791,7 +13791,7 @@ button {
 @media (max-width: 768px) {
   .statsBar .col-xs-4 strong,
   .statsBar .col-xs-3 strong {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .statsBar .col-xs-4 strong span,
@@ -13954,7 +13954,7 @@ button {
 @media (max-width: 768px) {
   .statsBar_grey .col-xs-4 strong,
   .statsBar_grey .col-xs-3 strong {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .statsBar_grey .col-xs-4 strong span,
@@ -14083,7 +14083,7 @@ button {
 }
 @media (max-width: 768px) {
   .statsBar2 .col-xs-4 strong {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .statsBar2 .col-xs-4 strong span {
@@ -14122,7 +14122,7 @@ button {
   }
 }
 .homeRandomBannersNew .btn {
-  font-size: 16px;
+  font-size: 18px;
   padding-right: 20px;
   padding-left: 20px;
   text-transform: none;
@@ -14253,7 +14253,7 @@ button {
   font-style: italic;
 }
 .homeRandomBannersImpactLoan .btn {
-  font-size: 16px;
+  font-size: 18px;
   padding-right: 20px;
   padding-left: 20px;
   text-transform: none;
@@ -14296,7 +14296,7 @@ button {
   }
 }
 .homeRandomBannersNew_countdown .btn {
-  font-size: 16px;
+  font-size: 18px;
   padding-right: 20px;
   padding-left: 20px;
   text-transform: none;
@@ -14716,7 +14716,7 @@ button {
   padding: 10px 32px;
   font-weight: bold;
   background-color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   color: #00BF7E;
   border-radius: 26px;
   text-transform: none;
@@ -15314,7 +15314,7 @@ section.howitworks .white-box p {
   padding: 50px 25px 50px 25px;
 }
 section.howitworks .white-box .layoutV2-btn {
-  font-size: 16px;
+  font-size: 18px;
   background: #63b4b0 !important;
   color: #fff;
   border: 1px solid #63b4b0;
@@ -15511,6 +15511,10 @@ section.homepage-howitworks .circles-holder .circle .circle_icon img {
     width: 115px;
   }
 }
+.sub_menu li a
+{
+    margin-top:0px !important
+}
 section.homepage-howitworks .circles-holder .circle .circle_text {
   font-size: 22px;
   padding-top: 15px;
@@ -15519,16 +15523,40 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
   section.homepage-howitworks .circles-holder .circle .circle_text {
     font-size: 20px;
   }
+  .
+  .navbar-logo-holder
+  {
+      width:200px !important
+  }
+  .leftText {
+    font-size: 64px !important;
+    text-transform: uppercase;
+    font-family: "open-sans-light";
+    margin-top: 49% !important;
+}
 }
 @media (max-width: 992px) {
   section.homepage-howitworks .circles-holder .circle .circle_text {
     font-size: 18px;
   }
+  .leftText {
+    font-size: 64px !important;
+    text-transform: uppercase;
+    font-family: "open-sans-light";
+    margin-top: 49% !important;
+}
 }
 @media (max-width: 400px) {
   section.homepage-howitworks .circles-holder .circle .circle_text {
     padding-top: 6px;
   }
+  .leftText {
+    font-size: 27px !important;
+    text-transform: uppercase;
+    font-family: "open-sans-light";
+    margin-top: 49% !important;
+}
+  
 }
 @media (max-width: 992px) {
   section.homepage-howitworks .circles-holder .c_dist {
@@ -16399,7 +16427,7 @@ section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_
 }
 @media (max-width: 400px) {
   section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_view_content .ps_main_view_gmbh .ps_main_info_row {
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 5px;
   }
 }
@@ -16481,7 +16509,7 @@ section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_
   }
 }
 section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_view_content .ps_main_details_goal_and_time .ps_goal {
-  font-size: 16px;
+  font-size: 18px;
   color: #525252;
   float: left;
 }
@@ -16497,7 +16525,7 @@ section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_
   }
 }
 section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_view_content .ps_main_details_goal_and_time .ps_left_time {
-  font-size: 16px;
+  font-size: 18px;
   float: right;
   color: #000000;
   border: 1px solid #5b8b9b;
@@ -16537,7 +16565,7 @@ section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_
 section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_view_content .ps_main_details {
   padding: 0 0 10px 0;
   border-bottom: 1px solid #e1e1e1;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
 }
 @media (max-width: 750px) {
@@ -16670,7 +16698,7 @@ section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_
     display: inline-block;
     text-align: center;
     border-bottom: none;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 section.homepage-popular-startups .ps_main_parent .ps_main_view_holder .ps_main_view_content .border-left {
@@ -16809,7 +16837,7 @@ section.homepage-news .news-block {
   margin-bottom: 25px;
   cursor: pointer;
   position: relative;
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (max-width: 769px) {
   section.homepage-news .news-block {
@@ -16840,7 +16868,7 @@ section.homepage-news .news-block .news-date {
   padding-bottom: 7px;
 }
 section.homepage-news .news-block .news-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 section.homepage-news .news-block .news-brief {
@@ -16911,7 +16939,7 @@ section.homepage-angel-club .row-angel-club .description-angel-club {
   font-size: 22px;
 }
 section.homepage-angel-club .row-angel-club .layoutV2-btn-angel-club {
-  font-size: 16px;
+  font-size: 18px;
   background: #000!important;
   color: #fff;
   text-transform: none;
@@ -17020,7 +17048,7 @@ section.homepage-testimonials .testimonial-box .carousel-caption p {
   font-family: "open_sans", sans-serif;
   color: #333;
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
 }
 section.homepage-testimonials .testimonial-box .carousel-caption .who {
   color: #000;
@@ -17163,7 +17191,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
   }
 }
 section.homepage-newsletter .newsletter-wrapper .newsletter-text p {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 0px;
   font-family: "Open Sans", sans-serif;
 }
@@ -17185,7 +17213,8 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input input {
 }
 .subscribeBtn
 {
-    color:white !important
+    color:white !important;
+    border-left:solid 1px #000
 }
 .subscribeBtn:hover
 {
@@ -17197,7 +17226,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input .input-group-b
   border-radius: 0 25px 25px 0;
   padding: 15px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: none;
   font-family: "Open Sans", sans-serif;
 }
@@ -17269,7 +17298,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
     margin-top:144px
 }
 .layoutV2-btn {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   text-transform: none;
   border: 1px solid #000;
@@ -17764,7 +17793,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 }
 .sidebarBox sup {
   top: 3px;
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 1px;
 }
 @media (min-width: 1200px) {
@@ -18164,7 +18193,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
   }
 }
 .allStartupItm .allStartupsBar strong {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 18px;
   display: block;
 }
@@ -18931,7 +18960,7 @@ section.howitworks-hiw .hiw-cta {
   background-image: url("../../graphics/layout/hiw-button.png");
   background-repeat: no-repeat;
   background-position: 95%;
-  font-size: 16px;
+  font-size: 18px;
   background-color: transparent;
   padding: 15px 60px 15px 25px;
   border: 1px solid #000;
@@ -19054,7 +19083,7 @@ section.howitworks-tablet .tablet-right {
   section.howitworks-tablet .tablet-right {
     padding-top: 25px;
     padding-bottom: 96px;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 @media (max-width: 850px) {
@@ -19220,7 +19249,7 @@ section.howitworks-investments .text-primary h2 {
 }
 section.howitworks-investments .text-primary p {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 auto;
 }
 @media (max-width: 1200px) {
@@ -19254,7 +19283,7 @@ section.howitworks-investments .text-secondary h2 {
 }
 section.howitworks-investments .text-secondary p {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 auto;
 }
 @media (max-width: 1200px) {
@@ -19322,7 +19351,7 @@ section.howitworks-investments .investments-table .investment-switch-content .in
 }
 @media (max-width: 1200px) {
   section.howitworks-investments .investments-table .investment-switch-content .investment-slide {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 @media (max-width: 992px) {
@@ -19537,7 +19566,7 @@ section.howitworks-triangle .piramid_layer .piramid_label .percentage {
 }
 @media (max-width: 560px) {
   section.howitworks-triangle .piramid_layer .piramid_label .percentage {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 section.howitworks-triangle .piramid_layer .piramid_label .left_text {
@@ -19547,7 +19576,7 @@ section.howitworks-triangle .piramid_layer .piramid_label .left_text {
 }
 @media (max-width: 560px) {
   section.howitworks-triangle .piramid_layer .piramid_label .left_text {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 @media (max-width: 560px) {
@@ -19666,7 +19695,7 @@ section.howitworks-flag p {
 }
 section.howitworks-flag .btn-cta {
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
   background-color: transparent;
   padding: 15px 25px 15px 25px;
   border: 1px solid #000;
@@ -20169,7 +20198,7 @@ section.howitworks-flag .btn-cta {
   color: #777777;
 }
 .pressRelease .itemTitle {
-  font-size: 16px;
+  font-size: 18px;
   color: #333333;
 }
 .pressRelease .glyphicon {
@@ -20760,7 +20789,7 @@ section.howitworks-flag .btn-cta {
   color: #6ed8aa;
 }
 .box_1_business_new .bussines_content_div_text p {
-  font-size: 16px;
+  font-size: 18px;
   color: #7b7a7a;
 }
 .box_1_business_new .bussines_content_button {
@@ -20952,7 +20981,7 @@ section.howitworks-flag .btn-cta {
     padding-top: 10px;
     padding-left: 10px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 @media (max-width: 768px) {
@@ -20977,7 +21006,7 @@ section.howitworks-flag .btn-cta {
     padding-top: 10px;
     padding-left: 10px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 @media (max-width: 768px) {
@@ -21029,7 +21058,7 @@ section.howitworks-flag .btn-cta {
   padding-top: 20px;
 }
 #companisten_rank .investor-item-rank .startupsList .lead {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #37a4cc;
   font-weight: bold;
@@ -21043,7 +21072,7 @@ section.howitworks-flag .btn-cta {
   }
 }
 #companisten_rank .investor-item-rank .badgesList .lead {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #37a4cc;
   font-weight: bold;
@@ -21069,7 +21098,7 @@ section.howitworks-flag .btn-cta {
   padding-top: 0;
 }
 #companisten_rank .investor-item-rank .badgesClub .lead {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #37a4cc;
   font-weight: bold;
@@ -21090,7 +21119,7 @@ section.howitworks-flag .btn-cta {
 }
 #companisten_rank .investor-item-rank .nr_statups {
   padding-top: 22px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: #4c4c4c;
 }
@@ -21121,7 +21150,7 @@ section.howitworks-flag .btn-cta {
 }
 @media (max-width: 768px) {
   #companisten_rank .investor-item-rank .ranks {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
   }
 }
@@ -22809,7 +22838,7 @@ img.locationFlag {
   background-color: #eb5954 !important;
   margin-top: 20px;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   padding: 7.5px 30px;
   border-radius: 19px;
 }
@@ -22846,7 +22875,7 @@ img.locationFlag {
 }
 @media (max-width: 375px) {
   #bannerNew_Small .btn-happines {
-    font-size: 16px;
+    font-size: 18px;
     padding: 7.5px 15px;
   }
 }
@@ -22941,7 +22970,7 @@ img.locationFlag {
   font-size: 34px;
 }
 .fq .fq_answer {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 30px !important;
   padding-bottom: 30px;
   border-bottom: 1px solid #ececec;
@@ -23449,7 +23478,7 @@ img.locationFlag {
   text-align: left;
 }
 .members_referral .voucher .code {
-  font-size: 16px;
+  font-size: 18px;
 }
 .members_referral .voucher .value {
   font-size: 24px;
@@ -23856,7 +23885,7 @@ img.locationFlag {
     font-size: 40px;
   }
   #business_unit .businessUnitBanner .businessTitle p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 #business_unit .btn-business-unit {
@@ -24033,7 +24062,7 @@ img.locationFlag {
   bottom: 50px;
   left: 30px;
   text-transform: none !important;
-  font-size: 16px;
+  font-size: 18px;
 }
 #business_unit .carousel .team_member h4 {
   padding-top: 0 !important;
@@ -24129,7 +24158,7 @@ img.locationFlag {
   }
   #business_unit .blok .text_blok_1 p,
   #business_unit .blok .text_blok_2 p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 #business_unit .blue_row {
@@ -24205,7 +24234,7 @@ img.locationFlag {
   padding-top: 10px;
   display: block;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (max-width: 768px) {
   #business_unit .blue_row_3 li {
@@ -24563,7 +24592,7 @@ img.locationFlag {
 }
 .headerGreen-registration-benefits p {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   paddin-bottom: 30px !important;
 }
 .green_happiness_guaranteed {
@@ -24636,7 +24665,7 @@ img.locationFlag {
   }
 }
 .green_happiness_guaranteed .happiness_guaranteed_banner .block2lines span {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   display: block !important;
   letter-spacing: normal;
@@ -24907,7 +24936,7 @@ img.locationFlag {
 }
 .headerGreen_crunchtime p {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   paddin-bottom: 30px !important;
 }
 .green_title_bar {
@@ -25309,7 +25338,7 @@ img.locationFlag {
     font-size: 32px;
   }
   .header-container .recommend_friend_bg .sub-heading {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .header-container .recommend_friend_bg .action-button {
@@ -26141,7 +26170,7 @@ img.locationFlag {
   height: auto;
   margin-top: 2px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   background-color: transparent;
   border: 2px solid #ffffff;
   color: #ffffff;
@@ -26523,7 +26552,7 @@ button.is_enabled:hover {
 }
 @media (max-width: 1200px) {
   .homeNewsItem .articleTitle.smallerTitle {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 24px;
   }
@@ -26537,7 +26566,7 @@ button.is_enabled:hover {
 }
 @media (max-width: 768px) {
   .homeNewsItem .articleTitle.smallerTitle {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 24px;
   }
@@ -26587,7 +26616,7 @@ button.is_enabled:hover {
   cursor: pointer;
 }
 .homeNewsItem .articleIcons h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 1.5em;
   margin: 0;
@@ -26920,7 +26949,7 @@ button.is_enabled:hover {
   padding: 3px;
 }
 .flashStartup .topRightCol {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   text-align: right;
 }
@@ -26982,7 +27011,7 @@ button.is_enabled:hover {
   color: #333;
 }
 #flashInvFixedBar .colText {
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 12px;
 }
 #flashInvFixedBar .col-sm-4 {
@@ -27172,7 +27201,7 @@ button.is_enabled:hover {
     font-size: 48px;
   }
   .headerGreen-academy .headline-wrapper-article h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
   .headerGreen-academy .headline-wrapper-article .category-container {
     font-size: 18px;
@@ -27186,7 +27215,7 @@ button.is_enabled:hover {
     font-size: 45px;
   }
   .headerGreen-academy .headline-wrapper-article h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
   .headerGreen-academy .headline-wrapper-article .category-container {
     font-size: 18px;
@@ -27546,7 +27575,7 @@ i.glyphicon-search {
 .pageContent.academy-pageContent .article-container .homeNewsItem .articleCategory,
 .academy-article-pageContent .article-container .homeNewsItem .articleCategory,
 .academy-related-articles .article-container .homeNewsItem .articleCategory {
-  font-size: 16px;
+  font-size: 18px;
 }
 .pageContent.academy-pageContent .article-container .homeNewsItem .articleSubtitle,
 .academy-article-pageContent .article-container .homeNewsItem .articleSubtitle,
@@ -28114,7 +28143,7 @@ i.glyphicon-search {
   height: auto;
   margin-top: 2px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 18px;
   background-color: transparent;
   border: 2px solid #ffffff;
   color: #ffffff;
@@ -28596,7 +28625,7 @@ i.glyphicon-search {
     font-size: 20px;
   }
   #partnerProgram .pageContent-partner .text-block h4 {
-    font-size: 16px;
+    font-size: 18px;
   }
   #partnerProgram .pageContent-partner .text-block .text-wrapper {
     font-size: 15px;
@@ -28935,7 +28964,7 @@ i.glyphicon-search {
   margin-bottom: 0;
 }
 .test-page-main-wrapper h2 {
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 5px;
 }
 .test-page-main-wrapper .paginated-content {
@@ -29005,7 +29034,7 @@ i.glyphicon-search {
 .test-page-main-wrapper .question-container .question-text {
   margin-top: 10px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 .test-page-main-wrapper .question-container table:not(.exceltable) {
   margin: 20px 0px;
@@ -29419,14 +29448,14 @@ span.appears {
 }
 @media (max-width: 991px) {
   .newPageContent h1.sub {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 23px;
   }
 }
 @media (max-width: 767px) {
   .newPageContent h1.sub {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 23px;
     letter-spacing: 0px;
@@ -29488,7 +29517,7 @@ span.appears {
 }
 .newPageContent a.inlineLink {
   font-family: Roboto, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #00a9ac;
   font-weight: 500;
   text-decoration: underline;
@@ -29947,7 +29976,7 @@ span.appears {
   padding-bottom: 5px; */
   border-radius: 0;
   text-transform: none;
-  font-size: 16px;
+  font-size: 18px;
   text-transform:uppercase
 }
 .newLayout .navbar-default .navbar-nav li .largeDropdown .list_nav ul li a:hover {
@@ -30690,7 +30719,7 @@ span.appears {
 .layoutV2 .KontactModal .oder_fb {
   height: 27px;
   line-height: 37px;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
 }
 .layoutV2 .KontactModal .line_befor_oder_fb:before {
@@ -30765,7 +30794,7 @@ span.appears {
   width: 100%;
   height: 45px;
   padding: 6px 12px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.42857143;
   color: #000;
   background-color: #fff;
@@ -30972,7 +31001,7 @@ span.appears {
 .LoginModal .oder_fb {
   height: 27px;
   line-height: 37px;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
 }
 .LoginModal .last_border {
@@ -31186,7 +31215,7 @@ span.appears {
 .KontactModal .oder_fb {
   height: 27px;
   line-height: 37px;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
 }
 .KontactModal .line_befor_oder_fb:before {
@@ -31880,7 +31909,7 @@ span.appears {
 .layoutV3 .KontactModal .oder_fb {
   height: 27px;
   line-height: 37px;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
 }
 .layoutV3 .KontactModal .line_befor_oder_fb:before {
@@ -32261,7 +32290,7 @@ span.appears {
 #Notice .NoticeTitle {
   padding-bottom: 65px;
   padding-top: 45px;
-  font-size: 16px;
+  font-size: 18px;
 }
 #Notice .NoticeTitle h6 {
   font-size: 24px;
@@ -32668,7 +32697,7 @@ span.appears {
 #footerNew .col-lg-3 a,
 #footerNew .col-md-6 a,
 #footerNew .col-xs-12 a {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 21px;
   margin-bottom: 11px;
   display: block;
@@ -32778,7 +32807,7 @@ span.appears {
   height: 58px;
   line-height: 51px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   -webkit-border-top-left-radius: 29px;
   -webkit-border-bottom-left-radius: 29px;
@@ -33100,7 +33129,7 @@ span.appears {
 #footerNew2 .col-lg-3 a,
 #footerNew2 .col-md-6 a,
 #footerNew2 .col-xs-12 a {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 21px;
   margin-bottom: 11px;
   display: block;
@@ -33214,7 +33243,7 @@ span.appears {
   height: 58px;
   line-height: 51px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   -webkit-border-top-left-radius: 29px;
   -webkit-border-bottom-left-radius: 29px;
@@ -33437,7 +33466,7 @@ span.appears {
 #footerBottomBar .BottomText {
   padding-bottom: 15px;
   padding-top: 25px;
-  font-size: 16px;
+  font-size: 18px;
 }
 #footerBottomBar .BottomText a {
   color: #333;
@@ -33928,7 +33957,7 @@ a:active {
 .inner-addon i {
   position: absolute;
   pointer-events: none;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
 }
 @media (max-width: 767px) {
@@ -33988,7 +34017,7 @@ a:active {
   height: 38px;
   line-height: 34px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 19px;
   user-select: none;
@@ -34008,7 +34037,7 @@ a:active {
   height: 38px;
   line-height: 34px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 19px;
   display: inline-block;
@@ -34027,7 +34056,7 @@ a:active {
   height: 38px;
   line-height: 34px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 19px;
   display: inline-block;
@@ -34046,7 +34075,7 @@ a:active {
   min-height: 58px;
   line-height: 54px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   border-radius: 29px;
   display: inline-block;
@@ -34086,7 +34115,7 @@ a.btn-default-new-layout.long-text {
   height: 28px;
   line-height: 22px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 25px;
   font-weight: 400;
@@ -34456,7 +34485,7 @@ a.btn-default-new-layout-small {
   background-color: #fff;
   padding-left: 70px;
   padding-right: 70px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 40px;
   width: 50% !important;
@@ -34479,7 +34508,7 @@ a.btn-default-new-layout-small {
   border-color: #5b8b9b;
   color: black;
   background-color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 40px;
   width: 50% !important;
@@ -34499,7 +34528,7 @@ a.btn-default-new-layout-small {
   border: 1px solid #00a9ac;
   padding-left: 70px;
   padding-right: 70px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 40px;
   width: 50% !important;
@@ -35082,7 +35111,7 @@ a.btn-default-new-layout-small {
     font-size: 18px;
   }
   .fifth_container .orderingMob .block_info p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
   }
   .fifth_container .orderingMob .block_info:last-child {
@@ -35098,7 +35127,7 @@ a.btn-default-new-layout-small {
 }
 @media (max-width: 767px) and (max-width: 375px) {
   .fifth_container .orderingMob .block_info p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .fifth_container .block_pic img {
@@ -35170,7 +35199,7 @@ a.btn-default-new-layout-small {
   }
 }
 .fifth_container .block_info p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   font-weight: 400;
 }
@@ -35535,7 +35564,7 @@ a.btn-default-new-layout-small {
   }
 }
 .sixth_container .carousel_exit .carousel-caption .exit_title .txt_exit {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
@@ -37811,7 +37840,7 @@ html {
   left: 25px;
   position: absolute;
   pointer-events: none;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
 }
 .expandableSearchArea .searchAreablock3 .btn-search-new-layout {
@@ -38108,7 +38137,7 @@ html {
   height: 28px;
   line-height: 28px;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   border-radius: 19px;
   -webkit-user-select: none;
@@ -38600,7 +38629,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .content_info p a {
   color: #333;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (max-width: 1000px) {
   .listing_container .startup_blok .content_startup_blok .content_info p a {
@@ -38667,7 +38696,7 @@ html {
   margin-top: 5px;
   display: table;
   height: 22px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 22px;
   color: #fff;
   padding-left: 7.5px;
@@ -38761,7 +38790,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .finance_info .block_finance_left span,
 .listing_container .startup_blok .content_startup_blok .finance_info .block_finance_right span {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
 }
 .listing_container .startup_blok .content_startup_blok .finance_info .block_time_left {
   float: right;
@@ -38820,7 +38849,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .progress_info .soon_block_left span,
 .listing_container .startup_blok .content_startup_blok .progress_info .soon_block_right span {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 18px;
 }
 .listing_container .startup_blok .content_startup_blok .progress_info .soon_block_left {
   padding-left: 15px;
@@ -39140,14 +39169,14 @@ html {
 .startups_title_active {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   color: #626262;
   padding-bottom: 30px;
 }
 .startups_inactive {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   color: #626262;
   padding-bottom: 30px;
   padding-top: 30px;
@@ -39903,7 +39932,7 @@ html {
 }
 .equity_campaign .equity_data .content_startup_blok .data_info .info_row p {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 2px;
 }
 .equity_campaign .equity_data .content_startup_blok .data_info .info_row .info_label {
@@ -40340,7 +40369,7 @@ html {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   text-transform: uppercase;
   color: #000;
@@ -41161,7 +41190,7 @@ html {
   padding: 15px;
   margin-bottom: 15px;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
   font-weight: 400;
 }
@@ -41806,7 +41835,7 @@ html {
 }
 @media (max-width: 540px) {
   .blue_founder_container_mobile h4 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .border_white_right {
@@ -42015,7 +42044,7 @@ a {
   font-family: 'Roboto', 'sans-serif';
   text-align: justify;
   margin-top: 15px;
-  font-size: 16px;
+  font-size: 18px;
 }
 .newsletter-subscribe-container .main-content-wrapper .checkmarked ul {
   list-style: none;
@@ -42241,7 +42270,7 @@ a {
   }
 }
 .thank_contact_msg {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 .more_investments_block {
@@ -42791,7 +42820,7 @@ a {
 .jobs_container .product__subtitle {
   position: relative;
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   display: block !important;
 }
 .jobs_container .product__description,
@@ -43205,7 +43234,7 @@ a {
 }
 @media (max-width: 767px) {
   .angelclub .first-container {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .angelclub .first-container-title {
@@ -43394,7 +43423,7 @@ a {
 .angelclub .third-container .big-text {
   font-family: "Open Sans";
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
   padding-left: 25px;
@@ -43773,7 +43802,7 @@ a {
 }
 @media (max-width: 767px) {
   .angelclub2 .first-container {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .angelclub2 .first-container-title {
@@ -43960,7 +43989,7 @@ a {
 .angelclub2 .third-container .big-text {
   font-family: "Open Sans";
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
   padding-left: 25px;
@@ -44491,7 +44520,7 @@ a {
 }
 @media (max-width: 640px) {
   #earlyAccessPledgeFixedBar .invested_wrap .amountDisplayValue {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 #earlyAccessPledgeFixedBar .invested_wrap .text_label {
@@ -44540,7 +44569,7 @@ a {
 }
 @media (max-width: 640px) {
   #earlyAccessPledgeFixedBar .users_wrap .usersDisplayValue {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 #earlyAccessPledgeFixedBar .users_wrap .text_label {
@@ -46759,15 +46788,42 @@ div.right_tools {
   .container {
     padding: 2px 16px;
   }
+.why5starCont
+{
+    margin-top:20px;
+    position:relative; height:90%;
+    margin-bottom:40px
 
+}
+.why5starContIco
+{
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    display: block;
+    top: calc(50% - 10px);
+    font-size: 61px;
+    cursor:pointer
+}
+.why5starContDesc
+{
+    display:none;
+    text-align:justify;
+    top: calc(20% - 10px);
+    vertical-align: middle;
+    position: absolute;
+    padding:10px;
+    cursor:pointer
 
+}
 .border-radius-zero
 {
     border-radius:0px !important
 }
 html, body {
     font-family: Open Sans;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 28px;
     scroll-behavior: smooth;
   }
@@ -46820,9 +46876,11 @@ html, body {
   }
 .leftText
 {
-    font-size:44px;
-    text-transform:uppercase;
-    font-family:"open-sans-light"
+    font-size: 44px;
+    text-transform: uppercase;
+    font-family: "open-sans-light";
+    /* font-weight: bold; */
+    margin-top: 24%;
 }
 .via-5star p
 {
@@ -46904,7 +46962,7 @@ html, body {
 
   .profile-usertitle-name {
     color: #5a7391;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 7px;
   }
@@ -47427,7 +47485,7 @@ div[class*='column'] {
 input[type='text'],
 input[type='password'],
 input[type='number'] {
-  font-size: 16px;
+  font-size: 18px;
   width: 100%;
   /* height: 50px; */
   /* padding-right: 40px; */
@@ -47473,7 +47531,7 @@ input[type='password']:focus {
 
 /* Buttons */
 .btn {
-  font-size: 16px;
+  font-size: 18px;
   /* width: 163px;
   height: 48px; */
   cursor: pointer;
@@ -47640,7 +47698,7 @@ input[type='password']:focus {
     font-size:25px !important
 }
 #mixedSlider .MS-content .item p {
-  font-size: 16px;
+  font-size: 18px;
   margin: 2px 10px 0 5px;
   text-indent: 15px;
   height:90px
@@ -47648,7 +47706,7 @@ input[type='password']:focus {
 #mixedSlider .MS-content .item a {
   float: right;
   margin: 0 20px 0 0;
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   color: rgba(173, 0, 0, 0.82);
   font-weight: bold;
@@ -47745,4 +47803,8 @@ input[type='password']:focus {
 #basicSlider .MS-controls .MS-right {
   top: 35px;
   right: 10px;
+}
+.section-subtitle p
+{
+    text-align:justify
 }

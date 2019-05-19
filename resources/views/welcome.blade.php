@@ -105,61 +105,52 @@
         </div>
     </section>
     <section class="all-startups-background">
-        <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+        {{-- <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div> --}}
         <div class="row">
             <div class="container-fluid">
-                <div class="col-lg-4 col-sm-12 col-xs-12 button-container text-left button-container-heading">
+                <div class="col-xs-12 button-container text-center button-container-heading">
                     <h2 class="leftText">Why 5Starunity?</h2>
-                </div>
-                <div class="col-lg-4 col-xs-12 col-sm-6 button-container text-left" id="why5star">
-                    <div class="row">
-                        <div class="col-xs-2 v-icons">
-                            <span>
-                                §
-                            </span>
-                        </div>
-                        <div class="col-xs-10 via-5star">
-                            <p>
-                                Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes. <br /> 100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
-                            </p>
-                        </div>
-
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-xs-2 v-icons">
-                            <span>
-                                <i class="fa fa-lightbulb-o" style="font-weight:normal"></i>
-                            </span>
-                        </div>
-                        <div class="col-xs-10 via-5star">
-                            <p>
-                                Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder, garantiert zielgerichtete und innovative Entwicklungen. <br /> Aus den zu erwartenden Rückflüssen kann wiederum erneut Hilfesuchenden unter die Arme gegriffen werden.
-
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xs-12 col-sm-6 button-container text-left button-container3rd">
-                    <div class="row">
-                        <div class="col-xs-2 v-icons">
-                            <span>
-                                <i class="fa fa-trophy"></i>
-                            </span>
-                        </div>
-                        <div class="col-xs-10 via-5star">
-                            <p>
-                                Lottery of Things - You Win!  <br /> Durch den innovativen Charakter des Zweckbetriebs erhalten Sie für jeden gespendeten Euro einen Taler, welchen Sie nun in diversen Verlosungen einsetzen können.  <br /> Wir versichern, notariell nachgewiesen, dass jedes Produkt an einen realen Spender übermittelt wird.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
        </div>
     </section>
-
-    <section class="homepage-popular-startups">
+    <section>
+        <div class="col-sm-4" style="height:300px">
+            <div id="news" class="news-block news-block-image; why5starCont">
+                <div class="news-date why5starContIco">
+                        §
+                </div>
+                <div class="news-brief why5starContDesc">
+                    Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes.
+                    100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4" style="height:300px">
+            <div id="news" class="news-block news-block-image; why5starCont">
+                <div class="news-date why5starContIco">
+                    <i class="fa fa-lightbulb-o" style="font-weight:normal"></i>
+                </div>
+                <div class="news-brief why5starContDesc">
+                    Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder, garantiert zielgerichtete und innovative Entwicklungen. <br /> Aus den zu erwartenden Rückflüssen kann wiederum erneut Hilfesuchenden unter die Arme gegriffen werden.
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4" style="height:300px">
+            <div id="news" class="news-block news-block-image; why5starCont">
+                <div class="news-date why5starContIco">
+                    <i class="fa fa-trophy"></i>
+                </div>
+                <div class="news-brief why5starContDesc">
+                    Lottery of Things - You Win!
+                    Durch den innovativen Charakter des Zweckbetriebs erhalten Sie für jeden gespendeten Euro einen Taler, welchen Sie nun in diversen Verlosungen einsetzen können.
+                    Wir versichern, notariell nachgewiesen, dass jedes Produkt an einen realen Spender übermittelt wird.
+                </div>
+            </div>
+        </div>
+    </section>
+    <br />
+    <section class="homepage-popular-startups" style="margin-top:30px">
         <div class="container-fluid">
             <div class="section-title padding-title"> {{ __('content.favt_products')}}</div>
         </div>
@@ -239,7 +230,7 @@
     </section>
     <section class="homepage-news">
         <div class="container">
-            <div class="section-title">News, Blogs and more …</div>
+            <div class="section-title">{{ __('content.blog_heading')}}</div>
         </div>
 
         <div class="container">
@@ -296,7 +287,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 button-container">
-                        <a href="{{ route('news') }}" class="btn layoutV2-btn">View all news</a>
+                        <a href="{{ route('news') }}" class="btn layoutV2-btn">{{ __('content.blog_button')}}</a>
                     </div>
                 </div>
             </div>
@@ -317,7 +308,7 @@
     </section>
 
     <section class="sfslf-background">
-        <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+        {{-- <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div> --}}
         <div class="row">
             <div class="container-fluid">
                 <div class="col-xs-12 button-container text-left button-announce-heading">
@@ -331,7 +322,7 @@
     </section>
     <section class="homepage-testimonials">
         <div class="container">
-            <div class="section-title">What our donors say</div>
+            <div class="section-title">{{ __('content.donors_heading')}}</div>
         </div>
         <div class="container">
             <div class="row item active">
@@ -404,15 +395,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-7 col-sm-12 newsletter-text">
-                        <h2>Don’t miss our new investment opportunities</h2>
-                        <p>Click and subscribe to our weekly newsletter for all the latest donation news.</p>
+                        <h2>{{ __('content.news_lettery_heading')}} </h2>
+                        <p>{{ __('content.news_letter_desc')}}</p>
 
                         <div class="newsletter-input">
                             <form name="newsletter-form-home" method="get" action="https://www.companisto.com/en/newsletter-subscribe">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="E-mail address">
+                                    <input type="text" class="form-control" placeholder="E-Mail-Adresse">
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default subscribeBtn" onclick="document.getElementsByName('newsletter-form-home')[0].submit();"> Subscribe</button>
+                                        <button type="button" class="btn btn-default subscribeBtn" onclick="document.getElementsByName('newsletter-form-home')[0].submit();"> {{ __('content.subscribe_btn')}}</button>
                                     </span>
                                 </div>
                             </form>

@@ -53,12 +53,12 @@
                 <nav class="navbar navbar-default new_header navbar-transparent absolute-positioning ">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <div class="col-xs-10">
+                            <div class="col-sm-8 col-md-8 col-xs-8">
                                 <a class="navbar-brand" href="/">
                                     <div class="navbar-logo-holder"></div>
                                 </a>
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-xs-3 pull-right">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:black">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -75,13 +75,13 @@
                                 <li ><a href="{{route('partner')}}">{{ __('menu.partner')}}</a></li>
                                 <li class="dropdown" id="bigmenu">
                                     <button class="btn btn-default dropdown-toggle menubtn" type="button" data-toggle="dropdown" data-hover="dropdown">{{ __('menu.more')}} <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
-                                        <li><a href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
-                                        <li><a href="{{route('news')}}">{{ __('menu.latest')}}</a></li>
-                                        <li><a href="{{route('ceo')}}">{{ __('menu.ceo')}}</a></li>
-                                        <li><a href="{{route('media-info')}}">{{ __('menu.press')}}</a></li>
-                                        <li><a href="{{route('contact-us')}}">{{ __('menu.contact')}}</a></li>
+                                    <ul class="dropdown-menu sub_menu">
+                                        <li><a style="margin-top:0px !important" href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
+                                        <li><a style="margin-top:0px !important" href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
+                                        <li><a style="margin-top:0px !important" href="{{route('news')}}">{{ __('menu.latest')}}</a></li>
+                                        <li><a style="margin-top:0px !important" href="{{route('ceo')}}">{{ __('menu.ceo')}}</a></li>
+                                        <li><a style="margin-top:0px !important" href="{{route('media-info')}}">{{ __('menu.press')}}</a></li>
+                                        <li><a style="margin-top:0px !important" href="{{route('contact-us')}}">{{ __('menu.contact')}}</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -203,10 +203,10 @@
                 <div class="container border">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 BottomText grey_75 text-center">
-                            <a style="text-decoration: none;cursor: default !important;">&copy; <?php echo date('Y') ?> 5Starunity</a>
-                            <a href="de/page/business-terms.html">Terms and Conditions</a>
-                            <a href="de/page/privacy-policy.html">Privacy Policy</a>
-                            <a href="de/page/impressum.html">Legal Notice</a>
+                            <a style="text-decoration: none;cursor: default !important;">&copy; <?php echo date('Y') ?> 5starUnity e.V.</a>
+                            <a href="de/page/business-terms.html">{{ __('menu.terms')}}</a>
+                            <a href="de/page/privacy-policy.html">{{ __('menu.privacy')}}</a>
+                            <a href="de/page/impressum.html">{{ __('menu.legal_notice')}}</a>
                         </div>
 
                         <div class="clear"></div>
@@ -257,10 +257,10 @@
                 </div>
             </div>
         </div>
-        <div class="investoren_support_div" data-toggle="modal" data-target="#KontactForm" id="BtnInvestorenSupport">
+        {{-- <div class="investoren_support_div" data-toggle="modal" data-target="#KontactForm" id="BtnInvestorenSupport">
             <span>Investor Support</span>
             <img src="graphics/layout/LiveChat.svg" class="iconSupport">
-        </div>
+        </div> --}}
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/jquery.bcSwipe.min.js')}}"></script>
     <script src="{{ asset('frontend/code/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     @yield('script')
