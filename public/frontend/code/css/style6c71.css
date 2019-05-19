@@ -1453,6 +1453,7 @@ dd {
   margin-left: 0;
 }
 @media (min-width: 992px) {
+    
   .dl-horizontal dt {
     float: left;
     width: 160px;
@@ -1549,6 +1550,7 @@ kbd {
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+
 kbd kbd {
   padding: 0;
   font-size: 100%;
@@ -2152,9 +2154,9 @@ pre code {
 
         height:600px !important;
       }
-    .button-container-heading {
+    /* .button-container-heading {
         margin-top: 255px !important;
-    }
+    } */
     .button-container3rd {
         margin-top: 210px !important;
     }
@@ -15492,7 +15494,14 @@ section.homepage-howitworks .circles-holder .circle .circle_icon {
     line-height: normal;
     color:#e4e4e4
   }
-    .circle_counter
+.why5starheading {
+    position: relative;
+    top: -53px !important;
+    text-transform: uppercase;
+    font-size: 28px !important;
+    font-family: "Open Sans", sans-serif !important;
+}
+.circle_counter
     {
         position:relative;
         top:-17px
@@ -15536,6 +15545,13 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
 }
 }
 @media (max-width: 992px) {
+    .why5starheading {
+        position: relative;
+        top: -60px !important;
+        text-transform: uppercase;
+        font-size: 28px !important;
+        font-family: "Open Sans", sans-serif !important;
+    }
   section.homepage-howitworks .circles-holder .circle .circle_text {
     font-size: 18px;
   }
@@ -16939,7 +16955,7 @@ section.homepage-angel-club .row-angel-club .description-angel-club {
   font-size: 22px;
 }
 section.homepage-angel-club .row-angel-club .layoutV2-btn-angel-club {
-  font-size: 18px;
+  font-size: 16px;
   background: #000!important;
   color: #fff;
   text-transform: none;
@@ -17226,21 +17242,9 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input .input-group-b
   border-radius: 0 25px 25px 0;
   padding: 15px;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 18px;
   text-transform: none;
   font-family: "Open Sans", sans-serif;
-}
-.button-container-heading h2
-{
-    position: absolute;
-    top: 89%;
-    width: 100%;
-    font-weight: bold;
-    font-family: "open_sans", sans-serif;
-    color: #white;
-    font-size: 32px;
-    text-align: center;
-    padding-bottom: 40px;
 }
 section.all-startups-background {
   position: relative;
@@ -17252,8 +17256,6 @@ section.all-startups-background {
   /* display: flex; */
   align-items: center;
   justify-content: center;
-  padding:0px;
-  margin:0px
 }
 section.sfslf-background {
     position: relative;
@@ -46892,7 +46894,7 @@ html, body {
 {
     font-size: 44px;
     text-transform: uppercase;
-    font-family: "open-sans-light";
+    font-family: "open_sans", sans-serif;
     /* font-weight: bold; */
     margin-top: 24%;
 }
@@ -47821,4 +47823,12 @@ input[type='password']:focus {
 .section-subtitle p
 {
     text-align:justify
+}
+.why5starheading
+{
+    position:relative;
+    top:-100px;
+    text-transform:uppercase;
+    font-size:35px;
+    font-family:"Open Sans", sans-serif !important
 }

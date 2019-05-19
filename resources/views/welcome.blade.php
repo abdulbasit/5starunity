@@ -110,7 +110,7 @@
             <div class="container-fluid">
                 <div class="col-xs-12 button-container text-center button-container-heading" style="padding:0px">
                     <img style="width:100%" src="{{ URL::to('/') }}/frontend/graphics/layout/003.png">
-                    <h2 class="">Why 5Starunity?</h2>
+                    <h2 class="why5starheading">Why 5Starunity?</h2>
                 </div>
             </div>
        </div>
