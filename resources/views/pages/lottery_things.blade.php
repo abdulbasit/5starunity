@@ -112,7 +112,7 @@
 </div>
 <br />
 <div class="container">
-    <p class="text-center">Das sicherste Zeichen des wahrhaft verständigen Menschen ist Neidlosigkeit.</p>
+    {{-- <p class="text-center">Das sicherste Zeichen des wahrhaft verständigen Menschen ist Neidlosigkeit.</p> --}}
     <div class="row">
         <div class="col-xs-12 button-container" style="margin:0px">
             <a href="/partner" class="btn layoutV2-btn">
