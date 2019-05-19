@@ -30,7 +30,15 @@ class LotteryController extends Controller
     }
     public function index()
     {
-        $lotteryData = Lottery::with('product','lottery_contestent')->paginate(18);
+        $lotteryData = Lottery::with(['lottery_contestent'])
+                        ->select('lotteries.*','lotteries.id as lotteryId','lottery_contestents.*',
+                                'lottery_contestents.id as contestentsId','lotteries.total_lots as created_lots')
+                        ->selectRaw('COUNT(lottery_contestents.lottery_id) as totalClients')
+                        ->leftjoin('lottery_contestents','lotteries.id','lottery_id')
+                        ->groupBy('lotteries.id','lottery_contestents.lottery_id')
+                        ->orderBy('totalClients','desc')
+                        ->paginate(18);
+        
         $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
         return view('lotteries.index',compact('lotteryData','testimonialData'));
     }
