@@ -21,7 +21,15 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $lotteryData = Lottery::with('product','lottery_contestent')->limit('3')->get();
+        $lotteryData = Lottery::with(['lottery_contestent'])
+                            ->select('lotteries.*','lotteries.id as lotteryId','lottery_contestents.*',
+                                    'lottery_contestents.id as contestentsId','lotteries.total_lots as created_lots')
+                            ->selectRaw('COUNT(lottery_contestents.lottery_id) as totalClients')
+                            ->leftjoin('lottery_contestents','lotteries.id','lottery_id')
+                            ->groupBy('lotteries.id','lottery_contestents.lottery_id')
+                            ->orderBy('totalClients','desc')
+                            ->limit(3)
+                            ->get();
         $sliderData = Slider::all();
         $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
         ->orderBy('blogs.id', 'DESC')
