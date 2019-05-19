@@ -118,7 +118,7 @@
     <section>
         <div class="col-sm-4" style="height:300px">
             <div id="news" class="news-block news-block-image; why5starCont">
-                <div class="news-date why5starContIco">
+                <div class="news-date why5starContIco" style="margin-top:10px">
                         §
                 </div>
                 <div class="news-brief why5starContDesc">
