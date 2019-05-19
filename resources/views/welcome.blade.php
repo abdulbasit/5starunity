@@ -166,17 +166,17 @@
                 @foreach($lotteryData as $i=>$lottery)
                     <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
                         <div class="content_startup_blok current_investment ">
-                            <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->id}}">
+                            <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->lottery_id}}">
                                 <div class="stratup_img lazy" data-src="" title="vanilla bean" style="overflow:hidden; height:100px">
                                     <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{$lottery->product->product_images[0]->pro_image}}">
                                 </div>
                             </a>
                             <div class="row content_info">
-                                <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->id}}">
+                                <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->lottery_id}}">
                                     <h2 class="mb-5px">{{$lottery->name}}</h2>
                                 </a>
                                 <p itemprop="description">
-                                    <a class="lot_desc" href="/lottery/detail/{{$lottery->id}}" title="{{$lottery->name}}">
+                                    <a class="lot_desc" href="/lottery/detail/{{$lottery->lottery_id}}" title="{{$lottery->name}}">
                                         {{$lottery->description}}
                                     </a>
                                 </p>
@@ -184,7 +184,7 @@
                             </div>
                             <div class="row finance_info">
                                 <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                        {{ __('menu.number_of_lots')}} : {{$lottery->total_lots}}
+                                        {{ __('menu.number_of_lots')}} : {{$lottery->created_lots}}
                                 </div>
                                 {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
                                     <div class="block_time_left">
@@ -196,20 +196,17 @@
                             <div class="row progress_info nopadding">
                                 <div class="col-xs-12 progress canInvest">
                                         <?php
-                                       $total = $lottery->one_lot_amount*$lottery->lottery_contestent->count();
+                                        $total = $lottery->one_lot_amount*$lottery->getTotalLotsAttribute($lottery->lottery_id);
                                         $progressBar = round($total/$lottery->lot_amount*100,0);
-                                        // */100
                                         ?>
                                     <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressBar ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressBar ?>%"><?php echo $progressBar ?>%</div>
                                 </div>
                                 <div class="col-xs-6 block_details borderRightgrey">
-                                <strong>{{$lottery->lottery_contestent->count()}}
-
-                                    </strong>
+                                <strong>{{$lottery->getTotalLotsAttribute($lottery->lottery_id)}}</strong>
                                     {{ __('menu.lots_bought')}}
                                 </div>
                                 <div class="col-xs-6 block_details">
-                                    <strong>{{$lottery->lottery_contestent->groupby('user_id')->count()}}</strong>{{ __('menu.participants')}}
+                                    <strong>{{$lottery->getTotalContestentsAttribute($lottery->lottery_id)}}</strong>{{ __('menu.participants')}}
                                 </div>
                             </div>
                             <a href="/lottery/detail/{{$lottery->id}}">
