@@ -108,8 +108,9 @@
         {{-- <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div> --}}
         <div class="row">
             <div class="container-fluid">
-                <div class="col-xs-12 button-container text-center button-container-heading">
-                    <h2 class="leftText">Why 5Starunity?</h2>
+                <div class="col-xs-12 button-container text-center button-container-heading" style="padding:0px">
+                    <img style="width:100%" src="{{ URL::to('/') }}/frontend/graphics/layout/003.png">
+                    <h2 class="">Why 5Starunity?</h2>
                 </div>
             </div>
        </div>

@@ -17230,16 +17230,30 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input .input-group-b
   text-transform: none;
   font-family: "Open Sans", sans-serif;
 }
+.button-container-heading h2
+{
+    position: absolute;
+    top: 89%;
+    width: 100%;
+    font-weight: bold;
+    font-family: "open_sans", sans-serif;
+    color: #white;
+    font-size: 32px;
+    text-align: center;
+    padding-bottom: 40px;
+}
 section.all-startups-background {
   position: relative;
   background-size: cover;
   height: auto;
-  background-image: url(../../graphics/layout/003.png);
+  /* background-image: url(../../graphics/layout/003.png); */
   background-position: top center;
   background-repeat: no-repeat;
   /* display: flex; */
   align-items: center;
   justify-content: center;
+  padding:0px;
+  margin:0px
 }
 section.sfslf-background {
     position: relative;
