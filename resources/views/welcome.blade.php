@@ -55,43 +55,19 @@
                 <div class="col-md-offset-1 col-md-10">
                     <div class="row circles-holder">
                         <div class="col-md-4 c_dist">
-                            <div class="circle c_nd circle1st">
-                                <div class="circle c_st">
-                                    <div class="circle_icon">
-                                        <span class="circle_counter">#1</span>
-                                        <span class="circle_text">
-                                            {{ __('menu.register')}}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="/register">
+                                <div class="circle c_nd registerCircle"></div>
+                            </a>
                         </div>
                         <div class="col-md-4 c_dist">
-                            <div class="circle c_nd circle1st">
-                                <div class="circle c_nd">
-                                    <div class="circle_icon">
-                                        <span class="circle_counter">#2</span>
-                                        <span class="circle_text">
-                                            {{ __('menu.donate')}}
-                                        </span>
-                                    </div>
-                                    {{-- <div class="circle_text">
-                                        Investment
-                                    </div> --}}
-                                </div>
-                            </div>
+                            <a href="#">
+                            <div class="circle c_nd spendCircle"></div>
+                            </a>
                         </div>
                         <div class="col-md-4 c_dist">
-                            <div class="circle c_nd circle1st">
-                                <div class="circle c_rd">
-                                    <div class="circle_icon">
-                                        <span class="circle_counter">#3</span>
-                                        <span class="circle_text">
-                                            Lottery of Things
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="/lotter-of-things">
+                            <div class="circle c_nd lotteryThingsCircle"></div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -105,47 +81,74 @@
         </div>
     </section>
     <section class="all-startups-background">
-        {{-- <div style="position:absolute; width:100%; height:100%; background-color: rgba(0, 0, 0, 0.5);"></div> --}}
-        <div class="row">
+         <div class="row">
             <div class="container-fluid">
                 <div class="col-xs-12 button-container text-center button-container-heading" style="padding:0px">
                     <img style="width:100%" src="{{ URL::to('/') }}/frontend/graphics/layout/003.png">
-                    <h2 class="why5starheading">Why 5Starunity?</h2>
+                    
                 </div>
             </div>
        </div>
     </section>
     <section>
-        <div class="col-sm-4" style="height:300px">
-            <div id="news" class="news-block news-block-image; why5starCont">
-                <div class="news-date why5starContIco" style="margin-top:10px">
-                        §
+        <div class="container">
+            <h2 class="why5starheading">Why 5Starunity?</h2>
+            <div class="row">
+                <div class="col-sm-6 whyWrap">
+                    <div id="news" class="news-block why5starCont">
+                        <div class="news-date why5starContIco" style="margin-top:10px; float:left">
+                            <img style="width:150px; float:left" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/1Recht.png">
+                            <span class="whyBoxHeading">SICHER</span>
+                        </div>
+                        <div class="news-brief why5starContDesc">
+                            Unser eingetragener Verein dient zur Erfüllung unseres Satzungszweckes, es gehen 100% aller verbleibenden Gewinne (nach positiver Prüfung) an Erfinder,
+                            Gründer und Entwickler - weltweit. Transparent werden wir alle Spender auf diesen Seiten darüber in Kenntnis setzen,
+                            welche Unternehmungen über die Jahre unterstützt wurden
+                        </div>
+                    </div>
                 </div>
-                <div class="news-brief why5starContDesc">
-                    Unser eingetragener Verein nebst Zweckbetrieb dient ausschließlich zur Erfüllung unseres Satzungszweckes.
-                    100% aller verbleibenden Gewinne gehen (nach positiver Prüfung) an Erfinder, Gründer und Entwickler - weltweit.
+                <div class="col-sm-6 whyWrap" >
+                    <div id="news" class="news-block news-block-image; why5starCont">
+                        <div class="news-date why5starContIco" style="margin-top:10px; float:left">
+                            <img style="width:150px; float:left" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/2Idee.png">
+                            <span class="whyBoxHeading">INNOVATIV</span>
+                        </div>
+                        <div class="news-brief why5starContDesc">
+                                Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder, 
+                                garantiert zielgerichtete und innovative Entwicklungen. 
+                                Aus den zu erwartenden Rückflüssen können wiederum erneut Hilfesuchenden unter die Arme gegriffen werden; 
+                                ein zeitlich erfolgreicher Kreislauf.
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4" style="height:300px">
-            <div id="news" class="news-block news-block-image; why5starCont">
-                <div class="news-date why5starContIco">
-                    <i class="fa fa-lightbulb-o" style="font-weight:normal"></i>
+            <div class="row">
+                <div class="col-sm-6 whyWrap" >
+                    <div id="news" class="news-block news-block-image; why5starCont">
+                        <div class="news-date why5starContIco" style="margin-top:10px; float:left">
+                            <img style="width:150px; float:left" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/3Herz.png">
+                            <span class="whyBoxHeading">BEHERZT</span>
+                        </div>
+                        <div class="news-brief why5starContDesc">
+                                Eine generelle Unterstützung für Erfinder, Gründer und Entwickler liegt uns am Herzen und treibt uns an, 
+                                hierfür ehrenamtlich innerhalb des Vereines zu Interagieren. Wir würden uns sehr freuen, 
+                                wenn Sie uns Ihr Vertrauen schenken und mit Spenden, Sachgütern, Rabatten bzw. 
+                                Informationen derartige Vorhaben tatkräftig unterstützen.
+                        </div>
+                    </div>
                 </div>
-                <div class="news-brief why5starContDesc">
-                    Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder, garantiert zielgerichtete und innovative Entwicklungen. <br /> Aus den zu erwartenden Rückflüssen kann wiederum erneut Hilfesuchenden unter die Arme gegriffen werden.
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4" style="height:300px">
-            <div id="news" class="news-block news-block-image; why5starCont">
-                <div class="news-date why5starContIco">
-                    <i class="fa fa-trophy"></i>
-                </div>
-                <div class="news-brief why5starContDesc">
-                    Lottery of Things - You Win!
-                    Durch den innovativen Charakter des Zweckbetriebs erhalten Sie für jeden gespendeten Euro einen Taler, welchen Sie nun in diversen Verlosungen einsetzen können.
-                    Wir versichern, notariell nachgewiesen, dass jedes Produkt an einen realen Spender übermittelt wird.
+                <div class="col-sm-6 whyWrap" >
+                    <div id="news" class="news-block news-block-image; why5starCont">
+                        <div class="news-date why5starContIco" style="margin-top:10px; float:left">
+                            <img style="width:150px; float:left" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/4Trophäe.png">
+                            <span class="whyBoxHeading">ERFOLGREICH</span>
+                        </div>
+                        <div class="news-brief why5starContDesc">
+                            Durch den innovativen Charakter und der Vereinigung diverser Crowdfunding-Aspekte erhalten Sie für jeden gespendeten Euro einen Taler,
+                            welchen Sie nun in diversen Verlosungen der vereinseigenen Lottery of Things einsetzen können. 
+                            Wir versichern anwaltlich überprüft, dass jedes Produkt an einen realen Spender übermittelt wird.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -166,13 +169,13 @@
                 @foreach($lotteryData as $i=>$lottery)
                     <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
                         <div class="content_startup_blok current_investment ">
-                            <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->lottery_id}}">
-                                <div class="stratup_img lazy" data-src="" title="vanilla bean" style="overflow:hidden; height:100px">
+                            <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
+                                <div class="stratup_img lazy" data-src="" title="{{$lottery->name}}" style="overflow:hidden; height:100px">
                                     <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{$lottery->product->product_images[0]->pro_image}}">
                                 </div>
                             </a>
                             <div class="row content_info">
-                                <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->lottery_id}}">
+                                <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
                                     <h2 class="mb-5px">{{$lottery->name}}</h2>
                                 </a>
                                 <p itemprop="description">

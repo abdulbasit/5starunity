@@ -53,7 +53,7 @@
                 <nav class="navbar navbar-default new_header navbar-transparent absolute-positioning ">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <div class="col-sm-8 col-md-8 col-xs-8">
+                            <div class="col-sm-8 col-md-8 col-xs-8 col-md-offset-3" style="position: relative; left: -30px;">
                                 <a class="navbar-brand" href="/">
                                     <div class="navbar-logo-holder"></div>
                                 </a>
@@ -91,7 +91,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 @if(!Auth::guard('client')->check())
                                     <li><a class="login uppercase" href="{{ route('login') }}">Log In</a></li>
-                                    <li><a class="register uppercase" href="{{ route('register') }}">{{ __('menu.register')}}</a></li>
+                                    <li><a class="uppercase" href="{{ route('register') }}">{{ __('menu.register')}}</a></li>
                                 @else
                                 <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu" style="padding:0px !important; padding-bottom:7px !important">
@@ -129,7 +129,7 @@
                     </button>
                     </div> --}}
                     <div class="modal-body">
-                       <h2 class="text-center">Comig Soon...</h2>
+                       <h2 class="text-center">Coming soon...</h2>
                     </div>
                     {{-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

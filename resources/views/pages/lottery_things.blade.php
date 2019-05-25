@@ -9,15 +9,19 @@
 </div>
 <div class="container">
     <div class="row profile">
-         <div class="col-md-12">
+         <div class="container">
             <div class="checkout-panel text-center">
                 <div class="section-title">
+                        <br />
                     Mit SPENDEN in die Zukunft tolle Lieblingsprodukte gewinnen
                 </div>
-                <p>Ihre Spenden helfen zukunftsorientierten Unternehmen, Start-Ups, Entwicklern und Gründern dabei, diverse Konzepte / Produkte zu gestalten / realisieren.</p>
-                <p>Wir möchten Sie auf unseren Vorstellungsseiten der ERFINDER / GRÜNDER transparent über bereits erfolgte Unterstützungen informieren.</p>
-                <p>Neben der emotionalen Befriedigung geleisteter Hilfen ist ein weiterer Vorteil Ihrer Spende, dass Sie mit 5starUnity-Talern belohnt werden und nun die Möglichkeit besitzen, nachfolgende Sachpreise gewinnen zu können. </p>
-                <p>Lieblingsprodukte suchen, 5starUnity-Taler in Lose tauschen und mit ein wenig Fortuna, bei der anwaltlich beglaubigten Ziehung, tolle Gewinne erlangen.</p>
+                <p>Ihre Spenden helfen zukunftsorientierten Unternehmen, Entwicklern und Gründern bspw. in einer StartUp-Phase dabei, diverse Konzepte / Produkte zu gestalten / realisieren. Auf unseren Vorstellungsseiten, die Sie über den oben angezeigten Button ERFINDER / GRÜNDER aufrufen können, informieren wir stets kommunikativ sowie transparent über bereits erfolgte Unterstützungen, welche nur durch Ihre gütigen Spenden erreicht wurden.</p>
+                <br />
+                <br />
+                <p>Neben der emotionalen Ehrenerklärung für zukünftige innovative Projekte ist ein weiterer Vorteil Ihrer Spende, dass Sie von unserem eingetragenen Verein mit 5starUnity-Talern belohnt werden und nun danach Möglichkeit besitzen, nachfolgende Sachpreise gewinnen zu können. Fehlt Ihnen ein aktuell beliebtes Produkt freuen wir uns über eine schriftliche Mitteilung und versprechen, dies innerhalb des Vorstandes zeitnah zu thematisieren.</p>
+                <br /><br />
+                <p>Suchen Sie mit nachstehender Funktion Ihre Lieblingsprodukte und nutzen Sie die vom Verein erhaltenen 5starUnity-Taler, um diese in gültige Lose zu tauschen. In Ihrem persönlichen Nutzerbereich werden alle Informationen dargestellt – wir wünschen Ihnen bereits heute viel Glück bei den anwaltlich überwachten Ziehungen und noch mehr Freude mit unseren tollen Sachpreisen, welche vom Vorstand persönlich überbracht werden.  </p>
+
 
                 {{-- <div class="section-title">Aktuellste und beliebteste Produkte unserer Spender</div> --}}
                 <section class="homepage-popular-startups">
@@ -32,7 +36,7 @@
                                 <i class="fa fa-circle circle" data-position="1"></i>
                             </div>
                         </div>
-                        <div class="container listing_container" id="list_startups">
+                        <div class="listing_container" id="list_startups">
                                 <div class="row row_for_mobile">
                                 <span id="total_pages" data-total="111"></span>
                                 @foreach($lotteryData as $i=>$lottery)

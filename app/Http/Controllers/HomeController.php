@@ -40,27 +40,27 @@ class HomeController extends Controller
     }
     public function ceo()
     {
-
+        return view('pages.comming_soon');
     }
     public function partner()
     {
-
+        return view('pages.comming_soon');
     }
     public function howitworks()
     {
-
+        return view('pages.comming_soon');
     }
     public function inventroAcadmy()
     {
-
+        return view('pages.comming_soon');
     }
     public function aboutUs()
     {
-
+        return view('pages.comming_soon');
     }
     public function mediaInfo()
     {
-
+        return view('pages.comming_soon');
     }
     public function contactUs()
     {
