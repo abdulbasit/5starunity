@@ -17246,7 +17246,8 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input input {
 .subscribeBtn
 {
     color:white !important;
-    border-left:solid 1px #000
+    border-left:solid 1px #000;
+    margin-top:1px !imporant
 }
 .subscribeBtn:hover
 {

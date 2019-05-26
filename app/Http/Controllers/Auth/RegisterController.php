@@ -54,8 +54,11 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         $profile_picture = $request->file('profile_pic');
+        $identity_card_front = $request->file('identity_card_front');
+        $identity_card_back = $request->file('identity_card_back');
         $resident_proof = $request->file('resident_proof');
         $identity_card = $request->file('identity_card');
+        $address2 = $request->file('address2');
 
         $dob =  date('Y-m-d', strtotime($request->get('dob')));
         $address = $request->get('address');
@@ -100,11 +103,44 @@ class RegisterController extends Controller
         {
             $imageName='';
         }
+        if($identity_card_front!="")
+        {
+            $file1 = $identity_card_front;
+            $identity_card_front_img_thumbnailPath = public_path('uploads/users/documents_proofs/');
+            $file1->getClientOriginalName();
+            $file1->getClientOriginalExtension();
+            $file1->getRealPath();
+            $file1->getSize();
+            $file1->getMimeType();
+            $identity_card_front_img = time().'_5star_profile.'.$file1->getClientOriginalExtension();
+            $file1->move($identity_card_front_img_thumbnailPath, $identity_card_front_img);
+        }
+        else
+        {
+            $identity_card_front_img='';
+        }
+        if($identity_card_back!="")
+        {
+            $file2 = $identity_card_back;
+            $identity_card_back_img_thumbnailPath = public_path('uploads/users/documents_proofs/');
+            $file2->getClientOriginalName();
+            $file2->getClientOriginalExtension();
+            $file2->getRealPath();
+            $file2->getSize();
+            $file2->getMimeType();
+            $identity_card_back_img = time().'_5star_profile.'.$file2->getClientOriginalExtension();
+            $file2->move($identity_card_back_img_thumbnailPath, $identity_card_back_img);
+        }
+        else
+        {
+            $identity_card_back_img='';
+        }
 
         $profile_id = UserProfile::create([
             'user_id' => $user_id->id,
             'dob' => $dob,
             'address' => $address,
+            "address_2"=>$address2,
             'country' => $country,
             'state' =>$state,
             'city' =>$city,
@@ -116,28 +152,6 @@ class RegisterController extends Controller
             "house_number"=>$request->get('hnumber')
         ]);
 
-        // $resProofImg = public_path('uploads/users/documents_proofs/res_proof');
-        // foreach ($resident_proof as $resident_proofImage)
-        // {
-        //     $resident_proofImage->getClientOriginalName();
-        //     $resident_proofImage->getClientOriginalExtension();
-        //     $resident_proofImage->getRealPath();
-        //     $resident_proofImage->getSize();
-        //     $resident_proofImage->getMimeType();
-
-        //     //Move Uploaded File
-        //     $res_poroof = time().'_5star_res_proof.'.$resident_proofImage->getClientOriginalExtension();
-        //     $resident_proofImage->move($resProofImg, $res_poroof);
-
-        //     $product_images = UserDocument::create([
-        //         "user_id" => $user_id->id,
-        //         "res_proof"=>$res_poroof,
-        //         "status"=>'1',
-        //         'updated_at'=>Carbon::now(),
-        //         'created_at'=>Carbon::now(),
-        //         "type"=>'res'
-        //     ]);
-        // }
 
         $idProofImg = public_path('uploads/users/documents_proofs/id_proof');
         foreach ($identity_card as $identity_proofImage)
@@ -155,6 +169,8 @@ class RegisterController extends Controller
             $product_images = UserDocument::create([
                 "user_id" => $user_id->id,
                 "res_proof"=>$id_proofImg,
+                "id_front"=>$identity_card_front_img,
+                "id_back"=>$identity_card_back_img,
                 "status"=>'1',
                 "type"=>'identity',
                 'updated_at'=>Carbon::now(),

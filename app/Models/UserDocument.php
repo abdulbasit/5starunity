@@ -14,7 +14,7 @@ class UserDocument extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'user_id', 'res_proof', 'identity_doc', 'status','notes','type'
+        'user_id', 'res_proof', 'identity_doc', 'status','notes','type','id_front','id_back'
     ];
     public function user()
     {

@@ -107,7 +107,7 @@
                 $("#dob-error").html(' ');
                 $("#dob").removeClass('error');
             }
-            alert($("#identity_card").val());
+            
             if($("#identity_card").val()=="")
             {
                 $("#id_prrof").addClass('form_error');
@@ -168,6 +168,12 @@
     })
     $("#identity_card").change(function () {
         $('.idImg').text(this.value.replace(/C:\\fakepath\\/i, ''))
+    });
+    $("#identity_card_front").change(function () {
+        $('.idImg1').text(this.value.replace(/C:\\fakepath\\/i, ''))
+    });
+    $("#identity_card_back").change(function () {
+        $('.idImg2').text(this.value.replace(/C:\\fakepath\\/i, ''))
     });
 
     function calcDate(date1,date2) {

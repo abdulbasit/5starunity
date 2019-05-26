@@ -400,7 +400,7 @@
                         <p>{{ __('content.news_letter_desc')}}</p>
 
                         <div class="newsletter-input">
-                            <form name="newsletter-form-home" method="get" action="https://www.companisto.com/en/newsletter-subscribe">
+                            <form name="newsletter-form-home" method="get" action="">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="E-Mail-Adresse">
                                     <span class="input-group-btn">

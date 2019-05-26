@@ -10,6 +10,12 @@ return [
     "donors_heading"=>"Referenzen und Meinungen unserer Spender, Gewinner sowie Partner",
     "news_lettery_heading"=>"Erhalten Sie laufend neue Informationen",
     "news_letter_desc"=>"Melden Sie sich für unseren regelmäßigen Newsletter an und bleiben Sie stets aktuell; informieren Sie sich auch über unsere Social Media Kanäle.",
-    "subscribe_btn"=>"Anmelden"
+    "subscribe_btn"=>"Anmelden",
+    "customer_reviews"=>"Informieren Sie sich über unsere Partner",
+    "customer_reviews_desc"=>"In regelmäßigen Abständen erhalten Sie transparent Daten über Projekte, Meinungen und anstehende Unterstützungen, bleiben Sie mit uns in Kontakt.",
+    "register_heading"=>"Kostenlose Registrierung für Spender",
+    "accunt_information"=>"Account Informationen",
+    "personal_information"=>"Persönliche Angaben",
+    "terms_cond"=>"Allgemeine Nutzungsbedingungen"
 ];
 ?>
