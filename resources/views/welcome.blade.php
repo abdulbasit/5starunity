@@ -85,7 +85,7 @@
             <div class="container-fluid">
                 <div class="col-xs-12 button-container text-center button-container-heading" style="padding:0px">
                     <img style="width:100%" src="{{ URL::to('/') }}/frontend/graphics/layout/003.png">
-                    
+
                 </div>
             </div>
        </div>
@@ -93,7 +93,7 @@
     <section>
         <div class="container">
             <h2 class="why5starheading">Why 5Starunity?</h2>
-            <div class="row">
+            <div class="row rowMargin">
                 <div class="col-sm-6 whyWrap">
                     <div id="news" class="news-block why5starCont">
                         <div class="news-date why5starContIco" style="margin-top:10px; float:left">
@@ -114,9 +114,9 @@
                             <span class="whyBoxHeading">INNOVATIV</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                                Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder, 
-                                garantiert zielgerichtete und innovative Entwicklungen. 
-                                Aus den zu erwartenden Rückflüssen können wiederum erneut Hilfesuchenden unter die Arme gegriffen werden; 
+                                Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder,
+                                garantiert zielgerichtete und innovative Entwicklungen.
+                                Aus den zu erwartenden Rückflüssen können wiederum erneut Hilfesuchenden unter die Arme gegriffen werden;
                                 ein zeitlich erfolgreicher Kreislauf.
                         </div>
                     </div>
@@ -130,9 +130,9 @@
                             <span class="whyBoxHeading">BEHERZT</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                                Eine generelle Unterstützung für Erfinder, Gründer und Entwickler liegt uns am Herzen und treibt uns an, 
-                                hierfür ehrenamtlich innerhalb des Vereines zu Interagieren. Wir würden uns sehr freuen, 
-                                wenn Sie uns Ihr Vertrauen schenken und mit Spenden, Sachgütern, Rabatten bzw. 
+                                Eine generelle Unterstützung für Erfinder, Gründer und Entwickler liegt uns am Herzen und treibt uns an,
+                                hierfür ehrenamtlich innerhalb des Vereines zu Interagieren. Wir würden uns sehr freuen,
+                                wenn Sie uns Ihr Vertrauen schenken und mit Spenden, Sachgütern, Rabatten bzw.
                                 Informationen derartige Vorhaben tatkräftig unterstützen.
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                         </div>
                         <div class="news-brief why5starContDesc">
                             Durch den innovativen Charakter und der Vereinigung diverser Crowdfunding-Aspekte erhalten Sie für jeden gespendeten Euro einen Taler,
-                            welchen Sie nun in diversen Verlosungen der vereinseigenen Lottery of Things einsetzen können. 
+                            welchen Sie nun in diversen Verlosungen der vereinseigenen Lottery of Things einsetzen können.
                             Wir versichern anwaltlich überprüft, dass jedes Produkt an einen realen Spender übermittelt wird.
                         </div>
                     </div>
@@ -158,11 +158,7 @@
         <div class="container-fluid">
             <div class="section-title padding-title"> {{ __('content.favt_products')}}</div>
         </div>
-        <div class="ps_parent_circles">
-            <div class="ps_circles">
-                <i class="fa fa-circle circle" data-position="1"></i>
-            </div>
-        </div>
+
         <div class="container listing_container" id="list_startups">
                 <div class="row row_for_mobile">
                 <span id="total_pages" data-total="111"></span>
@@ -381,12 +377,6 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <span class="sr-only">Next</span>
                 </a>
-
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel2" data-slide-to="1"></li>
-                </ol>
             </div>
         </div>
     </section>

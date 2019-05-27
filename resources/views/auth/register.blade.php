@@ -23,9 +23,7 @@ help{
     font-size: 13px;
     font-weight: normal;
 }
-label{
-    width:180px !important
-}
+
 .actions ul li a
 {
     border: solid 1px #000;
@@ -53,6 +51,7 @@ label.error
 {
     margin-bottom: 0px
 }
+
 #val1
 {
     height: 35px;
@@ -232,11 +231,7 @@ input[type='file']
     -ms-justify-content: center;
     z-index: -1000;
 }
-.form-file
-{
-    width: 100%;
-    margin-left:-6px
-}
+
 .form_error
 {
     border: solid 1px red !important
@@ -274,9 +269,9 @@ label.error {
 @section('content')
 <div class="main">
         <div class="container">
-            <h2 class="text-center">{{ __('content.register_heading')}}  </h2>
+            <h2 class="text-center registerHeading">{{ __('content.register_heading')}}  </h2>
             <br />
-            <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data" action="{{ route('register.save') }}">
+            <form method="POST" id="signup-form" class="" enctype="multipart/form-data" action="{{ route('register.save') }}">
                 @csrf
                 <h3>
                     <span class="title_text">{{ __('content.accunt_information')}} </span>
@@ -284,36 +279,36 @@ label.error {
                 <fieldset>
                     <div class="fieldset-content">
                         <div class="row">
-                            <div class="col-lg-9 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="fname" class="form-label">{{ __('lables.first_name')}} <font color="red"> *</font></label>
-                                <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname" placeholder="First Name" />
+                                <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-9 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="mname" class="form-label">{{ __('lables.middle_name')}} </label>
-                                <input type="text" value="{{ old('mname') }}" class="form-control{{ $errors->has('mname') ? ' is-invalid' : '' }}" name="mname" id="mname" placeholder="Middle Name" />
+                                <input type="text" value="{{ old('mname') }}" class="form-control{{ $errors->has('mname') ? ' is-invalid' : '' }}" name="mname" id="mname"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-9 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="lname" class="form-label">{{ __('lables.last_name')}} <font color="red"> *</font></label>
-                                <input required="required" type="text" value="{{ old('lname') }}" class="form-control{{ $errors->has('lname') ? ' is-invalid' : '' }}" name="lname" id="lname" placeholder="Last Name" />
+                                <input required="required" type="text" value="{{ old('lname') }}" class="form-control{{ $errors->has('lname') ? ' is-invalid' : '' }}" name="lname" id="lname"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-9 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="email" class="form-label">{{ __('lables.email')}} <font color="red"> *</font></label>
                                 <label id="email-error" class="error" for="email" style="display: none;"></label>
-                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  id="email" placeholder="Your Email" />
+                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  id="email"/>
                              </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-9 col-xs-12 form-group form-password">
-                                <label for="password" class="form-label" style="margin-left:23px">{{ __('lables.password')}} <font color="red"> *</font></label>
+                            <div class="col-lg-7 col-xs-12 form-group form-password">
+                                <label for="password" class="form-label" style="margin-left:20px">{{ __('lables.password')}} <font color="red"> *</font></label>
                                 <input required="required" type="password"  id="password" data-indicator="pwindicator" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" />
-                                <div id="pwindicator">
-                                    <div class="label"></div>
+                                <div id="pwindicator" style="width: 100px; height: 50px; top: 23px; position: relative;">
+                                    <div class="label1"></div>
                                     <div class="bar-strength">
                                         <div class="bar-process">
                                             <div class="bar"></div>
@@ -334,18 +329,18 @@ label.error {
                 <fieldset>
                     <div class="fieldset-content">
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="dob" class="form-label">{{ __('lables.dob')}} <font color="red"> *</font></label>
                                 <label id="dob-error" class="error" for="dob" style="display: none;"></label>
-                                <input onchange="calcAge()" required="required" type="text" class="form-control" name="dob" id="dob" placeholder="Date of Birth (DD.MM.YYYY)" />
+                                <input onchange="calcAge()" required="required" type="text" class="form-control" name="dob" id="dob" placeholder="(TT.MM.JJJJ)" />
                             </div>
                             <div class="error_msg" id="dobMsg"></div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="dob" class="form-label">{{ __('lables.country')}} <font color="red"> *</font></label>
-                                <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required">
-                                    <option >----Select Country----</option>
+                                <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required" style="margin-bottom:15px">
+                                    <option >----{{ __('lables.selct_country')}}----</option>
                                     @foreach($countries as $country)
                                         <option value="{{$country->country->id}}">{{$country->country->name}}</option>
                                     @endforeach
@@ -354,55 +349,55 @@ label.error {
                         </div>
                         <div class="row">
                             <div class="form-select">
-                                <label for="country" class="form-label" style="width:200px !important">{{ __('lables.city')}} / {{ __('lables.postal_code')}} <font color="red"> *</font></label>
+                                <label for="country" class="form-label">{{ __('lables.city')}} / {{ __('lables.postal_code')}} <font color="red"> *</font></label>
                                 <div class="row" style="width:100%">
-                                    <div class="col-lg-5 col-xs-12 no-padding">
-                                        <input required="required" type="text" class="form-control" name="city" id="city" placeholder="City" />
+                                    <div class="col-lg-3 col-xs-12 paddingZero">
+                                        <input required="required" type="text" class="form-control" name="city" id="city"/>
                                     </div>
-                                    <div class="col-lg-4 col-xs-12 no-padding">
-                                        <input required="required" type="text" class="form-control" name="postal_code" id="postal_code" placeholder="Postal Code" />
+                                    <div class="col-lg-2 col-xs-12 paddingZero stateMargin">
+                                        <input required="required" type="text" class="form-control" name="postal_code" id="postal_code"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="address" class="form-label">{{ __('lables.address')}} <font color="red"> *</font></label>
-                                <input required="required" type="text" class="form-control" name="address" id="address" placeholder="Address" />
+                                <input required="required" type="text" class="form-control" name="address" id="address"/>
                             </div>
                         </div>
-                       
+
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="country" class="form-label">{{ __('lables.house_number')}}<font color="red"> *</font></label>
-                                <input required="required" type="text" class="form-control" name="hnumber" id="hnumber" placeholder="Enter House Number" />
+                                <input required="required" type="text" class="form-control" name="hnumber" id="hnumber" />
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
+                            <div class="col-lg-7 col-xs-12 form-group">
                                 <label for="address" class="form-label">{{ __('lables.address2')}} </label>
-                                <input  type="text" class="form-control" name="address2" id="address2" placeholder="Address" />
+                                <input  type="text" class="form-control" name="address2" id="address2"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-select">
+                            <div class="col-lg-7 col-xs-12 form-select">
                                 <label for="country" class="form-label">{{ __('lables.phone_number')}} <font color="red"> *</font></label>
-                                <input required="required" type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number" />
+                                <input required="required" type="text" class="form-control" name="phone" id="phone"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
-                                <label for="profile_pic" class="form-label" style="width:130px">{{ __('lables.avatar')}} &nbsp; &nbsp;</label>
+                            <div class="col-lg-7 col-xs-12 form-group">
+                                <label for="profile_pic" class="form-label addressProof">{{ __('lables.avatar')}} &nbsp; &nbsp;</label>
                                 <div class="form-file" id="id_card">
                                     <input type="file" name="profile_pic" id="profile_pic" class="custom-file-input form-control" />
                                     <span id='val'></span>
-                                    <span id='button'>{{ __('lables.select_file')}}</span>
+                                    <span id='button1'>{{ __('lables.select_file')}}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
-                                <label for="profile_pic" class="form-label" style="width:145px">{{ __('lables.identity_proof')}} <font color="red"> *</font></label>
+                            <div class="col-lg-7 col-xs-12 form-group">
+                                <label for="profile_pic" class="form-label addressProof" >{{ __('lables.identity_proof')}} <font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof">
                                     <input required="required" type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" />
                                     <span id='val2' class="idImg"></span>
@@ -411,8 +406,8 @@ label.error {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
-                                <label for="profile_pic" class="form-label" style="width:145px">{{ __('lables.first_name')}} <font color="red"> *</font></label>
+                            <div class="col-lg-7 col-xs-12 form-group">
+                                <label for="profile_pic" class="form-label addressProof">{{ __('lables.first_name')}} <font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof_front">
                                     <input required="required" type="file" name="identity_card_front"  id="identity_card_front" class="custom-file-input form-control" />
                                     <span id='val3' class="idImg1"></span>
@@ -421,8 +416,8 @@ label.error {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-10 col-xs-12 form-group">
-                                <label for="profile_pic" class="form-label" style="width:145px">{{ __('lables.first_name')}}<font color="red"> *</font></label>
+                            <div class="col-lg-7 col-xs-12 form-group">
+                                <label for="profile_pic" class="form-label addressProof" >{{ __('lables.id_back')}}<font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof_bck">
                                     <input required="required" type="file" name="identity_card_back"  id="identity_card_back" class="custom-file-input form-control" />
                                     <span id='val4' class="idImg2"></span>
@@ -437,7 +432,7 @@ label.error {
                     </div>
                 </fieldset>
                 <h3 style="display:none">
-                    <span class="title_text">{{ __('content.terms_cond')}}</span>
+                    <span id="title_id_3" class="title_text">{{ __('content.terms_cond')}}</span>
                 </h3>
                 <fieldset>
                     <div class="fieldset-content">

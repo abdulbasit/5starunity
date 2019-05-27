@@ -19,6 +19,7 @@ return [
     "select_file"=>"Datei Auswählen",
     "id_front"=>"Ausweiss Vorderseite",
     "id_back"=>"Ausweiss Rückseite",
-    "address"=>"Straße"
+    "address"=>"Straße",
+    "selct_country"=>"Land Auswählen"
 ];
 ?>

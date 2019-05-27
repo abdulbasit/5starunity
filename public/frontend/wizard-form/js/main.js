@@ -60,11 +60,17 @@
             finish: 'Submit',
             current: ''
         },
-        titleTemplate: '<div class="title"><span class="number">#index#</span>#title#</div>',
+        titleTemplate: '<div id="title_id_#index#" class="title"><span id="#index#" class="number">#index#</span>#title#</div>',
         onStepChanging: function(event, currentIndex, newIndex)
         {
 
-            // console.log(newIndex);
+            if(newIndex<3)
+            {
+                $("#"+newIndex).removeClass('number');
+                $("#"+newIndex).addClass('formActive');
+                $("#title_id_"+newIndex).css('color','green');
+            }
+
             if(newIndex==2 && $("#identity_card").val()!="")
             {
                 scollPos();
@@ -84,9 +90,8 @@
         },
         onFinishing: function(event, currentIndex)
         {
-            form.validate().settings.ignore = ":disabled";
-            console.log(currentIndex);
 
+            form.validate().settings.ignore = ":disabled";
 
             var dateOfBirth = $("#dob").val();
             dateOfBirth = dateOfBirth.split('.');
@@ -107,7 +112,7 @@
                 $("#dob-error").html(' ');
                 $("#dob").removeClass('error');
             }
-            
+
             if($("#identity_card").val()=="")
             {
                 $("#id_prrof").addClass('form_error');
