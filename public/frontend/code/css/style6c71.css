@@ -3107,7 +3107,13 @@ select[multiple].form-group-lg .form-control {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #333 !important;
+  color: #fff !important;
+  text-decoration: none;
+}
+.menubtn:hover,
+.menubtn:focus,
+.menubtn.focus {
+  color: #fff !important;
   text-decoration: none;
 }
 .btn:active,
@@ -5554,6 +5560,10 @@ a.list-group-item-danger.active:focus {
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
   border-top: 0;
+}
+.red
+{
+    color:red
 }
 .panel > .table-bordered,
 .panel > .table-responsive > .table-bordered {
@@ -15429,7 +15439,7 @@ label{
       margin-top:50px !important
   }
   .whyBoxHeading {
-        top: -80px !important;
+        /* top: -80px !important; */
         font-size:19px !important
     }
     .section-title
@@ -15504,7 +15514,7 @@ section.homepage-howitworks .circles-holder {
     background-image: none;
     min-height: 360px;
   }
- 
+
 }
 .registerCircle
 {
@@ -46940,8 +46950,8 @@ div.right_tools {
     float: left;
     color: black;
     margin-top: 50%;
-    position: relative;
-    top: -207px;
+    position: absolute;
+    top: -11px;
 }
 .whyWrap
 {
@@ -46949,7 +46959,7 @@ div.right_tools {
 }
 .why5starContIco
 {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     vertical-align: middle;
     position: absolute;

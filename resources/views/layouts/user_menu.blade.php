@@ -46,25 +46,29 @@
         </div>
         <div class="profile-usermenu">
             <ul class="nav">
-                <li class="@if($route=='dashboard')active @endif">
+                {{-- <li class="@if($route=='dashboard')active @endif">
                     <a href="{{route('dashboard')}}">
                     <i class="glyphicon glyphicon-home"></i>
                     Dashboard </a>
-                </li>
+                </li> --}}
                 <li class="@if($route=='profile')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="glyphicon glyphicon-user"></i>
                     Profile </a>
                 </li>
                 <li class="@if($route=='update-profile') active @endif">
-                    <a  href="{{route('account-settings')}}">
-                    <i class="glyphicon glyphicon-cog"></i>
-                    Account Settings </a>
+                    @if($userInfo['user_data']->status==0)
+                        <a  href="{{route('account-settings')}}">
+                        <i class="glyphicon glyphicon-cog"></i>
+                        Account Settings </a>
+                    @endif
                 </li>
                 <li  class="@if($route=='wallet')active @endif">
-                    <a href="{{route('wallet')}}">
-                    <i class="glyphicon glyphicon-credit-card"></i>
-                    Wallet </a>
+                    @if($userInfo['user_data']->status==0)
+                        <a href="{{route('wallet')}}">
+                        <i class="glyphicon glyphicon-credit-card"></i>
+                        Wallet </a>
+                    @endif
                 </li>
                 <li class="@if($route=='lotteries')active @endif">
                     <a href="{{route('lottery.user.purchased')}}">

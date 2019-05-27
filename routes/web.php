@@ -42,6 +42,7 @@ Auth::routes();
     Route::post('login', 'Auth\LoginController@login');
     Route::get('logout', 'Auth\LoginController@logout');
     Route::get('register', 'Auth\RegisterController@index')->name('register');
+    Route::get('template', 'Auth\RegisterController@email_template')->name('template');
     Route::post('register/save', 'Auth\RegisterController@create')->name('register.save');
     Route::get('email/verification/{token}', 'Auth\RegisterController@verify_email');
     Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');

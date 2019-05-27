@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\Product_images;
+
 use App\Models\Lottery;
 use App\Models\LotteryContestent;
-use App\Models\Blog;
 use App\Models\UserDocument;
 use App\Models\UserProfile;
 use App\Models\User;
 use App\Models\Vallet;
-use Route;
 use Session;
 use Auth;
 use DB;
@@ -25,6 +22,7 @@ class LotteryController extends Controller
 
     public function __construct()
     {
+
         // $this->middleware('auth');
         // $this->middleware(['auth', 'verified']);
     }
@@ -38,17 +36,21 @@ class LotteryController extends Controller
                         ->groupBy('lotteries.id','lottery_contestents.lottery_id')
                         ->orderBy('totalClients','desc')
                         ->paginate(18);
-        
+
         $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
         return view('lotteries.index',compact('lotteryData','testimonialData'));
     }
     public function detail($id)
     {
+        $user = '';
+        if (Auth::guard('client')->check()){
+            $user = Auth::guard('client');
+        }
         Session::flash('route', 'lottery/detail/'.$id);
         $lotteryData = Lottery::find($id);
         $lotteryData->views=$lotteryData->views+1;
         $lotteryData->save();
-        return view('lotteries.detail',compact('lotteryData'));
+        return view('lotteries.detail',compact('lotteryData','user'));
     }
     public function purchaseLottery(Request $request)
     {

@@ -45,7 +45,7 @@
                         <div class="row">
                             @if(!Auth::guard('client')->check())
                                 <div class="action col-xs-10 col-lg-8 no-padding">
-                                    <a href="/login" class="add-to-cart btn" type="button">Apply</a>
+                                    <a  href="/login" class="add-to-cart btn" type="button">Apply</a>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
                                     <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
@@ -56,7 +56,7 @@
                                 <div style="width:100%; color:red; font-size:14px; text-align:center; padding-bottom:7px" id="errorLots"></div>
                                 <input  type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData->total_lots}}">
                                 <div class="action col-xs-10 col-lg-8 no-padding">
-                                    <button onclick="puchaseLottery()" class="add-to-cart btn" type="button">Apply</button>
+                                    <button onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" type="button">Apply</button>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
                                     <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
@@ -107,8 +107,16 @@
             }
 
         }
-        function puchaseLottery()
+        function puchaseLottery(val)
         {
+            if(val==1)
+            {
+                $("#errorLots").css('color','red');
+                $("#errorLots").html("Your Account is not approved by the admin yet.");
+                return false;
+            }
+
+
             var totalAmount = $("#totalAmount").text();
             var total_lots = $("#total_lots").val();
             var qty = $("#qty").val();

@@ -85,7 +85,6 @@
             <div class="container-fluid">
                 <div class="col-xs-12 button-container text-center button-container-heading" style="padding:0px">
                     <img style="width:100%" src="{{ URL::to('/') }}/frontend/graphics/layout/003.png">
-
                 </div>
             </div>
        </div>

@@ -50,7 +50,7 @@
                                         <div class="card border-info mx-sm-1 p-3 card_stats">
                                             <div style="margin-top: 15px; float: left; width: 100%;">
                                                 <div class="text-info text-center col-xs-12">Available Balance</div>
-                                                <div class="text-info text-center col-xs-12"> &euro; {{$available_balance->total_available_balance}}</div>
+                                                <div class="text-info text-center col-xs-12"> &euro; @if($available_balance){{$available_balance->total_available_balance}} @else 0 @endif</div>
                                             </div>
                                         </div>
                                     </div>
@@ -85,7 +85,9 @@
                  <div class="row profile-body">
                     <div class="col-lg-9 col-xs-12">
                         <div class="row text-right">
-                            <a class="editProf" href="{{route('account-settings')}}">Edit Profile</a>
+                            @if($userInfo['user_data']->status==0)
+                                <a class="editProf" href="{{route('account-settings')}}">Edit Profile</a>
+                            @endif
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Profile Status</div>
@@ -93,6 +95,8 @@
                                 <strong>
                                     @if($userInfo['user_data']->status==2)
                                         <span class="red">Disabled</span>
+                                    @elseif($userInfo['user_data']->status==1)
+                                        <span class="red">Your Account is not approved by the admin yet.</span>
                                     @else
                                         <span class="green">Acitve</span>
                                     @endif
@@ -109,7 +113,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Email Address</div>
-                            <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_data']->email}} <a style="font-size:13px; color:blue; text-decoration:underline" href="#" data-toggle="modal" data-target="#myModal" id="change_mail">Change</a></div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_data']->email}} @if($userInfo['user_data']->status==0)<a style="font-size:13px; color:blue; text-decoration:underline" href="#" data-toggle="modal" data-target="#myModal" id="change_mail">Change</a>@endif</div>
                         </div>
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Date of birth </div>

@@ -188,13 +188,12 @@ class RegisterController extends Controller
             $email_verification->verification="";
             $email_verification->email_verified_at=Carbon::now();
             $email_verification->save();
-            return redirect()->route('login')->with('success','Email Verified Successfully! ');
+            return redirect()->route('login')->with('success','Email Verified Successfully!');
         }
         else
         {
-            return redirect()->route('login')->with('error','Sorry. No Record Found! ');
+            return redirect()->route('login')->with('error','Sorry. No Record Found!');
         }
-
     }
     public function check_email(Request $request)
     {
@@ -251,7 +250,10 @@ class RegisterController extends Controller
             return $filename;
         }
     }
-
+    public function email_template()
+    {
+        return view('mails.register_verification');
+    }
     public function deleteImage($filename)
     {
         File::delete('uploads/users/profile_pic/' . $filename);
