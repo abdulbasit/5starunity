@@ -43,13 +43,13 @@
                 <p>
                     {{ __('content.3steps_cont1')}}<br />
                 </p>
-                <br />
+                {{-- <br /> --}}
                 <br />
                 <p>
                     {{ __('content.3steps_cont2')}}<br />
                 </p>
                 <br />
-                <br />
+                {{-- <br /> --}}
                 <p>
                     {{ __('content.3steps_cont3')}}<br />
                 </p>
