@@ -43,9 +43,13 @@
                 <p>
                     {{ __('content.3steps_cont1')}}<br />
                 </p>
+                <br />
+                <br />
                 <p>
                     {{ __('content.3steps_cont2')}}<br />
                 </p>
+                <br />
+                <br />
                 <p>
                     {{ __('content.3steps_cont3')}}<br />
                 </p>
@@ -481,7 +485,7 @@
                 setTimeout(function(){
                     $("#left_arrow").parent().css('top',"87px ");
                     $("#right_arrow").parent().css('top',"87px ");
-                 }, 3000);
+                 }, 1500);
 
             });
         </script>

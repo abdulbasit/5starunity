@@ -103,7 +103,7 @@ Auth::routes();
         Route::get('user/documents/{id}', 'UserController@userDocuments')->name('user.documents');
         Route::get('user/documents/approve/{id}', 'UserController@approve')->name('user.documents.approve');
         Route::post('user/documents/cancel/{id}', 'UserController@cancel')->name('user.documents.cancel');
-        Route::get('user/documents/download/{id}', 'UserController@download')->name('user.documents.download');
+        Route::get('user/documents/download/{id}/{type}', 'UserController@download')->name('user.documents.download');
         Route::get('user/status/{id}/{status}', 'UserController@update_status')->name('user.status');
         Route::get('user/credit/history/{id}', 'UserController@creditHistory')->name('user.credit.history');
         Route::get('user/credit/filter/history/{id}/{type}', 'UserController@creditHistory')->name('user.credit.filter.history');

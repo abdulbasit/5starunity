@@ -33,20 +33,21 @@
 <div class="content-wrapper">
     <div class="content-body">
       <!-- Zero configuration table -->
-      <section id="configuration">
-        <div class="row">
+      <section id="configuration" >
+        <div class="row" >
           <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title">User Documents</h4>
               </div>
               <div class="card-content collapse show">
-                <div class="card-body card-dashboard">
+                <div class="card-body card-dashboard" style="overflow:auto">
                   <table class="table table-striped table-bordered zero-configuration" id="usersT">
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Image</th>
+                        <th>Residence Proof</th>
+                        <th>Identity Proof </th>
                         <th>Status</th>
                         <th>Notes</th>
                         <th>Submited Date</th>
@@ -73,9 +74,16 @@
                             @else
                                 <i class="fa fa-file-image-o"></i>
                             @endif
-                            <a href="{{route('admin.user.documents.download',$documents->id)}}">
+                            <a href="{{route('admin.user.documents.download',[$documents->id,'res'])}}">
                                 Downoad Document
                             </a>
+                        </td>
+                        <td>
+                            <a href="{{route('admin.user.documents.download',[$documents->id,'idproof'])}}">
+                                Identity Documents
+                            </a>
+                            {{-- {{$documents->id_front}} --}}
+
                         </td>
                         <td>
                             @if($documents->status=='1')
@@ -110,7 +118,8 @@
                     <tfoot>
                       <tr>
                         <th>Name</th>
-                        <th>Image</th>
+                        <th>Residence Proof</th>
+                        <th>Identity Proof </th>
                         <th>Status</th>
                         <th>Notes</th>
                         <th>Submited Date</th>

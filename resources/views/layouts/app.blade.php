@@ -74,7 +74,7 @@
                                 <li  ><a href="{{route('ceo')}}">{{ __('menu.erfinder')}}</a></li>
                                 <li ><a href="{{route('partner')}}">{{ __('menu.partner')}}</a></li>
                                 <li class="dropdown" id="bigmenu">
-                                    <button class="btn btn-default dropdown-toggle menubtn" type="button" data-toggle="dropdown" data-hover="dropdown">{{ __('menu.more')}} <span class="caret"></span></button>
+                                    <button style="color:black !important" class="btn btn-default dropdown-toggle menubtn" type="button" data-toggle="dropdown" data-hover="dropdown">{{ __('menu.more')}} <span class="caret"></span></button>
                                     <ul class="dropdown-menu sub_menu">
                                         <li><a style="margin-top:0px !important" href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
                                         <li><a style="margin-top:0px !important" href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
@@ -98,9 +98,9 @@
                                         <div class="row nopadding">
                                             <div class="col-md-12 nopadding text-left">
                                                 <div class="list_nav">
-                                                    <ul>
-                                                        <li><a href="{{route('profile')}}">My Profile</a></li>
-                                                        <li><a href="/logout">LOG OUT </a></li>
+                                                    <ul style="margin-top:10px">
+                                                        <li><a style="margin-top:0px !important" href="{{route('profile')}}">My Profile</a></li>
+                                                        <li><a style="margin-top:0px !important" href="/logout">LOG OUT </a></li>
                                                     </ul>
                                                 </div>
                                             </div>

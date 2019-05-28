@@ -63,31 +63,52 @@ class UserController extends Controller
         $document_status->notes =$request->get('notes');
         $document_status->save();
     }
-    public function download($id)
+    public function download($id,$type)
     {
 
         $documents = UserDocument::where('id',$id)->first();
 
-        if($documents->type=='res')
+        if($type=='idproof')
         {
-            $file = public_path(). "/uploads/users/documents_proofs/res_proof/".$documents->res_proof;
-            $info = pathinfo($file);
-            $ext = $info['extension'];
+            $zip_file = 'invoices.zip'; // Name of our archive to download
+
+            // Initializing PHP class
+            $zip = new \ZipArchive();
+            $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
+
+            $invoice_file = public_path(). "/uploads/users/documents_proofs/res_proof/".$documents->res_proof;
+
+            // Adding file: second parameter is what will the path inside of the archive
+            // So it will create another folder called "storage/" inside ZIP, and put the file there.
+            $zip->addFile(storage_path($invoice_file), $invoice_file);
+            $zip->close();
+
+            // We return the file immediately after download
+            return response()->download($zip_file);
         }
         else
         {
-
-            $file= public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->res_proof;
-            $info = pathinfo($file);
-            $ext = $info['extension'];
+            if($documents->type=='res')
+            {
+                $file = public_path(). "/uploads/users/documents_proofs/res_proof/".$documents->res_proof;
+                $info = pathinfo($file);
+                $ext = $info['extension'];
+            }
+            else
+            {
+                $file= public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->res_proof;
+                $info = pathinfo($file);
+                $ext = $info['extension'];
+            }
+            $headers = array(
+                'Content-Type: application/'.$ext,
+            );
+            return response()->download($file );
         }
-        $headers = array(
-            'Content-Type: application/'.$ext,
-        );
-        return response()->download($file );
-        // return Response::download($file, $documents->res_proof , $headers);
 
+        // return Response::download($file, $documents->res_proof , $headers);
     }
+
     public function update_status($id,$status)
     {
         $user = User::where('id',$id)->first();

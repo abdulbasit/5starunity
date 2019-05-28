@@ -66,7 +66,7 @@
                                   <td height="24" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
+                                  <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
                                     <p>Lieber Interessent,</p>
                                     <p>Sicherheit steht bei uns an vorderster Stelle, weshalb wir Sie bitten die angegebene E-Mail-Adresse zu bestätigen.
                                     Nach komplett erfolgreicher Verifizierung steht Ihnen die uneingeschränkte Nutzung des internen Bereiches offen.</p>
@@ -79,8 +79,8 @@
                                 </tr>
                                 <tr>
                                   <td valign="top" width="48%" align="center"> <span>
-                                        <a href="#" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a>
-                                    {{-- <a href="{{URL::to('/email/verification/'.$email->verification_code)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a> --}}
+                                        {{-- <a href="#" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a> --}}
+                                    <a href="{{URL::to('/email/verification/'.$email->verification_code)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a>
                                     </span>
                                   </td>
                                 </tr>
@@ -88,7 +88,7 @@
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center">
+                                  <td align="justify">
                                       <p>Wir möchten Sie nochmals auf unsere allgemeinen Nutzungsbedingungen aufmerksam machen und
                                             danken bereits im Voraus für Ihr Vertrauen, Ihre Unterstützungen und verbleiben,</p>
                                       <p>
@@ -146,7 +146,7 @@
                         </tr>
                         <tr>
                           <td valign="top" align="center"> <span style="font-family: -apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif; color:#9EB0C9; font-size:10px;">&copy;
-                            <a href="https://www.5Starunity.com/" target="_blank" style="color:#9EB0C9 !important; text-decoration:none;">5Starunity</a> 2017
+                            <a href="https://www.5Starunity.com/" target="_blank" style="color:#9EB0C9 !important; text-decoration:none;">5Starunity</a> <?php echo date("Y") ?>
                           </span>
 
                           </td>

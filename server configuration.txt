@@ -1,0 +1,63 @@
+hostname ntest.xnowad.com
+cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh latest
+ns1.xnowad.com
+ns2.xnowad.com
+
+
+https://34.73.110.156:8083
+    username: admin
+    password: JxjXeB0dq5
+
+godaddy password
+ichm.arshad@gmail.com
+!1977!Cf66AfC9_
+
+mail trap account
+
+abdulbasit056@gmail.com
+Aa11441144@@
+
+php artisan make:migration add_votes_to_users_table --table=users
+php artisan make:migration create_users_table --create=users
+
+/home/admin/web/xnowad.com/public_html/5starunity
+
+/home/admin/web/5starunity.xnowad.com/public_html
+
+sudo mkdir -p /var/www/5starunity.xnowad.com/public_html
+sudo mkdir -p /var/www/5starunity.xnowad.com/public_html
+sudo chown -R $USER:$USER /var/www/5starunity.xnowad.com/public_html
+sudo chown -R $USER:$USER /var/www/5starunity.xnowad.com/public_html
+nano /var/www/5starunity.xnowad.com/public_html/index.html
+sudo nano /etc/httpd/sites-available/5starunity.xnowad.com.conf
+<VirtualHost *:80>
+
+    ServerName www.5starunity.xnowad.com
+    ServerAlias 5starunity.xnowad.com
+    DocumentRoot /var/www/5starunity.xnowad.com/public_html
+    ErrorLog /var/www/5starunity.xnowad.com/error.log
+    CustomLog /var/www/5starunity.xnowad.com/requests.log combined
+</VirtualHost>
+sudo ln -s /etc/httpd/sites-available/5starunity.xnowad.com.conf /etc/httpd/sites-enabled/5starunity.xnowad.com.conf
+sudo ln -s /etc/httpd/sites-available/5starunity.xnowad.com.conf /etc/httpd/sites-enabled/5starunity.xnowad.com.conf
+
+
+
+orignal httpd confg
+
+
+/===================paypal api credentional 
+Username:
+abdulbasit056_api1.gmail.com
+Password:
+SKLZSKGCFPJZ44YY
+Signature:
+A6lrMSeFU4NsAX8rywRYXlmmQJIPAB1aC9LbP8L.vUU9waxk6tPSlqKo
+
+Sandbox Account
+abdulbasit056@gmail.com
+AccessToken
+access_token$sandbox$znpjcb8qjxqwrg7f$3fe6c07cfaad0e26340cb9700839d347
+ExpiryDate
+10 Apr 2029
+Currencies
