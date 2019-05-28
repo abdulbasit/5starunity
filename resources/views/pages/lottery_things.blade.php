@@ -16,10 +16,11 @@
                     Mit SPENDEN in die Zukunft tolle Lieblingsprodukte gewinnen
                 </div>
                 <p>Ihre Spenden helfen zukunftsorientierten Unternehmen, Entwicklern und Gründern bspw. in einer StartUp-Phase dabei, diverse Konzepte / Produkte zu gestalten / realisieren. Auf unseren Vorstellungsseiten, die Sie über den oben angezeigten Button ERFINDER / GRÜNDER aufrufen können, informieren wir stets kommunikativ sowie transparent über bereits erfolgte Unterstützungen, welche nur durch Ihre gütigen Spenden erreicht wurden.</p>
-                <br />
+                {{-- <br /> --}}
                 <br />
                 <p>Neben der emotionalen Ehrenerklärung für zukünftige innovative Projekte ist ein weiterer Vorteil Ihrer Spende, dass Sie von unserem eingetragenen Verein mit 5starUnity-Talern belohnt werden und nun danach Möglichkeit besitzen, nachfolgende Sachpreise gewinnen zu können. Fehlt Ihnen ein aktuell beliebtes Produkt freuen wir uns über eine schriftliche Mitteilung und versprechen, dies innerhalb des Vorstandes zeitnah zu thematisieren.</p>
-                <br /><br />
+                <br />
+                {{-- <br /> --}}
                 <p>Suchen Sie mit nachstehender Funktion Ihre Lieblingsprodukte und nutzen Sie die vom Verein erhaltenen 5starUnity-Taler, um diese in gültige Lose zu tauschen. In Ihrem persönlichen Nutzerbereich werden alle Informationen dargestellt – wir wünschen Ihnen bereits heute viel Glück bei den anwaltlich überwachten Ziehungen und noch mehr Freude mit unseren tollen Sachpreisen, welche vom Vorstand persönlich überbracht werden.  </p>
 
 
@@ -124,9 +125,10 @@
                         </div>
                         <p>Unsere innerste Überzeugung des langfristigen Erfolgs und der Wille bahnbrechende Erfindungen zu unterstützen, ohne den Gründern im Vorfeld ein Exit-Szenario aufzuzeigen, benötigt Sie und eine starke Community. Wir freuen uns bereits direkt mit der Gründung des Vereins starke Partner gefunden zu haben und sind gewillt, unser Netzwerk stetig zu erweitern – jeder Nutzer erhält Zugang zu einzigartigen Angeboten.</p>
                         <br />
-                        <br />
+                        {{-- <br /> --}}
                         <p>Gerne erwarten wir Ihre Informationen über ggf. zukünftige Partnerschaften oder Gründer, welche eine Unterstützung jedweder Art benötigen. Senden Sie uns einfach mit dem internen Kontaktformular alle Daten, wir melden uns mit Sicherheit bei angegebenen Ansprechpartnern. Neben Geschäftspartnern haben Sie stets die Möglichkeit Freunde zu werben – hierzu finden Sie Ihren eigenen Link innerhalb des verifizierten internen Profils.</p>
-                        <br /><br />
+                        <br />
+                        {{-- <br /> --}}
                         <p>Durch unsere zahlreichen Partner / Unterstützer, günstig erhaltenen Produkten oder gar kostenfreien Sachspenden für die vereinsinterne Lottery of Things, erhalten Sie zusätzliche Taler bei jeder Spende Ihrer Freunde – denn gemeinsam Gewinnen macht mehr Freude. Genaue Voraussetzungen für diesen Bonus und ggf. noch weiteren tollen Bonbons finden Sie innerhalb des internen Systems, nach einer erfolgreichen Verifikation. </p>
              </div>
         </div>
