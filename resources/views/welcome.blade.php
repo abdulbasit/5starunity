@@ -79,7 +79,7 @@
 
             <div class="row">
                 <div class="col-xs-12 button-container ">
-                    <a href="#" class="btn layoutV2-btn">{{ __('menu.register_your_self')}}</a>
+                    <a href="/register" class="btn layoutV2-btn">{{ __('menu.register_your_self')}}</a>
                 </div>
             </div>
         </div>
