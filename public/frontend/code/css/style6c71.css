@@ -12,7 +12,7 @@ html {
     src: url("fonts/calibri/Calibri-normal.ttf");
     }
 @font-face {
-    font-family: "open-sans-light";
+    font-family: "Open Sans", sans-serif;
     src: url("fonts/open-sans/OpenSans-Light.ttf");
     }
 @font-face {
@@ -24,7 +24,7 @@ html {
     border:solid 1px green
 }
 body {
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "Open Sans", sans-serif; !important;
   margin: 0;
 }
 article,
@@ -119,7 +119,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: "Open Sans", sans-serif;;
   font-size: 1em;
 }
 button,
@@ -1534,7 +1534,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family:"Open Sans", sans-serif;;
 }
 code {
   padding: 2px 4px;
@@ -3137,7 +3137,7 @@ fieldset[disabled] .btn {
   color: #333;
   background-color: #fff;
   /* border-color: #ccc; */
-  font-family:"Open Sans", sans-serif !important
+  font-family:"Open Sans", sans-serif; !important
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -6336,7 +6336,7 @@ button.close {
   height: 20px;
   margin-top: -10px;
   line-height: 1;
-  font-family: serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
@@ -6710,7 +6710,6 @@ button.close {
 }
 #contactPage h2 {
   font-size: 35px;
-  font-family: 'Roboto Condensed', sans-serif;
   font-weight: bold;
 }
 #contactPage #contact textarea {
@@ -6905,7 +6904,7 @@ a.inline {
   margin-top: 25px !important;
   margin-bottom: 25px !important;
   color: #000 !important;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif; !important;
 }
 .sing_in_up_title h1 p {
   font-weight: bold;
@@ -7015,7 +7014,7 @@ a.inline {
 }
 /**** Early access Login CSS***/
 #earlyAccessLogin {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 #earlyAccessLogin .ac_login_content {
   padding: 10px 50px;
@@ -7114,7 +7113,7 @@ a.inline {
 }
 #earlyAccessLogin .access_login_title {
   color: #f3d2a7;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   padding-top: 5px;
   text-align: right;
@@ -7123,7 +7122,7 @@ a.inline {
 }
 #earlyAccessLogin .access_login_title .login_title {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
@@ -7147,7 +7146,7 @@ a.inline {
 }
 #earlyAccessLogin .btn-lightbrwn {
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold !important;
   color: #fff;
   padding: 20px 50px;
@@ -7260,7 +7259,7 @@ a.inline {
 }
 #angelclubNotice {
   background: #3b3a4c;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
   overflow: hidden;
   z-index: 99;
@@ -7391,7 +7390,7 @@ a.inline {
 }
 .faq_page {
   padding-top: 0 !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .faq_page ::selection {
   background-color: #b1dfee;
@@ -7403,7 +7402,7 @@ a.inline {
   margin-top: 80px;
 }
 .faq_page .search_container input {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   width: 100%;
   height: 60px;
   font-size: 20px;
@@ -7508,7 +7507,7 @@ a.inline {
   cursor: pointer;
 }
 .faq_page .cats_wraper .faq-cats-container .faq-cat h3 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 22px;
   padding: 50px 15px 5px 15px;
   line-height: 28px;
@@ -7936,7 +7935,7 @@ a.inline {
 }
 .accordion-group-date {
   color: #434343;
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 19px;
   font-weight: 400;
   text-transform: none;
@@ -8145,7 +8144,7 @@ a.inline {
   text-transform: uppercase;
   padding-right: 30px;
   overflow-wrap: break-word;
-  font-family: 'Oswald', Lato, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #434343;
 }
 @media (max-width: 480px) {
@@ -8544,7 +8543,7 @@ a.inline {
   .submenu-redesign span.current-section-title {
     text-transform: uppercase;
     font-size: 15px;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family:"Open Sans", sans-serif;;
     font-weight: 400;
   }
 }
@@ -8579,7 +8578,7 @@ a.inline {
   border: 0 !important;
   text-transform: uppercase;
   font-size: 15px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400;
   border-radius: 20px;
   transition: all 1s ease;
@@ -8723,7 +8722,7 @@ a.inline {
   border: 0 !important;
   text-transform: uppercase;
   font-size: 15px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400;
   margin: 8px 0px;
   padding-left: 10px;
@@ -8859,11 +8858,11 @@ a.inline {
   margin-top: 52.5px;
   margin-bottom: 50px;
   color: #434343;
-  font-family: "Oswald Regular", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 40px;
 }
 .main-title h1 {
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 500;
 }
 @media (max-width: 767px) {
@@ -8873,7 +8872,7 @@ a.inline {
   }
 }
 .main-title .subtitle {
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
 }
 @media (max-width: 768px) {
@@ -8883,7 +8882,7 @@ a.inline {
 }
 .teaser-sentence {
   color: #434343;
-  font-family: Lato, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 19px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -8915,13 +8914,13 @@ a.inline {
 }
 .more-startups-button .more-startups-chevron {
   font-size: 29px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .more-startups-button .more-startups-text {
   width: 50px;
   font-weight: bold;
   margin-left: 10px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 1400px) {
   .more-startups-button .more-startups-text {
@@ -9109,7 +9108,7 @@ a.inline {
   top: 0px !important;
   right: 20px !important;
   z-index: 999;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .register-overlay .LoginModal.main-row .close:hover {
   color: #bebebe;
@@ -9126,7 +9125,7 @@ a.inline {
   background: transparent;
 }
 .register-overlay .LoginModal.main-row .modal-page {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   height: inherit;
   min-height: inherit;
   color: #fff;
@@ -9180,7 +9179,7 @@ a.inline {
   padding-left: 40px;
   padding-right: 40px;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 19px;
   font-weight: 900;
 }
@@ -9191,12 +9190,12 @@ a.inline {
   margin: 0 auto;
 }
 .register-overlay .LoginModal.main-row .modal-page .modal-left-col .text-1 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;;
   margin-bottom: 10px;
   font-weight: 300;
 }
 .register-overlay .LoginModal.main-row .modal-page .modal-left-col .text-2 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
 }
 .register-overlay .LoginModal.main-row .modal-page .modal-right-col {
@@ -9229,7 +9228,7 @@ a.inline {
   }
 }
 .register-overlay .LoginModal.main-row .modal-page .modal-right-col .line_middle_oder_fb {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   padding: 0;
   width: 40%;
   color: #fff;
@@ -9466,7 +9465,7 @@ a.inline {
   }
 }
 .bottom-bar-sticky .header-text {
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 28px;
   text-transform: uppercase;
   line-height: 35px;
@@ -9573,7 +9572,7 @@ a.inline {
 }
 .more-startups-link {
   font-size: 19px;
-  font-family: "Roboto Condensed";
+  font-family: "Open Sans", sans-serif;;
   text-transform: none;
   text-decoration: underline;
   font-weight: 700;
@@ -9919,7 +9918,7 @@ new comment styles
   border-color: #009A8B;
   border-radius: 25px;
   font-size: 15px;
-  font-family: "Roboto Condensed";
+  font-family: "Open Sans", sans-serif;;
 }
 .commentBoxww .answer .ww_reply_button:hover {
   background-color: #ffffff;
@@ -10129,7 +10128,7 @@ new comment styles
   height: 25px;
   border-radius: 25px;
   width: 50px;
-  font-family: "Roboto Condensed";
+  font-family: "Open Sans", sans-serif;;
   margin-left: 2px;
 }
 .comment-item .message-text .ww_search_end_row .ww_search_comment_vote_up:hover {
@@ -10193,7 +10192,7 @@ new comment styles
   background-color: #9D9D9D;
   border-color: #9D9D9D;
   border-radius: 25px;
-  font-family: "Roboto Condensed";
+  font-family: "Open Sans", sans-serif;;
 }
 .loadmorecomm .ww_loadmore_com:hover {
   background-color: #ffffff;
@@ -10268,7 +10267,7 @@ new comment styles
 #ww_search_main_block_wrap .searchArea #ww_search_keyword_inp {
   color: #626262;
   border: 1px solid #9d9d9d;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-align: left;
   padding-left: 30px !important;
   background: transparent url(../../graphics/icons/search_delete_icon.gif) no-repeat right -10px center;
@@ -10306,7 +10305,7 @@ new comment styles
   line-height: 28px;
   padding: 0;
   height: 28px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   border-radius: 19px;
   font-weight: 400;
@@ -10447,7 +10446,7 @@ new comment styles
   padding-bottom: 10px;
 }
 #companisten .investor-item .quote strong {
-  font-family: arial;
+  font-family: "Open Sans", sans-serif;;
   font-size: 40px;
   line-height: 20px;
 }
@@ -10569,7 +10568,7 @@ new comment styles
   line-height: 36px;
   font-size: 18px;
   color: white;
-  font-family: Trebuchet, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
   box-sizing: border-box;
 }
@@ -11599,7 +11598,7 @@ button {
   background: #5b8b9b;
 }
 .headerBlue h1 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 45px;
   font-weight: 400;
   line-height: 65px;
@@ -11706,7 +11705,7 @@ button {
   background: #fff;
   padding: 5px 15px;
   opacity: 0.6;
-  font-family: "Avenir Next", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 17px;
   font-weight: bold;
   min-width: 20%;
@@ -12268,7 +12267,7 @@ button {
 }
 .onoffswitch-inner:before,
 .onoffswitch-inner:after {
-  font-family: Trebuchet, Arial, sans-serif;
+  "Open Sans", sans-serif;:  "Open Sans", sans-serif;, sans-serif;
   font-size: 18px;
   font-weight: bold;
   line-height: 31px;
@@ -12358,7 +12357,7 @@ button {
   padding: 15px;
   color: #FFF;
   background-color: #fda700;
-  font-family: "Roboto Cn", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   border-radius: 40px;
   text-transform: none;
@@ -12375,7 +12374,7 @@ button {
   padding: 15px;
   color: #626262;
   background: #e4e4e4;
-  font-family: "Roboto Cn", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   border-radius: 40px;
   text-transform: none;
@@ -12615,7 +12614,7 @@ button {
   height: 45px;
   line-height: 0.42;
   text-transform: none;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 17px;
   border-radius: 24px;
   display: inline-block;
@@ -12762,7 +12761,7 @@ button {
 .co_navbar .navbar {
   border: none;
   min-height: 68px !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   z-index: 9999;
 }
 .co_navbar .navbar-header,
@@ -12825,7 +12824,7 @@ button {
   }
 }
 .co_navbar .navbar-default li a {
-  font-family:  "Open Sans", sans-serif !important;
+  font-family:  "Open Sans", sans-serif; !important;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -15147,7 +15146,7 @@ section.homepage-header {
 }
 section.homepage-header .header-title {
   color: #fff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 36px;
   font-weight: bold;
   padding-top: 200px;
@@ -15238,7 +15237,7 @@ section.homepage-header .cowntdown .col-xs-2 {
 }
 section.homepage-header .cowntdown .title {
   padding: 10px 10px 20px 10px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
   font-size: 30px;
   font-weight: 400;
@@ -15255,7 +15254,7 @@ section.homepage-header .cowntdown .title {
   }
 }
 section.homepage-header .cowntdown .countdown_value {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 54px;
   line-height: 1;
   color: #fff;
@@ -15279,7 +15278,7 @@ section.homepage-header .cowntdown .countdown_value {
   }
 }
 section.homepage-header .cowntdown .countdown_label {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 100;
   font-size: 14px;
   color: #fff;
@@ -15301,7 +15300,7 @@ section.homepage-header .cowntdown .countdown_label {
   padding: 0 !important;
 }
 section.howitworks {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-top: 150px;
   margin-bottom: 75px;
   text-align: center;
@@ -15328,7 +15327,7 @@ section.howitworks .white-box img {
 }
 section.howitworks .white-box h2 {
   color: #000;
-  font-family: "open_sans_bold", sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding-bottom: 25px;
 }
 @media (min-width: 767px) and (max-width: 1200px) {
@@ -15364,7 +15363,7 @@ section.howitworks .right-box {
   background-position: bottom center;
 }
 section.homepage-howitworks {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding: 80px 0 80px 0;
   text-align: center;
   background-color: #f5f5f5;
@@ -15631,7 +15630,7 @@ section.homepage-howitworks .circles-holder .circle .circle_icon {
     top: -53px !important;
     text-transform: uppercase;
     font-size: 28px !important;
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "Open Sans", sans-serif; !important;
 }
 .circle_counter
     {
@@ -15672,7 +15671,7 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
   .leftText {
     font-size: 64px !important;
     text-transform: uppercase;
-    font-family: "open-sans-light";
+    font-family: "Open Sans", sans-serif;
     margin-top: 49% !important;
 }
 }
@@ -15682,7 +15681,7 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
         top: -45px !important;
         text-transform: uppercase;
         font-size: 28px !important;
-        font-family: "Open Sans", sans-serif !important;
+        font-family: "Open Sans", sans-serif; !important;
     }
   section.homepage-howitworks .circles-holder .circle .circle_text {
     font-size: 18px;
@@ -15690,7 +15689,7 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
   .leftText {
     font-size: 64px !important;
     text-transform: uppercase;
-    font-family: "open-sans-light";
+    font-family: "Open Sans", sans-serif;
     margin-top: 49% !important;
 }
 }
@@ -15701,7 +15700,7 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
   .leftText {
     font-size: 27px !important;
     text-transform: uppercase;
-    font-family: "open-sans-light";
+    font-family: "Open Sans", sans-serif;
     margin-top: 49% !important;
 }
 
@@ -15736,7 +15735,7 @@ section.homepage-howitworks .circles-holder .c_rd {
 }
 }
 section.homepage-popular-startups {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   max-width: 1920px;
   margin: 0 auto !important;
   padding-bottom: 80px;
@@ -15772,7 +15771,7 @@ section.homepage-popular-startups {
   }
 }
 section.homepage-popular-startups .banderoleWrapper {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   width: 180px;
   height: 180px;
@@ -15794,7 +15793,7 @@ section.homepage-popular-startups .banderole {
   -o-transform: rotate(-35deg);
   position: absolute;
   overflow: visible;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
 }
 section.homepage-popular-startups .banderole h5 {
@@ -16944,7 +16943,7 @@ section.homepage-statistics {
   }
 }
 section.homepage-statistics .stats-icon-block {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   color: #000;
 }
@@ -16952,7 +16951,7 @@ section.homepage-statistics .stats-icon-block .grey_75 {
   font-size: 18px;
 }
 section.homepage-statistics .stats-icon-block h4 {
-  font-family: "open_sans_bold", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 22px;
   font-weight: bold;
   padding-top: 7px;
@@ -16979,7 +16978,7 @@ section.homepage-news {
   }
 }
 section.homepage-news .news-block {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #fff;
   height: 180px;
   margin-bottom: 25px;
@@ -17116,7 +17115,7 @@ section.homepage-angel-club .row-angel-club .column-angel-club {
   }
 }
 section.homepage-testimonials {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #f2f2f2;
   max-width: 1920px;
   margin: 0 auto;
@@ -17193,7 +17192,7 @@ section.homepage-testimonials .testimonial-box {
   }
 }
 section.homepage-testimonials .testimonial-box .carousel-caption p {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #333;
   text-align: left;
   font-size: 18px;
@@ -17303,7 +17302,7 @@ section.homepage-testimonials .carousel-indicators li.active {
   background-color: #434343 !important;
 }
 section.homepage-newsletter {
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   max-width: 1920px;
   border-bottom: 1px solid #f2f2f2;
 }
@@ -17331,7 +17330,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
   font-weight: bold;
   margin-bottom: 40px;
   margin-top: 0px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
 }
 @media (max-width: 500px) {
   section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
@@ -17341,7 +17340,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-text h2 {
 section.homepage-newsletter .newsletter-wrapper .newsletter-text p {
   font-size: 18px;
   margin-bottom: 0px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
 }
 section.homepage-newsletter .newsletter-wrapper .newsletter-input {
   padding-top: 60px;
@@ -17377,7 +17376,7 @@ section.homepage-newsletter .newsletter-wrapper .newsletter-input .input-group-b
   font-weight: 400;
   font-size: 18px;
   text-transform: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
 }
 section.all-startups-background {
   position: relative;
@@ -17464,7 +17463,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 }
 .section-title {
   font-weight: bold;
-  font-family: "open_sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #000;
   font-size: 32px;
   text-align: center;
@@ -17754,7 +17753,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
   margin-right: 10px;
   background-color: #FFF;
   color: #626262;
-  font-family: Lato, sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   font-size: 15px;
   font-style: normal;
   font-weight: normal;
@@ -17904,12 +17903,12 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
   background-size: 16px 16px;
 }
 .sidebarBox .body a {
-  font-family: 'Roboto Condensed', 'sans-serif';
+  font-family: "Open Sans", sans-serif;;;
   font-weight: bold;
 }
 .sidebarBox .amount {
   color: #434343 !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 24px !important;
   font-style: normal;
   font-weight: 900 !important;
@@ -17924,7 +17923,7 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
   white-space: nowrap;
 }
 .sidebarBox .amount .small a {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   font-weight: bold;
 }
 .sidebarBox .accordion .accordion-inner {
@@ -18122,14 +18121,14 @@ section.all-startups-background .button-container .layoutV2-btn:hover {
 }
 #sidebar_accordion_overview .sidebar-accordion-heading .accordion-group-title {
   color: #434343;
-  font-family: Oswald, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
 }
 #sidebar_accordion_overview .sidebar-accordion-heading .accordion-group-date {
   color: #434343;
-  font-family: "Oswald Regular", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 19px;
 }
 #sidebar_accordion_overview .sidebar-accordion-group {
@@ -19013,7 +19012,7 @@ section.howitworks-header {
   width: 100%;
   padding-top: 70px;
   margin-top: -70px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
 }
 section.howitworks-header .header-left .header-img {
   max-height: 627px;
@@ -19095,7 +19094,7 @@ section.howitworks-header .header-right p {
 section.howitworks-hiw {
   padding: 80px 0 80px 0;
   background-image: url("../../graphics/layout/pattern-companisto.png");
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
 }
 section.howitworks-hiw h2 {
   font-size: 32px;
@@ -19117,7 +19116,7 @@ section.howitworks-hiw .hiw-cta {
   text-transform: initial;
 }
 section.howitworks-circles {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   padding: 80px 0 80px 0;
   text-align: center;
   background-color: #f5f5f5;
@@ -19202,7 +19201,7 @@ section.howitworks-circles .description {
   }
 }
 section.howitworks-tablet {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   padding: 80px 0 80px 0;
 }
 section.howitworks-tablet h2 {
@@ -19299,7 +19298,7 @@ section.howitworks-tablet .carousel-indicators .active {
   background-color: #000;
 }
 section.howitworks-investments {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   padding: 80px 0 80px 0;
   background-image: linear-gradient(#5b8b9b, #6ea1b0);
   color: #fff;
@@ -19575,7 +19574,7 @@ section.howitworks-investments .showLargeDevices {
   }
 }
 section.howitworks-triangle {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   padding: 80px 0 80px 0;
 }
 section.howitworks-triangle h2 {
@@ -19758,7 +19757,7 @@ section.howitworks-triangle .piramid_layer .label_level5 {
   top: 170px;
 }
 section.howitworks-companisto {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   padding: 80px 0 80px 0;
   background-color: #3bacd4;
 }
@@ -19811,7 +19810,7 @@ section.howitworks-companisto .companisto-carousel-holder .carousel-main-view {
   }
 }
 section.howitworks-flag {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   padding: 80px 0 80px 0;
   background: url("../../graphics/layout/de-flag.png");
   background-position: center left;
@@ -20446,7 +20445,7 @@ section.howitworks-flag .btn-cta {
   padding: 0 !important;
 }
 .rights-box2 .table-th {
-  font-family: 'Pacifico', cursive;
+  font-family: "Open Sans", sans-serif;;
   color: #5cd1ee;
   border-left: 3px dotted #97d6e8;
   font-size: 22px;
@@ -20458,7 +20457,7 @@ section.howitworks-flag .btn-cta {
   border: 0;
 }
 .rights-box2 .table-th3 {
-  font-family: 'Pacifico', cursive;
+  font-family: "Open Sans", sans-serif;;
   color: #5cd1ee;
   border-left: 0;
   font-size: 18px;
@@ -20492,7 +20491,7 @@ section.howitworks-flag .btn-cta {
     margin-top: 35px;
   }
   .rights-box2 .table-th2 {
-    font-family: 'Pacifico', cursive;
+    font-family: "Open Sans", sans-serif;;
     color: #5cd1ee;
     font-size: 15px;
     height: 35px;
@@ -20527,7 +20526,7 @@ section.howitworks-flag .btn-cta {
 .rights-box3 h3 {
   margin-top: 50px;
   line-height: 45px;
-  font-family: 'Pacifico', cursive;
+  font-family: "Open Sans", sans-serif;;
 }
 .rights-box3 p {
   padding-right: 100px;
@@ -20837,7 +20836,7 @@ section.howitworks-flag .btn-cta {
   background-color: white;
   border-color: #00a9ac;
   color: #00a9ac;
-  font-family: "Roboto Condensed";
+  font-family: "Open Sans", sans-serif;;;
 }
 .box_2 .btn-new-layout-transparent-white-grey:hover {
   background-color: #00a9ac;
@@ -20874,11 +20873,11 @@ section.howitworks-flag .btn-cta {
   display: table;
 }
 .box_2 h3 {
-  font-family: "Roboto Condensed", cursive !important;
+  font-family: "Open Sans", sans-serif;; !important;
   font-weight: 700;
 }
 .box_2 h3 span {
-  font-family: "Roboto Condensed", cursive !important;
+  font-family: "Open Sans", sans-serif;; !important;
   font-weight: 700;
 }
 .box_2 [class*="col-"] {
@@ -21190,7 +21189,7 @@ section.howitworks-flag .btn-cta {
   padding-bottom: 10px;
 }
 #companisten_rank .investor-item-rank .quote strong {
-  font-family: arial;
+  "Open Sans", sans-serif;;: "Open Sans", sans-serif;;;
   font-size: 40px;
   line-height: 20px;
 }
@@ -23573,7 +23572,7 @@ img.locationFlag {
 }
 .members_referral .sideblock .title {
   color: #434343;
-  font-family: "Oswald", sans-serif;
+  "Open Sans", sans-serif;;: "Open Sans", sans-serif;;;
   font-weight: bold;
   font-size: 24pt;
   text-align: left;
@@ -24522,7 +24521,7 @@ img.locationFlag {
   font-weight: 300;
   display: inline-block;
   margin-left: -30px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 768px) {
   #business_unit .circles_text .title_circles_text_1 h3 {
@@ -24533,7 +24532,7 @@ img.locationFlag {
   color: #575757;
   font-weight: 400;
   font-size: 17px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 #business_unit .circles_text .title_circles_text_1 span {
   position: relative;
@@ -24555,7 +24554,7 @@ img.locationFlag {
   font-weight: 300;
   display: inline-block;
   margin-left: -30px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 768px) {
   #business_unit .circles_text .title_circles_text_2 h3 {
@@ -24566,7 +24565,7 @@ img.locationFlag {
   color: #575757;
   font-weight: 400;
   font-size: 17px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 #business_unit .circles_text .title_circles_text_2 span {
   position: relative;
@@ -24588,7 +24587,7 @@ img.locationFlag {
   font-weight: 300;
   display: inline-block;
   margin-left: -30px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 768px) {
   #business_unit .circles_text .title_circles_text_3 h3 {
@@ -24599,7 +24598,7 @@ img.locationFlag {
   color: #575757;
   font-weight: 400;
   font-size: 17px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 #business_unit .circles_text .title_circles_text_3 span {
   position: relative;
@@ -24621,7 +24620,7 @@ img.locationFlag {
   font-weight: 300;
   display: inline-block;
   margin-left: -30px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 768px) {
   #business_unit .circles_text .title_circles_text_4 h3 {
@@ -24632,7 +24631,7 @@ img.locationFlag {
   color: #575757;
   font-weight: 400;
   font-size: 17px;
-  font-family: "Helvetica Neue";
+  font-family: "Open Sans", sans-serif;;
 }
 #business_unit .circles_text .title_circles_text_4 span {
   position: relative;
@@ -24770,7 +24769,7 @@ img.locationFlag {
   font-weight: 500;
   margin-top: 40px;
   letter-spacing: 1.5px;
-  font-family: 'Kalam', cursive;
+  font-family: "Open Sans", sans-serif;;;
 }
 @media (max-width: 768px) {
   .green_happiness_guaranteed .happiness_guaranteed_banner h3 {
@@ -25460,7 +25459,7 @@ img.locationFlag {
   }
 }
 .header-container .recommend_friend_bg {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   background: url('../../graphics/layout/recommend_friend_bg.png');
   background-repeat: no-repeat;
   background-position: center center;
@@ -25476,7 +25475,7 @@ img.locationFlag {
   padding: 7px 0 7px 0;
 }
 .header-container .recommend_friend_bg h1 {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   font-weight: bold;
   font-size: 58px;
   text-transform: uppercase;
@@ -25513,13 +25512,13 @@ img.locationFlag {
   background-color: transparent !important;
 }
 .how-it-works .title {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   text-transform: uppercase;
   font-size: 32px;
   padding-bottom: 50px;
 }
 .how-it-works .icon-block {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   font-size: 14px;
   text-align: center;
   font-weight: bold;
@@ -25578,7 +25577,7 @@ img.locationFlag {
   }
 }
 .pageContent_recommend {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   font-weight: normal;
   padding: 75px 20px 75px 20px;
 }
@@ -25831,7 +25830,7 @@ img.locationFlag {
   text-transform: uppercase;
   color: #fff;
   background: #000000;
-  font-family: 'Sarala', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
   -webkit-box-shadow: 2px 0 5px 0 rgba(50, 50, 50, 0.3);
   -moz-box-shadow: 2px 0 5px 0 rgba(50, 50, 50, 0.3);
@@ -25893,7 +25892,7 @@ img.locationFlag {
   max-width: 80px;
 }
 .headerGreen-blog {
-  font-family: Proxima Nova, Lato, sans-serif;
+  font-family:  "Open Sans", sans-serif;;;
   background: #B1DCC1;
   padding: 80px 0px 0px;
 }
@@ -26141,7 +26140,7 @@ img.locationFlag {
   margin: 0 10px 10px 0;
   position: relative;
   box-sizing: border-box;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   font-size: 14px;
 }
 .don-share-comment a {
@@ -26990,7 +26989,7 @@ button.is_enabled:hover {
   text-align: center;
   line-height: 32px;
   color: #FFFFFF;
-  font-family: sans-serif;
+  font-family:"Open Sans", sans-serif;;;
   font-size: 14px;
 }
 .socials-custom ul li.socials-whatsapp {
@@ -27413,7 +27412,7 @@ button.is_enabled:hover {
 }
 #academic-knowledge #academic-knowledge-main-text {
   font-size: 40px;
-  font-family: 'Avenir Next LT Pro Regular', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #4a4a4a;
 }
 @media (max-width: 1199px) {
@@ -27434,7 +27433,7 @@ button.is_enabled:hover {
 #academic-knowledge #academic-knowledge-sub-text {
   font-size: 22px;
   font-style: italic;
-  font-family: 'Avenir Next LT Pro Regular', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #4b4b4b;
 }
 @media (max-width: 1199px) {
@@ -27593,7 +27592,7 @@ button.is_enabled:hover {
 #submenu2.submenu-academy #academy-sorting-container div.academy-sorting-options-wrapper div.sorting-option-wrapper a.sorting-option:before {
   content: "";
   display: inline-block;
-  font-family: "Glyphicons Halflings";
+  font-family: "Open Sans", sans-serif;;;
   margin-right: 10px;
   width: 10px;
   height: 10px;
@@ -27706,7 +27705,7 @@ i.glyphicon-search {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  font-family: 'HelveticaNeue Medium', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -27729,7 +27728,7 @@ i.glyphicon-search {
 .pageContent.academy-pageContent .article-container .homeNewsItem .articleSubtitle,
 .academy-article-pageContent .article-container .homeNewsItem .articleSubtitle,
 .academy-related-articles .article-container .homeNewsItem .articleSubtitle {
-  font-family: 'Avenir Next LT Pro Regular', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 17px;
   text-align: left;
   color: #4b4b4b;
@@ -28011,7 +28010,7 @@ i.glyphicon-search {
 }
 .academy-pageContent-wrapper .articleDetails .inner-text {
   color: #555555;
-  font-family: 'Avenir Next LT Pro Regular', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 19px !important;
 }
 .academy-pageContent-wrapper .articleDetails .inner-text img {
@@ -28020,7 +28019,7 @@ i.glyphicon-search {
   height: auto;
 }
 .academy-pageContent-wrapper .articleDetails .inner-text p {
-  font-family: 'Avenir Next LT Pro Regular', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 19px !important;
   line-height: 34px;
   margin-bottom: 40px;
@@ -28051,7 +28050,7 @@ i.glyphicon-search {
 .academy-pageContent-wrapper .related-articles .related-article-wrapper {
   padding-left: 5px !important;
   padding-right: 5px !important;
-  font-family: 'Avenir Next LT Pro Regular', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .academy-pageContent-wrapper .related-articles .related-article-wrapper .homeNewsItem {
   border: none;
@@ -28066,7 +28065,7 @@ i.glyphicon-search {
   text-align: center;
   font-size: 48px;
   font-weight: 300;
-  font-family: 'Avenir Next LT Pro Regular', 'Lato', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #555555;
   padding: 40px 100px;
   line-height: 60px;
@@ -28198,7 +28197,7 @@ i.glyphicon-search {
   -ms-box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
   -o-box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
   box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-  font-family: 'Roboto condensed', 'sans-serif';
+  font-family: "Open Sans", sans-serif;;;
   /*text-align: center;*/
 }
 #ebook-bar-container .ebook-bar-close {
@@ -28360,10 +28359,10 @@ i.glyphicon-search {
   line-height: 1.5em;
 }
 .register-overlay {
-  font-family: 'Roboto Condensed', 'sans-serif';
+  font-family: "Open Sans", sans-serif;;;
 }
 .register-overlay .orangetext {
-  font-family: 'Roboto Condensed', 'sans-serif';
+  font-family: "Open Sans", sans-serif;;;
   font-weight: 600;
   font-size: 25px;
   color: #ee6771;
@@ -28670,7 +28669,7 @@ i.glyphicon-search {
   width: 100%;
   text-align: center;
   transform: translateY(-50%);
-  font-family: Proxima Nova, Lato, sans-serif;
+  font-family:  "Open Sans", sans-serif;;;
 }
 #partnerProgram .header-partner .head-content-wrapper .head-text h1 {
   font-size: 100px;
@@ -29343,7 +29342,7 @@ i.glyphicon-search {
   border: 1px solid #B0CBEF;
   border-width: 1px 0px 0px 1px;
   font-size: 11pt;
-  font-family: Calibri;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 100;
   border-spacing: 0px;
   border-collapse: collapse;
@@ -29578,7 +29577,7 @@ span.appears {
   /***************************************/
 }
 .newPageContent h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 45px;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -29589,7 +29588,7 @@ span.appears {
   }
 }
 .newPageContent h1.sub {
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
@@ -29611,7 +29610,7 @@ span.appears {
   }
 }
 .newPageContent h2 {
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 800;
   letter-spacing: 0.3px;
@@ -29665,7 +29664,7 @@ span.appears {
   }
 }
 .newPageContent a.inlineLink {
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   color: #00a9ac;
   font-weight: 500;
@@ -29684,7 +29683,7 @@ span.appears {
   line-height: 42px;
   padding-left: 33px;
   padding-right: 33px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.9px;
@@ -29812,7 +29811,7 @@ span.appears {
 .newLayout .navbar {
   border: none;
   min-height: 64px !important;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .newLayout .navbar-header,
 .newLayout .navbar-collapse {
@@ -30242,7 +30241,7 @@ span.appears {
 .layoutV2 .navbar {
   border: none;
   min-height: 64px !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   z-index: 9999;
 }
 .layoutV2 .navbar-header,
@@ -30306,7 +30305,7 @@ span.appears {
   border-radius: 15px;
   padding: 0 15px 0 15px;
   font-size: 15px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 960px) {
   .layoutV2 .navbar-default .navbar-nav li a {
@@ -30429,7 +30428,7 @@ span.appears {
   border-radius: 0;
 }
 .layoutV2 .navbar-default .navbar-nav li .largeDropdown .list_nav ul li a {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   margin-top: 0;
   margin-bottom: 0;
   text-decoration: none;
@@ -30782,7 +30781,7 @@ span.appears {
   text-align: center;
   padding-left: 0;
   padding-right: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 22px;
 }
 .layoutV2 .KontactModal .modal-footer a {
@@ -30804,7 +30803,7 @@ span.appears {
 }
 .layoutV2 .KontactModal h4 {
   color: #fff;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   line-height: 34px;
   font-weight: 300;
@@ -30812,7 +30811,7 @@ span.appears {
   text-transform: uppercase;
 }
 .layoutV2 .KontactModal .terms_and_cond {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
 }
 .layoutV2 .KontactModal .terms_and_cond a {
@@ -30930,7 +30929,7 @@ span.appears {
   margin: 0 auto;
 }
 .LoginModal .modal-body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   padding: 5px 60px;
 }
 @media (max-width: 767px) {
@@ -31278,7 +31277,7 @@ span.appears {
   text-align: center;
   padding-left: 0;
   padding-right: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 22px;
 }
 .KontactModal .modal-footer a {
@@ -31300,7 +31299,7 @@ span.appears {
 }
 .KontactModal h4 {
   color: #fff;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   line-height: 34px;
   font-weight: 300;
@@ -31308,7 +31307,7 @@ span.appears {
   text-transform: uppercase;
 }
 .KontactModal .terms_and_cond {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
 }
 .KontactModal .terms_and_cond a {
@@ -31413,7 +31412,7 @@ span.appears {
 .layoutV3 .navbar {
   border: none;
   min-height: 64px !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   z-index: 9999;
   margin-bottom: 0px;
 }
@@ -31485,7 +31484,7 @@ span.appears {
   border-radius: 15px;
   padding: 0 15px 0 15px;
   font-size: 15px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 1200px) {
   .layoutV3 .navbar-default .navbar-nav li a {
@@ -31628,7 +31627,7 @@ span.appears {
   border-radius: 0;
 }
 .layoutV3 .navbar-default .navbar-nav li .largeDropdown .list_nav ul li a {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   margin-top: 0;
   margin-bottom: 0;
   text-decoration: none;
@@ -31972,7 +31971,7 @@ span.appears {
   text-align: center;
   padding-left: 0;
   padding-right: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 22px;
 }
 .layoutV3 .KontactModal .modal-footer a {
@@ -31994,7 +31993,7 @@ span.appears {
 }
 .layoutV3 .KontactModal h4 {
   color: #fff;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   line-height: 34px;
   font-weight: 300;
@@ -32002,7 +32001,7 @@ span.appears {
   text-transform: uppercase;
 }
 .layoutV3 .KontactModal .terms_and_cond {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
 }
 .layoutV3 .KontactModal .terms_and_cond a {
@@ -32431,7 +32430,7 @@ span.appears {
   z-index: 999999 !important;
 }
 #Notice {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   overflow: hidden;
   z-index: 99;
   font-weight: 600;
@@ -32500,7 +32499,7 @@ span.appears {
 #followUsWrapNew h3 {
   font-size: 30px;
   font-weight: 300;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-align: right;
   color: #fff;
   margin-top: 25px;
@@ -32591,7 +32590,7 @@ span.appears {
 #followUsNew #followUsTitleNew {
   text-align: right;
   color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 300;
   text-transform: uppercase;
@@ -32955,7 +32954,7 @@ span.appears {
   width: 100%;
   height: 58px;
   line-height: 51px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: bold;
   -webkit-border-top-left-radius: 29px;
@@ -33391,7 +33390,7 @@ span.appears {
   width: 100%;
   height: 58px;
   line-height: 51px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: bold;
   -webkit-border-top-left-radius: 29px;
@@ -33607,7 +33606,7 @@ span.appears {
   font-size: 30px;
 }
 #footerBottomBar {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   overflow: hidden;
   z-index: 99;
   background-color: #fafafa;
@@ -33708,7 +33707,7 @@ span.appears {
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   font-style: italic;
   font-weight: 300;
   src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url('fonts/Roboto-LightItalic-latin-ext.woff2') format('woff2');
@@ -33716,7 +33715,7 @@ span.appears {
 }
 /* latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   font-style: italic;
   font-weight: 300;
   src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url('fonts/Roboto-LightItalic-latin.woff2') format('woff2');
@@ -33724,7 +33723,7 @@ span.appears {
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   font-style: normal;
   font-weight: 300;
   src: local('Roboto Light'), local('Roboto-Light'), url('fonts/Roboto-Light-latin-ext.woff2') format('woff2');
@@ -33732,7 +33731,7 @@ span.appears {
 }
 /* latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   font-style: normal;
   font-weight: 300;
   src: local('Roboto Light'), local('Roboto-Light'), url('fonts/Roboto-Light-latin.woff2') format('woff2');
@@ -33740,7 +33739,7 @@ span.appears {
 }
 /* latin-ext */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url('fonts/Roboto-Bold-latin-ext.woff2') format('woff2');
@@ -33748,19 +33747,19 @@ span.appears {
 }
 /* latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   font-style: normal;
   font-weight: 700;
   src: local('Roboto Bold'), local('Roboto-Bold'), url('fonts/Roboto-Bold-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 body {
-  font-family: Roboto, sans-serif !important;
+  font-family: "Open Sans", sans-serif; !important;
   font-variant-ligatures: none;
 }
 .popover,
 .tooltip {
-  font-family: Roboto, sans-serif !important;
+  font-family: "Open Sans", sans-serif; !important;
 }
 .btn-primary {
   color: #fff;
@@ -33862,7 +33861,7 @@ a:active {
 .first_container .h1_video h1 {
   margin: 0 auto;
   color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 58px;
   font-weight: 900;
   text-transform: uppercase;
@@ -33886,7 +33885,7 @@ a:active {
   margin: 0 auto;
   margin-top: 40px;
   color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 400;
   text-transform: uppercase;
@@ -33992,7 +33991,7 @@ a:active {
 .second_container h2 {
   margin-top: -2px;
   font-size: 35px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   color: #000;
 }
@@ -34165,7 +34164,7 @@ a:active {
 .btn-search-new-layout {
   height: 38px;
   line-height: 34px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: bold;
   border-radius: 19px;
@@ -34185,7 +34184,7 @@ a:active {
 .btn-filter-new-layout {
   height: 38px;
   line-height: 34px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: bold;
   border-radius: 19px;
@@ -34204,7 +34203,7 @@ a:active {
 .btn-sort-new-layout {
   height: 38px;
   line-height: 34px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: bold;
   border-radius: 19px;
@@ -34223,7 +34222,7 @@ a:active {
 .btn-default-new-layout {
   min-height: 58px;
   line-height: 54px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: 400;
   border-radius: 29px;
@@ -34263,7 +34262,7 @@ a.btn-default-new-layout.long-text {
 .btn-default-new-layout-small {
   height: 28px;
   line-height: 22px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: bold;
   border-radius: 25px;
@@ -34293,7 +34292,7 @@ a.btn-default-new-layout-small {
 .btn-default-new-layout-large {
   height: 88px;
   line-height: 88px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 24px;
   font-weight: bold;
   border-radius: 49px;
@@ -34911,7 +34910,7 @@ a.btn-default-new-layout-small {
 .third_container .bg_space .someText {
   margin-top: 80px !important;
   text-align: left;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 400;
   /*letter-spacing: 0.3px;
@@ -35080,7 +35079,7 @@ a.btn-default-new-layout-small {
   }
 }
 .fourth_container .bg_space2 .carousel .carousel-inner .item h3 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   line-height: 34px;
   font-weight: 400;
@@ -35095,7 +35094,7 @@ a.btn-default-new-layout-small {
   }
 }
 .fourth_container .bg_space2 .carousel .carousel-inner .item p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 24px;
   line-height: 36px;
   font-weight: 300;
@@ -35123,7 +35122,7 @@ a.btn-default-new-layout-small {
   display: block;
   font-weight: 300;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .fourth_container .bg_space2 .carousel .carousel-control {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0);
@@ -35218,7 +35217,7 @@ a.btn-default-new-layout-small {
   }
 }
 .fifth_container .title_fifth_container {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 500;
   margin-bottom: 80px;
@@ -35331,7 +35330,7 @@ a.btn-default-new-layout-small {
   }
 }
 .fifth_container .block_info {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 991px) {
   .fifth_container .block_info {
@@ -35356,7 +35355,7 @@ a.btn-default-new-layout-small {
   padding-bottom: 0;
 }
 .fifth_container_second .title_fifth_container {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 400;
   /*text-transform: uppercase;
@@ -35452,7 +35451,7 @@ a.btn-default-new-layout-small {
   }
 }
 .fifth_container_second .block_info {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 450px) {
   .fifth_container_second .block_info {
@@ -35515,7 +35514,7 @@ a.btn-default-new-layout-small {
   -ms-transform: skewY(3deg);
   -webkit-transform: skewY(3deg);
   transform: skewY(3deg);
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   color: #fff;
   font-weight: 400;
@@ -35682,7 +35681,7 @@ a.btn-default-new-layout-small {
   }
 }
 .sixth_container .carousel_exit .carousel-caption .exit_title {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
   padding-left: 0;
   padding-right: 0;
@@ -35692,7 +35691,7 @@ a.btn-default-new-layout-small {
   font-size: 30px;
   text-transform: uppercase;
   font-weight: 200;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 767px) {
   .sixth_container .carousel_exit .carousel-caption .exit_title h3 {
@@ -35705,7 +35704,7 @@ a.btn-default-new-layout-small {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 767px) {
   .sixth_container .carousel_exit .carousel-caption .exit_title h5 {
@@ -35716,7 +35715,7 @@ a.btn-default-new-layout-small {
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 767px) {
   .sixth_container .carousel_exit .carousel-caption .exit_title .txt_exit {
@@ -35885,7 +35884,7 @@ a.btn-default-new-layout-small {
   height: 14px !important;
 }
 .seventh_container .bg_space2 .carousel h3 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 400;
   margin-bottom: 60px;
@@ -35920,7 +35919,7 @@ a.btn-default-new-layout-small {
   }
 }
 .seventh_container .bg_space2 .carousel .carousel-inner .item p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   line-height: 20px;
   font-weight: 300;
   font-style: italic;
@@ -35954,7 +35953,7 @@ a.btn-default-new-layout-small {
   display: block;
   font-weight: 300;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .seventh_container .bg_space2 .carousel .carousel-control {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0);
@@ -36031,7 +36030,7 @@ a.btn-default-new-layout-small {
 }
 .eighth_container .title_eighth_container h2 {
   margin-top: -2px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 700;
   /*text-transform: uppercase;*/
@@ -36215,13 +36214,13 @@ a.btn-default-new-layout-small {
   margin: 0;
   padding-left: 10px;
   padding-right: 5px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .eighth_container .block_carousel .carousel-showsixmoveone .element_back .scroll ul {
   margin-left: -15px;
 }
 .eighth_container .block_carousel .carousel-showsixmoveone .element_back .scroll .new_rule_ccs {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
 }
 .eighth_container .block_carousel .carousel-showsixmoveone .element_back .scroll .new_rule_ccs span {
@@ -36245,7 +36244,7 @@ a.btn-default-new-layout-small {
   height: 600px;
 }
 .eighth_container .block_carousel .carousel-showsixmoveone .element_back .d5 h4 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .eighth_container .block_carousel .carousel-showsixmoveone .carousel-inner {
   padding-left: 0 !important;
@@ -36705,7 +36704,7 @@ a.btn-default-new-layout-small {
   transform: rotate(-30deg);
   position: relative;
   overflow: visible;
-  font-family: 'FuturaND-Bold', 'Arial';
+  font-family: "Open Sans", sans-serif;;
 }
 .eighth_container .logo_st {
   background-color: #fff;
@@ -36768,7 +36767,7 @@ a.btn-default-new-layout-small {
   background-color: transparent;
 }
 .eighth_container .name_st {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 20px;
   font-weight: 400;
   padding-top: 15px;
@@ -36776,7 +36775,7 @@ a.btn-default-new-layout-small {
 }
 .eighth_container .amount_st {
   color: #00a9ac;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   font-size: 26px;
   margin-top: 10px;
@@ -36786,7 +36785,7 @@ a.btn-default-new-layout-small {
   margin-bottom: 25px;
 }
 .eighth_container .companist_st {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
   margin-top: 10px;
   font-size: 15px;
@@ -36796,7 +36795,7 @@ a.btn-default-new-layout-small {
 }
 .eighth_container .finalized_st {
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400;
   font-size: 18px;
   margin: 0 auto;
@@ -36995,7 +36994,7 @@ a.btn-default-new-layout-small {
   margin-top: 150px;
   margin-bottom: 70px;
   color: #434343;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 400;
   text-transform: uppercase;
@@ -37092,7 +37091,7 @@ a.btn-default-new-layout-small {
   margin-top: 100px;
   margin-bottom: 70px;
   color: #434343;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 400;
   /*text-transform: uppercase;
@@ -37268,7 +37267,7 @@ iframe[data-test-id="ChatWidgetButton-iframe"] {
   }
 }
 .bottom-bar-sticky .header-text {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 28px;
 }
 @media (max-width: 767px) {
@@ -37333,7 +37332,7 @@ iframe[data-test-id="ChatWidgetButton-iframe"] {
   overflow: hidden;
 }
 .sp-title {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   font-weight: 500;
   margin-bottom: 80px;
@@ -37436,7 +37435,7 @@ html {
   padding: 30px 0 50px 0;
 }
 .up_container .climber_bg .top_headeline .max415 h1 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 45px;
   font-weight: 500;
   text-transform: none;
@@ -37471,7 +37470,7 @@ html {
   margin-bottom: 80px;
 }
 .invLoginWraper .invLoginContainer h3 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 32px;
   line-height: 1.5;
   color: #fff;
@@ -37557,7 +37556,7 @@ html {
   }
 }
 .down_container .gradient_bg .rearange h3 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   line-height: 50px;
   font-weight: 300;
@@ -37590,7 +37589,7 @@ html {
   outline: none;
 }
 .middle_container .title_for_startups {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   line-height: 1.1px;
   font-weight: 300;
@@ -37651,7 +37650,7 @@ html {
   }
 }
 .middle_container .searchArea .searchAreablock2 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
 }
 @media (max-width: 767px) {
@@ -37673,7 +37672,7 @@ html {
   color: #b8bed3;
   border: 1px solid #b8bed3;
   border-radius: 20px !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-transform: uppercase;
   font-weight: 500;
   text-align: left;
@@ -37734,7 +37733,7 @@ html {
   }
 }
 .middle_container .searchArea .filterAreablock .btn-filter-new-layout {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 600;
   text-transform: uppercase;
   width: auto;
@@ -37996,7 +37995,7 @@ html {
   width: 100%;
   color: #626262;
   border: 1px solid #9d9d9d;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-align: left;
   padding-left: 30px !important;
   /*background: transparent url('../../graphics/icons/search_delete_icon.gif') no-repeat right -10px center;*/
@@ -38079,7 +38078,7 @@ html {
 }
 .expandableFilterArea h3 {
   color: #000;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 20px;
@@ -38146,7 +38145,7 @@ html {
   padding-left: 7.5px;
 }
 .expandableFilterArea .filterNow label {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #000;
   font-size: 13px;
   position: relative;
@@ -38238,7 +38237,7 @@ html {
   cursor: pointer;
 }
 .expandableSortArea h3 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 26px;
   font-weight: 300;
 }
@@ -38285,7 +38284,7 @@ html {
   z-index: 90;
   height: 28px;
   line-height: 28px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: 300;
   border-radius: 19px;
@@ -38513,7 +38512,7 @@ html {
   text-decoration: none;
 }
 .listing_container .startup_blok .content_startup_blok .block_timeleft {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
   padding: 7px 0 10px 0;
 }
@@ -38544,7 +38543,7 @@ html {
   }
 }
 .listing_container .startup_blok .content_startup_blok .stratup_img .banderoleWrapper {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   width: 180px;
   height: 180px;
@@ -38602,7 +38601,7 @@ html {
   -o-transform: rotate(-35deg);
   position: absolute;
   overflow: visible;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
 }
 .listing_container .startup_blok .content_startup_blok .stratup_img .banderole h5 {
@@ -38676,7 +38675,7 @@ html {
   text-transform: uppercase;
   text-decoration: none;
   line-height: 27px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   padding-left: 15px;
 }
 .listing_container .startup_blok .content_startup_blok .stratup_img .co_financing:focus,
@@ -38739,7 +38738,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .content_info h2 {
   color: #000;
   margin-top: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   font-size: 25px;
 }
@@ -38752,7 +38751,7 @@ html {
   color: #000;
 }
 .listing_container .startup_blok .content_startup_blok .content_info .startupLocation {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 15px;
   font-weight: 600;
 }
@@ -38766,7 +38765,7 @@ html {
   color: #434343;
   margin-top: 5px;
   max-height: 63px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400;
   font-size: 15px;
 }
@@ -38777,7 +38776,7 @@ html {
 }
 .listing_container .startup_blok .content_startup_blok .content_info p a {
   color: #333;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
 }
 @media (max-width: 1000px) {
@@ -38811,7 +38810,7 @@ html {
   min-width: 50px;
   margin-top: 5px;
   background: transparent;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 @media (max-width: 1000px) {
   .listing_container .startup_blok .content_startup_blok .content_info .typeStartupBg,
@@ -38851,7 +38850,7 @@ html {
   padding-left: 7.5px;
   padding-right: 7.5px;
   min-width: 50px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .listing_container .startup_blok .content_startup_blok .content_info .typePreviewBusinessBg span {
   text-transform: uppercase;
@@ -38907,7 +38906,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .finance_info {
   height: 22px;
   color: #525252;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   font-size: 14px;
   padding-bottom: 32px;
@@ -38987,7 +38986,7 @@ html {
 }
 .listing_container .startup_blok .content_startup_blok .progress_info .soon_block_left,
 .listing_container .startup_blok .content_startup_blok .progress_info .soon_block_right {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 900;
   height: 75px;
   padding-top: 12px;
@@ -39019,7 +39018,7 @@ html {
 }
 .listing_container .startup_blok .content_startup_blok .progress_info .progress-bclub {
   color: #FFF;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 12px;
   text-transform: uppercase;
   height: 20px;
@@ -39029,7 +39028,7 @@ html {
   padding-top: 2px;
 }
 .listing_container .startup_blok .content_startup_blok .progress_info .progress {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   height: 20px;
   background-color: #e5e5e5;
   margin-bottom: 0;
@@ -39060,7 +39059,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .progress_info .block_details {
   height: 75px;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400;
   padding-top: 13px;
   padding-left: 2.5px;
@@ -39094,7 +39093,7 @@ html {
 .listing_container .startup_blok .content_startup_blok .progress_info .block_details_co {
   height: 75px;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400;
   padding-top: 3px;
   padding-left: 2.5px;
@@ -39136,7 +39135,7 @@ html {
   color: #000;
   text-align: center;
   background-color: #fff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   border-top: 1px solid #5b8b9b;
   font-size: 15px;
   font-weight: 600;
@@ -39156,7 +39155,7 @@ html {
   margin: 0 auto !important;
   margin-top: -15px !important;
   padding-left: 50px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
 }
 .listing_container .startup_blok .content_startup_blok .footer_startup .countdown .c_section {
@@ -39180,7 +39179,7 @@ html {
   color: #fff;
 }
 .listing_container .startup_blok .content_startup_blok .footer_startup .countdown_line {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 600;
 }
 .listing_container .startup_blok .content_startup_blok .footer_startup .countdown_line .c_section {
@@ -39239,14 +39238,14 @@ html {
 .gray_text,
 .block_days_left_gray {
   color: #525252;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   font-size: 14px;
   white-space: nowrap;
 }
 .block_days_left_yellow {
   color: #fb3;
-  font-family: "Open Sans", sans-serif !important;
+  font-family: "Open Sans", sans-serif; !important;
   font-weight: 700;
   font-size: 14px;
   white-space: nowrap;
@@ -39297,7 +39296,7 @@ html {
   min-height: 200px;
 }
 #closed_startup_list_div .title_for_startups_closed {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 35px;
   line-height: 1.1px;
   padding-top: 60px;
@@ -39316,14 +39315,14 @@ html {
   }
 }
 .startups_title_active {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
   font-size: 18px;
   color: #626262;
   padding-bottom: 30px;
 }
 .startups_inactive {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
   font-size: 18px;
   color: #626262;
@@ -39345,7 +39344,7 @@ html {
   fill: #000;
 }
 .btn-new-layout-green {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
@@ -39366,7 +39365,7 @@ html {
   border-color: #00a9ac;
 }
 .btn-new-layout-blue {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
@@ -39387,7 +39386,7 @@ html {
   border-color: #5b8b9b;
 }
 .btn-new-layout-gray {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
@@ -39408,7 +39407,7 @@ html {
   border-color: #bebebe;
 }
 .btn-new-layout-w {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 15px;
   font-weight: 400;
   text-transform: none;
@@ -39429,7 +39428,7 @@ html {
   border-color: #fff;
 }
 .btn-new-layout-wb {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 15px;
   font-weight: 400;
   text-transform: none;
@@ -39450,7 +39449,7 @@ html {
   border-color: #000;
 }
 .btn-new-layout-bw {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 24px;
   font-weight: 400;
   text-transform: none;
@@ -39692,7 +39691,7 @@ html {
   }
 }
 .equity_campaign .equity_image .equity_startup_img .banderoleWrapper {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   overflow: hidden;
   position: absolute;
@@ -39746,7 +39745,7 @@ html {
   -o-transform: rotate(-35deg);
   position: absolute;
   overflow: visible;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   height: 65px;
   line-height: 26px;
@@ -39841,7 +39840,7 @@ html {
   text-transform: uppercase;
   text-decoration: none;
   line-height: 27px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   padding-left: 15px;
 }
 .equity_campaign .equity_image .equity_startup_img .co_financing:focus,
@@ -39950,7 +39949,7 @@ html {
 }
 .equity_campaign .equity_image .cowntdown .title {
   padding: 10px 10px 20px 10px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
   font-size: 30px;
   font-weight: 400;
@@ -39973,7 +39972,7 @@ html {
   }
 }
 .equity_campaign .equity_image .cowntdown .countdown_value {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 42px;
   line-height: 1;
   color: #fff;
@@ -39999,7 +39998,7 @@ html {
   }
 }
 .equity_campaign .equity_image .cowntdown .countdown_label {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 100;
   font-size: 13px;
   color: #fff;
@@ -40168,7 +40167,7 @@ html {
 }
 .up_container .rocked_bg .top_headeline {
   margin-top: 300px;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 40px;
   line-height: 60px;
   font-weight: 300;
@@ -40291,7 +40290,7 @@ html {
   color: #fff;
 }
 .for_founder_second_container .rotated_back .title_for_founders h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   line-height: 40px;
   font-weight: 300;
@@ -40340,7 +40339,7 @@ html {
 }
 .for_founder_second_container .rotated_back .box_info .padding_top_box {
   padding-top: 7.5px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   text-align: left;
   font-weight: 400;
@@ -40484,7 +40483,7 @@ html {
   }
 }
 .for_founder_fourth_container .financing_and_co_financing h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   line-height: 40px;
   font-weight: 300;
@@ -40505,7 +40504,7 @@ html {
   }
 }
 .for_founder_fourth_container .details_financing_and_co_financing {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 25px;
   line-height: 30px;
   font-weight: 300;
@@ -40523,11 +40522,11 @@ html {
   text-transform: uppercase;
   color: #000;
   background-color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .for_founder_fourth_container .rount_80 .small_span {
   display: block;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
   font-size: 15px;
   text-align: center;
@@ -40541,7 +40540,7 @@ html {
   font-weight: 700;
   color: #c1343e;
   position: relative;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .for_founder_fourth_container .below {
   margin-top: 50px;
@@ -40550,7 +40549,7 @@ html {
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .fifth_container_for_founders .block_pic_info .block_pic {
   height: 80px;
@@ -40696,7 +40695,7 @@ html {
   margin: 12.5%;
 }
 .block_carousel_financing .carousel-showsevenmoveone .element h4 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #626262;
   font-weight: 500;
 }
@@ -41099,7 +41098,7 @@ html {
   }
 }
 .blue_founder_container .title_fifth_container {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   font-weight: 300;
   text-transform: uppercase;
@@ -41135,7 +41134,7 @@ html {
   padding-bottom: 230px;
 }
 .founder_investment_models .participation_models_title {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   font-weight: 300;
   text-transform: uppercase;
@@ -41193,7 +41192,7 @@ html {
   }
 }
 .founder_investment_models .participation_models .title_part_mod {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 30px;
   font-weight: 300;
   color: #434343;
@@ -41203,7 +41202,7 @@ html {
 .founder_investment_models .participation_models ul {
   margin-top: 30px;
   padding-left: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
 }
 .founder_investment_models .participation_models ul li {
   margin-top: 7.5px;
@@ -41297,7 +41296,7 @@ html {
   padding-bottom: 90px;
 }
 .unsere_investoren .unsere_investoren_title {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   font-weight: 300;
   margin-bottom: 80px;
@@ -41338,7 +41337,7 @@ html {
   color: #626262;
   padding: 15px;
   margin-bottom: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   text-align: left;
   font-weight: 400;
@@ -41403,7 +41402,7 @@ html {
 .companisto_netzwerk .text_companisto_netzwerk p {
   padding-top: 35px;
   color: #fff;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   line-height: 30px;
   font-weight: 300;
@@ -41419,7 +41418,7 @@ html {
   color: #fff;
 }
 .companisto_netzwerk .rotated_back .title_for_founders h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   line-height: 40px;
   font-weight: 300;
@@ -41528,7 +41527,7 @@ html {
 }
 .companisto_netzwerk .box_info .padding_top_box {
   padding-top: 7.5px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   text-align: left;
   font-weight: 400;
@@ -41611,7 +41610,7 @@ html {
   }
 }
 .unser_investment_team .unser_investment_team_title {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   font-weight: 300;
   margin-bottom: 80px;
@@ -41698,13 +41697,13 @@ html {
 }
 .unser_investment_team .team_member_box .team_member_info .name {
   display: block;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: 700;
 }
 .unser_investment_team .team_member_box .team_member_info .position {
   display: block;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 15px;
   font-weight: 400;
   color: #626262;
@@ -41811,7 +41810,7 @@ html {
   padding-left: 7.5px;
   padding-right: 7.5px;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
   letter-spacing: 0.4px;
   color: #fff;
@@ -41905,7 +41904,7 @@ html {
   padding-bottom: 50px;
 }
 .interested_to_invest h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   font-weight: 300;
   margin-bottom: 80px;
@@ -41919,7 +41918,7 @@ html {
   }
 }
 .interested_to_invest .interested_to_invest_text {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.4px;
@@ -41964,7 +41963,7 @@ html {
   color: #fff;
 }
 .blue_founder_container_mobile .title_blue_founder {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 35px;
   font-weight: 300;
   text-transform: uppercase;
@@ -42174,23 +42173,23 @@ a {
 .newsletter-subscribe-container h1 {
   color: #39b6b8;
   font-size: 30px;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
 .newsletter-subscribe-container h3 {
-  font-family: 'Roboto', 'sans-serif';
+  font-family: "Open Sans", sans-serif;
   font-size: 17px;
   font-weight: 900;
   color: #000;
 }
 .newsletter-subscribe-container .subtitle {
-  font-family: 'Roboto', 'sans-serif';
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-weight: 900;
   color: #000;
 }
 .newsletter-subscribe-container .main-content-wrapper .main-content {
-  font-family: 'Roboto', 'sans-serif';
+  font-family: "Open Sans", sans-serif;
   text-align: justify;
   margin-top: 15px;
   font-size: 18px;
@@ -42203,7 +42202,7 @@ a {
   float: left;
   margin-right: 15px;
   font-weight: 900;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: "Open Sans", sans-serif;
 }
 .newsletter-subscribe-container .main-content-wrapper .checkmarked ul li span.checkmark {
   color: #39b6b8;
@@ -42254,7 +42253,7 @@ a {
   position: absolute;
   bottom: 0;
   margin-top: 0;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -42435,7 +42434,7 @@ a {
   }
 }
 #thankYouPage {
-  font-family: Roboto, sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #434343;
   padding-top: 10px;
   padding-bottom: 100px;
@@ -42657,7 +42656,7 @@ a {
   border: 1px solid #00a9ac;
 }
 .jobs_container .job_description {
-  font-family: "Roboto";
+  font-family: "Open Sans", sans-serif;;
   font-weight: 200;
   float: left;
 }
@@ -42669,7 +42668,7 @@ a {
   width: 200px;
   font-size: 20px;
   margin-top: 10px;
-  font-family: "Roboto";
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
 }
 .jobs_container .color_map_point {
@@ -42687,7 +42686,7 @@ a {
   width: 100%;
   text-align: center;
   font-size: 34px;
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   font-weight: 200;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -42762,7 +42761,7 @@ a {
 .jobs_container kbd,
 .jobs_container pre,
 .jobs_container samp {
-  font-family: monospace,serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 1em;
 }
 .jobs_container pre {
@@ -42962,7 +42961,7 @@ a {
   margin: 0.5em 0 0;
   font-size: 1.75em;
   color: var(--color-product-title);
-  font-family: "Roboto", serif;
+  font-family: "Open Sans", sans-serif;, serif;
   font-weight: 500;
   width: 230px;
 }
@@ -43029,7 +43028,7 @@ a {
   margin: -1.3em 0 0.1em;
   font-size: 2.5em;
   color: #fff;
-  font-family: "Roboto", serif;
+  font-family: "Open Sans", sans-serif;, serif;
   font-weight: 700;
 }
 .jobs_container .details__subtitle {
@@ -43043,7 +43042,7 @@ a {
   line-height: 1.5;
   margin: 2em 0 0 0;
   width: 90%;
-  font-family: 'Roboto';
+  font-family: "Open Sans", sans-serif;;
   padding-right: 30px;
   overflow-y: auto;
   color: var(--color-details-desc);
@@ -43151,7 +43150,7 @@ a {
   right: 0 !important;
 }
 .jobs_container .title_job_modal {
-  font-family: Roboto;
+  font-family: "Open Sans", sans-serif;
   margin-top: -79px;
   margin-bottom: 25px;
   font-size: 48px;
@@ -43258,7 +43257,7 @@ a {
 }
 .jobs_container .calendar_item_job2 {
   margin-left: 5px;
-  font-family: "Roboto";
+  font-family: "Open Sans", sans-serif;;
   margin-top: 10px;
   float: left;
 }
@@ -43283,7 +43282,7 @@ a {
   max-height: 2.5em;
   /* (Number of lines you want visible) * (line-height) */
   line-height: 1.2em;
-  font-family: 'Roboto' !important;
+  font-family: "Open Sans", sans-serif; !important;
 }
 @media screen and (max-width: 600px) {
   .jobs_container .details__title {
@@ -43338,7 +43337,7 @@ a {
   border-bottom: 1px solid #bfbfbf;
 }
 .angelclub {
-  font-family: 'Open Sans' !important;
+  font-family: "Open Sans", sans-serif;
 }
 .angelclub .header {
   margin-top: -70px;
@@ -43374,7 +43373,7 @@ a {
 }
 .angelclub .first-container {
   text-align: center;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
   font-size: 24px;
   background-color: #1a1a24;
   border-top: 1px solid #000;
@@ -43391,7 +43390,7 @@ a {
   padding-bottom: 50px;
   text-align: center;
   font-size: 34px;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
 .angelclub .second-container {
@@ -43564,13 +43563,13 @@ a {
   }
 }
 .angelclub .third-container .number-text {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 45px;
   text-align: center;
   padding-bottom: 10px;
 }
 .angelclub .third-container .big-text {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   font-size: 18px;
   text-transform: uppercase;
@@ -43579,7 +43578,7 @@ a {
   padding-right: 25px;
 }
 .angelclub .third-container .small-text {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   padding-top: 20px;
   text-align: center;
@@ -43592,7 +43591,7 @@ a {
   }
 }
 .angelclub .third-container .number_letter {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   float: left;
   font-size: 40px;
@@ -43630,7 +43629,7 @@ a {
   }
 }
 .angelclub .third-container .third-container-title {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 34px;
@@ -43643,7 +43642,7 @@ a {
   }
 }
 .angelclub .third-container .third-container-title-2 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 34px;
@@ -43698,7 +43697,7 @@ a {
   margin-bottom: 30px;
   text-transform: uppercase;
   font-size: 32px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 .angelclub .forth-container .phone_nr {
@@ -43906,7 +43905,7 @@ a {
   Angel Club 2
 ***********************/
 .angelclub2 {
-  font-family: 'Open Sans' !important;
+  font-family: "Open Sans", sans-serif;
 }
 .angelclub2 .header {
   margin-top: -70px;
@@ -43942,7 +43941,7 @@ a {
 }
 .angelclub2 .first-container {
   text-align: center;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
   font-size: 24px;
   background-color: #1a1a24;
   border-top: 1px solid #000;
@@ -43959,7 +43958,7 @@ a {
   padding-bottom: 50px;
   text-align: center;
   font-size: 34px;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
 }
 .angelclub2 .second-container {
@@ -44130,13 +44129,13 @@ a {
   }
 }
 .angelclub2 .third-container .number-text {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 45px;
   text-align: center;
   padding-bottom: 10px;
 }
 .angelclub2 .third-container .big-text {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   font-size: 18px;
   text-transform: uppercase;
@@ -44145,7 +44144,7 @@ a {
   padding-right: 25px;
 }
 .angelclub2 .third-container .small-text {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   padding-top: 20px;
   text-align: center;
@@ -44158,7 +44157,7 @@ a {
   }
 }
 .angelclub2 .third-container .number_letter {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   float: left;
   font-size: 40px;
@@ -44196,7 +44195,7 @@ a {
   }
 }
 .angelclub2 .third-container .third-container-title {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 34px;
@@ -44209,7 +44208,7 @@ a {
   }
 }
 .angelclub2 .third-container .third-container-title-2 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 34px;
@@ -44264,7 +44263,7 @@ a {
   margin-bottom: 30px;
   text-transform: uppercase;
   font-size: 32px;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 .angelclub2 .forth-container .phone_nr {
@@ -44575,7 +44574,7 @@ a {
 #earlyAccessPledgeFixedBar .access-equity {
   color: #333;
   letter-spacing: 5px;
-  font-family: 'Open Sans', cursive;
+  font-family: "Open Sans", sans-serif;;
   font-size: 13px;
   text-transform: uppercase;
   padding-top: 3px;
@@ -44793,7 +44792,7 @@ a {
 }
 #earlyAccessPledgeFixedBar .cowntdown .title {
   padding-top: 0px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   text-transform: uppercase;
   font-size: 12px;
   color: #333333;
@@ -44827,7 +44826,7 @@ a {
   }
 }
 #earlyAccessPledgeFixedBar .cowntdown .countdown_label {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 300;
   font-size: 13px;
   color: #333333;
@@ -44878,7 +44877,7 @@ a {
   }
 }
 #earlyAccessPledgeFixedBar .btn-blue {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   background-color: #033d62;
   color: white;
@@ -44913,7 +44912,7 @@ a {
   text-decoration: none !important;
 }
 #earlyAccessPledgeFixedBar .btn-orange {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   background-color: #F9B231;
   color: black;
@@ -44948,7 +44947,7 @@ a {
   text-decoration: none !important;
 }
 #earlyAccessPledgeFixedBar .btn-green {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   background-color: #017632;
   color: #fff;
@@ -44983,7 +44982,7 @@ a {
   text-decoration: uppercase !important;
 }
 #earlyAccessPledgeFixedBar .btn-ei {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   border-radius: 50px;
   text-transform: uppercase;
@@ -45123,7 +45122,7 @@ a {
   }
 }
 #earlyAccessFixedBar .btn-lightbrwn {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   padding: 5px 15px;
   color: #fff;
@@ -45142,7 +45141,7 @@ a {
   text-decoration: none !important;
 }
 #earlyAccessFixedBar .btn-green {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   padding: 5px 15px;
   color: #fff;
@@ -45161,7 +45160,7 @@ a {
   text-decoration: none !important;
 }
 #earlyAccessFixedBar .btn-bar {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   padding: 5px 15px;
   border-radius: 50px;
@@ -45331,7 +45330,7 @@ a {
   }
 }
 #earlyAccessPreviewBar .btn-white {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   padding: 5px 15px;
   color: #fff;
@@ -45486,7 +45485,7 @@ a {
   }
 }
 #publicInvestmentPreviewBar .button_wrap .btn-bar {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   padding: 5px 15px;
   border-radius: 50px;
@@ -45604,7 +45603,7 @@ a {
   }
 }
 #publicInvestmentPreviewBar .banderoleWrapper {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   width: 245px;
   height: 180px;
@@ -45634,7 +45633,7 @@ a {
   -o-transform: rotate(-20deg);
   position: absolute;
   overflow: visible;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   left: -132px;
   top: 5px;
@@ -45868,14 +45867,14 @@ div.right_tools {
 }
 .ident-process .title {
   color: #fff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: bold;
   font-size: 18px;
   padding-bottom: 10px;
 }
 .ident-process .subtitle {
   color: #fff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 18px;
   font-weight: lighter;
   padding-bottom: 50px;
@@ -46025,7 +46024,7 @@ div.right_tools {
   text-transform: uppercase;
   margin-top: 40px;
   overflow-wrap: break-word;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #fff;
 }
 .ident-process .ident-method .no-padding {
@@ -46375,7 +46374,7 @@ div.right_tools {
   border: 5px solid #ffbb02;
 }
 .startup_equity_container .startup-description-wrapper .banderoleWrapper {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   overflow: hidden;
   position: absolute;
@@ -46404,7 +46403,7 @@ div.right_tools {
   -o-transform: rotate(-35deg);
   position: absolute;
   overflow: visible;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 700;
   height: 65px;
   line-height: 26px;
@@ -46549,7 +46548,7 @@ div.right_tools {
 }
 .startup_equity_container .cowntdown .title {
   padding: 10px 10px 20px 10px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   color: #000;
   font-size: 30px;
   font-weight: 400;
@@ -46566,7 +46565,7 @@ div.right_tools {
   }
 }
 .startup_equity_container .cowntdown .countdown_value {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 42px;
   line-height: 1;
   color: #000;
@@ -46590,7 +46589,7 @@ div.right_tools {
   }
 }
 .startup_equity_container .cowntdown .countdown_label {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-weight: 100;
   font-size: 13px;
   color: #000;
@@ -46618,7 +46617,7 @@ div.right_tools {
   background-color: #3aacd3;
 }
 .startup_equity_container .invest-button-ghost {
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
   background-color: #3aacd3;
   text-transform: uppercase !important;
 }
@@ -46650,7 +46649,7 @@ div.right_tools {
   line-height: 28px;
 }
 .startup_equity_container .submenu-redesign ul li a {
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
 }
 .startup_equity_container .brand-shares-startup {
   background-color: #0abaee;
@@ -46704,7 +46703,7 @@ div.right_tools {
   border: 1px solid #e9e9e9;
   background-color: #f5f5f5;
   padding: 15px;
-  font-family: 'Open Sans' !important;
+  font-family: "Open Sans", sans-serif;
 }
 @media (max-width: 991px) {
   .startup_equity_container #overviewNoticeText {
@@ -46713,12 +46712,12 @@ div.right_tools {
   }
 }
 .startup_equity_container .warning-new-overview {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   background-color: #eeeeee;
 }
 .startup_equity_container .warning-new-overview p {
   color: #000 !important;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
 }
 .startup_equity_container .ameria_holder_image {
   background: url('../../assets/img-left-top-ameria.png');
@@ -46771,7 +46770,7 @@ div.right_tools {
   color: black;
 }
 .startup_equity_container #accordion_overview .inner-text p {
-  font-family: 'Open Sans' !important;
+  font-family: "Open Sans", sans-serif;
   font-size: 19px !important;
   line-height: 28px !important;
 }
@@ -46791,7 +46790,7 @@ div.right_tools {
 }
 .startup_equity_container #accordion_overview .fileDownload a {
   color: black !important;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
 }
 .startup_equity_container #accordion_overview a.accordion-toggle {
   font-size: 24px;
@@ -46799,7 +46798,7 @@ div.right_tools {
   text-transform: uppercase;
   padding-right: 30px;
   overflow-wrap: break-word;
-  font-family: 'Open Sans';
+  font-family: "Open Sans", sans-serif;
   color: #000;
 }
 @media (max-width: 480px) {
@@ -46808,7 +46807,7 @@ div.right_tools {
   }
 }
 .startup_equity_container .accordion-group-title {
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
 }
 .startup_equity_container .submenu-mobile-active-row {
   height: 42px;
@@ -46830,11 +46829,11 @@ div.right_tools {
   margin-top: 10px;
   margin-bottom: 50px;
   color: #000;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;;
   font-size: 40px;
 }
 .startup_equity_container .main-title h1 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
 }
 @media (max-width: 767px) {
@@ -46844,7 +46843,7 @@ div.right_tools {
   }
 }
 .startup_equity_container .main-title .subtitle {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 @media (max-width: 768px) {
@@ -46857,14 +46856,14 @@ div.right_tools {
   margin: 3px 0 0;
   padding: 0;
   color: #000;
-  font-family: "Open Sans" !important;
+  font-family: "Open Sans", sans-serif;
 }
 .startup_equity_container .sidebarBox .body:not(:last-child) {
   border-bottom: 1px solid #e1e1e1;
 }
 .startup_equity_container .sidebarBox .amount {
   color: #000 !important;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-size: 24px !important;
   font-style: normal;
   font-weight: 500 !important;
@@ -46881,7 +46880,7 @@ div.right_tools {
   color: white;
 }
 .startup_equity_container .sidebarBox .amount .small a {
-  font-family: 'Open Sans';
+  font-family: "Open Sans", sans-serif;
   color: white;
   font-weight: 300 !important;
   padding-left: 5px;
@@ -46889,11 +46888,11 @@ div.right_tools {
 }
 .startup_equity_container .fileDownload a {
   color: black;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
 }
 .startup_equity_container .file-download-text-wrapper {
   color: black;
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 .startup_equity_container .file-download-text-wrapper:hover {
@@ -46985,14 +46984,14 @@ div.right_tools {
     border-radius:0px !important
 }
 html, body {
-    font-family: Open Sans;
+    font-family: "Open Sans", sans-serif;
     font-size: 18px;
     line-height: 28px;
     scroll-behavior: smooth;
   }
 
   h1 {
-    font-family: Open Sans;
+    font-family: "Open Sans", sans-serif;
     color: white;
     text-align: center;
     font-size: 200px;
@@ -47041,7 +47040,7 @@ html, body {
 {
     font-size: 44px;
     text-transform: uppercase;
-    font-family: "open_sans", sans-serif;
+    font-family:"Open Sans", sans-serif;
     /* font-weight: bold; */
     margin-top: 24%;
 }
@@ -47049,7 +47048,7 @@ html, body {
 {
     font-size:15px;
     margin:0px;
-    font-family:"open-sans-regular"
+    font-family:"Open Sans", sans-serif;
 }
 .v-icons
 {
@@ -47059,9 +47058,9 @@ html, body {
 {
     font-size:48px;
     font-weight:normal;
-    font-family:"open-sans-light"
+    font-family:"Open Sans", sans-serif;
 }
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+
 .invalid-feedback
 {
     color:red;
@@ -47975,7 +47974,7 @@ input[type='password']:focus {
 {
     text-transform: uppercase;
     font-size: 32px;
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "Open Sans", sans-serif; !important;
     float: left;
     width: 100%;
     text-align: center;
