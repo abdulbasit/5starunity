@@ -1,4 +1,21 @@
 (function($) {
+$( document ).ready(function() {
+    setTimeout(function(){
+        isMobile();
+    },100);
+    $(".actions").attr('style','position: relative !important; bottom: 115px !important; width: auto !important; float: right; right: 122px');
+});
+function isMobile() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+       {
+            $(".actions").removeAttr('style');
+            return true;
+       }
+       else
+       {
+           return false;
+       }
+  }
 
     var form = $("#signup-form");
     form.validate({
@@ -11,7 +28,6 @@
                 {
                     $("#country").addClass('form_error');
                 }
-
             element.before(error);
         },
         rules: {
@@ -64,6 +80,8 @@
         onStepChanging: function(event, currentIndex, newIndex)
         {
 
+
+            alert(newIndex);
             if(newIndex<3)
             {
                 $("#"+newIndex).removeClass('number');
@@ -71,6 +89,20 @@
                 $("#title_id_"+newIndex).css('color','green');
             }
 
+            if(newIndex==2 && isMobile()===false)
+            {
+                $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
+                $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
+            }
+            if(newIndex==1 && isMobile()===false)
+            {
+                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right; right: 122px');
+            }
+
+            if(newIndex==0 && isMobile()===false)
+            {
+                $(".actions").attr('style','position: relative !important; bottom: 115px !important; width: auto !important; float: right; right: 122px');
+            }
             if(newIndex==2 && $("#identity_card").val()!="")
             {
                 scollPos();
@@ -224,7 +256,45 @@ function scollPos() {
     var checkbox='';
     $("#remsCheck").remove();
     $(".actions").append('<div id="remsCheck"> </div>');
-    checkbox='<span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="terms_check" name="terms_check"></span><span id="termsCondTxt" style="float:left; margin-right:10px; margin-top:8px">Terms & Conditions</span>';
+    checkbox+='<div style="width:100%; float:left"><span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="terms_check" name="terms_check"></span><span id="termsCondTxt" style="float:left; margin-right:10px; margin-top:8px">Allgemeine Nutzungsbedingungen gelesen und akzeptieren</span></div>';
+    checkbox+='<div id="dataCheck" style="width:100%; float:left"><span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="data_check" name="terms_check"></span><span id="dataSecurityTxt" style="float:left; margin-right:10px; margin-top:8px">Datenschutzerklärung gelesen und akzeptieren</span></div>';
+    checkbox+='<div id="18plus" style="width:100%; float:left"><span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="age_check" name="terms_check"></span><span id="18Txt" style="float:left; margin-right:10px; margin-top:8px">Ich bestätige über 18 Jahre zu sein</span></div>';
     $("#remsCheck").html(checkbox);
+
+}
+function acceptTerms()
+{
+    if($("#terms_check").is(":checked")===false)
+        {
+            alert('ddd');
+            $( ".actions ul li a" ).last().attr('href',"");
+            $("#termsCondTxt").css('color','red');
+        }
+    else
+        {
+            $("#termsCondTxt").css('color','black');
+        }
+     if($("#data_check").is(":checked")===false)
+        {
+            $( ".actions ul li a" ).last().attr('href',"");
+            $("#dataCheck").css('color','red');
+        }
+    else
+        {
+            $("#dataCheck").css('color','black');
+        }
+    if($("#age_check").is(":checked")===false)
+        {
+            $( ".actions ul li a" ).last().attr('href',"");
+            $("#18plus").css('color','red');
+        }
+    else
+        {
+            $("#18plus").css('color','black');
+        }
+    if($("#terms_check").is(":checked")===true && $("#data_check").is(":checked")===true && $("#age_check").is(":checked")===true)
+        {
+            $(".actions ul li a").last().attr('href',"#finish");
+        }
 
 }

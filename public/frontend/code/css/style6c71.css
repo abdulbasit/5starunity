@@ -2116,21 +2116,25 @@ pre code {
     }
     .stateMargin
     {
-        margin-left:45px !important
+        margin-left:40px !important
     }
     .actions ul
     {
-        width:80% !important;
+        width:87% !important;
         float:left !important
     }
     .extraBtns
     {
         margin-top:90px;
     }
+    .contact_us_wrap
+    {
+        background-image: url(../../graphics/icons/social-twitter.png);
+    }
     #remsCheck
     {
-        width: 205px;
-        float: left;
+        width: 600px;
+        /* float: left; */
         margin: 0px !important
     }
     #remsCheck input
@@ -15389,18 +15393,29 @@ section.homepage-howitworks {
     white-space: initial;
   }
 }
+.fieldset-content
+{
+    border:0px !important
+}
 section.homepage-howitworks .section-title {
   font-weight: 700;
   font-size: 32px;
   padding-bottom: 40px;
 }
 label{
-    width:180px
+    width:230px
 }
 .form-file
 {
-    width: 448px;
-    margin-left:-6px
+    width: 502px;
+    margin-left: -1px;
+    margin-right: 18px;
+}
+.notice_form
+{
+    color:red;
+    text-align:center;
+    font-size:18px
 }
 @media (max-width: 500px) {
     .title {
@@ -15709,6 +15724,10 @@ section.homepage-howitworks .circles-holder .circle .circle_text {
   section.homepage-howitworks .circles-holder .c_dist {
     margin-bottom: 25px;
   }
+  .hidden-xs
+    {
+        display:none
+    }
 }
 section.homepage-howitworks .circles-holder .c_st {
   /* margin-left: 35px; */
@@ -29288,6 +29307,7 @@ i.glyphicon-search {
     width: 100%;
   }
 }
+
 .btn-store-answer {
   padding: 2px 20px;
   background: #8ab33c;

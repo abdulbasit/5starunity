@@ -22,21 +22,21 @@ help{
 .label {
     font-size: 13px;
     font-weight: normal;
+    width:230px !important
 }
-
 .actions ul li a
 {
-    border: solid 1px #000;
+    border: 1px solid rgb(225, 225, 225);
     color: black;
     border-radius: 100px;
     background: none
 }
 .actions ul li a:hover
 {
-    border: solid 1px #000;
+    border: 1px solid green;
     color: white;
     border-radius: 100px;
-    background-color:black
+    background-color:green
 }
 label.error
 {
@@ -264,6 +264,7 @@ label.error {
 {
     padding-right: 15px !important
 }
+
 </style>
 @endsection
 @section('content')
@@ -277,34 +278,34 @@ label.error {
                     <span class="title_text">{{ __('content.accunt_information')}} </span>
                 </h3>
                 <fieldset>
-                    <div class="fieldset-content">
+                    <div class="col-lg-7 fieldset-content">
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="fname" class="form-label">{{ __('lables.first_name')}} <font color="red"> *</font></label>
                                 <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="mname" class="form-label">{{ __('lables.middle_name')}} </label>
                                 <input type="text" value="{{ old('mname') }}" class="form-control{{ $errors->has('mname') ? ' is-invalid' : '' }}" name="mname" id="mname"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="lname" class="form-label">{{ __('lables.last_name')}} <font color="red"> *</font></label>
                                 <input required="required" type="text" value="{{ old('lname') }}" class="form-control{{ $errors->has('lname') ? ' is-invalid' : '' }}" name="lname" id="lname"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="email" class="form-label">{{ __('lables.email')}} <font color="red"> *</font></label>
                                 <label id="email-error" class="error" for="email" style="display: none;"></label>
                                 <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  id="email"/>
                              </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group form-password">
+                            <div class="col-xs-12 form-group form-password">
                                 <label for="password" class="form-label" style="margin-left:20px">{{ __('lables.password')}} <font color="red"> *</font></label>
                                 <input required="required" type="password"  id="password" data-indicator="pwindicator" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" />
                                 <div id="pwindicator" style="width: 100px; height: 50px; top: 23px; position: relative;">
@@ -318,6 +319,13 @@ label.error {
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-1 hidden-xs">
+                        <br />
+                        <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/1regsiter.png">
                     </div>
                     <div class="fieldset-footer">
                         &nbsp; {{-- <span>Step 1 of 2</span> --}}
@@ -327,9 +335,10 @@ label.error {
                     <span class="title_text">{{ __('content.personal_information')}}</span>
                 </h3>
                 <fieldset>
+                    <div class="col-lg-7">
                     <div class="fieldset-content">
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="dob" class="form-label">{{ __('lables.dob')}} <font color="red"> *</font></label>
                                 <label id="dob-error" class="error" for="dob" style="display: none;"></label>
                                 <input onchange="calcAge()" required="required" type="text" class="form-control" name="dob" id="dob" placeholder="(TT.MM.JJJJ)" />
@@ -337,7 +346,7 @@ label.error {
                             <div class="error_msg" id="dobMsg"></div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="dob" class="form-label">{{ __('lables.country')}} <font color="red"> *</font></label>
                                 <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required" style="margin-bottom:15px">
                                     <option >----{{ __('lables.selct_country')}}----</option>
@@ -350,43 +359,43 @@ label.error {
                         <div class="row">
                             <div class="form-select">
                                 <label for="country" class="form-label">{{ __('lables.city')}} / {{ __('lables.postal_code')}} <font color="red"> *</font></label>
-                                <div class="row" style="width:100%">
-                                    <div class="col-lg-3 col-xs-12 paddingZero">
+                                <div class="row" style="width:100%; margin:0px">
+                                    <div class="col-lg-7 col-xs-12 paddingZero">
                                         <input required="required" type="text" class="form-control" name="city" id="city"/>
                                     </div>
-                                    <div class="col-lg-2 col-xs-12 paddingZero stateMargin">
+                                    <div class="col-lg-3 col-xs-12 paddingZero stateMargin ">
                                         <input required="required" type="text" class="form-control" name="postal_code" id="postal_code"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="address" class="form-label">{{ __('lables.address')}} <font color="red"> *</font></label>
                                 <input required="required" type="text" class="form-control" name="address" id="address"/>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="country" class="form-label">{{ __('lables.house_number')}}<font color="red"> *</font></label>
                                 <input required="required" type="text" class="form-control" name="hnumber" id="hnumber" />
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="address" class="form-label">{{ __('lables.address2')}} </label>
                                 <input  type="text" class="form-control" name="address2" id="address2"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-select">
+                            <div class="col-xs-12 form-select">
                                 <label for="country" class="form-label">{{ __('lables.phone_number')}} <font color="red"> *</font></label>
                                 <input required="required" type="text" class="form-control" name="phone" id="phone"/>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label addressProof">{{ __('lables.avatar')}} &nbsp; &nbsp;</label>
                                 <div class="form-file" id="id_card">
                                     <input type="file" name="profile_pic" id="profile_pic" class="custom-file-input form-control" />
@@ -396,7 +405,7 @@ label.error {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label addressProof" >{{ __('lables.identity_proof')}} <font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof">
                                     <input required="required" type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" />
@@ -406,8 +415,8 @@ label.error {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
-                                <label for="profile_pic" class="form-label addressProof">{{ __('lables.first_name')}} <font color="red"> *</font></label>
+                            <div class="col-xs-12 form-group">
+                                <label for="profile_pic" class="form-label addressProof">{{ __('lables.id_front')}} <font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof_front">
                                     <input required="required" type="file" name="identity_card_front"  id="identity_card_front" class="custom-file-input form-control" />
                                     <span id='val3' class="idImg1"></span>
@@ -416,7 +425,7 @@ label.error {
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-7 col-xs-12 form-group">
+                            <div class="col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label addressProof" >{{ __('lables.id_back')}}<font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof_bck">
                                     <input required="required" type="file" name="identity_card_back"  id="identity_card_back" class="custom-file-input form-control" />
@@ -424,12 +433,22 @@ label.error {
                                     <span id='button2'>{{ __('lables.select_file')}}</span>
                                 </div>
                             </div>
-                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
+                        </div>
                     </div>
                     <div class="fieldset-footer">
                         &nbsp;
                         {{-- <span>Step 2 of 2</span> --}}
                     </div>
+
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-1 hidden-xs">
+                        <br />
+                        <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/1regsiter.png">
+                    </div>
+
                 </fieldset>
                 <h3 style="display:none">
                     <span id="title_id_3" class="title_text">{{ __('content.terms_cond')}}</span>
@@ -593,10 +612,10 @@ label.error {
 <script src="{{ asset('frontend/wizard-form/vendor/jquery.pwstrength/jquery.pwstrength.js')}}"></script>
 <script src="{{ asset('frontend/wizard-form/js/main.js')}}"></script>
 <script>
-$( document ).ready(function() {
-    $(".actions ul li:nth-child(2) a").css('display','none');
-    $(".actions ul li:nth-child(2) ").append('<a id="validation" href="#" onclick="check_email()">Next</a>');
-});
+// $( document ).ready(function() {
+//     $(".actions ul li:nth-child(2) a").css('display','none');
+//     $(".actions ul li:nth-child(2) ").append('<a id="validation" href="#" onclick="check_email()">Next</a>');
+// });
 
 function check_email()
     {
@@ -686,19 +705,7 @@ function calculateAge(birthMonth, birthDay, birthYear)
     }
         return calculatedAge;
 }
-function acceptTerms()
-{
-    if($("#terms_check").is(":checked")===true)
-        {
-            $(".actions ul li a").last().attr('href',"#finish");
-            $("#termsCondTxt").css('color','black');
-        }
-    else
-        {
-            $( ".actions ul li a" ).last().attr('href',"");
-            $("#termsCondTxt").css('color','red');
-        }
-}
+
 </script>
 @endsection
 @endsection

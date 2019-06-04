@@ -17,9 +17,15 @@ return [
     "avatar"=>"Profilbild",
     "identity_proof"=>"Nachweis Adresse",
     "select_file"=>"Datei Auswählen",
-    "id_front"=>"Ausweiss Vorderseite",
-    "id_back"=>"Ausweiss Rückseite",
+    "id_front"=>"Ausweis Vorderseite",
+    "id_back"=>"Ausweis Rückseite",
     "address"=>"Straße",
-    "selct_country"=>"Land Auswählen"
+    "selct_country"=>"Land Auswählen",
+    "submit"=>"BESTÄTIGEN",
+    "next"=>"WEITER",
+    "previous"=>"ZURÜCK",
+    "terms_cond"=>"Allgemeine Nutzungsbedingungen gelesen und akzeptieren",
+    "data_security"=>"Datenschutzerklärung gelesen und akzeptieren",
+    "above_18"=>"Ich bestätige über 18 Jahre zu sein"
 ];
 ?>

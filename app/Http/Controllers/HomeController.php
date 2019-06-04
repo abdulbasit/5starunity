@@ -50,6 +50,10 @@ class HomeController extends Controller
     {
         return view('pages.comming_soon');
     }
+    public function termsCond()
+    {
+        return view('pages.terms_cond');
+    }
     public function inventroAcadmy()
     {
         return view('pages.comming_soon');

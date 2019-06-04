@@ -206,7 +206,7 @@
                             <a style="text-decoration: none;cursor: default !important;">&copy; <?php echo date('Y') ?> 5starUnity e.V.</a>
                             <a href="de/page/business-terms.html">{{ __('menu.terms')}}</a>
                             <a href="de/page/privacy-policy.html">{{ __('menu.privacy')}}</a>
-                            <a href="de/page/impressum.html">{{ __('menu.legal_notice')}}</a>
+                            <a href="/terms">{{ __('menu.legal_notice')}}</a>
                         </div>
 
                         <div class="clear"></div>

@@ -47,6 +47,7 @@ Auth::routes();
     Route::get('email/verification/{token}', 'Auth\RegisterController@verify_email');
     Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');
     Route::get('lotter-of-things', 'HomeController@lotteryThings');
+    Route::get('terms', 'HomeController@termsCond');
     Route::post('check_email', 'Auth\RegisterController@check_email');
     Route::post('check_email', 'Auth\RegisterController@check_email')->name('check_email');
 

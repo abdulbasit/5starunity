@@ -547,8 +547,12 @@ fieldset {
     .actions ul li {
       margin-left: 10px; }
       .actions ul li:first-child a {
-        background: #f8f8f8;
-        color: #999; }
+        color:black; }
+        .actions ul li:first-child a:hover {
+            color:white !important;
+            background-color: red !important;
+            border:solid 1px red
+         }
         .actions ul li:first-child a:hover {
           background-color: #dfdfdf; }
       .actions ul li a {
@@ -719,6 +723,7 @@ fieldset {
     height: 750px; } }
 .addressProof
 {
-    width: 107px; margin-left: 25px;
+    width: 211px;
+    margin-left: -25px;
 }
 /*# sourceMappingURL=style.css.map */
