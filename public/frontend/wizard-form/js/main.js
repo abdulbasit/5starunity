@@ -80,8 +80,6 @@ function isMobile() {
         onStepChanging: function(event, currentIndex, newIndex)
         {
 
-
-            alert(newIndex);
             if(newIndex<3)
             {
                 $("#"+newIndex).removeClass('number');

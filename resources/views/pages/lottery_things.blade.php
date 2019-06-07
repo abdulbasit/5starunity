@@ -43,7 +43,7 @@
                                 @foreach($lotteryData as $i=>$lottery)
                                     <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
                                         <div class="content_startup_blok current_investment ">
-                                            <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->lottery_id}}">
+                                            <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
                                                 <div class="stratup_img lazy" data-src="" title="vanilla bean" style="overflow:hidden; height:100px">
                                                     <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{$lottery->product->product_images[0]->pro_image}}">
                                                 </div>
@@ -95,6 +95,7 @@
                                     </div>
                                 @endforeach
                             </div>
+                            <br />
                         <div class="row">
                             <div class="col-xs-12 button-container" style="margin:0px">
                                 <a href="/lotteries" class="btn layoutV2-btn">

@@ -15,54 +15,44 @@
 <div class="container-fluid">
         <div class="col-xs-12 contact_us_wrap">
             <fieldset>
-                <div class="col-lg-6 fieldset-content col-lg-offset-1">
+                <div class="col-lg-5 fieldset-content col-lg-offset-1">
                     <br />
                     <br />
                     <h3>…ob allgemeine (An)Fragen, Entwicklerthemen oder Partnergesuche - wir freuen uns </h3>
                     <br />
                     <div class="row">
                         <div class="col-xs-12 form-group">
-                            <label for="fname" class="form-label">{{ __('lables.first_name')}} <font color="red"> *</font></label>
+                            <label for="fname" class="form-label">Name <font color="red"> *</font></label>
                             <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname"/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 form-group">
-                            <label for="mname" class="form-label">{{ __('lables.middle_name')}} </label>
-                            <input type="text" value="{{ old('mname') }}" class="form-control{{ $errors->has('mname') ? ' is-invalid' : '' }}" name="mname" id="mname"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label for="lname" class="form-label">{{ __('lables.last_name')}} <font color="red"> *</font></label>
-                            <input required="required" type="text" value="{{ old('lname') }}" class="form-control{{ $errors->has('lname') ? ' is-invalid' : '' }}" name="lname" id="lname"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label for="email" class="form-label">{{ __('lables.email')}} <font color="red"> *</font></label>
+                            <label for="email" class="form-label">Email Address <font color="red"> *</font></label>
                             <label id="email-error" class="error" for="email" style="display: none;"></label>
-                            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  id="email"/>
-                            </div>
+                            <input type="email" class="form-control" name="email" value=""  id="email"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 form-group">
+                            <label for="email" class="form-label">Bettereff <font color="red"> *</font></label>
+                            <input type="email" class="form-control" name="email" value=""  id="email"/>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 form-group form-password">
-                            <label for="password" class="form-label" style="margin-left:20px">{{ __('lables.password')}} <font color="red"> *</font></label>
-                            <input required="required" type="password"  id="password" data-indicator="pwindicator" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" />
-                            <div id="pwindicator" style="width: 100px; height: 50px; top: 23px; position: relative;">
-                                <div class="label1"></div>
-                                <div class="bar-strength">
-                                    <div class="bar-process">
-                                        <div class="bar"></div>
-                                    </div>
-                                </div>
-
-                            </div>
+                            <label for="password" class="form-label">Message <font color="red"> *</font></label>
+                            <textarea class="form-control" placeholder="Message" name="" id=""></textarea>
                         </div>
                     </div>
                     <div class="row">
+
                         <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
                     </div>
+                </div>
+                <div class="col-lg-6 hidden-xs">
+                        <br /><br />
+                    <img class="img-responsive" src="{{ URL::to('/') }}/frontend/contact_form/images/bg-01.jpg">
                 </div>
             </fieldset>
         </div>
