@@ -89,17 +89,21 @@ function isMobile() {
 
             if(newIndex==2 && isMobile()===false)
             {
+                var ddd = $(".actions ul li a").find(`[href='']`);
+                console.log(ddd);
                 $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
                 $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
             }
             if(newIndex==1 && isMobile()===false)
             {
                 $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+                $(".actions ul").attr('style','top:0px; margin-left:50px');
             }
 
             if(newIndex==0 && isMobile()===false)
             {
                 $(".actions").attr('style','position: relative !important; bottom: 115px !important; width: auto !important; float: right; right: 122px');
+                $(".actions ul").attr('style','top:0px');
             }
             if(newIndex==2 && $("#identity_card").val()!="")
             {
