@@ -15546,7 +15546,6 @@ section.homepage-howitworks .circles-holder {
     background-image: none;
     min-height: 360px;
   }
-
 }
 .registerCircle
 {
@@ -15902,6 +15901,10 @@ section.homepage-popular-startups .preinvestFlagNew {
   {
       height:650px !important;
   }
+  .font-48
+    {
+        font-size:48px !important
+    }
   /* .profile-body
     {
         margin-top:200px
@@ -43268,6 +43271,10 @@ a {
   }
   .jobs_container .details__title {
     font-size: 24px;
+  }
+  .form-group, .form-select, .form-radio, .form-textarea, .form-date
+  {
+    margin-bottom:0px !important
   }
 }
 .jobs_container .job_title {

@@ -323,7 +323,7 @@ label.error {
                             <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-lg-offset-1 hidden-xs">
+                    <div class="col-lg-3 col-lg-offset-1 hidden-xs hidden-md">
                         <br />
                         <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/1regsiter.png">
                     </div>
@@ -444,7 +444,7 @@ label.error {
                     </div>
 
                     </div>
-                    <div class="col-lg-3 col-lg-offset-1 hidden-xs">
+                    <div class="col-lg-3 col-lg-offset-1 hidden-xs hidden-md">
                         <br />
                         <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/1regsiter.png">
                     </div>
