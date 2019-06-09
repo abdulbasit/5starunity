@@ -358,9 +358,9 @@ label.error {
                         </div>
                         <div class="row">
                             <div class="form-select">
-                                <label for="country" class="form-label">{{ __('lables.city')}} / {{ __('lables.postal_code')}} <font color="red"> *</font></label>
+                                <label for="country" class="form-label marginLabel">{{ __('lables.city')}} / {{ __('lables.postal_code')}} <font color="red"> *</font></label>
                                 <div class="row" style="width:100%; margin:0px">
-                                    <div class="col-lg-7 col-xs-12 paddingZero">
+                                    <div class="col-lg-7 col-xs-12 paddingZero postaFields">
                                         <input required="required" type="text" class="form-control" name="city" id="city"/>
                                     </div>
                                     <div class="col-lg-3 col-xs-12 paddingZero stateMargin ">
@@ -394,7 +394,7 @@ label.error {
                                 <input required="required" type="text" class="form-control" name="phone" id="phone"/>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row files">
                             <div class="col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label addressProof">{{ __('lables.avatar')}} &nbsp; &nbsp;</label>
                                 <div class="form-file" id="id_card">
@@ -404,7 +404,7 @@ label.error {
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row files">
                             <div class="col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label addressProof" >{{ __('lables.identity_proof')}} <font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof">
@@ -414,7 +414,7 @@ label.error {
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row files">
                             <div class="col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label addressProof">{{ __('lables.id_front')}} <font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof_front">
@@ -424,7 +424,7 @@ label.error {
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row files">
                             <div class="col-xs-12 form-group">
                                 <label for="profile_pic" class="form-label addressProof" >{{ __('lables.id_back')}}<font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof_bck">

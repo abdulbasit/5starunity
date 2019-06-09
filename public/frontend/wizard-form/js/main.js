@@ -94,7 +94,7 @@ function isMobile() {
             }
             if(newIndex==1 && isMobile()===false)
             {
-                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right; right: 122px');
+                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
             }
 
             if(newIndex==0 && isMobile()===false)
@@ -264,7 +264,6 @@ function acceptTerms()
 {
     if($("#terms_check").is(":checked")===false)
         {
-            alert('ddd');
             $( ".actions ul li a" ).last().attr('href',"");
             $("#termsCondTxt").css('color','red');
         }

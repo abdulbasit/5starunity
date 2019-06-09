@@ -2111,6 +2111,10 @@ pre code {
   }
 }
 @media (min-width: 1200px) {
+    .postaFields
+    {
+        margin-left:5px
+    }
     .paddingZero{
         padding:0px !important
     }
@@ -2332,6 +2336,12 @@ pre code {
   .col-lg-offset-0 {
     margin-left: 0%;
   }
+  .addressProof
+  {
+      width: 211px;
+      margin-left: -25px !important;
+  }
+
 }
 table {
   background-color: transparent;
@@ -15424,14 +15434,22 @@ label{
         margin-right: auto;
         margin-bottom: 10px !important;
     }
+    .marginLabel
+    {
+        margin-left:35px !important
+    }
     .form-file
     {
-        width: 228px !important;
-        margin-left:-6px
+        width: 205px !important;
+        margin-left: 15px !important;
     }
     .addressProof
     {
-        width: 100% !important; margin-left: 25px;
+        width: 100% !important;
+    }
+    .files
+    {
+        margin-top:10px
     }
     /* .form-file
     {
