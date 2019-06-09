@@ -46,8 +46,12 @@
                         </div>
                     </div>
                     <div class="row">
-
                         <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
+                    </div>
+                    <div class="row">
+                        <div class="form-group form-password pull-right" style="margin-top:10px; margin-right:18px">
+                          <button class="btn btn-primary" type="submit" >Send Message</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 hidden-xs">
