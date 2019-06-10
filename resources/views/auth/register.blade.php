@@ -305,7 +305,7 @@ label.error {
                              </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12 form-group form-password">
+                            <div class="col-xs-12 form-group form-password" style="margin:0px">
                                 <label for="password" class="form-label" style="margin-left:20px">{{ __('lables.password')}} <font color="red"> *</font></label>
                                 <input required="required" type="password"  id="password" data-indicator="pwindicator" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" />
                                 <div id="pwindicator" style="width: 100px; height: 50px; top: 23px; position: relative;">
@@ -315,12 +315,22 @@ label.error {
                                             <div class="bar"></div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
+                            <div class="col-xs-12 form-group" style="margin:0px">
+                                <label for="email" class="form-label"></label>
+                                <p style="font-size:11px; width:100%">
+                                    Wir empfehlen mind. acht Charakter und dabei einen Groß- / Kleinbuchstaben, <br />Ziffern und zwei Sonderzeichen.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 form-group">
+                                <label for="email" class="form-label"></label>
+                                <p  style="font-size:11px; width:100%"><font color='red'>*</font> Angaben / Eingaben sind erforderlich </p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-lg-offset-1 hidden-xs hidden-md">
@@ -425,7 +435,7 @@ label.error {
                             </div>
                         </div>
                         <div class="row files">
-                            <div class="col-xs-12 form-group">
+                            <div class="col-xs-12 form-group" style="margin:0px">
                                 <label for="profile_pic" class="form-label addressProof" >{{ __('lables.id_back')}}<font color="red"> *</font></label>
                                 <div class="form-file text-center" id="id_prrof_bck">
                                     <input required="required" type="file" name="identity_card_back"  id="identity_card_back" class="custom-file-input form-control" />
@@ -435,7 +445,10 @@ label.error {
                             </div>
                         </div>
                         <div class="row">
-                            <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
+                            <div class="col-xs-12 form-group">
+                                <label for="email" class="form-label"></label>
+                                <p  style="font-size:11px; width:100%"><font color='red'>*</font> Angaben / Eingaben sind erforderlich </p>
+                            </div>
                         </div>
                     </div>
                     <div class="fieldset-footer">
@@ -604,6 +617,7 @@ label.error {
         </div>
     </div>
 <br />
+<input type="hidden" id="newindex" name="">
 @section('script')
 <script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/jquery.validate.min.js')}}"></script>
 <script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/additional-methods.js')}}"></script>

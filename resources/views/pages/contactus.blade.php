@@ -1,83 +1,84 @@
 @extends('layouts.app')
 @section('content')
 @section('style')
-<link rel="stylesheet" type="text/css" href="{{ asset('frontend/contact_form/css/util.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('frontend/contact_form/css/main.css')}}">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="{{ asset('frontend/contact_form/vendor/animate/animate.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/contact_form/vendor/css-hamburgers/hamburgers.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/contact_form/vendor/animsition/css/animsition.min.css')}}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('frontend/contact_form/vendor/select2/select2.min.css')}}">
+<style>
+.form-group
+{
+    margin-top:10px
+}
+input[type="text"], input[type="password"], input[type="number"]
+{
+    margin-bottom:0px
+}
+.form-control
+{
+    height:50px !important
+}
+.button
+{
+    border: 1px solid green;
+    color: white;
+    border-radius: 100px;
+    background: green;
+    position: relative;
+    left: 50%;
+    margin-left: -139px;
+    top: -18px;
+}
+</style>
 @endsection
 <div class="container-fluid">
         <div class="col-xs-12 contact_us_wrap">
             <fieldset>
-                <div class="col-lg-5 fieldset-content col-lg-offset-1">
+                <div class="col-lg-10 fieldset-content col-lg-offset-1" style="background-image:url('{{ URL::to('/') }}/frontend/contact_form/images/bg-01.jpg'); background-size:cover">
+                   <div class="row">
+                    
                     <br />
-                    <br />
-                    <h3>…ob allgemeine (An)Fragen, Entwicklerthemen oder Partnergesuche - wir freuen uns </h3>
-                    <br />
                     <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label for="fname" class="form-label">Name <font color="red"> *</font></label>
-                            <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname"/>
+                        <div class="col-lg-6 col-xs-12 contactForm">
+                                <br />
+                                <br />
+                                <div class="section-title text-left">…ob allgemeine (An)Fragen, Entwicklerthemen oder Partnergesuche - wir freuen uns </div>
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <input required="required" placeholder="Name*" type="text" value="{{ old('fname') }}" class="form-control" name="fname" id="lname"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <input type="email" class="form-control" placeholder="E-Mail-Adresse*" name="email" value=""  id="email"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <input type="text" class="form-control" placeholder="Telefonnummer*" name="email" value=""  id="email"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <input type="text" class="form-control" placeholder="Betreff*" name="email" value=""  id="email"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 form-group form-password">
+                                    <textarea style="height:150px !important" class="form-control" placeholder="Nachricht*" name="" id=""></textarea>
+                                </div>
+                            </div>
+                            <div class="row contactFormNotice">
+                                <p class="notice_form" style="color:#000; font-size:11px"> <font color='red'>*</font> Angaben / Eingaben sind erforderlich </p>
+                            </div>
+                            <br /><br />
+                            <div class="row">
+                                <div class="form-group form-password" >
+                                <button class="btn btn-primary button" type="submit" >NACHRICHT SENDEN</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label for="email" class="form-label">Email Address <font color="red"> *</font></label>
-                            <label id="email-error" class="error" for="email" style="display: none;"></label>
-                            <input type="email" class="form-control" name="email" value=""  id="email"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group">
-                            <label for="email" class="form-label">Bettereff <font color="red"> *</font></label>
-                            <input type="email" class="form-control" name="email" value=""  id="email"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 form-group form-password">
-                            <label for="password" class="form-label">Message <font color="red"> *</font></label>
-                            <textarea class="form-control" placeholder="Message" name="" id=""></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="notice_form">*Angaben / Eingaben sind erforderlich </p>
-                    </div>
-                    <div class="row">
-                        <div class="form-group form-password pull-right" style="margin-top:10px; margin-right:18px">
-                          <button class="btn btn-primary" type="submit" >Send Message</button>
-                        </div>
-                    </div>
+                   </div>
                 </div>
-                <div class="col-lg-6 hidden-xs">
-                        <br /><br />
-                    <img class="img-responsive" src="{{ URL::to('/') }}/frontend/contact_form/images/bg-01.jpg">
-                </div>
+
             </fieldset>
         </div>
     </div>
-@section('script')
-<script src="{{ asset('frontend/contact_form/vendor/animsition/js/animsition.min.js')}}"></script>
-<script src="{{ asset('frontend/contact_form/vendor/bootstrap/js/popper.js')}}"></script>
-<script src="{{ asset('frontend/contact_form/vendor/select2/select2.min.js')}}"></script>
-<script>
-    $(".selection-2").select2({
-        minimumResultsForSearch: 20,
-        dropdownParent: $('#dropDownSelect1')
-    });
-</script>
-<!--===============================================================================================-->
-<script src="{{ asset('frontend/contact_form/vendor/daterangepicker/moment.min.js')}}"></script>
-<script src="{{ asset('frontend/contact_form/vendor/daterangepicker/daterangepicker.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('frontend/contact_form/vendor/countdowntime/countdowntime.js')}}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('frontend/contact_form/js/main.js')}}"></script>
 
-@endsection
 @endsection

@@ -95,7 +95,7 @@
     </section>
     <section>
         <div class="container">
-            <h2 class="why5starheading">Why 5Starunity?</h2>
+            {{-- <h2 class="why5starheading">Why 5Starunity?</h2> --}}
             <div class="row rowMargin">
                 <div class="col-sm-6 whyWrap">
                     <div id="news" class="news-block why5starCont">
@@ -221,7 +221,8 @@
                 @endforeach
             </div>
         <div class="row">
-            <div class="col-xs-12 button-container" style="margin:0px">
+            <div class="col-xs-12 button-container" style="margin:0px; margin-top:35px">
+                
                 <a href="/lotteries" class="btn layoutV2-btn">
                     {{ __('menu.view_all_lotteries')}}
                 </a>
@@ -330,11 +331,18 @@
                 <div class="col-md-4 col-xs-12">
                     <div class="testimonial-box">
                         <div class="carousel-caption">
-                            <div class="who" style="    border-radius: 1000px; width: 130px; height: 130px; overflow: hidden; margin-left: 25%;">
+                            <div class="who" style="  border-radius: 1000px; width: 130px; height: 150px; overflow: hidden; margin-left: 25%;">
                                 <img class="lazy" src="{{ URL::to('/') }}/uploads/testimonials/{{$testimonial->image}}"><br />
                             </div>
-                            <p>
-                                    {{$testimonial->detail}}
+                            <p style="text-align:justify">
+                                <?php 
+                                $str = $testimonial->detail;
+                                if( strlen( $testimonial->detail) > 200) {
+                                    $str = explode( "\n", wordwrap( $testimonial->detail, 200));
+                                    $str = $str[0] . '..';
+                                }
+                                echo $str;  
+                                ?>
                             </p>
                             <div class="who-name">
                                 <strong> {{$testimonial->name}} </strong> <br/>

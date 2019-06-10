@@ -1,4 +1,14 @@
 @extends('layouts.app')
+
+@section('style')
+<style>
+.listing_container
+{
+    padding-bottom:0px;
+}
+</style>
+@endsection
+
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -44,12 +54,12 @@
                                     <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
                                         <div class="content_startup_blok current_investment ">
                                             <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
-                                                <div class="stratup_img lazy" data-src="" title="vanilla bean" style="overflow:hidden; height:100px">
+                                                <div class="stratup_img lazy" data-src="" title="{{$lottery->name}}" style="overflow:hidden; height:100px">
                                                     <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{$lottery->product->product_images[0]->pro_image}}">
                                                 </div>
                                             </a>
                                             <div class="row content_info">
-                                                <a itemprop="url" title="vanilla bean" href="/lottery/detail/{{$lottery->lottery_id}}">
+                                                <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
                                                     <h2 class="mb-5px">{{$lottery->name}}</h2>
                                                 </a>
                                                 <p itemprop="description">
@@ -97,7 +107,7 @@
                             </div>
                             <br />
                         <div class="row">
-                            <div class="col-xs-12 button-container" style="margin:0px">
+                            <div class="col-xs-12 button-container" style="margin:0px; margin-top:30px">
                                 <a href="/lotteries" class="btn layoutV2-btn">
                                     {{ __('menu.view_all_lotteries')}}
                                 </a>
@@ -122,7 +132,7 @@
                 <div class="checkout-panel text-center" style=" background-color:#F5F5F5">
                     <div class="section-title">
                             <br />
-                        Freunde werben und gemeinsam Gründer / Entwickler erfolgreich machen
+                        Freunde werben und gemeinsam Entwickler erfolgreich machen
                         </div>
                         <p>Unsere innerste Überzeugung des langfristigen Erfolgs und der Wille bahnbrechende Erfindungen zu unterstützen, ohne den Gründern im Vorfeld ein Exit-Szenario aufzuzeigen, benötigt Sie und eine starke Community. Wir freuen uns bereits direkt mit der Gründung des Vereins starke Partner gefunden zu haben und sind gewillt, unser Netzwerk stetig zu erweitern – jeder Nutzer erhält Zugang zu einzigartigen Angeboten.</p>
                         <br />
@@ -134,7 +144,7 @@
              </div>
         </div>
     </div>
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="col-xs-12 button-container" style="margin:0px">
                 <a href="/partner" class="btn layoutV2-btn">
@@ -142,7 +152,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <br />
 <section class="homepage-newsletter ContentContainer">

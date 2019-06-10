@@ -2135,6 +2135,14 @@ pre code {
     {
         background-image: url(../../graphics/icons/social-twitter.png);
     }
+    .contactForm{
+        position: relative;
+        left: -100px;
+    }
+    .contactFormNotice{
+        position: relative;
+        left: -100px;
+    }
     #remsCheck
     {
         width: 600px;
@@ -17194,6 +17202,7 @@ section.homepage-testimonials .glyphicon-chevron-left {
 section.homepage-testimonials .testimonial-box {
   background-color: #fff;
   padding: 42px;
+  padding-top:20px;
   /*margin-bottom: 25px;*/
 }
 @media (min-width: 1200px) {
@@ -38762,8 +38771,9 @@ html {
   padding-top: 30px;
   padding-bottom: 15px;
   /*min-height:262px;*/
-  height: 165px;
+  height: 149px;
   margin-bottom: 5px;
+  overflow:hidden
 }
 .listing_container .startup_blok .content_startup_blok .content_info:focus,
 .listing_container .startup_blok .content_startup_blok .content_info:active,
@@ -48026,3 +48036,4 @@ input[type='password']:focus {
     font-weight: bold;
     margin-top:40px
 }
+

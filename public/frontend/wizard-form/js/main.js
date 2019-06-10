@@ -3,7 +3,7 @@ $( document ).ready(function() {
     setTimeout(function(){
         isMobile();
     },100);
-    $(".actions").attr('style','position: relative !important; bottom: 115px !important; width: auto !important; float: right; right: 122px');
+    $(".actions").attr('style','position: relative !important; bottom: 170px !important; width: auto !important; float: right; right: 122px');
 });
 function isMobile() {
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
@@ -20,15 +20,26 @@ function isMobile() {
     var form = $("#signup-form");
     form.validate({
         errorPlacement: function errorPlacement(error, element) {
-            if(element[0].id=="state" && $("#"+element[0].id).val()=="")
-                {
-                    $("#state").addClass('form_error');
-                }
-                if(element[0].id=="country" && $("#"+element[0].id).val()=="")
-                {
-                    $("#country").addClass('form_error');
-                }
-            element.before(error);
+          
+            // if(element[0].id=="state" && $("#"+element[0].id).val()=="")
+            //     {
+            //         $("#state").addClass('form_error');
+            //     }
+            //     if(element[0].id=="country" && $("#"+element[0].id).val()=="")
+            //     {
+            //         $("#country").addClass('form_error');
+            //     }
+            // element.before(error);
+            // alert($("#newindex").val());
+            if($("#newindex").val()==1)
+            {
+                $(".actions").attr('style','width:auto; position: relative !important; bottom: 185px !important; float: right; right: 122px');
+            }
+            else if($("#newindex").val()==0)
+            {
+                $(".actions").attr('style','width:auto; position: relative !important; bottom: 170px !important; float: right; right: 122px');
+                $(".actions ul").attr('style','position:relative; top:0px;');
+            }
         },
         rules: {
             username: {
@@ -61,7 +72,7 @@ function isMobile() {
             }
             else
             {
-                $("#id_prrof").css("border","none")
+                $("#id_prrof").css("border","none");
             }
             $(element).valid();
         },
@@ -71,15 +82,24 @@ function isMobile() {
         bodyTag: "fieldset",
         transitionEffect: "slideLeft",
         labels: {
-            previous: 'Previous',
-            next: 'Next',
-            finish: 'Submit',
+            previous: 'ZURÜCK',
+            next: 'WEITER',
+            finish: 'SENDEN',
             current: ''
         },
         titleTemplate: '<div id="title_id_#index#" class="title"><span id="#index#" class="number">#index#</span>#title#</div>',
         onStepChanging: function(event, currentIndex, newIndex)
         {
-
+            $('.actions ul li a').on('click', function (e) {
+                e.preventDefault();
+                //Get the id of parent container of anchor tag here
+                alert($(this).attr('href'));
+                if($(this).attr('href')=="#previous"){
+                    alert('here i am in previous');
+                }
+                
+            });  
+            
             if(newIndex<3)
             {
                 $("#"+newIndex).removeClass('number');
@@ -90,20 +110,19 @@ function isMobile() {
             if(newIndex==2 && isMobile()===false)
             {
                 var ddd = $(".actions ul li a").find(`[href='']`);
-                console.log(ddd);
                 $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
                 $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
             }
             if(newIndex==1 && isMobile()===false)
             {
                 $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-                $(".actions ul").attr('style','top:0px; margin-left:50px');
+                $(".actions ul").attr('style','position:relative; top:0px; margin-left:50px');
             }
 
             if(newIndex==0 && isMobile()===false)
             {
                 $(".actions").attr('style','position: relative !important; bottom: 115px !important; width: auto !important; float: right; right: 122px');
-                $(".actions ul").attr('style','top:0px');
+                $(".actions ul").attr('style','position:relative; top:0px; margin-left:50px');
             }
             if(newIndex==2 && $("#identity_card").val()!="")
             {
@@ -117,10 +136,16 @@ function isMobile() {
             {
                 $("#remsCheck").remove();
             }
-            form.validate().settings.ignore = ":disabled,:hidden";
+            
+            // var title = $('.actions ul li:first-child');
+            // console.log(title.attr('class'));
+           
+            
+                form.validate().settings.ignore = ":disabled,:hidden";
                 $("#state").removeClass('form_error');
                 $("#country").removeClass('form_error');
-            return form.valid();
+                $("#newindex").val(currentIndex);
+                return form.valid();  
         },
         onFinishing: function(event, currentIndex)
         {
