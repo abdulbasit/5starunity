@@ -38,7 +38,7 @@ input[type="text"], input[type="password"], input[type="number"]
                         <div class="col-lg-6 col-xs-12 contactForm">
                                 <br />
                                 <br />
-                                <div class="section-title text-left">…ob allgemeine (An)Fragen, Entwicklerthemen oder Partnergesuche - wir freuen uns </div>
+                                <div class="section-title text-left">…ob allgemeine (An)Fragen, Entwicklerthemen oder <br />- Partnergesuche  wir freuen uns </div>
                             <div class="row">
                                 <div class="col-xs-12 form-group">
                                     <input required="required" placeholder="Name*" type="text" value="{{ old('fname') }}" class="form-control" name="fname" id="lname"/>
