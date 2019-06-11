@@ -20,26 +20,17 @@ function isMobile() {
     var form = $("#signup-form");
     form.validate({
         errorPlacement: function errorPlacement(error, element) {
-          
-            // if(element[0].id=="state" && $("#"+element[0].id).val()=="")
-            //     {
-            //         $("#state").addClass('form_error');
-            //     }
-            //     if(element[0].id=="country" && $("#"+element[0].id).val()=="")
-            //     {
-            //         $("#country").addClass('form_error');
-            //     }
-            // element.before(error);
-            // alert($("#newindex").val());
-            if($("#newindex").val()==1)
-            {
-                $(".actions").attr('style','width:auto; position: relative !important; bottom: 185px !important; float: right; right: 122px');
-            }
-            else if($("#newindex").val()==0)
-            {
-                $(".actions").attr('style','width:auto; position: relative !important; bottom: 170px !important; float: right; right: 122px');
-                $(".actions ul").attr('style','position:relative; top:0px;');
-            }
+
+            if(element[0].id=="state" && $("#"+element[0].id).val()=="")
+                {
+                    $("#state").addClass('form_error');
+                }
+                if(element[0].id=="country" && $("#"+element[0].id).val()=="")
+                {
+                    $("#country").addClass('form_error');
+                }
+            element.before(error);
+
         },
         rules: {
             username: {
@@ -90,16 +81,14 @@ function isMobile() {
         titleTemplate: '<div id="title_id_#index#" class="title"><span id="#index#" class="number">#index#</span>#title#</div>',
         onStepChanging: function(event, currentIndex, newIndex)
         {
-            $('.actions ul li a').on('click', function (e) {
-                e.preventDefault();
-                //Get the id of parent container of anchor tag here
-                alert($(this).attr('href'));
-                if($(this).attr('href')=="#previous"){
-                    alert('here i am in previous');
+
+            setTimeout(function(){
+                var activeButtons =  $('.actions ul').find("li:visible").length;
+                if(activeButtons==3)
+                {
+                     $(".actions ul li:last-child").css("display", "none");
                 }
-                
-            });  
-            
+             },300);
             if(newIndex<3)
             {
                 $("#"+newIndex).removeClass('number');
@@ -107,22 +96,38 @@ function isMobile() {
                 $("#title_id_"+newIndex).css('color','green');
             }
 
-            if(newIndex==2 && isMobile()===false)
+
+            if(newIndex==2 && isMobile()===false && currentIndex==1)
             {
-                var ddd = $(".actions ul li a").find(`[href='']`);
+                alert(newIndex+" => "+currentIndex);
                 $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
                 $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
             }
-            if(newIndex==1 && isMobile()===false)
+
+            if(newIndex==1 && isMobile()===false && currentIndex==1)
             {
+                alert(newIndex+" => "+currentIndex);
+
+                // $('.actions ul li a').on('click', function (e) {
+                //     alert($(this).attr('href'));
+                //     e.preventDefault();
+                //     if($(this).attr('href')=="#previous"){
+                //         $("#signup-form-p-2").css('display','none');
+                //         $("#signup-form-p-1").css('display','none');
+                //         $("#signup-form-p-0").css('display','block');
+                //         alert("tab=>"+newIndex);
+                //         newIndex=0;
+                //     }
+                // });
                 $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-                $(".actions ul").attr('style','position:relative; top:0px; margin-left:50px');
+                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
             }
 
             if(newIndex==0 && isMobile()===false)
             {
-                $(".actions").attr('style','position: relative !important; bottom: 115px !important; width: auto !important; float: right; right: 122px');
-                $(".actions ul").attr('style','position:relative; top:0px; margin-left:50px');
+                alert(newIndex+" => "+currentIndex);
+                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right; right: 122px');
+                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
             }
             if(newIndex==2 && $("#identity_card").val()!="")
             {
@@ -136,16 +141,16 @@ function isMobile() {
             {
                 $("#remsCheck").remove();
             }
-            
+
             // var title = $('.actions ul li:first-child');
             // console.log(title.attr('class'));
-           
-            
+
+
                 form.validate().settings.ignore = ":disabled,:hidden";
                 $("#state").removeClass('form_error');
                 $("#country").removeClass('form_error');
                 $("#newindex").val(currentIndex);
-                return form.valid();  
+                return form.valid();
         },
         onFinishing: function(event, currentIndex)
         {
@@ -174,10 +179,14 @@ function isMobile() {
 
             if($("#identity_card").val()=="")
             {
+                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
                 $("#id_prrof").addClass('form_error');
                 return false;
             }
             else{
+                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
                 $("#id_prrof").removeClass('form_error');
             }
             return form.valid();
@@ -221,22 +230,34 @@ function isMobile() {
     $('#password').pwstrength();
 
     $('#button').click(function () {
+        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
         $("input[type='file']").trigger('click');
-    })
-
+    });
     $("#profile_pic").change(function () {
-        $('#val').text(this.value.replace(/C:\\fakepath\\/i, ''))
+        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+        $('#val').text(this.value.replace(/C:\\fakepath\\/i, ''));
     })
     $("#resident_proof").change(function () {
+        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
         $('.resImg').text(this.value.replace(/C:\\fakepath\\/i, ''))
     })
     $("#identity_card").change(function () {
+
+        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
         $('.idImg').text(this.value.replace(/C:\\fakepath\\/i, ''))
     });
     $("#identity_card_front").change(function () {
+        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
         $('.idImg1').text(this.value.replace(/C:\\fakepath\\/i, ''))
     });
     $("#identity_card_back").change(function () {
+        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
         $('.idImg2').text(this.value.replace(/C:\\fakepath\\/i, ''))
     });
 
@@ -291,6 +312,8 @@ function scollPos() {
 }
 function acceptTerms()
 {
+
+    // $(".actions ul").attr('style','position:relative; top:0px; margin-left:50px');
     if($("#terms_check").is(":checked")===false)
         {
             $( ".actions ul li a" ).last().attr('href',"");

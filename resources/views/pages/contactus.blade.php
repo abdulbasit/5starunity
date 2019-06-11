@@ -32,13 +32,13 @@ input[type="text"], input[type="password"], input[type="number"]
             <fieldset>
                 <div class="col-lg-10 fieldset-content col-lg-offset-1" style="background-image:url('{{ URL::to('/') }}/frontend/contact_form/images/bg-01.jpg'); background-size:cover">
                    <div class="row">
-                    
+
                     <br />
                     <div class="row">
                         <div class="col-lg-6 col-xs-12 contactForm">
                                 <br />
                                 <br />
-                                <div class="section-title text-left">…ob allgemeine (An)Fragen, Entwicklerthemen oder <br />- Partnergesuche  wir freuen uns </div>
+                                <div class="section-title text-left">…ob allgemeine (An)Fragen, Entwicklerthemen oder <br /> Partnergesuche - wir freuen uns </div>
                             <div class="row">
                                 <div class="col-xs-12 form-group">
                                     <input required="required" placeholder="Name*" type="text" value="{{ old('fname') }}" class="form-control" name="fname" id="lname"/>
