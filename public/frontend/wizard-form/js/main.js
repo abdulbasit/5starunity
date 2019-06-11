@@ -99,14 +99,14 @@ function isMobile() {
 
             if(newIndex==2 && isMobile()===false && currentIndex==1)
             {
-                alert(newIndex+" => "+currentIndex);
+                // alert(newIndex+" => "+currentIndex);
                 $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
                 $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
             }
 
             if(newIndex==1 && isMobile()===false && currentIndex==1)
             {
-                alert(newIndex+" => "+currentIndex);
+                // alert(newIndex+" => "+currentIndex);
 
                 // $('.actions ul li a').on('click', function (e) {
                 //     alert($(this).attr('href'));
@@ -125,7 +125,7 @@ function isMobile() {
 
             if(newIndex==0 && isMobile()===false)
             {
-                alert(newIndex+" => "+currentIndex);
+                // alert(newIndex+" => "+currentIndex);
                 $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right; right: 122px');
                 $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
             }
