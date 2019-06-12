@@ -222,7 +222,7 @@
             </div>
         <div class="row">
             <div class="col-xs-12 button-container" style="margin:0px; margin-top:35px">
-                
+
                 <a href="/lotteries" class="btn layoutV2-btn">
                     {{ __('menu.view_all_lotteries')}}
                 </a>
@@ -331,18 +331,27 @@
                 <div class="col-md-4 col-xs-12">
                     <div class="testimonial-box">
                         <div class="carousel-caption">
-                            <div class="who" style="  border-radius: 1000px; width: 130px; height: 130px; overflow: hidden; margin-left: 25%;">
+                            <div class="who" id="who_{{$testimonial->id}}" style="  border-radius: 1000px; width: 130px; height: 130px; overflow: hidden; margin-left: 25%;">
                                 <img class="lazy" src="{{ URL::to('/') }}/uploads/testimonials/{{$testimonial->image}}"><br />
                             </div>
                             <p style="text-align:justify">
-                                <?php 
-                                $str = $testimonial->detail;
-                                if( strlen( $testimonial->detail) > 200) {
-                                    $str = explode( "\n", wordwrap( $testimonial->detail, 200));
-                                    $str = $str[0] . '..';
+                                <?php
+                                if (strlen($testimonial->detail) >= 200)
+                                {
+                                    echo substr($testimonial->detail, 0, 200)."...";
                                 }
-                                echo $str;  
+                                else
+                                {
+                                    echo $testimonial->detail;
+                                }
                                 ?>
+                                <span style="font-size:20px"><a onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> + </a></span>
+                                <div id="{{$testimonial->id}}" style="display:none">{{$testimonial->detail}}
+                                    <div class="who-name pull-right" style="margin-top:50px">
+                                        <strong> {{$testimonial->name}} </strong> <br/>
+                                        <i>Donor</i>
+                                    </div>
+                                </div>
                             </p>
                             <div class="who-name">
                                 <strong> {{$testimonial->name}} </strong> <br/>
@@ -352,42 +361,6 @@
                     </div>
                 </div>
                 @endforeach
-            </div>
-        </div>
-        <div class="container homepage-testimonials-small-devices">
-            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-
-                    <div class="row item active">
-                        <div class="col-xs-12">
-                            <div class="testimonial-box">
-                                <div class="carousel-caption">
-                                    <div class="who">
-                                        <img class="lazy" src="graphics/layout/testimonial_pic_color_1_new_homepage.png"><br />
-                                    </div>
-                                    <p>
-                                        “An easy, straight-forward and comfortable solution for investing venture capital. <br/>Contact is always friendly and the processes run quickly. I like being a customer here.”
-                                    </p>
-                                    <div class="who-name">
-                                        <strong>Hans-Peter P.</strong> <br/>
-                                        <i>Donor</i>
-                                    </div>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel2" data-slide="prev" style="margin-left: -150px;color: #434343;">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel2" data-slide="next" style="margin-right: -150px;color: #434343;">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
     </section>
@@ -429,6 +402,24 @@
             </div>
         </div>
     </div>
+        <div class="modal fade  modal-sm col-lg-offset-2 col-sm-offset-2" id="donorModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    <img src="" id="detailImg" style="width:130px; border-radius:100px">
+                </h4>
+              </div>
+              <div class="modal-body" id="donor_content">
+                <p>Some text in the modal.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
     <script src="{{ asset('frontend/jssor/docs.min.js')}}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{ asset('frontend/jssor/ie10-viewport-bug-workaround.js')}}"></script>
@@ -494,7 +485,24 @@
                     $("#left_arrow").parent().css('top',"87px ");
                     $("#right_arrow").parent().css('top',"87px ");
                  }, 1500);
-
             });
+
+           function donorDetail(id)
+           {
+                $("#donor_content").removeAttr('style');
+                $('#donorModal').modal('toggle');
+                var detail = $("#"+id).html();
+                $("#donor_content").html(detail);
+                var image = $("#who_"+id+' img').attr('src');
+                $("#detailImg").attr('src',image);
+                setTimeout(function(){
+                    var height = $("#donor_content").css('height');
+                    var orig_height = height.split('px');
+                    var height_add = parseInt(orig_height[0])+80;
+                    $("#donor_content").css('height', height_add+'px');
+
+                },200);
+
+           }
         </script>
 @endsection

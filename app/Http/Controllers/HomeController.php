@@ -10,6 +10,7 @@ use App\Models\LotteryContestent;
 use App\Models\Blog;
 use App\Models\Testimonial;
 use App\Models\Slider;
+use App\Models\ContactUs;
 use DB;
 class HomeController extends Controller
 {
@@ -37,6 +38,18 @@ class HomeController extends Controller
         ->get();
         $testimonialData = Testimonial::orderBy('id', 'DESC')->limit('3')->get();
         return view('welcome',compact('lotteryData','blogData','testimonialData','sliderData'));
+    }
+    public function save_contact_us(Request $request)
+    {
+        $lottery_id = ContactUs::create([
+            "name" => $request->get("name"),
+            "email"=>$request->get("email"),
+            "phone"=>$request->get('phone'),
+            "betreff"=>$request->get('betreff'),
+            "msg"=>$request->get('msg'),
+            "created_at"=>""
+        ]);
+        return redirect()->back();
     }
     public function ceo()
     {

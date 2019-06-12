@@ -1,5 +1,16 @@
 
 @extends('layouts.app')
+@section('style')
+<style>
+    .thumbnail > img, .thumbnail a > img{
+        border-radius:100px
+    }
+    .thumbnail
+    {
+        border-radius:100px
+    }
+</style>
+@endsection
 @section('content')
 
 <div class="container pageContent">
@@ -71,7 +82,7 @@
                                     </div>
                                     <div class="col-md-10 col-sm-10">
                                         <div class="panel panel-default arrow left">
-                                        <div class="panel-body">
+                                        <div class="panel-body" style="padding-left:20px !important">
                                             <header class="text-left">
                                             <div class="comment-user"><i class="fa fa-user"></i> {{$blogPostData->blog_comments[$i]->user->name." ".$blogPostData->blog_comments[$i]->user->middle_name." ".$blogPostData->blog_comments[$i]->user->last_name}}</div>
                                             <time class="comment-date" datetime="{{\Carbon\Carbon::parse($comments->created_at)->format('d-m-Y H:i:s')}}"><i class="fa fa-clock-o"></i> {{\Carbon\Carbon::parse($comments->created_at)->toFormattedDateString()}}</time>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\AllowedCountry;
+use App\Models\ContactUs;
 use Auth;
 use DB;
 class AdminController extends Controller
@@ -41,5 +42,10 @@ class AdminController extends Controller
             ]);
         }
         return redirect('admin/settings');
+    }
+    public function contact_us()
+    {
+        $contactus_quries = ContactUs::all();
+        return view('admin.contactus.index',compact('contactus_quries'));
     }
 }
