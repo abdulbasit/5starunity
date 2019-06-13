@@ -47140,36 +47140,30 @@ html, body {
   }
   .change_pic
   {
-    width:90%;
     height:25px;
     text-align:center;
     font-size:12px;
     margin-top:-25px;
     background-color:rgb(255,255,255,0.8);
-    position:absolute
+    position: relative;
   }
   .change_pic:hover
   {
-    width:90%;
     height:25px;
     text-align:center;
     font-size:12px;
     margin-top:-25px;
     background-color:white;
-    position:absolute
+    position:relative
   }
   .change_pic a
   {
       color:blue
   }
-  .profile-userpic img {
-    float: none;
-    margin: 0 auto;
-    width: 50%;
-    height: 132px;
-    -webkit-border-radius: 50% !important;
-    -moz-border-radius: 50% !important;
-    border-radius: 50% !important;
+  .profile-userpic img
+  {
+    height:100%;
+    width:100%
   }
 
   .profile-usertitle {
@@ -48036,4 +48030,13 @@ input[type='password']:focus {
     font-weight: bold;
     margin-top:40px
 }
-
+.profile-userpic
+{
+    width: 130px;
+    border-radius: 100px;
+    overflow: hidden;
+    height: 130px;
+    position: relative;
+    left: 50%;
+    margin-left: -66px;
+}
