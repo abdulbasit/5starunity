@@ -409,7 +409,16 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">
-                    <img src="" id="detailImg" style="width:130px; border-radius:100px; height:130px">
+                    <div class="who" id="who_{{$testimonial->id}}" style="    border-radius: 1000px;
+                            width: 130px;
+                            height: 130px;
+                            overflow: hidden;
+                            margin-left: -76px;
+                            position: relative;
+                            left: 50%;">
+                        <img src="" id="detailImg" style="width:130px; border-radius:100px; height:130px">
+                    </div>
+
                 </h4>
               </div>
               <div class="modal-body" id="donor_content">
