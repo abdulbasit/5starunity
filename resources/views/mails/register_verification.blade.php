@@ -106,12 +106,6 @@
                                 <tr>
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
-                                <tr>
-                                  <td align="center">
-                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">If you did not sign up for this account you can ignore this email and the account
-                                      will be deleted.</p>
-                                  </td>
-                                </tr>
                               </tbody>
                             </table>
                           </td>
