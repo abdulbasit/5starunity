@@ -416,7 +416,7 @@
                             margin-left: -76px;
                             position: relative;
                             left: 50%;">
-                        <img src="" id="detailImg">
+                        <img src="" id="detailImg" style="width:100%">
                     </div>
 
                 </h4>
