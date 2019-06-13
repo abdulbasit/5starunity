@@ -3,11 +3,15 @@
 @section('style')
 <style>
     .thumbnail > img, .thumbnail a > img{
-        border-radius:100px
+        border-radius:100px;
+        height: 91px;
+        width: 100px
     }
     .thumbnail
     {
-        border-radius:100px
+        border-radius:100px;
+        height: 100px;
+        width: 100px
     }
 </style>
 @endsection
