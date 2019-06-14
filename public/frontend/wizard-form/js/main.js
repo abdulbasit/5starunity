@@ -95,40 +95,47 @@ function isMobile() {
                 $("#"+newIndex).addClass('formActive');
                 $("#title_id_"+newIndex).css('color','green');
             }
+            setTimeout(function(){
+                $(".actions").css('display','none');
+            },310);
+            setTimeout(function(){
 
+                var fieldset = $(".body:visible").attr('id');
+                if(fieldset=='signup-form-p-2' && isMobile()===false)
+                {
 
-            if(newIndex==2 && isMobile()===false && currentIndex==1)
-            {
-                // alert(newIndex+" => "+currentIndex);
-                $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
-                $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
-            }
+                    $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
+                    $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
+                }
+                if(fieldset=='signup-form-p-1' && isMobile()===false)
+                {
+                    // alert(newIndex+" => "+currentIndex);
 
-            if(newIndex==1 && isMobile()===false && currentIndex==1)
-            {
-                // alert(newIndex+" => "+currentIndex);
+                    // $('.actions ul li a').on('click', function (e) {
+                    //     alert($(this).attr('href'));
+                    //     e.preventDefault();
+                    //     if($(this).attr('href')=="#previous"){
+                    //         $("#signup-form-p-2").css('display','none');
+                    //         $("#signup-form-p-1").css('display','none');
+                    //         $("#signup-form-p-0").css('display','block');
+                    //         alert("tab=>"+newIndex);
+                    //         newIndex=0;
+                    //     }
+                    // });
+                    $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+                    $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+                }
 
-                // $('.actions ul li a').on('click', function (e) {
-                //     alert($(this).attr('href'));
-                //     e.preventDefault();
-                //     if($(this).attr('href')=="#previous"){
-                //         $("#signup-form-p-2").css('display','none');
-                //         $("#signup-form-p-1").css('display','none');
-                //         $("#signup-form-p-0").css('display','block');
-                //         alert("tab=>"+newIndex);
-                //         newIndex=0;
-                //     }
-                // });
-                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
-            }
-
-            if(newIndex==0 && isMobile()===false)
-            {
-                // alert(newIndex+" => "+currentIndex);
-                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right; right: 122px');
-                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
-            }
+                if(fieldset=='signup-form-p-0' && isMobile()===false)
+                {
+                    // alert(newIndex+" => "+currentIndex);
+                    $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right; right: 122px');
+                    $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+                }
+            },300)
+            setTimeout(function(){
+                $(".actions").fadeIn('slow');
+            },400);
             if(newIndex==2 && $("#identity_card").val()!="")
             {
                 scollPos();
