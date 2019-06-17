@@ -321,7 +321,7 @@ label.error {
                         <div class="row">
                             <div class="col-xs-12 form-group" style="margin:0px">
                                 <label for="email" class="form-label"></label>
-                                <p style="font-size:11px; width:100%">
+                                <p style="font-size:11px; width:100%; line-height:20px">
                                     Wir empfehlen mind. acht Charakter und dabei einen Groß- / Kleinbuchstaben, <br />Ziffern und zwei Sonderzeichen.
                                 </p>
                             </div>

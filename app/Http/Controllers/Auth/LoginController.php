@@ -47,7 +47,7 @@ class LoginController extends Controller
     else  if (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
     {
         Auth::guard('client')->logout();
-        return redirect()->route('login')->with('error','Login not possible. Please check your email to verify your account. ');
+        return redirect()->route('login')->with('error',' E-Mail-Adresse nicht verifiziert; bitte überprüfen Sie Ihren Mail-Account.');
     }
       // if unsuccessful, then redirect back to the login with the form data
       return redirect()->route('login')->with('error','Invalid credentionals please try again with correct information! ');

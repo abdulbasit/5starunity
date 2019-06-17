@@ -2,15 +2,16 @@
 @section('content')
 <div class="container">
     <div class="">
-            <div class="section-title text-left font-48">
+            <div class="section-title text-left">
                 <br />
                 Impressum & mehr
             </div>
+            <p>Angaben gemäß § 5 TMG</p>
             <div class="section-title  text-left">
                 <br />
                 Betreiber der Plattform und zustellfähige Anschrift
             </div>
-            <div class="col-lg-6 col-xs-12">
+            <div class="col-xs-12" style="background-image:url({{ URL::to('/') }}/frontend/graphics/Impressum.jpg); background-size: contain; background-repeat: no-repeat; background-position: right;">
             <p>
                 5starUnity e.V.<br />
                 Karl-Schurz-Strasse 16<br />
@@ -30,12 +31,12 @@
                 Ust-IdNr. gemäß § 27a UStG: DE111111111<br />
             </p>
         </div>
-        <div class="col-lg-6 col-xs-12">
+        {{-- <div class="col-lg-6 col-xs-12">
             <br />
             <br />
-            <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/Impressum.jpg">
+            <img class="img-responsive" src="">
 
-        </div>
+        </div> --}}
 </div>
 <br />
 <div class="container">
@@ -77,7 +78,7 @@
                 Haftungshinweis
             </div>
             <p>
-                Trotz gebührender inhaltlicher Sorgfalt übernimmt 5starUnity e.V. oder deren Verantwortliche keine Haftung für Inhalte externer Links - bei verlinkten Seiten ist ausschließlich 
+                Trotz gebührender inhaltlicher Sorgfalt übernimmt 5starUnity e.V. oder deren Verantwortliche keine Haftung für Inhalte externer Links - bei verlinkten Seiten ist ausschließlich
                 deren Betreiber verantwortlich. Diese Domain inkl. allen angeschlossenen Sub-Domains weisen mit Links auf andere Seiten (einschl. Produkte), weshalb folgendes gilt:
                 5starUnity erklärt ausdrücklich, keinerlei Einfluss auf Gestaltung, Inhalt oder Zahlungsmodalitäten hat und distanziert sich von Inhalten aller verlinkten Seiten.
             </p>

@@ -18,7 +18,8 @@ input[type="text"], input[type="password"], input[type="number"]
 }
 .form-control
 {
-    height:50px !important
+    height:50px !important;
+    box-shadow: none !important
 }
 .button
 {
@@ -27,8 +28,7 @@ input[type="text"], input[type="password"], input[type="number"]
     border-radius: 100px;
     background: green;
     position: relative;
-    left: 50%;
-    margin-left: -139px;
+    margin-left: 20px;
     top: -18px;
 }
 .error {
@@ -49,7 +49,7 @@ input[type="text"], input[type="password"], input[type="number"]
                         <div class="col-lg-6 col-xs-12 contactForm">
                                 <br />
                                 <br />
-                                <div class="section-title text-left">…ob allgemeine (An)Fragen, Entwicklerthemen oder <br /> Partnergesuche - wir freuen uns </div>
+                                <div class="section-title text-left" style="line-height:40px">…ob allgemeine (An)Fragen, Entwicklerthemen oder <br /> Partnergesuche - wir freuen uns </div>
                             <div class="row">
                                 <div class="col-xs-12 form-group">
                                     <label for="name"></label>
@@ -101,6 +101,13 @@ input[type="text"], input[type="password"], input[type="number"]
     <script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/jquery.validate.min.js')}}"></script>
 
 <script>
+    $(".form-control").on('focus',function(){
+        $(".form-control").css('border','1px solid #ccc')
+        var id = $(this).attr('id');
+        $("#"+id).css('border','solid 1px green')
+    }).focusout(function(){
+        $(".form-control").css('border','1px solid #ccc')
+    });
     $.validator.setDefaults({
         submitHandler: function() {
             $("#contact").submit();

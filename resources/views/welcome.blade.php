@@ -94,6 +94,10 @@
        </div>
     </section>
     <section>
+        <br />
+        <br />
+        <br />
+        <br />
         <div class="container">
             {{-- <h2 class="why5starheading">Why 5Starunity?</h2> --}}
             <div class="row rowMargin">
@@ -334,18 +338,22 @@
                             <div class="who" id="who_{{$testimonial->id}}" style="  border-radius: 1000px; width: 130px; height: 130px; overflow: hidden; margin-left: 25%;">
                                 <img class="lazy" src="{{ URL::to('/') }}/uploads/testimonials/{{$testimonial->image}}"><br />
                             </div>
-                            <p style="text-align:justify">
+                            <p style="text-align:justify; margin-top:15px">
                                 <?php
                                 if (strlen($testimonial->detail) >= 200)
                                 {
                                     echo substr($testimonial->detail, 0, 200)."...";
+                                    ?>
+                                    <span><a onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> Mehr </a></span>
+                                <?php
+
                                 }
                                 else
                                 {
                                     echo $testimonial->detail;
                                 }
                                 ?>
-                                <span style="font-size:20px"><a onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> + </a></span>
+
                                 <div id="{{$testimonial->id}}" style="display:none">{{$testimonial->detail}}
                                     <div class="who-name pull-right" style="margin-top:50px">
                                         <strong> {{$testimonial->name}} </strong> <br/>

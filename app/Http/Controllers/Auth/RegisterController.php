@@ -178,7 +178,7 @@ class RegisterController extends Controller
             ]);
         }
         $this->mailSend($mailData);
-        return redirect()->route('login')->with('info','Verification emaiil has been sent to you please check your inbox!');
+        return redirect()->route('login')->with('info',' Bitte überprüfen Sie Ihren Post-Eingang und verifizieren Sie die E-Mail-Adresse.');
     }
     public function verify_email($token)
     {
