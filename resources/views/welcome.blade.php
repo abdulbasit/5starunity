@@ -340,9 +340,9 @@
                             </div>
                             <p style="text-align:justify; margin-top:15px">
                                 <?php
-                                if (strlen($testimonial->detail) >= 200)
+                                if (strlen($testimonial->detail) >= 150)
                                 {
-                                    echo substr($testimonial->detail, 0, 200)."...";
+                                    echo substr($testimonial->detail, 0, 150)."...";
                                     ?>
                                     <span><a onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> Mehr </a></span>
                                 <?php
