@@ -83,7 +83,7 @@
                                         @endif
                                     </div> --}}
                                     <div class="col-md-5 col-xs-12 no-padding pull-right">
-                                        <div class="form-check">
+                                        <div class="form-check" style="margin-left:10px">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                             <label class="form-check-label" for="remember">
                                                 {{ __('Remember Me') }}
