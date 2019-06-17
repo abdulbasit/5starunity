@@ -28,8 +28,9 @@ input[type="text"], input[type="password"], input[type="number"]
     border-radius: 100px;
     background: green;
     position: relative;
-    margin-left: 20px;
+    margin-left: -200px;
     top: -18px;
+    left: 50%;
 }
 .error {
     color: red;

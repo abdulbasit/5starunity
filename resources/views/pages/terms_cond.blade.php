@@ -39,7 +39,7 @@
         </div> --}}
 </div>
 <br />
-<div class="container">
+<div class="container no-padding">
 
     <div class="row profile">
             <br />
