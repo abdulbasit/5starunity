@@ -48040,3 +48040,19 @@ input[type='password']:focus {
     left: 50%;
     margin-left: -66px;
 }
+.btn-primary
+{
+    border: 1px solid rgb(225, 225, 225);
+    border-radius:1000px;
+    background-color:white;
+    color:black;
+    font-size:18px
+}
+.btn-primary:hover
+{
+    border: 1px solid green;
+    background-color:green;
+    color:white;
+    font-size:18px
+
+}

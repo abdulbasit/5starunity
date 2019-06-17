@@ -50,7 +50,7 @@ class LoginController extends Controller
         return redirect()->route('login')->with('error',' E-Mail-Adresse nicht verifiziert; bitte überprüfen Sie Ihren Mail-Account.');
     }
       // if unsuccessful, then redirect back to the login with the form data
-      return redirect()->route('login')->with('error','Invalid credentionals please try again with correct information! ');
+      return redirect()->route('login')->with('error','E-Mail-Adresse und / oder Passwort falsch - bitte versuchen Sie es erneut.');
     //   return redirect()->back()->withInput($request->only('email', 'remember'));
     }
 

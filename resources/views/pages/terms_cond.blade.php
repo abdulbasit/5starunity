@@ -2,11 +2,11 @@
 @section('content')
 <div class="container">
     <div class="">
-            <div class="section-title text-left">
+            <div class="section-title text-left font-48">
                 <br />
                 Impressum & mehr
             </div>
-            <p>Angaben gemäß § 5 TMG</p>
+            <div class="section-title  text-left">Angaben gemäß § 5 TMG</div>
             <div class="section-title  text-left">
                 <br />
                 Betreiber der Plattform und zustellfähige Anschrift

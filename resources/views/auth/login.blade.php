@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+@section('style')
+<style>
+.form-control
+{
+    box-shadow: none !important
+}
+</style>
+@endsection
 @section('content')
 <div class="container">
     <br />
@@ -75,7 +82,7 @@
                                             </a>
                                         @endif
                                     </div> --}}
-                                    <div class="col-md-3 col-xs-12 no-padding pull-right">
+                                    <div class="col-md-5 col-xs-12 no-padding pull-right">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                             <label class="form-check-label" for="remember">
@@ -115,4 +122,15 @@
 </div>
 <br />
 <br />
+@section('script')
+<script>
+     $(".form-control").on('focus',function(){
+        $(".form-control").css('border','1px solid #ccc')
+        var id = $(this).attr('id');
+        $("#"+id).css('border','solid 1px green')
+    }).focusout(function(){
+        $(".form-control").css('border','1px solid #ccc')
+    });
+</script>
+@endsection
 @endsection
