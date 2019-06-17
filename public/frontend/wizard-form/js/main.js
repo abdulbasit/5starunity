@@ -82,6 +82,7 @@ function isMobile() {
         onStepChanging: function(event, currentIndex, newIndex)
         {
 
+
             setTimeout(function(){
                 var activeButtons =  $('.actions ul').find("li:visible").length;
                 if(activeButtons==3)
@@ -152,12 +153,13 @@ function isMobile() {
             // var title = $('.actions ul li:first-child');
             // console.log(title.attr('class'));
 
-
-                form.validate().settings.ignore = ":disabled,:hidden";
-                $("#state").removeClass('form_error');
-                $("#country").removeClass('form_error');
-                $("#newindex").val(currentIndex);
-                return form.valid();
+                if(currentIndex < newIndex)//check if previous button is clicked
+                {
+                    form.validate().settings.ignore = ":disabled,:hidden";
+                    $("#state").removeClass('form_error');
+                    return form.valid();
+                }
+                return form;
         },
         onFinishing: function(event, currentIndex)
         {
@@ -237,34 +239,27 @@ function isMobile() {
     $('#password').pwstrength();
 
     $('#button').click(function () {
-        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
         $("input[type='file']").trigger('click');
     });
     $("#profile_pic").change(function () {
-        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+
         $('#val').text(this.value.replace(/C:\\fakepath\\/i, ''));
     })
     $("#resident_proof").change(function () {
-        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+
         $('.resImg').text(this.value.replace(/C:\\fakepath\\/i, ''))
     })
     $("#identity_card").change(function () {
 
-        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+
         $('.idImg').text(this.value.replace(/C:\\fakepath\\/i, ''))
     });
     $("#identity_card_front").change(function () {
-        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+
         $('.idImg1').text(this.value.replace(/C:\\fakepath\\/i, ''))
     });
     $("#identity_card_back").change(function () {
-        $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-        $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
+
         $('.idImg2').text(this.value.replace(/C:\\fakepath\\/i, ''))
     });
 
