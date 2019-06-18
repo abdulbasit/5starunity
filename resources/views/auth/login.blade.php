@@ -31,7 +31,7 @@
             </div>
         @endif
         <div class="col-lg-8 col-lg-offset-2">
-            <div class="card-header text-center"><h3>{{ __('Login') }}</h3></div>
+                <div class="section-title">{{ __('Login') }}</div>
             <br />
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}">

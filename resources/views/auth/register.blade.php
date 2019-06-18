@@ -630,7 +630,13 @@ label.error {
 //     $(".actions ul li:nth-child(2) a").css('display','none');
 //     $(".actions ul li:nth-child(2) ").append('<a id="validation" href="#" onclick="check_email()">Next</a>');
 // });
-
+$(".form-control").on('focus',function(){
+        $(".form-control").css('border','1px solid #ccc')
+        var id = $(this).attr('id');
+        $("#"+id).css('border','solid 1px green')
+    }).focusout(function(){
+        $(".form-control").css('border','1px solid #ccc')
+    });
 function check_email()
     {
         $("input").prop('disabled', true);
