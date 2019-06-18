@@ -11,7 +11,7 @@
                 <br />
                 Betreiber der Plattform und zustellfähige Anschrift
             </div>
-            <div class="col-xs-12" style="background-image:url({{ URL::to('/') }}/frontend/graphics/Impressum.jpg); background-size: contain; background-repeat: no-repeat; background-position: right;">
+            <div class="col-xs-12 no-padding" style="background-image:url({{ URL::to('/') }}/frontend/graphics/Impressum.jpg); background-size: contain; background-repeat: no-repeat; background-position: right;">
             <p>
                 5starUnity e.V.<br />
                 Karl-Schurz-Strasse 16<br />
