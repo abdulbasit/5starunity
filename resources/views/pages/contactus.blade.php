@@ -23,10 +23,9 @@ input[type="text"], input[type="password"], input[type="number"]
 }
 .button
 {
-    border: 1px solid green;
-    color: white;
+    border: 1px solid black;
+    color: black;
     border-radius: 100px;
-    background: green;
     position: relative;
     margin-left: -200px;
     top: -18px;
@@ -66,7 +65,7 @@ input[type="text"], input[type="password"], input[type="number"]
                             <div class="row">
                                 <div class="col-xs-12 form-group">
                                     <label for="phone"></label>
-                                    <input required type="text" class="form-control" placeholder="Telefonnummer*" name="phone" value=""  id="phone"/>
+                                    <input type="text" class="form-control" placeholder="Telefonnummer" name="phone" value=""  id="phone"/>
                                 </div>
                             </div>
                             <div class="row">
