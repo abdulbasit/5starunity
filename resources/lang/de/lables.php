@@ -26,6 +26,7 @@ return [
     "previous"=>"ZURÜCK",
     "terms_cond"=>"Allgemeine Nutzungsbedingungen gelesen und akzeptieren",
     "data_security"=>"Datenschutzerklärung gelesen und akzeptieren",
-    "above_18"=>"Ich bestätige über 18 Jahre zu sein"
+    "above_18"=>"Ich bestätige über 18 Jahre zu sein",
+    "remember"=>"Angemeldet bleiben"
 ];
 ?>
