@@ -344,9 +344,8 @@
                                 {
                                     echo substr($testimonial->detail, 0, 180)."...";
                                     ?>
-                                    <span><a onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> Mehr </a></span>
+                                    <span><a onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> {{ __('menu.more')}} </a></span>
                                 <?php
-
                                 }
                                 else
                                 {
@@ -357,13 +356,13 @@
                                 <div id="{{$testimonial->id}}" style="display:none">{{$testimonial->detail}}
                                     <div class="who-name pull-right" style="margin-top:50px">
                                         <strong> {{$testimonial->name}} </strong> <br/>
-                                        <i>Donor</i>
+                                        <i>DONOR</i>
                                     </div>
                                 </div>
                             </p>
                             <div class="who-name">
                                 <strong> {{$testimonial->name}} </strong> <br/>
-                                <i>Donor</i>
+                                <i>DONOR</i>
                             </div>
                         </div>
                     </div>
