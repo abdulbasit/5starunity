@@ -58,17 +58,17 @@
             <div class="row">
                 <div class="col-md-offset-1 col-md-10">
                     <div class="row circles-holder">
-                        <div class="col-md-4 c_dist">
+                        <div class="col-md-4 col-sm-4 c_dist">
                             <a href="/register">
                                 <div class="circle c_nd registerCircle"></div>
                             </a>
                         </div>
-                        <div class="col-md-4 c_dist">
+                        <div class="col-md-4 col-sm-4 c_dist">
                             <a href="#">
                             <div class="circle c_nd spendCircle"></div>
                             </a>
                         </div>
-                        <div class="col-md-4 c_dist">
+                        <div class="col-md-4 col-sm-4 c_dist">
                             <a href="/lotter-of-things">
                             <div class="circle c_nd lotteryThingsCircle"></div>
                             </a>
@@ -84,7 +84,7 @@
             </div>
         </div>
     </section>
-    <section class="all-startups-background">
+    <section class="all-startups-background" style="height:100% !important">
          <div class="row">
             <div class="container-fluid">
                 <div class="col-xs-12 button-container text-center button-container-heading" style="padding:0px">
@@ -93,11 +93,7 @@
             </div>
        </div>
     </section>
-    <section>
-        <br />
-        <br />
-        <br />
-        <br />
+    <section style="margin-top:70px">
         <div class="container">
             {{-- <h2 class="why5starheading">Why 5Starunity?</h2> --}}
             <div class="row rowMargin">
