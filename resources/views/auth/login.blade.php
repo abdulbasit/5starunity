@@ -187,7 +187,7 @@ $(".form-control").on('focus',function(){
     var id = $(this).attr('id');
     $("#"+id).css('border','solid 1px green')
 }).focusout(function(){
-    $(".form-control").css('border','1px solid #ccc')
+    $(".f orm-control").css('border','1px solid #ccc')
 });
 </script>
 @endsection

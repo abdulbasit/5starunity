@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @section('style')
+<link rel="stylesheet" media="screen" href="{{ asset('frontend/wizard-form/css/screen.css')}}">
 <style>
 label{
     width:100%;
@@ -31,8 +32,8 @@ input[type="text"], input[type="password"], input[type="number"]
     top: -18px;
     left: 50%;
 }
-.error {
-    color: red;
+.error{
+    border:solid 1px red !important
 }
 </style>
 @endsection
@@ -65,7 +66,7 @@ input[type="text"], input[type="password"], input[type="number"]
                             <div class="row">
                                 <div class="col-xs-12 form-group">
                                     <label for="phone"></label>
-                                    <input type="text" class="form-control" placeholder="Telefonnummer" name="phone" value=""  id="phone"/>
+                                    <input required type="text" class="form-control" placeholder="Telefonnummer" name="phone" id="phone" value=""/>
                                 </div>
                             </div>
                             <div class="row">
@@ -99,8 +100,11 @@ input[type="text"], input[type="password"], input[type="number"]
     </div>
     @section('script')
     <script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/jquery.validate.min.js')}}"></script>
+    <script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/additional-methods.js')}}"></script>
 
 <script>
+
+
     $(".form-control").on('focus',function(){
         $(".form-control").css('border','1px solid #ccc')
         var id = $(this).attr('id');
@@ -108,22 +112,17 @@ input[type="text"], input[type="password"], input[type="number"]
     }).focusout(function(){
         $(".form-control").css('border','1px solid #ccc')
     });
-    $.validator.setDefaults({
-        submitHandler: function() {
-            $("#contact").submit();
-            return false;
-        }
-    });
+    // $.validator.setDefaults({
+    //     submitHandler: function() {
+    //         $("#contact").submit();
+    //         return false;
+    //     }
+    // });
     $().ready(function() {
         // validate the form when it is submitted
         var validator = $("#contact").validate({
             errorPlacement: function(error, element) {
                 $("#"+element.attr( "id" )).css('border','solid 1px red');
-                // Append error within linked label
-                // $( element )
-                //     .closest( "form" )
-                //         .find( "label[for='" + element.attr( "id" ) + "']" )
-                //             .append( error );
             },
             errorElement: "span",
             messages: {
