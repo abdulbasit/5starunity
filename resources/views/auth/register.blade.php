@@ -231,7 +231,15 @@ input[type='file']
     -ms-justify-content: center;
     z-index: -1000;
 }
+.form-group rp
+{
+    border: 0px white !important;
+    display: none !important
 
+}
+.form-group .error{
+    border:solid 1px red !important
+}
 .form_error
 {
     border: solid 1px red !important
@@ -337,9 +345,9 @@ label.error {
                         <br />
                         <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/1regsiter.png">
                     </div>
-                    <div class="fieldset-footer">
-                        &nbsp; {{-- <span>Step 1 of 2</span> --}}
-                    </div>
+                    {{-- <div class="fieldset-footer">
+                        &nbsp; <span>Step 1 of 2</span>
+                    </div> --}}
                 </fieldset>
                 <h3>
                     <span class="title_text">{{ __('content.personal_information')}}</span>
@@ -451,10 +459,10 @@ label.error {
                             </div>
                         </div>
                     </div>
-                    <div class="fieldset-footer">
+                    {{-- <div class="fieldset-footer">
                         &nbsp;
-                        {{-- <span>Step 2 of 2</span> --}}
-                    </div>
+                        <span>Step 2 of 2</span>
+                    </div> --}}
 
                     </div>
                     <div class="col-lg-3 col-lg-offset-1 hidden-xs hidden-md">
@@ -619,7 +627,7 @@ label.error {
 <br />
 <input type="hidden" id="newindex" name="">
 @section('script')
-<script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/jquery.validate.min.js')}}"></script>
+<script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/jquery.validate.js')}}"></script>
 <script src="{{ asset('frontend/wizard-form/vendor/jquery-validation/dist/additional-methods.js')}}"></script>
 <script src="{{ asset('frontend/wizard-form/vendor/jquery-steps/jquery.steps.js')}}"></script>
 <script src="{{ asset('frontend/wizard-form/vendor/minimalist-picker/dobpicker.js')}}"></script>

@@ -20,15 +20,41 @@ function isMobile() {
     var form = $("#signup-form");
     form.validate({
         errorPlacement: function errorPlacement(error, element) {
+            // $("#state").addClass('form_error');
+            // if($("#country").val()=="")
+            //     $("#country").addClass('form_error');
+            // else
+            //     $("#country").removeClass('form_error');
 
-            if(element[0].id=="state" && $("#"+element[0].id).val()=="")
-                {
-                    $("#state").addClass('form_error');
-                }
-                if(element[0].id=="country" && $("#"+element[0].id).val()=="")
-                {
-                    $("#country").addClass('form_error');
-                }
+            // if($("#city").val()=="")
+            //     $("#city").addClass('form_error');
+            // else
+            //     $("#city").removeClass('form_error');
+
+            // if($("#postal_code").val()=="")
+            //     $("#postal_code").addClass('form_error');
+            // else
+            //     $("#postal_code").removeClass('form_error');
+
+            // if($("#postal_code").val()=="")
+            //     $("#phone").addClass('form_error');
+            // else
+            //     $("#phone").removeClass('form_error');
+
+            // if($("#profile_pic").val()=="")
+            //     $("#profile_pic").addClass('form_error');
+            // else
+            //     $("#profile_pic").removeClass('form_error');
+
+            // if($("#identity_card_front").val()=="")
+            //     $("#identity_card_front").addClass('form_error');
+            // else
+            //     $("#identity_card_front").removeClass('form_error');
+
+            // if($("#identity_card_back").val()=="")
+            //     $("#identity_card_back").addClass('form_error');
+            // else
+            //     $("#identity_card_back").removeClass('form_error');
             element.before(error);
 
         },
@@ -46,10 +72,12 @@ function isMobile() {
                 required: true,
                 email : true
             },
-            // identity_card: {
-            //     required: true,
-            //     email : true
-            // }
+            country: {
+                required: true
+            },
+            city: {
+                required: true
+            }
         },
         messages : {
             email: {
@@ -104,32 +132,16 @@ function isMobile() {
                 var fieldset = $(".body:visible").attr('id');
                 if(fieldset=='signup-form-p-2' && isMobile()===false)
                 {
-
                     $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
                     $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
                 }
                 if(fieldset=='signup-form-p-1' && isMobile()===false)
                 {
-                    // alert(newIndex+" => "+currentIndex);
-
-                    // $('.actions ul li a').on('click', function (e) {
-                    //     alert($(this).attr('href'));
-                    //     e.preventDefault();
-                    //     if($(this).attr('href')=="#previous"){
-                    //         $("#signup-form-p-2").css('display','none');
-                    //         $("#signup-form-p-1").css('display','none');
-                    //         $("#signup-form-p-0").css('display','block');
-                    //         alert("tab=>"+newIndex);
-                    //         newIndex=0;
-                    //     }
-                    // });
-                    $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
+                    $(".actions").attr('style','position: relative !important; bottom: 105px !important; width: auto !important; float: right;');
                     $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
                 }
-
                 if(fieldset=='signup-form-p-0' && isMobile()===false)
                 {
-                    // alert(newIndex+" => "+currentIndex);
                     $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right; right: 122px');
                     $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
                 }

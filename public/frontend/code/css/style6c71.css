@@ -15583,9 +15583,22 @@ section.homepage-howitworks .circles-holder .circle {
     {
         font-size:14px !important
     }
+    #remember
+    {
+        margin-left:15px !important
+    }
     .why5starContDesc
     {
         top: calc(8% - 10px) !important;
+    }
+    .exBtns
+    {
+        margin-top:20px !important
+    }
+    #logBtnWrap
+    {
+        margin-bottom:30px !important;
+        margin-top:20px !important
     }
     .loginHeading
     {

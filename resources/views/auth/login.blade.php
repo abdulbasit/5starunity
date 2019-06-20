@@ -101,15 +101,15 @@
                     </div>
                     <div class="form-group row mb-0">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-11 col-lg-10">
+                            <div class="col-xs-12 col-sm-11 col-lg-10" id="logBtnWrap">
                                 <div class="pull-right" style="width:100%">
-                                    <div class="col-md-2 col-xs-4 pull-right" style="position:relative; right:5px">
+                                    <div class="col-md-2 col-sm-3 col-xs-4 pull-right" style="position:relative; right:5px">
                                         <button type="submit" class="btn btn-primary" style="margin-top:-5px">
                                             {{ __('Login') }}
                                         </button>
                                     </div>
                                     <div class="col-md-5 col-sm-6 col-xs-8 no-padding pull-right">
-                                        <div class="form-check" style="margin-left:10px">
+                                        <div class="form-check" style="margin-left:10px" id="remember">
                                             <input style="width:20px; height:20px" class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                             <label class="form-check-label" for="remember" style="position: relative; top: -5px; width:auto">
                                                     {{ __('lables.remember')}}
@@ -125,7 +125,7 @@
         </div>
         <div class="col-lg-6 col-lg-offset-3 extraBtns">
             <div class="card-body">
-                <div class="form-group row" style="position:relative; left:4px">
+                <div class="form-group row exBtns" style="position:relative; left:4px">
                     <label for="" class="col-md-6 col-sm-6 col-xs-12 col-form-label text-right">
                         {{-- {{ __('Password') }} --}}
                         Noch nicht registriert?
@@ -137,7 +137,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="form-group row"  style="position:relative; left:4px">
+                <div class="form-group row exBtns"  style="position:relative; left:4px">
                     <label for="" class="col-md-6 col-sm-6 col-xs-12 col-form-label text-right">
                         {{-- {{ __('Password') }} --}}
                         Passwort Vergessen?
