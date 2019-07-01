@@ -40,7 +40,7 @@
 }
 .tableRow
 {
-    margin-top:10px;
+    margin-top:20px;
     margin-bottom:10px
 }
 </style>
@@ -155,7 +155,7 @@
                         <br />
                         <div class="container">
                             <div class="col-md-2 col-sm-4 c_dist">
-                                <a href="/lotteries">
+                                <a href="/lotter-of-things">
                                 <div class="circle c_nd spendCircle"></div>
                                 </a>
                             </div>
