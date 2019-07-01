@@ -32,7 +32,7 @@ return [
     "edit_picture"=>"Bearbeiten",
     "change"=>"ändern",
     "delete"=>"LÖSCHEN ",
-    "my_account"=>"MEIN ACCOUNT",
+    "my_account"=>"MEIN KONTO",
     "register_date"=>"Registrations Datum",
     "verification_status"=>"Verifizierungsstatus",
     "donator_id"=>"Spender-ID",

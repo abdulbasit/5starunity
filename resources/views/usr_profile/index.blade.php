@@ -155,7 +155,7 @@
                         <br />
                         <div class="container">
                             <div class="col-md-2 col-sm-4 c_dist">
-                                <a href="/lotter-of-things">
+                                <a href="/lotteries">
                                 <div class="circle c_nd spendCircle"></div>
                                 </a>
                             </div>
