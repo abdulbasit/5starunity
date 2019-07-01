@@ -109,7 +109,7 @@
                         <br />
                         <div class="row text-right">
                             @if($userInfo['user_data']->status==0)
-                                <a class="editProf" href="{{route('account-settings')}}">Edit Profile</a>
+                                <a class="editProf" href="{{route('account-settings')}}">{{ __('lables.edit_profile')}}</a>
                             @endif
                         </div>
                         <br />

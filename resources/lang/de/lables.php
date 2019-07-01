@@ -49,6 +49,9 @@ return [
     "security"=>"Sicherheit",
     "active"=>"AKTIV",
     "inactive"=>"NICHT VERIFIZIERT",
-    "not_approved"=>"Ihre Dokumente werden noch Geprüft."
+    "not_approved"=>"Ihre Dokumente werden noch Geprüft.",
+    "edit_profile"=>"Profil Bearbeiten",
+    'update'=>"SPEICHERN",
+    "my_lots"=>"Meine Verlosungen"
 ];
 ?>

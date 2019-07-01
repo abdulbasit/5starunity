@@ -59,7 +59,7 @@
                 <li class="@if($route=='lotteries')active @endif">
                     <a href="{{route('lottery.user.purchased')}}">
                     <i class="glyphicon glyphicon-th-list"></i>
-                    {{ __('lables.my_profile')}} </a>
+                    {{ __('lables.my_lots')}} </a>
                 </li>
                 <li class="@if($route=='free_coins')active @endif">
                     <a href="{{route('profile')}}">

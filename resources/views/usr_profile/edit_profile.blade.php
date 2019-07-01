@@ -35,19 +35,19 @@ function getCountrySates()
                     <div class="row profile-body">
                         <div class="col-lg-9 col-xs-12">
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">First Name</div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.first_name')}}</div>
                                 <div class="col-lg-8 col-md-6 col-xs-12">
                                     <input class="form-control" type="text" name="name" value="{{$userInfo['user_data']->name}}">
                                 </div>
                             </div>
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Middle Name</div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.middle_name')}}</div>
                                 <div class="col-lg-8 col-md-6 col-xs-12">
                                     <input class="form-control" type="text" name="mname" value="{{$userInfo['user_data']->middle_name}}">
                                 </div>
                             </div>
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Last Name</div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.last_name')}}</div>
                                 <div class="col-lg-8 col-md-6 col-xs-12">
                                     <input class="form-control" type="text" name="lname" value="{{$userInfo['user_data']->last_name}}">
                                 </div>
@@ -57,11 +57,11 @@ function getCountrySates()
                                 <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" disabled="disabled" name="name" value="{{$userInfo['user_data']->email}}"></div>
                             </div> --}}
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Date of birth </div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.dob')}} </div>
                                 <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="dob" value="{{date('d-m-Y', strtotime($userInfo['user_profile']->dob))}}"></div>
                             </div>
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Country</div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.country')}}</div>
                                 <div class="col-lg-8 col-md-6 col-xs-12">
                                     <select name="country" id="country" class="form-control " onchange="getCountrySates()">
                                         @foreach($countries as $country)
@@ -81,36 +81,36 @@ function getCountrySates()
                                 </div>
                         </div> --}}
                         <div class="row rowSpacing">
-                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">City</div>
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.city')}}</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">
                                 <input type="text" name="city" class="form-control" id="city" value="{{$userInfo['user_profile']->city}}">
                             </div>
                         </div>
                         <div class="row rowSpacing">
-                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Postal Code</div>
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.postal_code')}}</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">
                                 <input type="text" name="postal_code" class="form-control" id="postal_code" value="{{$userInfo['user_profile']->postal_code}}">
                             </div>
                         </div>
                         <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Contact Number</div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.phone_number')}}</div>
                                 <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="contact" id="contact" value="{{$userInfo['user_profile']->user_contact}}"></div>
                             </div>
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Address </div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.address')}} </div>
                                 <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="address" id="address" value="{{$userInfo['user_profile']->address}}"></div>
                             </div>
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Street </div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.street_number')}} </div>
                                 <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="street" id="street" value="{{$userInfo['user_profile']->address}}"></div>
                             </div>
                             <div class="row rowSpacing">
-                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">House Number </div>
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.house_number')}}</div>
                                 <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="house" id="house" value="{{$userInfo['user_profile']->address}}"></div>
                             </div>
                             <div class="row rowSpacing">
                                 <div class="col-lg-12 col-md-6 col-xs-12 text-right">
-                                    <input type="submit" value="Update" class="btn btn-primary">
+                                    <input type="submit" value="{{ __('lables.update')}}" class="btn btn-primary">
                                 </div>
                             </div>
                         </div>
