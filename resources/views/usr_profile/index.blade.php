@@ -68,7 +68,7 @@
                                         <div class="card border-info mx-sm-1 p-3 card_stats">
                                             <div style="margin-top: 15px; float: left; width: 100%;">
                                                 <div class="text-info text-center col-xs-12">5starUnity-Taler</div>
-                                                <div class="text-info text-center col-xs-12"> &euro; @if($available_balance){{$available_balance->total_available_balance}} @else 0 @endif</div>
+                                                <div class="text-info text-center col-xs-12">  @if($available_balance){{$available_balance->total_available_balance}} @else 0 @endif</div>
                                             </div>
                                         </div>
                                     </div>
@@ -155,10 +155,11 @@
                         <br />
                         <div class="container">
                             <div class="col-md-2 col-sm-4 c_dist">
+                                <a href="/lotteries">
                                 <div class="circle c_nd spendCircle"></div>
+                                </a>
                             </div>
-                            <div class="col-md-8 col-sm-8 c_dist">
-                                <br />
+                            <div class="col-md-8 col-sm-8 c_dist" style="margin-top:9px">
                                 <br />
                                 <p>
                                     Wir danken Ihnen für Ihre bisherige Treue, übermittelten Spenden und dafür, <br /> dass Sie gemeinsam mit Vielen unsere Community stärken.

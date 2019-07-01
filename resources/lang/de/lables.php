@@ -35,8 +35,17 @@ return [
     "my_account"=>"MEIN ACCOUNT",
     "register_date"=>"Registrations Datum",
     "verification_status"=>"Verifizierungsstatus",
-    "donator_id"=>"Donator- ID",
+    "donator_id"=>"Spender-ID",
     "personal_link"=>"Link für Freunde",
-    "my_network"=>"Netzwerk"
+    "my_network"=>"Netzwerk",
+    "my_profile"=>"Meine Profildaten",
+    "free_coins"=>"Kostenfreie Taler",
+    "product_partner"=>"Produktpartner",
+    "invite_friends"=>"Freunde werben",
+    "documents_area"=>"Dokumenten-Bereich",
+    "activities"=>"Verlauf / Aktivitäten",
+    "my_contacts"=>"Kontakte / Freunde",
+    "settings"=>"Einstellungen",
+    "security"=>"Sicherheit"
 ];
 ?>

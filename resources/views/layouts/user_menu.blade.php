@@ -14,9 +14,9 @@
                         <a href="javascript:changeProfile()" style="text-decoration: none;">
                             <i class="glyphicon glyphicon-edit"></i> {{ __('lables.change')}}
                         </a>&nbsp;&nbsp;
-                        <a href="profile/picture/remove" style="color: red;text-decoration: none;">
+                        <a href="profile/picture/remove" style="color: red;text-decoration: none; text-transform: lowercase">
                             <i class="glyphicon glyphicon-trash"></i>
-                            {{ __('lables.delete')}}
+                            {{  __('lables.delete')}}
                         </a>
                     </p>
                     <input type="file" id="file" style="display: none"/>
@@ -54,66 +54,66 @@
                 <li class="@if($route=='profile')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="glyphicon glyphicon-user"></i>
-                    My Profile </a>
+                    {{ __('lables.my_profile')}} </a>
                 </li>
                 <li class="@if($route=='lotteries')active @endif">
                     <a href="{{route('lottery.user.purchased')}}">
                     <i class="glyphicon glyphicon-th-list"></i>
-                    My Lots </a>
+                    {{ __('lables.my_profile')}} </a>
                 </li>
                 <li class="@if($route=='free_coins')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="glyphicon glyphicon-cd"></i>
-                    Free Coins </a>
+                    {{ __('lables.free_coins')}}</a>
                 </li>
                 <li class="@if($route=='partner')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="	glyphicon glyphicon-link"></i>
-                    Product Partner </a>
+                    {{ __('lables.product_partner')}}</a>
                 </li>
                 <li class="@if($route=='invite_friends')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="	glyphicon glyphicon-share"></i>
-                    Invite Friends </a>
+                    {{ __('lables.invite_friends')}}</a>
                 </li>
                 <li class="@if($route=='documents_area')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="glyphicon glyphicon-file"></i>
-                    Documents Area </a>
+                    {{ __('lables.documents_area')}}</a>
                 </li>
                 <li class="@if($route=='activities')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="glyphicon glyphicon-list-alt"></i>
-                    Activities </a>
+                    {{ __('lables.activities')}} </a>
                 </li>
                 <li class="@if($route=='my_contacts')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="	glyphicon glyphicon-education"></i>
-                    My Contacts/Friends </a>
+                    {{ __('lables.my_contacts')}}</a>
                 </li>
                 <li class="@if($route=='update-profile') active @endif">
                     @if($userInfo['user_data']->status==0)
                         <a  href="{{route('account-settings')}}">
                         <i class="glyphicon glyphicon-cog"></i>
-                        Settings </a>
+                        {{ __('lables.settings')}} </a>
                     @endif
                 </li>
                 <li class="@if($route=='security')active @endif">
                     <a href="{{route('profile')}}">
                     <i class="	glyphicon glyphicon-lock"></i>
-                    Security </a>
+                    {{ __('lables.security')}} </a>
                 </li>
 
-                <li  class="@if($route=='wallet')active @endif">
+                {{-- <li  class="@if($route=='wallet')active @endif">
                     @if($userInfo['user_data']->status==0)
                         <a href="{{route('wallet')}}">
                         <i class="glyphicon glyphicon-credit-card"></i>
                         Wallet </a>
                     @endif
-                </li>
+                </li> --}}
 
                 <li class="logoutUser">
-                    <a style="color:white" href="{{route('profile')}}">
+                    <a style="color:white" href="/logout">
                     <i class="glyphicon glyphicon-log-out"></i>
                     Logout </a>
                 </li>
