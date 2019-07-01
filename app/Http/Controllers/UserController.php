@@ -14,7 +14,7 @@ use App\Models\UserDocument;
 use App\Models\UserProfile;
 use App\Mail\ChangeMailEmail;
 use Illuminate\Support\Facades\Mail;
-
+use File;
 class UserController extends Controller
 {
     public function __construct()
@@ -119,5 +119,18 @@ class UserController extends Controller
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         $route='dashboard';
         return view('usr_profile.dashboard',compact('userInfo','route'));
+    }
+    public function removePicture()
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $userProfile = UserProfile::where('user_id',$userId)->first();
+        $file_path = public_path().'/uploads/users/profile_pic/'.$userProfile->profile_picture;
+        if (file_exists($file_path) and !empty($file_path)) {
+            File::delete($file_path);
+            //UPDATE database
+            $userProfile->profile_picture = "";
+            $userProfile->save();
+        }
+        return redirect()->back();
     }
 }

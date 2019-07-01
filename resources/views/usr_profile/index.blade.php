@@ -23,7 +23,25 @@
     padding-top: 22px;
     left: 50%;
     box-shadow: 1px 5px 7px #CCC;
-    margin-left: -35px
+    margin-left: -35px;
+    overflow: hidden
+}
+.spendCircle
+{
+    width: 170px;
+    height: 170px;
+    margin:0px;
+    padding: 0px
+}
+.my-card img
+{
+    width: 65px !important;
+    margin-top: -20px
+}
+.tableRow
+{
+    margin-top:10px;
+    margin-bottom:10px
 }
 </style>
 @endsection
@@ -45,34 +63,37 @@
                                 <div class="row w-100">
                                     <div class="col-md-4">
                                         <div class="card border-info shadow text-info p-3 my-card" >
-                                            <span class="fa fa-money" aria-hidden="true"></span>
+                                            <img style="width:100%" src="{{ asset('frontend/img/Taler.jpg')}}" alt=""/>
                                         </div>
                                         <div class="card border-info mx-sm-1 p-3 card_stats">
                                             <div style="margin-top: 15px; float: left; width: 100%;">
-                                                <div class="text-info text-center col-xs-12">Available Balance</div>
+                                                <div class="text-info text-center col-xs-12">5starUnity-Taler</div>
                                                 <div class="text-info text-center col-xs-12"> &euro; @if($available_balance){{$available_balance->total_available_balance}} @else 0 @endif</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="card border-info shadow text-info p-3 my-card" >
-                                            <span class="fa fa-bar-chart" aria-hidden="true"></span>
+                                            <img style="width:100%" src="{{ asset('frontend/img/Taler.jpg')}}" alt=""/>
                                         </div>
                                         <div class="card border-info mx-sm-1 p-3 card_stats">
                                             <div style="margin-top: 15px; float: left; width: 100%;">
-                                                <div class="text-info text-center col-xs-12">Purchased Lots</div>
+                                                <div class="text-info text-center col-xs-12">Bonus-Taler</div>
                                                 <div class="text-info text-center col-xs-12">{{$purchasedLots->count()}}</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="card border-info shadow text-info p-3 my-card" >
-                                            <span class="fa fa-minus-square-o" aria-hidden="true"></span>
+                                        <div class="card border-info shadow text-info p-3 my-card" style="overflow:visible !important" >
+                                            <img src="{{ asset('frontend/img/spay.png')}}" alt="" style="    width: 100px !important;
+                                            margin: 0px;
+                                            margin-left: -15px;
+                                            background: white;"/>
                                         </div>
                                         <div class="card border-info mx-sm-1 p-3 card_stats">
                                             <div style="margin-top: 15px; float: left; width: 100%;">
                                                 <div class="text-info text-center col-xs-12">
-                                                    Total Spent
+                                                    S-PAY
                                                 </div>
                                                 <div class="text-info text-center col-xs-12"> &euro; {{$spent}}</div>
                                             </div>
@@ -84,13 +105,20 @@
                  <br />
                  <div class="row profile-body">
                     <div class="col-lg-9 col-xs-12">
+
+                        <br />
                         <div class="row text-right">
                             @if($userInfo['user_data']->status==0)
                                 <a class="editProf" href="{{route('account-settings')}}">Edit Profile</a>
                             @endif
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Profile Status</div>
+                        <br />
+                        <div class="row tableRow">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.register_date')}}</div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">{{date('d-m-Y H:i:s', strtotime($userInfo['user_profile']->created_at))}}</div>
+                        </div>
+                        <div class="row tableRow">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.verification_status')}}</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">
                                 <strong>
                                     @if($userInfo['user_data']->status==2)
@@ -103,11 +131,44 @@
                                 </strong>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Registered Date </div>
-                            <div class="col-lg-8 col-md-6 col-xs-12">{{date('d-m-Y H:i:s', strtotime($userInfo['user_profile']->created_at))}}</div>
+                        <div class="row tableRow">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.donator_id')}}</div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">
+                                <?php
+
+                                    // echo number_format(00000000000 , 9, ',', '.');
+                                    echo sprintf('%09d', Auth::guard('client')->user()->id)?>
+                            </div>
                         </div>
-                        <div class="row">
+                        <div class="row tableRow">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.personal_link')}}</div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">
+
+                            </div>
+                        </div>
+                        <div class="row tableRow">
+                            <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.my_network')}}</div>
+                            <div class="col-lg-8 col-md-6 col-xs-12">
+
+                            </div>
+                        </div>
+                        <br />
+                        <div class="container">
+                            <div class="col-md-2 col-sm-4 c_dist">
+                                <div class="circle c_nd spendCircle"></div>
+                            </div>
+                            <div class="col-md-8 col-sm-8 c_dist">
+                                <br />
+                                <br />
+                                <p>
+                                    Wir danken Ihnen für Ihre bisherige Treue, übermittelten Spenden und dafür, <br /> dass Sie gemeinsam mit Vielen unsere Community stärken.
+                                </p>
+                                <p>
+                                        <span style="color:#F9B000"><b>Spenden</b></span> können mit Betätigung des Buttons jederzeit durchgeführt werden.
+                                </p>
+                            </div>
+                        </div>
+                        {{-- <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Name</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_data']->name." ".$userInfo['user_data']->middle_name." ".$userInfo['user_data']->last_name}}</div>
                         </div>
@@ -130,7 +191,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Address </div>
                             <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_profile']->address}}</div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-lg-3 col-xs-12"></div>
                 </div>
@@ -235,7 +296,7 @@ function changeProfile() {
                 }
                 $('#loading').css('display', 'none');
                 setTimeout(function(){
-                    location.reload();
+                    // location.reload();
                 },1000);
 
             },

@@ -42,11 +42,13 @@
                         <div class="row w-100">
                             <div class="col-md-4">
                                 <div class="card border-info shadow text-info p-3 my-card" >
-                                    <span class="fa fa-money" aria-hidden="true"></span>
+                                    <span class="fa fa-money" aria-hidden="true">
+                                        <img src="">
+                                    </span>
                                 </div>
                                 <div class="card border-info mx-sm-1 p-3 card_stats">
                                     <div style="margin-top: 15px; float: left; width: 100%;">
-                                        <div class="text-info text-center col-xs-12">Available Balance</div>
+                                        <div class="text-info text-center col-xs-12">Available Balance--</div>
                                         <div class="text-info text-center col-xs-12">234</div>
                                     </div>
                                 </div>

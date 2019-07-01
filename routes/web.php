@@ -78,6 +78,9 @@ Auth::routes();
         Route::post('credit_card', 'WalletController@credit_card')->name('credit_card');
         Route::post('balance/purchase', 'WalletController@donated')->name('balance.purchase');
         Route::get('response', 'WalletController@response')->name('response');
+
+        Route::get('profile/picture/remove', 'UserController@removePicture')->name('profile.picture.remove');
+
     });
     Route::get('balance/capturePayment', 'WalletController@capturePayment')->name('balance.capturePayment');
     Route::get('redirectBack', 'WalletController@redirectBack')->name('redirectBack');

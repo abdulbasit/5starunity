@@ -93,7 +93,7 @@
                                     <li><a class="login uppercase" href="{{ route('login') }}">Log In</a></li>
                                     <li><a class="uppercase" href="{{ route('register') }}">{{ __('menu.register')}}</a></li>
                                 @else
-                                <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MY ACCOUNT&nbsp; <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                <li class="dropdown" id="bigmenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ __('lables.my_account')}} &nbsp;</a>
                                     <div class="dropdown-menu largeDropdown" role="menu" aria-labelledby="bigmenu" style="padding:0px !important; padding-bottom:7px !important">
                                         <div class="row nopadding">
                                             <div class="col-md-12 nopadding text-left">

@@ -1942,7 +1942,13 @@ pre code {
 }
 .green
 {
-    color:green !important
+    color:white !important;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color:green;
+    border-radius:100px
 }
 @media (min-width: 992px) {
     .pr_heading
@@ -48113,4 +48119,12 @@ input[type='password']:focus {
     color:white;
     font-size:18px
 
+}
+.logoutUser
+{
+    background-color:red !important;
+}
+.logoutUser a:hover
+{
+    background-color:red !important;
 }

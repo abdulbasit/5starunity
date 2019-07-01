@@ -27,6 +27,16 @@ return [
     "terms_cond"=>"Allgemeine Nutzungsbedingungen gelesen und akzeptieren",
     "data_security"=>"Datenschutzerklärung gelesen und akzeptieren",
     "above_18"=>"Ich bestätige über 18 Jahre zu sein",
-    "remember"=>"Angemeldet bleiben"
+    "remember"=>"Angemeldet bleiben",
+    //User dashboard links start
+    "edit_picture"=>"Bearbeiten",
+    "change"=>"ändern",
+    "delete"=>"LÖSCHEN ",
+    "my_account"=>"MEIN ACCOUNT",
+    "register_date"=>"Registrations Datum",
+    "verification_status"=>"Verifizierungsstatus",
+    "donator_id"=>"Donator- ID",
+    "personal_link"=>"Link für Freunde",
+    "my_network"=>"Netzwerk"
 ];
 ?>
