@@ -479,144 +479,173 @@ label.error {
                     <div class="fieldset-content">
                         <div class="row">
                             <div class="col-xs-12 terms_cond" id="terms">
-                                    Terms and Conditions
-                                    (English Version)
-
-                                    1.      General Provisions
-
-                                    1.1.      These are the terms and conditions (hereafter "terms") for the use of the website "companisto.com" and all of its subdomains (hereafter "Companisto website") as well as for all business relations between Companisto GmbH, Köpenicker Str. 154, 10997 Berlin, Germany (hereafter "Companisto") and the members of Companisto (hereafter "Companist").
-
-                                    1.2.      Companisto is the operator of the Companisto website and party to all contracts with the Companists.
-
-                                    1.3.      The Companisto website is an online platform that enables Companists to participate directly or indirectly in young companies (hereafter "equity-based crowdfunding project") through borrowed capital, mezzanine capital, or equity (hereafter "participation"). For this purpose, the equity-based crowdfunding project publishes information on the Companisto website, and the Companists may send questions to the equity-based crowdfunding project. In case Companists acquire participations, Companisto does not become a contracting party itself. Participation or purchase contracts are concluded solely between the Companist and the equity-based crowdfunding project, another Companist, or the Companisto Venture Capital GmbH, or the Companisto Beteiligungs GmbH & Co. KG.
-
-                                    1.4.      To all services provided by Companisto (hereafter "services"), the following terms apply exclusively. The terms are accepted by checking the respective box during the purchase of participations or during the registration as a Companist. The terms may be accessed, printed, or saved to a local device at http://www.companisto.com/business-terms at any time, and they are also emailed to the Companist during the purchase of participations.
-
-                                    2.      Registration and Membership Account
-
-                                    2.1.      Some sections of the Companisto website require users to register as Companists. Registration is free of charge. It is done by creating a membership account and agreeing, among other documents, to these terms. By registering, the Companist enters into a contract with Companisto on the use of the Companisto website. By purchasing a participation on the Companisto website, the purchaser simultaneously opens a free membership account.
-
-                                    2.2.      Registration is limited to persons who have full capacity to contract. In particular, minors are not allowed to register on Companisto.
-
-                                    2.3.      The data requested by Companisto during the registration process are to be provided completely and correctly. During the registration, only single persons may be entered as the owner of the membership account (i.e., no married couples or families).
-
-                                    2.4.      Should the data provided during the registration change at a later point in time, the Companist is responsible for correcting the data in the membership account immediately.
-
-                                    2.5.      The Companist is responsible for the use of the membership account and should ensure that the password remains secret. In case the Companist notices unauthorized use of the password or the membership account, Companisto must be notified of this fact.
-
-                                    2.6.      A membership account is not transferable to another person. A person is not allowed to register more than once.
-
-                                    2.7.      Companisto reserves the right to delete membership accounts created during incomplete registrations after a reasonable period of time.
-
-                                    3.      Companisto Website
-
-                                    3.1.      By means of the Companisto website, Companisto solely provides a platform on which Companists may invest in equity-based crowdfunding projects and on which equity-based crowdfunding projects may search for investors. The information on the equity-based crowdfunding projects published on the Companisto website is provided solely by the equity-based crowdfunding projects. Companisto does not check the profitability of the equity-based crowdfunding project. Therefore, Companisto does not guarantee that this information is correct or complete. Information and data marked as "confidential" on the Companisto website (hereafter "confidential information") must be kept confidential. Any confidential information may exclusively be used by the Companist to make an investment decision, and the Companist must keep this information confidential. The Companist must not relay the confidential information to third parties, publish it, or disseminate it in any way. Information that (i) was provided to the Companist by a third party without the breach of a confidentiality agreement and without any obligation to confidentiality; (ii) is already public or (iii) was released by Companisto for the purpose of distribution or publication is not considered confidential information.
-
-                                    3.2.      The Companisto website provides Companists with the technical possibility of using the Companisto website to publish own contents within the framework provided by Companisto. In general, the contents published on the Companisto website by Companists are not checked by Companisto and do not reflect the opinion of Companisto.
-
-                                    3.3.      A friendly, factual, and fair tone is important to the Companisto community. Consequently, Companisto reserves the right not to publish, to delete, to edit, to move, and to close posts that violate the Companisto netiquette. The latest version of netiquette may be accessed at www.companisto.com/netiquette.
-
-                                    4.      Conclusion of a Contract
-
-                                    4.1.      A contract on the purchase of a participation requires that the Companist fill out the payment processing form on the Companisto website and click on the button "Invest Now" or "Purchase Now" at the end of the payment processing form. This, however, does not constitute the conclusion of a contract; instead, the Companist thus makes an offer to purchase a participation under the conditions of the contracts accepted by the Companist in the payment processing form. The Companist concludes a contract with either the equity-based crowdfunding project, another Companist, Companisto Venture Capital GmbH, or Companisto Beteiligungs GmbH & Co. KG. Companisto does not become a contracting party itself. Details are regulated by the contracts accepted by the Companist during the purchase of participations.
-
-                                    4.2.      The contract on the purchase of a participation is not concluded until Companisto confirms the purchase of the participation in an email (participation confirmation). The conclusion of a written contract in addition to the above procedure is not necessary. The Companist has no claim to the conclusion of a contract of participation.
-
-                                    4.3.      The time during which the participations offered on the Companisto website may be purchased is limited. Companisto individually determines the duration of the offer for each equity-based crowdfunding project. Companisto is authorized to extend the duration as often and as much as it deems necessary.
-
-                                    4.4.      If a contract is concluded via the Companisto website, Companisto will provide each of the contracting parties with the data necessary to establish contact with the other party on request.
-
-                                    5.      Processing of Payments
-                                    5.1.      The payments of all participation purchases on the Companisto website are processed solely by payment service providers with the authorization to operate financial transfers. Neither Companisto nor the payment service provider are contracting parties to the share purchase. Companisto is not entitled to obtain ownership or possession of the Companists' funds or securities.
-
-                                    6.      SEPA Direct Debits
-
-                                    6.1.      If a Companist pays for a participation by means of SEPA direct debit, the pre-notification period of the direct debit is reduced to 2 days.
-
-                                    6.2.      In the case of a payment through SEPA direct debit, the Companist shall ensure the availability of sufficient funds on the bank account. Any costs that are due to the non-payment or reversal of a direct debit shall be covered by the Companist unless the non-payment or reversal is caused by Companisto.
-
-                                    7.      Commissions, Premiums, Fees
-
-                                    7.1.      Registration as a Companist is free of charge.
-
-                                    7.2.      If a participation is purchased via the Companisto website, Companisto or Companisto Venture Capital GmbH may charge a commission that is payable by the equity-based crowdfunding project. Details are regulated by the contracts accepted by the Companist during the purchase of participations.
-
-                                    7.3.      Companists may only offset commissions against claims to outstanding credits and against claims due and/or future claims if these claims are legally enforcible or uncontested.
-
-                                    8.      Change or Cancellation of Services
-                                    8.1.      Companisto is not obliged to provide its free services. Conversely, the Companist may stop using the services at any time.
-
-                                    8.2.      The services of Companisto are constantly being redeveloped and may thus change from time to time. For instance, individual features may be added or removed. Companisto may also cancel a service temporarily or permanently, for example because of technical or legal reasons. If possible, particularly in case a service is permanently canceled because of economic reasons, Companisto will notify the Companist of the imminent cancellation within the framework of the respective service.
-
-                                    9.      System Integrity
-
-                                    9.1.      Companisto reserves the right to change, limit, or remove the contents and the functionalities of the website at any time. While Companisto aims to provide its service without any technical difficulties, maintenance work, redevelopment, and/or other issues may limit and/or temporarily prevent the use of the service. Under certain circumstances, this may also lead to data loss. Therefore, Companisto does not guarantee that the service is available or free of technical difficulties or data loss.
-
-                                    10.      Profile Data/Taxes
-
-                                    10.1.      If the Companist has stored data in his/her profile on the Companisto website or if Companisto receives data from financial authorities, Companisto is authorized to use these data and to make them available to those crowdfunding projects in which the Companist has invested as well as to these projects' service providers in order for payouts to the Companists resulting from the Companist's participations (e.g., interest payments or loan repayments) to be made and in order for the necessary declarations, particularly those related to capital gains tax, the German solidarity surcharge, and (if applicable) church tax, to be made to the responsible authorities by Companisto or the crowdfunding projects or these projects' service providers. This includes, but is not limited to, the Companist's first and last name, sex, address, investment amount, bank information, information on tax exemptions, and the Companist's tax identification number.
-
-                                    10.2.      The Companist hereby agrees that Companisto, the crowdfunding projects, and these projects' service providers may request the Companist's church tax information from the German Federal Central Tax Office and any other responsible authority in order for church tax to be paid on behalf of the Companist. The Companist may restrict the submission of his data by the Federal Central Tax Office. In order to do so, the Companist must submit a declaration restricting the submission of his/her data to the Federal Central Tax Office. Once the Companist has restricted the submission of his/her data, this restriction will remain effective until the Companist notifies the Federal Central Tax Office that he/she no longer wishes to restrict the submission.
-
-                                    10.3.      The Companist also agrees that Companisto may transfer the Companist's profile data (including data from the performance of adequacy tests) to Companisto's sister company Companisto Wertpapier GmbH, which operates the sister platform www.companisto-investments.de and will store and process the data in accordance with its privacy policy. The data transfer is carried out for the purpose of the registration on the sister platform and the possibility to invest in projects presented there.
-
-                                    11.      Limitation of Liability
-
-                                    Other legal preconditions for making a claim notwithstanding, the following exclusions and limitations of liability for damages apply to Companisto:
-
-                                    11.1.      Companisto is liable if Companisto is guilty of gross negligence or intent. In the case of ordinary negligence, Companisto is only liable if it fails to fulfil a duty whose fulfillment is essential for the proper performance of the contract and on whose fulfillment the other contracting party may rely (so-called cardinal duty). In all other cases, the parties shall not be liable for damages of any kind, regardless of the subject matter of the claim and including the liability for fault at the conclusion of the contract.
-
-                                    11.2.      If Companisto is liable for ordinary negligence according to point 11.1, the liability of Companisto is limited to the damage that Companisto typically had to expect based on the conditions known at the conclusion of the contract. If the purchase of a participation or a contract related to this purchase is null and void, potential claims of the Companist against Companisto resulting from this fact are limited to the refund of the amount paid for the purchase of the participation.
-
-                                    11.3.      The above exclusions and limitations of liability do not apply to cases where Companisto guarantees the nature of the goods nor to damages payable according to product liability laws nor to damage resulting from loss of life, physical injury, or damage to health.
-
-                                    11.4.      The above exclusions and limitations of liability also apply to the employees of Companisto, vicarious agents, and other third parties used by Companisto to fulfill the contract.
-
-                                    12.      Termination of the User Relationship
-
-                                    12.1.      The usage agreement for the Companisto website is made for an indefinite period and may be terminated with immediate effect by both Companisto and the Companist at any time. To terminate the usage agreement, the Companist has to send an email to service@companisto.com.
-
-                                    12.2.      Companisto is authorized to exclude a Companist from forums, the comment system, other communication tools offered by Companisto, the Companisto Business Club, new investment opportunities on Companisto, and any other area, service, or system offered by Companisto at any time and without giving any reason or to partially or fully restrict a Companist's access to these areas, services, or systems for a limited or unlimited period.
-
-                                    12.3.      Even in cases where the user relationship is terminated by Companisto and in cases where the Companist's access is restricted, Companisto provides Companists who are holding shares on Companisto with a way of managing their shares on Companisto (i.e., access to the share overview page, access to investor updates, submission of the information necessary for payouts and tax purposes, update of personal information, voting in the case of pooling votes). This, however, does not include usage of the comment system on Companisto or of any other Companisto services not strictly necessary to exercise the rights resulting from the shares.
-
-                                    12.4.      The right to extraordinary termination for good cause remains unaffected.
-
-                                    12.5.      Legal termination rights remain unaffected.
-
-                                    13.      Risk Warning
-
-                                    13.1.      Crowdfunding investments offer opportunities, but they are risk investments. In the worst case, the entire investment amount may be lost, so crowdfunding investments are unsuitable for retirement plans. However, there is no obligation to make further contributions. Investors can minimize the risk by splitting their investment amount between several equity-based crowdfunding projects rather than investing all of it in a single equity-based crowdfunding project. Professional investors often follow this strategy because it causes the risk to be distributed among several investments. In this way, successful investments can balance other less successful investments.
-
-                                    13.2.      Companisto does not provide investment counseling or any other kind of counseling. No information or consultancy contract is concluded. Companisto is not obliged to provide information about ongoing developments within the equity-based crowdfunding project.
-
-                                    13.3.      The majority of shares of the Companists are subordinated profit-participating loans ("partiarische Nachrangdarlehen"). Such loans are shares in a business with similar characteristics as equity. If the company becomes insolvent, the claims of the Companists – just like those of all other shareholders of the company – will be satisfied from the assets in the insolvency only after the claims of all other external creditors have been satisfied.
-
-                                    13.4.      The information on the equity-based crowdfunding projects published on the Companisto website is provided solely by the equity-based crowdfunding projects. Companisto does not check the profitability of the equity-based crowdfunding project.
-
-                                    13.5.      The information on the companies published on the Companisto website is provided solely by the companies. The projections made by the companies do not guarantee successful development of the company in the future. Consequently, crowdfunding investments are only suitable for investors who can cope with the risk of a total loss of the capital invested. All investors make their own independent investment decisions and bear any risks themselves.
-
-                                    13.6.      There is only a limited market for participations in equity-based crowdfunding projects. Because of the lack of an appropriate market, the sale of participations in equity-based crowdfunding projects is possible only to a limited extent.
-
-                                    13.7.      It is the responsibility solely of the Companist to decide whether to invest in equity-based crowdfunding projects by means of the Companisto website and in which equity-based crowdfunding project to invest. The information available on the Companisto website does not constitute a consultancy service of Companisto, and it cannot replace professional advice. Consequently, Companisto recommends that Companists inform themselves about the legal, economic, and tax-related consequences of purchasing a participation before the investment in an equity-based crowdfunding project and during the holding period if necessary. Each purchase of a participation may lead to the loss of the entire investment amount. Therefore, Companists should only invest money whose potential loss they can bear.
-
-                                    14.      Assumption of Contracts
-
-                                    14.1.      In case (i) Companisto files insolvency or (ii) if insolvency proceedings concerning the assets of Companisto have been legally opened or (iii) if the opening of such proceedings has been rejected because of a lack of assets or (iv) if Companisto is liquidated or (v) if Companisto discontinues its operations, Companisto Holding GmbH, registered in the commercial register of the local court (Amtsgericht) Charlottenburg under HRB 141442 B, as well as its subsidiaries are authorized in the context of a genuine contract for the benefit of third parties to maintain the business relationship with the Companist in lieu of Companisto. This includes, in particular, the management and usage of the customer profile and the customer data of the Companist.
-
-                                    15.      Final Provisions
-
-                                    15.1.      German law applies exclusively, excluding the UN Sales Convention (CISG). Venue for the settlement of disputes arising from and in relation to this contract shall be Berlin insofar as is permitted by law.
-
-                                    15.2.      Should there be any contradictions between these terms and other provisions accepted by the Companist, the other provisions have priority. This applies to the contracts on the purchase of participations in particular.
-
-                                    15.3.      Should any individual provision of these terms be or become entirely or partly void or illegal, the validity of the remaining provisions shall in no way be affected. In such case, the void or illegal provision or provisions shall be replaced by statutory law (§ 306 Abs.2 BGB). In all other cases, the contracting parties shall make a valid provision as similar as possible to the original provision in an economic sense unless any additional interpretation of the contract has a higher priority or is possible.
-
-                                    15.4.      Companisto reserves the right to change these terms at any time and without giving reasons. The changed terms will be emailed to the Companists at least two weeks before they come into force. Unless a Companist objects to the new terms in writing or in text form directed toward Companisto within two weeks of receiving the email, the changed terms are considered accepted. Companisto will explicitly notify the Companists of the importance of the two-week period in the email containing the changed terms. The current terms and conditions may be accessed at www.companisto.com/business-terms. If Companists do not agree with the changed terms, they are required to stop using the services provided by Companisto.
-
-                                    15.5.      These terms and conditions are issued in German and English; in the case of discrepancies between the two versions, the German version shall govern.
-
-                                    Last Updated: 03 December 2018
+                                    <strong>1 Allgemeines </strong><br />
+                                    <p>
+                                    (1)	Dies sind unsere Allgemeinen Geschäfts- und Nutzungsbedingungen (nachfolgend kurz: AGB) für alle auf der Plattform „5starUnity.com“ angebotenen Dienstleistungen, Services und sonstigen Eventualitäten, wie bspw. eine Spende zugunsten des Vereins, und alle zu dieser Domain gehörenden Subdomains (nachfolgend: 5starUnity-Webseiten). Ferner gelten diese AGB für alle Geschäftsbeziehungen zwischen dem 5starUnity e.V., Karl-Schurz-Strasse 16, 70190 Stuttgart, Deutschland (kurz: 5starUnity) und den Unterstützern / Spendern / Produktgebern sowie Partnern (nachfolgend: Partner).</p>
+                                        <p>
+                                    (2)	Die Nutzung unserer 5starUnity-Webseiten bestimmt sich ausschließlich nach den vorliegenden AGB; abweichenden Allgemeinen Geschäftsbedingungen der Partner oder von Interessenten, welche ggf. ersuchen, Partner zu werden, wird ausdrücklich widersprochen. Die AGB werden angenommen, indem die entsprechende Schaltfläche bei der Anmeldung als Partner bestätigt wird. Eine aktuell gültige Fassung kann jederzeit unter www.5starUnity.com/Nutzungsbedingungen abgerufen, ausgedruckt oder lokal abgespeichert werden.
+                                        </p>
+                                        <p>
+                                    (3)	Betreiber der 5starUnity-Webseiten sowie Vertragspartei aller Partner, inkl. jener nach §2 der Vereinssatzung zu unterstützenden natürlichen und jusristischen Personen, ist 5starUnity. Abweichende Rechtsverhältnisse richten sich nach den zu schließenden separaten Verträgen und werden involvierten Partnern kund getan.
+                                        </p>
+                                        <p>
+                                    (4)	Alle 5starUnity-Webseiten verstehen sich als Online-Plattform, auf der Partnern die Möglichkeit gegeben wird, mittels Spenden Erfinder und Gründer in der StartUp-Phase und ggf. darüber hinaus finanziell zu unterstützen, um somit die Möglichkeit zu schaffen, Erfindungen, welche insbesondere der Allgemeinheit dienen, marktreif zu gestalten. Für jede Spende erhält der Partner automatisch 5starUnity-Taler (ein Taler entspricht einem gespendeten Euro) auf sein persönliches Partnerkonto gutgeschrieben und besitzt fortan die Möglichkeit, diese in der vereinseigenen Lottery of Things oder sonstigen Konzepten / Produkten einzutauschen. Eine Auszahlung dieser 5starUnity-Taler ist ausgeschlossen.
+                                        </p>
+                                    <strong>
+                                        2 Anmeldung und Partnerkonto
+                                    </strong>
+                                    <p>
+                                    (1)	Die Nutzung diverser Bereiche innerhalb der 5starUnity-Webseite setzt eine kostenfreie Anmeldung als Partner voraus. Ein erfolgreicher Anmeldeprozess bedarf u. a. der Zustimmung zu diesen AGB sowie der Bereitstellung benötigter Verifizierungsdateien. Mit der im Rahmen der Registrierung versendeten Bestätigungs-Mail sowie des Klicks auf den darin enthaltenen Aktivierungs-Link, kommt zwischen 5starUnity und dem Partner ein Vertrag über die Nutzung der 5starUnity-Webseiten zustande.
+                                    </p>
+                                    <p>
+                                    (2)	Eine Anmeldung ist nur unbeschränkt geschäftsfähigen Personen erlaubt, welche insbesondere das 18. Lebensjahr vollendet haben und wahrheitsgemäße Angaben der abgefragten Daten vollständig übermitteln.
+                                    </p>
+                                    <p>
+                                    (3)	Bei der Anmeldung dürfen nur einzelne Personen als Inhaber eines Partnerskonto angegeben werden (d. h. keine Ehepaare oder Familien); Mehrfachregistrierungen (auch durch vorgeschobene Dritte) sind untersagt – eine Übertragbarkeit ist ausgeschlossen.
+                                    </p>
+                                    <p>
+                                    (4)	Alle Partner verpflichten sich, sämtliche angegebene Daten, welche sich nach der Anmeldung ändern, umgehend zu korrigieren und stets aktuell zu halten. Sollte eine selbstständige Abwandlung unmöglich sein, ist ein Änderungswunsch über die interne Mitteilungszentrale inkl. Begleitdokumente zu übermitteln.
+                                    </p>
+                                    <p>
+                                    (5)	Der Partner ist für die Nutzung seines Accounts eigenständig verantwortlich und hat dafür Sorge zu tragen, dass das Passwort keinem Dritten zugänglich gemacht wird. Ferner trägt er die volle Verantwortung für alle Handlungen, welche über sein jeweiliges Profil auf den 5starUnity-Webseiten vorgenommen werden. Sollte der Partner eine unautorisierte oder missbräuchliche Nutzung seines Passworts oder seines Partnerskontos bemerken, ist er verpflichtet, dies 5starUnity unverzüglich mitzuteilen.
+                                    </p>
+                                    <p>
+                                    (6)	5starUnity behält sich das Recht vor, Profile, die mit Einmal-Emailadressen (auch unter Wegwerf-Emailadressen bekannt) registriert wurden, sowie Partnerkonten von nicht vollständig durchgeführten Anmeldungen nach einer angemessenen Zeit zu löschen.
+                                    </p>
+                                    <p>
+                                    (7)	Es besteht kein Anspruch auf Nutzung des und dem damit verbundenem Partnerkonto auf den 5starUnity-Webseiten. 5starUnity behält sich das Recht vor, selbst beim Vorliegen aller Voraussetzungen für eine Aufnahme,  Anmeldungsgesuche ohne Angabe von Gründen abzulehnen und bestätigt an dieser Stelle, dass alle bis zu diesem Zeitpunkt übermittelten Daten automatisch gelöscht werden.
+                                    </p>
+                                    <p>
+                                        <strong>
+                                    3 Nutzung, Verfügbarkeit und Systemintegrität der 5starUnity-Webseiten
+                                        </strong>
+                                    </p>
+                                    <p>
+                                    (1)	5starUnity stellt lediglich eine Plattform zur Verfügung, mittels derer Partner ein persönliches Nutzerkonto eröffnen und Spenden tätigen können. Für getätigte Unterstützungen, welche gem. § 2 Vereinssatzung verwendet werden, erhält der Partner 5starUnity-Taler und kann damit in der vereinseigenen Lotterie Preise gewinnen. Die Informationen / Detailbeschreibungen der Lotterie-Preise auf den 5starUnity-Webseiten werden ausschließlich ohne Gewähr zur Verfügung gestellt; 5starUnity steht daher nicht für die Richtigkeit und Vollständigkeit dieser Informationen ein.
+                                    </p>
+                                    <p>
+                                    (2)	Alle Daten von Parterunternehmungen, Werbeträgern und sonstigen Unterstützern – sowohl im öffentlichen als auch im internen Nutzungsbereich – werden gem. separat vereinbarter Verträge proklamiert. 5starUnity übernimmt keine Verantwortung für Richtigkeit / Vollständigkeit und schließt hiermit etwaige Haftungsansprüche im Vorfeld aus. Sofern 5starUnity Links zu Webseiten Dritter veröffentlicht, wird für deren Inhalt keinerlei Haftung übernommen. Die Inhalte dieser Seiten unterliegen nicht dem Einfluss des Vereins oder der im Auftrag des Vereins handelnden Unternehmung.
+                                    </p>
+                                    <p>
+                                    (3)	Sollten Informationen und Daten als „vertraulich“ gekennzeichnet werden (z. B. innerhalb eines Newsletters nach einer Unterstützung durch unseren Verein), sind alle Partner der Verschwiegenheit verpflichtet. Alle vertraulichen Informationen dürfen ausschließlich zum Zwecke einer (ggf. weiteren) Spendenentscheidung genutzt und müssen vertraulich behandelt werden. Eine Weitergabe an Dritte, Veröffentlichung oder Verbreitung darf ohne Genehmigung von 5starUnity in keiner Art oder Form stattfinden.
+                                    </p>
+                                    <p>
+                                    (4)	Auf den von 5starUnity zur Verfügung gestellten Webseiten bestehen technische Möglichkeiten, selbst Inhalte bzw. Kommentare zu veröffentlichen. Diese veröffentlichten Inhalte werden von 5starUnity grundsätzlich nicht geprüft und stellen nicht die Meinung von 5starUnity dar.
+                                    </p>
+                                    <p>
+                                    (5)	5starUnity ist ein freundlicher, sachlicher und fairer Umgangston wichtig. Deshalb behält sich der Vorstand bzw. die dafür zuständige Abteilung vor, Beiträge und Kommentare nicht zu veröffentlichen, zu löschen, zu bearbeiten, zu verschieben oder zu schließen, sofern ein intern definierter Verstoß vorliegt. 5starUnity wird Verhaltensregeln erstellen und diese im öffentlich zugänglichen Bereich hinterlegen.
+                                    </p>
+                                    <p>
+                                    (6)	Es ist beabsichtigt, eine umfassende Verfügbarkeit der 5starUnity-Webseiten für den Partner zu ermöglichen; dennoch wird an dieser Stelle darauf hingewiesen, dass kein Anspruch auf eine solche Disponibilität besteht, da dieser aus technischen Gründen nicht gewährt werden kann. Ferner sind alle Beteiligten bestrebt, durch Erweiterungen oder Verbesserungen alle 5starUnity-Webseiten an sich, aber auch die allgemeine Sicherheit ständig weiterzuentwickeln – eine eingeschränkte Verfügbarkeit könnte als Folge eintreten. Wartungsarbeiten, die zu einer Einschränkung führen, werden den Partnern angezeigt. Zu entsprechenden Einschränkungen könnte ebenfalls mangelnde technische Ausstattung und / oder mangelnde Internet-Datenqualität beitragen. Letztendlich ist anzumerken, dass 5starUnity jederzeit berechtigt ist, alle Webseiten und deren Angebote vorübergehend einzuschränken, wenn dies aus Kapazitätsgründen, aus Gründen der Sicherheit oder zur Durchführung sonstiger technischer Maßnahmen von Nöten ist oder 5starUnity aus anderen Gründen sinnvoll erscheint. Für Datenverluste wird keine Haftung übernommen.
+                                    </p>
+                                    <strong>
+                                    4 Spenden, Erhalt / Gebrauch von 5starUnity-Talern und Widerrufsrecht
+                                    </strong>
+                                    <p>
+                                    (1)	Nach erfolgreicher Verifizierung stehen jedem Partner interne Bereiche auf der Plattform zur Verfügung. Aufgrund der vom Vorstand festgelegten Altersgrenze kann keine Spende davor getätigt werden. Zur Übermittlung einer Spende benutzt der Partner den im eigenen Hauptmenü vorhandenen Button und folgt den Schritten der Zahlungsabwickler, welche in § 5 näher beschrieben werden. Folgeschritte unterliegen den Bestimmungen der einzelnen Anbieter, 5starUnity übernimmt keine Haftung für diese Abwicklungen.
+                                    </p>
+                                    <p>
+                                    (2)	Sollte ein Partner andenken, größere Beträge (ab 25.000.- Euro) für den ideelen Hauptzweck des Vereins zur Verfügung stellen zu wollen, könnten gesonderte Verträge mit eigenem Rechtsgebaren angefertigt werden. Hierzu bitten wir den Vorstand unter Spenden@5starUnity.com für weitere Vorgehensweisen zu kontaktieren. Bis zur Erstellung einer gesonderten Vereinbarung gelten diese AGB.
+                                    </p>
+                                    <p>
+                                    (3)	Nach einem bestätigten Spendeneingang durch den Zahlungsabwickler an 5starUnity erhält der Partner im Verhältnis 1 Euro = 1 Taler vereinseigene 5starUnity-Taler zur freien Verfügung in sein Backoffice eingebucht. Diese Taler sind als freiwillge Gabe des Vereins für eine Unterstützung anzusehen und können weder ausbezahlt, umgetauscht, weitergegeben oder rückabgewickelt werden. Mit diesen Talern kann der Partner im internen Bereich Lose innerhalb der Lottery of Things sowie alle sonstig angebotenen Produkte / Konzepte erwerben. Es gelten hierbei die Verlosungsbedingungen auf den jeweilig angebotenen Preisen und / oder die Tauschbedingungen bei Produkten / Konzepten von externen Anbietern. 5starUnity übernimmt keine Haftung für Qualität, Herkunft, Vertragsbestimmungen oder sonstige Ungereimtheiten externer Produkte / Konzepte.
+                                    </p>
+                                    <p>
+                                    (4)	Der Zeitpunkt einer Verlosung, die Austellung diverser Produkte, die Einteilung von sonstigen Konzepten / Gegebenheiten obliegt ausschließlich 5starUnity, es besteht kein Anspruch auf bestimmte Artikel. Sollte ein Artikel, der sich bereits in einer aktiven Verlosungsphase befindet und Partner Taler in Lose getauscht haben, zu deaktivieren sein bzw. findet – obgleich welchem Grund – eine Rückabwicklung statt, erhalten alle Partner die dementsprechend eingesetzten Taler gutgeschrieben. Es besteht in diesem Sonderfall kein Anspruch auf tatsächliche Verlosung wobei anzumerken ist, dass 5starUnity alle Möglichkeiten zur Vermeidung dieses Szenarios ausschöpft. Im Gegenzug besteht jederzeit die Chance, dass ein Produkt vor Ablauf der 100% Los-Vergabe verlost wird; die Entscheidung obliegt 5starUnity – in diesem Fall erhöht sich die theoretische Gewinnchance eines jeden Losbesitzers prozentual.
+                                    </p>
+                                    <p>
+                                    (5)	Jede Ziehung findet unter Aufsicht eines Juristen und eines Vorstandes von 5starUnity statt; temporär ist es angedacht und möglich, dass sich ehemalige Gewinner freiwillig als Los-Fee beteiligen. Der Sieger wird max. 72 Stunden nach Bekanntgabe telefonisch und / oder schriftlich kontaktiert – eine Besitzübergabe findet gem. persönlicher Absprache statt, es fallen keine Versand- / Übergabekosten in den freigegebenen Ländern an. Sollte ein Gewinner weder telefonisch noch schriftlich erreichbar sein, wird das Objekt zwei Monate in den Räumlichkeiten von 5starUnity verwahrt. Nach Ablauf der zwei Monate ab Bekanntgabe erlischt für den rechtmäßig gezogenen Gewinner folgerichtiger Besitzanspruch und geht an 5starUnity über. Über eine weitere Mittelverwendung entscheidet der Vorstand einstimmig.
+                                    </p>
+                                    <p>
+                                    (6)	Widerrufsrecht / Widerrufsbelehrung – Akzeptanz der unwiderruflichen Übertragung der Eigentumsrechte: Jede/r Pomotionsartikel / Sachspende wird unwiderruflich eingebracht; alle Eigentumsrechte gehen nach Annahme des Aufnahmeprotokolls durch ein amtierendes Vorstandsmitglied an den Verein über. Nach Übertragung der Rechte hat eine Aushändigung des Gegenstandes zu erfolgen, ein Widerruf ist unzulässig. Die angegebene natürliche / juristische Person bestätigt mit ihrer rechtskräftigen Unterschrift dies gelesen, verstanden und akzeptiert zu haben.
+                                    </p>
+                                    <strong>
+                                     5 Zahlungsabwicklungen für Spenden
+                                    </strong>
+                                    <p>
+                                    (1)	Die Zahlungsabwicklung für sämtliche auf den 5starUnity-Webseiten vorgenommenen Spenden wird ausschließlich von auf der Plattform näher beschriebenen Zahlungsdienstleistern mit der Erlaubnis zum Betreiben von Finanztransfergeschäften durchgeführt.
+                                    </p>
+                                    <p>
+                                    (2)	Hinsichtlich der zur Verfügung gestellten Methoden (bspw: Kreditkarte, PayPal) gelten die jeweiligen Geschäftsbedingungen der einzelnen Anbieter, 5starUnity übernimmt keine Haftung für Vollständigkeit / Korrektheit der Angaben.
+                                    </p>
+                                    <p>
+                                    (3)	Entsprechend anfallende Kosten für etwaige Kursschwankungen bei Fremdwährungen sind stets abzuwägen und beim Zahlungsabwickler im Vorfeld zu erfragen.
+                                    </p>
+                                    <strong>
+                                    6 Gebühren, Kosten und Provisionen
+                                    </strong>
+                                    <p>
+                                    (1)	Die Anmeldung als Partner, eine Teilnahme an der Lottery of Things (bei Verfügbarkeit von Talern) sowie der Erhalt von Preisen innerhalb der freigegebenen Länder ist kostenlos.
+                                    </p>
+                                    <p>
+                                    (2)	Kommt es zu einer separaten Absprache, fällt ggf. eine Provision an, die von Projektpartnern zu begleichen ist. Einzelheiten regeln die von den Partnern bestätigten und unterzeichneten Verträge.
+                                    </p>
+                                    <p>
+                                    (3)	Für angebotene Produkte / Konzepte im internen Bereich können Versandkosten, Nachnahmegebühren oder Ähnliches anfallen; eine genaue Auskunft zusätzlicher Gebühren regeln die jeweiligen Geschäfts- / Verkaufsbedingungen der Partner. 5starUnity übernimmt keine Haftung für die Kostenstrukturen oder sonstigen Gebühren externer Anbindungen.
+                                    </p>
+                                    <p>
+                                    (4)	Mitunter kann es vorkommen, dass Zahlungsabwickler für Spenden eine Kostennote oder Ähnliches in Rechnung stellen. Wir weisen darauf hin, dass diese Kosten vom jeweiligen Spender zu tragen sind; 5starUnity übernimmt nur die mit dem Abwickler eingegangenen Vertragsgebühren.
+                                    </p>
+                                    <strong>
+                                     7 Löschung des Profils / Beendigung und Einschränkung der Plattform-Nutzung
+                                    </strong>
+                                    <p>
+                                    (1)	Die Nutzung für alle 5starUnity-Webseiten wird auf unbestimmte Zeit geschlossen und kann von 5starUnity sowie dem Partner jederzeit mit sofortiger Wirkung beendet werden. Eine Beendigung des Verhältnisses geht mit der unwiderruflichen Löschung des Benutzerprofils einher und muss 5starUnity per E-Mail an Service@5starUnity.com mitgeteilt werden. Löschungen können bis zu 4 Wochen Zeit beanspruchen und sind in Textform (bzw. über die technologischen Funktionen im internen Bereich) zu erklären.
+                                    </p>
+                                    <p>
+                                    (2)	5starUnity ist berechtigt, Partner ohne Angabe von Gründen jederzeit von der Teilnahme an Foren, dem Kommentarsystem oder anderen angebotenen Bereichen, Dienstleistungen oder Systemen auszuschließen bzw. den Zugang teilweise oder in Gänze, zeitweise oder dauerhaft, zu beschränken.
+                                    </p>
+                                    <p>
+                                    (3)	Das beiderseitige Recht zur Löschung aus wichtigem Grund bleibt unberührt.
+                                    </p>
+                                    <strong>
+                                    8 Vertraulichkeit und Datenschutz
+                                    </strong>
+                                    <p>
+                                    (4)	Alle Daten werden von 5starUnity ausschließlich zu den sich aus der Registrierung ergebenden Zwecken unter Beachtung der einschlägigen gesetzlichen Bestimmungen des Datenschutzes gespeichert und verarbeitet (siehe auch geltende Datenschutzerklärung).
+                                    </p>
+                                    <p>
+                                    (5)	Der Nutzer stimmt zu, dass einige personenbezogene Daten des Nutzers an eigene Unternehmen übermittelt werden dürfen. Diese Zustimmung kann der Nutzer jederzeit per E-Mail an Service@5starUnity.com widerrufen.
+                                    </p>
+                                    <p>
+                                     9 Änderungen der Allgemeinen Nutzungsbedingungen
+                                    </p>
+                                    <p>
+                                    (1)	5starUnity ist jederzeit berechtigt, den Inhalt dieser Allgemeinen Nutzungsbedingungen zu ändern bzw. an zukünftige Gegebenheiten anzupassen.
+                                    </p>
+                                    <p>
+                                    (2)	In diesem Fall wird 5starUnity Partnern den Änderungsvorschlag unter Benennung des Grundes und des konkreten Umfangs in Textform (z. B. per E-Mail) mitteilen. Die Änderungen gelten als vom Partner genehmigt, wenn er diesen nicht in mindestens Textform widerspricht. Wir werden den Partner auf diese Folge im Mitteilungsschreiben besonders hinweisen.
+                                    </p>
+                                    <p>
+                                    (3)	Ein Widerspruch muss innerhalb von sechs Wochen nach Zugang der Mitteilung über die Änderung eingegangen sein; übt der Partner sein Widerspruchsrecht aus, gilt der Änderungswunsch als abgelehnt. Im Falle der Ablehnung muss der widersprechende Partner mit einer Beendigung oder Einschränkung der Plattform-Nutzung seitens 5starUnity i.S.d. § 7 rechnen.
+                                    </p>
+                                    <strong>
+                                     10 Salvatorische Klausel
+                                    </strong>
+                                    <p>
+                                    (1)	5starUnity versteht sich als Verein und erhält ausschließlich Spenden, welche nach geltender Satzung verwendet werden dürfen. Für alle Verkäufe, Veräußerungen oder sonstige Gegebenheiten, die ggf. im internen Bereich angeführt werden, ist ausschließlich das dort zu benennende Unternehmen zuständig.
+                                    </p>
+                                    <p>
+                                    (2)	Für die Nutzung der 5starUnity-Webseiten gelten diese AGB; im Allgemeinen verweist der Vorstand von 5starUnity auf § 306 BGB, welcher die Funktionen der salvatorischen Klausel erörtert und beschreibt.
+                                    </p>
+                                    <strong>
+                                     11 Anwendbares Recht, Gerichtsstand
+                                    </strong>
+                                    <p>
+                                    (1)	Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG), sofern dies für 5starUnity von Relevanz ist. Zwingende Bestimmungen des Staates, in dem der Partner seinen gewöhnlichen Aufenthalt hat, bleiben unberührt.
+                                    </p>
+                                    <p>
+                                    (2)	Gerichtsstand für sämtliche Streitigkeiten aus und im Zusammenhang mit Verträgen ist, soweit gesetzlich zulässig, Stuttgart.
+                                    </p>
+                                    <strong>
+                                    12 Schlussbestimmungen
+                                    </strong>
+                                    <p>
+                                    (1)	Sämtliche Nebenabreden müssen schriftlich formuliert und stets beiderseits elektronisch oder persönlich bestätigt werden; es wird festgehalten, dass durch Bestätigung dieser AGB keine Nebenabreden getroffen wurden.
+                                    </p>
+                                    <p>
+                                    (2)	Es wird ausdrücklich darauf hingewiesen, dass eine Nutzung der Plattformen, eine Partnerschaft in jedweder Form oder eine Teilnahme an der Lottery of Things kein Beitritt zum 5starUnity e.V. darstellt bzw. kein Beitritt ermöglicht.
+                                    </p>
                             </div>
                         </div>
                     </div>
