@@ -46,6 +46,9 @@ return [
     "activities"=>"Verlauf / Aktivitäten",
     "my_contacts"=>"Kontakte / Freunde",
     "settings"=>"Einstellungen",
-    "security"=>"Sicherheit"
+    "security"=>"Sicherheit",
+    "active"=>"AKTIV",
+    "inactive"=>"NICHT VERIFIZIERT",
+    "not_approved"=>"Ihre Dokumente werden noch Geprüft."
 ];
 ?>

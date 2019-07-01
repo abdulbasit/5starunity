@@ -95,7 +95,7 @@
                                                 <div class="text-info text-center col-xs-12">
                                                     S-PAY
                                                 </div>
-                                                <div class="text-info text-center col-xs-12"> &euro; {{$spent}}</div>
+                                                <div class="text-info text-center col-xs-12">  {{$spent}}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -122,11 +122,11 @@
                             <div class="col-lg-8 col-md-6 col-xs-12">
                                 <strong>
                                     @if($userInfo['user_data']->status==2)
-                                        <span class="red">Disabled</span>
+                                        <span class="red">{{ __('lables.inactive')}}</span>
                                     @elseif($userInfo['user_data']->status==1)
-                                        <span class="red">Your Account is not approved by the admin yet.</span>
+                                        <span class="red">{{ __('lables.not_approved')}}</span>
                                     @else
-                                        <span class="green">Acitve</span>
+                                        <span class="green">{{ __('lables.active')}}</span>
                                     @endif
                                 </strong>
                             </div>
