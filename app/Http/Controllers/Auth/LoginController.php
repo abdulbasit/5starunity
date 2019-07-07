@@ -42,7 +42,7 @@ class LoginController extends Controller
         if(Session::get('route')!="")
             return redirect(Session::get('route'));
         else
-            return redirect('/profile');
+            return redirect('/dashboard');
     }
     else  if (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
     {

@@ -8,7 +8,7 @@
                 <div class="row">
                     <div style="width:200px;height: 200px; border: 1px solid whitesmoke ;text-align: center;position: relative; border-radius:1000px; overflow:hidden" id="image">
                         <img width="100%" height="100%" id="preview_image" src="{{asset('images/noimage.jpg')}}"/>
-                        <i id="loading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="position: absolute;left: 40%;top: 40%;display: none"></i>
+                         <i id="loading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="position: absolute;left: 40%;top: 40%;display: none"></i>
                     </div>
                     <p style="margin-top:30px">
                         <a href="javascript:changeProfile()" style="text-decoration: none;">

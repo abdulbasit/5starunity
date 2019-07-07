@@ -55,14 +55,14 @@ Auth::routes();
 
     //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {
-        Route::get('profile', 'UserController@index')->name('profile')->middleware('verified');
+        Route::get('profile', 'UserController@profile')->name('profile')->middleware('verified');
         Route::post('change-email', 'UserController@change_mail')->name('change-email');
 
         Route::get('account-settings', 'UserController@profileUpdate')->name('account-settings');
         Route::get('profile-image', 'UserController@immage_upload')->name('profile-image');
         Route::match(['get', 'post'], 'ajax-image-upload', 'Auth\RegisterController@ajaxImage');
         Route::post('profile-update', 'UserController@update')->name('profile-update');
-        Route::get('dashboard', 'UserController@dashboard')->name('dashboard');
+        Route::get('dashboard', 'UserController@index')->name('dashboard');
 
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
@@ -80,6 +80,7 @@ Auth::routes();
         Route::get('response', 'WalletController@response')->name('response');
 
         Route::get('profile/picture/remove', 'UserController@removePicture')->name('profile.picture.remove');
+        Route::get('profile/delete', 'UserController@deleteAccount')->name('profile.delete');
 
     });
     Route::get('balance/capturePayment', 'WalletController@capturePayment')->name('balance.capturePayment');

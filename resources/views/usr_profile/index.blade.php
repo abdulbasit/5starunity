@@ -9,6 +9,7 @@
 }
 .my-card
 {
+    border:none;
     position: relative;
     top: 35px;
     border-radius: 50%;
@@ -22,7 +23,7 @@
     text-align: center;
     padding-top: 22px;
     left: 50%;
-    box-shadow: 1px 5px 7px #CCC;
+    /* box-shadow: 1px 5px 7px #CCC; */
     margin-left: -35px;
     overflow: hidden
 }
@@ -107,12 +108,6 @@
                     <div class="col-lg-9 col-xs-12">
 
                         <br />
-                        <div class="row text-right">
-                            @if($userInfo['user_data']->status==0)
-                                <a class="editProf" href="{{route('account-settings')}}">{{ __('lables.edit_profile')}}</a>
-                            @endif
-                        </div>
-                        <br />
                         <div class="row tableRow">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.register_date')}}</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">{{date('d-m-Y H:i:s', strtotime($userInfo['user_profile']->created_at))}}</div>
@@ -125,6 +120,8 @@
                                         <span class="red">{{ __('lables.inactive')}}</span>
                                     @elseif($userInfo['user_data']->status==1)
                                         <span class="red">{{ __('lables.not_approved')}}</span>
+                                    @elseif($userInfo['user_data']->status==3)    
+                                        <span class="red">Account delete under process </span>
                                     @else
                                         <span class="green">{{ __('lables.active')}}</span>
                                     @endif
@@ -153,9 +150,10 @@
                             </div>
                         </div>
                         <br />
+                        @if($userInfo['user_data']->status==1)
                         <div class="container">
                             <div class="col-md-2 col-sm-4 c_dist">
-                                <a href="/lotteries">
+                                <a href="wallet">
                                 <div class="circle c_nd spendCircle"></div>
                                 </a>
                             </div>
@@ -169,6 +167,7 @@
                                 </p>
                             </div>
                         </div>
+                        @endif
                         {{-- <div class="row">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">Name</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">{{$userInfo['user_data']->name." ".$userInfo['user_data']->middle_name." ".$userInfo['user_data']->last_name}}</div>

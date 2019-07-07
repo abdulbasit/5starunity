@@ -19,7 +19,7 @@ return [
     "select_file"=>"Datei Auswählen",
     "id_front"=>"Ausweis Vorderseite",
     "id_back"=>"Ausweis Rückseite",
-    "address"=>"Straße",
+    "address"=>"Adresszusatz",
     "selct_country"=>"Land Auswählen",
     "submit"=>"BESTÄTIGEN",
     "next"=>"WEITER",
@@ -52,6 +52,7 @@ return [
     "not_approved"=>"Ihre Dokumente werden noch Geprüft.",
     "edit_profile"=>"Profil Bearbeiten",
     'update'=>"SPEICHERN",
-    "my_lots"=>"Meine Verlosungen"
+    "my_lots"=>"Meine Verlosungen",
+    "delete_account"=>"ACCOUNT LÖSCHEN"
 ];
 ?>

@@ -42,6 +42,29 @@ class UserController extends Controller
         $route='profile';
         return view('usr_profile.index',compact('userInfo','route','available_balance','purchasedLots','spent'));
     }
+    public function profile()
+    {
+       
+        $spent = 0;
+        $userId = Auth::guard('client')->user()->id;
+        $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
+        $purchasedLots = Vallet::where('balance','<','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
+
+        foreach($purchasedLots as $spneMoney)
+        {
+            // str_replace("-","",$spneMoney->balance);
+            $spent+=str_replace("-","",$spneMoney->balance);
+        }
+        
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        // dd($userProfile['country_name']->name);
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        // dd($userInfo['user_profile']);
+        $route='profile';
+        return view('usr_profile.profile',compact('userInfo','route','available_balance','purchasedLots','spent'));
+    }
     public function profileUpdate()
     {
         $route='update-profile';
@@ -132,5 +155,14 @@ class UserController extends Controller
             $userProfile->save();
         }
         return redirect()->back();
+    }
+    public function deleteAccount()
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $userData = User::where('users.id',$userId)->first();
+        //update column in case of delete my account 3 for request and 4 for approve deletion account by admin 
+        $userData->status='3';
+        $userData->save();
+        return redirect()->back()->with('notice','Account deletion request has been sent to administrator. You will be inform via email once it approved');
     }
 }
