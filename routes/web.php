@@ -115,6 +115,8 @@ Auth::routes();
         Route::get('user/credit/filter/history/{id}/{type}', 'UserController@creditHistory')->name('user.credit.filter.history');
         Route::post('user/trans/log/{id}/', 'UserController@transLog')->name('user.trans.log');
         Route::get('user/trans/history/{id}/', 'UserController@transactionHistory')->name('user.trans.history');
+        Route::get('user/account/delete', 'UserController@deleteRquest')->name('user.account.delete');
+        Route::get('user/account/deleted', 'UserController@deletedAccounts')->name('user.account.deleted');
 
         Route::get('logout', 'Auth\AdminLoginController@logout');
 

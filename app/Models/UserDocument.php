@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 class UserDocument extends Authenticatable
 {
+    use SoftDeletes;
     // protected $guard = 'admin';
 
     /**
@@ -20,5 +22,5 @@ class UserDocument extends Authenticatable
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
-
+    protected $dates = ['deleted_at'];
 }

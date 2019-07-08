@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Vallet extends Model
 {
+    use SoftDeletes;
     // protected $guard = 'admin';
 
     protected $fillable = [
@@ -16,4 +18,5 @@ class Vallet extends Model
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
+    protected $dates = ['deleted_at'];
 }

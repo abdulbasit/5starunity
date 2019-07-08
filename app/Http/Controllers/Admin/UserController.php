@@ -9,6 +9,7 @@ use App\Models\LotteryContestent;
 use App\Models\Vallet;
 use App\Models\UserDocument;
 use  App\Models\TransLog;
+use  App\Models\BlogComment;
 use Auth;
 class UserController extends Controller
 {
@@ -16,6 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $userData = User::with('userProfile')->get();
+        // dd($userData);
         return view('admin.users.index',compact('userData'));
     }
     public function creditHistory($id,$type="")
@@ -112,9 +114,29 @@ class UserController extends Controller
     public function update_status($id,$status)
     {
         $user = User::where('id',$id)->first();
+        if($status==4)
+            $this->delete($id);
         $user->status =$status;
         $user->save();
         return redirect('admin/users');
+    }
+    public function delete($id)
+    {
+       
+        $deleteProfile = UserProfile::where('user_id',$id);
+        $deleteProfile->delete();
+
+        $deleteBlogComment = BlogComment::where('user_id',$id);
+        $deleteBlogComment->delete();
+
+        $deleteDocuments = userDocument::where('user_id',$id);
+        $deleteDocuments->delete();
+
+        $deleteVallet = Vallet::where('user_id',$id);
+        $deleteVallet->delete();
+
+        $deleteAccount = User::find($id);
+        $deleteAccount->delete();
     }
     public function create()
     {
@@ -123,5 +145,17 @@ class UserController extends Controller
     public function documents()
     {
         return view('admin.users.documents');
+    }
+    public function deleteRquest()
+    {
+        $userData = User::with('userProfile')->where('status','3')->get();
+        
+        return view('admin.users.index',compact('userData'));
+    }
+    public function deletedAccounts()
+    {
+        $userData = User::withTrashed()->restore();
+        dd($userData);
+        return view('admin.users.index',compact('userData'));
     }
 }

@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable; 
+use Illuminate\Database\Eloquent\SoftDeletes;
 class UserProfile extends Authenticatable
 {
+    use SoftDeletes;
     // protected $guard = 'admin';
 
     protected $fillable = [
@@ -25,4 +27,5 @@ class UserProfile extends Authenticatable
     {
         return $this->belongsTo('App\Models\State','state');
     }
+    protected $dates = ['deleted_at'];
 }

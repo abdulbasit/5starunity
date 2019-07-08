@@ -29,17 +29,23 @@
                       <tr>
                         <td>{{$user->name}} {{$user->middle_name}} {{$user->last_name}} </td>
                         <td>{{$user->email}}</td>
-                        <td>{{date('d-m-Y ', strtotime($userData[$i]->userProfile->dob))}}</td>
+                        <td>{{@date('d-m-Y ', strtotime($userData[$i]->userProfile->dob))}}</td>
                         <td>
                             @if($user->status=="0" && $user->verification=="")
                                <span class="badge badge-primary"> Active</span>
                             @elseif($user->status=="1")
-                            <span class="badge badge-warning ml-1">
-                                Verificitaion Pending
+
+                            @elseif($user->status=="4")
+                            <span class="badge badge-danger">
+                                Account Deleted 
                             </span>
                             @elseif($user->verification!="")
                             <span class="badge badge-warning ml-1">
                                 Email Verificitaion Pending
+                            </span>
+                            @elseif($user->status=="3")
+                            <span class="badge badge-warning ml-1">
+                              Delete Account Rquest 
                             </span>
                             @else
                             <span class="badge badge-danger">
@@ -58,12 +64,14 @@
                                     </button>
                                     <div class="dropdown-menu arrow " id="options">
                                         @if($user->status=="1" || $user->status=="2")
-                                            <a class="dropdown-item" href="/admin/user/status/{{$user->id}}/0"><i class="fa fa-check"></i> Acitivate </a>
+                                            <a class="dropdown-item" href="{{ route('admin.user.status',[$user->id,0]) }}"><i class="fa fa-check"></i> Acitivate </a>
+                                        @elseif($user->status=="3")
+                                            <a class="dropdown-item" href="{{ route('admin.user.status',[$user->id,4]) }}"><i class="ft-slash red"></i> Remove</a>
                                         @else
-                                            <a class="dropdown-item" href="/admin/user/status/{{$user->id}}/2"><i class="ft-slash red"></i> Block </a>
-                                        @endif
-                                        <a class="dropdown-item" href="{{ route('admin.user.documents',$user->id) }}"><i class="ft-file-text green"></i> Documents  </a>
-                                        <a class="dropdown-item" href="{{ route('admin.user.credit.history',$user->id) }}"><i class="fa fa-credit-card"></i> Credit History  </a>
+                                              <a class="dropdown-item" href="{{ route('admin.user.status',[$user->id,2]) }}"><i class="ft-slash red"></i> Block </a>
+                                          @endif
+                                          <a class="dropdown-item" href="{{ route('admin.user.documents',$user->id) }}"><i class="ft-file-text green"></i> Documents  </a>
+                                          <a class="dropdown-item" href="{{ route('admin.user.credit.history',$user->id) }}"><i class="fa fa-credit-card"></i> Credit History  </a>
                                     </div>
                                 </div>
                             </div>
