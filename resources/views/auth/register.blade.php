@@ -40,7 +40,8 @@ help{
 }
 label.error
 {
-    right:10px
+    right:10px;
+    border:none
 }
 #val
 {
@@ -238,7 +239,7 @@ input[type='file']
     display: none !important
 
 }
-.form-group .error{
+.form-group input.error{
     border:solid 1px red !important
 }
 .form_error
@@ -310,7 +311,7 @@ label.error {
                             <div class="col-xs-12 form-group">
                                 <label for="email" class="form-label">{{ __('lables.email')}} <font color="red"> *</font></label>
                                 <label id="email-error" class="error" for="email" style="display: none;"></label>
-                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  id="email"/>
+                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"  id="email" onchange="check_email()"/>
                              </div>
                         </div>
                         <div class="row">
@@ -677,6 +678,19 @@ $(".form-control").on('focus',function(){
     });
 function check_email()
     {
+        var email = $("#email").val();
+        var re = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+        var emailFormat = re.test($("#email").val());// this return result in boolean type
+        
+        if (emailFormat===false) {
+            $("#email").addClass('error');
+            $("#email-error").css('display','block');
+            $("#email-error").html('Invalid Email ');
+            $(".actions ul li:nth-child(2) a").removeAttr('href');
+            return false;
+        }
+
         $("input").prop('disabled', true);
         $.ajax({
             method: "POST",
@@ -690,7 +704,8 @@ function check_email()
             {
                 $("#email").addClass('error');
                 $("#email-error").css('display','block');
-                $("#email-error").html('email already register')
+                $("#email-error").html('email already register');
+                $(".actions ul li:nth-child(2) a").removeAttr('href');
                 return false;
             }
             else
@@ -701,6 +716,7 @@ function check_email()
                     'padding-top': '5px',
                     'text-align':'center'
                     });
+                    $(".actions ul li:nth-child(2) a").attr('href','#next');
                 $("#validation").removeAttr("onclick");
                 setTimeout(function(){
                     $(".actions ul li:nth-child(2) a").click();

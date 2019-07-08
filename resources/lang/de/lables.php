@@ -33,7 +33,7 @@ return [
     "change"=>"ändern",
     "delete"=>"LÖSCHEN ",
     "my_account"=>"MEIN KONTO",
-    "register_date"=>"Registrations Datum",
+    "register_date"=>"Registrations -i Datum",
     "verification_status"=>"Verifizierungsstatus",
     "donator_id"=>"Spender-ID",
     "personal_link"=>"Link für Freunde",
@@ -49,10 +49,10 @@ return [
     "security"=>"Sicherheit",
     "active"=>"AKTIV",
     "inactive"=>"NICHT VERIFIZIERT",
-    "not_approved"=>"Ihre Dokumente werden noch Geprüft.",
+    "not_approved"=>"Ihre Dokumente werden noch geprüft.",
     "edit_profile"=>"Profil Bearbeiten",
     'update'=>"SPEICHERN",
     "my_lots"=>"Meine Verlosungen",
-    "delete_account"=>"ACCOUNT LÖSCHEN"
+    "delete_account"=>"Konto LÖSCHEN"
 ];
 ?>

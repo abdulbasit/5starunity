@@ -150,7 +150,7 @@
                             </div>
                         </div>
                         <br />
-                        @if($userInfo['user_data']->status==1)
+                        @if($userInfo['user_data']->status==0)
                         <div class="container">
                             <div class="col-md-2 col-sm-4 c_dist">
                                 <a href="wallet">

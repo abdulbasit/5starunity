@@ -84,7 +84,7 @@
                                 </tr>
                                 <tr>
                                     <td align="right">{{ __('lables.email')}}</td>
-                                    <td>{{$userInfo['user_data']->email}} @if($userInfo['user_data']->status==0)<a style="font-size:13px; color:blue; text-decoration:underline" href="#" data-toggle="modal" data-target="#myModal" id="change_mail">Change</a>@endif</td>
+                                    <td>{{$userInfo['user_data']->email}} @if($userInfo['user_data']->status==0)<a style="font-size:13px; color:blue; text-decoration:underline" href="#" data-toggle="modal" data-target="#myModal" id="change_mail">{{ __('lables.change')}}</a>@endif</td>
                                 </tr>
                                 <tr>
                                     <td></td>
