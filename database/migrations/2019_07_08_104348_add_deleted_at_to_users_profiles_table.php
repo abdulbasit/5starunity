@@ -19,9 +19,6 @@ class AddDeletedAtToUsersProfilesTable extends Migration
         Schema::table('vallets', function (Blueprint $table) {
             $table->softDeletes();
         });
-        Schema::table('blog_comments', function (Blueprint $table) {
-            $table->softDeletes();
-        });
     }
 
     /**
@@ -35,10 +32,6 @@ class AddDeletedAtToUsersProfilesTable extends Migration
             $this->dropColumn('deleted_at');
         });
         Schema::table('vallets', function (Blueprint $table) {
-            $this->dropColumn('deleted_at');
-        });
-        
-        Schema::table('blog_comments', function (Blueprint $table) {
             $this->dropColumn('deleted_at');
         });
     }
