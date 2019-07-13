@@ -11,6 +11,7 @@ use App\Models\Country;
 use App\Models\AllowedCountry;
 use App\Models\State;
 use App\Models\UserDocument;
+use App\Models\InvitationList;
 use App\Models\UserProfile;
 use App\Mail\ChangeMailEmail;
 use Illuminate\Support\Facades\Mail;
@@ -39,7 +40,7 @@ class UserController extends Controller
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         // dd($userInfo['user_profile']);
-        $route='profile';
+        $route='dashboard';
         return view('usr_profile.index',compact('userInfo','route','available_balance','purchasedLots','spent'));
     }
     public function profile()
@@ -165,4 +166,42 @@ class UserController extends Controller
         $userData->save();
         return redirect()->back()->with('notice','Account deletion request has been sent to administrator. You will be inform via email once it approved');
     }
+    public function refer()
+    {
+        $spent = 0;
+        $userId = Auth::guard('client')->user()->id;
+        $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
+        $purchasedLots = Vallet::where('balance','<','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
+
+        foreach($purchasedLots as $spneMoney)
+        {
+            $spent+=str_replace("-","",$spneMoney->balance);
+        }
+        $userData = User::where('users.id',$userId)->first();
+        $emaailsList = InvitationList::where('sender_id',$userId)->get();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='refer';
+        return view('usr_profile.refer_form',compact('userInfo','route','available_balance','purchasedLots','spent','emaailsList'));
+    }
+    public function sendInivte(Request $request)
+    {
+            $userId = Auth::guard('client')->user()->id;
+           
+            $emailsList = $request->get('email_list');
+            foreach(explode(",",$emailsList) as $email){
+                $verification_code = md5($email.date('ymdhis').$userId);
+                InvitationList::create([
+                    'email' => $email,
+                    'sender_id' => $userId,
+                    'status' =>'0',
+                    'type' => "",
+                    'verification_code' => $verification_code
+                ]);
+                $verification_code ="";
+            }
+            return redirect()->back()->with('message','Invitations email sent to your selected users ');
+    }
+
 }

@@ -33,7 +33,7 @@ return [
     "change"=>"ändern",
     "delete"=>"LÖSCHEN ",
     "my_account"=>"MEIN KONTO",
-    "register_date"=>"Registrations -i Datum",
+    "register_date"=>"Registrations-Datum",
     "verification_status"=>"Verifizierungsstatus",
     "donator_id"=>"Spender-ID",
     "personal_link"=>"Link für Freunde",
@@ -53,6 +53,6 @@ return [
     "edit_profile"=>"Profil Bearbeiten",
     'update'=>"SPEICHERN",
     "my_lots"=>"Meine Verlosungen",
-    "delete_account"=>"Konto LÖSCHEN"
+    "delete_account"=>"Konto LÖSCHEN" 
 ];
 ?>

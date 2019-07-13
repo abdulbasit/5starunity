@@ -71,10 +71,11 @@
                     <i class="	glyphicon glyphicon-link"></i>
                     {{ __('lables.product_partner')}}</a>
                 </li>
-                <li class="@if($route=='invite_friends')active @endif">
-                    <a href="{{route('profile')}}">
-                    <i class="	glyphicon glyphicon-share"></i>
-                    {{ __('lables.invite_friends')}}</a>
+                <li class="@if($route=='refer')active @endif">
+                    <a href="{{route('user.refer')}}">
+                        <i class="	glyphicon glyphicon-share"></i>
+                        {{ __('lables.invite_friends')}}
+                    </a>
                 </li>
                 <li class="@if($route=='documents_area')active @endif">
                     <a href="{{route('profile')}}">

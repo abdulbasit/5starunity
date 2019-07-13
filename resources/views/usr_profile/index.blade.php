@@ -105,7 +105,7 @@
                         </div>
                  <br />
                  <div class="row profile-body">
-                    <div class="col-lg-9 col-xs-12">
+                    <div class="col-lg-12 col-xs-12">
 
                         <br />
                         <div class="row tableRow">
@@ -132,15 +132,18 @@
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.donator_id')}}</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">
                                 <?php
-
-                                    // echo number_format(00000000000 , 9, ',', '.');
-                                    echo sprintf('%09d', Auth::guard('client')->user()->id)?>
+                                    $number = Auth::guard('client')->user()->id;
+                                    $length = ceil(log10($number));
+                                    echo $user_number = substr("000000000",$length).number_format($number);
+                                ?>
                             </div>
                         </div>
                         <div class="row tableRow">
                             <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.personal_link')}}</div>
                             <div class="col-lg-8 col-md-6 col-xs-12">
-
+                                <a href="#">
+                                    {{ request()->getSchemeAndHttpHost() }}/{{$userInfo['user_data']->user_name}}?code={{$userInfo['user_data']->referral_code}}
+                                </a>
                             </div>
                         </div>
                         <div class="row tableRow">
@@ -296,7 +299,7 @@ function changeProfile() {
                 }
                 $('#loading').css('display', 'none');
                 setTimeout(function(){
-                    // location.reload();
+                    location.reload();
                 },1000);
 
             },

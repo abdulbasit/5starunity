@@ -63,6 +63,7 @@ Auth::routes();
         Route::match(['get', 'post'], 'ajax-image-upload', 'Auth\RegisterController@ajaxImage');
         Route::post('profile-update', 'UserController@update')->name('profile-update');
         Route::get('dashboard', 'UserController@index')->name('dashboard');
+        Route::get('user/refer', 'UserController@refer')->name('user.refer');
 
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
@@ -72,10 +73,13 @@ Auth::routes();
         Route::get('wallet/filter/{type}', 'WalletController@index')->name('wallets.filter');
         Route::get('lots/numbers/{id}', 'WalletController@detail')->name('lots.numbers');
 
+        Route::post('send_inivte', 'UserController@sendInivte')->name('send_inivte');
+
 
         Route::get('kalarna', 'WalletController@kalarna')->name('kalarna');
         Route::get('paypal', 'WalletController@paypal')->name('paypal');
         Route::post('credit_card', 'WalletController@credit_card')->name('credit_card');
+        
         Route::post('balance/purchase', 'WalletController@donated')->name('balance.purchase');
         Route::get('response', 'WalletController@response')->name('response');
 

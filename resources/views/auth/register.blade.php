@@ -257,7 +257,7 @@ input[type='file']
 }
 label.error {
     right: 10px;
-    width: 100%;
+    width: auto;
     text-align: right;
 }
 .terms_cond
@@ -711,17 +711,13 @@ function check_email()
             else
             {
                 $("#validation").remove();
-                $(".actions ul li:nth-child(2) a").css({
-                    'display': 'block',
-                    'padding-top': '5px',
-                    'text-align':'center'
-                    });
+                $("#email-error").css('display','none');
                     $(".actions ul li:nth-child(2) a").attr('href','#next');
                 $("#validation").removeAttr("onclick");
-                setTimeout(function(){
-                    $(".actions ul li:nth-child(2) a").click();
+                // setTimeout(function(){
+                //     $(".actions ul li:nth-child(2) a").click();
 
-                },500);
+                // },500);
 
                 $("#email").removeClass('error')
             }

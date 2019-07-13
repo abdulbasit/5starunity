@@ -197,19 +197,6 @@ function isMobile() {
                 $("#dob-error").html(' ');
                 $("#dob").removeClass('error');
             }
-
-            if($("#identity_card").val()=="")
-            {
-                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
-                $("#id_prrof").addClass('form_error');
-                return false;
-            }
-            else{
-                $(".actions").attr('style','position: relative !important; bottom: 188px !important; width: auto !important; float: right;');
-                $(".actions ul").attr('style','position:relative; top:0px; margin-left:25px');
-                $("#id_prrof").removeClass('form_error');
-            }
             return form.valid();
         },
         onFinished: function(event, currentIndex) {

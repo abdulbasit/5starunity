@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Mail\RegistrationEmail;
 use Illuminate\Support\Facades\Mail;
+
 use Auth;
 use DB;
 class RegisterController extends Controller
@@ -29,7 +30,6 @@ class RegisterController extends Controller
     public function index()
     {
         $countries = AllowedCountry::with('country')->get();
-
         return view('auth/register',compact('countries'));
     }
     public function ajaxStates(Request $request)
@@ -68,10 +68,14 @@ class RegisterController extends Controller
         $postal_code = $request->get('postal_code');
         $phone = $request->get('phone');
         $verificatation = md5(Carbon::now());
-
+        $referral_code = mt_rand(0,100000);
         $emailCheck = User::where('email',$request->get('email'))->count();
         if($emailCheck>0)
-            return redirect()->route('login')->with('error','Email already registered!');
+            return 'error';
+            // return redirect()->route('login')->with('error','Email already registered!');
+        $get_user_name =  explode("@",$request->get('email'));
+        $user_name = $get_user_name[0];
+        
 
         $user_id = User::create([
             'name' => $request->get('fname'),
@@ -83,9 +87,27 @@ class RegisterController extends Controller
             'status'=>'1',//disabled
             'verification'=>$verificatation
         ]);
+
+        //add user name
+        $checkUserName = User::where("user_name",$user_name)->count();
+        if($checkUserName>0)
+            $user_name = $this->generate_username($user_name, 1000);
+
+        //referral code generate 
+        $referral_code = rand();
+        $referral_code = md5($referral_code.date('ymdhis').$user_id);
+        
+        //generate user code
+        $number = $user_id->id;
+        $length = ceil(log10($number));
+        $user_number = substr("000000000",$length).number_format($number);
+        $user_id->user_name = $user_name.$user_id->id;
+        $user_id->referral_code = substr($referral_code,0,15);
+        $user_id->user_number = $user_number;
+        $user_id->save();
+
         $mailData = array('email_address'=>$request->get('email'),"verification_token"=>$verificatation,
                            "user_name"=> $request->get('fname')." ".$request->get('lname') );
-
 
         if($profile_picture!="")
         {
@@ -164,7 +186,7 @@ class RegisterController extends Controller
 
             //Move Uploaded File
            $id_proofImg = time().'_5star_id_proof.'.$identity_proofImage->getClientOriginalExtension();
-            $identity_proofImage->move($idProofImg, $id_proofImg);
+           $identity_proofImage->move($idProofImg, $id_proofImg);
 
             $product_images = UserDocument::create([
                 "user_id" => $user_id->id,
@@ -177,8 +199,9 @@ class RegisterController extends Controller
                 'created_at'=>Carbon::now(),
             ]);
         }
+        
         $this->mailSend($mailData);
-        return redirect()->route('login')->with('info',' Bitte überprüfen Sie Ihren Post-Eingang und verifizieren Sie die E-Mail-Adresse.');
+        return redirect()->route('login')->with('info',__('messages.register_success_info'));
     }
     public function verify_email($token)
     {
@@ -258,4 +281,15 @@ class RegisterController extends Controller
     {
         File::delete('uploads/users/profile_pic/' . $filename);
     }
+    function generate_username($string_name, $rand_no){
+		$username_parts = array_filter(explode(" ", strtolower($string_name))); //explode and lowercase name
+		$username_parts = array_slice($username_parts, 0, 2); //return only first two arry part
+	
+		$part1 = (!empty($username_parts[0]))?substr($username_parts[0], 0,8):""; //cut first name to 8 letters
+		$part2 = (!empty($username_parts[1]))?substr($username_parts[1], 0,5):""; //cut second name to 5 letters
+		$part3 = ($rand_no)?rand(0, $rand_no):"";
+		
+		$username = $part1. str_shuffle($part2). $part3; //str_shuffle to randomly shuffle all characters 
+		return $username;
+}
 }
