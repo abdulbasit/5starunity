@@ -63,9 +63,13 @@ class HomeController extends Controller
     {
         return view('pages.comming_soon');
     }
-    public function termsCond()
+    public function impresum()
     {
-        return view('pages.terms_cond');
+        return view('pages.impresum');
+    }
+    public function terms()
+    {
+        return view('pages.terms');
     }
     public function inventroAcadmy()
     {
