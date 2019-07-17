@@ -73,7 +73,7 @@
                     @csrf
                     <input type="hidden" name="pre-route" id="pre-route" value="{{Session::get('route')}}">
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-sm-3 col-form-label text-right">
+                        <label for="email" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                 {{ __('lables.email')}}
                         </label>
                         <div class="col-md-6 col-sm-7">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-sm-3 col-form-label text-right" style="margin-top:10px">{{ __('lables.password')}}</label>
+                        <label for="password" class="col-md-4 col-sm-3 col-form-label text-right" style="margin-top:11px">{{ __('lables.password')}}</label>
                         <div class="col-md-6 col-sm-7">
                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
@@ -104,7 +104,7 @@
                             <div class="col-xs-12 col-sm-11 col-lg-10" id="logBtnWrap">
                                 <div class="pull-right" style="width:100%">
                                     <div class="col-md-2 col-sm-3 col-xs-4 pull-right" style="position:relative; right:5px">
-                                        <button type="submit" class="btn btn-primary" style="margin-top:-5px">
+                                        <button type="submit" class="btn btn-primary" style="margin-top:-5px; background-color:green; color:white; border:none">
                                             {{ __('Login') }}
                                         </button>
                                     </div>
