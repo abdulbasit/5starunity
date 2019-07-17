@@ -104,7 +104,7 @@
                             <div class="col-xs-12 col-sm-11 col-lg-10" id="logBtnWrap">
                                 <div class="pull-right" style="width:100%">
                                     <div class="col-md-2 col-sm-3 col-xs-4 pull-right" style="position:relative; right:5px">
-                                        <button type="submit" class="btn btn-primary" style="margin-top:-5px; background-color:green; color:white; border:none">
+                                        <button type="submit" class="btn btn-green" style="margin-top:-5px">
                                             {{ __('Login') }}
                                         </button>
                                     </div>

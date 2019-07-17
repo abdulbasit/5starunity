@@ -3419,6 +3419,10 @@ fieldset[disabled] .btn-warning.active {
   background-color:green;
   border:solid 1px green
 }
+.greenBg
+{
+
+}
 .btn-danger:active,
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
@@ -33898,9 +33902,6 @@ body {
   background-color: #00a9ac;
   border-color: #00a9ac;
 }
-.btn-primary:hover {
-  background-color: #0c7771;
-}
 .btn-apply {
   color: #fff;
   background-color: #00a9ac;
@@ -48143,6 +48144,22 @@ input[type='password']:focus {
     left: 50%;
     margin-left: -66px;
 }
+.btn-green
+{
+    border: 1px solid rgb(225, 225, 225);
+    border-radius:1000px;
+    background-color:white;
+    color:black;
+    font-size:18px
+}
+.btn-green:hover
+{
+    border-radius:1000px;
+    background-color:green;
+    color:black;
+    font-size:18px
+}
+
 .btn-primary
 {
     border: 1px solid rgb(225, 225, 225);
