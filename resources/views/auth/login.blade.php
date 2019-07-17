@@ -14,7 +14,7 @@
     margin: 0px;
     position: absolute;
     width: 100%;
-    top: -54px;
+    top: -33px;
     color: red
 }
 #password-error
@@ -66,7 +66,7 @@
             </div>
         @endif
         <div class="col-lg-8 col-lg-offset-2">
-                <div class="section-title loginHeading">{{ __('Login') }}</div>
+                <h2 class="text-center registerHeading">{{ __('Login') }}</h2>
             <br />
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}" id="login">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-sm-3 col-form-label text-right">{{ __('lables.password')}}</label>
+                        <label for="password" class="col-md-4 col-sm-3 col-form-label text-right" style="margin-top:10px">{{ __('lables.password')}}</label>
                         <div class="col-md-6 col-sm-7">
                             <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
@@ -140,7 +140,7 @@
                 <div class="form-group row exBtns"  style="position:relative; left:4px">
                     <label for="" class="col-md-6 col-sm-6 col-xs-12 col-form-label text-right">
                         {{-- {{ __('Password') }} --}}
-                        Passwort Vergessen?
+                        Passwort vergessen?
                     </label>
                     <div class="col-md-5 col-sm-4 col-xs-11 no-padding">
                         @if (Route::has('password.request'))
@@ -178,7 +178,7 @@ $("#login").validate({
     password: "",
     email: {
       required: "",
-      email: "Email address must be \"name@domain.com\""
+      email: "E-Mail-Adresse muss \"name@domain.com\" sein"
     }
   }
 });
