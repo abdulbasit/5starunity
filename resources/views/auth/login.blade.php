@@ -105,7 +105,7 @@
                                 <div class="pull-right" style="width:100%">
                                     <div class="col-md-2 col-sm-3 col-xs-4 pull-right" style="position:relative; right:5px">
                                         <button type="submit" class="btn-green" style="margin-top:-5px">
-                                            {{ __('Login') }}
+                                            {{ __('EINLOGGEN') }}
                                         </button>
                                     </div>
                                     <div class="col-md-5 col-sm-6 col-xs-8 no-padding pull-right">
