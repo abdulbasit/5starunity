@@ -45088,7 +45088,7 @@ a {
   font-family: "Open Sans", sans-serif;;
   font-weight: 400!important;
   background-color: #017632;
-  color: #fff;
+  /* color: #fff; */
   border-radius: 50px;
   text-transform: uppercase;
   margin: 0 auto;
@@ -48150,13 +48150,17 @@ input[type='password']:focus {
     border-radius:1000px;
     background-color:white;
     color:black;
-    font-size:18px
+    font-size:18px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:5px;
+    padding-bottom:5px;
 }
 .btn-green:hover
 {
     border-radius:1000px;
     background-color:green;
-    color:black;
+    color:white;
     font-size:18px
 }
 
