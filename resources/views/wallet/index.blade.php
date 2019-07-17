@@ -17,7 +17,7 @@
                 <button id="buyLot" class="btnPurchaseCredit pull-right" type="button"> + Buy Lot </button>
                 <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> + Donate </button>
                 <div class="dropdown show pull-right dropDownMenu">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a style="padding-left:15px;padding-right:15px; text-decoration:none" class="btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Filter Results
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
