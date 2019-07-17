@@ -40,9 +40,8 @@
                 <div class="alert alert-success">
                     <strong>Success!</strong> {{Session::get('success')}}
                 </div>
-
                 @endif
-                <div id="historyTable">
+                <div id="historyTable" @if($action=='purchase') style="display: none"@endif>
                     <table class="table table-striped text-center">
                         <thead>
                         <tr>
