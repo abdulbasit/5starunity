@@ -156,7 +156,7 @@
                         @if($userInfo['user_data']->status==0)
                         <div class="container">
                             <div class="col-md-2 col-sm-4 c_dist">
-                                <a href="wallet">
+                                <a href="wallet?action=purchase">
                                 <div class="circle c_nd spendCircle"></div>
                                 </a>
                             </div>
@@ -166,7 +166,7 @@
                                     Wir danken Ihnen für Ihre bisherige Treue, übermittelten Spenden und dafür, <br /> dass Sie gemeinsam mit Vielen unsere Community stärken.
                                 </p>
                                 <p>
-                                        <span style="color:#F9B000"><b>Spenden</b></span> können mit Betätigung des Buttons jederzeit durchgeführt werden.
+                                    <span style="color:#F9B000"><b>Spenden</b></span> können mit Betätigung des Buttons jederzeit durchgeführt werden.
                                 </p>
                             </div>
                         </div>

@@ -46,8 +46,9 @@ class WalletController extends Controller
         $this->_api_context = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
-    public function index($type="")
+    public function index($type="", Request $request)
     {
+        $action = $request->input('action');
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
@@ -69,7 +70,7 @@ class WalletController extends Controller
             $walletHistory = Vallet::where('status','approved')->where('user_id',$userId)->orderBy('id','desc')->get();
         }
 
-        return view('wallet.index',compact('userInfo','route','walletHistory'));
+        return view('wallet.index',compact('userInfo','route','walletHistory','action'));
     }
     public function kalarna()
     {

@@ -200,6 +200,16 @@
 @endsection
 @section('script')
 <script>
+@if($action=='purchase')
+{
+    $( document ).ready(function() {
+        jQuery(function(){
+            jQuery('#btnPurchaseCredit').click();
+        });
+    });
+}
+@endif
+
 $("#btnPurchaseCredit").click(function(){
     $( "#historyTable" ).fadeOut( "slow", function() {
         $("#paymentOptions").fadeIn("slow",function(){
