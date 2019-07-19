@@ -16,6 +16,8 @@ use App\Models\UserProfile;
 use App\Mail\ChangeMailEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationEmail;
+use App\Mail\inviteEmail;
+
 use File;
 class UserController extends Controller
 {
@@ -25,6 +27,14 @@ class UserController extends Controller
     }
     public function index()
     {
+        $obj = new \stdClass();
+        $obj->verification_code = '89sf9sdhf98asdfsdafpsduifgW';
+        // $obj->recevier_name = $mailData['user_name'];
+        // $obj->new_email = $mailData['new_email'];
+        // $obj->sender ="admin@xnowad.com";
+        // $obj->receiver = $mailData['email_address'];
+        Mail::to('abdulbasit056@gmail.com')->send(new inviteEmail($obj));
+        dd('here i am ');
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
         $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
