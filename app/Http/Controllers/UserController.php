@@ -16,7 +16,7 @@ use App\Models\UserProfile;
 use App\Mail\ChangeMailEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationEmail;
-use App\Mail\inviteEmail;
+// use App\Mail\inviteEmail;
 
 use File;
 class UserController extends Controller
