@@ -27,13 +27,9 @@ class UserController extends Controller
     }
     public function index()
     {
-        $obj = new \stdClass();
-        $obj->verification_code = '89sf9sdhf98asdfsdafpsduifgW';
-        // $obj->recevier_name = $mailData['user_name'];
-        // $obj->new_email = $mailData['new_email'];
-        // $obj->sender ="admin@xnowad.com";
-        // $obj->receiver = $mailData['email_address'];
-        Mail::to('abdulbasit056@gmail.com')->send(new inviteEmail($obj));
+        $mailData = array('email_address' => 'abdulbasit05@gmail.com',"verification_token" => 'yaf89sdhf9asd8yfh',
+        "user_name" => 'abdul ',"new_email" => 'basi_321@hotmail.com');
+        $this->mailSend($mailData);
         dd('here i am ');
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
