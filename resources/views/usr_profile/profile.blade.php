@@ -154,7 +154,6 @@
                                     Eine Account Löschung wird innerhalb von 72h bestätigt – bitte beachten Sie, dass <span style="color:red; font-weight:bold">keine</span> Wiederherstellung vorgenommen werden kann.  
                                 </p>
                             </div>
-                            
                             @endif
                         </div>
                     </div>
