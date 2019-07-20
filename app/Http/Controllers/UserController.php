@@ -16,7 +16,7 @@ use App\Models\UserProfile;
 use App\Mail\ChangeMailEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationEmail;
-// use App\Mail\inviteEmail;
+use App\Mail\inviteEmail;
 
 use File;
 class UserController extends Controller
@@ -27,10 +27,24 @@ class UserController extends Controller
     }
     public function index()
     {
-        $mailData = array('email_address' => 'abdulbasit05@gmail.com',"verification_token" => 'yaf89sdhf9asd8yfh',
-        "user_name" => 'abdul ',"new_email" => 'basi_321@hotmail.com');
-        $this->mailSend($mailData);
-        dd('here i am ');
+       
+       
+//         try {
+//             Mail::raw('Text to e-mail', function($message)
+//             {
+//                 $message->from('user1@xnowad.com', 'Laravel');
+//                 $message->to('5starunityy@gmail.com');
+//             });
+        
+//             return "Success";
+//         } catch (Exception $ex) {
+//             // Debug via $ex->getMessage();
+//             return "We've got errors!";
+//         }
+// dd('jdjddj');
+       
+
+    //     dd('here i am ');
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
         $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
@@ -115,6 +129,7 @@ class UserController extends Controller
     }
     public function change_mail(Request $request)
     {
+       
         $oldEmail = $request->input('oldEmail');
         $newEmail = $request->input('newEmail');
         $verificatation = md5(Carbon::now());
@@ -123,7 +138,7 @@ class UserController extends Controller
         $userInfo->email=$newEmail;
         $userInfo->verification=$verificatation;
         $userInfo->email_verified_at="NULL";
-        $userInfo->save();
+        // $userInfo->save();
         $mailData = array('email_address' => $oldEmail,"verification_token" => $verificatation,
         "user_name" => $userInfo->name." ".$userInfo->middle_name." ".$userInfo->last_name,
         "new_email" => $newEmail);

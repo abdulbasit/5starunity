@@ -50,9 +50,9 @@ return [
     "active"=>"AKTIV",
     "inactive"=>"NICHT VERIFIZIERT",
     "not_approved"=>"Ihre Dokumente werden noch geprüft.",
-    "edit_profile"=>"Profil Bearbeiten",
+    "edit_profile"=>"DATENÄNDERUNG",
     'update'=>"SPEICHERN",
     "my_lots"=>"Meine Verlosungen",
-    "delete_account"=>"Konto LÖSCHEN" 
+    "delete_account"=>"ACCOUNT LÖSCHEN" 
 ];
 ?>

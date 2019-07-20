@@ -65,8 +65,14 @@
                 </div>
             @endif
             <div class="profile-content">
+               
                  <div class="row profile-body">
                     <div class="col-lg-9 col-xs-12 profileWraper">
+                        <p>
+                            In diesem Bereich haben Sie die Möglichkeit Ihre Anmeldedaten einzusehen, zu ändern oder eine Löschung Ihres gesamten Accounts vorzumerken; bitte geben Sie nur übereinstimmende  Daten Ihres Ausweisdokuments an.<br />
+                            <br />
+                            Wir weisen darauf hin, dass nach einer Änderung von Daten zur Sicherheit eine erneute Verifizierung erfolgt – bis zur Bestätigung können diverse Funktionen nur eingeschränkt benutzt werden.
+                        </p>
                         <br />
                         <table class="table table-borderless">
                             <tbody>
@@ -132,12 +138,23 @@
                          <div class="row">
                          <br />
                          @if($userInfo['user_data']->status==0)
-                            <div class="col-xs-12 col-lg-4">
-                                <a data-toggle="modal" data-target="#accountDelete" class="deletProf">{{ __('lables.delete_account')}}</a>
+                            <div class="col-xs-12">
+                                <div class="row" style="height:40px">
+                                    <a class="editProf" style="" href="{{route('account-settings')}}">{{ __('lables.edit_profile')}}</a>
+                                </div>
+                                <p style="width:100%">
+                                    Datenänderung bedarf einer erneuten Verifizierung einschließlich Übermittlung eines Ausweis- bzw. Adressdokuments, welche bis zu 72h benötigt und bis dahin ggf. Funktionen einschränkt. 
+                                </p>
+                            </div>  
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <a data-toggle="modal" data-target="#accountDelete" class="deletProf">{{ __('lables.delete_account')}}</a>
+                                </div>
+                                <p>
+                                    Eine Account Löschung wird innerhalb von 72h bestätigt – bitte beachten Sie, dass <span style="color:red; font-weight:bold">keine</span> Wiederherstellung vorgenommen werden kann.  
+                                </p>
                             </div>
-                            <div class="col-xs-12 col-lg-4 pull-right">
-                                <a class="editProf" style="" href="{{route('account-settings')}}">{{ __('lables.edit_profile')}}</a>
-                            </div>    
+                            
                             @endif
                         </div>
                     </div>
@@ -337,6 +354,7 @@ function changeProfile() {
     }
 function change_email()
 {
+    
     var oldEmail = $("#old_email").val();
     var newEmail = $("#new_email").val();
     var verifyMail = ValidateEmail(newEmail,"");

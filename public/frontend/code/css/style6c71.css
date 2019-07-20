@@ -2120,7 +2120,7 @@ pre code {
 @media (min-width: 1200px) {
   .profileWraper
   {
-    margin-top:200px
+    margin-top:50px
   }
     .postaFields
     {
@@ -47933,7 +47933,6 @@ input[type='password']:focus {
   padding-right:10px;
   padding-top:6px;
   padding-bottom:6px;
-  text-transform:lowercase
 }
 .deletProf:hover
 {
