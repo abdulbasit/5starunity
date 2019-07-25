@@ -189,9 +189,6 @@ class UserController extends Controller
         $userProfile->house_number=$request->get('house');
 
         // $this->mailSend($mailData);
-
-
-
         // $userProfile->save();
         // return redirect()->route('profile')->with('success','Profile updated Successfully !');
     }
@@ -282,6 +279,7 @@ class UserController extends Controller
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         $route='refer';
+        
         return view('usr_profile.refer_form',compact('userInfo','route','available_balance','purchasedLots','spent','emaailsList'));
     }
     public function sendInivte(Request $request)
@@ -291,10 +289,15 @@ class UserController extends Controller
         $senderName = Auth::guard('client')->user()->name;
         $data=[];
         $emailsList = $request->get('email_list');
+        $alreadyRegistered = '';
         foreach(explode(",",$emailsList) as $email){
             //check if email already exists then skip entry 
+            $regUers = User::where('email',$email)->count();
+            if($regUers>0)
+                $alreadyRegistered.=$email.",";
+
             $emailcheck = InvitationList::where('email',$email)->count();
-            if($emailcheck==0)
+            if($emailcheck==0 && $regUers==0)
             {
                 $invitationEmail = InvitationList::create([
                     'email' => $email,
@@ -302,7 +305,6 @@ class UserController extends Controller
                     'status' =>'0',
                     'type' => ""
                 ]);
-            
             
                 $verification_code = md5($email.date('ymdhis').$invitationEmail->id);
                 $invitationEmail->verification_code = $verification_code;
@@ -312,8 +314,8 @@ class UserController extends Controller
                 $emailData = array("to"=>$email,"from_email"=>"admin","subject"=>"Invitation Email","email_data"=>$data);
                 $this->inviteEmail($emailData);
             }
-        }  
-        return redirect()->back()->with('message','Invitations email sent to your selected users ');
+        }
+        return redirect()->back()->with('message','Invitations email sent to your selected users ?'.$alreadyRegistered);
     }
 
 }

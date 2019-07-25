@@ -279,6 +279,7 @@ label.error {
 @endsection
 @section('content')
 <div class="main">
+       
         <div class="container">
             <h2 class="text-center registerHeading">{{ __('content.register_heading')}}  </h2>
             <br />

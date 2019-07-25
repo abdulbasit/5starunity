@@ -21,12 +21,26 @@
 @section('content')
     <div class="container">
         <div class="row profile">
+        <?php @$msg = explode("?",Session::get('message'));
+            @$mailsList = explode(",",rtrim($msg[1],","));
+        ?>
             @include('../layouts.user_menu')
             <div class="col-md-9 prof" style="margin-top:0px">
-                @if ($message = Session::get('success'))
+
+                    @if (count($mailsList)>1)
+                        <div class="alert alert-danger alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <b>Alrady Registered Emails </b><br />
+                            @foreach($mailsList as $regEmails)
+                                {{$regEmails}} <br />
+                            @endforeach
+                        </div>
+                    @endif
+
+                @if ($msg[0]!="")
                     <div class="alert alert-success alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
-                        {{ $message }}
+                        {{ $msg[0] }}
                     </div>
                 @endif
                 
@@ -72,7 +86,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Accepted</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Sent Date</th>
                                     <th scope="col">Accept Date</th>
                                 </tr>
@@ -84,9 +98,9 @@
                                     <td>{{$list->email}}</td>
                                     <td>
                                         @if($list->verification_code=="")
-                                            <span class="red">{{ __('lables.inactive')}}</span>
+                                            <span class="green">{{ __('lables.active')}}</span>
                                         @else
-                                            <span class="red">{{ __('lables.not_approved')}}</span>
+                                            <span class="red">{{ __('lables.inactive')}}</span>
                                         @endif
                                     </td>
                                     <td>
