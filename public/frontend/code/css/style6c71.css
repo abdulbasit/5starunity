@@ -47496,6 +47496,8 @@ html, body {
 .card_stats{
     width:100%;
     padding: 2em !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     padding-bottom:10px !important
 
 }

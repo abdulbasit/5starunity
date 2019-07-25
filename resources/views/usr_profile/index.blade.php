@@ -62,7 +62,7 @@
                             {{-- <h3>Your Lots</h3> --}}
                             <div class="" style="background:none">
                                 <div class="row w-100">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="card border-info shadow text-info p-3 my-card" >
                                             <img style="width:100%" src="{{ asset('frontend/img/Taler.jpg')}}" alt=""/>
                                         </div>
@@ -73,7 +73,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="card border-info shadow text-info p-3 my-card" >
                                             <img style="width:100%" src="{{ asset('frontend/img/Taler.jpg')}}" alt=""/>
                                         </div>
@@ -84,7 +84,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
+                                            <div class="card border-info shadow text-info p-3 my-card" >
+                                                <img style="width:100%" src="{{ asset('frontend/img/Taler.jpg')}}" alt=""/>
+                                            </div>
+                                            <div class="card border-info mx-sm-1 p-3 card_stats">
+                                                <div style="margin-top: 15px; float: left; width: 100%;">
+                                                    <div class="text-info text-center col-xs-12">Teamspenden</div>
+                                                    <div class="text-info text-center col-xs-12">  @if($available_balance){{$available_balance->total_available_balance}} @else 0 @endif</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="col-md-3">
                                         <div class="card border-info shadow text-info p-3 my-card" style="overflow:visible !important" >
                                             <img src="{{ asset('frontend/img/spay.png')}}" alt="" style="    width: 100px !important;
                                             margin: 0px;

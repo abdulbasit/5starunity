@@ -92,9 +92,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1;?>
                                 @foreach($emaailsList as $list)
                                 <tr>
-                                    <th scope="row">{{$list->id}}</th>
+                                    <th scope="row">{{$i++}}</th>
                                     <td>{{$list->email}}</td>
                                     <td>
                                         @if($list->verification_code=="")
