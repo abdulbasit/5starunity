@@ -80,7 +80,7 @@
                         <br />
                         <div class="section-title text-left">Listings</div>
                         
-                        <table class="table table-striped table-bordered">
+                        <table class="table table-striped table-bordered"  style="margin:0px; padding:0px">
                            
                             <thead>
                                 <tr>
@@ -113,6 +113,11 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <nav class="text-center">
+                            <ul class="pagination" style="margin:0px; padding:0px">
+                                {{ $emaailsList->links() }}
+                            </ul>
+                        </nav>
                     </div>
                 </div>
                 @else 

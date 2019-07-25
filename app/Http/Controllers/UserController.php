@@ -274,7 +274,7 @@ class UserController extends Controller
             $spent+=str_replace("-","",$spneMoney->balance);
         }
         $userData = User::where('users.id',$userId)->first();
-        $emaailsList = InvitationList::where('sender_id',$userId)->get();
+        $emaailsList = InvitationList::where('sender_id',$userId)->paginate(10);
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
