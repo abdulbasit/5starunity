@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\AllowedCountry;
 use App\Models\UserDocument;
+use App\Models\InvitationList;
 use App\Models\State;
 use App\Models\Country;
 use App\Models\UserProfile;
@@ -27,10 +28,14 @@ class RegisterController extends Controller
     {
         // $this->middleware('guest');
     }
-    public function index()
+    public function index(Request $request)
     {
+        if (@Auth::guard('client')->user()->id!="")
+            return redirect()->route('dashboard');
+
+        $invitee =  $request->input('invitee');
         $countries = AllowedCountry::with('country')->get();
-        return view('auth/register',compact('countries'));
+        return view('auth/register',compact('countries','invitee'));
     }
     public function ajaxStates(Request $request)
     {
@@ -53,6 +58,16 @@ class RegisterController extends Controller
 
     protected function create(Request $request)
     {
+       
+        //check if user is freferrer then approve its acceptence    
+        if($request->get('invitee')!="")
+        {
+            $userInvites = InvitationList::where('verification_code',$request->get('invitee'))->first();
+            $userInvites->verification_code="";
+            $userInvites->updated_at=Carbon::now();
+            $userInvites->save();
+
+        }
         $profile_picture = $request->file('profile_pic');
         $identity_card_front = $request->file('identity_card_front');
         $identity_card_back = $request->file('identity_card_back');

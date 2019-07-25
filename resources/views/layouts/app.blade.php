@@ -263,6 +263,7 @@
         </div> --}}
     <script type="text/javascript" src="{{ asset('frontend/code/scripts/jquery.bcSwipe.min.js')}}"></script>
     <script src="{{ asset('frontend/code/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    
     @yield('script')
 <script>
 var prevScrollpos = window.pageYOffset;

@@ -17,10 +17,11 @@ use App\Mail\ChangeMailEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationEmail;
 use App\Mail\inviteEmail;
-
+use App\Traits\EmailTrait;
 use File;
 class UserController extends Controller
 {
+    use EmailTrait;
     public function __construct()
     {
         $this->middleware('auth');
@@ -28,23 +29,6 @@ class UserController extends Controller
     public function index()
     {
        
-       
-//         try {
-//             Mail::raw('Text to e-mail', function($message)
-//             {
-//                 $message->from('user1@xnowad.com', 'Laravel');
-//                 $message->to('5starunityy@gmail.com');
-//             });
-        
-//             return "Success";
-//         } catch (Exception $ex) {
-//             // Debug via $ex->getMessage();
-//             return "We've got errors!";
-//         }
-// dd('jdjddj');
-       
-
-    //     dd('here i am ');
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
         $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
@@ -107,6 +91,15 @@ class UserController extends Controller
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
         //update user complete name
+
+        $identity_card_back_img='';
+        $identity_card_front_img='';
+
+        $identity_card_front = $request->file('identity_card_front');
+        $identity_card_back = $request->file('identity_card_back');
+        $resident_proof = $request->file('resident_proof');
+        $identity_card = $request->file('identity_card');
+        
         $userData->name = $request->get('name');
         $userData->middle_name=$request->get('mname');
         $userData->last_name=$request->get('lname');
@@ -114,6 +107,76 @@ class UserController extends Controller
         //update user profile
         $dob =  date('Y-m-d', strtotime($request->get('dob')));
 
+        
+
+       
+        if($identity_card_front!="")
+        {
+            $file1 = $identity_card_front;
+            $identity_card_front_img_thumbnailPath = public_path('uploads/users/documents_proofs/');
+            $file1->getClientOriginalName();
+            $file1->getClientOriginalExtension();
+            $file1->getRealPath();
+            $file1->getSize();
+            $file1->getMimeType();
+            $identity_card_front_img = time().'_5star_profile.'.$file1->getClientOriginalExtension();
+            $file1->move($identity_card_front_img_thumbnailPath, $identity_card_front_img);
+        }
+      dd('here'.$identity_card_front_img);
+        if($identity_card_back!="")
+        {
+            $file2 = $identity_card_back;
+            $identity_card_back_img_thumbnailPath = public_path('uploads/users/documents_proofs/');
+            $file2->getClientOriginalName();
+            $file2->getClientOriginalExtension();
+            $file2->getRealPath();
+            $file2->getSize();
+            $file2->getMimeType();
+            $identity_card_back_img = time().'_5star_profile.'.$file2->getClientOriginalExtension();
+            $file2->move($identity_card_back_img_thumbnailPath, $identity_card_back_img);
+        }
+        $profile_id = UserProfile::create([
+            'user_id' => $user_id->id,
+            'dob' => $dob,
+            'address' => $address,
+            "address_2"=>$address2,
+            'country' => $country,
+            'state' =>$state,
+            'city' =>$city,
+            'postal_code'=>$postal_code,
+            'profile_picture'=>$imageName,
+            'user_contact'=>$phone,
+            'created_at'=>"2019-03-14",
+            "street"=>$request->get('street_n'),
+            "house_number"=>$request->get('hnumber')
+        ]);
+
+
+        $idProofImg = public_path('uploads/users/documents_proofs/id_proof');
+        foreach ($identity_card as $identity_proofImage)
+        {
+            $identity_proofImage->getClientOriginalName();
+            $identity_proofImage->getClientOriginalExtension();
+            $identity_proofImage->getRealPath();
+            $identity_proofImage->getSize();
+            $identity_proofImage->getMimeType();
+
+            //Move Uploaded File
+           echo $id_proofImg = time().'_5star_id_proof.'.$identity_proofImage->getClientOriginalExtension();
+           $identity_proofImage->move($idProofImg, $id_proofImg);
+
+            $product_images = UserDocument::create([
+                "user_id" => $user_id->id,
+                "res_proof"=>$id_proofImg,
+                "id_front"=>$identity_card_front_img,
+                "id_back"=>$identity_card_back_img,
+                "status"=>'1',
+                "type"=>'identity',
+                'updated_at'=>Carbon::now(),
+                'created_at'=>Carbon::now(),
+            ]);
+        }
+        
         $userProfile = UserProfile::where('user_id',$userId)->first();
         $userProfile->dob=$dob;
         $userProfile->address=$request->get('address');
@@ -124,8 +187,13 @@ class UserController extends Controller
         $userProfile->user_contact=$request->get('contact');
         $userProfile->street=$request->get('street');
         $userProfile->house_number=$request->get('house');
-        $userProfile->save();
-        return redirect()->route('profile')->with('success','Profile updated Successfully !');
+
+        // $this->mailSend($mailData);
+
+
+
+        // $userProfile->save();
+        // return redirect()->route('profile')->with('success','Profile updated Successfully !');
     }
     public function change_mail(Request $request)
     {
@@ -142,19 +210,28 @@ class UserController extends Controller
         $mailData = array('email_address' => $oldEmail,"verification_token" => $verificatation,
         "user_name" => $userInfo->name." ".$userInfo->middle_name." ".$userInfo->last_name,
         "new_email" => $newEmail);
-        $this->mailSend($mailData);
+        $this->changeEmailSend($mailData);
         Auth::guard('client')->logout();
         return true;
     }
-    public function mailSend($mailData)
+    public function changeEmailSend($mailData)
     {
-        $obj = new \stdClass();
-        $obj->verification_code = $mailData['verification_token'];
-        $obj->recevier_name = $mailData['user_name'];
-        $obj->new_email = $mailData['new_email'];
-        $obj->sender ="admin@xnowad.com";
-        $obj->receiver = $mailData['email_address'];
-        Mail::to($mailData['email_address'])->send(new ChangeMailEmail($obj));
+        try {
+                $obj = new \stdClass();
+                $obj->verification_code = $mailData['verification_token'];
+                $obj->recevier_name = $mailData['user_name'];
+                $obj->new_email = $mailData['new_email'];
+                $obj->sender ="admin@xnowad.com";
+                $obj->receiver = $mailData['email_address'];
+                $mailObj = new ChangeMailEmail($obj);
+                Mail::to($mailData['email_address'])->send($mailObj);
+                return "Success";
+            } 
+        catch (Exception $ex) {
+                // Debug via $ex->getMessage();
+                return "We've got errors!";
+            }
+       
     }
     public function dashboard()
     {
@@ -209,21 +286,34 @@ class UserController extends Controller
     }
     public function sendInivte(Request $request)
     {
-            $userId = Auth::guard('client')->user()->id;
-           
-            $emailsList = $request->get('email_list');
-            foreach(explode(",",$emailsList) as $email){
-                $verification_code = md5($email.date('ymdhis').$userId);
-                InvitationList::create([
+    
+        $userId = Auth::guard('client')->user()->id;
+        $senderName = Auth::guard('client')->user()->name;
+        $data=[];
+        $emailsList = $request->get('email_list');
+        foreach(explode(",",$emailsList) as $email){
+            //check if email already exists then skip entry 
+            $emailcheck = InvitationList::where('email',$email)->count();
+            if($emailcheck==0)
+            {
+                $invitationEmail = InvitationList::create([
                     'email' => $email,
                     'sender_id' => $userId,
                     'status' =>'0',
-                    'type' => "",
-                    'verification_code' => $verification_code
+                    'type' => ""
                 ]);
-                $verification_code ="";
+            
+            
+                $verification_code = md5($email.date('ymdhis').$invitationEmail->id);
+                $invitationEmail->verification_code = $verification_code;
+                $invitationEmail->save();
+                $data['verification_code'] = $verification_code;
+                $data['sender_name']=$senderName;
+                $emailData = array("to"=>$email,"from_email"=>"admin","subject"=>"Invitation Email","email_data"=>$data);
+                $this->inviteEmail($emailData);
             }
-            return redirect()->back()->with('message','Invitations email sent to your selected users ');
+        }  
+        return redirect()->back()->with('message','Invitations email sent to your selected users ');
     }
 
 }

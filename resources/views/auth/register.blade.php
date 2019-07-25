@@ -284,6 +284,7 @@ label.error {
             <br />
             <form method="POST" id="signup-form" class="" enctype="multipart/form-data" action="{{ route('register.save') }}">
                 @csrf
+                <input type="hidden" name="invitee" value="{{$invitee}}">
                 <h3>
                     <span class="title_text">{{ __('content.accunt_information')}} </span>
                 </h3>

@@ -6,7 +6,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class InviteEmail extends Mailable
+class InviteEmails extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -15,12 +15,15 @@ class InviteEmail extends Mailable
     public function __construct($email)
     {
         $this->email = $email;
+        // dd($email->subject);
     }
 
     public function build()
     {
-        return $this->from('admin@xnowad.com')
+        return $this->from($this->email->sender)
                     ->view('mails.invite_email')
+                    ->subject($this->email->subject)
+                    ->to($this->email->receiver)
                     // ->text('mails.demo_plain')
                     ->with(
                       [

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @section('script')
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
 <script>
 function getCountrySates()
 {
@@ -14,6 +15,7 @@ function getCountrySates()
             $("#sates").html(msg);
         });
 }
+
 </script>
 @endsection
 @section('style')
@@ -22,14 +24,32 @@ function getCountrySates()
         {
             margin-bottom: 10px !important
         }
+        .custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+        .custom-file-input::before {
+            content: '{{ __('lables.select_file')}}';
+            display: inline-block;
+            background: #FFF;
+            border: none;
+            padding: 0;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff; 
+             /* font-weight: 700; */
+            font-size: 12pt; 
+        }
+
+
     </style>
 @endsection
 <div class="container">
-
     <div class="row profile">
         @include('../layouts.user_menu')
 		<div class="col-md-9 prof">
-            <form action="/profile-update" method="POST" >
+            <form action="/profile-update" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="profile-content">
                     <div class="row profile-body">
@@ -109,10 +129,23 @@ function getCountrySates()
                                 <div class="col-lg-8 col-md-6 col-xs-12"><input class="form-control" type="text" name="house" id="house" value="{{$userInfo['user_profile']->address}}"></div>
                             </div>
                             <div class="row rowSpacing">
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.identity_proof')}}</div>
+                                <div class="col-lg-8 col-md-6 col-xs-12"><input type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" /></div>
+                            </div>
+                            <div class="row rowSpacing">
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.id_front')}}</div>
+                                <div class="col-lg-8 col-md-6 col-xs-12"><input  type="file" name="identity_card_front"  id="identity_card_front" class="custom-file-input form-control" /></div>
+                            </div>
+                            <div class="row rowSpacing">
+                                <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.id_back')}}</div>
+                                <div class="col-lg-8 col-md-6 col-xs-12"><input type="file" name="identity_card_back"  id="identity_card_back" class="custom-file-input form-control" /></div>
+                            </div>
+                            <div class="row rowSpacing">
                                 <div class="col-lg-12 col-md-6 col-xs-12 text-right">
                                     <input type="submit" value="{{ __('lables.update')}}" class="btn btn-primary">
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="col-lg-3 col-xs-12"></div>
                     </div>

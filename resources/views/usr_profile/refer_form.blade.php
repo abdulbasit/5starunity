@@ -71,22 +71,30 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Donations</th>
-                                    <th scope="col">Team</th>
-                                    <th scope="col">Team Spenden</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Accepted</th>
+                                    <th scope="col">Sent Date</th>
+                                    <th scope="col">Accept Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($emaailsList as $list)
                                 <tr>
                                     <th scope="row">{{$list->id}}</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <td>{{$list->email}}</td>
+                                    <td>
+                                        @if($list->verification_code=="")
+                                            <span class="red">{{ __('lables.inactive')}}</span>
+                                        @else
+                                            <span class="red">{{ __('lables.not_approved')}}</span>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        {{\Carbon\Carbon::parse($list->created_at)->toFormattedDateString()}}
+                                    </td>
+                                    <td>
+                                        {{\Carbon\Carbon::parse($list->updated_at)->toFormattedDateString()}}
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
