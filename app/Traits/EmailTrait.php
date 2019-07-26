@@ -3,7 +3,7 @@ namespace App\Traits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationEmail;
-use App\Mail\inviteEmails;
+use App\Mail\InviteEmail;
 trait EmailTrait {
  
     public function sendEmails($mailObj) {
@@ -31,7 +31,7 @@ trait EmailTrait {
             $obj->sender = $regFrom;
             $obj->subject = $param['subject'];
             $obj->receiver = $param['to'];
-            $mailObj = new inviteEmails($obj); 
+            $mailObj = new InviteEmail($obj); 
             $this->sendEmails($mailObj);
     }
  
