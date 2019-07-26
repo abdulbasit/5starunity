@@ -15,7 +15,24 @@ function getCountrySates()
             $("#sates").html(msg);
         });
 }
-
+$("#identity_card").on('change',function(){
+   if($(this).val()!="")
+        $(this).css('color',"black")
+   else
+        $(this).css('color',"transparent")
+})
+$("#identity_card_front").on('change',function(){
+   if($(this).val()!="")
+        $(this).css('color',"black")
+   else
+        $(this).css('color',"transparent")
+})
+$("#identity_card_back").on('change',function(){
+   if($(this).val()!="")
+        $(this).css('color',"black")
+   else
+        $(this).css('color',"transparent")
+})
 </script>
 @endsection
 @section('style')
@@ -42,7 +59,44 @@ function getCountrySates()
             font-size: 12pt; 
         }
 
+        .custom-file-input 
+        {
+            color: transparent;
+        }
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+    content: '{{ __('lables.select_file')}}';
+    color: black;
+    display: inline-block;
+    background-color: #eaeaea;
+    padding: 5px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    /* font-weight: 700; */
+    font-size: 18px;
+    position: relative;
+    left: -12px;
+    top: -6px;
+    height: 35px;
+    text-shadow: none;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
 
+body {
+  padding: 20px;
+}
     </style>
 @endsection
 <div class="container">

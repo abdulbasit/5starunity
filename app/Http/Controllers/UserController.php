@@ -88,10 +88,12 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
+        
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
-        //update user complete name
 
+        $emailData = array("to"=>$userData->email,"from_email"=>"admin","subject"=>"Profile On Hold","email_data"=>array("name"=>$userData->name));
+        //update user complete name
         $identity_card_back_img='';
         $identity_card_front_img='';
 
@@ -103,13 +105,9 @@ class UserController extends Controller
         $userData->name = $request->get('name');
         $userData->middle_name=$request->get('mname');
         $userData->last_name=$request->get('lname');
-        $userData->save();
+        
         //update user profile
         $dob =  date('Y-m-d', strtotime($request->get('dob')));
-
-        
-
-       
         if($identity_card_front!="")
         {
             $file1 = $identity_card_front;
@@ -122,7 +120,6 @@ class UserController extends Controller
             $identity_card_front_img = time().'_5star_profile.'.$file1->getClientOriginalExtension();
             $file1->move($identity_card_front_img_thumbnailPath, $identity_card_front_img);
         }
-      dd('here'.$identity_card_front_img);
         if($identity_card_back!="")
         {
             $file2 = $identity_card_back;
@@ -135,24 +132,12 @@ class UserController extends Controller
             $identity_card_back_img = time().'_5star_profile.'.$file2->getClientOriginalExtension();
             $file2->move($identity_card_back_img_thumbnailPath, $identity_card_back_img);
         }
-        $profile_id = UserProfile::create([
-            'user_id' => $user_id->id,
-            'dob' => $dob,
-            'address' => $address,
-            "address_2"=>$address2,
-            'country' => $country,
-            'state' =>$state,
-            'city' =>$city,
-            'postal_code'=>$postal_code,
-            'profile_picture'=>$imageName,
-            'user_contact'=>$phone,
-            'created_at'=>"2019-03-14",
-            "street"=>$request->get('street_n'),
-            "house_number"=>$request->get('hnumber')
-        ]);
-
-
+      
         $idProofImg = public_path('uploads/users/documents_proofs/id_proof');
+        //delete old files uploaded by user 
+        $deleteDocuments = UserDocument::where('user_id',$userId);
+        $deleteDocuments->delete();
+        //===============================
         foreach ($identity_card as $identity_proofImage)
         {
             $identity_proofImage->getClientOriginalName();
@@ -162,11 +147,11 @@ class UserController extends Controller
             $identity_proofImage->getMimeType();
 
             //Move Uploaded File
-           echo $id_proofImg = time().'_5star_id_proof.'.$identity_proofImage->getClientOriginalExtension();
+           $id_proofImg = time().'_5star_id_proof.'.$identity_proofImage->getClientOriginalExtension();
            $identity_proofImage->move($idProofImg, $id_proofImg);
 
             $product_images = UserDocument::create([
-                "user_id" => $user_id->id,
+                "user_id" => $userId,
                 "res_proof"=>$id_proofImg,
                 "id_front"=>$identity_card_front_img,
                 "id_back"=>$identity_card_back_img,
@@ -175,8 +160,9 @@ class UserController extends Controller
                 'updated_at'=>Carbon::now(),
                 'created_at'=>Carbon::now(),
             ]);
+            
         }
-        
+        $userData->status='1';
         $userProfile = UserProfile::where('user_id',$userId)->first();
         $userProfile->dob=$dob;
         $userProfile->address=$request->get('address');
@@ -186,11 +172,13 @@ class UserController extends Controller
         $userProfile->postal_code=$request->get('postal_code');
         $userProfile->user_contact=$request->get('contact');
         $userProfile->street=$request->get('street');
-        $userProfile->house_number=$request->get('house');
-
-        // $this->mailSend($mailData);
-        // $userProfile->save();
-        // return redirect()->route('profile')->with('success','Profile updated Successfully !');
+        $userProfile->house_number=$request->get('house'); 
+        $userProfile->save();
+         //save user datta after all processes 
+         $userData->save();
+        
+        $this->profileUpdateEmail($emailData);
+        return redirect()->route('profile')->with('success','Profile updated Successfully !');
     }
     public function change_mail(Request $request)
     {
