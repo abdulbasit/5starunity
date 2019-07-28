@@ -4,8 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="">
-                <div class="card-header">{{ __('Reset Password--') }}</div>
+            <div class=""> 
+                <div class="card-header">
+                        <h2  class="text-center registerHeading">{{ __('Reset Password--') }}</h2>
+                        <br /></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf

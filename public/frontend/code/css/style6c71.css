@@ -1115,6 +1115,17 @@ a:focus {
   color: #0c7771;
   text-decoration: underline;
 }
+.resetPass
+{
+    margin-top:20px
+}
+.resetPass:hover
+{
+  background-color:red !important; 
+  color:white !important; 
+  border-color:red !important; 
+
+}
 a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
@@ -1299,7 +1310,7 @@ h6,
 }
 p {
   margin: 0 0 10.5px;
-  text-align:justify
+  text-align:justify !important
 }
 .lead {
   margin-bottom: 21px;

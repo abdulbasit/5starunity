@@ -46,11 +46,15 @@ input[type="text"], input[type="password"], input[type="number"]
                     <form action="/send-query" method="POST" id="contact">
                         @csrf
                     <br />
+                    <br />
+                    <br />
+                    <div class="contactForm">
+                        <div class="section-title text-left col-xs-9" style="line-height:40px">…ob allgemeine (An)Fragen, Entwicklerthemen oder Partnergesuche - wir freuen uns </div>
+                    </div>
                     <div class="row">
+                       
                         <div class="col-lg-6 col-xs-12 contactForm">
-                                <br />
-                                <br />
-                                <div class="section-title text-left" style="line-height:40px">…ob allgemeine (An)Fragen, Entwicklerthemen oder <br /> Partnergesuche - wir freuen uns </div>
+                                
                             <div class="row">
                                 <div class="col-xs-12 form-group">
                                     <label for="name"></label>
@@ -60,7 +64,7 @@ input[type="text"], input[type="password"], input[type="number"]
                             <div class="row">
                                 <div class="col-xs-12 form-group">
                                     <label for="email"></label>
-                                    <input required type="email" class="form-control" placeholder="E-Mail-Adresse*" name="email" value=""  id="email"/>
+                                    <input required type="email" class="form-control" placeholder="E-Mail-Adresse*" name="email" value=""  id="email" style="font-size:18px"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -78,7 +82,7 @@ input[type="text"], input[type="password"], input[type="number"]
                             <div class="row">
                                 <div class="col-xs-12 form-group form-password">
                                     <label for="msg"></label>
-                                    <textarea required style="height:150px !important" class="form-control" placeholder="Nachricht*" name="msg" id="msg"></textarea>
+                                    <textarea required style="height:150px !important; font-size:18px" class="form-control" placeholder="Nachricht*" name="msg" id="msg"></textarea>
                                 </div>
                             </div>
                             <div class="row contactFormNotice">

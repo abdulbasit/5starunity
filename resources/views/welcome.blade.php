@@ -340,7 +340,7 @@
                                 {
                                     echo substr($testimonial->detail, 0, 180)."...";
                                     ?>
-                                    <span><a onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> {{ __('menu.more')}} </a></span>
+                                    <span><a style="text-transform:lowercase; color:blue;float: right" onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> {{ __('menu.more')}} </a></span>
                                 <?php
                                 }
                                 else

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container no-padding">
+    <br />
     <h2 class="text-center registerHeading">Allgemeine Nutzungsbedingungen</h2>
     <br />
     <div class="fieldset-content">

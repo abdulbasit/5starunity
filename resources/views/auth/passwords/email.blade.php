@@ -6,7 +6,7 @@
         <div class="col-md-8 col-lg-offset-3">
             <div class="">
                 <br />
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <h2 class="text-center registerHeading">{{ __('Reset Password') }}</h2>
                 <br />
                 <div class="card-body">
                     @if (session('status'))
@@ -20,7 +20,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-3 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-3 col-form-label text-md-right">{{ __('lables.email')}}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -35,8 +35,8 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-9 offset-md-3">
-                                <button type="submit" class="btn btn-primary pull-right">
-                                    {{ __('Send Password Reset Link') }}
+                                <button type="submit" class="btn btn-primary pull-right resetPass">
+                                    {{ __('PASSWORT ZURÜCKSETZEN ') }}
                                 </button>
                             </div>
                         </div>
