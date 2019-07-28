@@ -317,7 +317,7 @@ function changeProfile() {
                 }
                 $('#loading').css('display', 'none');
                 setTimeout(function(){
-                    // location.reload();
+                    location.reload();
                 },1000);
 
             },
