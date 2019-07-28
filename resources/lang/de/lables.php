@@ -39,7 +39,7 @@ return [
     "personal_link"=>"Link für Freunde",
     "my_network"=>"Netzwerk",
     "my_profile"=>"Meine Profildaten",
-    "free_coins"=>"Kostenfreie Taler",
+    "free_coins"=>"Promotions-Taler",
     "product_partner"=>"Produktpartner",
     "invite_friends"=>"Freunde werben",
     "documents_area"=>"Dokumenten-Bereich",
