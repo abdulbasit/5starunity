@@ -34,7 +34,9 @@
                             @if($user->status=="0" && $user->verification=="")
                                <span class="badge badge-primary"> Active</span>
                             @elseif($user->status=="1")
-
+                              <span class="badge badge-warning">
+                                  Unverified Documents 
+                              </span>
                             @elseif($user->status=="4")
                             <span class="badge badge-danger">
                                 Account Deleted 

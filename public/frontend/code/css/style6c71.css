@@ -47502,6 +47502,10 @@ html, body {
 
 }
 
+#terms>ul>li
+{
+  list-style:decimal
+}
   @media screen and (min-width: 997px) {
     .wrapper {
       display: -webkit-box;
