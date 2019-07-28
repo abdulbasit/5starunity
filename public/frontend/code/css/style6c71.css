@@ -2127,11 +2127,15 @@ pre code {
     margin-left: 0%;
   }
 }
-
+.profileTable > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td
+{
+  padding-left:60px !important
+}
 @media (min-width: 1200px) {
   .profileWraper
   {
-    margin-top:50px
+    position: relative;
+      top: -7px;
   }
     .postaFields
     {
@@ -47936,7 +47940,7 @@ input[type='password']:focus {
   color:white;
   border-radius:100px;
   padding:10px;
-  top:5px;
+  top:28px;
   position: relative;
 }
 .deletProf
@@ -47950,11 +47954,14 @@ input[type='password']:focus {
   padding-right:10px;
   padding-top:6px;
   padding-bottom:6px;
+  top:22px;
+    position: relative;
 }
 .deletProf:hover
 {
     color:white;
-    text-decoration:none
+    text-decoration:none;
+    
 }
 .editProf:hover
 {
