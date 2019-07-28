@@ -53,6 +53,8 @@ return [
     "edit_profile"=>"DATENÄNDERUNG",
     'update'=>"SPEICHERN",
     "my_lots"=>"Meine Verlosungen",
-    "delete_account"=>"ACCOUNT LÖSCHEN" 
+    "delete_account"=>"ACCOUNT LÖSCHEN",
+    "yes"=>"JA",
+    "no"=>"NEIN"
 ];
 ?>
