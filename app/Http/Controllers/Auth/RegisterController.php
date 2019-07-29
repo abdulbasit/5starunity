@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\AllowedCountry;
 use App\Models\UserDocument;
 use App\Models\InvitationList;
+use App\Models\Subscription;
 use App\Models\State;
 use App\Models\Country;
 use App\Models\UserProfile;
@@ -58,7 +59,7 @@ class RegisterController extends Controller
 
     protected function create(Request $request)
     {
-       
+      
         //check if user is freferrer then approve its acceptence    
         if($request->get('invitee')!="")
         {
@@ -214,7 +215,13 @@ class RegisterController extends Controller
                 'created_at'=>Carbon::now(),
             ]);
         }
-        
+        if( $request->get('subscribe', true) ) 
+        {
+            Subscription::create([
+                'email' => $request->get('email'),
+                'status' => '0'
+            ]);
+        }
         $this->mailSend($mailData);
         return redirect()->route('login')->with('info',__('messages.register_success_info'));
     }
@@ -306,5 +313,14 @@ class RegisterController extends Controller
 		
 		$username = $part1. str_shuffle($part2). $part3; //str_shuffle to randomly shuffle all characters 
 		return $username;
-}
+    }
+    public function subscribe(Request $request)
+    {
+        Subscription::create([
+            'email' => $request->get('email'),
+            'status' => '0'
+        ]);
+        return 'scuccess';
+        
+    }
 }

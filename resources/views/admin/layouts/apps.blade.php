@@ -307,6 +307,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                                 <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
                             </ul>
                         </li>
+                       
                         <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Pages</a>
                             <ul class="menu-content">
@@ -328,6 +329,9 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                               <li><a class="menu-item" href="{{ route('admin.slider.create') }}">Add New Slider</a></li>
                               <li><a class="menu-item" href="{{ route('admin.sliders') }}">Slider Listings</a>
                             </ul>
+                          </li>
+                          <li>
+                              <a class="menu-item" href="/admin/subscriptions"><i class="ft-layout"></i>Sbuscriptions</a>
                           </li>
                       </ul>
                     </li>

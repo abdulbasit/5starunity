@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\AllowedCountry;
 use App\Models\ContactUs;
+use App\Models\Subscription;
 use Auth;
 use DB;
 class AdminController extends Controller
@@ -47,5 +48,10 @@ class AdminController extends Controller
     {
         $contactus_quries = ContactUs::all();
         return view('admin.contactus.index',compact('contactus_quries'));
+    }
+    public function subscriber()
+    {
+        $subscirberList = Subscription::where('status','0') ->groupBy('email')->get();
+        return view('admin.users.subscriber',compact('subscirberList'));
     }
 }

@@ -35,6 +35,7 @@ Auth::routes();
     Route::get('media-info', 'HomeController@MediaInfo')->name('media-info');
     Route::get('contact-us', 'HomeController@contactUs')->name('contact-us');
     Route::post('send-query', 'HomeController@save_contact_us')->name('send-query');
+    Route::post('subscribe', 'Auth\RegisterController@subscribe')->name('subscribe');
 
     Route::get('lotteries', 'LotteryController@index');
     Route::get('lottery/detail/{id}', 'LotteryController@detail');
@@ -186,5 +187,7 @@ Auth::routes();
         Route::get('slider/delete/{id}', 'SliderController@deleteSlider')->name('slider.delete');
         //Contact us queries
         Route::get('contact-us', 'AdminController@contact_us')->name('contact-us');
+        //Contact us queries
+        Route::get('subscriptions', 'AdminController@subscriber')->name('subscriptions');
 
 });

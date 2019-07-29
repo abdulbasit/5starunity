@@ -25,6 +25,7 @@ class PageController extends Controller
     {
         $lottery_id = Page::create([
             "page_name" => $request->get("name"),
+            "page_slug" => $this->cleanString($request->get("name")),
             "page_title"=>$request->get("title"),
             "page_content"=>$request->get("content")
         ]);
@@ -53,4 +54,19 @@ class PageController extends Controller
         return redirect('admin/pages');
         
     }
+    function cleanString($string)
+    {
+        // allow only letters
+        $res = preg_replace("/[^a-zA-Z]/", "_", $string);
+
+        // trim what's left to 8 chars
+        // $res = substr($res, 0, 8);
+
+        // make lowercase
+        $res = strtolower($res);
+
+        // return
+        return $res;
+    }
+
 }

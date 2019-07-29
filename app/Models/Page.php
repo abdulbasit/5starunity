@@ -7,7 +7,7 @@ class Page extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'page_name','page_content','page_title'
+        'page_name','page_content','page_title','page_slug'
     ];
 
     protected $dates = ['deleted_at'];

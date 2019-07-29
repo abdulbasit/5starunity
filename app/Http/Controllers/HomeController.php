@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Product_images;
 use App\Models\Lottery;
+use App\Models\Page;
 use App\Models\LotteryContestent;
 use App\Models\Blog;
 use App\Models\Testimonial;
@@ -69,7 +70,8 @@ class HomeController extends Controller
     }
     public function terms()
     {
-        return view('pages.terms');
+        $page = Page::where('page_slug','terms')->first();
+        return view('pages.terms',compact('page'));
     }
     public function inventroAcadmy()
     {
