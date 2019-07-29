@@ -306,6 +306,13 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                                 <li><a class="menu-item" href="{{ route('admin.blog.create') }}">Add New Blog</a></li>
                                 <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <a class="menu-item" href="#"><i class="ft-layout"></i>Pages</a>
+                            <ul class="menu-content">
+                                <li><a class="menu-item" href="{{ route('admin.pages') }}">Pages Listing</a></li>
+                                <li><a class="menu-item" href="{{ route('admin.page.create') }}">Add New Page</a></li>
+                            </ul>
                           </li>
                           <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Donors</a>

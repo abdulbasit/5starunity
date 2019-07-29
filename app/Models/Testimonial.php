@@ -8,7 +8,7 @@ class Testimonial extends Model
 {
     use SoftDeletes;
     protected $fillable = [
-        'name', 'image', 'detail'
+        'name', 'image', 'detail','title'
     ];
 
 

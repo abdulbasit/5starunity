@@ -26,6 +26,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                              <label class="col-md-3 label-control" for="projectinput1">Title</label>
+                              <div class="col-md-9">
+                                  <input type="text" id="title" class="form-control" placeholder="Entring Title"  name="title" value="{{$testimonial->title}}">
+                              </div>
+                          </div>
+                            <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Description</label>
                                 <div class="col-md-9">
                                     <textarea required="required" id="desc" rows="5" class="form-control" name="desc" placeholder="Provide Complete Description..">{{$testimonial->detail}}</textarea>

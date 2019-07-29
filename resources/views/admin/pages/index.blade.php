@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this testimonial ?</p>
+                    <p>Are you suer you want to delete this Page ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -44,47 +44,46 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Title</th>
-                        <th>Detail</th>
-                        <th>Created at</th>
-                        <th>Image</th>
+                        <th>Created At</th>
+                        <th>Updated at</th>
                         <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($testimonialData as $testimonial)
-                      <tr>
-                        <td>{{$testimonial->id}}</td>
-                        <td>{{$testimonial->name}}</td>
-                        <td>{{$testimonial->title}}</td>
-                        <td>{{$testimonial->detail}}</td>
-                        <td>{{$testimonial->created_at}}</td>
-                        <td><img width="30"  src="{{ URL::to('/') }}/uploads/testimonials/{{$testimonial->image}}"></td>
-                        <td>
-                            <div class="col-sm-3 col-6">
-                                <div class="btn-group mr-1 mb-1">
-                                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    Action
-                                    </button>
-                                    <div class="dropdown-menu arrow " id="options">
-                                        <a class="dropdown-item" href="{{ route('admin.testimonial.edit',$testimonial->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                        <a data-id="{{$testimonial->id}}" onclick="deleteFunction({{$testimonial->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                      @endforeach
+                        @foreach($page as $pageInfo)
+                        <tr>
+                          <td>{{$pageInfo->id}}</td>
+                          <td>{{$pageInfo->page_name}}</td>
+                          <td>{{$pageInfo->page_title}}</td>
+                          {{-- <td>{{$pageInfo->page_content}}</td> --}}
+                          <td>{{$pageInfo->created_at}}</td>
+                          <td>{{$pageInfo->updated_at}}</td>
+                          <td>
+                              <div class="col-sm-3 col-6">
+                                  <div class="btn-group mr-1 mb-1">
+                                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                                      aria-haspopup="true" aria-expanded="false">
+                                      Action
+                                      </button>
+                                      <div class="dropdown-menu arrow " id="options">
+                                          <a class="dropdown-item" href="{{ route('admin.page.edit',$pageInfo->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                          <a data-id="{{$pageInfo->id}}" onclick="deleteFunction({{$pageInfo->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
-                            <th>Detail</th>
-                            <th>Created at</th>
-                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Created At</th>
+                            <th>Updated at</th>
                             <th>Options</th>
-                          </tr>
+                        </tr>
                     </tfoot>
                   </table>
                 </div>
@@ -100,11 +99,17 @@
 <script>
     function deleteFunction(id)
     {
+        // var id = $(this).attr("data-id");
         $("#yes").attr("delete-id",id);
     }
+    // $("#delete").click(function(){
+    //     alert('dd');
+    //     var id = $(this).attr("data-id");
+    //     $("#yes").attr("delete-id",id);
+    // });
     $("#yes").click(function(){
         var id = $(this).attr("delete-id");
-        window.location.href = "testimonials/delete/"+id;
+        window.location.href = "page/delete/"+id;
     });
 </script>
 @endsection

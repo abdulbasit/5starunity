@@ -352,13 +352,13 @@
                                 <div id="{{$testimonial->id}}" style="display:none">{{$testimonial->detail}}
                                     <div class="who-name pull-right" style="margin-top:50px">
                                         <strong> {{$testimonial->name}} </strong> <br/>
-                                        <i>DONOR</i>
+                                        <i>{{$testimonial->title}}</i>
                                     </div>
                                 </div>
                             </p>
                             <div class="who-name">
                                 <strong> {{$testimonial->name}} </strong> <br/>
-                                <i>DONOR</i>
+                                <i>{{$testimonial->title}}</i>
                             </div>
                         </div>
                     </div>

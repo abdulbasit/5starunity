@@ -97,10 +97,18 @@ Auth::routes();
         //site settings
         Route::get('settings', 'AdminController@index')->name('settings');
         Route::post('settings/save', 'AdminController@saveSettings')->name('settings.save');
-            // Authentication Routes...
+        // Authentication Routes...
         Route::get('/', function () {
             return redirect(route("admin.login"));
         });
+        //pages routes
+        Route::get('/pages', 'PageController@index')->name('pages');
+        Route::get('/page/create', 'PageController@create')->name('page.create');
+        Route::post('page/save', 'PageController@save')->name('page.save');
+        Route::get('page/edit/{id}', 'PageController@edit')->name('page.edit');
+        Route::post('page/update', 'PageController@update')->name('page.update');
+        Route::get('page/delete/{id}', 'PageController@delete')->name('page.delete');
+
         Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('login');
         Route::post('login', 'Auth\AdminLoginController@login');
         // Password Reset Routes...

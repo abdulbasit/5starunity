@@ -35,46 +35,45 @@
                 <div class="col-md-12">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title" id="horz-layout-basic">Create New Testimonials</h4>
+                      <h4 class="card-title" id="horz-layout-basic">Create New Page</h4>
                       <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collpase show">
                       <div class="card-body">
-                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="/admin/testimonials/save">
+                        <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="/admin/page/update">
+                           <input type="hidden" name="page_id" value="{{$page->id}}">
                             @csrf
                           <div class="form-body">
                             <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput1">Name</label>
+                                <label class="col-md-3 label-control" for="projectinput1">Name </label>
                                 <div class="col-md-9">
-                                    <input type="text" id="name" class="form-control" placeholder="Complete Name"  name="name">
+                                <input type="text" id="name" class="form-control" placeholder="Page Name"  name="name" value="{{$page->page_name}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1">Title</label>
                               <div class="col-md-9">
-                                  <input type="text" id="title" class="form-control" placeholder="Entring Title"  name="title">
+                                  <input type="text" id="title" class="form-control" placeholder="Page Title"  name="title" value="{{$page->page_name}}">
                               </div>
                           </div>
-                            <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput1">Description</label>
+                          <div class="form-group row">
+                                <label class="col-md-3 label-control" for="address">Content</label>
                                 <div class="col-md-9">
-                                    <textarea required="required" id="desc" rows="5" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-md-3 label-control" for="projectinput1">Image</label>
-                                <div class="col-md-9">
-                                    <input type="file" name="image" id="image">
+                                    <textarea id="summernote" name="content" placeholder="Page content.....">{{$page->page_content}}</textarea>
+                                    {{-- <textarea required="required" id="desc" rows="12" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea> --}}
                                 </div>
                             </div>
                           </div>
-                          <div class="form-actions pull-rigth">
-                            <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
-                              <i class="ft-x"></i> Cancel
-                            </button>
-                            <button type="submit" class="btn btn-primary">
-                              <i class="fa fa-check-square-o"></i> Save
-                            </button>
+                          <div class="form-actions pull-rigth" >
+                              <div class="row" style="float:right">
+                                    <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
+                                    <i class="ft-x"></i> Cancel
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-check-square-o"></i> Save
+                                    </button>
+                              </div>
+                              <br />
                           </div>
                         </form>
                       </div>
@@ -86,9 +85,42 @@
             <!-- // Basic form layout section end -->
           </div>
         </div>
-
 @endsection
 @section('script')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
+<script>
+    $('#summernote').summernote({
+        placeholder: '',
+        tabsize: 2,
+        height: 300
+    });
+</script>
+<script>
+$("#yes").click(function(){
+    window.location.href = "/admin/blog"
+});
+    $(function(){
+          $('#desc').froalaEditor()
+            .on('froalaEditor.image.beforeUpload', function (e, editor, files) {
+              if (files.length) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                  var result = e.target.result;
+                  editor.image.insert(result, null, null, editor.image.get());
+                  console.log(files);
+                };
+                // console.log(files[0]);
+                reader.readAsDataURL(files[0]);
+              }
+
+              return false;
+            })
+        });
+
+
+
+</script>
 <script>
     $("#yes").click(function(){
         window.location.href = "/admin/testimonials"

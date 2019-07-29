@@ -56,6 +56,7 @@ class TestimonialController extends Controller
             "name" =>$request->get("name"),
             "image"=>$imageName,
             "detail"=>$request->get("desc"),
+            "title"=>$request->get("title"),
             "created_at"=>Carbon::now(),
             "updated_at"=>Carbon::now(),
         ]);
@@ -81,6 +82,7 @@ class TestimonialController extends Controller
 
         $testimonial->name=$request->get("name");
         $testimonial->detail=$request->get("desc");
+        $testimonial->title=$request->get("title");
         $testimonial->updated_at=Carbon::now();
         $testimonial->save();
         return redirect('/admin/testimonials');
