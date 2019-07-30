@@ -233,6 +233,13 @@ class UserController extends Controller
         $userId = Auth::guard('client')->user()->id;
         $userProfile = UserProfile::where('user_id',$userId)->first();
         echo $file_path = public_path().'/uploads/users/profile_pic/'.$userProfile->profile_picture;
+        if (is_file($file_path)) {
+            echo 'here';
+            /* The path '/path/to/foo.txt' exists and is a file */
+        } else {
+            echo 'there';
+            /* The path '/path/to/foo.txt' does not exist or is not a file */
+        }
         dd($userProfile);
         if (file_exists($file_path) and !empty($file_path)) {
             File::delete($file_path);
