@@ -232,7 +232,7 @@ class UserController extends Controller
     {
         $userId = Auth::guard('client')->user()->id;
         $userProfile = UserProfile::where('user_id',$userId)->first();
-        echo $file_path = url('/').'/public/uploads/users/profile_pic/'.$userProfile->profile_picture;
+        echo $file_path = url('/').'/uploads/users/profile_pic/'.$userProfile->profile_picture;
         // echo url('/');
         
         // echo asset('/');
