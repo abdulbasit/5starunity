@@ -232,6 +232,7 @@ class UserController extends Controller
     {
         $userId = Auth::guard('client')->user()->id;
         $userProfile = UserProfile::where('user_id',$userId)->first();
+        dd($userProfile);
         $file_path = public_path().'/uploads/users/profile_pic/'.$userProfile->profile_picture;
         if (file_exists($file_path) and !empty($file_path)) {
             File::delete($file_path);
@@ -239,7 +240,7 @@ class UserController extends Controller
             $userProfile->profile_picture = "";
             $userProfile->save();
         }
-        return redirect()->back();
+        // return redirect()->back();
     }
     public function deleteAccount()
     {
