@@ -16,7 +16,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Mail\RegistrationEmail;
 use Illuminate\Support\Facades\Mail;
-
+use App\Models\Page;
 use Auth;
 use DB;
 class RegisterController extends Controller
@@ -33,10 +33,11 @@ class RegisterController extends Controller
     {
         if (@Auth::guard('client')->user()->id!="")
             return redirect()->route('dashboard');
-
+        
+        $page = Page::where('page_slug','terms')->first();
         $invitee =  $request->input('invitee');
         $countries = AllowedCountry::with('country')->get();
-        return view('auth/register',compact('countries','invitee'));
+        return view('auth/register',compact('countries','invitee','page'));
     }
     public function ajaxStates(Request $request)
     {
@@ -59,7 +60,7 @@ class RegisterController extends Controller
 
     protected function create(Request $request)
     {
-      
+        
         //check if user is freferrer then approve its acceptence    
         if($request->get('invitee')!="")
         {
