@@ -232,7 +232,7 @@ class UserController extends Controller
     {
         $userId = Auth::guard('client')->user()->id;
         $userProfile = UserProfile::where('user_id',$userId)->first();
-        echo $file_path = public_path().'/uploads/users/profile_pic/'.$userProfile->profile_picture;
+        echo $file_path = '/uploads/users/profile_pic/'.$userProfile->profile_picture;
         if (is_file($file_path)) {
             echo 'here';
             /* The path '/path/to/foo.txt' exists and is a file */
