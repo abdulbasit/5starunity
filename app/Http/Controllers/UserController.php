@@ -232,17 +232,19 @@ class UserController extends Controller
     {
         $userId = Auth::guard('client')->user()->id;
         $userProfile = UserProfile::where('user_id',$userId)->first();
-        echo $file_path = '/public/uploads/users/profile_pic/'.$userProfile->profile_picture;
-        echo url('/');
+        echo $file_path = url('/').'/public/uploads/users/profile_pic/'.$userProfile->profile_picture;
+        // echo url('/');
         
-        echo asset('/');
-        dd($userProfile);
+        // echo asset('/');
+        
         if (file_exists($file_path) and !empty($file_path)) {
+            echo 'here';
             File::delete($file_path);
             //UPDATE database
             $userProfile->profile_picture = "";
             $userProfile->save();
         }
+        dd($userProfile);
         // return redirect()->back();
     }
     public function deleteAccount()
