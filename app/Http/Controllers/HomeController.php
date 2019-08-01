@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Product_images;
+use App\Models\Category;
 use App\Models\Lottery;
 use App\Models\Page;
 use App\Models\LotteryContestent;
@@ -92,6 +93,7 @@ class HomeController extends Controller
     public function lotteryThings()
     {
         DB::enableQueryLog();
+        $category = Category::where('category_for','pro')->get();
         $lotteryData = Lottery::with(['lottery_contestent'])
                             ->select('lotteries.*','lotteries.id as lotteryId','lottery_contestents.*',
                                      'lottery_contestents.id as contestentsId','lotteries.total_lots as created_lots')
@@ -103,6 +105,6 @@ class HomeController extends Controller
                             ->get();
         // dd(DB::getQueryLog());
         // dd($lotteryData);
-        return view('pages.lottery_things',compact('lotteryData'));
+        return view('pages.lottery_things',compact('lotteryData','category'));
     }
 }

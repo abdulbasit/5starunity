@@ -72,7 +72,7 @@
                     {{ __('lables.product_partner')}}</a>
                 </li>
                 <li class="@if($route=='refer')active @endif">
-                    <a href="{{route('user.refer')}}">
+                    <a href="{{route('user.refer','all')}}">
                         <i class="	glyphicon glyphicon-share"></i>
                         {{ __('lables.invite_friends')}}
                     </a>

@@ -42,6 +42,27 @@
                                 {{-- {{ __('content.favt_products')}} --}}
                             </div>
                         </div>
+                        <form action="/search" method="post">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-2 form-group"></div>
+                            <div class="col-xs-12 col-lg-4 form-group">
+                                <input type="text" class="form-control " name="search" id="search" style="margin:0px">
+                            </div>
+                            {{-- <div class="col-xs-12 col-lg-3 form-group">
+                                <select name="country" id="country" class="form-control ">
+                                    <option>----Category----</option>
+                                    @foreach($category as $proCategory)
+                                        <option value="{{$proCategory->id}}">{{$proCategory->name}}</option>
+                                    @endforeach
+                                    
+                                </select>
+                            </div> --}}
+                            <div class="col-xs-12 col-lg-2 form-group">
+                                <button type="submit" class="btn-green" style="margin-top:-2px">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
                         <div class="ps_parent_circles">
                             <div class="ps_circles">
                                 <i class="fa fa-circle circle" data-position="1"></i>
@@ -55,7 +76,7 @@
                                         <div class="content_startup_blok current_investment ">
                                             <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
                                                 <div class="stratup_img lazy" data-src="" title="{{$lottery->name}}" style="overflow:hidden; height:100px">
-                                                    <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{$lottery->product->product_images[0]->pro_image}}">
+                                                    <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{@$lottery->product->product_images[0]->pro_image}}">
                                                 </div>
                                             </a>
                                             <div class="row content_info">
@@ -83,8 +104,8 @@
                                             <div class="row progress_info nopadding">
                                                 <div class="col-xs-12 progress canInvest">
                                                         <?php
-                                                        $total = $lottery->one_lot_amount*$lottery->getTotalLotsAttribute($lottery->lottery_id);
-                                                        $progressBar = round($total/$lottery->lot_amount*100,0);
+                                                        @$total = $lottery->one_lot_amount*$lottery->getTotalLotsAttribute($lottery->lottery_id);
+                                                        @$progressBar = round($total/$lottery->lot_amount*100,0);
                                                         ?>
                                                     <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressBar ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressBar ?>%"><?php echo $progressBar ?>%</div>
                                                 </div>

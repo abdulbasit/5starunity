@@ -250,25 +250,32 @@ class UserController extends Controller
         $userData->save();
         return redirect()->back()->with('notice','Account deletion request has been sent to administrator. You will be inform via email once it approved');
     }
-    public function refer()
+    public function refer($filters)
     {
+        
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
         $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
         $purchasedLots = Vallet::where('balance','<','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
-
+        
         foreach($purchasedLots as $spneMoney)
         {
             $spent+=str_replace("-","",$spneMoney->balance);
         }
+        
         $userData = User::where('users.id',$userId)->first();
-        $emaailsList = InvitationList::where('sender_id',$userId)->paginate(10);
+        if($filters=='all')
+            $emaailsList = InvitationList::where('sender_id',$userId)->paginate(10);
+        if($filters=='active')    
+            $emaailsList = InvitationList::where('sender_id',$userId)->where('verification_code','')->paginate(10);
+        if($filters=='inactive')        
+            $emaailsList = InvitationList::where('sender_id',$userId)->where('verification_code','!=','')->paginate(10);
+
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         $route='refer';
-        
-        return view('usr_profile.refer_form',compact('userInfo','route','available_balance','purchasedLots','spent','emaailsList'));
+        return view('usr_profile.refer_form',compact('userInfo','route','available_balance','purchasedLots','spent','emaailsList','filters'));
     }
     public function sendInivte(Request $request)
     {

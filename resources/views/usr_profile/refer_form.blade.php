@@ -1,4 +1,4 @@
-
+{{-- {{dd('here')}} --}}
 @extends('layouts.app')
 
 @section('style')
@@ -78,14 +78,21 @@
                     <div class="row">
                         <br />
                         <br />
-                        <div class="section-title text-left">Listings</div>
-                        
+                        <div class="section-title text-left">My Team</div>
+                        <div class="col-xs-12" style="margin-bottom:20px; padding:0px">
+                            <select name="filter" id="filter" class="fomr-controle pull-right text-center">
+                                <option value="all" @if($filters=='all') selected @endif>All</option>
+                                <option value="active" @if($filters=='active') selected @endif>Active</option>
+                                <option value="inactive" @if($filters=='inactive') selected @endif>In Active</option>
+                            </select>
+                        </div>
                         <table class="table table-striped table-bordered"  style="margin:0px; padding:0px">
                            
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Email</th>
+                                    <th scope="col">Spend</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Sent Date</th>
                                     <th scope="col">Accept Date</th>
@@ -97,6 +104,7 @@
                                 <tr>
                                     <th scope="row">{{$i++}}</th>
                                     <td>{{$list->email}}</td>
+                                    <td>0</td>
                                     <td>
                                         @if($list->verification_code=="")
                                             <span class="green">{{ __('lables.active')}}</span>
@@ -134,5 +142,11 @@
 @endsection
 @section('script')
 <script src="{{ asset('frontend/tags_input/bootstrap-tagsinput.min.js')}}"></script>
+<script>
+    $("#filter").on('change',function(){
+        var filter = $(this).val();
+        window.location='/user/refer/'+filter
+    });
+</script>
 @endsection
 

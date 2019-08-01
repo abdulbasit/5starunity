@@ -53,6 +53,7 @@ Auth::routes();
     Route::get('terms', 'HomeController@terms');
     Route::post('check_email', 'Auth\RegisterController@check_email');
     Route::post('check_email', 'Auth\RegisterController@check_email')->name('check_email');
+    Route::post('search', 'LotteryController@search')->name('search');
 
 
     //client side routing for logged in user
@@ -65,7 +66,7 @@ Auth::routes();
         Route::match(['get', 'post'], 'ajax-image-upload', 'Auth\RegisterController@ajaxImage');
         Route::post('profile-update', 'UserController@update')->name('profile-update');
         Route::get('dashboard', 'UserController@index')->name('dashboard');
-        Route::get('user/refer', 'UserController@refer')->name('user.refer');
+        Route::get('user/refer/{filters}', 'UserController@refer')->name('user.refer');
 
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');

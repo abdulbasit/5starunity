@@ -122,5 +122,9 @@ class LotteryController extends Controller
         $userData = User::where('users.id',$user_id)->first();
         return view('wallet.lotteries',compact('lotteryData','userData','userInfo','route'));
     }
+    public function search(Request $request)
+    {
+
+    }
 
 }
