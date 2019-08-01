@@ -15,6 +15,10 @@
 {
     width:100%
 }
+.profileTable > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td
+{
+    padding-left:10px !important
+}
 </style>
 <link rel="stylesheet" href="{{ asset('frontend/tags_input/bootstrap-tagsinput.css')}}">
 @endsection
@@ -92,7 +96,9 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Spend</th>
+                                    @if($filters=='all' || $filters=='active') 
+                                        <th scope="col">Spend</th>
+                                    @endif
                                     <th scope="col">Status</th>
                                     <th scope="col">Sent Date</th>
                                     <th scope="col">Accept Date</th>
@@ -104,7 +110,11 @@
                                 <tr>
                                     <th scope="row">{{$i++}}</th>
                                     <td>{{$list->email}}</td>
-                                    <td>0</td>
+                                    @if($filters=='all' || $filters=='active') 
+                                        <td>
+
+                                        </td>
+                                    @endif
                                     <td>
                                         @if($list->verification_code=="")
                                             <span class="green">{{ __('lables.active')}}</span>

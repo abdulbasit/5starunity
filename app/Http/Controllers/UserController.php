@@ -265,7 +265,7 @@ class UserController extends Controller
         
         $userData = User::where('users.id',$userId)->first();
         if($filters=='all')
-            $emaailsList = InvitationList::where('sender_id',$userId)->paginate(10);
+            $emaailsList = InvitationList::where('sender_id',$userId)->whre('')->leftJoin('vallets','user_id','reciver_id')->paginate(10);
         if($filters=='active')    
             $emaailsList = InvitationList::where('sender_id',$userId)->where('verification_code','')->paginate(10);
         if($filters=='inactive')        

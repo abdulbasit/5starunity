@@ -61,15 +61,7 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         
-        //check if user is freferrer then approve its acceptence    
-        if($request->get('invitee')!="")
-        {
-            $userInvites = InvitationList::where('verification_code',$request->get('invitee'))->first();
-            $userInvites->verification_code="";
-            $userInvites->updated_at=Carbon::now();
-            $userInvites->save();
-
-        }
+        
         $profile_picture = $request->file('profile_pic');
         $identity_card_front = $request->file('identity_card_front');
         $identity_card_back = $request->file('identity_card_back');
@@ -223,6 +215,16 @@ class RegisterController extends Controller
                 'status' => '0'
             ]);
         }
+
+        //check if user is freferrer then approve its acceptence    
+        if($request->get('invitee')!="")
+        {
+            $userInvites = InvitationList::where('verification_code',$request->get('invitee'))->first();
+            $userInvites->verification_code="";
+            $userInvites->updated_at=Carbon::now();
+            $userInvites->reciver_id=$user_id->id;
+            $userInvites->save();
+        }   
         $this->mailSend($mailData);
         return redirect()->route('login')->with('info',__('messages.register_success_info'));
     }
