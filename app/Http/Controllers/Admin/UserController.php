@@ -10,10 +10,12 @@ use App\Models\Vallet;
 use App\Models\UserDocument;
 use  App\Models\TransLog;
 use  App\Models\BlogComment;
+use App\Traits\EmailTrait;
+use App\Mail\DeleteAccountEmail;
 use Auth;
 class UserController extends Controller
 {
-
+    use EmailTrait;
     public function index()
     {
         $userData = User::with('userProfile')->get();
@@ -122,7 +124,13 @@ class UserController extends Controller
     }
     public function delete($id)
     {
-       
+        //send email for delete account 
+        $userData =User::find($id);
+        $data = array("sender_name"=>$userData->name);
+        $emailData = array("to"=>$userData->email,"from_email"=>"no-reply","subject"=>"Delet Account","email_data"=>$data);
+        $this->DeleteAccountAdminEmail($emailData);
+
+        
         $deleteProfile = UserProfile::where('user_id',$id);
         $deleteProfile->delete();
 
@@ -136,7 +144,10 @@ class UserController extends Controller
         $deleteVallet->delete();
 
         $deleteAccount = User::find($id);
+
         $deleteAccount->delete();
+      
+        return redirect()->back();
     }
     public function create()
     {
