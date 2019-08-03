@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Lottery;
+use App\Models\Product;
 use App\Models\LotteryContestent;
 use App\Models\UserDocument;
 use App\Models\UserProfile;
 use App\Models\User;
 use App\Models\Vallet;
+use App\Models\Category;
 use Session;
 use Auth;
 use DB;
@@ -36,9 +38,9 @@ class LotteryController extends Controller
                         ->groupBy('lotteries.id','lottery_contestents.lottery_id')
                         ->orderBy('totalClients','desc')
                         ->paginate(18);
-
+        $category = Category::where('category_for','pro')->get();
         $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
-        return view('lotteries.index',compact('lotteryData','testimonialData'));
+        return view('lotteries.index',compact('lotteryData','testimonialData','category'));
     }
     public function detail($id)
     {
@@ -124,7 +126,29 @@ class LotteryController extends Controller
     }
     public function search(Request $request)
     {
-
+        $categoryID = $request->post('category');
+        $searchString = $request->post('search');
+        DB::enableQueryLog(); // Enable query log
+        $lotteryData = Lottery::with(['lottery_contestent','product'])
+                            ->select('lotteries.*','lotteries.id as lotteryId','lottery_contestents.*',
+                                    'lottery_contestents.id as contestentsId','lotteries.total_lots as created_lots',"products.*")
+                            ->selectRaw('COUNT(lottery_contestents.lottery_id) as totalClients')
+                            ->leftjoin('lottery_contestents','lotteries.id','lottery_id')
+                            ->leftjoin('products','products.id','lotteries.pro_id')
+                            ->groupBy('lotteries.id','lottery_contestents.lottery_id')
+                            ->orderBy('totalClients','desc');
+        if($categoryID!="")
+        {
+            $lotteryData = $lotteryData->where('products.cat_id',"=",$categoryID);
+        }
+        if($searchString!="")
+        {
+        
+            $lotteryData = $lotteryData->where('lotteries.name',"like","%$searchString%");
+        }
+        $lotteryData = $lotteryData->paginate(18);
+        $category = Category::where('category_for','pro')->get();
+        $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
+        return view('lotteries.index',compact('lotteryData','testimonialData','category'));
     }
-
 }

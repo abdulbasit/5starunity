@@ -53,7 +53,7 @@ Auth::routes();
     Route::get('terms', 'HomeController@terms');
     Route::post('check_email', 'Auth\RegisterController@check_email');
     Route::post('check_email', 'Auth\RegisterController@check_email')->name('check_email');
-    Route::post('search', 'LotteryController@search')->name('search');
+    Route::post('lottery/search', 'LotteryController@search')->name('search');
 
 
     //client side routing for logged in user

@@ -42,27 +42,7 @@
                                 {{-- {{ __('content.favt_products')}} --}}
                             </div>
                         </div>
-                        <form action="/search" method="post">
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-2 form-group"></div>
-                            <div class="col-xs-12 col-lg-4 form-group">
-                                <input type="text" class="form-control " name="search" id="search" style="margin:0px">
-                            </div>
-                            {{-- <div class="col-xs-12 col-lg-3 form-group">
-                                <select name="country" id="country" class="form-control ">
-                                    <option>----Category----</option>
-                                    @foreach($category as $proCategory)
-                                        <option value="{{$proCategory->id}}">{{$proCategory->name}}</option>
-                                    @endforeach
-                                    
-                                </select>
-                            </div> --}}
-                            <div class="col-xs-12 col-lg-2 form-group">
-                                <button type="submit" class="btn-green" style="margin-top:-2px">
-                                    Search
-                                </button>
-                            </div>
-                        </div>
+                        
                         <div class="ps_parent_circles">
                             <div class="ps_circles">
                                 <i class="fa fa-circle circle" data-position="1"></i>
