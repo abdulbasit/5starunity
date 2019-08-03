@@ -6,6 +6,7 @@ use App\Mail\RegistrationEmail;
 use App\Mail\InviteEmail;
 use App\Mail\ProfileUpdateEmail;
 use App\Mail\DeleteAccountEmail;
+use App\Mail\ApprovedAccountEmail;
 trait EmailTrait {
  
     public function sendEmails($mailObj) {
@@ -64,6 +65,20 @@ trait EmailTrait {
             $obj->subject = $param['subject'];
             $obj->receiver = $param['to'];
             $mailObj = new DeleteAccountEmail($obj); 
+            $this->sendEmails($mailObj);
+    }
+    public function ApproveAccountAdminEmail($param)
+    {
+        $regFrom = \Config::get('constants.emailsFrom.'.$param['from_email']);
+            $obj = new \stdClass();
+            foreach($param['email_data'] as $key=>$emailData)
+            {
+                $obj->$key = $emailData;
+            }
+            $obj->sender = $regFrom;
+            $obj->subject = $param['subject'];
+            $obj->receiver = $param['to'];
+            $mailObj = new ApprovedAccountEmail($obj); 
             $this->sendEmails($mailObj);
     }
 }

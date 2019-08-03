@@ -11,7 +11,7 @@ use App\Models\UserDocument;
 use  App\Models\TransLog;
 use  App\Models\BlogComment;
 use App\Traits\EmailTrait;
-use App\Mail\DeleteAccountEmail;
+
 use Auth;
 class UserController extends Controller
 {
@@ -120,6 +120,11 @@ class UserController extends Controller
             $this->delete($id);
         $user->status =$status;
         $user->save();
+
+        //send email for approve account 
+        $data = array("sender_name"=>$user->name);
+        $emailData = array("to"=>$user->email,"from_email"=>"no-reply","subject"=>"Account Approved","email_data"=>$data);
+        $this->ApproveAccountAdminEmail($emailData);
         return redirect('admin/users');
     }
     public function delete($id)
