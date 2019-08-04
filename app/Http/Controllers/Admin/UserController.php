@@ -116,29 +116,29 @@ class UserController extends Controller
     public function update_status($id,$status)
     {
         $user = User::where('id',$id)->first();
-        if($status==4)
-            $this->delete($id);
+
         $user->status =$status;
         $user->save();
-        // if($status-='0')
-        // {
-        //     //send email for approve account 
-        //     $data = array("sender_name"=>$user->name);
-        //     $emailData = array("to"=>$user->email,"from_email"=>"no-reply","subject"=>"Account Approved","email_data"=>$data);
-        //     $this->ApproveAccountAdminEmail($emailData);
-        //     return redirect('admin/users');
-        // }
-       
+        if($status=='0')
+        {
+            //send email for approve account 
+            $data = array("sender_name"=>$user->name);
+            $emailData = array("to"=>$user->email,"from_email"=>"no-reply","subject"=>"Account Approved","email_data"=>$data);
+            $this->ApproveAccountAdminEmail($emailData);
+            return redirect('admin/users');
+        }
+        else if ($status=='4')
+        {
+            //send email for delete account 
+            $data = array("sender_name"=>$user->name);
+            $emailData = array("to"=>$user->email,"from_email"=>"no-reply","subject"=>"Delet Account","email_data"=>$data);
+            $this->DeleteAccountAdminEmail($emailData);
+            $this->delete($id);
+        }
         
     }
     public function delete($id)
     {
-        //send email for delete account 
-        $userData =User::find($id);
-        $data = array("sender_name"=>$userData->name);
-        $emailData = array("to"=>$userData->email,"from_email"=>"no-reply","subject"=>"Delet Account","email_data"=>$data);
-        $this->DeleteAccountAdminEmail($emailData);
-
         
         $deleteProfile = UserProfile::where('user_id',$id);
         $deleteProfile->delete();
