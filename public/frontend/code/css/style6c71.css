@@ -15474,7 +15474,7 @@ label{
 .notice_form
 {
     color:red;
-    text-align:center;
+    text-align:center !important;
     font-size:18px
 }
 @media (max-width: 500px) {
