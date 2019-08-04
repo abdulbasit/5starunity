@@ -67,6 +67,7 @@ Auth::routes();
         Route::post('profile-update', 'UserController@update')->name('profile-update');
         Route::get('dashboard', 'UserController@index')->name('dashboard');
         Route::get('user/refer/{filters}', 'UserController@refer')->name('user.refer');
+        Route::get('promotions', 'UserController@promotions')->name('promotions');
 
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');

@@ -61,8 +61,8 @@
                     <i class="glyphicon glyphicon-th-list"></i>
                     {{ __('lables.my_lots')}} </a>
                 </li>
-                <li class="@if($route=='free_coins')active @endif">
-                    <a href="{{route('profile')}}">
+                <li class="@if($route=='promotions')active @endif">
+                    <a href="{{route('promotions')}}">
                     <i class="glyphicon glyphicon-cd"></i>
                     {{ __('lables.free_coins')}}</a>
                 </li>

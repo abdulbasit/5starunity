@@ -60,6 +60,7 @@ return [
     "category"=>"KATEGORIEN",
     'placehoder_search'=>"wonach möchten Sie suchen?",
     "reset_password"=>"Passwort Anforderung",
-    "post_comment"=>"ÜBERMITTELN"
+    "post_comment"=>"ÜBERMITTELN",
+    "recomend"=>"EMPFEHLUNG ANMELDEN"
 ];
 ?>
