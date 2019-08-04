@@ -16,7 +16,7 @@
             <select name="category" id="category" class="form-control" style="width:100%">
                 <option value="">{{ __('lables.category')}}</option>
                 @foreach($categories as $categoryBlog)
-                    <option @if($categoryBlog->id==$cat_id) selected="selected"@endif value="{{$categoryBlog->id}}">{{$categoryBlog->name}}</option>
+                    <option @if($categoryBlog->id==@$cat_id) selected="selected"@endif value="{{$categoryBlog->id}}">{{$categoryBlog->name}}</option>
                 @endforeach
             </select>
         </div>
