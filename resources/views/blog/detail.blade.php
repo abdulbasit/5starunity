@@ -47,7 +47,7 @@
                 @if(!Auth::guard('client')->check())
                     <h3>Kommentare</h3>
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-9">
                             <p>Das Kommentieren ist nur für Registrierte Benutzer möglich. Bitte melden Sie sich an, um kommentieren zu können.</p>
                         </div>
                         <div class="col-sm-4 text-center">
@@ -110,7 +110,7 @@
                       </div>
                 @endif
             </div>
-            <div class="col-lg-4 col-xs-12 categories">
+            <div class="col-lg-3 col-xs-12 categories">
                 <h4 style="margin-left:15px" class="text-left">{{__('lables.category')}}</h4>
                 <div class="profile-usermenu">
                     <ul class="nav">
@@ -118,7 +118,7 @@
                         <li class="">
                             <a href="/cat-news/{{$category->id}}">{{$category->name}} </a>
                         </li>
-                        @endforeach
+                        @endforeach      
                     </ul>
                 </div>
             </div>
