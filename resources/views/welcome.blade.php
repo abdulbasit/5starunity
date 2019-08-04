@@ -533,12 +533,12 @@
             {
                 
                 $("#subsMsg").css('color','green');
-                $("#subsMsg").html('Thanks for your intrest..')
+                $("#subsMsg").html("{{ __('messages.subscription_thanks')}}")
             }
             else if (msg=='error')
             {
                 $("#subsMsg").css('color','red');
-                $("#subsMsg").html('Already Subscribed')
+                $("#subsMsg").html("{{ __('messages.already_exists')}}")
             }
         });
     });
