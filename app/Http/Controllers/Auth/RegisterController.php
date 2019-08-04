@@ -215,6 +215,9 @@ class RegisterController extends Controller
                 'email' => $request->get('email'),
                 'status' => '0'
             ]);
+            $data = array("sender_name"=>$request->get('email'));
+            $emailData = array("to"=>$request->get('email'),"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
+            $this->SubscribeEmail($emailData);
         }
 
         //check if user is freferrer then approve its acceptence    
@@ -225,7 +228,10 @@ class RegisterController extends Controller
             $userInvites->updated_at=Carbon::now();
             $userInvites->reciver_id=$user_id->id;
             $userInvites->save();
-        }   
+        }
+
+        
+        
         $this->mailSend($mailData);
         return redirect()->route('login')->with('info',__('messages.register_success_info'));
     }
