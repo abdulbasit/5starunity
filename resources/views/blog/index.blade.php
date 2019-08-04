@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-xs-12 col-lg-3 pull-right">
             <select name="category" id="category" class="form-control" style="width:100%">
-                <option value="">{{ __('lables.category')}}</option>
+                <option value="">----{{ __('lables.category')}}--</option>
                 @foreach($categories as $categoryBlog)
                     <option @if($categoryBlog->id==@$cat_id) selected="selected"@endif value="{{$categoryBlog->id}}">{{$categoryBlog->name}}</option>
                 @endforeach
@@ -44,7 +44,7 @@
                     </div>
                     @endforeach
                 @else
-                    <span style="color:red; text-align:center">No Data Found</span>
+                <span style="color:red; text-align:center">{{__('messages.no_data')}}</span>
                 @endif
                </div>
             <nav class="text-center">
@@ -59,7 +59,8 @@
     <script>
         $("#category").on('change',function(){
             var categoryID = $(this).val();
-            window.location="/cat-news/"+categoryID;
+            if(categoryID!="")
+                window.location="/cat-news/"+categoryID;
         });
     </script>
 @endsection
