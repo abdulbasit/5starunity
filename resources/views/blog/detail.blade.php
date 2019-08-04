@@ -70,8 +70,7 @@
                             </form>
                         </div>
                     </div>
-                    <br />    
-                    <br />
+                    
                     <div class="container">
                         <div class="row">
                           <div class="col-md-8">
@@ -124,6 +123,10 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <br />
+        <br />
+        <br />
 @endsection
 @section('script')
 <script>
