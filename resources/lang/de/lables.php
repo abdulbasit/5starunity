@@ -58,6 +58,7 @@ return [
     "no"=>"NEIN",
     "search"=>"SUCHEN",
     "category"=>"KATEGORIEN",
-    'placehoder_search'=>"wonach möchten Sie suchen?"
+    'placehoder_search'=>"wonach möchten Sie suchen?",
+    "reset_password"=>"Passwort Anforderung"
 ];
 ?>

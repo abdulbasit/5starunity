@@ -6,7 +6,7 @@
         <div class="col-md-8 col-lg-offset-3">
             <div class="">
                 <br />
-                <h2 class="text-center registerHeading">{{ __('Reset Password') }}</h2>
+                <h2 class="text-center registerHeading">{{ __('lables.reset_password')}}</h2>
                 <br />
                 <div class="card-body">
                     @if (session('status'))
