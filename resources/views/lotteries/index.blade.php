@@ -26,11 +26,11 @@
                     <div class="row">
                         <div class="col-xs-12 col-lg-1 form-group"></div>
                         <div class="col-xs-12 col-lg-4 form-group">
-                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" style="margin:0px">
+                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" style="margin:0px" placeholder="{{ __('lables.placehoder_search')}}">
                         </div>
                         <div class="col-xs-12 col-lg-4 form-group">
                             <select name="category" id="category" class="form-control ">
-                                <option value="">----Category----</option>
+                                <option value="">----{{ __('lables.category')}}----</option>
                                 @foreach($category as $proCategory)
                                     <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
                                 @endforeach
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-xs-12 col-lg-2 form-group text-cnetr">
                             <button type="submit" class="btn-green" style="margin-top:-2px">
-                                Search
+                                {{ __('lables.search')}}
                             </button>
                         </div>
                     </div>

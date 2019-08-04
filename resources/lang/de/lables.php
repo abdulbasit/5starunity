@@ -55,6 +55,9 @@ return [
     "my_lots"=>"Meine Verlosungen",
     "delete_account"=>"ACCOUNT LÖSCHEN",
     "yes"=>"JA",
-    "no"=>"NEIN"
+    "no"=>"NEIN",
+    "search"=>"SUCHEN",
+    "category"=>"KATEGORIEN",
+    'placehoder_search'=>"wonach möchten Sie suchen?"
 ];
 ?>
