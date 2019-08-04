@@ -52,8 +52,8 @@
                 5starUnity e.V. wird gerichtlich und außergerichtlich gem. § 26 BGB vertreten durch: <br />
                 Dirk Marras (Präsident), Silvia Palka (Vizepräsidentin), Alexander Müller (Vizepräsident) <br />
                 <br />
-                Für einzelne Beiträge sind, sofern diese von externen Quellen veröffentlicht werden sollten, die jeweiligen AutorInnen verantwortlich.<br />
-                Der Verantwortungsbereich für angebotene Konzepte / Produkte, welche ggf. im internen Bereich proklamiert werden, liegt beim jeweiligen Unternehmen selbst.<br />
+                Für einzelne Beiträge sind, sofern diese von externen Quellen veröffentlicht werden sollten, die jeweiligen AutorInnen verantwortlich. Der<br />
+                Verantwortungsbereich für angebotene Konzepte / Produkte, welche ggf. im internen Bereich proklamiert werden, liegt beim jeweiligen Unternehmen selbst.<br />
                 5starUnity e.V. erteilt ausschließlich die Zustimmung zur Darstellung; es gelten die Allgemeinen Geschäftsbedingungen des jeweiligen externen Anbieters.<br />
             </p>
             <br /><br />
