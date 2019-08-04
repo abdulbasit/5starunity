@@ -69,6 +69,8 @@
             var categoryID = $(this).val();
             if(categoryID!="")
                 window.location="/cat-news/"+categoryID;
+            else 
+                window.location="/news";
         });
     </script>
 @endsection
