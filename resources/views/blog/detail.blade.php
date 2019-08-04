@@ -19,7 +19,7 @@
 
 <div class="container pageContent">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
             <div class="">
                 <br />
                 <br /><br />
@@ -47,7 +47,7 @@
                 @if(!Auth::guard('client')->check())
                     <h3>Kommentare</h3>
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-8">
                             <p>Das Kommentieren ist nur für Registrierte Benutzer möglich. Bitte melden Sie sich an, um kommentieren zu können.</p>
                         </div>
                         <div class="col-sm-4 text-center">
