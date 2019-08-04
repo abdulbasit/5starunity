@@ -66,7 +66,7 @@
                                 <textarea name="comment" id="postCommentBox" placeholder="Geben Sie hier Ihre Nachricht ein"></textarea>
                                 <input type="hidden" name="post_id" id="post_id" value="{{$blogPostData->id}}">
                                 <span id="cmnt_msg" class="red" style="display:none; color:red">Required Field</span>
-                                <button type="button" onclick="sumbit_comment()" class="btn-default-new-layout-small btn-new-layout-ghost-bggreen pull-right">Submit</button>
+                                <button type="button" onclick="sumbit_comment()" class="btn-green pull-right" style="right:0px">{{__('lables.post_comment')}}</button>
                             </form>
                         </div>
                     </div>

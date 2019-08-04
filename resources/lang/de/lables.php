@@ -59,6 +59,7 @@ return [
     "search"=>"SUCHEN",
     "category"=>"KATEGORIEN",
     'placehoder_search'=>"wonach möchten Sie suchen?",
-    "reset_password"=>"Passwort Anforderung"
+    "reset_password"=>"Passwort Anforderung",
+    "post_comment"=>"ÜBERMITTELN"
 ];
 ?>
