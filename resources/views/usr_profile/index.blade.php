@@ -11,7 +11,7 @@
 {
     border:none;
     position: relative;
-    top: 35px;
+    /* top: -10px; */
     border-radius: 50%;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -25,7 +25,8 @@
     left: 50%;
     /* box-shadow: 1px 5px 7px #CCC; */
     margin-left: -35px;
-    overflow: hidden
+    overflow: hidden;
+    z-index: 100;
 }
 .spendCircle
 {

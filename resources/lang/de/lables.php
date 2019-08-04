@@ -30,7 +30,7 @@ return [
     "remember"=>"Angemeldet bleiben",
     //User dashboard links start
     "edit_picture"=>"Bearbeiten",
-    "change"=>"ändern",
+    "change"=>"ÄNDERN",
     "delete"=>"LÖSCHEN ",
     "my_account"=>"MEIN KONTO",
     "register_date"=>"Registrations-Datum",

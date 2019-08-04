@@ -138,10 +138,10 @@
                          <div class="row">
                          <br />
                          @if($userInfo['user_data']->status==0)
-                            <div class="col-xs-4">
-                                <a class="editProf" style="" href="{{route('account-settings')}}">{{ __('lables.edit_profile')}}</a>
+                            <div class="col-xs-5">
+                                <a class="editProf pull-right" style="" href="{{route('account-settings')}}">{{ __('lables.edit_profile')}}</a>
                             </div>  
-                            <div class="col-xs-8">
+                            <div class="col-xs-7" style="padding-left:50px">
                                     Datenänderung bedarf einer erneuten Verifizierung einschließlich Übermittlung eines Ausweis- bzw. Adressdokuments, welche bis zu 72h benötigt und bis dahin ggf. Funktionen einschränkt.               
                             </div>  
                             @endif
@@ -149,10 +149,10 @@
                         
                         <div class="row" style="margin-top:30px">
                                 @if($userInfo['user_data']->status==0)
-                            <div class="col-xs-4">
-                                    <a data-toggle="modal" data-target="#accountDelete" class="deletProf">{{ __('lables.delete_account')}}</a>                                
+                            <div class="col-xs-5">
+                                <a data-toggle="modal" data-target="#accountDelete" class="deletProf pull-right">{{ __('lables.delete_account')}}</a>                                
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-7" style="padding-left:50px">
                                 Eine Account Löschung wird innerhalb von 72h bestätigt – bitte beachten Sie, dass <span style="color:red; font-weight:bold">keine</span> Wiederherstellung vorgenommen werden kann.  
                             </div>
                             @endif
