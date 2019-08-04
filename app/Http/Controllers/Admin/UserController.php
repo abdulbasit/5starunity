@@ -125,7 +125,7 @@ class UserController extends Controller
             $data = array("sender_name"=>$user->name);
             $emailData = array("to"=>$user->email,"from_email"=>"no-reply","subject"=>"Account Approved","email_data"=>$data);
             $this->ApproveAccountAdminEmail($emailData);
-            return redirect('admin/users');
+           
         }
         else if ($status=='4')
         {
@@ -135,6 +135,7 @@ class UserController extends Controller
             $this->DeleteAccountAdminEmail($emailData);
             $this->delete($id);
         }
+        return redirect('admin/users');
         
     }
     public function delete($id)
