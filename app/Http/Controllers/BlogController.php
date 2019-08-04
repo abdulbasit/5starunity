@@ -28,7 +28,8 @@ class BlogController extends Controller
             $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
             ->orderBy('blogs.id', 'DESC')
             ->paginate(12);
-            return view('blog.index',compact('blogData'));
+            $categories = Category::where('category_for','blog')->get();
+            return view('blog.index',compact('blogData','categories'));
     }
     public function cat_blogs($cat_id)
     {
@@ -36,7 +37,8 @@ class BlogController extends Controller
         ->where('cat_id',$cat_id)
         ->orderBy('blogs.id', 'DESC')
         ->paginate(12);
-        return view('blog.index',compact('blogData'));
+        $categories = Category::where('category_for','blog')->get();
+        return view('blog.index',compact('blogData','categories','cat_id'));
     }
     public function blogDetail($slug)
     {

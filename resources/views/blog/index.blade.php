@@ -12,6 +12,20 @@
 <br />
 <div class="container pageContent">
     <div class="row">
+        <div class="col-xs-12 col-lg-3 pull-right">
+            <select name="category" id="category" class="form-control" style="width:100%">
+                <option value="">{{ __('lables.category')}}</option>
+                @foreach($categories as $categoryBlog)
+                    <option @if($categoryBlog->id==$cat_id) selected="selected"@endif value="{{$categoryBlog->id}}">{{$categoryBlog->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-xs-12 col-lg-3 pull-right text-right">  
+            Filter
+        </div>
+    </div>
+    <br />
+    <div class="row">
         <div class="col-md-12">
             <div class="row">
                 @if(count($blogData) >0)
@@ -26,19 +40,6 @@
                             <a class="articleTitle smallerTitle" href="/article/{{$blog->post_name}}-{{$blog->id}}" title=" {{$blog->title}}">
                                 {{$blog->title}}
                             </a>
-                            {{-- <div class="articleBtm">
-                                <div class="row">
-                                    <div class="col-xs-12 articleIcons">
-                                        <a class="pull-right" href="article/article-2766.html#commentspart" title="Kommentare" style="margin-top:3px">
-                                            <sup class="pull-right">{{$blog->blog_comment}}</sup>
-                                            <img class="pull-right small_news_icon" src="{{ URL::to('/') }}/frontend/graphics/icons/icon-comments.svg" alt="Kommentare" title="Kommentare" />
-                                        </a>
-                                        <div class="shareIcon pull-right" title="Teilen" data-toggle="popover" data-placement="top" data-content="<div class='addthis_sharing_toolbox' data-url='https://www.companisto.com/de/article/article-2766' data-title='Warum vanilla bean auf vegan setzt - Schauen Sie es sich an! - Schauen Sie es sich an!'></div>">
-                                            <img class="small_news_icon" src="{{ URL::to('/') }}/frontend/graphics/icons/icon-share.svg" alt="Teilen" title="Teilen" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                     @endforeach
@@ -53,4 +54,12 @@
             </nav>
         </div>
 
+@endsection
+@section('script')
+    <script>
+        $("#category").on('change',function(){
+            var categoryID = $(this).val();
+            window.location="/cat-news/"+categoryID;
+        });
+    </script>
 @endsection
