@@ -1,14 +1,5 @@
 @extends('admin.layouts.apps')
 @section('style')
-{{-- <link rel="stylesheet" href="{{ asset('app-assets/editor/css/froala_editor.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/froala_style.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/code_view.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image_manager.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/table.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/video.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image_manager.css')}}">
-<link rel="stylesheet" href="{{ asset('app-assets/editor/css/plugins/image.css')}}"> --}}
 <style>
 .fr-box.fr-basic .fr-element
 {
@@ -55,7 +46,7 @@
                 <div class="col-md-12">
                   <div class="card">
                     <div class="card-header">
-                      <h4 class="card-title" id="horz-layout-basic">Create New Blog</h4>
+                      <h4 class="card-title" id="horz-layout-basic">Edit Blog</h4>
                       <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collpase show">
@@ -79,6 +70,12 @@
                                             <option {{old('status',$cat->id)==$blog->cat_id? 'selected':''}} value="{{$cat->id}}"> {{$cat->name}} </option>
                                         @endforeach
                                     </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Author</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="author" class="form-control" placeholder="Author"  name="author" value="{{$blog->author}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -174,35 +171,6 @@
         height: 300
     });
 </script>
-
-
-  {{-- <script type="text/javascript" src="{{ asset('app-assets/editor/js/froala_editor.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/froala_editor.min.js')}}" ></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/char_counter.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/code_beautifier.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/code_view.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/colors.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/draggable.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/emoticons.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/entities.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/file.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/font_size.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/font_family.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/fullscreen.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/image.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/image_manager.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/line_breaker.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/inline_style.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/link.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/lists.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/paragraph_format.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/paragraph_style.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/quick_insert.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/quote.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/table.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/save.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/url.min.js')}}"></script>
-  <script type="text/javascript" src="{{ asset('app-assets/editor/js/plugins/video.min.js')}}"></script> --}}
   <script>
     $(function(){
         $('#desc')

@@ -64,6 +64,7 @@ class BlogController extends Controller
             $blogPost->title=$request->get("title");
             $blogPost->description=$request->get("desc");
             $blogPost->seo_title = $request->get('mtitle');
+            $blogPost->author = $request->get('author');
             $blogPost->seo_meta = $request->get('mtags');
             $blogPost->seo_meta_des = $request->get('mdesc');
             $blogPost->cat_id = $request->get('category');
@@ -95,6 +96,7 @@ class BlogController extends Controller
             "post_img"=>$imageName,
             "status"=>$request->get("status"),
             "allow_cooments"=>"0",
+            "author"=>$request->get("status"),
             "short_desc"=>$request->get("short_desc"),
             "post_author"=>Auth::guard('admin')->user()->id,
             "post_name"=>$this->hyphenize(str_replace(".","",$request->get("title")))

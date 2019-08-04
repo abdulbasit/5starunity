@@ -29,11 +29,11 @@
             </div>
             <div class="clear"></div>
                 <div class="articleDetails">
-
                     <div class="dottedSpacer"></div>
                     <div class="row">
                         <div class="col-md-12" style="min-height: 42px;">
-                            <span class="articleDate">{{\Carbon\Carbon::parse($blogPostData->created_at)->toFormattedDateString()}}</span>
+                            <span class="articleDate">{{\Carbon\Carbon::parse($blogPostData->created_at)->toFormattedDateString()}}</span>,
+                            <span class="articleDate">Autor: {{$blogPostData->author}}</span>
 
                         </div>
                     </div>
