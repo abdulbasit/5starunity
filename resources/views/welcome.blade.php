@@ -527,8 +527,19 @@
             data: { "_token": "{{ csrf_token() }}",email: email }
         })
         .done(function( msg ) {
-          $("#email").removeAttr('disabled');
-          $("#subsMsg").html('Thanks for your intrest..')
+            $("#email").removeAttr('disabled');
+            
+            if(msg=='scuccess')
+            {
+                
+                $("#subsMsg").css('color','green');
+                $("#subsMsg").html('Thanks for your intrest..')
+            }
+            else if (msg=='error')
+            {
+                $("#subsMsg").css('color','red');
+                $("#subsMsg").html('Already Subscribed')
+            }
         });
     });
 </script>

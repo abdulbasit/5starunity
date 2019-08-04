@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
 use Auth;
 use DB;
+use App\Traits\EmailTrait;
 class RegisterController extends Controller
 {
-
+    use EmailTrait;
     use RegistersUsers;
 
     protected $redirectTo = '/login';
@@ -319,11 +320,23 @@ class RegisterController extends Controller
     }
     public function subscribe(Request $request)
     {
-        Subscription::create([
-            'email' => $request->get('email'),
-            'status' => '0'
-        ]);
-        return 'scuccess';
-        
+        $email = $request->get('email');
+      
+        $userData = Subscription::where('email',$email)->count();
+        if($userData==0)
+        {
+            Subscription::create([
+                'email' => $request->get('email'),
+                'status' => '0'
+            ]);
+            $data = array("sender_name"=>$request->get('email'));
+            $emailData = array("to"=>$request->get('email'),"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
+            $this->SubscribeEmail($emailData);
+            return 'scuccess';
+        }
+        else 
+        {
+            return 'error';
+        }
     }
 }
