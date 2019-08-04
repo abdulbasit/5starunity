@@ -32,6 +32,7 @@
                         <p>
                             Partner bieten Ihnen die Möglichkeit nachfolgend eingestellte Werbung bis zu drei Mal anzusehen wodurch Sie kostenfreie Bonus-Taler zur freien Verfügung erhalten. Nutzen Sie diese Chance um bspw. Lose von Produkten Ihrer Wahl zu erwerben.  
                             <br />
+                            <br />
                             Kennen auch Sie z.B. Unternehmen, welche gut sichtbare Werbeplätze buchen und an garantierten Views / Klicks interessiert sein könnten? Jede positv zustande gekommene Empfehlung vergüten wir mit S-PAY, die Sie frei nutzen dürfen.  
                         </p>
                         <br />
