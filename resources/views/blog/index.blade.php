@@ -9,8 +9,16 @@
         </div>
     </div>
 </div>
+
 <br />
 <div class="container pageContent">
+    <div class="row">
+        <br />
+        <br />
+        <p>{{ __('content.news-tesxt-1')}}</p>
+        <br />
+        <p style="margin-top:10px">{{ __('content.news-tesxt-2')}}</p>
+    </div>
     <div class="row">
         <div class="col-xs-12 col-lg-3 pull-right">
             <select name="category" id="category" class="form-control" style="width:100%">
