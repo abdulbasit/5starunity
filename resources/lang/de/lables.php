@@ -30,7 +30,7 @@ return [
     "remember"=>"Angemeldet bleiben",
     //User dashboard links start
     "edit_picture"=>"Bearbeiten",
-    "change"=>"ÄNDERN",
+    "change"=>"andern",
     "delete"=>"LÖSCHEN ",
     "my_account"=>"MEIN KONTO",
     "register_date"=>"Registrations-Datum",
@@ -58,9 +58,12 @@ return [
     "no"=>"NEIN",
     "search"=>"SUCHEN",
     "category"=>"KATEGORIEN",
-    'placehoder_search'=>"wonach möchten Sie suchen?",
+    "lottery_category_dropdown"=>"Suche nach Produkt-Kategorie",
+    'placehoder_search'=>"Produkte in der Lottery of Things suchen",
     "reset_password"=>"Passwort Anforderung",
     "post_comment"=>"ÜBERMITTELN",
-    "recomend"=>"EMPFEHLUNG ANMELDEN"
+    "recomend"=>"EMPFEHLUNG ANMELDEN",
+    "filter"=>"Auswahlkategorie",
+    "categories_news"=>"…bitte auswählen"
 ];
 ?>

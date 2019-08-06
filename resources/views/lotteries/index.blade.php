@@ -5,6 +5,10 @@
 {
     right:0px !important
 }
+#search
+{
+    margin:0px;
+}
 </style>
 @endsection
 @section('content')
@@ -26,11 +30,11 @@
                     <div class="row">
                         <div class="col-xs-12 col-lg-1 form-group"></div>
                         <div class="col-xs-12 col-lg-4 form-group">
-                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" style="margin:0px" placeholder="{{ __('lables.placehoder_search')}}">
+                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="{{ __('lables.placehoder_search')}}">
                         </div>
                         <div class="col-xs-12 col-lg-4 form-group">
                             <select name="category" id="category" class="form-control ">
-                                <option value="">----{{ __('lables.category')}}----</option>
+                                <option value="">----{{ __('lables.lottery_category_dropdown')}}----</option>
                                 @foreach($category as $proCategory)
                                     <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
                                 @endforeach
@@ -113,4 +117,13 @@
                 </ul>
             </nav>
     </section>
+@endsection
+@section('script')
+    <script>
+        $(".form-control").on('focus',function(){
+            $(this).css('border-color','green');
+        }).on('focusout',function(){
+            $(this).removeAttr('style');
+        })
+    </script>
 @endsection

@@ -19,17 +19,18 @@
         <br />
         <p style="margin-top:10px">{{ __('content.news-tesxt-2')}}</p>
     </div>
+    <br />
     <div class="row">
         <div class="col-xs-12 col-lg-3 pull-right">
             <select name="category" id="category" class="form-control" style="width:100%">
-                <option value="">----{{ __('lables.category')}}--</option>
+                <option value="">----{{ __('lables.categories_news')}}--</option>
                 @foreach($categories as $categoryBlog)
                     <option @if($categoryBlog->id==@$cat_id) selected="selected"@endif value="{{$categoryBlog->id}}">{{$categoryBlog->name}}</option>
                 @endforeach
             </select>
         </div>
         <div class="col-xs-12 col-lg-3 pull-right text-right">  
-            Filter
+                {{ __('lables.filter')}}
         </div>
     </div>
     <br />

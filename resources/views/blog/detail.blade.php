@@ -31,7 +31,7 @@
                 <div class="articleDetails">
                     <div class="dottedSpacer"></div>
                     <div class="row">
-                        <div class="col-md-12" style="min-height: 42px;">
+                        <div class="col-md-12" style="min-height: 31px">
                             <span class="articleDate">{{\Carbon\Carbon::parse($blogPostData->created_at)->toFormattedDateString()}}</span>,
                             <span class="articleDate">Autor: {{$blogPostData->author}}</span>
 
@@ -48,7 +48,7 @@
                     <h3>Kommentare</h3>
                     <div class="row">
                         <div class="col-sm-8">
-                            <p>Das Kommentieren ist nur für Registrierte Benutzer möglich. Bitte melden Sie sich an, um kommentieren zu können.</p>
+                            <p>Das Kommentieren ist nur für registrierte benutzer möglich. Bitte melden Sie sich an, um kommentieren zu können.</p>
                         </div>
                         <div class="col-sm-4 text-center">
                             <a href="{{ route('login') }}" class="btn btn-primary" style="margin-bottom: 5px;">Log In</a> &nbsp;
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 @else
-                    <h3>Bemerkungen</h3>
+                    <h3>Kommentare</h3>
                     <div class="row addComment " id="addCommentMain" style="display: block;">
                         {{-- <div class="col-sm-2 col-md-1">
                             <div class="avatar" style="background-image:url();"></div>

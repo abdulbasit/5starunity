@@ -49,14 +49,17 @@
                 Vertretigungsberechtigte Personen
             </div>
             <p>
-                5starUnity e.V. wird gerichtlich und außergerichtlich gem. § 26 BGB vertreten durch: <br />
-                Dirk Marras (Präsident), Silvia Palka (Vizepräsidentin), Alexander Müller (Vizepräsident) <br />
-                <br />
-                Für einzelne Beiträge sind, sofern diese von externen Quellen veröffentlicht werden sollten, die jeweiligen AutorInnen verantwortlich. Der<br />
-                Verantwortungsbereich für angebotene Konzepte / Produkte, welche ggf. im internen Bereich proklamiert werden, liegt beim jeweiligen Unternehmen selbst.<br />
-                5starUnity e.V. erteilt ausschließlich die Zustimmung zur Darstellung; es gelten die Allgemeinen Geschäftsbedingungen des jeweiligen externen Anbieters.<br />
+                5starUnity e.V. wird gerichtlich und außergerichtlich gem. § 26 BGB vertreten durch: 
+                Dirk Marras (Präsident), Silvia Palka (Vizepräsidentin), Alexander Müller (Vizepräsident) 
+                {{-- <br /> --}}
+                Für einzelne Beiträge sind, sofern diese von externen Quellen veröffentlicht werden sollten, die jeweiligen AutorInnen verantwortlich. Der
+                {{-- <br /> --}}
+                Verantwortungsbereich für angebotene Konzepte / Produkte, welche ggf. im internen Bereich proklamiert werden, liegt beim jeweiligen Unternehmen selbst.
+                {{-- <br /> --}}
+                5starUnity e.V. erteilt ausschließlich die Zustimmung zur Darstellung; es gelten die Allgemeinen Geschäftsbedingungen des jeweiligen externen Anbieters.
+                {{-- <br /> --}}
             </p>
-            <br /><br />
+            
             <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                 Inhaltliche Verantwortung nach § 55 RStV
             </div>
@@ -65,7 +68,7 @@
                 Alle Anzeigen / Produkte / Konzepte oder Ähnliches, welche durch bzw. von externen Anbietern zu bedienen sind, stehen in der Verantwortung der jeweiligen Geschäftsführer
                 bzw. durch die in deren Impressum benannten Verantwortlichkeiten. 5starUnity e.V. lehnt jedwede Verantwortung für fremde Texte / Angebote ab.
             </p>
-            <br /><br />
+            
             <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                 Plattform der EU-Kommission
             </div>
@@ -74,7 +77,7 @@
                 5starUnity e.V. nimmt jedoch nicht an dem Verfahren zur alternativen Streitbeilegung teil, da es sich ausschließlich um eine spendenbasierende Plattform handelt.
                 Wir weisen bei Angelegenheiten, welche Sie als Verbraucher zu klären wissen möchten, durch externe Angebote auf die jeweiligen Stellen des Anbieters hin.
             </p>
-            <br /><br />
+            
             <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                 Haftungshinweis
             </div>
@@ -83,7 +86,7 @@
                 deren Betreiber verantwortlich. Diese Domain inkl. allen angeschlossenen Sub-Domains weisen mit Links auf andere Seiten (einschl. Produkte), weshalb folgendes gilt:
                 5starUnity erklärt ausdrücklich, keinerlei Einfluss auf Gestaltung, Inhalt oder Zahlungsmodalitäten hat und distanziert sich von Inhalten aller verlinkten Seiten.
             </p>
-            <br /><br />
+            
             <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;"s>
                     Copyright / Fotoquellen
             </div>
