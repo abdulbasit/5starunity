@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
-<div class="headerBlue headerTransparent">
+<div class="headerBlue headerTransparent newsHeader">
     <div class="container">
         <div class="row">
             <div class="text-center">
-                <h1>News</h1>
+                {{-- <h1>News</h1> --}}
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-xs-12 col-lg-3 pull-right">
             <select name="category" id="category" class="form-control" style="width:100%">
-                <option value="">----{{ __('lables.categories_news')}}--</option>
+                <option value="">{{ __('lables.categories_news')}}</option>
                 @foreach($categories as $categoryBlog)
                     <option @if($categoryBlog->id==@$cat_id) selected="selected"@endif value="{{$categoryBlog->id}}">{{$categoryBlog->name}}</option>
                 @endforeach

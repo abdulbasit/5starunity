@@ -47930,6 +47930,14 @@ input[type='password']:focus {
     margin-right:5px
 
 }
+.newsHeader
+{
+  background-image: url("../../../images/news-heading.png");
+  background-size:100%;
+  background-repeat:no-repeat;
+  margin-top:0px !important;
+  min-height:162px;
+}
 .dropDownMenu a{
     color:black;
     font-size:12px;
