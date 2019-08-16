@@ -30,10 +30,17 @@
     </script>
 @endsection
 @section('content')
+
     <div class="container">
         <div class="row profile">
             @include('../layouts.user_menu')
             <div class="profile-content">
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ $message }}
+                    </div>
+                @endif
                 <div class="row profile-body">
                     <div class="col-lg-8 col-xs-12 profileWraper">
                         <p>

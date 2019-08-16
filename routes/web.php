@@ -70,6 +70,7 @@ Auth::routes();
         Route::get('promotions', 'UserController@promotions')->name('promotions');
         Route::get('partners', 'UserController@partners')->name('partners');
         Route::get('recomendations', 'UserController@recomendations')->name('recomendations');
+        Route::post('recomendations/save', 'UserController@savecomadation')->name('recomendations.save');
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
         Route::get('lottery/user/purchased', 'LotteryController@userPurchasedLotteries')->name('lottery.user.purchased');

@@ -11,6 +11,7 @@ use App\Models\Country;
 use App\Models\AllowedCountry;
 use App\Models\State;
 use App\Models\UserDocument;
+use App\Models\Recomendations;
 use App\Models\InvitationList;
 use App\Models\UserProfile;
 use App\Mail\ChangeMailEmail;
@@ -335,5 +336,18 @@ class UserController extends Controller
     public function recomendations()
     {
         return view('usr_profile.recomendation');
+    }
+    public function savecomadation(Request $request)
+    {
+        $user_recomandations = Recomendations::create([
+
+            "first_name"=>$request->get('first_name'),
+            "function"=>$request->get('function'),
+            "company_name"=>$request->get('company'),
+            "email"=>$request->get('email'),
+            "comments"=>$request->get('comments')
+        ]);
+        return redirect('/partners')->with('success','Recomandations sent successfuly');
+
     }
 }

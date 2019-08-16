@@ -83,10 +83,10 @@
                     </div>
                 </div>
                 <br />
-                <form method="POST" action="{{ route('login') }}" id="login">
+                <form method="POST" action="{{ route('recomendations.save') }}" id="login">
                     @csrf
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
+                        <label for="first_name" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                 {{ __('lables.first_name')}}
                         </label>
                         <div class="col-md-8 col-sm-7">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="email" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
+                        <label for="function" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                 {{ __('lables.function')}}
                         </label>
                         <div class="col-md-8 col-sm-7">
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                            <label for="email" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
+                            <label for="company" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                     {{ __('lables.company')}}
                             </label>
                             <div class="col-md-8 col-sm-7">
@@ -119,12 +119,11 @@
                             </div>
                         </div>
                         <div class="form-group row" style="margin-top:25px">
-                            <label for="email" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
+                            <label for="extra_comments" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                     {{ __('lables.extra_comments')}}
                             </label>
                             <div class="col-md-8 col-sm-7">
                                 <textarea id="comments" class="form-control" rows="6" name="comments" required ></textarea>
-                                
                             </div>
                         </div>
                     <div class="form-group row">
@@ -148,21 +147,21 @@
         </div>
         <div class="col-lg-3 col-lg-offset-1 hidden-xs hidden-md">
             <br />
-            <br /><br /><br />
+            <br /><br /><br /><br /><br /><br />
             <img class="img-responsive" src="{{ URL::to('/') }}/frontend/graphics/4_tabs/recmondatinos.png">
         </div>
     </div>
     <br />
-                <div class="row ">
-                    <div style="margin-left:30px">
-                        <p>
-                                Ihre Empfehlung wird von unserer internen Abteilung Marketing, Relationship and Communication kontaktiert.
-                                Wir bitten um Beachtung, dass zur Wahrung der Transparenz auf Sie als Empfehlungsgeber hingewiesen wird
-                                und bedanken uns im Voraus für Ihre Mühe, das entgegengebrachte Vertrauen und die Treue zur Community.
-                        </p>
-                    </div>
-                </div>
-                <br />
+        <div class="row ">
+            <div style="margin-left:30px">
+                <p>
+                        Ihre Empfehlung wird von unserer internen Abteilung Marketing, Relationship and Communication kontaktiert.
+                        Wir bitten um Beachtung, dass zur Wahrung der Transparenz auf Sie als Empfehlungsgeber hingewiesen wird
+                        und bedanken uns im Voraus für Ihre Mühe, das entgegengebrachte Vertrauen und die Treue zur Community.
+                </p>
+            </div>
+        </div>
+        <br />
 </div>
 
 
