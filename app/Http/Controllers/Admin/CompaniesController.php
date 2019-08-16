@@ -57,6 +57,46 @@ class CompaniesController extends Controller
         ]);
         return redirect('admin/company')->with('success',"Company Added Successfully ");
     }
+    public function edit($id)
+    {
+        $company = Company::find($id);
+        return view('admin.companies.edit',compact('company'));
+    }
+    public function saveEdits(Request $request)
+    {
+        $company_id = $request->get('company_id');
+        $companyUpdate = Company::find($company_id);
+
+        $companyUpdate->company_name = $request->get('company');
+        $companyUpdate->company_views = $request->get('views');
+        $companyUpdate->company_views_attempt = $request->get('duration');
+        $companyUpdate->duration=$request->get('duration');
+        $companyUpdate->vidoe = $request->get('youtube_video');
+        if($request->file('image')!="")
+        {
+            $file = $request->file('image');
+            $thumbnailPath = public_path('uploads/copmany_images/');
+            $file->getClientOriginalName();
+            $file->getClientOriginalExtension();
+            $file->getRealPath();
+            $file->getSize();
+            $file->getMimeType();
+            $imageName = time().'_5starunity.'.$file->getClientOriginalExtension();
+            $file->move($thumbnailPath, $imageName);
+            $companyUpdate->image=$imageName;
+        }
+        $companyUpdate->view_counter = $request->get('views');
+        $companyUpdate->views_amount = $request->get('amount');
+        $companyUpdate->user_amount = $request->get('per_view_amount');
+        $companyUpdate->save();
+        return redirect('admin/company')->with('success',"Company Updated Successfully ");   
+    }
+    public function delete($id)
+    {
+        $company = Company::find($id);
+        $company->delete();
+        return redirect('admin/company')->with('success',"Company Deleted Successfully ");   
+    }
     function getYouTubeVideoId(Request $request) 
     {
         //  $video_id = $request->videoId;

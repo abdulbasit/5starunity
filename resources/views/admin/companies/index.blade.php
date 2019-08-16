@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this Lottery ?</p>
+                    <p>Are you suer you want to delete this Company ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -94,7 +94,7 @@
                                         Action
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
-                                            <a class="dropdown-item" href="{{ route('admin.lottery.edit',$companyData->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                            <a class="dropdown-item" href="{{ route('admin.company.edit',$companyData->id) }}"><i class="ft-edit green"></i> Edit </a>
                                             <a data-id="{{$companyData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@ $("#delete").click(function(){
 });
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
-    window.location.href = "lottery/delete/"+id;
+    window.location.href = "company/delete/"+id;
 })
 </script>
 @endsection

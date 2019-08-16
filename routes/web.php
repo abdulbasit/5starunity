@@ -125,8 +125,11 @@ Auth::routes();
         //companies script 
         Route::get('company/create', 'CompaniesController@create')->name('company.create');
         Route::get('company', 'CompaniesController@index')->name('company');
+        Route::get('company/edit/{id}', 'CompaniesController@edit')->name('company.edit');
         Route::post('company/video_thumbnail', 'CompaniesController@getYouTubeVideoId')->name('company.video_thumbnail');
         Route::post('company/save', 'CompaniesController@save')->name('company.save');
+        Route::post('company/edit/save', 'CompaniesController@saveEdits')->name('company.edit.save');
+        Route::get('company/delete/{id}', 'CompaniesController@delete')->name('company.delete');
         
         Route::get('users', 'UserController@index')->name('users');
         Route::get('user/edit', 'UserController@index')->name('user.edit');
