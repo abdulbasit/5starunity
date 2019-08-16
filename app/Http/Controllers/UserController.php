@@ -330,7 +330,7 @@ class UserController extends Controller
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
-        $route='promotions';
+        $route='partner';
         return view('usr_profile.promotions',compact('userInfo','route'));
     }
     public function recomendations()

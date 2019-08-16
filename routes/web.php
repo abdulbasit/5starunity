@@ -75,6 +75,9 @@ Auth::routes();
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
         Route::get('lottery/user/purchased', 'LotteryController@userPurchasedLotteries')->name('lottery.user.purchased');
 
+
+        Route::get('promotions', 'CompanyController@index')->name('promotions');
+
         Route::get('wallet', 'WalletController@index')->name('wallet');
         Route::get('wallet/filter/{type}', 'WalletController@index')->name('wallets.filter');
         Route::get('lots/numbers/{id}', 'WalletController@detail')->name('lots.numbers');
