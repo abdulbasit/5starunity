@@ -120,7 +120,8 @@ Auth::routes();
         Route::get('password/reset', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('password.request');
         Route::post('password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('password.email');
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-
+        Route::get('recomandations', 'UserController@recomandations')->name('recomandations');
+        
         Route::get('users', 'UserController@index')->name('users');
         Route::get('user/edit', 'UserController@index')->name('user.edit');
         Route::get('user/create', 'UserController@create')->name('user.create');

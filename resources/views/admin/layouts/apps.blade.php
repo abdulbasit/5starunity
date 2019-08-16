@@ -282,7 +282,9 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                         <li><a class="menu-item" href="{{ route('admin.user.create') }}">Add New User</a></li>
                         <li><a class="menu-item" href="{{ route('admin.users') }}">User Listing</a></li>
                         <li><a class="menu-item" href="{{ route('admin.user.account.delete') }}">Delete Account <br />Requests</a></li>
+                        <li><a class="menu-item" href="{{ route('admin.recomandations') }}">Recomandatons</a></li>
                         {{-- <li><a class="menu-item" href="{{ route('admin.user.account.deleted') }}">Deleted Account</a></li> --}}
+
                       </ul>
                     </li>
                     <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Products</span></a>

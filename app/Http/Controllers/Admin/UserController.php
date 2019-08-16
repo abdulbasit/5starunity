@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserProfile;
 use App\Models\LotteryContestent;
+use App\Models\Recomendations;
 use App\Models\Vallet;
 use App\Models\UserDocument;
 use  App\Models\TransLog;
@@ -21,6 +22,12 @@ class UserController extends Controller
         $userData = User::with('userProfile')->get();
         // dd($userData);
         return view('admin.users.index',compact('userData'));
+    }
+    public function recomandations()
+    {
+        $userData = Recomendations::all();
+        // dd($userData);
+        return view('admin.users.recomandatins',compact('userData'));
     }
     public function creditHistory($id,$type="")
     {
@@ -176,7 +183,6 @@ class UserController extends Controller
     public function deletedAccounts()
     {
         $userData = User::withTrashed()->restore();
-        dd($userData);
         return view('admin.users.index',compact('userData'));
     }
 }
