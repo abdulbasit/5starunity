@@ -122,6 +122,12 @@ Auth::routes();
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
         Route::get('recomandations', 'UserController@recomandations')->name('recomandations');
         
+        //companies script 
+        Route::get('company/create', 'CompaniesController@create')->name('company.create');
+        Route::get('company', 'CompaniesController@index')->name('company');
+        Route::post('company/video_thumbnail', 'CompaniesController@getYouTubeVideoId')->name('company.video_thumbnail');
+        Route::post('company/save', 'CompaniesController@save')->name('company.save');
+        
         Route::get('users', 'UserController@index')->name('users');
         Route::get('user/edit', 'UserController@index')->name('user.edit');
         Route::get('user/create', 'UserController@create')->name('user.create');

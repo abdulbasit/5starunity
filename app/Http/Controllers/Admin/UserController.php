@@ -12,7 +12,6 @@ use App\Models\UserDocument;
 use  App\Models\TransLog;
 use  App\Models\BlogComment;
 use App\Traits\EmailTrait;
-
 use Auth;
 class UserController extends Controller
 {
@@ -20,13 +19,11 @@ class UserController extends Controller
     public function index()
     {
         $userData = User::with('userProfile')->get();
-        // dd($userData);
         return view('admin.users.index',compact('userData'));
     }
     public function recomandations()
     {
         $userData = Recomendations::all();
-        // dd($userData);
         return view('admin.users.recomandatins',compact('userData'));
     }
     public function creditHistory($id,$type="")
