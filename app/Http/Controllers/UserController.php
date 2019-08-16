@@ -322,5 +322,18 @@ class UserController extends Controller
         $route='promotions';
         return view('usr_profile.promotions',compact('userInfo','route'));
     }
-
+    public function partners()
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='promotions';
+        return view('usr_profile.promotions',compact('userInfo','route'));
+    }
+    public function recomendations()
+    {
+        return view('usr_profile.recomendation');
+    }
 }

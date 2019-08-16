@@ -22,6 +22,13 @@
 </style>
 <link rel="stylesheet" href="{{ asset('frontend/tags_input/bootstrap-tagsinput.css')}}">
 @endsection
+@section('script')
+    <script>
+       $("#recomendations").on('click',function(){
+            window.location='recomendations';
+        });
+    </script>
+@endsection
 @section('content')
     <div class="container">
         <div class="row profile">
@@ -37,7 +44,7 @@
                         </p>
                         <br />
                         <div class="row text-center">
-                            <button type="submit" class="btn-green" style="margin-top:-5px">
+                            <button id="recomendations" type="button" class="btn-green" style="margin-top:-5px">
                                 {{ __('lables.recomend') }}
                             </button>
                         </div>

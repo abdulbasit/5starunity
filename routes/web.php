@@ -68,7 +68,8 @@ Auth::routes();
         Route::get('dashboard', 'UserController@index')->name('dashboard');
         Route::get('user/refer/{filters}', 'UserController@refer')->name('user.refer');
         Route::get('promotions', 'UserController@promotions')->name('promotions');
-
+        Route::get('partners', 'UserController@partners')->name('partners');
+        Route::get('recomendations', 'UserController@recomendations')->name('recomendations');
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
         Route::get('lottery/user/purchased', 'LotteryController@userPurchasedLotteries')->name('lottery.user.purchased');

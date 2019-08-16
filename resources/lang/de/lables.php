@@ -64,6 +64,9 @@ return [
     "post_comment"=>"ÜBERMITTELN",
     "recomend"=>"EMPFEHLUNG ANMELDEN",
     "filter"=>"Auswahlkategorie",
-    "categories_news"=>"…bitte auswählen"
+    "categories_news"=>"…bitte auswählen",
+    'function'=>"Funktion",
+    'company'=>"Firmenname",
+    'extra_comments'=>"Produkt / weitere Angaben"
 ];
 ?>

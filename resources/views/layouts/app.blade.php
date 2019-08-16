@@ -277,6 +277,7 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
+
 </script>
 </body>
 </html>
