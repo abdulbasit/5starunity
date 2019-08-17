@@ -17,13 +17,13 @@ class CompanyController extends Controller
         DB::enableQueryLog();
         $company = Company::
                             with(['company_views'])
-                            ->select('companies.*','company_views.*')
+                            ->select('companies.*','company_views.*','companies.id as company_id')
                             ->selectRaw('COUNT(company_views.company_id) as totalViews')
                             ->leftjoin('company_views','companies.id','company_id')
                             ->groupBy('companies.id','company_views.company_id')
                             ->orderBy('companies.id','desc')
                             ->paginate(18);
-
+        // dd($company);
         // dd(DB::getQueryLog());
         return view('promotions.index',compact('company','user_id'));
     }

@@ -8,7 +8,9 @@
         }
         .postContainer
         {
-            width:100%; position:absolute; height:100%; top:0px; z-index:10000
+            width:100%; position:absolute; 
+            height:100%; top:0px; 
+            z-index:10000; padding:0px
         }
     </style>
 @endsection
@@ -16,14 +18,19 @@
 <input type="hidden" id="lottery_id" name="lottery_id" value="{{$company_detail->id}}">
 <div class="container postContainer">
 		<div class="card">
-			<div class="container-fliud">
+            <div class="row" style="margin-bottom:20px">
+               <span class="pull-left"><a href="/promotions" style="font-size:16px; text-decoration:underline">Back</a></span>
+            </div>
+			<div class="container-fliud">   
 				<div class="wrapper row">
 					<div class="preview col-md-12">
+                            
 						<div class="preview-pic tab-content">
+                            
                             <h3 class="product-title"> {{$company_detail->company_name}} </h3>
                             <div class="tab-pane active" id="pic-1">
                                 @if($company_detail->image!="")
-                                    <img src="{{ URL::to('/') }}/uploads/copmany_images/{{$company_detail->image}}" />
+                                    <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{$company_detail->image}}" />
                                 @else
                                 <?php 
                                     if (($pos = strpos($company_detail->vidoe, "=")) !== FALSE) 
