@@ -77,6 +77,7 @@ Auth::routes();
 
 
         Route::get('promotions', 'CompanyController@index')->name('promotions');
+        Route::get('partner/detail/{id}', 'CompanyController@detail')->name('partner.detail');
 
         Route::get('wallet', 'WalletController@index')->name('wallet');
         Route::get('wallet/filter/{type}', 'WalletController@index')->name('wallets.filter');

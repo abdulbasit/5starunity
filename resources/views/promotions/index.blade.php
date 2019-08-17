@@ -25,7 +25,7 @@
         </div>
         <br />
         <div class="container listing_container" id="list_startups">
-                <form action="/lottery/search" method="post">
+                {{-- <form action="/lottery/search" method="post">
                     @csrf
                     <div class="row">
                         <div class="col-xs-12 col-lg-1 form-group"></div>
@@ -38,16 +38,17 @@
                             </button>
                         </div>
                     </div>
-                </form>
+                </form> --}}
                 <br />
                 <div class="row row_for_mobile">
                 <span id="total_pages" data-total="111"></span>
+                
                 @if($company->count()>0)
                     @foreach($company as $i=>$company)
                         <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
                             <div class="content_startup_blok current_investment ">
-                                <a itemprop="url" title="{{$company->company_name}}" href="/lottery/detail/{{$company->id}}">
-                                    <div class="stratup_img lazy" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
+                                <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
+                                    <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
                                         @if($company->image!="")
                                             <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{$company->image}}">
                                         @else
@@ -63,11 +64,11 @@
                                     </div>
                                 </a>
                                 <div class="row content_info">
-                                    <a itemprop="url" title="{{$company->company_name}}" href="/lottery/detail/{{$company->id}}">
+                                    <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->id}}">
                                         <h2 class="mb-5px">{{$company->company_name}}</h2>
                                     </a>
                                     <p itemprop="description">
-                                        <a class="lot_desc" href="/lottery/detail/{{$company->id}}" title="{{$company->company_name}}">
+                                        <a class="lot_desc" href="/partner/detail/{{$company->id}}" title="{{$company->company_name}}">
                                             {{$company->description}}
                                         </a>
                                     </p>
@@ -102,7 +103,7 @@
                                     </div>
                                 </a>
                                 @else
-                                <a href="/lottery/detail/{{$company->id}}">
+                                <a href="/partner/detail/{{$company->id}}">
                                     <div class="footer_startup ">
                                         {{ __('lables.view_now')}}
                                     </div>
