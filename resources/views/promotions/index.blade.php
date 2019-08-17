@@ -32,14 +32,6 @@
                         <div class="col-xs-12 col-lg-4 form-group">
                             <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="{{ __('lables.placehoder_search')}}">
                         </div>
-                        <div class="col-xs-12 col-lg-4 form-group">
-                            <select name="category" id="category" class="form-control ">
-                                <option value="">----{{ __('lables.lottery_category_dropdown')}}----</option>
-                                {{-- @foreach($category as $proCategory)
-                                    <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
-                                @endforeach --}}
-                            </select>
-                        </div>
                         <div class="col-xs-12 col-lg-2 form-group text-cnetr">
                             <button type="submit" class="btn-green" style="margin-top:-2px">
                                 {{ __('lables.search')}}
@@ -54,28 +46,28 @@
                     @foreach($company as $i=>$company)
                         <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
                             <div class="content_startup_blok current_investment ">
-                                <a itemprop="url" title="{{$company->name}}" href="/lottery/detail/{{$company->lottery_id}}">
+                                <a itemprop="url" title="{{$company->company_name}}" href="/lottery/detail/{{$company->id}}">
                                     <div class="stratup_img lazy" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
                                         @if($company->image!="")
                                             <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{$company->image}}">
                                         @else
-                                            <?php 
+                                        <?php 
                                             if (($pos = strpos($company->vidoe, "=")) !== FALSE) 
                                             { 
                                                 $whatIWant = substr($company->vidoe, $pos+1); 
                                             }
                                             $thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
-                                            ?>
-                                                <img class="img-responsive" src="{{$thumbnail}}">
+                                        ?>
+                                            <img class="img-responsive" src="{{$thumbnail}}">
                                         @endif
                                     </div>
                                 </a>
                                 <div class="row content_info">
-                                    <a itemprop="url" title="{{$company->name}}" href="/lottery/detail/{{$company->lottery_id}}">
-                                        <h2 class="mb-5px">{{$company->name}}</h2>
+                                    <a itemprop="url" title="{{$company->company_name}}" href="/lottery/detail/{{$company->id}}">
+                                        <h2 class="mb-5px">{{$company->company_name}}</h2>
                                     </a>
                                     <p itemprop="description">
-                                        <a class="lot_desc" href="/lottery/detail/{{$company->lottery_id}}" title="{{$company->name}}">
+                                        <a class="lot_desc" href="/lottery/detail/{{$company->id}}" title="{{$company->company_name}}">
                                             {{$company->description}}
                                         </a>
                                     </p>
@@ -83,7 +75,7 @@
                                 </div>
                                 <div class="row finance_info">
                                     <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                            {{ __('menu.number_of_lots')}} : {{$company->created_lots}}
+                                            {{ __('lables.maximum_views')}} : {{$company->totalViews}}
                                     </div>
                                     {{-- <div class="col-xs-5 col-sm-6 block_finance_right text-right">
                                         <div class="block_time_left">
@@ -92,27 +84,30 @@
                                         </div>
                                     </div> --}}
                                 </div>
-                                <div class="row progress_info nopadding">
-                                    <div class="col-xs-12 progress canInvest">
-                                            <?php
-                                            // $total = $company->one_lot_amount*$company->getTotalLotsAttribute($company->lottery_id);
-                                            // @$progressBar = round($total/$company->lot_amount*100,0);
-                                            ?>
-                                        {{-- <div class="progress-bar" role="progressbar" aria-valuenow="<?php //echo $progressBar ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php //echo $progressBar ?>%"><?php //echo $progressBar ?>%</div> --}}
-                                    </div>
+                                <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
                                     <div class="col-xs-6 block_details borderRightgrey">
-                                    {{-- <strong>{{$company->getTotalLotsAttribute($company->lottery_id)}}</strong> --}}
-                                        {{ __('menu.lots_bought')}}
+                                            
+                                        {{ __('lables.my_views')}}: {{$company->someFunction($user_id)}}/{{$company->company_views_attempt}}
+                                    {{-- <strong>{{$company->getTotalLotsAttribute($company->id)}}</strong> --}}
+                                        
                                     </div>
                                     <div class="col-xs-6 block_details">
-                                        {{-- <strong>{{$company->getTotalContestentsAttribute($company->lottery_id)}}</strong>{{ __('menu.participants')}} --}}
+                                        {{-- <strong>{{$company->getTotalContestentsAttribute($company->id)}}</strong>{{ __('menu.participants')}} --}}
                                     </div>
                                 </div>
-                                <a href="/lottery/detail/{{$company->id}}">
+                                @if($company->someFunction($user_id)==$company->company_views_attempt)
+                                <a href="#">
                                     <div class="footer_startup ">
-                                        {{ __('menu.win_now')}}
+                                        {{ __('lables.already_viwed')}}
                                     </div>
                                 </a>
+                                @else
+                                <a href="/lottery/detail/{{$company->id}}">
+                                    <div class="footer_startup ">
+                                        {{ __('lables.view_now')}}
+                                    </div>
+                                </a>
+                                @endif
                             </div>
                         </div>
                     @endforeach

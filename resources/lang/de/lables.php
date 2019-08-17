@@ -67,6 +67,10 @@ return [
     "categories_news"=>"…bitte auswählen",
     'function'=>"Funktion",
     'company'=>"Firmenname",
-    'extra_comments'=>"Produkt / weitere Angaben"
+    'extra_comments'=>"Produkt / weitere Angaben",
+    "maximum_views"=>"MAXIMALE ANSICHTEN",
+    'already_viwed'=>"ANSICHTEN",
+    'my_views'=>"MEINE ANSICHTEN",
+    'view_now'=> "JETZT ANSEHEN"
 ];
 ?>
