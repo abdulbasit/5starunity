@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Vallet;
 use App\Models\Country;
 use App\Models\AllowedCountry;
+use App\Models\BonusTaler;
 use App\Models\State;
 use App\Models\UserDocument;
 use App\Models\Recomendations;
@@ -47,7 +48,8 @@ class UserController extends Controller
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         // dd($userInfo['user_profile']);
         $route='dashboard';
-        return view('usr_profile.index',compact('userInfo','route','available_balance','purchasedLots','spent'));
+        $bonusTaler = BonusTaler::where('user_id',$userId)->orderBy('id','desc')->first();
+        return view('usr_profile.index',compact('userInfo','route','available_balance','purchasedLots','spent','bonusTaler'));
     }
     public function profile()
     {

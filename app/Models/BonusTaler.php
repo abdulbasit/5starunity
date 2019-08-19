@@ -14,4 +14,10 @@ class BonusTaler extends Authenticatable
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
+    public static function bonusTalers($user_id) {
+        echo $this->total_available_balance;
+        // return $user_views = CompanyView::where('user_id',$user_id)
+        //                     ->where('company_id',$company_id)
+        //                     ->count();
+    }
 }

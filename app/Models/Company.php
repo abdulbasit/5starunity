@@ -19,6 +19,7 @@ class Company extends Authenticatable
                             ->where('company_id',$company_id)
                             ->count();
     }
+    
     public function company_views()
     {
         return $this->belongsTo('App\Models\Company');
