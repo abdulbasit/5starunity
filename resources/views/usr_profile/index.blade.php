@@ -81,7 +81,7 @@
                                         <div class="card border-info mx-sm-1 p-3 card_stats">
                                             <div style="margin-top: 15px; float: left; width: 100%;">
                                                 <div class="text-info text-center col-xs-12">Bonus-Taler</div>
-                                                <div class="text-info text-center col-xs-12">{{$bonusTaler->total_available_balance}}</div>
+                                                <div class="text-info text-center col-xs-12">{{@$bonusTaler->total_available_balance}}</div>
                                             </div>
                                         </div>
                                     </div>

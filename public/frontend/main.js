@@ -123,11 +123,12 @@
         }
       }
       function validate(evt,id) {
-
+        
         var type = $("."+id+ " input").attr('type');
         if(type=='number')
         {
             var theEvent = evt || window.event;
+            console.log(theEvent);
 
             // Handle paste
             if (theEvent.type === 'paste') {
@@ -149,9 +150,9 @@
                     var qty = $("#qty").val();
                     var lotAmount = $("#totalAmount").attr('lot-amount');
                     $("#totalAmount").html(lotAmount*qty);
-
+                    console.log(evt.which);
                     if ((evt.which != 46 || qty.indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) {
-                        console.log('ddd');
+                       
                         var int = qty.split(".");
                             $("#lotSize").html('<font color="red"><b>Only round number</b></font>');
                             $("#qty").val(int[0]);

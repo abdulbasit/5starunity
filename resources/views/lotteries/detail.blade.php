@@ -48,7 +48,7 @@
                                     <a  href="/login" class="add-to-cart btn" type="button">Apply</a>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
-                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
+                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="return validate(event,'qty_wrap'); emptyQty()" onchange="">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @else
@@ -59,7 +59,7 @@
                                     <button onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" type="button">Apply</button>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
-                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" onkeypress="validate(event,'qty_wrap')" onchange="emptyQty()">
+                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="validate(event,'qty_wrap'); emptyQty()" onchange="">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
                                 </div>
                             @endif
