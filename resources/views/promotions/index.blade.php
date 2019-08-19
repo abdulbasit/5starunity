@@ -64,11 +64,11 @@
                                     </div>
                                 </a>
                                 <div class="row content_info">
-                                    <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->id}}">
+                                    <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
                                         <h2 class="mb-5px">{{$company->company_name}}</h2>
                                     </a>
                                     <p itemprop="description">
-                                        <a class="lot_desc" href="/partner/detail/{{$company->id}}" title="{{$company->company_name}}">
+                                        <a class="lot_desc" href="/partner/detail/{{$company->company_id}}" title="{{$company->company_name}}">
                                             {{$company->description}}
                                         </a>
                                     </p>
@@ -88,22 +88,22 @@
                                 <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
                                     <div class="col-xs-6 block_details borderRightgrey">
                                             
-                                        {{ __('lables.my_views')}}: {{$company->someFunction($user_id)}}/{{$company->company_views_attempt}}
-                                    {{-- <strong>{{$company->getTotalLotsAttribute($company->id)}}</strong> --}}
+                                        {{ __('lables.my_views')}}: {{$company->promotionVies($user_id,$company->company_id)}}/{{$company->company_views_attempt}}
+                                    {{-- <strong>{{$company->getTotalLotsAttribute($company->company_id)}}</strong> --}}
                                         
                                     </div>
                                     <div class="col-xs-6 block_details">
-                                        {{-- <strong>{{$company->getTotalContestentsAttribute($company->id)}}</strong>{{ __('menu.participants')}} --}}
+                                        {{-- <strong>{{$company->getTotalContestentsAttribute($company->company_id)}}</strong>{{ __('menu.participants')}} --}}
                                     </div>
                                 </div>
-                                @if($company->someFunction($user_id)==$company->company_views_attempt)
+                                @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
                                 <a href="#">
                                     <div class="footer_startup ">
                                         {{ __('lables.already_viwed')}}
                                     </div>
                                 </a>
                                 @else
-                                <a href="/partner/detail/{{$company->id}}">
+                                <a href="/partner/detail/{{$company->company_id}}">
                                     <div class="footer_startup ">
                                         {{ __('lables.view_now')}}
                                     </div>

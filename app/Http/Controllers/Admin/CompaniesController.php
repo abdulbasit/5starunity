@@ -97,17 +97,10 @@ class CompaniesController extends Controller
         $company->delete();
         return redirect('admin/company')->with('success',"Company Deleted Successfully ");   
     }
-    function getYouTubeVideoId(Request $request) 
-    {
-        //  $video_id = $request->videoId;
-        // $video_id= 'vKYwGoCF5eY';
-
-        // $thumbnail="http://img.youtube.com/vi/".$video_id."/maxresdefault.jpg";
-        
-        // $info = pathinfo($thumbnail);
-        // $contents = file_get_contents($thumbnail);
-        // $file = '/tmp/' . $info['basename'];
-        // file_put_contents($file, $contents);
-        // $uploaded_file = new UploadedFile($file, $info['basename']);
-    }
+    // function getYouTubeVideoId(Request $request) 
+    // {
+    //    $vidID = $request->videoId;
+    //    $xml = simplexml_load_file('http://gdata.youtube.com/feeds/api/videos/'.$vidID);
+    //    echo  strval($xml->xpath('//yt:duration[@seconds]')[0]->attributes()->seconds);
+    // }
 }

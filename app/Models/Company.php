@@ -14,8 +14,10 @@ class Company extends Authenticatable
         'image','view_counter','views_amount','user_amount'
     ];
     
-    public function someFunction($user_id) {
-        return $user_views = CompanyView::where('user_id',$user_id)->count();
+    public function promotionVies($user_id,$company_id) {
+        return $user_views = CompanyView::where('user_id',$user_id)
+                            ->where('company_id',$company_id)
+                            ->count();
     }
     public function company_views()
     {

@@ -143,7 +143,7 @@
        }
     });
 
-    //    $("#youtube_video").on('change',function(){
+    //    $("#youtube_video").on('keyup',function(){
     //     var link = $(this).val();
     //     var videoId = link.split("?v=");
 
@@ -153,7 +153,7 @@
     //             data: { "_token": "{{ csrf_token() }}",videoId: videoId[1] }
     //         })
     //         .done(function( msg ) {
-    //             alert(msg)
+               
     //         });
     //    })
 </script>
