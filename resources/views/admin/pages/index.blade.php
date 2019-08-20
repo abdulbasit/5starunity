@@ -43,6 +43,7 @@
                       <tr>
                         <th>Id</th>
                         <th>Name</th>
+                        <th>Slug</th>
                         <th>Title</th>
                         <th>Created At</th>
                         <th>Updated at</th>
@@ -54,6 +55,7 @@
                         <tr>
                           <td>{{$pageInfo->id}}</td>
                           <td>{{$pageInfo->page_name}}</td>
+                          <td>{{$pageInfo->page_slug}}</td>
                           <td>{{$pageInfo->page_title}}</td>
                           {{-- <td>{{$pageInfo->page_content}}</td> --}}
                           <td>{{$pageInfo->created_at}}</td>
@@ -79,6 +81,7 @@
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
+                            <th>Slug</th>
                             <th>Title</th>
                             <th>Created At</th>
                             <th>Updated at</th>
