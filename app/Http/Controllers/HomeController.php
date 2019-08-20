@@ -69,9 +69,9 @@ class HomeController extends Controller
     {
         return view('pages.impresum');
     }
-    public function terms()
+    public function pages($page)
     {
-        $page = Page::where('page_slug','terms')->first();
+        $page = Page::where('page_slug',$page)->first();
         return view('pages.terms',compact('page'));
     }
     public function inventroAcadmy()

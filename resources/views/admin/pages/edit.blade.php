@@ -53,7 +53,7 @@
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1">Title</label>
                               <div class="col-md-9">
-                                  <input type="text" id="title" class="form-control" placeholder="Page Title"  name="title" value="{{$page->page_name}}">
+                                  <input type="text" id="title" class="form-control" placeholder="Page Title"  name="title" value="{{$page->page_title}}">
                               </div>
                           </div>
                           <div class="form-group row">
