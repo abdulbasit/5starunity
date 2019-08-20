@@ -39,7 +39,7 @@ class CompanyController extends Controller
         $user_id = Auth::guard('client')->user()->id;
         $amount = $company_detail->user_amount;
         $checkTotalCredit = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
-            if(count($checkTotalCredit)==0)
+            if( BonusTaler::where('user_id',$user_id)->count()==0)
             {
                 $remainingTotalBalance = $amount;
                 $balance = $amount;
