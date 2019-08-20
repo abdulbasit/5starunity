@@ -54,7 +54,7 @@
                             @else
                             {{-- success login --}}
                                 <div style="width:100%; color:red; font-size:14px; text-align:center; padding-bottom:7px" id="errorLots"></div>
-                                <input  type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData->total_lots}}">
+                                <input  type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData1->totalLots}}">
                                 <div class="action col-xs-10 col-lg-8 no-padding">
                                     <button onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" type="button">Apply</button>
                                 </div>

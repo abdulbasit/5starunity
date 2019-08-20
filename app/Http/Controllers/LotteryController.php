@@ -38,6 +38,7 @@ class LotteryController extends Controller
                         ->groupBy('lotteries.id','lottery_contestents.lottery_id')
                         ->orderBy('totalClients','desc')
                         ->paginate(18);
+        
         $category = Category::where('category_for','pro')->get();
         $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
         return view('lotteries.index',compact('lotteryData','testimonialData','category'));
@@ -49,10 +50,11 @@ class LotteryController extends Controller
             $user = Auth::guard('client');
         }
         Session::flash('route', 'lottery/detail/'.$id);
-        $lotteryData = Lottery::find($id);
+        $lotteryData = Lottery::select('lotteries.*','lotteries.total_lots as totalLots')->where('id',$id)->first();
+        $lotteryData1 = json_decode($lotteryData);
         $lotteryData->views=$lotteryData->views+1;
         $lotteryData->save();
-        return view('lotteries.detail',compact('lotteryData','user'));
+        return view('lotteries.detail',compact('lotteryData','user','lotteryData1'));
     }
     public function purchaseLottery(Request $request)
     {

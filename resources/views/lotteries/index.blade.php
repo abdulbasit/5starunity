@@ -61,7 +61,7 @@
                                 </a>
                                 <div class="row content_info">
                                     <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lotteryId}}">
-                                        <h2 class="mb-5px">{{$lottery->name}}</h2>
+                                        <h2 class="mb-5px">{{$lottery->name}}{{$lottery->lotteryId}}</h2>
                                     </a>
                                     <p itemprop="description">
                                         <a class="lot_desc" href="/lottery/detail/{{$lottery->lotteryId}}" title="{{$lottery->name}}">
