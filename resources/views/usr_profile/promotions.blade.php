@@ -51,7 +51,7 @@
                         </p>
                         <br />
                         <div class="row text-center">
-                            <button id="recomendations" type="button" class="btn-green" style="margin-top:-5px">
+                            <button id="recomendations" type="button" class="btn-green" style="margin-top:-5px; right:0px">
                                 {{ __('lables.recomend') }}
                             </button>
                         </div>
