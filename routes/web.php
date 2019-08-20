@@ -50,7 +50,7 @@ Auth::routes();
     Route::post('ajax/states', 'Auth\RegisterController@ajaxStates');
     Route::get('lotter-of-things', 'HomeController@lotteryThings');
     Route::get('impresum', 'HomeController@impresum');
-    Route::get('{page}', 'HomeController@pages');
+    Route::get('page/{page}', 'HomeController@pages');
     Route::post('check_email', 'Auth\RegisterController@check_email');
     Route::post('check_email', 'Auth\RegisterController@check_email')->name('check_email');
     Route::post('lottery/search', 'LotteryController@search')->name('search');
