@@ -34,14 +34,14 @@
 						<p class="product-description">
                             {{$lotteryData->description}}
                         </p>
-                        <h4 class="price">Amount per lot: <span  > {{round($lotteryData->one_lot_amount,0)}} </span></h4>
-						<h4 class="price"> Taler Required: <span id="totalAmount" lot-amount="{{round($lotteryData->one_lot_amount,0)}}"> {{round($lotteryData->one_lot_amount,2)}} </span></h4>
+                        <h4 class="price">{{__('lables.lot_per_amount')}}: <span  > {{round($lotteryData->one_lot_amount,0)}} </span></h4>
+						<h4 class="price"> {{__('lables.taler_rquired')}}: <span id="totalAmount" lot-amount="{{round($lotteryData->one_lot_amount,0)}}"> {{round($lotteryData->one_lot_amount,2)}} </span></h4>
 						<p class="vote">
                             <strong><?php
                                 $total = $lotteryData->one_lot_amount*$lotteryData->lottery_contestent->count();
                                 echo $progressBar = round($total/$lotteryData->lot_amount*100,0);
                                 ?>%</strong>
-                             Of total amount donated </p>
+                             {{__('lables.total_donation')}}</p>
                         <div class="row">
                             @if(!Auth::guard('client')->check())
                                 <div class="action col-xs-10 col-lg-8 no-padding">
@@ -49,18 +49,18 @@
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
                                     <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="return validate(event,'qty_wrap'); emptyQty()" onchange="">
-                                    <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
+                                    <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left; line-height:15px">{{__('lables.enter_number_of_lots')}}</span>
                                 </div>
                             @else
                             {{-- success login --}}
                                 <div style="width:100%; color:red; font-size:14px; text-align:center; padding-bottom:7px" id="errorLots"></div>
                                 <input  type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData1->totalLots}}">
                                 <div class="action col-xs-10 col-lg-8 no-padding">
-                                    <button onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" type="button">Apply</button>
+                                    <button onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" type="button">{{__('menu.donate')}}</button>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
                                     <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="validate(event,'qty_wrap'); emptyQty()" onchange="">
-                                    <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left">Enter no of lots</span>
+                                    <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left; line-height:15px">{{__('lables.enter_number_of_lots')}}</span>
                                 </div>
                             @endif
                         </div>

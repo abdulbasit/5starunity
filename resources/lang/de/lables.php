@@ -71,6 +71,10 @@ return [
     "maximum_views"=>"MAXIMALE ANSICHTEN",
     'already_viwed'=>"ANSICHTEN",
     'my_views'=>"MEINE ANSICHTEN",
-    'view_now'=> "JETZT ANSEHEN"
+    'view_now'=> "JETZT ANSEHEN",
+    'lot_per_amount'=>"TALER PRO LOSE",
+    'taler_rquired'=>"GESAMT TALER FÜR DIESE SPENDE",
+    'total_donation'=>"von Gesamt Spende",
+    'enter_number_of_lots'=>"Anzahl der Lose Eingeben"
 ];
 ?>
