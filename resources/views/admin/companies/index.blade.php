@@ -72,14 +72,14 @@
                             <td>
                                
                                 @if($companyData->image!="")
-                                    <img src="{{ URL::to('/') }}/uploads/copmany_images/{{$companyData->image}}" width="50">
+                                    <img src="{{ URL::to('/') }}/uploads/copmany_images/{{@$companyData->image}}" width="50">
                                 @else 
                                 <?php 
                                 if (($pos = strpos($companyData->vidoe, "=")) !== FALSE) 
                                 { 
-                                    $whatIWant = substr($companyData->vidoe, $pos+1); 
+                                    @$whatIWant = substr($companyData->vidoe, $pos+1); 
                                 }
-                                $thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
+                                @$thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
                                 ?>
                                     <img src="{{$thumbnail}}" width="50">
                                 @endif
