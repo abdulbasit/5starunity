@@ -195,15 +195,19 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
+            
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="row" style="border-bottom:solid 1px #ccc; padding-bottom:20px">
             <span>
                 <strong>{{ __('messages.delte_account')}}</strong>
             </span>
+          </div>
+            <p style="margin-top:30px">{{ __('messages.delete_account_message')}}</p>
         </div>
         <div class="modal-body" style="margin-top:10px">
             
         </div>
-            <div class="modal-footer">
+            <div class="modal-footer text-left">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">{{ __('lables.no')}}</button>
                 <button type="button" class="btn btn-success" id="delete_account_btn">{{ __('lables.yes')}}</button>
         </div>

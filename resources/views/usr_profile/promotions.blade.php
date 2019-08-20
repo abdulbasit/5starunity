@@ -42,7 +42,7 @@
                     </div>
                 @endif
                 <div class="row profile-body">
-                    <div class="col-lg-8 col-xs-12 profileWraper">
+                    <div class="col-lg-9 col-xs-12 profileWraper">
                         <p>
                             Partner bieten Ihnen die Möglichkeit nachfolgend eingestellte Werbung bis zu drei Mal anzusehen wodurch Sie kostenfreie Bonus-Taler zur freien Verfügung erhalten. Nutzen Sie diese Chance um bspw. Lose von Produkten Ihrer Wahl zu erwerben.  
                             <br />

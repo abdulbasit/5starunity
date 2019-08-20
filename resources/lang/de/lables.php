@@ -30,7 +30,7 @@ return [
     "remember"=>"Angemeldet bleiben",
     //User dashboard links start
     "edit_picture"=>"Bearbeiten",
-    "change"=>"andern",
+    "change"=>"ändern",
     "delete"=>"LÖSCHEN ",
     "my_account"=>"MEIN KONTO",
     "register_date"=>"Registrations-Datum",
@@ -75,6 +75,7 @@ return [
     'lot_per_amount'=>"TALER PRO LOSE",
     'taler_rquired'=>"GESAMT TALER FÜR DIESE SPENDE",
     'total_donation'=>"von Gesamt Spende",
-    'enter_number_of_lots'=>"Anzahl der Lose Eingeben"
+    'enter_number_of_lots'=>"Anzahl der Lose Eingeben",
+    'subscribe_news_letter'=>"Newsletter abbonnieren "
 ];
 ?>
