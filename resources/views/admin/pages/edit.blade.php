@@ -51,6 +51,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                              <label class="col-md-3 label-control" for="projectinput1">Page Slug </label>
+                              <div class="col-md-9">
+                              <input type="text" id="slug" class="form-control" placeholder="Page Slug"  name="slug" value="{{$page->page_slug}}">
+                              </div>
+                          </div>
+                            <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput1">Title</label>
                               <div class="col-md-9">
                                   <input type="text" id="title" class="form-control" placeholder="Page Title"  name="title" value="{{$page->page_title}}">

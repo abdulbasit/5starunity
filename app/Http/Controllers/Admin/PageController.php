@@ -42,6 +42,7 @@ class PageController extends Controller
         $id = $request->get("page_id");
         $page = Page::find($id);
         $page->page_name=$request->get("name");
+        $page->page_slug=$request->get("slug");
         $page->page_title = $request->get("title");
         $page->page_content=$request->get("content");
         $page->save();
