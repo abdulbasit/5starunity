@@ -50,14 +50,14 @@
                                 <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
                                     <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
                                         @if($company->image!="")
-                                            <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{$company->image}}">
+                                            <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{@$company->image}}">
                                         @else
                                         <?php 
                                             if (($pos = strpos($company->vidoe, "=")) !== FALSE) 
                                             { 
-                                                $whatIWant = substr($company->vidoe, $pos+1); 
+                                                @$whatIWant = substr($company->vidoe, $pos+1); 
                                             }
-                                            $thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
+                                            @$thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
                                         ?>
                                             <img class="img-responsive" src="{{$thumbnail}}">
                                         @endif
