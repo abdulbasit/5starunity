@@ -61,7 +61,7 @@
                                 </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 label-control" for="projectinput1">Company Views</label>
+                                    <label class="col-md-3 label-control" for="projectinput1">Maximum No.  of views</label>
                                     <div class="col-md-9">
                                         <input type="text" id="views" class="form-control" placeholder="Enter Views "  name="views" value="">
                                     </div>
@@ -88,19 +88,25 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 label-control" for="duration">Add Duration</label>
+                                    <label class="col-md-3 label-control" for="duration">Enter Duration (seconds)</label>
                                     <div class="col-md-9">
                                         <input type="text" id="duration" class="form-control" placeholder="Enter Add Duration"  name="duration" value="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 label-control" for="amount">Views Amount</label>
+                                    <label class="col-md-3 label-control" for="amount">Enter amount for total views </label>
                                     <div class="col-md-9">
                                         <input type="text" id="amount" class="form-control" placeholder="Enter per views amount "  name="amount" value="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 label-control" for="amount">Per View Amount</label>
+                                    <label class="col-md-3 label-control" for="amount">Number of views allowed </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="views_allowed" class="form-control" placeholder="Enter number views attempt"  name="views_allowed" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="amount">Enter amount Per View </label>
                                     <div class="col-md-9">
                                         <input type="text" id="per_view_amount" class="form-control" placeholder="Enter per views amount for user  "  name="per_view_amount" value="">
                                     </div>

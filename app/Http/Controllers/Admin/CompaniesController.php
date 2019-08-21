@@ -47,7 +47,7 @@ class CompaniesController extends Controller
         $company = Company::create([
             "company_name"=>$request->get('company'),
             "company_views"=>$request->get('views'),
-            "company_views_attempt"=>$request->get('duration'),
+            "company_views_attempt"=>$request->get('views_allowed'),
             "duration"=>$request->get('duration'),
             "vidoe"=>$request->get('youtube_video'),
             "image"=>$imageName,
@@ -69,7 +69,7 @@ class CompaniesController extends Controller
 
         $companyUpdate->company_name = $request->get('company');
         $companyUpdate->company_views = $request->get('views');
-        $companyUpdate->company_views_attempt = $request->get('duration');
+        $companyUpdate->company_views_attempt = $request->get('views_allowed');
         $companyUpdate->duration=$request->get('duration');
         $companyUpdate->vidoe = $request->get('youtube_video');
         if($request->file('image')!="")

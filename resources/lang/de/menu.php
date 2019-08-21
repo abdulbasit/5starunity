@@ -15,7 +15,7 @@ return [
     "ceo"=>"Gründer & Förderer",
     "press"=>"Presse",
     "contact"=>"Kontakt",
-    "donate"=>"Spenden",
+    "donate"=>"TALER EINLÖSEN",
     "register_your_self"=>"ZUR REGISTRIERUNG",
     "number_of_lots"=> "Maximale Anzahl der Lose",
     "lots_bought"=> "VERGEBENE LOSE",

@@ -100,8 +100,8 @@
                                             <div class="col-md-12 nopadding text-left">
                                                 <div class="list_nav">
                                                     <ul style="margin-top:10px">
-                                                        <li><a style="margin-top:0px !important" href="{{route('dashboard')}}">Dashboard</a></li>
-                                                        <li><a style="margin-top:0px !important" href="/logout">AUSLOGGEN</a></li>
+                                                        <li style="padding:0px"><a style="margin-top:0px !important" href="{{route('dashboard')}}">Dashboard</a></li>
+                                                        <li style="padding:0px"><a style="margin-top:0px !important" href="/logout">AUSLOGGEN</a></li>
                                                     </ul>
                                                 </div>
                                             </div>

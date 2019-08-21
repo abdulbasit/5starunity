@@ -162,7 +162,7 @@
                     }
                     else
                     {
-                        $("#lotSize").html('Enter no of lots');
+                        $("#lotSize").html('Anzahl der Lose');
                         $("."+id+" span.error_card").remove();
                         $("."+id+" span#error_card").remove();
                     }

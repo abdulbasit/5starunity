@@ -53,7 +53,7 @@
                         <form action="/send_inivte" method="post">
                             @csrf
                             <div class="row profile-body">
-                                <div class="col-lg-10 col-xs-12 profileWraper">
+                                <div class="col-lg-12 col-xs-12 profileWraper">
                                     <div class="section-title text-left">Invite Friends</div>
                                     <section id="examples">
                                         <div class="example example_markup">

@@ -6,6 +6,17 @@
             border:0px;
             margin-top: 0px
         }
+        .add-to-cart
+        {
+            background-color:green;
+            color:white;
+            border-radius:100px
+        }
+        .add-to-cart:hover
+        {
+            background-color:green;
+            color:white
+        }
     </style>
 @endsection
 @section('content')
@@ -29,7 +40,7 @@
 								<span class="fa fa-star"></span>
 								<span class="fa fa-star"></span>
 							</div> --}}
-							<span class="review-no">{{$lotteryData->lottery_contestent->groupby('user_id')->count()}} Lotteristen</span>
+							<span class="review-no">{{$lotteryData->lottery_contestent->groupby('user_id')->count()}} Teilnehmer</span>
 						</div>
 						<p class="product-description">
                             {{$lotteryData->description}}
@@ -45,10 +56,10 @@
                         <div class="row">
                             @if(!Auth::guard('client')->check())
                                 <div class="action col-xs-10 col-lg-8 no-padding">
-                                    <a  href="/login" class="add-to-cart btn" type="button">Apply</a>
+                                    <a  href="/login" class="add-to-cart btn" type="button">{{__('menu.donate')}}</a>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
-                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="return validate(event,'qty_wrap'); emptyQty()" onchange="">
+                                    <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="validate(event,'qty_wrap'); emptyQty()">
                                     <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left; line-height:15px">{{__('lables.enter_number_of_lots')}}</span>
                                 </div>
                             @else

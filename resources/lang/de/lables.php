@@ -72,10 +72,10 @@ return [
     'already_viwed'=>"ANSICHTEN",
     'my_views'=>"MEINE ANSICHTEN",
     'view_now'=> "JETZT ANSEHEN",
-    'lot_per_amount'=>"TALER PRO LOSE",
-    'taler_rquired'=>"GESAMT TALER FÜR DIESE SPENDE",
+    'lot_per_amount'=>"Benötigte Taler pro Los",
+    'taler_rquired'=>"Benötigte Taler gemäß gewünschter Anzahl",
     'total_donation'=>"von Gesamt Spende",
-    'enter_number_of_lots'=>"Anzahl der Lose Eingeben",
+    'enter_number_of_lots'=>"Anzahl der Lose",
     'subscribe_news_letter'=>"Newsletter abbonnieren "
 ];
 ?>
