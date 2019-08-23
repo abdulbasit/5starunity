@@ -2141,6 +2141,10 @@ pre code {
     {
         margin-left:5px
     }
+    .promotions_card
+    {
+      width:24% !important
+    }
     .paddingZero{
         padding:0px !important
     }
@@ -15671,6 +15675,7 @@ section.homepage-howitworks .circles-holder .circle {
     {
         font-size:25px !important
     }
+    
 
   section.homepage-howitworks .circles-holder .circle {
     margin: 0 auto !important;
@@ -47803,7 +47808,7 @@ div[class*='column'] {
 input[type='text'],
 input[type='password'],
 input[type='number'] {
-  font-size: 18px;
+  font-size: 15px;
   width: 100%;
   /* height: 50px; */
   /* padding-right: 40px; */

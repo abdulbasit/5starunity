@@ -5,7 +5,12 @@ use App\Models\CompanyView;
 use Illuminate\Http\Request;
 use App\Models\BonusTaler;
 use App\Models\Company;
+use App\Models\User;
+use App\Models\UserProfile;
+use App\Models\UserDocument;
+use App\Models\Category;
 use Carbon\Carbon;
+
 use Auth;
 use DB;
 use Session;
@@ -14,7 +19,14 @@ class CompanyController extends Controller
 
     public function index()
     {
+        $userId = Auth::guard('client')->user()->id;
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='promotions';
         $user_id = Auth::guard('client')->user()->id;
+        $category = Category::where('category_for','company')->get();
         DB::enableQueryLog();
         $company = Company::
                             with(['company_views'])
@@ -26,7 +38,7 @@ class CompanyController extends Controller
                             ->paginate(18);
         // dd($company);
         // dd(DB::getQueryLog());
-        return view('promotions.index',compact('company','user_id'));
+        return view('promotions.index',compact('company','user_id','userInfo','route','category'));
     }
     public function detail($id)
     {

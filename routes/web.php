@@ -136,6 +136,7 @@ Auth::routes();
         Route::post('company/edit/save', 'CompaniesController@saveEdits')->name('company.edit.save');
         Route::get('company/delete/{id}', 'CompaniesController@delete')->name('company.delete');
         
+        
         Route::get('users', 'UserController@index')->name('users');
         Route::get('user/edit', 'UserController@index')->name('user.edit');
         Route::get('user/create', 'UserController@create')->name('user.create');

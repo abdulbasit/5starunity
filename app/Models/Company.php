@@ -11,7 +11,7 @@ class Company extends Authenticatable
     use SoftDeletes;
     protected $fillable = [
         'company_name', 'company_views', 'company_views_attempt', 'duration','vidoe',
-        'image','view_counter','views_amount','user_amount'
+        'image','view_counter','views_amount','user_amount','category_id'
     ];
     
     public function promotionVies($user_id,$company_id) {

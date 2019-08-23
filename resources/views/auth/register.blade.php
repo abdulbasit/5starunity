@@ -475,6 +475,7 @@ label.error {
                     </div>
 
                 </fieldset>
+
                 <h3 style="display:none">
                     <span id="title_id_3" class="title_text">{{ __('content.terms_cond')}}</span>
                 </h3>
@@ -491,6 +492,8 @@ label.error {
             <input type="hidden" name="csToken" id="csToken" value="{{ csrf_token() }}">
         </div>
     </div>
+<br />
+<br />
 <br />
 <input type="hidden" id="newindex" name="">
 @section('script')

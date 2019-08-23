@@ -67,6 +67,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="projectinput1">Category</label>
+                                    <div class="col-md-9">
+                                    <select id="category" name="category" class="form-control">
+                                        <option value="">--Choose Category--</option>
+                                        @foreach($category as $cat)
+                                            <option value="{{$cat->id}}"> {{$cat->name}} </option>
+                                        @endforeach
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label class="col-md-3 label-control" for="projectinput1">Add Type </label>
                                     <div class="col-md-9">
                                     <select id="add_type" name="add_type" class="form-control">

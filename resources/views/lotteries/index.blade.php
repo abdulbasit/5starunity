@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-xs-12 col-lg-4 form-group">
                             <select name="category" id="category" class="form-control ">
-                                <option value="">----{{ __('lables.lottery_category_dropdown')}}----</option>
+                                <option value="">{{ __('lables.lottery_category_dropdown')}}</option>
                                 @foreach($category as $proCategory)
                                     <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
                                 @endforeach

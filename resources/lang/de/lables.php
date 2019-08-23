@@ -76,6 +76,9 @@ return [
     'taler_rquired'=>"Benötigte Taler gemäß gewünschter Anzahl",
     'total_donation'=>"von Gesamt Spende",
     'enter_number_of_lots'=>"Anzahl der Lose",
-    'subscribe_news_letter'=>"Newsletter abbonnieren "
-];
+    'subscribe_news_letter'=>"Newsletter abbonnieren",
+    'you_earn'=>"HOLEN SIE SICH",
+    "send"=>"ÜBERMITTELN"
+]
 ?>
+ 

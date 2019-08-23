@@ -44,10 +44,10 @@
                 <div class="row profile-body">
                     <div class="col-lg-9 col-xs-12 profileWraper">
                         <p>
-                            Partner bieten Ihnen die Möglichkeit nachfolgend eingestellte Werbung bis zu drei Mal anzusehen wodurch Sie kostenfreie Bonus-Taler zur freien Verfügung erhalten. Nutzen Sie diese Chance um bspw. Lose von Produkten Ihrer Wahl zu erwerben.  
+                                Erfinder, Gründer und Start-Up Unternehmen, welche durch den 5starUnity e.V. mit Ihren Spenden unterstützt wurden, bieten an dieser Stelle Ihre Produkte an. Ferner finden Sie ggf. weitere Schnäppchen anderer Partner – wir wünschen Ihnen bereits an dieser Stelle viel Spass beim stöbern und einkaufen. 
                             <br />
                             <br />
-                            Kennen auch Sie z.B. Unternehmen, welche gut sichtbare Werbeplätze buchen und an garantierten Views / Klicks interessiert sein könnten? Jede positv zustande gekommene Empfehlung vergüten wir mit S-PAY, die Sie frei nutzen dürfen.  
+                            Kennen auch Sie z.B. Unternehmen, welche unserer Community exklusive Produkte und / oder gezielte Angebote offerieren möchten? Durch Ihre Mithilfe können wir zu einer sehr starken Gemeinschaft wachsen und generieren Vorteile für jeden! 
                         </p>
                         <br />
                         <div class="row text-center">

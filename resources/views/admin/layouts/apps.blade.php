@@ -291,6 +291,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                       <ul class="menu-content">
                           <li><a class="menu-item" href="{{ route('admin.company.create') }}">Create Company</a></li>
                           <li><a class="menu-item" href="{{ route('admin.company') }}">View Companies</a></li>
+                          <li><a class="menu-item" href="{{ route('admin.categories','company') }}">Categories</a></li>
                         </ul>
                     </li>
                     <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Products</span></a>

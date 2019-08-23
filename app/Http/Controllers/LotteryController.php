@@ -39,7 +39,7 @@ class LotteryController extends Controller
                         ->orderBy('totalClients','desc')
                         ->paginate(18);
         
-        $category = Category::where('category_for','pro')->get();
+        $category = Category::where('category_for','pro')->orderBy('name','asc')->get();
         $testimonialData = Testimonial::orderBy('id', 'DESC')->get();
         return view('lotteries.index',compact('lotteryData','testimonialData','category'));
     }

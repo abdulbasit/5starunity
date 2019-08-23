@@ -18,13 +18,16 @@ class CompaniesController extends Controller
     public function index()
     {
         $companies = Company::all();
-        return view('admin.companies.index',compact('companies'));
-        // $video_id= 'vKYwGoCF5eY';
-        // $thumbnail="http://img.youtube.com/vi/".$video_id."/maxresdefault.jpg";
+        return view('admin.companies.index',compact('companies','category'));
+    }
+    public function creatCategory()
+    {
+        return view('admin.companies.category_create');
     }
     public function create()
     {
-        return view('admin.companies.create');
+        $category = Category::where('category_for','company')->get();
+        return view('admin.companies.create',compact('category'));
     }
     public function save(Request $request)
     {
@@ -45,6 +48,7 @@ class CompaniesController extends Controller
             $imageName="";
         }
         $company = Company::create([
+            "category_id"=>$request->get('category'),
             "company_name"=>$request->get('company'),
             "company_views"=>$request->get('views'),
             "company_views_attempt"=>$request->get('views_allowed'),
@@ -59,8 +63,9 @@ class CompaniesController extends Controller
     }
     public function edit($id)
     {
+        $category = Category::where('category_for','company')->get();
         $company = Company::find($id);
-        return view('admin.companies.edit',compact('company'));
+        return view('admin.companies.edit',compact('company','category'));
     }
     public function saveEdits(Request $request)
     {
@@ -68,6 +73,7 @@ class CompaniesController extends Controller
         $companyUpdate = Company::find($company_id);
 
         $companyUpdate->company_name = $request->get('company');
+        $companyUpdate->category_id = $request->get('category');
         $companyUpdate->company_views = $request->get('views');
         $companyUpdate->company_views_attempt = $request->get('views_allowed');
         $companyUpdate->duration=$request->get('duration');
