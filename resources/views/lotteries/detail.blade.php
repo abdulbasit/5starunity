@@ -17,6 +17,12 @@
             background-color:green;
             color:white
         }
+        .redeem
+        {
+            font-size:16px; 
+            font-weight:bold; 
+            text-decoration:none !important
+        }
     </style>
 @endsection
 @section('content')
@@ -53,6 +59,8 @@
                                 echo $progressBar = round($total/$lotteryData->lot_amount*100,0);
                                 ?>%</strong>
                              {{__('lables.total_donation')}}</p>
+                        <input type="hidden" id="bonus_taler" name="bonus_taler" value="no">
+                        <input type="hidden" id="bonusAmount" name="bonusAmount" value="0">
                         <div class="row">
                             @if(!Auth::guard('client')->check())
                                 <div class="action col-xs-10 col-lg-8 no-padding">
@@ -127,7 +135,7 @@
                 return false;
             }
 
-
+            var bonusTaler = $("#bonus_taler").val();
             var totalAmount = $("#totalAmount").text();
             var total_lots = $("#total_lots").val();
             var qty = $("#qty").val();
@@ -136,7 +144,7 @@
             $.ajax({
                 method: "POST",
                 url: "{{route('lottery.purchase')}}",
-                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots,lottery_id:lottery_id }
+                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots,lottery_id:lottery_id,bonusTaler:bonusTaler}
             }).done(function( msg ) {
                 var obj = JSON.parse(msg);
                 if(obj.status=='success')
@@ -157,8 +165,10 @@
                 }
                 else
                 {
+                    $("#bonus_taler").val(obj.bonus_use);
+                    $("#bonusAmount").val(obj.amount);
                     $("#errorLots").css('color','red');
-                    $("#errorLots").html(obj.message);
+                    $("#errorLots").html(obj.message+"<br /> "+obj.bonus_taler);
                 }
             });
         }

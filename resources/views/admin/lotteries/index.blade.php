@@ -63,7 +63,7 @@
                                 </a>
                             </td>
                             <td>
-                               {{$lotData->product->pro_name}}
+                               {{@$lotData->product->pro_name}}
                             </td>
                             <td>{{$lotData->lot_amount}}</td>
                             <td>{{$lotData->total_lots}}</td>

@@ -9,9 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Company extends Authenticatable
 {
     use SoftDeletes;
+    // protected $casts = [
+    //     'options' => 'array'
+    // ];
     protected $fillable = [
         'company_name', 'company_views', 'company_views_attempt', 'duration','vidoe',
-        'image','view_counter','views_amount','user_amount','category_id'
+        'image','view_counter','views_amount','user_amount','category_id','options'
     ];
     
     public function promotionVies($user_id,$company_id) {

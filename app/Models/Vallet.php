@@ -9,9 +9,11 @@ class Vallet extends Model
 {
     use SoftDeletes;
     // protected $guard = 'admin';
-
+    protected $casts = [
+        'options' => 'array'
+    ];
     protected $fillable = [
-        'user_id', 'credit', 'balance','total_available_balance','pre_balance','status'
+        'user_id', 'credit', 'balance','total_available_balance','pre_balance','status','options','type'
     ];
 
     public function user()

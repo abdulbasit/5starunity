@@ -123,8 +123,8 @@
         }
       }
       function validate(evt,id) {
-        
         var type = $("."+id+ " input").attr('type');
+            
         if(type=='number')
         {
             var theEvent = evt || window.event;

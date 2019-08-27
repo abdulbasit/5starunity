@@ -12,6 +12,7 @@ use App\Models\UserProfile;
 use App\Models\User;
 use App\Models\Vallet;
 use App\Models\Category;
+use App\Models\BonusTaler;
 use Session;
 use Auth;
 use DB;
@@ -56,21 +57,95 @@ class LotteryController extends Controller
         $lotteryData->save();
         return view('lotteries.detail',compact('lotteryData','user','lotteryData1'));
     }
-    public function purchaseLottery(Request $request)
+    Public function lotterPurchaseBonus($request)
     {
         $qty = $request->get('qty');
+        $bonus = $request->get('bonusTaler');
+        $user_id = Auth::guard('client')->user()->id;
+        $amount = $request->get('amount');
+        $total_lots = $request->get('total_lots');
+
+        $checkTotalCredit = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
+        
+
+        echo $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
+        echo "<br />";
+        echo $balance = "-".$amount;
+        echo "<br />";
+        echo $previousBalance = $checkTotalCredit->total_available_balance;
+        return false;
+
+        if($checkTotalCredit && $checkTotalCredit->total_available_balance >= $amount && $bonus=='no')
+        {
+            
+            echo $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
+            echo "<br />";
+            echo $balance = "-".$amount;
+            echo "<br />";
+            echo $previousBalance = $checkTotalCredit->total_available_balance;
+
+            // $vallet_id = BonusTaler::create([
+            //     "user_id" => $user_id,
+            //     "credit"=>'0.00',
+            //     "balance"=>$balance.".00",
+            //     "pre_balance"=> $previousBalance,
+            //     "total_available_balance"=>$remainingTotalBalance,
+            //     "created_at"=>Carbon::now(),
+            //     "updated_at"=>Carbon::now(),
+            //     "status"=>"approved",
+            //     'options'=>array('bonus_taler'=>'none')
+            // ]);
+        }
+        else
+        {
+            // $bonusTaler = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
+            // if($bonusTaler->total_available_balance>=$amount)
+            // {
+            //     $response = json_encode(array("status"=>"error","bonus_use"=>"yes","message"=>"Insufficiant Balance!",'bonus_taler'=>"Use  your bonus talers &nbsp;".$bonusTaler->total_available_balance.' <a id="bonus" onclick="puchaseLottery(0)" href="#" class="redeem">Use</a>','amount'=>$bonusTaler->total_available_balance));
+            // }
+            // else
+            // {
+            //     $response = json_encode(array("status"=>"error","bonus_use"=>"no","message"=>"Insufficiant Balance!",'bonus_taler'=>$bonusTaler->total_available_balance));
+            // }
+            
+            // return $response;
+        }
+
+
+    }
+    public function purchaseLottery(Request $request)
+    {
+        
+        $qty = $request->get('qty');
+        $bonus = $request->get('bonusTaler');
         $user_id = Auth::guard('client')->user()->id;
         $amount = $request->get('amount');
         $total_lots = $request->get('total_lots');
 
         $lottery_id = $request->lottery_id;
 
+        if($bonus=='yes')
+            return $this->lotterPurchaseBonus($request);
+
         if($qty > $total_lots)
             return $response = json_encode(array("status"=>"error","message"=>"Lots must be less than".$total_lots));
 
-        $checkTotalCredit = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
-        if($checkTotalCredit && $checkTotalCredit->total_available_balance >= $amount)
+
+            if($bonus=='no')
+            {
+                $optionsArray = json_encode(array('bonus_taler'=>array('status'=>'no')));
+                $checkTotalCredit = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
+            }
+            else
+            {
+                
+                $checkTotalCredit = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
+                $optionsArray = json_encode(array('bonus_taler'=>array('status'=>'yes','taler','')));
+            }
+                
+        if($checkTotalCredit && $checkTotalCredit->total_available_balance >= $amount && $bonus=='no')
         {
+            
             $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
             $balance = "-".$amount;
             $previousBalance = $checkTotalCredit->total_available_balance;
@@ -82,12 +157,24 @@ class LotteryController extends Controller
                 "total_available_balance"=>$remainingTotalBalance,
                 "created_at"=>Carbon::now(),
                 "updated_at"=>Carbon::now(),
-                "status"=>"approved"
+                "status"=>"approved",
+                'options'=>array('bonus_taler'=>'none'),
+                'type'=>'lot'
             ]);
         }
         else
         {
-            return $response = json_encode(array("status"=>"error","message"=>"Insufficiant Balance!"));
+            $bonusTaler = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
+            if($bonusTaler->total_available_balance>=$amount)
+            {
+                $response = json_encode(array("status"=>"error","bonus_use"=>"yes","message"=>"Insufficiant Balance!",'bonus_taler'=>"Use  your bonus talers &nbsp;".$bonusTaler->total_available_balance.' <a id="bonus" onclick="puchaseLottery(0)" href="#" class="redeem">Use</a>','amount'=>$bonusTaler->total_available_balance));
+            }
+            else
+            {
+                $response = json_encode(array("status"=>"error","bonus_use"=>"no","message"=>"Insufficiant Balance!",'bonus_taler'=>$bonusTaler->total_available_balance));
+            }
+            
+            return $response;
         }
         $i=1;
         $numbers = '';

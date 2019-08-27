@@ -49,6 +49,7 @@ class WalletController extends Controller
     public function index($type="", Request $request)
     {
         $action = $request->input('action');
+
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
@@ -56,21 +57,28 @@ class WalletController extends Controller
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
 
+        DB::enableQueryLog(); // Enable query log
+
         $route='wallet';
+        $walletHistory = Vallet::where('user_id',$userId)->where('status','approved');
+
         if($type=="credit")
-        {
-            $walletHistory = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
+        {   
+            $walletHistory = $walletHistory->where('credit','>','0');
         }
-        else if($type=="lots")
+        else if($type=="lot" || $type=="bonus")
         {
-            $walletHistory = Vallet::where('credit','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
+            $walletHistory = $walletHistory->where('credit','0.00');
         }
         else
         {
-            $walletHistory = Vallet::where('status','approved')->where('user_id',$userId)->orderBy('id','desc')->get();
+            $type='credit';
         }
-
-        return view('wallet.index',compact('userInfo','route','walletHistory','action'));
+        $walletHistory = $walletHistory->where('type',$type)->orderBy('id','desc')->get();
+        
+        // dd(DB::getQueryLog()); // Show results of log
+        
+        return view('wallet.index',compact('userInfo','route','walletHistory','action','type'));
     }
     public function kalarna()
     {
@@ -122,6 +130,7 @@ class WalletController extends Controller
     }
     public function response()
     {
+       
         if (empty($_GET['paymentId']) || empty($_GET['PayerID']))
         {
             throw new Exception('The response is missing the paymentId and PayerID');
@@ -141,7 +150,7 @@ class WalletController extends Controller
            $transaction_id = $response->transactions[0]->related_resources[0]->sale->id;
            $state = $response->transactions[0]->related_resources[0]->sale->state;
            $users_id = Auth::guard('client')->user()->id;
-           $checkTotalCredit = Vallet::where('user_id',$users_id)->where('status','approved')->orderBy('id','desc')->first();
+           $checkTotalCredit = Vallet::where('user_id',$users_id)->where('status','approved')->where('type','credit')->orderBy('id','desc')->first();
            if(!$checkTotalCredit)
                {
                    $trans_id = Vallet::create([
@@ -152,7 +161,8 @@ class WalletController extends Controller
                         "total_available_balance"=>$amount,
                         "created_at"=>Carbon::now(),
                         "updated_at"=>Carbon::now(),
-                        "status"=>"approved"
+                        "status"=>"approved",
+                        "type"=>"credit"
                    ]);
                }
                else
@@ -170,7 +180,8 @@ class WalletController extends Controller
                        "total_available_balance"=>$remainingTotalBalance,
                        "created_at"=>Carbon::now(),
                        "updated_at"=>Carbon::now(),
-                       "status"=>"approved"
+                       "status"=>"approved",
+                       "type"=>"credit"
                    ]);
                 }
            //save transaction log
@@ -231,7 +242,7 @@ class WalletController extends Controller
             $state = $response->transactions[0]->related_resources[0]->sale->state;
 
             $users_id = Auth::guard('client')->user()->id;
-            $checkTotalCredit = Vallet::where('user_id',$users_id)->where('status','approved')->orderBy('id','desc')->first();
+            $checkTotalCredit = Vallet::where('user_id',$users_id)->where('status','approved')->where('type','credit')->orderBy('id','desc')->first();
                 if(!$checkTotalCredit)
                 {
                     $trans_id = Vallet::create([
@@ -242,7 +253,8 @@ class WalletController extends Controller
                          "total_available_balance"=>$amount,
                          "created_at"=>Carbon::now(),
                          "updated_at"=>Carbon::now(),
-                         "status"=>"pending"
+                         "status"=>"pending",
+                         "type"=>"credit"
                     ]);
                 }
                 else
@@ -261,7 +273,8 @@ class WalletController extends Controller
                         "total_available_balance"=>$remainingTotalBalance,
                         "created_at"=>Carbon::now(),
                         "updated_at"=>Carbon::now(),
-                        "status"=>"pending"
+                        "status"=>"pending",
+                        "type"=>"credit"
                     ]);
                 // dd(DB::getQueryLog());
                 }

@@ -8,12 +8,130 @@
 }
 </style>
 @endsection
+@section('script')
+<script>
+@if($action=='purchase')
+{
+    $( document ).ready(function() {
+        jQuery(function(){
+            jQuery('#btnPurchaseCredit').click();
+        });
+    });
+}
+@endif
+
+$("#btnPurchaseCredit").click(function(){
+    $( "#historyTable" ).fadeOut( "slow", function() {
+        $("#paymentOptions").fadeIn("slow",function(){
+            $("#btnPurchaseCredit").fadeOut("fast",function(){
+                $("#viewHistory").fadeIn();
+            });
+        });
+    });
+});
+$("#viewHistory").click(function(){
+    $( "#paymentOptions" ).fadeOut( "slow", function() {
+        $("#historyTable").fadeIn("slow",function(){
+            $("#viewHistory").fadeOut("fast",function(){
+                $("#btnPurchaseCredit").fadeIn();
+            });
+        });
+    });
+});
+$(".method").click(function(){
+    var paymentMethod = $(this).attr('id');
+
+        $(".method").removeClass('method-selected');
+        $(this).addClass('method-selected');
+        if(paymentMethod=='credit-card')
+        {
+            $(".creditFormWrap").fadeIn("slow",function(){
+                $("#payBtn").attr('type','button');
+                $("#payBtn").attr('onclick','credit_card()');
+                $("#creditCard").css('display','block');
+                $("#creditCard :input").prop("disabled", false);
+                $("#creditPForm :input").attr("action","");
+            });
+        }
+        else if(paymentMethod=='paypal')
+        {
+            $(".creditFormWrap").fadeIn("slow",function(){
+                $("#creditPForm").attr("action","/balance/purchase");
+                $("#creditCard").css('display','none');
+                $("#creditCard :input").prop("disabled", true);
+                $("#payBtn").attr('type','submit');
+                $("#payBtn").attr('onclick','');
+            });
+        }
+});
+$(".paymehnt_close").click(function(){
+    $(".creditFormWrap").fadeOut("fast",function(){
+        $(".method").removeClass('method-selected');
+    });
+});
+function credit_card()
+{
+    $("#creditForm").css('opacity','0.5');
+    $("#creditPForm :input").prop("disabled", true);
+
+
+      var credit = $("#credit").val();
+      var card_number = $("#card_number").val();
+      var expiration = $("#expiration").val();
+      var cvv = $("#cvv").val();
+      var fname = $("#fname").val();
+      var lname = $("#lname").val();
+
+      var values = [credit,card_number,expiration,cvv,fname,card_type,lname ];
+      payment_form_validation(values);
+      var card_type = GetCardType(card_number);
+      $.ajax({
+            method: "POST",
+            url: "{{route('credit_card')}}",
+            data: { "_token": "{{ csrf_token() }}",credit: credit , card_number:card_number,expiration:expiration,
+                    cvv:cvv,fname:fname,card_type:card_type,lname:lname }
+        }).done(function( msg ) {
+            $("#creditForm").css('opacity','1');
+            $("#creditPForm :input").prop("disabled", false);
+            if(msg=='success')
+            {
+                $("#msg").html('Payment Success');
+                $("#msg").addClass('success_msg');
+            }
+            setTimeout(function(){
+                window.location="/wallet";
+             }, 1000);
+        }).fail(function() {
+
+            $("#creditForm").css('opacity','1');
+            $("#creditPForm :input").prop("disabled", false);
+            $("#msg").html('Payment Unsuccessfull. Please try with correct information!');
+            $("#msg").addClass('error_msg');
+        });
+}
+function filter(type)
+{
+    window.location="/wallet/filter/"+type
+}
+$("#buyLot").click(function (){
+    window.location="/lotteries";
+})
+</script>
+@endsection
+
 <div class="container">
     <div class="row profile">
          @include('../layouts.user_menu')
          <div class="col-md-9 prof">
              <div class="row">
-                <h4 class="no-padding pull-left">Wallet</h4>
+                 {{$action}}
+                 @if($type=='lot')
+                    <h4 class="no-padding pull-left">Transaction History</h4>
+                 @elseif($type=='credit')
+                    <h4 class="no-padding pull-left">Credit History</h4>
+                 @elseif($type=='bonus')                   
+                    <h4 class="no-padding pull-left">Bonus Talers</h4>
+                @endif
                 <button id="buyLot" class="btnPurchaseCredit pull-right" type="button"> + Buy Lot </button>
                 <button id="btnPurchaseCredit" class="btnPurchaseCredit pull-right" type="button"> + Donate </button>
                 <div class="dropdown show pull-right dropDownMenu">
@@ -22,14 +140,18 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <ul>
-                            <li onclick="filter('all')">
+                            {{-- <li onclick="filter('all')">
                                 All
-                            </li>
-                            <li onclick="filter('lots')">
-                                Lots History
-                            </li>
+                            </li> --}}
+                            
                             <li onclick="filter('credit')">
                                 Credit History
+                            </li>
+                            <li onclick="filter('lot')">
+                                Lots History
+                            </li>
+                            <li onclick="filter('bonus')">
+                                Bonus History
                             </li>
                         </ul>
                     </div>
@@ -56,21 +178,29 @@
                         @foreach($walletHistory as $key => $history)
                             @if($key==0)
                             <tr style="background-color:#fde9ec">
-                                @if($history->credit!='0')
-                                    <td>Credit Donated</td>
-                                @else
-                                    <td>Lottery Purchased</td>
-                                @endif
+                                @if($history->credit!='0' && $history->type=='credit')
+                                <td>Credit Donated</td>
+                            @elseif($history->credit>='0' && $history->type=='lot')
+                                <td>Lottery Purchased</td>
+                            @elseif($history->credit=='0.00' && $history->type=='bonus')
+                                <td>Bonus Talers</td>
+                            @elseif($history->credit!='0.00' && $history->type=='bonus')
+                                <td>Bonus Talers</td>
+                            @endif
                                 <td>{{$history->balance}}</td>
                                 <td>{{$history->total_available_balance}}</td>
                                 <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
                             </tr>
                             @else
                             <tr>
-                                @if($history->credit!='0')
+                                @if($history->credit!='0' && $history->type=='credit')
                                     <td>Credit Donated</td>
-                                @else
+                                @elseif($history->credit>='0' && $history->type=='lot')
                                     <td>Lottery Purchased</td>
+                                @elseif($history->credit=='0.00' && $history->type=='bonus')
+                                    <td>Bonus Talers</td>
+                                @elseif($history->credit!='0.00' && $history->type=='bonus')
+                                    <td>Bonus Talers</td>
                                 @endif
                                 <td>{{$history->balance}}</td>
                                 <td>{{$history->total_available_balance}}.00</td>
@@ -196,114 +326,4 @@
          </div>
     </div>
 </div>
-@endsection
-@section('script')
-<script>
-@if($action=='purchase')
-{
-    $( document ).ready(function() {
-        jQuery(function(){
-            jQuery('#btnPurchaseCredit').click();
-        });
-    });
-}
-@endif
-
-$("#btnPurchaseCredit").click(function(){
-    $( "#historyTable" ).fadeOut( "slow", function() {
-        $("#paymentOptions").fadeIn("slow",function(){
-            $("#btnPurchaseCredit").fadeOut("fast",function(){
-                $("#viewHistory").fadeIn();
-            });
-        });
-    });
-});
-$("#viewHistory").click(function(){
-    $( "#paymentOptions" ).fadeOut( "slow", function() {
-        $("#historyTable").fadeIn("slow",function(){
-            $("#viewHistory").fadeOut("fast",function(){
-                $("#btnPurchaseCredit").fadeIn();
-            });
-        });
-    });
-});
-$(".method").click(function(){
-    var paymentMethod = $(this).attr('id');
-
-        $(".method").removeClass('method-selected');
-        $(this).addClass('method-selected');
-        if(paymentMethod=='credit-card')
-        {
-            $(".creditFormWrap").fadeIn("slow",function(){
-                $("#payBtn").attr('type','button');
-                $("#payBtn").attr('onclick','credit_card()');
-                $("#creditCard").css('display','block');
-                $("#creditCard :input").prop("disabled", false);
-                $("#creditPForm :input").attr("action","");
-            });
-        }
-        else if(paymentMethod=='paypal')
-        {
-            $(".creditFormWrap").fadeIn("slow",function(){
-                $("#creditPForm").attr("action","/balance/purchase");
-                $("#creditCard").css('display','none');
-                $("#creditCard :input").prop("disabled", true);
-                $("#payBtn").attr('type','submit');
-                $("#payBtn").attr('onclick','');
-            });
-        }
-});
-$(".paymehnt_close").click(function(){
-    $(".creditFormWrap").fadeOut("fast",function(){
-        $(".method").removeClass('method-selected');
-    });
-});
-function credit_card()
-{
-    $("#creditForm").css('opacity','0.5');
-    $("#creditPForm :input").prop("disabled", true);
-
-
-      var credit = $("#credit").val();
-      var card_number = $("#card_number").val();
-      var expiration = $("#expiration").val();
-      var cvv = $("#cvv").val();
-      var fname = $("#fname").val();
-      var lname = $("#lname").val();
-
-      var values = [credit,card_number,expiration,cvv,fname,card_type,lname ];
-      payment_form_validation(values);
-      var card_type = GetCardType(card_number);
-      $.ajax({
-            method: "POST",
-            url: "{{route('credit_card')}}",
-            data: { "_token": "{{ csrf_token() }}",credit: credit , card_number:card_number,expiration:expiration,
-                    cvv:cvv,fname:fname,card_type:card_type,lname:lname }
-        }).done(function( msg ) {
-            $("#creditForm").css('opacity','1');
-            $("#creditPForm :input").prop("disabled", false);
-            if(msg=='success')
-            {
-                $("#msg").html('Payment Success');
-                $("#msg").addClass('success_msg');
-            }
-            setTimeout(function(){
-                window.location="/wallet";
-             }, 1000);
-        }).fail(function() {
-
-            $("#creditForm").css('opacity','1');
-            $("#creditPForm :input").prop("disabled", false);
-            $("#msg").html('Payment Unsuccessfull. Please try with correct information!');
-            $("#msg").addClass('error_msg');
-        });
-}
-function filter(type)
-{
-    window.location="/wallet/filter/"+type
-}
-$("#buyLot").click(function (){
-    window.location="/lotteries";
-})
-</script>
 @endsection
