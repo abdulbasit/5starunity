@@ -2642,7 +2642,7 @@ label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
-  font-size:16px
+  font-size:18px
   /* font-weight: bold; */
 }
 input[type="search"] {
@@ -13004,7 +13004,7 @@ button {
   margin-bottom: 0px !important;
   padding-top: 0;
   padding-bottom: 0;
-  font-size: 16px !important;
+  font-size:18px !important;
   border-radius: 25px !important;
   border: 1px solid transparent;
   padding-right: 15px;
@@ -13602,7 +13602,7 @@ button {
   color: #fff !important;
 }
 #bannerWrap .banner-right-image .aditional_font_increase {
-  font-size: 16px !important;
+  font-size:18px !important;
   padding-bottom: 10px;
 }
 @media (max-width: 991px) {
@@ -15561,7 +15561,7 @@ label{
     .menubtn {
         letter-spacing: 0px;
         margin-top: 0px !important;
-        font-size: 16px !important;
+        font-size:18px !important;
     }
     section.homepage-newsletter .newsletter-wrapper .newsletter-input input
     {
@@ -17241,7 +17241,7 @@ section.homepage-angel-club .row-angel-club .description-angel-club {
   font-size: 22px;
 }
 section.homepage-angel-club .row-angel-club .layoutV2-btn-angel-club {
-  font-size: 16px;
+  font-size:18px
   background: #000!important;
   color: #fff;
   text-transform: none;
@@ -24386,7 +24386,7 @@ img.locationFlag {
 #business_unit .carousel .team_member p {
   padding-left: 20px;
   padding-top: 20px;
-  font-size: 16px !important;
+  font-size:18px !important;
   font-weight: 300;
   text-transform: none !important;
 }
@@ -47144,7 +47144,7 @@ div.right_tools {
 }
 html, body {
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
+    font-size:18px
     line-height: 28px;
     scroll-behavior: smooth;
   }
@@ -47351,7 +47351,7 @@ html, body {
     padding: 20px;
     background: #fff;
     min-height: 460px;
-    font-size:16px
+    font-size:18px
   }
 .table-borderless
 {
@@ -47989,7 +47989,7 @@ input[type='password']:focus {
 {
     letter-spacing: 0px;
     margin-top: 33px;
-    font-size: 16px;
+    font-size:18px;
 }
 
 
