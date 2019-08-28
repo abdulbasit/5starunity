@@ -23,10 +23,6 @@ html {
 .validateSuccess{
     border:solid 1px green
 }
-body {
-    font-family: "Open Sans", sans-serif !important;
-  margin: 0;
-}
 article,
 aside,
 details,
@@ -47141,7 +47137,7 @@ div.right_tools {
 }
 html, body {
     font-family: "Open Sans", sans-serif;
-    font-size:18px
+    font-size:18px;
     line-height: 28px;
     scroll-behavior: smooth;
   }
@@ -47318,8 +47314,6 @@ html, body {
 
   .profile-usermenu ul li a {
     color: #93a3b5;
-    font-size: 14px;
-    font-weight: 400;
   }
 
   .profile-usermenu ul li a i {
