@@ -75,7 +75,7 @@
                                 <div style="width:100%; color:red; font-size:14px; text-align:center; padding-bottom:7px" id="errorLots"></div>
                                 <input  type="hidden" name="total_lots" id="total_lots" value="{{$lotteryData1->totalLots}}">
                                 <div class="action col-xs-10 col-lg-8 no-padding">
-                                    <button onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" type="button">{{__('menu.donate')}}</button>
+                                    <button trans_type="credit" onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" id="lot_purchase" type="button">{{__('menu.donate')}}</button>
                                 </div>
                                 <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
                                     <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="validate(event,'qty_wrap'); emptyQty()" onchange="">
@@ -124,10 +124,20 @@
                 $("#errorLots").html("Minimum Lots Required = 1");
                 $("#qty").val('1');
             }
-
+        }
+        function purchaseBonus()
+        {
+            $("#lot_purchase").attr('trans_type','bonus');
+            $("#errorLots").html("");
+            setTimeout(function(){
+                puchaseLottery(0);
+            },1000)
         }
         function puchaseLottery(val)
         {
+            var type = $("#lot_purchase").attr('trans_type');
+            console.log(type);
+            
             if(val==1)
             {
                 $("#errorLots").css('color','red');
@@ -144,7 +154,7 @@
             $.ajax({
                 method: "POST",
                 url: "{{route('lottery.purchase')}}",
-                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots,lottery_id:lottery_id,bonusTaler:bonusTaler}
+                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots,lottery_id:lottery_id,bonusTaler:bonusTaler,type:type}
             }).done(function( msg ) {
                 var obj = JSON.parse(msg);
                 if(obj.status=='success')
@@ -172,5 +182,6 @@
                 }
             });
         }
+       
     </script>
 @endsection

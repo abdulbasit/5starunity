@@ -52,8 +52,8 @@ class CompanyController extends Controller
         $company_detail = Company::where('id',$id)->first();
         $user_id = Auth::guard('client')->user()->id;
         $amount = $company_detail->user_amount;
-        $checkTotalCredit = Vallet::where('user_id',$user_id)->where('type','bonus')->orderBy('id','desc')->first();
-            if( Vallet::where('user_id',$user_id)->where('type','bonus')->count()==0)
+        $checkTotalCredit = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
+            if( BonusTaler::where('user_id',$user_id)->count()==0)
             {
                 $remainingTotalBalance = $amount;
                 $balance = $amount;
@@ -66,7 +66,8 @@ class CompanyController extends Controller
                 $previousBalance = $checkTotalCredit->total_available_balance;
             }
            
-            $vallet_id = Vallet::create([
+            
+            $vallet_id = BonusTaler::create([
                 "user_id" => $user_id,
                 "credit"=>'0.00',
                 "balance"=>$balance.".00",
@@ -77,17 +78,17 @@ class CompanyController extends Controller
                 'type'=>'bonus',
                 'status'=>'approved'
             ]);
-            $trans_log = TransLog::create([
-                "type" => 'bonus',
-                "payment_method"=>'Promotion Talers',
-                "amount"=>$amount,
-                "trans_id"=>strtoupper(uniqid($vallet_id->id)),
-                "state"=>'completed',
-                "invoice_number"=>uniqid($vallet_id->id),
-                "vallet_id"=>$vallet_id->id,
-                "created_at"=>Carbon::now(),
-                "updated_at"=>Carbon::now()
-            ]);
+            // $trans_log = TransLog::create([
+            //     "type" => 'bonus',
+            //     "payment_method"=>'Promotion Talers',
+            //     "amount"=>$amount,
+            //     "trans_id"=>strtoupper(uniqid($vallet_id->id)),
+            //     "state"=>'completed',
+            //     "invoice_number"=>uniqid($vallet_id->id),
+            //     "vallet_id"=>$vallet_id->id,
+            //     "created_at"=>Carbon::now(),
+            //     "updated_at"=>Carbon::now()
+            // ]);
             CompanyView::create([
                 "user_id" => $user_id,
                 "company_id" => $id,
