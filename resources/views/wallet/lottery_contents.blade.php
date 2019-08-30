@@ -6,6 +6,10 @@
 {
     height: 500px;
 }
+.profileTable > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td
+{
+    padding-left:0px !important
+}
 </style>
 @endsection
 <div class="container">
@@ -24,16 +28,25 @@
                         <thead>
                         <tr>
                             <th class="text-center">#</th>
+                            <th class="text-center">Purchased By</th>
                             <th class="text-center">Lot Number</th>
                             <th class="text-center">Lot Amount</th>
                             <th class="text-center">Created At</th>
                             <th class="text-center">Status</th>
+                            
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($lotteryDetail as $key => $lottery)
                             <tr>
                                 <td>{{$key+1}}</td>
+                                @if($lottery->type=='credit')
+                                    <td>Purchased Credit</td>
+                                @elseif($lottery->type=='bonus')
+                                    <td>Bonus Talers</td>
+                                @elseif($lottery->type=='team')
+                                    <td>Team Spend Bonus</td>
+                                @endif
                                 <td>{{$lottery->lot_number}}</td>
                                 <td>{{$lottery->lottery->one_lot_amount}}</td>
                                 <td>{{Carbon\Carbon::parse($lottery->created_at)->toFormattedDateString()}}</td>

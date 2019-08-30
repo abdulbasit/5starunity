@@ -60,21 +60,21 @@ class WalletController extends Controller
         DB::enableQueryLog(); // Enable query log
 
         $route='wallet';
-        $walletHistory = Vallet::where('user_id',$userId)->where('status','approved');
-
-        if($type=="credit")
-        {   
-            $walletHistory = $walletHistory->where('credit','>','0');
-        }
-        else if($type=="lot" || $type=="bonus")
-        {
-            $walletHistory = $walletHistory->where('credit','0.00');
-        }
-        else
-        {
-            $type='credit';
-        }
-        $walletHistory = $walletHistory->where('type',$type)->orderBy('id','desc')->get();
+        $walletHistory = Vallet::where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->get();
+        
+        // if($type=="credit")
+        // {   
+        //     $walletHistory = $walletHistory->where('credit','>','0');
+        // }
+        // else if($type=="lot" || $type=="bonus")
+        // {
+            // $walletHistory = $walletHistory->where('credit','0.00');
+        // }
+        // else
+        // {
+        //     $type='credit';
+        // }
+        // $walletHistory = $walletHistory->orderBy('id','desc')->get();
         
         // dd(DB::getQueryLog()); // Show results of log
         
@@ -421,7 +421,12 @@ class WalletController extends Controller
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
 
         $route='lotteries';
-        $lotteryDetail = LotteryContestent::where('lottery_id',$id)->where('user_id',$userId)->get();
+        $lotteryDetail = LotteryContestent::where('lottery_id',$id)
+                                            ->where('lottery_contestents.user_id',$userId)
+                                            ->leftjoin('vallets','vallets.id','lottery_contestents.vallet_id')
+                                            ->select('lottery_contestents.*','vallets.*')
+                                            ->orderBy('lottery_contestents.id','desc')
+                                            ->get();
         return view('wallet.lottery_contents',compact('lotteryDetail','userInfo','route'));
     }
 }

@@ -6,6 +6,10 @@
 {
     height: 500px;
 }
+.profileTable > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td
+{
+    padding-left:0px !important
+}
 </style>
 @endsection
 <div class="container">
@@ -28,7 +32,7 @@
                             <th class="text-center">Total lots</th>
                             <th class="text-center">Total Amount</th>
                             <th class="text-center">Purchased Date</th>
-                            <th class="text-center">Detail</th>
+                            <th class="text-center">Options</th>
                         </tr>
                         </thead>
                         <tbody>

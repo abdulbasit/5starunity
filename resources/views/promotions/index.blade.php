@@ -55,20 +55,6 @@
     <div class="row profile">
         @include('../layouts.user_menu')
         <div class="container listing_container" id="list_startups">
-                {{-- <form action="/lottery/search" method="post">
-                    @csrf
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-1 form-group"></div>
-                        <div class="col-xs-12 col-lg-4 form-group">
-                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="{{ __('lables.placehoder_search')}}">
-                        </div>
-                        <div class="col-xs-12 col-lg-2 form-group text-cnetr">
-                            <button type="submit" class="btn-green" style="margin-top:-2px">
-                                {{ __('lables.search')}}
-                            </button>
-                        </div>
-                    </div>
-                </form> --}}
                 <div class="col-lg-9 col-xs-12 profileWraper">
                     <p>
                         Partner bieten Ihnen die Möglichkeit nachfolgend eingestellte Werbung bis zu drei Mal anzusehen wodurch Sie kostenfreie Bonus-Taler zur freien Verfügung erhalten. Nutzen Sie diese Chance um bspw. Lose von Produkten Ihrer Wahl zu erwerben.  
@@ -94,9 +80,9 @@
                         <div class="col-xs-12 col-lg-5 form-group">
                             <select name="category" id="category" class="form-control ">
                                 <option value="">...Unternehmen nach Kategorie suchen...</option>
-                                @foreach($category as $proCategory)
+                                {{-- @foreach($category as $proCategory)
                                     <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
-                                @endforeach
+                                @endforeach --}}
                             </select>
                         </div>
                         <div class="col-xs-12 col-lg-2 form-group text-cnetr">
@@ -110,12 +96,15 @@
                 <br />
                 <div class="row row_for_mobile">
                 <span id="total_pages" data-total="111"></span>
-                
                 @if($company->count()>0)
                     @foreach($company as $i=>$company)
                         <div class="col-xs-12 col-sm-6 col-lg-3 startup_blok active-yes promotions_card">
                             <div class="content_startup_blok current_investment ">
-                                <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
+                                    @if($company->promotionVies($user_id,$company->company_id)>=$company->company_views_attempt)
+                                        <a itemprop="url" title="{{$company->company_name}}" href="#">
+                                    @else
+                                        <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
+                                    @endif
                                     <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
                                         @if($company->image!="")
                                             <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{@$company->image}}">
@@ -132,25 +121,31 @@
                                     </div>
                                 </a>
                                 <div class="row content_info">
-                                    <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
-                                        <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
-                                    </a>
+                                    @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
+                                        <a itemprop="url" title="{{$company->company_name}}" href="#">
+                                            <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
+                                        </a>
+                                    @else
+                                        <a itemprop="url" title="{{$company->company_name}}" href="#">
+                                            <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
+                                        </a>
+                                    @endif
                                 </div>
                                 <div class="row finance_info">
                                     <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                            {{ __('lables.maximum_views')}} : {{$company->company_views_attempt}}
+                                        {{ __('lables.maximum_views')}} : {{$company->company_views_attempt}}
                                     </div>
                                 </div>
                                 <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
                                     <div class="col-xs-6 block_details borderRightgrey">
-                                            ANSICHTEN 
+                                        ANSICHTEN 
                                      </div>
                                      <div class="col-xs-6 block_details borderRightgrey">
-                                            MEINE ANSICHTEN<br /> {{$company->promotionVies($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
+                                        MEINE ANSICHTEN<br /> {{$company->promotionVies($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
                                      </div>
                                 </div>
                                 @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
-                                <a href="#">dd
+                                <a href="#">
                                     <div class="footer_startup ">
                                         {{ __('lables.already_viwed')}}
                                     </div>
@@ -158,7 +153,6 @@
                                 @else
                                 <a href="/partner/detail/{{$company->company_id}}">
                                     <div class="footer_startup ">
-                                        {{-- {{ __('lables.you_earn')}} -  --}}
                                         {{$company->user_amount}} BONUS TALER<br />
                                         {{ __('lables.view_now')}}
                                     </div>
@@ -174,11 +168,8 @@
                 @endif    
             </div>
             <nav class="text-center">
-                <ul class="pagination">
-                    {{-- {{ $companyData->links() }} --}}
-                </ul>
+                <ul class="pagination"></ul>
             </nav>
-    
         </div>
         </div>
     </section>

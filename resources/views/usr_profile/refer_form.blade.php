@@ -22,6 +22,15 @@
 </style>
 <link rel="stylesheet" href="{{ asset('frontend/tags_input/bootstrap-tagsinput.css')}}">
 @endsection
+@section('script')
+<script src="{{ asset('frontend/tags_input/bootstrap-tagsinput.min.js')}}"></script>
+<script>
+    $("#filter").on('change',function(){
+        var filter = $(this).val();
+        window.location='/user/refer/'+filter
+    });
+</script>
+@endsection
 @section('content')
     <div class="container">
         <div class="row profile">
@@ -150,13 +159,5 @@
     </div>
     
 @endsection
-@section('script')
-<script src="{{ asset('frontend/tags_input/bootstrap-tagsinput.min.js')}}"></script>
-<script>
-    $("#filter").on('change',function(){
-        var filter = $(this).val();
-        window.location='/user/refer/'+filter
-    });
-</script>
-@endsection
+
 

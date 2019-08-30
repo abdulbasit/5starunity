@@ -177,36 +177,25 @@ $("#buyLot").click(function (){
                         <tbody>
                         @foreach($walletHistory as $key => $history)
                             @if($key==0)
-                            <tr style="background-color:#fde9ec">
-                                @if($history->credit!='0' && $history->type=='credit')
+                                <tr style="background-color:#fde9ec">
+                            @else
+                                <tr>
+                            @endif
+
+                            @if($history->credit!='0')
                                 <td>Credit Donated</td>
-                            @elseif($history->credit>='0' && $history->type=='lot')
+                            @else($history->credit>='0')
                                 <td>Lottery Purchased</td>
-                            @elseif($history->credit=='0.00' && $history->type=='bonus')
+                            {{-- @elseif($history->credit=='0.00' && $history->type=='bonus')
                                 <td>Bonus Talers</td>
                             @elseif($history->credit!='0.00' && $history->type=='bonus')
-                                <td>Bonus Talers</td>
+                                <td>Bonus Talers</td> --}}
                             @endif
                                 <td>{{$history->balance}}</td>
                                 <td>{{$history->total_available_balance}}</td>
                                 <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
                             </tr>
-                            @else
-                            <tr>
-                                @if($history->credit!='0' && $history->type=='credit')
-                                    <td>Credit Donated</td>
-                                @elseif($history->credit>='0' && $history->type=='lot')
-                                    <td>Lottery Purchased</td>
-                                @elseif($history->credit=='0.00' && $history->type=='bonus')
-                                    <td>Bonus Talers</td>
-                                @elseif($history->credit!='0.00' && $history->type=='bonus')
-                                    <td>Bonus Talers</td>
-                                @endif
-                                <td>{{$history->balance}}</td>
-                                <td>{{$history->total_available_balance}}.00</td>
-                                <td>{{Carbon\Carbon::parse($history->created_at)->toFormattedDateString()}}</td>
-                            </tr>
-                            @endif
+                            
                         @endforeach
                         </tbody>
                     </table>

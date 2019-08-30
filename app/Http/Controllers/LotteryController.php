@@ -63,6 +63,7 @@ class LotteryController extends Controller
         $bonus = $request->get('bonusTaler');
         $user_id = Auth::guard('client')->user()->id;
         $amount = $request->get('amount');
+
         $total_lots = $request->get('total_lots');
         $lottery_id = $request->get('lottery_id');
         
@@ -103,7 +104,8 @@ class LotteryController extends Controller
                 "created_at"=>Carbon::now(),
                 "updated_at"=>Carbon::now(),
                 "status"=>"approved",
-                'options'=>$bonus_taler
+                'options'=>$bonus_taler,
+                'type'=>'bonus'
             ]);
 
             $i=1;
@@ -124,9 +126,7 @@ class LotteryController extends Controller
                 ]);
                 $lot_number="";
             }
-
-
-            return $response = json_encode(array("status"=>"success","message"=>"Successfull",'numbers'=>rtrim($numbers,",")));
+            return $response = json_encode(array("status"=>"success","message"=>"Successfull","type"=>'Bonus Taler','numbers'=>rtrim($numbers,","),'totl_spent'=>$amount,"total_available"=>$checkTotalCredit->total_available_balance));
         }
         else
         {
@@ -147,7 +147,6 @@ class LotteryController extends Controller
     }
     public function purchaseLottery(Request $request)
     {
-
         $qty = $request->get('qty');
         $bonus = $request->get('bonusTaler');
         $user_id = Auth::guard('client')->user()->id;
@@ -183,7 +182,8 @@ class LotteryController extends Controller
                 "total_available_balance"=>$remainingTotalBalance,
                 "created_at"=>Carbon::now(),
                 "updated_at"=>Carbon::now(),
-                "status"=>"approved"
+                "status"=>"approved",
+                "type"=>'credit'
             ]);
             $i=1;
             $numbers = '';
@@ -193,7 +193,7 @@ class LotteryController extends Controller
                 $lot_number = (rand(10000,1000));
                 $numbers.=$lot_number.",";
                 LotteryContestent::create([
-                    "lottery_id" =>'1',
+                    "lottery_id" =>$lottery_id,
                     "user_id"=>$user_id,
                     "lot_number"=>$lot_number,
                     "status"=> '0',
@@ -203,7 +203,7 @@ class LotteryController extends Controller
                 ]);
                 $lot_number="";
             }
-            $response = json_encode(array("status"=>"success","message"=>"Successfull",'numbers'=>rtrim($numbers,",")));
+            $response = json_encode(array("status"=>"success","message"=>"Successfull","type"=>'Bonus Taler','numbers'=>rtrim($numbers,","),'totl_spent'=>$amount,"total_available"=>$checkTotalCredit->total_available_balance));
         }
         else
         {
