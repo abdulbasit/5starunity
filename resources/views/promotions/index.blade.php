@@ -79,7 +79,7 @@
                         </div>
                         <div class="col-xs-12 col-lg-5 form-group">
                             <select name="category" id="category" class="form-control ">
-                                <option value="">...Kategorie...</option>
+                                <option value="">Kategorie</option>
                                 {{-- @foreach($category as $proCategory)
                                     <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
                                 @endforeach --}}
