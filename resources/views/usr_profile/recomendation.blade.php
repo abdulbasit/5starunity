@@ -44,6 +44,10 @@
 {
     padding-top:5px
 }
+.col-form-label
+{
+    width:270px
+}
 </style>
 @endsection
 <br />
@@ -82,7 +86,7 @@
                             <label for="first_name" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                 
                             </label>
-                            <div class="col-md-8 col-sm-7">
+                            <div class="col-md-7 col-sm-7 col-md-offset-4" style="position:relative; left:18px">
                                 <p>
                                     Wir freuen uns, dass Sie uns helfen möchten die Community und ihre Partner
                                     zu erweitern und bitten darum folgende Angaben zu ergänzen:
@@ -91,9 +95,9 @@
                         </div>
                     <div class="form-group row">
                         <label for="first_name" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
-                                {{ __('lables.first_name')}} <span style="color:red">*</span>
+                                {{ __('lables.complete_name')}}  <span style="color:red">*</span>
                         </label>
-                        <div class="col-md-8 col-sm-7">
+                        <div class="col-md-7 col-sm-7">
                             <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required autofocus>
                         </div>
                     </div>
@@ -101,7 +105,7 @@
                         <label for="function" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                 {{ __('lables.function')}} <span style="color:red">*</span>
                         </label>
-                        <div class="col-md-8 col-sm-7">
+                        <div class="col-md-7 col-sm-7">
                             <input id="function" type="text" class="form-control" name="function" value="{{ old('function') }}" required >
                         </div>
                     </div>
@@ -109,7 +113,7 @@
                             <label for="company" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                     {{ __('lables.company')}} <span style="color:red">*</span>
                             </label>
-                            <div class="col-md-8 col-sm-7">
+                            <div class="col-md-7 col-sm-7">
                                 <input id="company" type="text" class="form-control" name="company" value="{{ old('company') }}" required >                            
                             </div>
                         </div>
@@ -117,7 +121,7 @@
                             <label for="email" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                     {{ __('lables.email')}} <span style="color:red">*</span>
                             </label>
-                            <div class="col-md-8 col-sm-7">
+                            <div class="col-md-7 col-sm-7">
                                 <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                                 
                             </div>
@@ -126,9 +130,9 @@
                             <label for="extra_comments" class="col-md-4 col-sm-3 col-form-label text-right"  style="margin-top:2px">
                                     {{ __('lables.extra_comments')}} <span style="color:red">*</span>
                             </label>
-                            <div class="col-md-8 col-sm-7">
+                            <div class="col-md-7 col-sm-7">
                                 <textarea id="comments" class="form-control" rows="6" name="comments" required ></textarea>
-                                <p><span style="color:red">*</span> Angaben / Eingaben sind erforderlich</p>
+                                <p style="font-size:11px"><span style="color:red">*</span> Angaben / Eingaben sind erforderlich</p>
                             </div>
                             
                         </div>

@@ -55,11 +55,13 @@ Auth::routes();
     Route::post('check_email', 'Auth\RegisterController@check_email')->name('check_email');
     Route::post('lottery/search', 'LotteryController@search')->name('search');
 
+    Route::get('unsbscribe', 'HomeController@unsubscribe')->name('unsbscribe');
 
     //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {
         Route::get('profile', 'UserController@profile')->name('profile')->middleware('verified');
         Route::post('change-email', 'UserController@change_mail')->name('change-email');
+        
 
         Route::get('account-settings', 'UserController@profileUpdate')->name('account-settings');
         Route::get('profile-image', 'UserController@immage_upload')->name('profile-image');

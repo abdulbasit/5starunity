@@ -63,7 +63,7 @@
                             @csrf
                             <div class="row profile-body">
                                 <div class="col-lg-12 col-xs-12 profileWraper">
-                                    <div class="section-title text-left">Invite Friends</div>
+                                    <h3>Invite Friends</h3>
                                     <section id="examples">
                                         <div class="example example_markup">
                                             <div class="bs-docs-example">
@@ -91,7 +91,7 @@
                     <div class="row">
                         <br />
                         <br />
-                        <div class="section-title text-left">My Team</div>
+                        <h3>My Team</h3>
                         <div class="col-xs-12" style="margin-bottom:20px; padding:0px">
                             <select name="filter" id="filter" class="fomr-controle pull-right text-center">
                                 <option value="all" @if($filters=='all') selected @endif>All</option>

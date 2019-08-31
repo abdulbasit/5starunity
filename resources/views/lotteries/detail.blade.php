@@ -36,12 +36,14 @@
                         <div class="tab-pane active" id="pic-1"><img src="{{ URL::to('/') }}/uploads/pro_images/{{$lotteryData->product->product_images[0]->pro_image}}" /></div>
                     </div>
                 </div>
+
+
                 <div class="details col-md-6">
                     <h3 class="product-title"> {{$lotteryData->name}} </h3>
                     <div class="rating">
                         <span class="review-no">{{$lotteryData->lottery_contestent->groupby('user_id')->count()}} Teilnehmer</span>
                     </div>
-                    
+                    <div id="loterAmountDetails">
                     <h4 class="price">{{__('lables.lot_per_amount')}}: <span  > {{round($lotteryData->one_lot_amount,0)}} </span></h4>
                     <h4 class="price"> {{__('lables.taler_rquired')}}: <span id="totalAmount" lot-amount="{{round($lotteryData->one_lot_amount,0)}}"> {{round($lotteryData->one_lot_amount,2)}} </span></h4>
                     <p class="vote">
@@ -57,7 +59,7 @@
                             <div class="action col-xs-10 col-lg-8 no-padding">
                                 <a  href="/login" class="add-to-cart btn" type="button">{{__('menu.donate')}}</a>
                             </div>
-                            <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
+                            <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap" style="margin-left:32px">
                                 <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="validate(event,'qty_wrap'); emptyQty()">
                                 <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left; line-height:15px">{{__('lables.enter_number_of_lots')}}</span>
                             </div>
@@ -68,13 +70,17 @@
                             <div class="action col-xs-10 col-lg-8 no-padding">
                                 <button trans_type="credit" onclick="puchaseLottery({{$user->user()->status}})" class="add-to-cart btn" id="lot_purchase" type="button">{{__('menu.donate')}}</button>
                             </div>
-                            <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap">
+                            <div class="action col-xs-10 col-lg-3 qty_wrap" id="qty_wrap"  style="margin-left:32px">
                                 <input style="margin-top:0px" type="number" name="qty" id="qty" value="1" oninput="validate(event,'qty_wrap'); emptyQty()" onchange="">
                                 <span id="lotSize" style="font-size:11px; text-align:center; width:100%; float:left; line-height:15px">{{__('lables.enter_number_of_lots')}}</span>
                             </div>
                         @endif
                     </div>
+                    </div>
+
                 </div>
+
+
             </div>
             <div>
                 <br />

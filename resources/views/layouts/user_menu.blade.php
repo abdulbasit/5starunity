@@ -6,6 +6,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row">
+                    <div class="col-md-4">
                     <div style="width:200px;height: 200px; border: 1px solid whitesmoke ;text-align: center;position: relative; border-radius:1000px; overflow:hidden" id="image">
                         <img width="100%" height="100%" id="preview_image" src="{{asset('images/noimage.jpg')}}"/>
                          <i id="loading" class="fa fa-spinner fa-spin fa-3x fa-fw" style="position: absolute;left: 40%;top: 40%;display: none"></i>
@@ -21,6 +22,13 @@
                     </p>
                     <input type="file" id="file" style="display: none"/>
                     <input type="hidden" id="file_name"/>
+                </div>
+                <div class="col-md-8">
+                    <p style="margin-top:10px">
+                        <br />
+                        Empfohlenes Format für Ihr Profilbild sind 300×300 Pixel, wobei die Upload-Größe max. 4 MB betragen sollte. Es könnten verschiedene Dateiformate wie z. B. JPG, JPEG hochgeladen werden. Wir halten uns offen Profilbilder zu löschen bzw. eine Freischaltung zu untersagen, sollten diese gegen geltendes Recht / unsere Netiquette verstoßen oder beleidigende Darstellungen zeigen.
+                    </p>
+                </div>
                 </div>
             </div>
         </div>

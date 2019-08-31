@@ -156,6 +156,8 @@ class LotteryController extends Controller
 
         $lottery_id = $request->get('lottery_id');
 
+        
+
         if($qty > $total_lots)
             return $response = json_encode(array("status"=>"error","message"=>"Lots must be less than".$total_lots));
 

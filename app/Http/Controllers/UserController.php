@@ -350,6 +350,6 @@ class UserController extends Controller
             "comments"=>$request->get('comments')
         ]);
         return redirect('/partners')->with('success','Recomandations sent successfuly');
-
     }
+    
 }

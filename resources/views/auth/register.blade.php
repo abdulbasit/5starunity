@@ -294,7 +294,7 @@ label.error {
                         <div class="row">
                             <div class="col-xs-12 form-group">
                                 <label for="fname" class="form-label">{{ __('lables.first_name')}} <font color="red"> *</font></label>
-                                <input required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="lname"/>
+                                <input autofocus required="required" type="text" value="{{ old('fname') }}" class="form-control{{ $errors->has('fname') ? ' is-invalid' : '' }}" name="fname" id="fname"/>
                             </div>
                         </div>
                         <div class="row">
@@ -372,9 +372,12 @@ label.error {
                                 <label for="dob" class="form-label">{{ __('lables.country')}} <font color="red"> *</font></label>
                                 <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required" style="margin-bottom:15px">
                                     <option >----{{ __('lables.selct_country')}}----</option>
-                                    @foreach($countries as $country)
+                                    <option value="14">Österreich</option>
+                                    <option value="82">Deutschland</option>
+                                    {{-- @foreach($countries as $country)
+                                        
                                         <option value="{{$country->country->id}}">{{$country->country->name}}</option>
-                                    @endforeach
+                                    @endforeach --}}
                                 </select>
                             </div>
                         </div>
@@ -508,6 +511,11 @@ label.error {
 //     $(".actions ul li:nth-child(2) a").css('display','none');
 //     $(".actions ul li:nth-child(2) ").append('<a id="validation" href="#" onclick="check_email()">Next</a>');
 // });
+$(document).ready(function(){
+    setTimeout(function(){
+        document.getElementById("fname").focus(); 
+    },1000)
+});
 $(".form-control").on('focus',function(){
         $(".form-control").css('border','1px solid #ccc')
         var id = $(this).attr('id');

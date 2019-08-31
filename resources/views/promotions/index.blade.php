@@ -75,11 +75,11 @@
                     @csrf
                     <div class="row" style="margin-bottom:20px">
                         <div class="col-xs-12 col-lg-5 form-group">
-                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="Untetrnehmen nach Name suchen">
+                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="Suchbegriff">
                         </div>
                         <div class="col-xs-12 col-lg-5 form-group">
                             <select name="category" id="category" class="form-control ">
-                                <option value="">...Unternehmen nach Kategorie suchen...</option>
+                                <option value="">...Kategorie...</option>
                                 {{-- @foreach($category as $proCategory)
                                     <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
                                 @endforeach --}}
@@ -140,7 +140,7 @@
                                     <div class="col-xs-6 block_details borderRightgrey">
                                         ANSICHTEN 
                                      </div>
-                                     <div class="col-xs-6 block_details borderRightgrey">
+                                     <div class="col-xs-6 block_details">
                                         MEINE ANSICHTEN<br /> {{$company->promotionVies($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
                                      </div>
                                 </div>
@@ -153,8 +153,9 @@
                                 @else
                                 <a href="/partner/detail/{{$company->company_id}}">
                                     <div class="footer_startup ">
-                                        {{$company->user_amount}} BONUS TALER<br />
-                                        {{ __('lables.view_now')}}
+                                        {{$company->user_amount}} BONUS TALER pro Ansicht
+                                        {{-- <br />
+                                        {{ __('lables.view_now')}} --}}
                                     </div>
                                 </a>
                                 @endif

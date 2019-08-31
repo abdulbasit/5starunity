@@ -1,17 +1,18 @@
 @extends('layouts.app')
 @section('content')
-<div class="headerBlue headerTransparent newsHeader">
-    <div class="container">
-        <div class="row">
-            <div class="text-center">
-                {{-- <h1>News</h1> --}}
-            </div>
-        </div>
-    </div>
-</div>
 
 <br />
 <div class="container pageContent">
+    <div class="row">
+        <div class="headerBlue headerTransparent newsHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <br />
         <br />

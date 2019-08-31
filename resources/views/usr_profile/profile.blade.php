@@ -341,10 +341,10 @@ function change_email()
         <div class="modal-header">
             
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <div class="row" style="border-bottom:solid 1px #ccc; padding-bottom:20px">
-            <span>
+          <div class="row text-center" style="border-bottom:solid 1px #ccc; padding-bottom:20px">
+            
                 <strong>{{ __('messages.delte_account')}}</strong>
-            </span>
+            
           </div>
             <p style="margin-top:30px">{{ __('messages.delete_account_message')}}</p>
         </div>

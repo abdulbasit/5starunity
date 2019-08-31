@@ -69,16 +69,17 @@ return [
     'company'=>"Firmenname",
     'extra_comments'=>"Produkt / weitere Angaben",
     "maximum_views"=>"MAXIMALE ANSICHTEN",
-    'already_viwed'=>"ANSICHTEN",
+    'already_viwed'=>"MAXIMALE ANSICHTEN ERREICHT",
     'my_views'=>"MEINE ANSICHTEN",
-    'view_now'=> "JETZT ANSEHEN",
+    'view_now'=> "BONUS TALER pro Ansicht",
     'lot_per_amount'=>"Benötigte Taler pro Los",
     'taler_rquired'=>"Benötigte Taler gemäß gewünschter Anzahl",
-    'total_donation'=>"von Gesamt Spende",
+    'total_donation'=>"insgesamt vergebene Lose",
     'enter_number_of_lots'=>"Anzahl der Lose",
     'subscribe_news_letter'=>"Newsletter abbonnieren",
     'you_earn'=>"HOLEN SIE SICH",
-    "send"=>"ÜBERMITTELN"
+    "send"=>"ÜBERMITTELN",
+    'complete_name'=>"Vor- & Nachname"
 ]
 ?>
  

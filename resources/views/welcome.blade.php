@@ -375,8 +375,24 @@
                     <div class="col-lg-6 col-md-7 col-sm-12 newsletter-text">
                         <h2>{{ __('content.news_lettery_heading')}} </h2>
                         <p>{{ __('content.news_letter_desc')}}</p>
-
                         <div class="newsletter-input">
+                            @if ($message = Session::get('success'))
+                                <script>
+                                    $(document).ready(function(){
+                                        setTimeout(function(){
+                                            document.getElementById("email").focus(); 
+                                        },1000)
+                                    });
+                                function gotoBottom(id)
+                                {
+                                        var element = document.getElementsByClassName(id);
+                                        element.scrollTop = element.scrollHeight - element.clientHeight;
+                                    }
+                                </script>
+                                <div style="color:green; font-size:14px; text-align:center;" id="unsubsmsg">
+                                    {{ $message }}
+                                </div>
+                            @endif
                             <form name="newsletter-form-home" method="get" action="">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="E-Mail-Adresse" id="email" name="email">
@@ -386,6 +402,7 @@
                                 </div>
                                 
                             </form>
+                            
                             <div style="color:green; font-size:14px; text-align:center;" id="subsMsg"></div>
                         </div>
                     </div>

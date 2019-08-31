@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Subscription;
 use App\Models\Product_images;
 use App\Models\Category;
 use App\Models\Lottery;
@@ -95,16 +96,28 @@ class HomeController extends Controller
         DB::enableQueryLog();
         $category = Category::where('category_for','pro')->get();
         $lotteryData = Lottery::with(['lottery_contestent'])
-                            ->select('lotteries.*','lotteries.id as lotteryId','lottery_contestents.*',
-                                     'lottery_contestents.id as contestentsId','lotteries.total_lots as created_lots')
-                            ->selectRaw('COUNT(lottery_contestents.lottery_id) as totalClients')
-                            ->leftjoin('lottery_contestents','lotteries.id','lottery_id')
-                            ->groupBy('lotteries.id','lottery_contestents.lottery_id')
-                            ->orderBy('totalClients','desc')
-                            ->limit(12)
-                            ->get();
-        // dd(DB::getQueryLog());
-        // dd($lotteryData);
+                                ->select('lotteries.*','lotteries.id as lotteryId','lottery_contestents.*',
+                                        'lottery_contestents.id as contestentsId','lotteries.total_lots as created_lots')
+                                ->selectRaw('COUNT(lottery_contestents.lottery_id) as totalClients')
+                                ->leftjoin('lottery_contestents','lotteries.id','lottery_id')
+                                ->groupBy('lotteries.id','lottery_contestents.lottery_id')
+                                ->orderBy('totalClients','desc')
+                                ->limit(12)
+                                ->get();
         return view('pages.lottery_things',compact('lotteryData','category'));
+    }
+    public function unsubscribe(Request $request)
+    {
+        $unsbscribe = Subscription::where('email',$request->email)->first();
+        if($unsbscribe)
+        {
+            $unsbscribe->status = 1;
+            $unsbscribe->save();
+            return redirect('/')->with('success','You are unsubscribed!');
+        }
+        else{
+            return redirect('/')->with('success','You are unsubscribed!');
+        }
+        
     }
 }

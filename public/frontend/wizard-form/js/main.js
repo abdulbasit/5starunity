@@ -133,7 +133,7 @@ function isMobile() {
                 if(fieldset=='signup-form-p-2' && isMobile()===false)
                 {
                     $(".actions").attr('style','width:90%; position: relative !important; bottom: 0; float: right; right: 122px');
-                    $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:45px');
+                    $(".actions ul").attr('style','float:right !important; width:auto !important; position:relative; top:63px');
                 }
                 if(fieldset=='signup-form-p-1' && isMobile()===false)
                 {
@@ -304,11 +304,11 @@ function scollPos() {
     // console.log(ddd);
     var checkbox='';
     $("#remsCheck").remove();
-    $(".actions").append('<div id="remsCheck"> </div>');
+    $(".actions").append('<div id="remsCheck" style="margin-top:50px !important"> </div>');
     checkbox+='<div style="width:100%; float:left; margin-top:10px"><span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="terms_check" name="terms_check"></span><span id="termsCondTxt" style="float:left; margin-right:10px; margin-top:8px">Allgemeine Nutzungsbedingungen gelesen und akzeptieren</span></div>';
     checkbox+='<div id="dataCheck" style="width:100%; float:left; margin-top:10px"><span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="data_check" name="terms_check"></span><span id="dataSecurityTxt" style="float:left; margin-right:10px; margin-top:8px">Datenschutzerklärung gelesen und akzeptieren</span></div>';
     checkbox+='<div id="18plus" style="width:100%; float:left; margin-top:10px"><span style="float:left; margin-left:10px; margin-top:15px"><input onclick="acceptTerms()" type="checkbox" id="age_check" name="terms_check"></span><span id="18Txt" style="float:left; margin-right:10px; margin-top:8px">Ich bestätige über 18 Jahre zu sein</span></div>';
-    checkbox+='<div id="18plus" style="width:100%; float:left; margin-top:10px"><span style="float:left; margin-left:10px; margin-top:15px"><input type="checkbox" id="subscribe" name="subscribe"></span><span id="18Txt" style="float:left; margin-right:10px; margin-top:8px">Newsletter abbonnieren</span></div>';
+    checkbox+='<div id="18plus" style="width:100%; float:left; margin-top:10px"><span style="float:left; margin-left:10px; margin-top:15px"><input type="checkbox" id="subscribe" name="subscribe"></span><span id="18Txt" style="float:left; margin-right:10px; margin-top:8px">Newsletter abonnieren</span></div>';
     $("#remsCheck").html(checkbox);
 
 }
