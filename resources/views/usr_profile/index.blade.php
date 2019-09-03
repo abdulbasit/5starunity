@@ -81,7 +81,7 @@
                                         <div class="card border-info mx-sm-1 p-3 card_stats">
                                             <div style="margin-top: 15px; float: left; width: 100%;">
                                                 <div class="text-info text-center col-xs-12">Bonus-Taler</div>
-                                                <div class="text-info text-center col-xs-12">{{@$bonusTaler->total_available_balance}}</div>
+                                                <div class="text-info text-center col-xs-12"> @if($bonusTaler){{$bonusTaler->total_available_balance}} @else 0 @endif</div>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@
                                             <div class="card border-info mx-sm-1 p-3 card_stats">
                                                 <div style="margin-top: 15px; float: left; width: 100%;">
                                                     <div class="text-info text-center col-xs-12">Team-Spenden</div>
-                                                    <div class="text-info text-center col-xs-12">  @if($available_balance){{$available_balance->total_available_balance}} @else 0 @endif</div>
+                                                    <div class="text-info text-center col-xs-12">  @if($teamSpends){{$teamSpends}} @else 0 @endif</div>
                                                 </div>
                                             </div>
                                         </div>

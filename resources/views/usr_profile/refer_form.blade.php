@@ -106,7 +106,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Email</th>
                                     @if($filters=='all' || $filters=='active') 
-                                        <th scope="col">Spend</th>
+                                        <th scope="col">Spent</th>
                                     @endif
                                     <th scope="col">Status</th>
                                     <th scope="col">Sent Date</th>
@@ -121,7 +121,7 @@
                                     <td>{{$list->email}}</td>
                                     @if($filters=='all' || $filters=='active') 
                                         <td>
-
+                                            {{App\Models\TeamSpend::calculateDonation(@$list->reciver_id,@$list->sender_id)}}
                                         </td>
                                     @endif
                                     <td>

@@ -14,44 +14,6 @@
         }
     </style>
 @endsection
-@section('content')
-
-<input type="hidden" id="lottery_id" name="lottery_id" value="{{$company_detail->id}}">
-<div class="container postContainer">
-		<div class="card">
-            <div class="row" style="margin-bottom:20px">
-               <span class="pull-left"><a href="/promotions" style="font-size:16px; text-decoration:underline">Back</a></span>
-            </div>
-			<div class="container-fliud">   
-				<div class="wrapper row">
-					<div class="preview col-md-12">
-                            
-						<div class="preview-pic tab-content">
-                            <h3 class="product-title pull-left"> {{$company_detail->company_name}}</h3>
-                            <span class="pull-right" style="font-weight:bold; font-size:20px"><div class="countdown"></div></span>
-                            <div class="tab-pane active" id="pic-1">
-                                @if($company_detail->image!="")
-                                    <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{$company_detail->image}}" />
-                                @else
-                                <?php 
-                                    if (($pos = strpos($company_detail->vidoe, "=")) !== FALSE) 
-                                    { 
-                                        $whatIWant = substr($company_detail->vidoe, $pos+1); 
-                                    }
-                                    // $thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
-                                ?>
-                                    <object width="100%" height="600" data="http://www.youtube.com/v/{{$whatIWant}}?autoplay=1" type="application/x-shockwave-flash"><param name="src" value="http://www.youtube.com/v/{{$whatIWant}}?autoplay=1" /></object>    
-                                @endif
-                            </div>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-    </div>
-
-@endsection
 @section('script')
  <script>
   var timer2 = convertTime(<?php echo $company_detail->duration ?>);
@@ -91,3 +53,42 @@
     }
  </script>
 @endsection
+@section('content')
+
+<input type="hidden" id="lottery_id" name="lottery_id" value="{{$company_detail->id}}">
+<div class="container postContainer">
+		<div class="card">
+            <div class="row" style="margin-bottom:20px">
+               <span class="pull-left"><a href="/promotions" style="font-size:16px; text-decoration:underline">Back</a></span>
+            </div>
+			<div class="container-fliud">   
+				<div class="wrapper row">
+					<div class="preview col-md-12">
+                            
+						<div class="preview-pic tab-content">
+                            <h3 class="product-title pull-left"> {{$company_detail->company_name}}</h3>
+                            <span class="pull-right" style="font-weight:bold; font-size:20px"><div class="countdown"></div></span>
+                            <div class="tab-pane active" id="pic-1">
+                                @if($company_detail->image!="")
+                                    <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{$company_detail->image}}" />
+                                @else
+                                <?php 
+                                    if (($pos = strpos($company_detail->vidoe, "=")) !== FALSE) 
+                                    { 
+                                        $whatIWant = substr($company_detail->vidoe, $pos+1); 
+                                    }
+                                    // $thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
+                                ?>
+                                    <object width="100%" height="600" data="http://www.youtube.com/v/{{$whatIWant}}?autoplay=1" type="application/x-shockwave-flash"><param name="src" value="http://www.youtube.com/v/{{$whatIWant}}?autoplay=1" /></object>    
+                                @endif
+                            </div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+    </div>
+
+@endsection
+

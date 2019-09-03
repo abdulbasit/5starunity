@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 use App\Models\Lottery;
 use App\Models\Product;
 use App\Models\LotteryContestent;
+use App\Models\TeamSpend;
 use App\Models\UserDocument;
 use App\Models\UserProfile;
 use App\Models\User;
 use App\Models\Vallet;
 use App\Models\Category;
 use App\Models\BonusTaler;
+use App\Models\InvitationList;
 use Session;
 use Auth;
 use DB;
@@ -83,18 +85,22 @@ class LotteryController extends Controller
             $balance = "-".$amount;
             $previousBalance = $checkTotalCredit->total_available_balance;
 
+            $previousBalance = round($previousBalance,2);
+            $remainingTotalBalance = round($remainingTotalBalance,2);
+            
+            
             $bonus_taler_id = BonusTaler::create([
                 "user_id" => $user_id,
                 "credit"=>'0.00',
                 "balance"=>$balance.".00",
                 "pre_balance"=> $previousBalance,
-                "total_available_balance"=>$remainingTotalBalance,
+                "total_available_balance"=>round($remainingTotalBalance,2),
                 "created_at"=>Carbon::now(),
                 "updated_at"=>Carbon::now(),
                 "status"=>"approved",
                 'options'=>array('bonus_taler'=>'none')
             ]);
-
+           
             $vallet_id = Vallet::create([
                 "user_id" => $user_id,
                 "credit"=>$checkTotal->credit,
@@ -126,6 +132,8 @@ class LotteryController extends Controller
                 ]);
                 $lot_number="";
             }
+             //team spend logs here 
+             $this->teamSpend($request);
             return $response = json_encode(array("status"=>"success","message"=>"Successfull","type"=>'Bonus Taler','numbers'=>rtrim($numbers,","),'totl_spent'=>$amount,"total_available"=>$checkTotalCredit->total_available_balance));
         }
         else
@@ -153,18 +161,16 @@ class LotteryController extends Controller
         $amount = $request->get('amount');
         $total_lots = $request->get('total_lots');
         $type = $request->get('type');
-
         $lottery_id = $request->get('lottery_id');
 
-        
-
+            
         if($qty > $total_lots)
             return $response = json_encode(array("status"=>"error","message"=>"Lots must be less than".$total_lots));
 
         if($bonus=='yes')
             return $this->lotterPurchaseBonus($request);
 
-            DB::enableQueryLog();
+        DB::enableQueryLog();
         $checkTotalCredit = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
         
         // dd(DB::getQueryLog());
@@ -205,6 +211,8 @@ class LotteryController extends Controller
                 ]);
                 $lot_number="";
             }
+            //team spend logs here 
+            $this->teamSpend($request);
             $response = json_encode(array("status"=>"success","message"=>"Successfull","type"=>'Bonus Taler','numbers'=>rtrim($numbers,","),'totl_spent'=>$amount,"total_available"=>$checkTotalCredit->total_available_balance));
         }
         else
@@ -221,6 +229,56 @@ class LotteryController extends Controller
             }
         }
         return $response;
+    }
+    public function teamSpend($request)
+    {
+        $qty = $request->get('qty');
+        $bonus = $request->get('bonusTaler');
+        $user_id = Auth::guard('client')->user()->id;
+        $amount = $request->get('amount');
+        $total_lots = $request->get('total_lots');
+        $type = $request->get('type');
+        $lottery_id = $request->get('lottery_id');
+        
+        //check for team spend 
+        $invitation_link = InvitationList::where('reciver_id',$user_id)->first();
+        if($invitation_link)
+        {
+            $percentToGet = 10;
+            $percentInDecimal = $percentToGet / 100;
+            $balancePercent = $percentInDecimal * $amount;
+
+            $checkTotalCredit = BonusTaler::where('user_id',$invitation_link->sender_id)->orderBy('id','desc')->first();
+            if( BonusTaler::where('user_id',$invitation_link->sender_id)->count()==0)
+            {
+                $remainingTotalBalance = $balancePercent;
+                $balance = $balancePercent;
+                $previousBalance = "";
+            }
+            else
+            {
+                $remainingTotalBalance = $checkTotalCredit->total_available_balance+$balancePercent;
+                $balance = $balancePercent;
+                $previousBalance = $checkTotalCredit->total_available_balance;
+            }
+
+            $vallet_id = BonusTaler::create([
+                "user_id" => $invitation_link->sender_id,
+                "credit"=>'0.00',
+                "balance"=>round($balance,2).".00",
+                "pre_balance"=> round($previousBalance,2),
+                "total_available_balance"=>round($remainingTotalBalance,2),
+                "created_at"=>Carbon::now(),
+                "updated_at"=>Carbon::now(),
+                'type'=>'bonus',
+                'status'=>'approved'
+            ]);
+            $bonus_taler_id = TeamSpend::create([
+                "sender_id" => $user_id,
+                "reciver_id"=>$invitation_link->sender_id,
+                "amount"=>$balance.".00"
+            ]);
+        }
     }
     public function userPurchasedLotteries()
     {

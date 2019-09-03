@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\TeamSpend;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Vallet;
@@ -21,6 +21,7 @@ use App\Mail\RegistrationEmail;
 use App\Mail\inviteEmail;
 use App\Traits\EmailTrait;
 use File;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     use EmailTrait;
@@ -30,7 +31,6 @@ class UserController extends Controller
     }
     public function index()
     {
-       
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
         $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
@@ -38,22 +38,19 @@ class UserController extends Controller
 
         foreach($purchasedLots as $spneMoney)
         {
-            // str_replace("-","",$spneMoney->balance);
             $spent+=str_replace("-","",$spneMoney->balance);
         }
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
-        // dd($userProfile['country_name']->name);
+        $teamSpends = TeamSpend::where('reciver_id',$userId)->sum('amount');
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
-        // dd($userInfo['user_profile']);
         $route='dashboard';
         $bonusTaler = BonusTaler::where('user_id',$userId)->orderBy('id','desc')->first();
-        return view('usr_profile.index',compact('userInfo','route','available_balance','purchasedLots','spent','bonusTaler'));
+        return view('usr_profile.index',compact('userInfo','route','available_balance','purchasedLots','spent','bonusTaler','teamSpends'));
     }
     public function profile()
     {
-       
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
         $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
@@ -61,16 +58,12 @@ class UserController extends Controller
 
         foreach($purchasedLots as $spneMoney)
         {
-            // str_replace("-","",$spneMoney->balance);
             $spent+=str_replace("-","",$spneMoney->balance);
         }
-        
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
-        // dd($userProfile['country_name']->name);
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
-        // dd($userInfo['user_profile']);
         $route='profile';
         return view('usr_profile.profile',compact('userInfo','route','available_balance','purchasedLots','spent'));
     }
@@ -78,7 +71,6 @@ class UserController extends Controller
     {
         $route='update-profile';
         $userId = Auth::guard('client')->user()->id;
-
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
         $userDocuments = UserDocument::where('user_id',$userId)->get();
@@ -91,12 +83,10 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-        
         $userId = Auth::guard('client')->user()->id;
         $userData = User::where('users.id',$userId)->first();
 
         $emailData = array("to"=>$userData->email,"from_email"=>"admin","subject"=>"Profile On Hold","email_data"=>array("name"=>$userData->name));
-        //update user complete name
         $identity_card_back_img='';
         $identity_card_front_img='';
 
@@ -268,7 +258,7 @@ class UserController extends Controller
         
         $userData = User::where('users.id',$userId)->first();
         if($filters=='all')
-            $emaailsList = InvitationList::where('sender_id',$userId)->leftJoin('vallets','user_id','reciver_id')->paginate(10);
+            $emaailsList = InvitationList::where('sender_id',$userId)->paginate(10);
         if($filters=='active')    
             $emaailsList = InvitationList::where('sender_id',$userId)->where('verification_code','')->paginate(10);
         if($filters=='inactive')        
