@@ -37,7 +37,6 @@ class LoginController extends Controller
 
       // Attempt to log the user in
     //   ,'verification'=>""
-
     if (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->password,'verification'=>""], $request->remember)) {
 
         if(Session::get('route')!="")

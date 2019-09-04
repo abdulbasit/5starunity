@@ -31,6 +31,7 @@ class UserController extends Controller
     }
     public function index()
     {
+       
         $spent = 0;
         $userId = Auth::guard('client')->user()->id;
         $available_balance = Vallet::where('credit','>','0')->where('user_id',$userId)->where('status','approved')->orderBy('id','desc')->first();
