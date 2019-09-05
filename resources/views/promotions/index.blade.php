@@ -92,81 +92,82 @@
                         </div>
                     </div>
                 </form>
-                </div>
-                <br />
-                <div class="row row_for_mobile">
-                <span id="total_pages" data-total="111"></span>
-                @if($company->count()>0)
-                    @foreach($company as $i=>$company)
-                        <div class="col-xs-12 col-sm-6 col-lg-3 startup_blok active-yes promotions_card">
-                            <div class="content_startup_blok current_investment ">
-                                    @if($company->promotionVies($user_id,$company->company_id)>=$company->company_views_attempt)
-                                        <a itemprop="url" title="{{$company->company_name}}" href="#">
-                                    @else
-                                        <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
-                                    @endif
-                                    <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
-                                        @if($company->image!="")
-                                            <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{@$company->image}}">
+                
+                    <br />
+                    <div class="row row_for_mobile">
+                    <span id="total_pages" data-total="111"></span>
+                    @if($company->count()>0)
+                        @foreach($company as $i=>$company)
+                            <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes promotions_card">
+                                <div class="content_startup_blok current_investment ">
+                                        @if($company->promotionVies($user_id,$company->company_id)>=$company->company_views_attempt)
+                                            <a itemprop="url" title="{{$company->company_name}}" href="#">
                                         @else
-                                        <?php 
-                                            if (($pos = strpos($company->vidoe, "=")) !== FALSE) 
-                                            { 
-                                                @$whatIWant = substr($company->vidoe, $pos+1); 
-                                            }
-                                            @$thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
-                                        ?>
-                                            <img class="img-responsive" src="{{$thumbnail}}">
+                                            <a itemprop="url" title="{{$company->company_name}}" href="/partner/detail/{{$company->company_id}}">
+                                        @endif
+                                        <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
+                                            @if($company->image!="")
+                                                <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{@$company->image}}">
+                                            @else
+                                            <?php 
+                                                if (($pos = strpos($company->vidoe, "=")) !== FALSE) 
+                                                { 
+                                                    @$whatIWant = substr($company->vidoe, $pos+1); 
+                                                }
+                                                @$thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
+                                            ?>
+                                                <img class="img-responsive" src="{{$thumbnail}}">
+                                            @endif
+                                        </div>
+                                    </a>
+                                    <div class="row content_info">
+                                        @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
+                                            <a itemprop="url" title="{{$company->company_name}}" href="#">
+                                                <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
+                                            </a>
+                                        @else
+                                            <a itemprop="url" title="{{$company->company_name}}" href="#">
+                                                <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
+                                            </a>
                                         @endif
                                     </div>
-                                </a>
-                                <div class="row content_info">
+                                    <div class="row finance_info">
+                                        <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
+                                            {{ __('lables.maximum_views')}} : {{$company->company_views_attempt}}
+                                        </div>
+                                    </div>
+                                    <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
+                                        <div class="col-xs-6 block_details borderRightgrey">
+                                            ANSICHTEN 
+                                        </div>
+                                        <div class="col-xs-6 block_details">
+                                            MEINE ANSICHTEN<br /> {{$company->promotionVies($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
+                                        </div>
+                                    </div>
                                     @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
-                                        <a itemprop="url" title="{{$company->company_name}}" href="#">
-                                            <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
-                                        </a>
+                                    <a href="#">
+                                        <div class="footer_startup ">
+                                            {{ __('lables.already_viwed')}}
+                                        </div>
+                                    </a>
                                     @else
-                                        <a itemprop="url" title="{{$company->company_name}}" href="#">
-                                            <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
-                                        </a>
+                                    <a href="/partner/detail/{{$company->company_id}}">
+                                        <div class="footer_startup ">
+                                            {{$company->user_amount}} BONUS TALER pro Ansicht
+                                            {{-- <br />
+                                            {{ __('lables.view_now')}} --}}
+                                        </div>
+                                    </a>
                                     @endif
                                 </div>
-                                <div class="row finance_info">
-                                    <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                        {{ __('lables.maximum_views')}} : {{$company->company_views_attempt}}
-                                    </div>
-                                </div>
-                                <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
-                                    <div class="col-xs-6 block_details borderRightgrey">
-                                        ANSICHTEN 
-                                     </div>
-                                     <div class="col-xs-6 block_details">
-                                        MEINE ANSICHTEN<br /> {{$company->promotionVies($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
-                                     </div>
-                                </div>
-                                @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
-                                <a href="#">
-                                    <div class="footer_startup ">
-                                        {{ __('lables.already_viwed')}}
-                                    </div>
-                                </a>
-                                @else
-                                <a href="/partner/detail/{{$company->company_id}}">
-                                    <div class="footer_startup ">
-                                        {{$company->user_amount}} BONUS TALER pro Ansicht
-                                        {{-- <br />
-                                        {{ __('lables.view_now')}} --}}
-                                    </div>
-                                </a>
-                                @endif
                             </div>
+                        @endforeach
+                    @else
+                        <div class="alert alert-danger alert-block">
+                            Sorry No Record Found!
                         </div>
-                    @endforeach
-                @else
-                    <div class="alert alert-danger alert-block">
-                        Sorry No Record Found!
-                    </div>
-                @endif    
+                    @endif   
+                </div> 
             </div>
             <nav class="text-center">
                 <ul class="pagination"></ul>

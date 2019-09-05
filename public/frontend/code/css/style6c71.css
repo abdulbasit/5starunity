@@ -2136,7 +2136,7 @@ pre code {
     }
     .promotions_card
     {
-      width:24% !important
+      width:33% !important
     }
     .paddingZero{
         padding:0px !important
@@ -38667,7 +38667,7 @@ html {
   padding: 7px 0 10px 0;
 }
 .listing_container .startup_blok .content_startup_blok .stratup_img {
-  min-height: 220px;
+  min-height: 149px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
