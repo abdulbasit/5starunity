@@ -76,12 +76,12 @@
                                 <li class="dropdown" id="bigmenu">
                                     <button style="color:black !important" class="btn btn-default dropdown-toggle menubtn" type="button" data-toggle="dropdown" data-hover="dropdown">{{ __('menu.more')}} <span class="caret"></span></button>
                                     <ul class="dropdown-menu sub_menu">
-                                        <li><a style="margin-top:0px !important" href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
-                                        <li><a style="margin-top:0px !important" href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
-                                        <li><a style="margin-top:0px !important" href="{{route('news')}}">{{ __('menu.latest')}}</a></li>
-                                        <li><a style="margin-top:0px !important" href="{{route('ceo')}}">{{ __('menu.ceo')}}</a></li>
-                                        <li><a style="margin-top:0px !important" href="{{route('media-info')}}">{{ __('menu.press')}}</a></li>
-                                        <li><a style="margin-top:0px !important" href="{{route('contact-us')}}">{{ __('menu.contact')}}</a></li>
+                                        <li><a style="margin-top:0px !important; font-size:15px !important" href="{{route('howitworks')}}">{{ __('menu.idea')}}</span></a></li>
+                                        <li><a style="margin-top:0px !important; font-size:15px !important" href="{{route('inventro.acadmy')}}">{{ __('menu.knowledge')}}</span></a></li>
+                                        <li><a style="margin-top:0px !important; font-size:15px !important" href="{{route('news')}}">{{ __('menu.latest')}}</a></li>
+                                        <li><a style="margin-top:0px !important; font-size:15px !important" href="{{route('ceo')}}">{{ __('menu.ceo')}}</a></li>
+                                        <li><a style="margin-top:0px !important; font-size:15px !important" href="{{route('media-info')}}">{{ __('menu.press')}}</a></li>
+                                        <li><a style="margin-top:0px !important; font-size:15px !important" href="{{route('contact-us')}}">{{ __('menu.contact')}}</a></li>
                                     </ul>
                                 </li>
                             </ul>

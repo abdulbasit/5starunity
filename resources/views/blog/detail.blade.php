@@ -48,7 +48,7 @@
                     <h3>Kommentare</h3>
                     <div class="row">
                         <div class="col-sm-8">
-                            <p>Das Kommentieren ist nur für Registrierte Benutzer möglich. Bitte melden Sie sich an, um kommentieren zu können.</p>
+                            <p>Das Kommentieren ist nur für registrierte Benutzer möglich. Bitte melden Sie sich an, um kommentieren zu können.</p>
                         </div>
                         <div class="col-sm-4 text-center">
                             <a href="{{ route('login') }}" class="btn btn-primary" style="margin-bottom: 5px;">Log In</a> &nbsp;

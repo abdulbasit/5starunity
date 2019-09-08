@@ -15560,7 +15560,7 @@ label{
     }
     .menubtn {
         letter-spacing: 0px;
-        margin-top: 0px !important;
+        /* margin-top: 0px !important; */
         font-size:18px !important;
     }
     section.homepage-newsletter .newsletter-wrapper .newsletter-input input
@@ -38650,7 +38650,7 @@ html {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  height: 549px;
+  /* height: 549px; */
 }
 @media (max-width: 767px) {
   .listing_container .startup_blok .content_startup_blok {
@@ -47991,7 +47991,7 @@ input[type='password']:focus {
 .menubtn
 {
     letter-spacing: 0px;
-    margin-top: 33px;
+    margin-top: 30px;
     font-size:18px;
 }
 
