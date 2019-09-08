@@ -47,12 +47,12 @@
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Company Views</th>
-                        <th>Views Attempt</th>
+                        <th>Total Views </th>
+                        <th>Views Per user </th>
                         <th>Duration</th>
                         <th>Video/Image</th>
-                        <th>Views Amount</th>
-                        <th>User Amout</th>
+                        <th>Total Amount ( € )</th>
+                        <th>Taler per view </th>
                         <th>Action</th>
                       </tr>
                     </thead>
