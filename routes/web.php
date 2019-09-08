@@ -103,7 +103,11 @@ Auth::routes();
     Route::get('balance/capturePayment', 'WalletController@capturePayment')->name('balance.capturePayment');
     Route::get('redirectBack', 'WalletController@redirectBack')->name('redirectBack');
 
-
+    //===============================================================
+        ////////////////////////////////////////////////////////////
+        /////////////////// Admin Routes///////////////////////////
+        ///////////////////////////////////////////////////////////
+    //===============================================================
 
     Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
         //site settings
@@ -211,5 +215,9 @@ Auth::routes();
         Route::get('contact-us', 'AdminController@contact_us')->name('contact-us');
         //Contact us queries
         Route::get('subscriptions', 'AdminController@subscriber')->name('subscriptions');
-
+        //discount cuppons
+        Route::get('cuppons', 'CupponController@index')->name('cuppons');
+        Route::get('cuppon/create', 'CupponController@create')->name('cuppon.create');
+        Route::post('cuppon/save', 'CupponController@save')->name('cuppon.save');
+        Route::get('cuppon/edit/{id}', 'CupponController@edit')->name('cuppon.edit');
 });

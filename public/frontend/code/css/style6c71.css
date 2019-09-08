@@ -2138,6 +2138,15 @@ pre code {
     {
       width:33% !important
     }
+    .promotions_card a 
+    {
+      color:black
+    }
+    .promotions_card a:hover 
+    {
+      color:black;
+      text-decoration:none
+    }
     .paddingZero{
         padding:0px !important
     }

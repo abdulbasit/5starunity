@@ -110,21 +110,25 @@
                                     <label class="col-md-3 label-control" for="amount">Views Amount</label>
                                     <div class="col-md-9">
                                         <input type="text" id="amount" class="form-control" placeholder="Enter per views amount "  name="amount" value="{{$company->views_amount}}">
+                                        <help>Enter total amount (in EUR) for this promotion</help>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control" for="amount">Enter amount Per View</label>
                                     <div class="col-md-9">
                                         <input type="text" id="per_view_amount" class="form-control" placeholder="Enter per views amount for user  "  name="per_view_amount" value="{{$company->user_amount}}">
+                                        <help>Bonus Taler per view Type a message here</help>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="amount">Number of views allowed </label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="views_allowed" class="form-control" placeholder="Enter number views attempt"  name="views_allowed" value="{{$company->company_views_attempt}}">
+                                        <help>Number of views allowed ( per member)</help>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-md-3 label-control" for="amount">Number of views allowed </label>
-                                <div class="col-md-9">
-                                    <input type="text" id="views_allowed" class="form-control" placeholder="Enter number views attempt"  name="views_allowed" value="{{$company->company_views_attempt}}">
-                                </div>
-                            </div>
+                           
                             <div class="form-actions pull-right">
                                 <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
                                 <i class="ft-x"></i> Cancel
