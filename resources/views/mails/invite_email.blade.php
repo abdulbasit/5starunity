@@ -51,7 +51,7 @@
                                 </tr>
                                 <tr>
                                   <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
-                                    Invitation 
+                                      EINLADUNG 
                                     </span>
                                   </td>
                                 </tr>
@@ -66,10 +66,13 @@
                                 </tr>
                                 <tr>
                                   <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
-                                    <span style="text-align:left">Hi <b></b>,<br /></span>
-                                    {{$email->sender_name}} wants to invite you to join his team on 5starunity. <br />
-                                    Please click below link to join 
-                                    </span>
+                                    {{-- <span style="text-align:left">Hi <b></b>,<br /></span> --}}
+                                    {{$email->sender_name}} lädt dich ein der 5starUnity-Community in seinem Team beizutreten. <br />
+                                    <br /> 
+                                    Es wäre uns eine Ehre deine Stärken bei uns zu wissen und mit Euch gemeinsam vielen Erfindern, Gründern und Entwicklern helfen zu können.
+                                  <br />
+                                  Zur Erstellung eines <strong>kostenfreien Accounts</strong> klicke bitte auf folgenden Link:   
+                                  </span>
                                   </td>
                                 </tr>
                                 <tr>
@@ -77,7 +80,7 @@
                                 </tr>
                                 <tr>
                                   <td valign="top" width="48%" align="center"> <span>
-                                    <a href="{{URL::to('/register?invitee='.$email->verification_code)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">Verify Email Address</a>
+                                    <a href="{{URL::to('/register?invitee='.$email->verification_code)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">KOSTENFREIEN ACCOUNT ANLEGEN </a>
                                     </span>
                                   </td>
                                 </tr>
@@ -95,8 +98,13 @@
                                 </tr>
                                 <tr>
                                   <td align="center">
-                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">If you did not chagne email address for this account you can ignore this email and the account
-                                      will be deleted.</p>
+                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
+                                        Diese Einladung wurde auf Wunsch des oben genanntem Community-Mitglied an Sie versendet, welches Sie auf unsere Gemeinschaft hinweisen möchte. 
+                                        <br />
+                                        Sollten Sie kein Interesse an einer Teilnahme haben oder der falsche Adressat sein, können Sie diese Mail einfach ignorieren; es finden keine automatisierten Folgemails, eine Aufnahme in irgendeine Datenbank oder sonstiges statt. 
+                                        <br />
+                                        Für weitere Anliegen steht Ihnen unser Service-Team gerne jederzeit zur Verfügung.   
+                                    </p>
                                   </td>
                                 </tr>
                               </tbody>

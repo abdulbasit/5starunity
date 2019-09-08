@@ -304,7 +304,7 @@ class UserController extends Controller
                 $this->inviteEmail($emailData);
             }
         }
-        return redirect()->back()->with('message','Invitations email sent to your selected users ?'.$alreadyRegistered);
+        return redirect()->back()->with('message','Einladungs-Mail wurde an Ihren Freund gesendet'.$alreadyRegistered);
     }
     public function promotions()
     {
