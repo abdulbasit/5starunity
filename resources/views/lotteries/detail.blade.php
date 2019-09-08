@@ -25,6 +25,91 @@
         }
     </style>
 @endsection
+@section('script')
+    <script>
+
+        function emptyQty()
+        {
+            var qty = $("#qty").val();
+            if(qty=="" || qty<=0)
+            {
+                $("#errorLots").css('color','red');
+                $("#errorLots").html("Minimum Lots Required = 1");
+                $("#qty").val('1');
+            }
+        }
+        function purchaseBonus()
+        {
+            $("#lot_purchase").attr('trans_type','bonus');
+            $("#errorLots").html("");
+            setTimeout(function(){
+                puchaseLottery(0);
+            },1000)
+        }
+        function puchaseLottery(val)
+        {
+            var type = $("#lot_purchase").attr('trans_type');
+            console.log(type);
+            
+            if(val==1)
+            {
+                $("#errorLots").css('color','red');
+                $("#errorLots").html("Your Account is not approved by the admin yet.");
+                return false;
+            }
+
+            var bonusTaler = $("#bonus_taler").val();
+            var totalAmount = $("#totalAmount").text();
+            var total_lots = $("#total_lots").val();
+            var qty = $("#qty").val();
+            var lottery_id =$("#lottery_id").val();
+
+            $.ajax({
+                method: "POST",
+                url: "{{route('lottery.purchase')}}",
+                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots,lottery_id:lottery_id,bonusTaler:bonusTaler,type:type}
+            }).done(function( msg ) {
+                var obj = JSON.parse(msg);
+                if(obj.status=='success')
+                {
+                    $("#numbers").html("");
+                    $("#errorLots").css('color','green');
+                    $("#errorLots").html(obj.message);
+                    $("#myModal").modal();
+                    var number = obj.numbers.split(",");
+                    var arrayLength = number.length;
+                    var i=0;
+                    
+
+                    
+                    $("#lottery_type").html(obj.type);
+                    $("#spent").html(obj.totl_spent);
+                    $("#previous_balance").html(obj.total_available);
+                    $("#current_balance").html(obj.total_available-obj.totl_spent);
+
+
+                    for (i=0;i<=arrayLength;i++) {
+                        if(number[i]!==undefined)
+                        {
+                            $("#numbers").append("<p> Lott Number "+(i+1)+": "+number[i]+"</p>");
+                        }
+                    }
+                }
+                else
+                {
+                    $("#bonus_taler").val(obj.bonus_use);
+                    $("#bonusAmount").val(obj.amount);
+                    $("#errorLots").css('color','red');
+                    $("#errorLots").html(obj.message+"<br /> "+obj.bonus_taler);
+                }
+            });
+        }
+       function view()
+       {
+            $("#myModal").modal();
+       }
+    </script>
+@endsection
 @section('content')
 <input type="hidden" id="lottery_id" name="lottery_id" value="{{$lotteryData->id}}">
 <div class="container">
@@ -127,88 +212,4 @@
     </div>
 </div>
 @endsection
-@section('script')
-    <script>
 
-        function emptyQty()
-        {
-            var qty = $("#qty").val();
-            if(qty=="" || qty<=0)
-            {
-                $("#errorLots").css('color','red');
-                $("#errorLots").html("Minimum Lots Required = 1");
-                $("#qty").val('1');
-            }
-        }
-        function purchaseBonus()
-        {
-            $("#lot_purchase").attr('trans_type','bonus');
-            $("#errorLots").html("");
-            setTimeout(function(){
-                puchaseLottery(0);
-            },1000)
-        }
-        function puchaseLottery(val)
-        {
-            var type = $("#lot_purchase").attr('trans_type');
-            console.log(type);
-            
-            if(val==1)
-            {
-                $("#errorLots").css('color','red');
-                $("#errorLots").html("Your Account is not approved by the admin yet.");
-                return false;
-            }
-
-            var bonusTaler = $("#bonus_taler").val();
-            var totalAmount = $("#totalAmount").text();
-            var total_lots = $("#total_lots").val();
-            var qty = $("#qty").val();
-            var lottery_id =$("#lottery_id").val();
-
-            $.ajax({
-                method: "POST",
-                url: "{{route('lottery.purchase')}}",
-                data: { "_token": "{{ csrf_token() }}",qty: qty , amount:totalAmount,total_lots:total_lots,lottery_id:lottery_id,bonusTaler:bonusTaler,type:type}
-            }).done(function( msg ) {
-                var obj = JSON.parse(msg);
-                if(obj.status=='success')
-                {
-                    $("#numbers").html("");
-                    $("#errorLots").css('color','green');
-                    $("#errorLots").html(obj.message);
-                    $("#myModal").modal();
-                    var number = obj.numbers.split(",");
-                    var arrayLength = number.length;
-                    var i=0;
-                    
-
-                    
-                    $("#lottery_type").html(obj.type);
-                    $("#spent").html(obj.totl_spent);
-                    $("#previous_balance").html(obj.total_available);
-                    $("#current_balance").html(obj.total_available-obj.totl_spent);
-
-
-                    for (i=0;i<=arrayLength;i++) {
-                        if(number[i]!==undefined)
-                        {
-                            $("#numbers").append("<p> Lott Number "+(i+1)+": "+number[i]+"</p>");
-                        }
-                    }
-                }
-                else
-                {
-                    $("#bonus_taler").val(obj.bonus_use);
-                    $("#bonusAmount").val(obj.amount);
-                    $("#errorLots").css('color','red');
-                    $("#errorLots").html(obj.message+"<br /> "+obj.bonus_taler);
-                }
-            });
-        }
-       function view()
-       {
-            $("#myModal").modal();
-       }
-    </script>
-@endsection
