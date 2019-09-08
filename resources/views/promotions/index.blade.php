@@ -100,7 +100,7 @@
                         @foreach($company as $i=>$company)
                         
                             <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes promotions_card">
-                                @if($company->promotionVies($user_id,$company->company_id)>=$company->company_views_attempt)
+                                @if($company->promotionViwes($user_id,$company->company_id)>=$company->company_views_attempt)
                                     <a href="#">
                                 @else        
                                     <a href="/partner/detail/{{$company->company_id}}">
@@ -121,15 +121,29 @@
                                             @endif
                                         </div>
                                     <div class="row content_info">
-                                        @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
+                                        @if($company->promotionViwes($user_id,$company->company_id)==$company->company_views_attempt)
                                             <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
                                         @else
                                             <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
                                         @endif
                                     </div>
+                                    
                                     <div class="row finance_info">
+                                            
                                         <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
                                             {{ __('lables.maximum_views')}} : {{$company->company_views_attempt}}
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row progress_info nopadding">
+                                        <div class="col-xs-12 progress canInvest">
+                                            <?php
+                                            
+                                                $totalViewsAttempts = $company->view_counter;
+                                                $promostionsView = $company->promotionViwes("0",$company->company_id);
+                                                @$progressPercent = round($promostionsView/$totalViewsAttempts*100,0); 
+                                            ?>
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressPercent ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressPercent ?>%"><?php echo $progressPercent ?>%</div>
                                         </div>
                                     </div>
                                     <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
@@ -137,10 +151,11 @@
                                             ANSICHTEN 
                                         </div>
                                         <div class="col-xs-6 block_details">
-                                            MEINE ANSICHTEN<br /> {{$company->promotionVies($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
+                                            MEINE ANSICHTEN<br /> {{$company->promotionViwes($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
                                         </div>
                                     </div>
-                                    @if($company->promotionVies($user_id,$company->company_id)==$company->company_views_attempt)
+                                   
+                                    @if($company->promotionViwes($user_id,$company->company_id)==$company->company_views_attempt)
                                         <div class="footer_startup ">
                                             {{ __('lables.already_viwed')}}
                                         </div>
