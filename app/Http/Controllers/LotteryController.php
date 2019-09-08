@@ -71,7 +71,6 @@ class LotteryController extends Controller
         
         $checkTotalCredit = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
         $checkTotal = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
-        dd($checkTotal);
         $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
         $balance = "-".$amount;
         $previousBalance = $checkTotalCredit->total_available_balance;
@@ -100,7 +99,8 @@ class LotteryController extends Controller
                 "status"=>"approved",
                 'options'=>array('bonus_taler'=>'none')
             ]);
-           
+           if($checkTotal)
+           {
             $vallet_id = Vallet::create([
                 "user_id" => $user_id,
                 "credit"=>$checkTotal->credit,
@@ -113,7 +113,7 @@ class LotteryController extends Controller
                 'options'=>$bonus_taler,
                 'type'=>'bonus'
             ]);
-
+           }
             $i=1;
             $numbers = '';
             $a = array("red");
