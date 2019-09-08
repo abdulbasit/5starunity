@@ -59,7 +59,6 @@
 <div class="container postContainer">
 		<div class="card">
             <div class="row" style="margin-bottom:20px">
-               <span class="pull-left"><a href="/promotions" style="font-size:16px; text-decoration:underline">Back</a></span>
             </div>
 			<div class="container-fliud">   
 				<div class="wrapper row">

@@ -101,9 +101,9 @@
                             @if($promostionsView = $company->promotionViwes("0",$company->company_id < $company->company_views))
                                 <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes promotions_card">
                                     @if($company->promotionViwes($user_id,$company->company_id)>=$company->company_views_attempt)
-                                        <a href="#">
+                                        <a style="text-decoration:none" href="#">
                                     @else        
-                                        <a href="/partner/detail/{{$company->company_id}}">
+                                        <a style="text-decoration:none" href="/partner/detail/{{$company->company_id}}">
                                     @endif
                                         <div class="content_startup_blok current_investment ">
                                             <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
@@ -140,7 +140,7 @@
                                                     $totalViewCompanyAllowed = $company->company_views; //100
                                                     $totaPromotionsViews = $company->promotionViwes("0",$company->company_id);
                                                     $progressPercent = round($totaPromotionsViews/$totalViewCompanyAllowed*100,0); 
-                                                    
+
                                                 ?>
                                                 <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressPercent ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressPercent ?>%"><?php echo $progressPercent ?>%</div>
                                             </div>
