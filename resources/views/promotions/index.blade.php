@@ -135,13 +135,17 @@
                                         </div>
                                         
                                     </div>
+                                    <?php
+                                        $totalViewsAttempts = $company->view_counter;
+                                        $promostionsView = $company->promotionViwes("0",$company->company_id);
+                                        echo $progressPercent = round($promostionsView/$totalViewsAttempts*100,0); 
+                                    ?>
                                     <div class="row progress_info nopadding">
                                         <div class="col-xs-12 progress canInvest">
                                             <?php
-                                            
                                                 $totalViewsAttempts = $company->view_counter;
                                                 $promostionsView = $company->promotionViwes("0",$company->company_id);
-                                                @$progressPercent = round($promostionsView/$totalViewsAttempts*100,0); 
+                                                $progressPercent = round($promostionsView/$totalViewsAttempts*100,0); 
                                             ?>
                                             <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressPercent ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressPercent ?>%"><?php echo $progressPercent ?>%</div>
                                         </div>
@@ -149,6 +153,8 @@
                                     <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
                                         <div class="col-xs-6 block_details borderRightgrey">
                                             ANSICHTEN 
+                                            <br />
+                                            {{$company->company_views}}
                                         </div>
                                         <div class="col-xs-6 block_details">
                                             MEINE ANSICHTEN<br /> {{$company->promotionViwes($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
