@@ -101,19 +101,31 @@ class LotteryController extends Controller
             ]);
            if($checkTotal)
            {
+               $credit = $checkTotal->credit;
+               $balance = $checkTotal->balance;
+               $pre_balance = $checkTotal->pre_balance;
+               $total_available_balance = $checkTotal->total_available_balance;
+           }
+           else
+           {
+                $credit = 0;
+                $balance = 0;
+                $pre_balance = 0;
+                $total_available_balance = 0;
+           }
             $vallet_id = Vallet::create([
                 "user_id" => $user_id,
-                "credit"=>$checkTotal->credit,
-                "balance"=>$checkTotal->balance,
-                "pre_balance"=> $checkTotal->pre_balance,
-                "total_available_balance"=>$checkTotal->total_available_balance,
+                "credit"=>$credit,
+                "balance"=>$balance,
+                "pre_balance"=> $pre_balance,
+                "total_available_balance"=>$total_available_balance,
                 "created_at"=>Carbon::now(),
                 "updated_at"=>Carbon::now(),
                 "status"=>"approved",
                 'options'=>$bonus_taler,
                 'type'=>'bonus'
             ]);
-           }
+
             $i=1;
             $numbers = '';
             $a = array("red");
