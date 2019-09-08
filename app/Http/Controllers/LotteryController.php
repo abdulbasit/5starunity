@@ -71,7 +71,7 @@ class LotteryController extends Controller
         
         $checkTotalCredit = BonusTaler::where('user_id',$user_id)->orderBy('id','desc')->first();
         $checkTotal = Vallet::where('user_id',$user_id)->orderBy('id','desc')->first();
-        dd($checkTotal->credit);
+        dd($checkTotal);
         $remainingTotalBalance = $checkTotalCredit->total_available_balance-$amount;
         $balance = "-".$amount;
         $previousBalance = $checkTotalCredit->total_available_balance;
