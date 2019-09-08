@@ -23,15 +23,15 @@
                 </div>
                 @endif
                 <div id="historyTable">
-                    <h3>Your Lots</h3>
+                    <h3>Übersicht Ihre Lose</h3>
                     <table class="table table-striped text-center">
                         <thead>
                         <tr>
                             <th class="text-center">#</th>
-                            <th class="text-center">Purchased By</th>
-                            <th class="text-center">Lot Number</th>
-                            <th class="text-center">Lot Amount</th>
-                            <th class="text-center">Created At</th>
+                            <th class="text-center">Eingelöst mit</th>
+                            <th class="text-center">LOS Nummer</th>
+                            <th class="text-center">Eingelöste Taler</th>
+                            <th class="text-center">Einlösungsdatum</th>
                             <th class="text-center">Status</th>
                             
                         </tr>
@@ -52,9 +52,9 @@
                                 <td>{{Carbon\Carbon::parse($lottery->created_at)->toFormattedDateString()}}</td>
                                 <td>
                                     @if($lottery->status==0)
-                                        Not Winner
+                                        Nicht gewonnen
                                     @else if($lottery->status==1)
-                                        Winner
+                                        Gewonnen
                                     @endif
                                 </td>
                             </tr>

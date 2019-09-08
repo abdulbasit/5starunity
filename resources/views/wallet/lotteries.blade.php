@@ -15,7 +15,18 @@
 <div class="container">
     <div class="row profile">
          @include('../layouts.user_menu')
-         <div class="col-md-9 prof">
+         <div class="col-md-9 ">
+             <div class="row">
+                 <div class="col-md-8">
+                    Viele Partner stellen Produkte / Konzepte zur Verfügung um unsere Community und des Gedanken des spendenbasierten Crowdfundings voran zu bringen. Diese Vorteile möchten wir an alle Spender weitergeben - nutzen Sie daher die Möglichkeit, Ihre Taler in unserer internen Lottery of Things einzulösen!
+                 </div>
+                 <div class="col-md-4 col-sm-4 c_dist" >
+                    <a href="/lotteries">
+                        <div class="circle c_nd lotteriesCircle"></div>
+                    </a>
+                 </div>
+             </div>
+                <br /><br />
             <div class="checkout-panel">
                 @if(Session::get('success')!="")
                 <div class="alert alert-success">
@@ -23,16 +34,16 @@
                 </div>
                 @endif
                 <div id="historyTable">
-                    <h3>Your Purchased Lotteries</h3>
+                    <h3>Übersicht Ihrer Teilnahmen</h3>
                     <table class="table table-striped text-center">
                         <thead>
                         <tr>
                             <th class="text-center">#</th>
-                            <th class="text-center">Lottery Name </th>
-                            <th class="text-center">Total lots</th>
-                            <th class="text-center">Total Amount</th>
-                            <th class="text-center">Purchased Date</th>
-                            <th class="text-center">Options</th>
+                            <th class="text-center">Verlosungsname </th>
+                            <th class="text-center">Anzahl Lose</th>
+                            <th class="text-center">Eingelöste Taler</th>
+                            <th class="text-center">Einlösungsdatum</th>
+                            <th class="text-center">Anmerkungen</th>
                         </tr>
                         </thead>
                         <tbody>

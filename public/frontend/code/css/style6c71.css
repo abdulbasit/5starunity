@@ -15607,6 +15607,14 @@ section.homepage-howitworks .circles-holder {
     background-image:url(../../graphics/4_tabs/1regsiter.png);
     background-size:100%
 }
+.lotteriesCircle
+{
+    background-image:url(../../graphics/4_tabs/lotteries.png);
+    background-size:100%;
+    min-height:200px;
+    background-position: 23px -28px;
+
+}
 .spendCircle
 {
     background-image:url(../../graphics/4_tabs/2speneden.png);
