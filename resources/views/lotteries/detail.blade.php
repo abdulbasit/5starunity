@@ -43,15 +43,17 @@
                     <div class="rating">
                         <span class="review-no">{{$lotteryData->lottery_contestent->groupby('user_id')->count()}} Teilnehmer</span>
                     </div>
+                    <p class="vote">
+                        <strong><?php
+                        $total = $lotteryData->one_lot_amount*$lotteryData->lottery_contestent->count();
+                        echo $progressBar = round($total/$lotteryData->lot_amount*100,0);
+                        ?>%</strong>
+                        {{__('lables.total_donation')}}
+                    </p>
                     <div id="loterAmountDetails">
                     <h4 class="price">{{__('lables.lot_per_amount')}}: <span  > {{round($lotteryData->one_lot_amount,0)}} </span></h4>
                     <h4 class="price"> {{__('lables.taler_rquired')}}: <span id="totalAmount" lot-amount="{{round($lotteryData->one_lot_amount,0)}}"> {{round($lotteryData->one_lot_amount,2)}} </span></h4>
-                    <p class="vote">
-                        <strong><?php
-                            $total = $lotteryData->one_lot_amount*$lotteryData->lottery_contestent->count();
-                            echo $progressBar = round($total/$lotteryData->lot_amount*100,0);
-                            ?>%</strong>
-                            {{__('lables.total_donation')}}</p>
+                    
                     <input type="hidden" id="bonus_taler" name="bonus_taler" value="no">
                     <input type="hidden" id="bonusAmount" name="bonusAmount" value="0">
                     <div class="row">

@@ -98,77 +98,79 @@
                     <span id="total_pages" data-total="111"></span>
                     @if($company->count()>0)
                         @foreach($company as $i=>$company)
-                            @if($promostionsView = $company->promotionViwes("0",$company->company_id < $company->company_views))
-                                <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes promotions_card">
-                                    @if($company->promotionViwes($user_id,$company->company_id)>=$company->company_views_attempt)
-                                        <a style="text-decoration:none" href="#">
-                                    @else        
-                                        <a style="text-decoration:none" href="/partner/detail/{{$company->company_id}}">
-                                    @endif
-                                        <div class="content_startup_blok current_investment ">
-                                            <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
-                                                @if($company->image!="")
-                                                    <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{@$company->image}}">
+                            @if($company->promotionViwes("0",$company->company_id) < $company->company_views)
+                                @if($company->promotionViwes($user_id,$company->company_id) < $company->company_views_attempt)
+                                    <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes promotions_card">
+                                        @if($company->promotionViwes($user_id,$company->company_id)>=$company->company_views_attempt)
+                                            <a style="text-decoration:none" href="#">
+                                        @else        
+                                            <a style="text-decoration:none" href="/partner/detail/{{$company->company_id}}">
+                                        @endif
+                                            <div class="content_startup_blok current_investment ">
+                                                <div class="stratup_img lazy text-center" data-src="" title="{{$company->company_name}}" style="overflow:hidden; height:100px">
+                                                    @if($company->image!="")
+                                                        <img class="img-responsive" src="{{ URL::to('/') }}/uploads/copmany_images/{{@$company->image}}">
+                                                    @else
+                                                    <?php 
+                                                        if (($pos = strpos($company->vidoe, "=")) !== FALSE) 
+                                                        { 
+                                                            @$whatIWant = substr($company->vidoe, $pos+1); 
+                                                        }
+                                                        @$thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
+                                                    ?>
+                                                        <img class="img-responsive" src="{{$thumbnail}}">
+                                                    @endif
+                                                </div>
+                                            <div class="row content_info">
+                                                @if($company->promotionViwes($user_id,$company->company_id)==$company->company_views_attempt)
+                                                    <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
                                                 @else
-                                                <?php 
-                                                    if (($pos = strpos($company->vidoe, "=")) !== FALSE) 
-                                                    { 
-                                                        @$whatIWant = substr($company->vidoe, $pos+1); 
-                                                    }
-                                                    @$thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
-                                                ?>
-                                                    <img class="img-responsive" src="{{$thumbnail}}">
+                                                    <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
                                                 @endif
                                             </div>
-                                        <div class="row content_info">
+                                            
+                                            <div class="row finance_info">
+                                                <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
+                                                    {{ __('lables.maximum_views')}} : {{$company->company_views_attempt}}
+                                                </div>
+                                            </div>
+                                            <div class="row progress_info nopadding">
+                                                <div class="col-xs-12 progress canInvest">
+                                                    <?php
+                                                        
+                                                        $totalViewCompanyAllowed = $company->company_views; //100
+                                                        $totaPromotionsViews = $company->promotionViwes("0",$company->company_id);
+                                                        $progressPercent = round($totaPromotionsViews/$totalViewCompanyAllowed*100,0); 
+
+                                                    ?>
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressPercent ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressPercent ?>%"><?php echo $progressPercent ?>%</div>
+                                                </div>
+                                            </div>
+                                            <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
+                                                <div class="col-xs-6 block_details borderRightgrey">
+                                                    ANSICHTEN 
+                                                    <br />
+                                                    {{$company->company_views}}
+                                                </div>
+                                                <div class="col-xs-6 block_details">
+                                                    MEINE ANSICHTEN<br /> {{$company->promotionViwes($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
+                                                </div>
+                                            </div>
+                                        
                                             @if($company->promotionViwes($user_id,$company->company_id)==$company->company_views_attempt)
-                                                <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
+                                                <div class="footer_startup ">
+                                                    {{ __('lables.already_viwed')}}
+                                                </div>
                                             @else
-                                                <h4 class="mb-5px" style="color:black">{{$company->company_name}}</h4>
+                                                <div class="footer_startup ">
+                                                    {{$company->user_amount}} BONUS TALER pro Ansicht
+                                                </div>
                                             @endif
                                         </div>
-                                        
-                                        <div class="row finance_info">
-                                            <div class="col-xs-7 col-sm-6 block_finance_left text-left  block_days_left_gray">
-                                                {{ __('lables.maximum_views')}} : {{$company->company_views_attempt}}
-                                            </div>
-                                        </div>
-                                        <div class="row progress_info nopadding">
-                                            <div class="col-xs-12 progress canInvest">
-                                                <?php
-                                                    
-                                                    $totalViewCompanyAllowed = $company->company_views; //100
-                                                    $totaPromotionsViews = $company->promotionViwes("0",$company->company_id);
-                                                    $progressPercent = round($totaPromotionsViews/$totalViewCompanyAllowed*100,0); 
-
-                                                ?>
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressPercent ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressPercent ?>%"><?php echo $progressPercent ?>%</div>
-                                            </div>
-                                        </div>
-                                        <div class="row progress_info nopadding" style="border-top:solid 1px #5b8b9b">
-                                            <div class="col-xs-6 block_details borderRightgrey">
-                                                ANSICHTEN 
-                                                <br />
-                                                {{$company->company_views}}
-                                            </div>
-                                            <div class="col-xs-6 block_details">
-                                                MEINE ANSICHTEN<br /> {{$company->promotionViwes($user_id,$company->company_id)}} von {{$company->company_views_attempt}}
-                                            </div>
-                                        </div>
-                                    
-                                        @if($company->promotionViwes($user_id,$company->company_id)==$company->company_views_attempt)
-                                            <div class="footer_startup ">
-                                                {{ __('lables.already_viwed')}}
-                                            </div>
-                                        @else
-                                            <div class="footer_startup ">
-                                                {{$company->user_amount}} BONUS TALER pro Ansicht
-                                            </div>
-                                        @endif
-                                    </div>
-                                </a>
-                                </div>   
-                            @endif                        
+                                    </a>
+                                    </div>   
+                                @endif 
+                            @endif
                         @endforeach
                     @else
                         <div class="alert alert-danger alert-block">
