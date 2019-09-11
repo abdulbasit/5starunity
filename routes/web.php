@@ -220,4 +220,5 @@ Auth::routes();
         Route::get('cuppon/create', 'CupponController@create')->name('cuppon.create');
         Route::post('cuppon/save', 'CupponController@save')->name('cuppon.save');
         Route::get('cuppon/edit/{id}', 'CupponController@edit')->name('cuppon.edit');
+        Route::post('cuppon/update', 'CupponController@update')->name('cuppon.update');
 });

@@ -48242,3 +48242,35 @@ input[type='password']:focus {
 {
     background-color:red !important;
 }
+.cupponBox
+{
+  width:80px;  height: 80px; border:solid 2px orange;
+  border-radius:4px; float: left;
+}
+.cupponDetail
+{
+  float: left;
+}
+.cupponDetail h3
+{
+  padding-left:10px; 
+  padding-top:0px;
+  margin:0px !important
+}
+.cupponDetail span
+{
+  font-size:12px;
+  padding-left:12px
+}
+.cupponsRow
+{
+  border:solid #f1f1f1 1px; 
+  border-right:0px; 
+  margin-left:5px;
+  padding:20px
+}
+.gclock
+{
+  position: relative;
+  text-outline: 3px;
+}

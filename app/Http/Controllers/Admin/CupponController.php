@@ -37,8 +37,26 @@ class CupponController extends Controller
         ]);
         return redirect('admin/cuppons');
     }
-    public function edit()
+    public function edit($id)
     {
-        
+        $cupponDetial = DiscountCuppon::where('id',$id)->first();
+        return view('admin.cuppons.edit',compact('cupponDetial'));
+    }
+    public function update(Request $request)
+    {
+        $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
+        $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
+        $id = $request->get('id');
+        $cupponDetial = DiscountCuppon::where('id',$id)->first();
+        $cupponDetial->name= $request->get('name');
+        $cupponDetial->description= $request->get('desc');
+        $cupponDetial->type= $request->get('type');
+        $cupponDetial->price= $request->get('amount');
+        $cupponDetial->start_date= $start_date;
+        $cupponDetial->end_date= $end_date;
+        $cupponDetial->reference_website= $request->get('siteurl');
+        $cupponDetial->usage= $request->get('limit');
+        $cupponDetial->save();
+        return redirect('admin/cuppons');
     }
 }

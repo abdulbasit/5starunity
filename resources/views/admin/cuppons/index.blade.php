@@ -80,7 +80,7 @@
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
                                             <a class="dropdown-item" href="{{ route('admin.cuppon.edit',$cupponDate->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                            <a data-id="{{$cupponDate->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                             <a data-id="{{$cupponDate->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                         </div>
                                     </div>
                                 </div>

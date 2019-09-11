@@ -55,6 +55,27 @@
                                 {{ __('lables.recomend') }}
                             </button>
                         </div>
+                        <br />
+                        <br />
+                        <br />
+                        <div class="row cupponsRow">
+                            <div class="cupponBox"></div>
+                            <div class="cupponDetail">
+                                <h3>15% off on every purcahse hurry up</h3>
+                                <span>  &nbsp; <i class="glyphicon glyphicon-time gclock"></i>&nbsp; Starts <b>From</b>  2.20.2018  <b>To</b> 2.20.2018 </span>
+                                <div>
+                                    <div style="margin-left:15px; margin-top:10px; float:left">
+                                        <button id="recomendations" type="button" class="btn-green" style="margin-top:-5px; right:0px">
+                                            Go to website
+                                        </button>
+                                    </div>
+                                    <div style="margin-left:15px; margin-top:10px; float:left">
+                                        <a href="#">Get Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>

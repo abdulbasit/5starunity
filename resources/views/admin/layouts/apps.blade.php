@@ -346,7 +346,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Cuppons</a>
                             <ul class="menu-content">
                               <li><a class="menu-item" href="{{ route('admin.cuppon.create') }}">Create Discount <br />Cuppons</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.sliders') }}">Cuppons Listing</a>
+                              <li><a class="menu-item" href="{{ route('admin.cuppons') }}">Cuppons Listing</a>
                             </ul>
                           </li>
                       </ul>
