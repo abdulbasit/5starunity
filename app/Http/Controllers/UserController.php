@@ -13,6 +13,7 @@ use App\Models\BonusTaler;
 use App\Models\State;
 use App\Models\UserDocument;
 use App\Models\Recomendations;
+use App\Models\DiscountCuppon;
 use App\Models\InvitationList;
 use App\Models\UserProfile;
 use App\Mail\ChangeMailEmail;
@@ -319,12 +320,13 @@ class UserController extends Controller
     public function partners()
     {
         $userId = Auth::guard('client')->user()->id;
+        $cuppons = DiscountCuppon::all();
         $userData = User::where('users.id',$userId)->first();
         $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
         $userDocuments = UserDocument::where('user_id',$userId)->get();
         $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
         $route='partner';
-        return view('usr_profile.promotions',compact('userInfo','route'));
+        return view('usr_profile.promotions',compact('userInfo','route','cuppons'));
     }
     public function recomendations()
     {

@@ -33,12 +33,13 @@ class CupponController extends Controller
             "start_date"=>$start_date,
             "end_date"=>$end_date,
             "reference_website"=>$request->get('siteurl'),
-            "usage"=>$request->get('limit')
+            "usage"=>$request->get('limit'),
+            'cuppon_code'=>$request->get('code')
         ]);
         return redirect('admin/cuppons');
     }
     public function edit($id)
-    {
+    { 
         $cupponDetial = DiscountCuppon::where('id',$id)->first();
         return view('admin.cuppons.edit',compact('cupponDetial'));
     }
@@ -56,6 +57,7 @@ class CupponController extends Controller
         $cupponDetial->end_date= $end_date;
         $cupponDetial->reference_website= $request->get('siteurl');
         $cupponDetial->usage= $request->get('limit');
+        // $cupponDetial->cuppon_code=$request->get('code');
         $cupponDetial->save();
         return redirect('admin/cuppons');
     }

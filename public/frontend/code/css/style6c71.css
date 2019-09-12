@@ -48244,8 +48244,64 @@ input[type='password']:focus {
 }
 .cupponBox
 {
-  width:80px;  height: 80px; border:solid 2px orange;
-  border-radius:4px; float: left;
+    width: 80px;
+    height: 85px;
+    border: solid 2px orange;
+    border-radius: 4px;
+    float: left;
+    color: orange;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+}
+.d_amount{
+  float: left;
+    height: 46px;
+    text-align: center;
+    width: 100%;
+}
+.get_code_heading
+{
+  float:left; 
+  position:relative; 
+  top:0px; 
+  background-color:white; 
+  height:100%; 
+  width:100%; 
+  z-index:100; 
+  text-transform:uppercase
+}
+.codeDiv
+{
+  float:left; 
+  position:absolute; 
+  top:5px; 
+  background-color:white; 
+  width:100%
+}
+.dCode
+{
+  width: 300px;
+    height: 40px;
+    border: dotted 2px lightblue;
+    float: left;
+    border-radius: 4px;
+    margin-left: 15px;
+    margin-top: 5px;
+    text-align:center;
+    padding-top:5px;
+    color: #888888;
+    position: relative;
+    top: 0px;
+}
+.exclusive
+{
+  background-color:orange;
+  color:white;
+  width:100%;
+  height:25px;
+  float: left;
+  font-size:15px
 }
 .cupponDetail
 {
@@ -48267,7 +48323,8 @@ input[type='password']:focus {
   border:solid #f1f1f1 1px; 
   border-right:0px; 
   margin-left:5px;
-  padding:20px
+  padding:20px;
+  margin-bottom:-1px
 }
 .gclock
 {

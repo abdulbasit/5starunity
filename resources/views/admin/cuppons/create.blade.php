@@ -85,6 +85,20 @@
                         </div>
                     </div> 
                     <div class="form-group row">
+                        <label class="col-md-3 label-control" for="code"> Cuppon Code</label>
+                        <div class="col-md-7">
+                            <input required="required" type="text" id="code" class="form-control" placeholder="Cuppon Code"  name="code">
+                        </div>
+                        <div class="col-md-2">
+                            <a id="generate" style="    position: relative;
+                            top: 10px;
+                            font-size: 16px;
+                            font-weight: bold;
+                            text-decoration: underline;
+                            color: green;">Generate</a>
+                        </div>
+                    </div> 
+                    <div class="form-group row">
                         <label class="col-md-3 label-control" for="amount"> Amount</label>
                         <div class="col-md-9">
                             <input required="required" type="text" id="amount" class="form-control" placeholder="Cuppon Amount"  name="amount">
@@ -210,5 +224,50 @@ $("#end_date").change(function(){
         $("#end_date").val("")
     }
 });
+(function() {
+	 function IDGenerator() {
+	 
+		 this.length = 5;
+		 this.timestamp = +new Date;
+		 
+		 var _getRandomInt = function( min, max ) {
+			return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+		 }
+		 
+		 this.generate = function() {
+			 var ts = this.timestamp.toString();
+			 var parts = ts.split( "" ).reverse();
+			 var id = "";
+			 
+			 for( var i = 0; i < this.length; ++i ) {
+				var index = _getRandomInt( 0, parts.length - 1 );
+				id += parts[index];	 
+			 }
+			 
+			 return id;
+		 }
+
+		 
+	 }
+	 
+	 
+	 $("#generate").on('click',function() {
+         
+         var generator = new IDGenerator();
+            $("#code").val(generator.generate());
+		// var btn = document.querySelector( "#generate" ),
+		// 	output = document.querySelector( "#code" );
+            // alert(btn)
+		// btn.addEventListener( "click", function() {
+		
+		// 	output.innerHTML = generator.generate();
+			
+		// }, false); 
+		 
+	 });
+	 
+	 
+ })();
+
 </script>
 @endsection

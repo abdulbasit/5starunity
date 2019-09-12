@@ -27,6 +27,9 @@
        $("#recomendations").on('click',function(){
             window.location='recomendations';
         });
+        $(".get_code_heading").on('click',function(){
+            $(this).remove();
+        });
     </script>
 @endsection
 @section('content')
@@ -58,28 +61,37 @@
                         <br />
                         <br />
                         <br />
+                        @foreach($cuppons as $cupponCodes)
                         <div class="row cupponsRow">
-                            <div class="cupponBox"></div>
+                            <div class="cupponBox">
+                                <span class="d_amount">{{$cupponCodes->price}} @if($cupponCodes->type=='percentage') % @endif</span>
+                                <span class="exclusive">Exclusive</span>
+                            </div>
                             <div class="cupponDetail">
-                                <h3>15% off on every purcahse hurry up</h3>
-                                <span>  &nbsp; <i class="glyphicon glyphicon-time gclock"></i>&nbsp; Starts <b>From</b>  2.20.2018  <b>To</b> 2.20.2018 </span>
+                                <h3>{{$cupponCodes->name}}</h3>
+                                <span>  &nbsp; <i class="glyphicon glyphicon-time gclock"></i>&nbsp; Starts <b>From</b>  {{\Carbon\Carbon::parse($cupponCodes->start_date)->toFormattedDateString()}}  <b>To</b> {{\Carbon\Carbon::parse($cupponCodes->end_date)->toFormattedDateString()}}</span>
                                 <div>
                                     <div style="margin-left:15px; margin-top:10px; float:left">
-                                        <button id="recomendations" type="button" class="btn-green" style="margin-top:-5px; right:0px">
+                                        <a href="{{$cupponCodes->reference_website}}" target="_blank" id="recomendations" class="btn-green" style="margin-top:-5px; right:0px; text-decoration:none">
                                             Go to website
-                                        </button>
+                                        </a>
                                     </div>
-                                    <div style="margin-left:15px; margin-top:10px; float:left">
-                                        <a href="#">Get Code</a>
+                                    <div class="dCode">
+                                        <div class="get_code_heading">
+                                            <a id="codeverlay">Get Code</a>
+                                        </div>
+                                        <div class="codeDiv">
+                                            {{$cupponCodes->cuppon_code}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-
