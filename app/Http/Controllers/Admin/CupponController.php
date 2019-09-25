@@ -22,7 +22,7 @@ class CupponController extends Controller
         return view('admin.cuppons.create');
     }
     public function save(Request $request)
-    {
+    { 
         $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
         $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
         DiscountCuppon::create([
@@ -34,6 +34,7 @@ class CupponController extends Controller
             "end_date"=>$end_date,
             "reference_website"=>$request->get('siteurl'),
             "usage"=>$request->get('limit'),
+            'category'=>$request->get('category'),
             'cuppon_code'=>$request->get('code')
         ]);
         return redirect('admin/cuppons');
@@ -56,6 +57,7 @@ class CupponController extends Controller
         $cupponDetial->start_date= $start_date;
         $cupponDetial->end_date= $end_date;
         $cupponDetial->reference_website= $request->get('siteurl');
+        $cupponDetial->category= $request->get('category');
         $cupponDetial->usage= $request->get('limit');
         // $cupponDetial->cuppon_code=$request->get('code');
         $cupponDetial->save();

@@ -13,7 +13,7 @@ class DiscountCuppon extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'type', 'price','start_date','end_date','usage','reference_website','cuppon_code'
+        'name', 'category', 'description', 'type', 'price','start_date','end_date','usage','reference_website','cuppon_code'
     ];
 
     

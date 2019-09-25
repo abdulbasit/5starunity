@@ -79,6 +79,17 @@
                     @csrf
                     <div class="form-body">
                     <div class="form-group row">
+                        <label class="col-md-3 label-control" for="name"> Category</label>
+                        <div class="col-md-9">
+                            <select name="category" id="category" class="form-control">
+                                <option value="">Select Category </option>
+                                <option value="discount">Discount</option>
+                                <option value="exclusive">Exclusive</option>
+                                <option value="special">Special Offer</option>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group row">
                         <label class="col-md-3 label-control" for="name"> Title</label>
                         <div class="col-md-9">
                             <input required="required" type="text" id="name" class="form-control" placeholder="Cuppon Title"  name="name">

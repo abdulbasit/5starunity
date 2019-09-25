@@ -48246,13 +48246,38 @@ input[type='password']:focus {
 {
     width: 80px;
     height: 85px;
-    border: solid 2px orange;
     border-radius: 4px;
     float: left;
-    color: orange;
     font-size: 20px;
     text-align: center;
     padding-top: 10px;
+}
+.redCupponCategory
+{
+  background-color:red
+}
+.greenCupponCategory
+{
+  background-color:green
+}
+.orangeCupponCategory
+{
+  background-color:orange
+}
+.redbox
+{
+  border: solid 2px red;
+  color: red;
+}
+.greenbox
+{
+  border: solid 2px green;
+  color: green;
+}
+.corangebx
+{
+  border: solid 2px orange;
+  color: orange;
 }
 .d_amount{
   float: left;
@@ -48296,12 +48321,12 @@ input[type='password']:focus {
 }
 .exclusive
 {
-  background-color:orange;
   color:white;
   width:100%;
   height:25px;
   float: left;
-  font-size:15px
+  font-size:15px;
+  text-transform:capitalize
 }
 .cupponDetail
 {

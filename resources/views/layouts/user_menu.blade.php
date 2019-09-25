@@ -183,17 +183,17 @@ function changeProfile() {
                     </a>
                 </li>
                 <li class="@if($route=='documents_area')active @endif">
-                    <a href="{{route('profile')}}">
+                    <a href="{{route('documents')}}">
                     <i class="glyphicon glyphicon-file"></i>
                     {{ __('lables.documents_area')}}</a>
                 </li>
                 <li class="@if($route=='activities')active @endif">
-                    <a href="{{route('profile')}}">
+                    <a href="{{route('course')}}">
                     <i class="glyphicon glyphicon-list-alt"></i>
                     {{ __('lables.activities')}} </a>
                 </li>
                 <li class="@if($route=='my_contacts')active @endif">
-                    <a href="{{route('profile')}}">
+                    <a href="{{route('contacts')}}">
                     <i class="	glyphicon glyphicon-education"></i>
                     {{ __('lables.my_contacts')}}</a>
                 </li>
@@ -205,7 +205,7 @@ function changeProfile() {
                     @endif
                 </li>
                 <li class="@if($route=='security')active @endif">
-                    <a href="{{route('profile')}}">
+                    <a href="{{route('security')}}">
                     <i class="	glyphicon glyphicon-lock"></i>
                     {{ __('lables.security')}} </a>
                 </li>

@@ -80,6 +80,17 @@
                     @csrf
                     <div class="form-body">
                     <div class="form-group row">
+                        <label class="col-md-3 label-control" for="name"> Category</label>
+                        <div class="col-md-9">
+                            <select name="category" id="category" class="form-control">
+                                <option {{old('type',$cupponDetial->category)==""? 'selected':''}} value="">Select Category </option>
+                                <option {{old('type',$cupponDetial->category)=="discount"? 'selected':''}} value="discount">Discount</option>
+                                <option {{old('type',$cupponDetial->category)=="exclusive"? 'selected':''}} value="exclusive">Exclusive</option>
+                                <option {{old('type',$cupponDetial->category)=="special"? 'selected':''}} value="special">Special Offer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-3 label-control" for="name"> Title</label>
                         <div class="col-md-9">
                             <input value="{{$cupponDetial->name}}" required="required" type="text" id="name" class="form-control" placeholder="Cuppon Title"  name="name">

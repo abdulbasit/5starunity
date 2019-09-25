@@ -34,13 +34,39 @@
 @section('content')
     <div class="container">
         <div class="row profile">
-        <?php @$msg = explode("?",Session::get('message'));
-            @$mailsList = explode(",",rtrim($msg[1],","));
+        <?php 
+        // if(Session::get('message'))
+        // {
+        //     dd(Session::get('message'));
+        // }
         ?>
             @include('../layouts.user_menu')
             <div class="col-md-9 prof" style="margin-top:0px">
 
-                    @if (count($mailsList)>1)
+                    @if (Session::get('message'))
+                        @foreach(Session::get('message') as $key=>$message)
+                            @if($key=="already" && $message)
+                                <div class="alert alert-danger alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <b>E-Mail wurde an </b><br />
+                                    @foreach($message as $regEmails)
+                                        {{$regEmails}} <br />
+                                    @endforeach
+                                    <b> bereits gesendet</b>
+                                </div>    
+                            @elseif($message)
+                            <div class="alert alert-success alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <b>Einladungs-Mail wurde an Ihren Freund gesendet</b><br />
+                                    @foreach($message as $regEmails)
+                                        {{$regEmails}} <br />
+                                    @endforeach
+                                </div>    
+                            @endif
+                        @endforeach
+                       
+                    @endif
+                    {{-- @if (count(Session::get('message'))>1)
                         <div class="alert alert-danger alert-block">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             <b>Alrady Registered Emails </b><br />
@@ -48,14 +74,14 @@
                                 {{$regEmails}} <br />
                             @endforeach
                         </div>
-                    @endif
+                    @endif --}}
 
-                @if ($msg[0]!="")
+                {{-- @if ($msg[0]!="")
                     <div class="alert alert-success alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ $msg[0] }}
                     </div>
-                @endif
+                @endif --}}
                 
                 @if($userInfo['user_data']->status==0)
                 <div class="profile-content">

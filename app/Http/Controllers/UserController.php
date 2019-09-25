@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\TeamSpend;
+use App\Models\CupponCount;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Vallet;
@@ -278,17 +279,27 @@ class UserController extends Controller
         $userId = Auth::guard('client')->user()->id;
         $senderName = Auth::guard('client')->user()->name;
         $data=[];
+        $mailSent='';
+        $alreadyRegMsg='';
         $emailsList = $request->get('email_list');
-        $alreadyRegistered = '';
+        $alreadyRegistered = [];
+        $alreadyInvited = [];
+        $sendInvite = [];
         foreach(explode(",",$emailsList) as $email){
             //check if email already exists then skip entry 
             $regUers = User::where('email',$email)->count();
+
             if($regUers>0)
-                $alreadyRegistered.=$email.",";
+                $alreadyRegistered[]=$email;
 
             $emailcheck = InvitationList::where('email',$email)->count();
+
+            if($emailcheck>0)
+                $alreadyInvited[]=$email;
+
             if($emailcheck==0 && $regUers==0)
             {
+                $sendInvite[] = $email;
                 $invitationEmail = InvitationList::create([
                     'email' => $email,
                     'sender_id' => $userId,
@@ -305,7 +316,8 @@ class UserController extends Controller
                 $this->inviteEmail($emailData);
             }
         }
-        return redirect()->back()->with('message','Einladungs-Mail wurde an Ihren Freund gesendet'.$alreadyRegistered);
+        $already = array_unique(array_merge($alreadyRegistered,$alreadyInvited));
+        return redirect()->back()->with('message',["mail_sent"=>$sendInvite,"already"=>$already]);
     }
     public function promotions()
     {
@@ -328,6 +340,38 @@ class UserController extends Controller
         $route='partner';
         return view('usr_profile.promotions',compact('userInfo','route','cuppons'));
     }
+    public function redirectToUrl($id)
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $cuppon = DiscountCuppon::find($id);
+        $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
+        $cupponCounterCreate = CupponCount::create([
+            "cuppon_id"=>$id,
+            "counter"=>"",
+            "user_id"=>$userId,
+            "ip_address"=>$this->get_client_ip()
+        ]);
+        return view('usr_profile.redirect',compact('cuppon'));
+    }
+    function get_client_ip() 
+    {
+        $ipaddress = '';
+        if (getenv('HTTP_CLIENT_IP'))
+            $ipaddress = getenv('HTTP_CLIENT_IP');
+        else if(getenv('HTTP_X_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+        else if(getenv('HTTP_X_FORWARDED'))
+            $ipaddress = getenv('HTTP_X_FORWARDED');
+        else if(getenv('HTTP_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_FORWARDED_FOR');
+        else if(getenv('HTTP_FORWARDED'))
+            $ipaddress = getenv('HTTP_FORWARDED');
+        else if(getenv('REMOTE_ADDR'))
+            $ipaddress = getenv('REMOTE_ADDR');
+        else
+            $ipaddress = '0.0.0.0';
+        return $ipaddress;
+    }
     public function recomendations()
     {
         return view('usr_profile.recomendation');
@@ -344,5 +388,50 @@ class UserController extends Controller
         ]);
         return redirect('/partners')->with('success','Recomandations sent successfuly');
     }
+    public function documentArea()
+    {
+        
+        $userId = Auth::guard('client')->user()->id;
+        $cuppons = DiscountCuppon::all();
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='documents_area';
+        return view('usr_profile.coming_soon',compact('userInfo','route','cuppons'));
+    }
+    public function course()
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $cuppons = DiscountCuppon::all();
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='activities';
+        return view('usr_profile.coming_soon',compact('userInfo','route','cuppons'));
+    }   
+    public function contacts()
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $cuppons = DiscountCuppon::all();
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='my_contacts';
+        return view('usr_profile.coming_soon',compact('userInfo','route','cuppons'));
+    }   
+    public function security()
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $cuppons = DiscountCuppon::all();
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='security';
+        return view('usr_profile.coming_soon',compact('userInfo','route','cuppons'));
+    }   
     
 }

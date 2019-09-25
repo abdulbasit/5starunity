@@ -215,33 +215,33 @@
                             <div id="follow-us-footer">
                                 <ul>
                                     <li>
-                                        <a target="_blank" href="#" title="">
+                                        <a target="_blank" href="https://www.linkedin.com/company/47984332/" title="">
                                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a target="_blank" href="#" title="">
+                                        <a target="_blank" href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163" title="">
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a target="_blank" href="#" title="">
+                                        <a target="_blank" href="https://twitter.com/5starUnity" title="">
                                             <i class="fa fa-twitter" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a target="_blank" href="#" title="">
+                                        <a target="_blank" href="https://www.instagram.com/5starunity/" title="">
                                             <i class="fa fa-instagram" aria-hidden="true"></i>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a target="_blank" href="#" title="">
-                                            <i class="fa fa-xing" aria-hidden="true"></i>
+                                        <a target="_blank" href="https://www.pinterest.at/5starUnity/" title="">
+                                            <i class="fa fa-pinterest" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a target="_blank" href="#" title="">
+                                        <a target="_blank" href="https://www.youtube.com/channel/UC8LLdXLjsYPxCRl5mT0eQqQ" title="">
                                             <i class="fa fa-youtube-play" aria-hidden="true"></i>
                                         </a>
                                     </li>

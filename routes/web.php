@@ -71,17 +71,22 @@ Auth::routes();
         Route::get('user/refer/{filters}', 'UserController@refer')->name('user.refer');
         Route::get('promotions', 'UserController@promotions')->name('promotions');
         Route::get('partners', 'UserController@partners')->name('partners');
+        Route::get('partner/redirect/{id}', 'UserController@redirectToUrl')->name('partner.redirect');
         Route::get('recomendations', 'UserController@recomendations')->name('recomendations');
         Route::post('recomendations/save', 'UserController@savecomadation')->name('recomendations.save');
         Route::post('post-comment', 'BlogController@post_comment')->name('post-comment');
         Route::post('lottery/purchase', 'LotteryController@purchaseLottery')->name('lottery.purchase');
         Route::get('lottery/user/purchased', 'LotteryController@userPurchasedLotteries')->name('lottery.user.purchased');
 
+        Route::get('documents', 'UserController@documentArea')->name('documents');
+        Route::get('course', 'UserController@course')->name('course');
+        Route::get('contacts', 'UserController@contacts')->name('contacts');
+        Route::get('security', 'UserController@security')->name('security');
 
         Route::get('promotions', 'CompanyController@index')->name('promotions');
         Route::get('partner/detail/{id}', 'CompanyController@detail')->name('partner.detail');
         Route::get('partner/bonus/{id}', 'CompanyController@bonusTalerAdd')->name('partner.bonus');
-
+        
         Route::get('wallet', 'WalletController@index')->name('wallet');
         Route::get('wallet/filter/{type}', 'WalletController@index')->name('wallets.filter');
         Route::get('lots/numbers/{id}', 'WalletController@detail')->name('lots.numbers');
