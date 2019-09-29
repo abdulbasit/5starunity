@@ -101,7 +101,7 @@
                             <span class="product_class" id="product_class"></span>
                         </div>
                         <div class="col-md-3">
-                            <input required="required" value="2.5" type="text" id="factor" class="form-control" placeholder="Enter factor eg.(2.3)"  name="factor" readonly="readonly">
+                            <input required="required" value="5.4" type="text" id="factor" class="form-control" placeholder="Enter factor eg.(2.3)"  name="factor" readonly="readonly">
                             <small class="text-muted"  style="position: relative">Factor</small>
                         </div>
                     </div>

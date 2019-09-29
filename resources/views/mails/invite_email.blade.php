@@ -6,7 +6,7 @@
         <tr>
           <td valign="top">
             <table class="innermain" cellpadding="0" width="580" cellspacing="0" border="0"
-            bgcolor="#F4F7FA" align="center" style="margin:0 auto; table-layout: fixed;">
+            bgcolor="#F4F7FA" align="justify" style="margin:0 auto; table-layout: fixed;">
               <tbody>
                 <!-- START of MAIL Content -->
                 <tr>
@@ -18,9 +18,9 @@
                           <td colspan="2" height="30"></td>
                         </tr>
                         <tr>
-                          <td valign="top" align="center">
-                            <a href="5starunity.com" style="display:inline-block; cursor:pointer; text-align:center;">
-                              <img src="{{ asset('images/logo-5starunity.png')}}"  height="50" width="150" border="0" alt="5Starunity">
+                          <td valign="top" align="justify">
+                            <a href="5starunity.com" style="display:inline-block; cursor:pointer; text-align:justify;">
+                              <img src="{{ asset('images/logo-5starunity.png')}}"  height="50" width="200" border="0" alt="5Starunity">
                             </a>
                           </td>
                         </tr>
@@ -38,7 +38,7 @@
                           <td height="40"></td>
                         </tr>
                         <tr style="font-family: -apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif; color:#4E5C6E; font-size:14px; line-height:20px; margin-top:20px;">
-                          <td class="content" colspan="2" valign="top" align="center" style="padding-left:90px; padding-right:90px;">
+                          <td class="content" colspan="2" valign="top" align="justify" style="padding-left:90px; padding-right:90px;">
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
                               <tbody>
                                 <tr>
@@ -50,8 +50,8 @@
                                   <td height="30" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
-                                      EINLADUNG 
+                                  <td align="justify"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
+                                      Einladung zur Community 
                                     </span>
                                   </td>
                                 </tr>
@@ -65,11 +65,12 @@
                                   <td height="24" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
+                                  <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
                                     {{-- <span style="text-align:left">Hi <b></b>,<br /></span> --}}
                                     {{$email->sender_name}} lädt dich ein der 5starUnity-Community in seinem Team beizutreten. <br />
                                     <br /> 
                                     Es wäre uns eine Ehre deine Stärken bei uns zu wissen und mit Euch gemeinsam vielen Erfindern, Gründern und Entwicklern helfen zu können.
+                                  <br />
                                   <br />
                                   Zur Erstellung eines <strong>kostenfreien Accounts</strong> klicke bitte auf folgenden Link:   
                                   </span>
@@ -79,7 +80,7 @@
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td valign="top" width="48%" align="center"> <span>
+                                  <td valign="top" width="48%" align="justify"> <span>
                                     <a href="{{URL::to('/register?invitee='.$email->verification_code)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">KOSTENFREIEN ACCOUNT ANLEGEN </a>
                                     </span>
                                   </td>
@@ -88,7 +89,7 @@
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center">
+                                  <td align="justify">
                                     {{-- <img src="https://s3.amazonaws.com/app-public/5Starunity-notification/hr.png" width="54" --}}
                                     {{-- height="2" border="0"> --}}
                                   </td>
@@ -97,11 +98,13 @@
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center">
+                                  <td align="justify">
                                     <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
                                         Diese Einladung wurde auf Wunsch des oben genanntem Community-Mitglied an Sie versendet, welches Sie auf unsere Gemeinschaft hinweisen möchte. 
                                         <br />
+                                        <br />
                                         Sollten Sie kein Interesse an einer Teilnahme haben oder der falsche Adressat sein, können Sie diese Mail einfach ignorieren; es finden keine automatisierten Folgemails, eine Aufnahme in irgendeine Datenbank oder sonstiges statt. 
+                                        <br />
                                         <br />
                                         Für weitere Anliegen steht Ihnen unser Service-Team gerne jederzeit zur Verfügung.   
                                     </p>
