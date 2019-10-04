@@ -486,7 +486,7 @@ label.error {
                     <div class="fieldset-content">
                         <div class="row">
                             <div class="col-xs-12 terms_cond" id="terms">
-                                {!!$page->page_content!!}
+                                {!!@$page->page_content!!}
                             </div>
                         </div>
                     </div>

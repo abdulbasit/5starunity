@@ -27,8 +27,8 @@ class AddColumnsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->removeColumn('status');
-            $table->removeColumn('verification');
+            $table->dropColumn('status');
+            $table->dropColumn('verification');
         });
     }
 }

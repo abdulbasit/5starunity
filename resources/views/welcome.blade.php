@@ -327,47 +327,49 @@
         </div>
         <div class="container">
             <div class="row item active">
-                @foreach($testimonialData as $testimonial)
-                <div class="col-md-4 col-xs-12">
-                    <div class="testimonial-box">
-                        <div class="carousel-caption">
-                            <div class="who" id="who_{{$testimonial->id}}" style="  border-radius: 1000px; width: 130px; height: 130px; overflow: hidden; margin-left: 25%;">
-                                <img class="lazy" src="{{ URL::to('/') }}/uploads/testimonials/{{$testimonial->image}}"><br />
-                            </div>
-                            <p style="text-align:justify; margin-top:15px">
-                                <?php
-                                if (strlen($testimonial->detail) >= 180)
-                                {
-                                    echo substr($testimonial->detail, 0, 180)."...";
-                                    ?>
-                                    <span><a style="text-transform:lowercase; color:blue;float: right" onclick="donorDetail({{$testimonial->id}})" id="dMore" style="color:blue"> {{ __('menu.more')}} </a></span>
-                                <?php
-                                }
-                                else
-                                {
-                                    echo $testimonial->detail;
-                                }
-                                ?>
+                {{-- {{dd(count($testimonialData))}} --}}
+                @if(count($testimonialData)>0)
+                    @foreach($testimonialData as $testimonial)
+                        <div class="col-md-4 col-xs-12">
+                            <div class="testimonial-box">
+                                <div class="carousel-caption">
+                                    <div class="who" id="who_{{@$testimonial->id}}" style="  border-radius: 1000px; width: 130px; height: 130px; overflow: hidden; margin-left: 25%;">
+                                        <img class="lazy" src="{{ URL::to('/') }}/uploads/testimonials/{{@$testimonial->image}}"><br />
+                                    </div>
+                                    <p style="text-align:justify; margin-top:15px">
+                                        <?php
+                                        if (strlen(@$testimonial->detail) >= 180)
+                                        {
+                                            echo substr(@$testimonial->detail, 0, 180)."...";
+                                            ?>
+                                            <span><a style="text-transform:lowercase; color:blue;float: right" onclick="donorDetail({{@$testimonial->id}})" id="dMore" style="color:blue"> {{ __('menu.more')}} </a></span>
+                                        <?php
+                                        }
+                                        else
+                                        {
+                                            echo @$testimonial->detail;
+                                        }
+                                        ?>
 
-                                <div id="{{$testimonial->id}}" style="display:none">{{$testimonial->detail}}
-                                    <div class="who-name pull-right" style="margin-top:50px">
-                                        <strong> {{$testimonial->name}} </strong> <br/>
-                                        <i>{{$testimonial->title}}</i>
+                                        <div id="{{@$testimonial->id}}" style="display:none">{{@$testimonial->detail}}
+                                            <div class="who-name pull-right" style="margin-top:50px">
+                                                <strong> {{@$testimonial->name}} </strong> <br/>
+                                                <i>{{@$testimonial->title}}</i>
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <div class="who-name">
+                                        <strong> {{@$testimonial->name}} </strong> <br/>
+                                        <i>{{@$testimonial->title}}</i>
                                     </div>
                                 </div>
-                            </p>
-                            <div class="who-name">
-                                <strong> {{$testimonial->name}} </strong> <br/>
-                                <i>{{$testimonial->title}}</i>
                             </div>
                         </div>
-                    </div>
-                </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
-
     <section class="homepage-newsletter ContentContainer">
         <div class="container-fluid newsletter-wrapper">
             <div class="container">
@@ -431,7 +433,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">
-                    <div class="who" id="who_{{$testimonial->id}}" style="    border-radius: 1000px;
+                    <div class="who" id="who_{{@$testimonial->id}}" style="    border-radius: 1000px;
                             width: 130px;
                             height: 130px;
                             overflow: hidden;
