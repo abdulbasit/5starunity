@@ -92,7 +92,6 @@ class UserController extends Controller
                     $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_front);
                     $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_back);
                     // Close ZipArchive   
-                    dd($zip);  
                     $zip->close();
                 }
                 
