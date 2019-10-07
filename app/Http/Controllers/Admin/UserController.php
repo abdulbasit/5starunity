@@ -79,15 +79,16 @@ class UserController extends Controller
         if($type=='idproof')
         {
            
-            $zip_file = 'invoices.zip'; // Name of our archive to download
+            $zip_file = public_path('uploads/users/documents_proofs/id_proof/').'id.zip'; // Name of our archive to download
 
             // // // Initializing PHP class
             $zip = new \ZipArchive();
             $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
+            $invoice_file = 'invoices/aaa001.pdf';
             dd($zip);
             // // Adding file: second parameter is what will the path inside of the archive
             // // So it will create another folder called "storage/" inside ZIP, and put the file there.
-            // $zip->addFile(public_path($zip_file), $zip_file);
+            $zip->addFile(public_path($invoice_file), $invoice_file);
            
             // $zip->close();
 //  dd($zip);
