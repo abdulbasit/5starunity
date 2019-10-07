@@ -13,6 +13,7 @@ use  App\Models\TransLog;
 use  App\Models\BlogComment;
 use App\Traits\EmailTrait;
 use Auth;
+use ZipArchive;
 class UserController extends Controller
 {
     use EmailTrait;
@@ -78,24 +79,22 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $file_names = public_path('uploads/users/documents_proofs/id_proof/').$documents->id_front;
-
-            //Archive name
-            $archive_file_name='iMUST_Products.zip';
-
-            //Download Files path
-            $file_path=public_path('uploads/users/documents_proofs');
-            header("Pragma: public");
-            header("Expires: 0");
-            header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-            header("Cache-Control: public");
-            header("Content-Description: File Transfer");
-            header("Content-type: application/octet-stream");
-            header("Content-Disposition: attachment; filename=\"".$file_names."\"");
-            header("Content-Transfer-Encoding: binary");
-            header("Content-Length: ".filesize($file_path.$file_names));
-            ob_end_flush();
-            @readfile($file_path.$file_names);
+            $name = 'id_documents';
+            $zipname = base_path()."/".uniqid().rand(1,999).$name.'.zip';
+            $zip = new ZipArchive;
+            $zip->open($zipname, ZipArchive::CREATE);
+            if ($handle = opendir(base_path()."/")) {
+                $zip->addFile(public_path()."/".$documents->id_front);
+              closedir($handle);
+            }
+        
+            $zip->close();
+            header('Content-Type: application/zip');
+            header("Content-Disposition: attachment; filename='php-sdk.zip");
+            header('Content-Length: ' . filesize($zipname));
+            //header("Location: php-merchantpay.zip");
+            readfile($zipname);
+            unlink($zipname);
         }
         else
         {
