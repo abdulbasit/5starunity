@@ -83,11 +83,11 @@ class UserController extends Controller
             $zipname = base_path()."/".uniqid().rand(1,999).'-'.$name.'.zip';
             $zip = new ZipArchive;
             $zip->open($zipname, ZipArchive::CREATE);
-            $dir_path = "/public/uploads/users/documents_proofs/id_proof";
+            $dir_path = public_path()."/uploads/users/documents_proofs/id_proof";
             $zip_path = "/".$documents->id_front."/";
             // $this->addToZip($zip,$dir_path,$zip_path);
             // if (file_exists($dir_path.$zip_path) && is_file($dir_path.$zip_path))
-            $zip->addFile($dir_path, $zip_path);
+            // $zip->addFile($dir_path, $zip_path);
             // dd($dir_path, $zip_path);
             $zip->close();
             $name = $name.'.zip';
