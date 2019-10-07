@@ -81,7 +81,7 @@ class UserController extends Controller
         {
             $name = 'dd';
             $zipname = base_path()."/".uniqid().rand(1,999).'-'.$name.'.zip';
-            dd($zipname);
+    
             $zip = new ZipArchive;
             $zip->open($zipname, ZipArchive::CREATE);
             $dir_path = public_path()."/uploads/users/documents_proofs/id_proof";
