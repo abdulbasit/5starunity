@@ -78,7 +78,7 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            dd($documents->id_front);
+            dd($documents->id_front,$documents->id_back);
             // $zip_file = 'invoices.zip'; // Name of our archive to download
 
             // // // Initializing PHP class
