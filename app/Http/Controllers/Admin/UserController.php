@@ -13,7 +13,7 @@ use App\Models\TransLog;
 use App\Models\BlogComment;
 use App\Traits\EmailTrait;
 use Auth;
-use File;
+use ZipArchive;
 class UserController extends Controller
 {
     use EmailTrait;
@@ -80,13 +80,31 @@ class UserController extends Controller
         if($type=='idproof')
         {
            
-            $headers = ["Content-Type"=>"application/zip"];
-            $fileName = $id.".zip"; // name of zip
-            Zipper::make(public_path('uploads/users/documents_proofs/id_proof').$id.'.zip') //file path for zip file
-                    ->add(public_path('uploads/users/documents_proofs/id_proof').$documents->id_front.$documents->id_back.'/')->close(); //files to be zipped
-    
-            return response()
-            ->download(public_path(public_path('uploads/users/documents_proofs/id_proof').$fileName),$fileName, $headers);
+            // if($request->has('download')) {
+                // Define Dir Folder
+                $public_dir=public_path();
+                // Zip File Name
+                $zipFileName = 'AllDocuments.zip';
+                // Create ZipArchive Obj
+                $zip = new ZipArchive;
+                if ($zip->open($public_dir . '/' . $zipFileName, ZipArchive::CREATE) === TRUE) {
+                    // Add File in ZipArchive
+                    $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_front);
+                    $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_back);
+                    // Close ZipArchive     
+                    $zip->close();
+                }
+                // Set Header
+                $headers = array(
+                    'Content-Type' => 'application/octet-stream',
+                );
+                $filetopath=$public_dir.'/'.$zipFileName;
+                // Create Download Response
+                if(file_exists($filetopath)){
+                    return response()->download($filetopath,$zipFileName,$headers);
+                }
+            // }
+            // return view('createZip');
         }
         else
         {
