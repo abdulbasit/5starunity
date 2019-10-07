@@ -84,7 +84,7 @@ class UserController extends Controller
             // $zip = new \ZipArchive();
             // $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
 
-            $id_proof_file = public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->res_proof;
+            $id_proof_file = public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->id_front;
                 $info = pathinfo($id_proof_file);
                 $ext = $info['extension'];
             $headers = array(
@@ -103,7 +103,7 @@ class UserController extends Controller
         {
             if($documents->type=='res')
             {
-                $file = public_path(). "/uploads/users/documents_proofs/res_proof/".$documents->res_proof;
+                $file = public_path(). "/uploads/users/documents_proofs/".$documents->res_proof;
                 $info = pathinfo($file);
                 $ext = $info['extension'];
             }
