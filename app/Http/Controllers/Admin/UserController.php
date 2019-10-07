@@ -89,7 +89,6 @@ class UserController extends Controller
             $front = $documents->id_front;
             $back = $documents->id_back;
 
-            dd($front);
             // Adding file: second parameter is what will the path inside of the archive
             // So it will create another folder called "storage/" inside ZIP, and put the file there.
             $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$front), $front);
@@ -102,9 +101,6 @@ class UserController extends Controller
             //header("Location: php-merchantpay.zip");
             readfile($zip_file);
             unlink($zip_file);
-
-            // We return the file immediately after download
-            // return response()->download($zip_file);
         }
         else
         {
