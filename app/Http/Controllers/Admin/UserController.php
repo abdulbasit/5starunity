@@ -79,10 +79,22 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $zipname = base_path()."/".uniqid().rand(1,999).'-.zip';
+            $name = 'dd';
+            $zipname = base_path()."/".uniqid().rand(1,999).'-'.$name.'.zip';
             $zip = new ZipArchive;
             $zip->open($zipname, ZipArchive::CREATE);
-            dd($zip);
+            $dir_path = public_path()."/uploads/users/documents_proofs/id_proof";
+            $zip_path = "/".$documents->id_front."/";
+            // $this->addToZip($zip,$dir_path,$zip_path);
+            $zip->addFile($dir_path.$zip_path);
+            $zip->close();
+            $name = $name.'.zip';
+            header('Content-Type: application/zip');
+            header("Content-Disposition: attachment; filename=$name");
+            header('Content-Length: ' . filesize($zipname));
+            //header("Location: php-merchantpay.zip");
+            readfile($zipname);
+            unlink($zipname);
         }
         else
         {
