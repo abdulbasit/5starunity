@@ -94,6 +94,7 @@ class UserController extends Controller
                     // Close ZipArchive     
                     $zip->close();
                 }
+                dd($zip);
                 // Set Header
                 $headers = array(
                     'Content-Type' => 'application/octet-stream',
