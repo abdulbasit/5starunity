@@ -79,7 +79,7 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $zipname = base_path()."/plugin_docs/MerchantPayDropin".uniqid().rand(1,999).'-.zip';
+            $zipname = base_path()."/".uniqid().rand(1,999).'-.zip';
             $zip = new ZipArchive;
             $zip->open($zipname, ZipArchive::CREATE);
             dd($zip);
