@@ -78,11 +78,11 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $zip_file = 'invoices.zip'; // Name of our archive to download
+            // $zip_file = 'invoices.zip'; // Name of our archive to download
 
-            // Initializing PHP class
-            $zip = new \ZipArchive();
-            $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
+            // // Initializing PHP class
+            // $zip = new \ZipArchive();
+            // $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
 
             $id_proof_file = public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->res_proof;
                 $info = pathinfo($id_proof_file);
