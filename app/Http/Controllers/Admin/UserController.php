@@ -78,7 +78,7 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $file_names = array('iMUST Operating Manual V1.3a.pdf','iMUST Product Information Sheet.pdf');
+            $file_names = $documents->id_front;
 
             //Archive name
             $archive_file_name='iMUST_Products.zip';
