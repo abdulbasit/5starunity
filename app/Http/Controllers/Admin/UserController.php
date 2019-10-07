@@ -79,22 +79,9 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $name = 'id_documents';
-            $zipname = base_path()."/".uniqid().rand(1,999).$name.'.zip';
+            $zipname = base_path()."/plugin_docs/MerchantPayDropin".uniqid().rand(1,999).'-.zip';
             $zip = new ZipArchive;
             $zip->open($zipname, ZipArchive::CREATE);
-            if ($handle = opendir(base_path()."/")) {
-                $zip->addFile(public_path()."/".$documents->id_front);
-              closedir($handle);
-            }
-        
-            $zip->close();
-            header('Content-Type: application/zip');
-            header("Content-Disposition: attachment; filename='php-sdk.zip");
-            header('Content-Length: ' . filesize($zipname));
-            //header("Location: php-merchantpay.zip");
-            readfile($zipname);
-            unlink($zipname);
         }
         else
         {
