@@ -86,8 +86,9 @@ class UserController extends Controller
             $dir_path = public_path()."/uploads/users/documents_proofs/id_proof";
             $zip_path = "/".$documents->id_front."/";
             // $this->addToZip($zip,$dir_path,$zip_path);
-            if (file_exists($dir_path.$zip_path) && is_file($dir_path.$zip_path))
+            // if (file_exists($dir_path.$zip_path) && is_file($dir_path.$zip_path))
             $zip->addFile($dir_path, $zip_path);
+            dd($dir_path, $zip_path);
             $zip->close();
             $name = $name.'.zip';
             header('Content-Type: application/zip');
