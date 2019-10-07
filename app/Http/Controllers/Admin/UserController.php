@@ -90,7 +90,7 @@ class UserController extends Controller
             //     $zip->addFile($file, $images);
             // }      
             $zip = $zip->open('AllDocuments.zip', ZipArchive::CREATE);
-            $zip->addFile($file, $documents->id_front);  
+            $zip->addFile($file, "$documents->id_front");  
             $zip->close();
 
             
