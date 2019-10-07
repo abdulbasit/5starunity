@@ -78,7 +78,7 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $zip_file = public_path().'AllDocuments.zip'; // Name of our archive to download
+            $zip_file = public_path().'/AllDocuments.zip'; // Name of our archive to download
 
             // // Initializing PHP class
             $zip = new \ZipArchive();
