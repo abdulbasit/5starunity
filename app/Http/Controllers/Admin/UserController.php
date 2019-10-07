@@ -76,27 +76,33 @@ class UserController extends Controller
     {
 
         $documents = UserDocument::where('id',$id)->first();
-
+        $zipName = date('ymdhis')."_".$documents->user->name."-".$documents->user->last_name."-"."documents";
         if($type=='idproof')
         {
 
-            $zip_file = 'invoices.zip'; // Name of our archive to download
+            $zip_file = str_replace(" ","-",$zipName).'.zip'; // Name of our archive to download
 
             // Initializing PHP class
             $zip = new \ZipArchive();
             $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
             
-            $invoice_file = $documents->id_front;
-            $invoice_file1 = $documents->id_back;
+            $front = $documents->id_front;
+            $back = $documents->id_back;
             // Adding file: second parameter is what will the path inside of the archive
             // So it will create another folder called "storage/" inside ZIP, and put the file there.
-            $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$invoice_file), $invoice_file);
-            $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$invoice_file1), $invoice_file1);
+            $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$front), $front);
+            $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$back), $back);
             $zip->close();
             
+            header('Content-Type: application/zip');
+            header("Content-Disposition: attachment; filename=$zip_file");
+            header('Content-Length: ' . filesize($zip_file));
+            //header("Location: php-merchantpay.zip");
+            readfile($zip_file);
+            unlink($zip_file);
+
             // We return the file immediately after download
-            return response()->download($zip_file);
-          
+            // return response()->download($zip_file);
         }
         else
         {
