@@ -85,12 +85,17 @@ class UserController extends Controller
 
             //Download Files path
             $file_path=public_path('uploads/users/documents_proofs');
-            header("Content-type: application/zip"); 
-            header("Content-Disposition: attachment; filename=$archive_file_name");
-            header("Content-length: " . filesize($archive_file_name));
-            header("Pragma: no-cache"); 
-            header("Expires: 0"); 
-            readfile("$archive_file_name");
+            header("Pragma: public");
+            header("Expires: 0");
+            header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+            header("Cache-Control: public");
+            header("Content-Description: File Transfer");
+            header("Content-type: application/octet-stream");
+            header("Content-Disposition: attachment; filename=\"".$file_names."\"");
+            header("Content-Transfer-Encoding: binary");
+            header("Content-Length: ".filesize($file_path.$file_names));
+            ob_end_flush();
+            @readfile($file_path.$file_names);
         }
         else
         {
