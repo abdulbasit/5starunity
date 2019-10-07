@@ -79,25 +79,29 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $name = 'dd';
-            $zipname = base_path()."/".uniqid().rand(1,999).'-'.$name.'.zip';
-    
+
+            $file= public_path(). "/uploads/users/documents_proofs/id_proof/"; 
+            $zipFileName = 'AllDocuments.zip';
             $zip = new ZipArchive;
-            $zip->open($zipname, ZipArchive::CREATE);
-            $dir_path = public_path()."/uploads/users/documents_proofs/id_proof";
-            $zip_path = "/".$documents->id_front."/";
-            // $this->addToZip($zip,$dir_path,$zip_path);
-            // if (file_exists($dir_path.$zip_path) && is_file($dir_path.$zip_path))
-            $zip->addFile($dir_path, $zip_path);
-            // dd($dir_path, $zip_path);
+            
+            // if ($zip->open($file . '/' . $zipFileName, ZipArchive::CREATE) === TRUE) {
+            //     foreach($articles as $article) {
+            //       $images = $article->image;
+            //     $zip->addFile($file, $images);
+            // }      
+            $zip->addFile($file, $documents->id_front);  
             $zip->close();
-            $name = $name.'.zip';
-            header('Content-Type: application/zip');
-            header("Content-Disposition: attachment; filename=$name");
-            header('Content-Length: ' . filesize($zipname));
-            //header("Location: php-merchantpay.zip");
-            readfile($zipname);
-            unlink($zipname);
+
+            
+            // Set Header
+            $headers = array(
+                'Content-Type' => 'application/octet-stream',
+            );
+            $filetopath=$file.'/'.$zipFileName;
+            // Create Download Response
+            if(file_exists($filetopath)){
+                return response()->download($file,$zipFileName,$headers);
+            }
         }
         else
         {
