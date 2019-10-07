@@ -84,12 +84,12 @@ class UserController extends Controller
             // // // Initializing PHP class
             $zip = new \ZipArchive();
             $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
-            // $invoice_file = 'invoices/aaa001.pdf';
-            dd($zip);
+            $id_front = $documents->id_front;
+            
             // // Adding file: second parameter is what will the path inside of the archive
             // // So it will create another folder called "storage/" inside ZIP, and put the file there.
-            // $zip->addFile(public_path($invoice_file), $invoice_file);
-           
+            $zip->addFile(storage_path($id_front), $id_front);
+           dd($zip);
             // $zip->close();
 //  dd($zip);
             // We return the file immediately after download
