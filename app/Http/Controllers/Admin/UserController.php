@@ -88,10 +88,10 @@ class UserController extends Controller
             
             // Adding file: second parameter is what will the path inside of the archive
             // So it will create another folder called "storage/" inside ZIP, and put the file there.
-            $zip->addFile(public_path("/uploads/users/documents_proofs/id_proof/".$invoice_file), $invoice_file);
-            dd($zip);
+            $zip->addFile(public_path($invoice_file), $invoice_file);
+           
             $zip->close();
-
+ dd($zip);
             // We return the file immediately after download
             return response()->download($zip_file);
         }
