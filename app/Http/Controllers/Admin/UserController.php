@@ -78,20 +78,19 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $zip_file = public_path().'/uploads/users/documents_proofs/AllDocuments.zip'; // Name of our archive to download
+            $file_names = array('iMUST Operating Manual V1.3a.pdf','iMUST Product Information Sheet.pdf');
 
-            // // Initializing PHP class
-            $zip = new \ZipArchive();
-            $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
-            $invoice_file = public_path('uploads/users/documents_proofs/id_proof/').$documents->id_front;
-            // Adding file: second parameter is what will the path inside of the archive
-            // So it will create another folder called "storage/" inside ZIP, and put the file there.
-            $zip->addFile(public_path($invoice_file), $invoice_file);
-           
-            // $zip->close();
-//  dd($zip);
-            // We return the file immediately after download
-            return response()->download($zip_file);
+            //Archive name
+            $archive_file_name='iMUST_Products.zip';
+
+            //Download Files path
+            $file_path=public_path('uploads/users/documents_proofs');
+            header("Content-type: application/zip"); 
+            header("Content-Disposition: attachment; filename=$archive_file_name");
+            header("Content-length: " . filesize($archive_file_name));
+            header("Pragma: no-cache"); 
+            header("Expires: 0"); 
+            readfile("$archive_file_name");
         }
         else
         {
