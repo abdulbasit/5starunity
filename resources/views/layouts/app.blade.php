@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -258,6 +259,7 @@
                 </div>
             </div>
         </div>
+        @include('cookieConsent::index')
         {{-- <div class="investoren_support_div" data-toggle="modal" data-target="#KontactForm" id="BtnInvestorenSupport">
             <span>Investor Support</span>
             <img src="graphics/layout/LiveChat.svg" class="iconSupport">
