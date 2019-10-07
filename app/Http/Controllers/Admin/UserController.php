@@ -9,10 +9,11 @@ use App\Models\LotteryContestent;
 use App\Models\Recomendations;
 use App\Models\Vallet;
 use App\Models\UserDocument;
-use  App\Models\TransLog;
-use  App\Models\BlogComment;
+use App\Models\TransLog;
+use App\Models\BlogComment;
 use App\Traits\EmailTrait;
 use Auth;
+use File;
 class UserController extends Controller
 {
     use EmailTrait;
