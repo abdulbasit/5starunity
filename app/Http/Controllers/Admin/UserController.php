@@ -79,21 +79,13 @@ class UserController extends Controller
         if($type=='idproof')
         {
            
-            $zip_file = public_path('uploads/users/documents_proofs/').'id.zip'; // Name of our archive to download
-
-            // // // Initializing PHP class
-            $zip = new \ZipArchive();
-            $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
-            $id_front = $documents->id_front;
-            
-            // // Adding file: second parameter is what will the path inside of the archive
-            // // So it will create another folder called "storage/" inside ZIP, and put the file there.
-            $zip->addFile(storage_path($id_front), $id_front);
-        //    dd($zip);
-            $zip->close();
-//  dd($zip);
-            // We return the file immediately after download
-            return response()->download($zip_file);
+            $headers = ["Content-Type"=>"application/zip"];
+            $fileName = $id.".zip"; // name of zip
+            Zipper::make(public_path('uploads/users/documents_proofs/id_proof').$id.'.zip') //file path for zip file
+                    ->add(public_path('uploads/users/documents_proofs/id_proof').$documents->id_front.$documents->id_back.'/')->close(); //files to be zipped
+    
+            return response()
+            ->download(public_path(public_path('uploads/users/documents_proofs/id_proof').$fileName),$fileName, $headers);
         }
         else
         {
