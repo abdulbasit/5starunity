@@ -88,6 +88,8 @@ class UserController extends Controller
             
             $front = $documents->id_front;
             $back = $documents->id_back;
+
+            dd($front);
             // Adding file: second parameter is what will the path inside of the archive
             // So it will create another folder called "storage/" inside ZIP, and put the file there.
             $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$front), $front);
@@ -106,21 +108,9 @@ class UserController extends Controller
         }
         else
         {
-            if($documents->type=='res')
-            {
-                $file = public_path(). "/uploads/users/documents_proofs/res_proof/".$documents->res_proof;
-                $info = pathinfo($file);
-                $ext = $info['extension'];
-            }
-            else
-            {
-                $file= public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->res_proof;
-                $info = pathinfo($file);
-                $ext = $info['extension'];
-            }
-            $headers = array(
-                'Content-Type: application/'.$ext,
-            );
+            $file = public_path(). "/uploads/users/documents_proofs/res_proof/".$documents->res_proof;
+            $info = pathinfo($file);
+            $ext = $info['extension'];
             return response()->download($file );
         }
 
