@@ -78,7 +78,7 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
-            $file_names = $documents->id_front;
+            $file_names = public_path('uploads/users/documents_proofs/id_proof/').$documents->id_front;
 
             //Archive name
             $archive_file_name='iMUST_Products.zip';
