@@ -84,16 +84,20 @@ class UserController extends Controller
             $zip = new \ZipArchive();
             $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
 
-            $invoice_file = public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->res_proof;
-            
+            $id_proof_file = public_path(). "/uploads/users/documents_proofs/id_proof/".$documents->res_proof;
+                $info = pathinfo($id_proof_file);
+                $ext = $info['extension'];
+            $headers = array(
+                    'Content-Type: application/'.$ext,
+                );
             // Adding file: second parameter is what will the path inside of the archive
             // So it will create another folder called "storage/" inside ZIP, and put the file there.
-            $zip->addFile(public_path($invoice_file), $invoice_file);
+            // $zip->addFile(public_path($invoice_file), $invoice_file);
            
-            $zip->close();
- dd($zip);
+            // $zip->close();
+//  dd($zip);
             // We return the file immediately after download
-            return response()->download($zip_file);
+            return response()->download($id_proof_file);
         }
         else
         {
