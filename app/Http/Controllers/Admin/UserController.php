@@ -98,6 +98,7 @@ class UserController extends Controller
             } else {
                 echo 'failed, code:' . $res;
             }
+            dd($res);
             $zip->addFile($file, "1570475224_5star_profile_id_front.jpg");  
             $zip->close();
 
