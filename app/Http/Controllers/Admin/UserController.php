@@ -89,8 +89,8 @@ class UserController extends Controller
             //       $images = $article->image;
             //     $zip->addFile($file, $images);
             // }      
-            $zip = $zip->open('AllDocuments.zip', ZipArchive::CREATE);
-            // $zip->addFile( "app.yaml");  
+            // $zip = $zip->open('AllDocuments.zip', ZipArchive::CREATE);
+            $zip->addFile($file, "1570475224_5star_profile_id_front.jpg");  
             $zip->close();
 
             
