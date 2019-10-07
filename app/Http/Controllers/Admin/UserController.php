@@ -80,39 +80,23 @@ class UserController extends Controller
         if($type=='idproof')
         {
 
-            $file= public_path(). "/uploads/users/documents_proofs/id_proof/"; 
-            $zipFileName = 'AllDocuments.zip';
-            $zip = new ZipArchive;
-            
-            // if ($zip->open($file . '/' . $zipFileName, ZipArchive::CREATE) === TRUE) {
-            //     foreach($articles as $article) {
-            //       $images = $article->image;
-            //     $zip->addFile($file, $images);
-            // }      
-            // $zip = $zip->open('AllDocuments.zip', ZipArchive::CREATE);
-            ob_clean();
-            $res = $zip->open('AllDocuments.zip');
-            if ($res === TRUE) {
-                echo 'ok';
-                // $zip->extractTo('test');
-                // $zip->close();
-            } else {
-                echo 'failed, code:' . $res;
-            }
-            dd($res);
-            $zip->addFile($file, "1570475224_5star_profile_id_front.jpg");  
-            $zip->close();
+            $zip_file = 'invoices.zip'; // Name of our archive to download
 
+            // Initializing PHP class
+            $zip = new \ZipArchive();
+            $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
             
-            // Set Header
-            $headers = array(
-                'Content-Type' => 'application/octet-stream',
-            );
-            $filetopath=$file.'/'.$zipFileName;
-            // Create Download Response
-            if(file_exists($filetopath)){
-                return response()->download($file,$zipFileName,$headers);
-            }
+            $invoice_file = $documents->id_front;
+            $invoice_file1 = $documents->id_back;
+            // Adding file: second parameter is what will the path inside of the archive
+            // So it will create another folder called "storage/" inside ZIP, and put the file there.
+            $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$invoice_file), $invoice_file);
+            $zip->addFile(public_path('uploads/users/documents_proofs/id_proof/'.$invoice_file1), $invoice_file1);
+            $zip->close();
+            
+            // We return the file immediately after download
+            return response()->download($zip_file);
+          
         }
         else
         {
