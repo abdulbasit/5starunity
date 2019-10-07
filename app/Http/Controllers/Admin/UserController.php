@@ -9,11 +9,10 @@ use App\Models\LotteryContestent;
 use App\Models\Recomendations;
 use App\Models\Vallet;
 use App\Models\UserDocument;
-use App\Models\TransLog;
-use App\Models\BlogComment;
+use  App\Models\TransLog;
+use  App\Models\BlogComment;
 use App\Traits\EmailTrait;
 use Auth;
-use ZipArchive;
 class UserController extends Controller
 {
     use EmailTrait;
@@ -79,34 +78,20 @@ class UserController extends Controller
 
         if($type=='idproof')
         {
+            $zip_file = 'AllDocuments.zip'; // Name of our archive to download
+
+            // // Initializing PHP class
+            $zip = new \ZipArchive();
+            $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
+            $invoice_file = public_path('uploads/users/documents_proofs/id_proof/').$documents->id_front;
+            // Adding file: second parameter is what will the path inside of the archive
+            // So it will create another folder called "storage/" inside ZIP, and put the file there.
+            $zip->addFile(public_path($invoice_file), $invoice_file);
            
-            // if($request->has('download')) {
-                // Define Dir Folder
-                $public_dir=public_path();
-                // Zip File Name
-                $zipFileName = 'AllDocuments.zip';
-                // Create ZipArchive Obj
-                $zip = new ZipArchive;
-                // if ($zip->open($public_dir . '/' . $zipFileName, ZipArchive::CREATE) === TRUE) {
-                    // Add File in ZipArchive
-                    // dd(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_front);
-                    $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_front);
-                    // $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_back);
-                    // Close ZipArchive   
-                    $zip->close();
-                // }
-                
-                // Set Header
-                $headers = array(
-                    'Content-Type' => 'application/octet-stream',
-                );
-                $filetopath=$public_dir.'/'.$zipFileName;
-                // Create Download Response
-                if(file_exists($filetopath)){
-                    return response()->download($filetopath,$zipFileName,$headers);
-                }
-            // }
-            // return view('createZip');
+            // $zip->close();
+//  dd($zip);
+            // We return the file immediately after download
+            return response()->download($zip_file);
         }
         else
         {
