@@ -89,8 +89,8 @@ class UserController extends Controller
             // // Adding file: second parameter is what will the path inside of the archive
             // // So it will create another folder called "storage/" inside ZIP, and put the file there.
             $zip->addFile(storage_path($id_front), $id_front);
-           dd($zip);
-            // $zip->close();
+        //    dd($zip);
+            $zip->close();
 //  dd($zip);
             // We return the file immediately after download
             return response()->download($zip_file);
