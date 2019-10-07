@@ -80,7 +80,7 @@ class UserController extends Controller
         if($type=='idproof')
         {
             $name = 'dd';
-            $zipname = base_path()."/".uniqid().rand(1,999).'-'.$name.'.zip';
+            echo $zipname = base_path()."/".uniqid().rand(1,999).'-'.$name.'.zip';
             $zip = new ZipArchive;
             $zip->open($zipname, ZipArchive::CREATE);
             $dir_path = public_path()."/uploads/users/documents_proofs/id_proof";
