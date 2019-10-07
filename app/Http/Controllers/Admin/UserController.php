@@ -91,10 +91,11 @@ class UserController extends Controller
                     // Add File in ZipArchive
                     $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_front);
                     $zip->addFile(public_path('uploads/users/documents_proofs/id_proof'),$documents->id_back);
-                    // Close ZipArchive     
+                    // Close ZipArchive   
+                    dd($zip);  
                     $zip->close();
                 }
-                dd($zip);
+                
                 // Set Header
                 $headers = array(
                     'Content-Type' => 'application/octet-stream',
