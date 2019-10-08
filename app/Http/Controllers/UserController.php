@@ -106,30 +106,30 @@ class UserController extends Controller
         $dob =  date('Y-m-d', strtotime($request->get('dob')));
         if($identity_card_front!="")
         {
-            $file1 = $identity_card_front;
-            $identity_card_front_img_thumbnailPath = public_path('uploads/users/documents_proofs/');
+            $file1 = $identity_card_front; 
+            $identity_card_front_img_thumbnailPath = public_path('uploads/users/documents_proofs/id_proof');
             $file1->getClientOriginalName();
             $file1->getClientOriginalExtension();
             $file1->getRealPath();
             $file1->getSize();
             $file1->getMimeType();
-            $identity_card_front_img = time().'_5star_profile.'.$file1->getClientOriginalExtension();
+            $identity_card_front_img = time().'_5star_profile_id_front.'.$file1->getClientOriginalExtension();
             $file1->move($identity_card_front_img_thumbnailPath, $identity_card_front_img);
         }
         if($identity_card_back!="")
         {
             $file2 = $identity_card_back;
-            $identity_card_back_img_thumbnailPath = public_path('uploads/users/documents_proofs/');
+            $identity_card_back_img_thumbnailPath = public_path('uploads/users/documents_proofs/id_proof');
             $file2->getClientOriginalName();
             $file2->getClientOriginalExtension();
             $file2->getRealPath();
             $file2->getSize();
             $file2->getMimeType();
-            $identity_card_back_img = time().'_5star_profile.'.$file2->getClientOriginalExtension();
+            $identity_card_back_img = time().'_5star_profile_id_back.'.$file2->getClientOriginalExtension();
             $file2->move($identity_card_back_img_thumbnailPath, $identity_card_back_img);
         }
       
-        $idProofImg = public_path('uploads/users/documents_proofs/id_proof');
+        $idProofImg = public_path('uploads/users/documents_proofs/res_proof');
         //delete old files uploaded by user 
         $deleteDocuments = UserDocument::where('user_id',$userId);
         $deleteDocuments->delete();
