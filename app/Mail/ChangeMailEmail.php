@@ -19,7 +19,7 @@ class ChangeMailEmail extends Mailable
 
     public function build()
     {
-        return $this->from('admin@xnowad.com',"5Starunity ".$this->email->subject)
+        return $this->from('admin@xnowad.com',"5Starunity ",$this->email->subject)
                     ->view('mails.change_email')
                     // ->text('mails.demo_plain')
                     ->with(

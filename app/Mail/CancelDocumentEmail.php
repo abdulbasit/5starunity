@@ -20,7 +20,7 @@ class CancelDocumentEmail extends Mailable
 
     public function build()
     {
-        return $this->from($this->email->sender,"5Starunity ".$this->email->subject)
+        return $this->from($this->email->sender,"5Starunity ",$this->email->subject)
                     ->view('mails.admin.cancel_document')
                     ->subject($this->email->subject)
                     ->to($this->email->receiver)

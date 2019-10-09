@@ -20,7 +20,7 @@ class DeleteAccountEmail extends Mailable
 
     public function build()
     {
-        return $this->from($this->email->sender,"5Starunity ".$this->email->subject)
+        return $this->from($this->email->sender,"5Starunity ",$this->email->subject)
                     ->view('mails..admin.delete_account')
                     ->subject($this->email->subject)
                     ->to($this->email->receiver)
