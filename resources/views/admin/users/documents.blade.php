@@ -153,9 +153,9 @@
             $("notes").removeAttr("disabled")
             $("#notes_msg").html("Canceld! ");
             $('#info').modal('hide');
-            // setTimeout(function(){
-            //     location.reload();
-            // },1000);
+            setTimeout(function(){
+                location.reload();
+            },1000);
         });
     });
     function cancel(id)
