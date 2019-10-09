@@ -67,13 +67,13 @@ class UserController extends Controller
     }
     public function cancel($id,Request $request)
     {
+        error_reporting(E_ALL);
         $document_status = UserDocument::where('id',$id)->first();
         $document_status->status ="1";
-        $document_status->notes =$request->get('notes');
-        $data = array("sender_name"=>$document_status->user->name);
-        $emailData = array("to"=>$document_status->user->email,"from_email"=>"no-reply","subject"=>"Account Approved","email_data"=>$data);
+        $document_status->notes = $request->get('notes');
+        $data = array("sender_name"=>$document_status->user->name,'document_cancel_reason'=>$request->get('notes'));
+        $emailData = array("to"=>$document_status->user->email,"from_email"=>"no-reply","subject"=>"Account Canceled","email_data"=>$data);
         $this->CancelDocumentAdminEmail($emailData);
-
         $document_status->save();
     }
     public function download($id,$type)

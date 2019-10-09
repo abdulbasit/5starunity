@@ -21,7 +21,7 @@ class CancelDocumentEmail extends Mailable
     public function build()
     {
         return $this->from($this->email->sender,"5starunity Accounts")
-                    ->view('mails.admin.approve_account')
+                    ->view('mails.admin.cancel_document')
                     ->subject($this->email->subject)
                     ->to($this->email->receiver)
                     // ->text('mails.demo_plain')
@@ -30,9 +30,5 @@ class CancelDocumentEmail extends Mailable
                             'testVarOne' => '1',
                             'testVarTwo' => '2',
                       ]);
-                    //   ->attach(public_path('/images').'/demo.jpg', [
-                    //           'as' => 'demo.jpg',
-                    //           'mime' => 'image/jpeg',
-                    //   ]);
     }
 }
