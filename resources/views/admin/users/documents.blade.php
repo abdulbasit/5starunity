@@ -139,8 +139,10 @@
 @section('script')
 <script>
     $("#yes").click(function (){
+        $("#notes").attr('readonly');
         var id = $("#dId").val();
         var notes = $("#notes").val();
+        
         var formAction = $("#cancel_form").attr('action');
         $("notes").attr("disabled","disabled");
         $.ajax({
@@ -151,9 +153,9 @@
             $("notes").removeAttr("disabled")
             $("#notes_msg").html("Canceld! ");
             $('#info').modal('hide');
-            setTimeout(function(){
-                location.reload();
-            },1000);
+            // setTimeout(function(){
+            //     location.reload();
+            // },1000);
         });
     });
     function cancel(id)
@@ -163,5 +165,6 @@
         $('#info').modal('show');
     }
 $("#usersT").DataTable();
+
 </script>
 @endsection

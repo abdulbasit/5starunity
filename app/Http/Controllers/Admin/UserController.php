@@ -57,8 +57,9 @@ class UserController extends Controller
         $userDocuments = UserDocument::where('user_id',$id)->orderBy('type', 'asc')->get();
         return view('admin.users.documents',compact('userDocuments'));
     }
-    public function approve($id)
+    public function approve($id,Request $request)
     {
+       
         $document_status = UserDocument::where('id',$id)->first();
         $document_status->status ="0";
         $document_status->save();
@@ -66,10 +67,13 @@ class UserController extends Controller
     }
     public function cancel($id,Request $request)
     {
-
         $document_status = UserDocument::where('id',$id)->first();
         $document_status->status ="1";
         $document_status->notes =$request->get('notes');
+        $data = array("sender_name"=>$document_status->user->name);
+        $emailData = array("to"=>$document_status->user->email,"from_email"=>"no-reply","subject"=>"Account Approved","email_data"=>$data);
+        $this->CancelDocumentAdminEmail($emailData);
+
         $document_status->save();
     }
     public function download($id,$type)
