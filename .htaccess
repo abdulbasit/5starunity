@@ -9,14 +9,20 @@
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ ^$1 [N]
 
+
     RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
     RewriteRule ^(.*)$ public/$1 
+
+    RewriteCond %{REQUEST_URI} !^/million_pixle
+    RewriteRule ^(.*)$ /million_pixle/$1 [NC,L]
 
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ server.php
 
+
 </IfModule>
+
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php71” package as the default “PHP” programming language.
