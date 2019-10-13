@@ -136,6 +136,16 @@
                           <td height="10">&nbsp;</td>
                         </tr>
                         <tr>
+                            <h1>Folgen Sie uns auf</h1>
+                            <table border="0">
+                              <tr>
+                                <td><a href="https://www.linkedin.com/company/47984332/"><img src="{{ asset('frontend/img/linkedin.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163"><img src="{{ asset('frontend/img/facebook.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://twitter.com/5starUnity"><img src="{{ asset('frontend/img/twitter.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('frontend/img/instagram.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                              </tr>
+                            </table>
                           <td valign="top" align="center"> <span style="font-family: -apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif; color:#9EB0C9; font-size:10px;">&copy;
                             <a href="https://www.5Starunity.com/" target="_blank" style="color:#9EB0C9 !important; text-decoration:none;">5Starunity</a> <?php echo date("Y") ?>
                           </span>
