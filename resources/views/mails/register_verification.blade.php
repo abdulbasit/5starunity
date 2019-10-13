@@ -50,7 +50,8 @@
                                   <td height="30" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
+                                  <td align="center"> 
+                                    <span style="color:#48545d;font-size:22px;line-height: 24px; font-weight:bold">
                                     E-Mail-Verifizierung
                                     </span>
 

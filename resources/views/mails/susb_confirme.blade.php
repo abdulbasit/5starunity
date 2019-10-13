@@ -50,7 +50,7 @@
                                   <td height="30" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
+                                  <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px; font-weight:bold">
                                       Bestätigung zur Anmeldung
                                     </span>
 
@@ -147,7 +147,7 @@
                         </tr>
                         <tr>
                            
-                          <td valign="top" align="center"> <span style="font-family: -apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif; color:#9EB0C9; font-size:10px;">&copy;
+                          <td valign="top" align="center"> <span style="font-family: -apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif; color:#9EB0C9; font-size:10px;">
                             <a href="https://www.5Starunity.com/" target="_blank" style="color:#9EB0C9 !important; text-decoration:none;">
                               © 5starUnity Europe OÜ <?php echo date("Y") ?><br />
                               </a> 
