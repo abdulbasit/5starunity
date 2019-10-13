@@ -65,8 +65,8 @@
                                   <td height="24" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
-                                    <span style="text-align:left">Hi <b> {{$email->sender_name}}</b>,<br /></span>
+                                  <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
+                                    <span style="text-align:left">
                                     Zuerst möchten wir uns dafür bedanken, dass Sie sich für unsere Community, Partner und Konzepte begeistern und heißen Sie in der Gemeinschaft<br />
                                     </span>
                                   </td>
@@ -77,7 +77,7 @@
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
+                                  <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
                                     <p>
                                         Wir freuen uns ab heute mit Ihnen gemeinsam große Schritte zu erreichen und bitten Sie, uns dabei zu helfen. Haben Sie Kontakt zu     
                                     </p>
@@ -125,7 +125,7 @@
                                       </tr>
                                     </table>
                                     <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
-                                      <a href="{{URL::to('unsbscribe?email='.$email->sender_name)}}">Unsbscribe</a>
+                                      <a href="{{URL::to('unsbscribe?email='.$email->sender_name)}}">Newsletter Abmelden</a>
                                     </p>
                                   </td>
                                 </tr>

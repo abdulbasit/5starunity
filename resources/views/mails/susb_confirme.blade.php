@@ -68,7 +68,7 @@
                                     <td height="24" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td> <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
+                                  <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
                                     Sehr geehrter Interessent, Sie haben sich mit <b> {{$email->sender_name}}</b>,<br /></span>
                                     für unseren Newsletter angemeldet. Es freut uns sehr, dass Sie Neuigkeiten über unsere Community, Partner und Produkte erfahren wollen – Sie sind nur noch einen Schritt von der Anmeldung entfernt; bitte bestätigen Sie Ihre Mailadresse durch klick auf den Button<br />
                                     <br />
@@ -76,12 +76,12 @@
                                 </tr>
                                 <tr>
                                     <td valign="top" width="48%" align="center"> <span>
-                                      <a href="{{URL::to('/email/verification/'.$email->verification)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">Newsletter Abonnieren </a>
+                                      <a href="{{URL::to('/subscribe/'.$email->verification)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">Newsletter Abonnieren </a>
                                       </span>
                                     </td>
                                   </tr>
                                   <tr>
-                                    <td>
+                                    <td align="justify">
                                       <br />
                                       <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
                                           Durch die Angabe Ihrer E-Mail-Adresse und Anklicken des Buttons „Newsletter Abonnieren“ erklären Sie sich damit einverstanden, dass Ihnen die Firma 5starUnity Europe OÜ regelmäßig Informationen zu folgenden Themen senden darf: Allgemeine Branchen-Informationen, Vorstellung von Produkt- / Geschäftspartnern sowie unterstützten StartUp Unternehmen und allen zur Erfüllung notwendigen Services. 
