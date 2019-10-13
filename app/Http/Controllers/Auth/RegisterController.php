@@ -350,7 +350,9 @@ class RegisterController extends Controller
     {
         $email = $request->get('email');
         $verificatation = md5(Carbon::now());
-        
+        $userData = Subscription::where('email',$email)->count();
+        if($userData==0)
+        {
             Subscription::create([
                 'email' => $request->get('email'),
                 'status' => '0',
@@ -361,5 +363,11 @@ class RegisterController extends Controller
             $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
             $this->SubscriptionConfirmEmail($emailData);
             return 'scuccess';
+        }
+        else 
+        {
+            return 'error';
+        }
+            
     }
 }
