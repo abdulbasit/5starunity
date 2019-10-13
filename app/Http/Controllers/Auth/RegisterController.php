@@ -335,7 +335,7 @@ class RegisterController extends Controller
             // $userData->save();
            
             $data = array("sender_name"=>$userData->email);
-            $emailData = array("to"=>$userData->email,"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
+            $emailData = array("to"=>$userData->email,"from_email"=>"no-reply","subject"=>"Willkommen!","email_data"=>$data);
             $this->SubscribeEmail($emailData);
             $status = 'scuccess';
         }
