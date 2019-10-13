@@ -13,7 +13,6 @@ use App\Mail\SubsConfirmEmail;
 trait EmailTrait {
  
     public function sendEmails($mailObj) {
- 
         try {
            
             Mail::send($mailObj);
@@ -114,17 +113,17 @@ trait EmailTrait {
     }
     public function SubscriptionConfirmEmail($param)
     {
-            $regFrom = \Config::get('constants.emailsFrom.'.$param['from_email']);
-            $obj = new \stdClass();
-            foreach($param['email_data'] as $key=>$emailData)
-            {
-                $obj->$key = $emailData;
-            }
-            $obj->sender = $regFrom;
-            $obj->subject = $param['subject'];
-            $obj->receiver = $param['to'];
-            $mailObj = new SubsConfirmEmail($obj); 
-            $this->sendEmails($mailObj);
+        $regFrom = \Config::get('constants.emailsFrom.'.$param['from_email']);
+        $obj = new \stdClass();
+        foreach($param['email_data'] as $key=>$emailData)
+        {
+            $obj->$key = $emailData;
+        }
+        $obj->sender = $regFrom;
+        $obj->subject = $param['subject'];
+        $obj->receiver = $param['to'];
+        $mailObj = new SubsConfirmEmail($obj); 
+        $this->sendEmails($mailObj);
     }
 }
  

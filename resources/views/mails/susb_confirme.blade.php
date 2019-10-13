@@ -51,7 +51,7 @@
                                 </tr>
                                 <tr>
                                   <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
-                                    E-Mail-Verifizierung
+                                    Newsletter-Verifizierung
                                     </span>
 
                                   </td>
@@ -67,9 +67,13 @@
                                 </tr>
                                 <tr>
                                   <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
-                                    <p>Lieber Interessent,</p>
-                                    <p>Sicherheit steht bei uns an vorderster Stelle, weshalb wir Sie bitten die angegebene E-Mail-Adresse zu bestätigen.
-                                    Nach komplett erfolgreicher Verifizierung steht Ihnen die uneingeschränkte Nutzung des internen Bereiches offen.</p>
+                                    <p>Bestätigung zur Anmeldung,</p>
+                                    <p>
+                                      Sehr geehrter Interessent, Sie haben sich mit {{$email->sender_name}}
+                                    </p>
+                                    <p>
+                                      für unseren Newsletter angemeldet. Es freut uns sehr, dass Sie Neuigkeiten über unsere Community, Partner und Produkte erfahren wollen – Sie sind nur noch einen Schritt von der Anmeldung entfernt; bitte bestätigen Sie Ihre Mailadresse durch klick auf den Button
+                                    </p>
                                     </span>
 
                                   </td>
@@ -80,7 +84,7 @@
                                 <tr>
                                   <td valign="top" width="48%" align="center"> <span>
                                         {{-- <a href="#" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a> --}}
-                                    <a href="{{URL::to('/email/verification/'.$email->verification)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a>
+                                    <a href="{{URL::to('/subscribe/'.$email->verification)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a>
                                     </span>
                                   </td>
                                 </tr>
@@ -89,18 +93,11 @@
                                 </tr>
                                 <tr>
                                   <td align="justify">
-                                      <p>Wir möchten Sie nochmals auf unsere allgemeinen Nutzungsbedingungen aufmerksam machen und
-                                            danken bereits im Voraus für Ihr Vertrauen, Ihre Unterstützungen und verbleiben,</p>
                                       <p>
-                                            mit herzlichem Gruß<br />
-                                            Ihr 5starUnity Team
+                                        Durch die Angabe Ihrer E-Mail-Adresse und Anklicken des Buttons „Newsletter Abonnieren“ erklären Sie sich damit einverstanden, dass Ihnen die Firma 5starUnity Europe OÜ regelmäßig Informationen zu folgenden Themen senden darf: Allgemeine Branchen-Informationen, Vorstellung von Produkt- / Geschäftspartnern sowie unterstützten StartUp Unternehmen und allen zur Erfüllung notwendigen Services.
                                       </p>
                                       <p>
-                                            *Für den unwahrscheinlichen Fall, dass Sie keine Registrierung veranlasst haben bitten wir Sie, diese Mail zu ignorieren.
-                                      </p>
-                                      <p>
-                                            Eine Löschung aller angegebenen Daten des noch zu verifizierenden Accounts findet nach bestimmter Zeit automatisch statt.
-                                      </p>
+                                        Ihre Einwilligung können Sie jederzeit gegenüber unserem Unternehmen widerrufen – Hinweise zum Datenschutz erfahren Sie HIER.                                       </p>
                                   </td>
                                 </tr>
                                 <tr>

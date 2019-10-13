@@ -15,12 +15,15 @@ class SubsConfirmEmail extends Mailable
     public function __construct($email)
     {
         $this->email = $email;
+        // dd($email->subject);
     }
 
     public function build()
     {
-        return $this->from('admin@xnowad.com',"5Starunity ",$this->email->subject)
+        return $this->from($this->email->sender,"5Starunity ",$this->email->subject)
                     ->view('mails.susb_confirme')
+                    ->subject($this->email->subject)
+                    ->to($this->email->receiver)
                     // ->text('mails.demo_plain')
                     ->with(
                       [

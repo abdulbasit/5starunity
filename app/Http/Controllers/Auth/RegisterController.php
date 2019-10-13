@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
 use Auth;
 use DB;
+use Session;
 use App\Traits\EmailTrait;
 class RegisterController extends Controller
 {
@@ -324,28 +325,26 @@ class RegisterController extends Controller
 		$username = $part1. str_shuffle($part2). $part3; //str_shuffle to randomly shuffle all characters 
 		return $username;
     }
-    public function subscribe(Request $request)
+    public function subscribe($verification,Request $request)
     {
-        
-        $email = $request->get('email');
-      
-        $userData = Subscription::where('email',$email)->first();
-        if(count($userData)==0 && $userData->allow_subscription!="")
+        $host = request()->getHttpHost();
+        $userData = Subscription::where('allow_subscription',$verification)->first();
+        if($userData->allow_subscription == $verification)
         {
-            Subscription::create([
-                'email' => $request->get('email'),
-                'status' => '0',
-                'allow_subscription'=>''
-            ]);
-            $data = array("sender_name"=>$request->get('email'));
-            $emailData = array("to"=>$request->get('email'),"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
+            $userData->allow_subscription='';
+            // $userData->save();
+           
+            $data = array("sender_name"=>$userData->email);
+            $emailData = array("to"=>$userData->email,"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
             $this->SubscribeEmail($emailData);
-            return 'scuccess';
+            $msg = 'scuccess';
         }
-        else 
+        else
         {
-            return 'error';
+            $msg = 'error';
         }
+        return redirect()->back($host)->with('error','Sorry. No Record Found!');
+
     }
     public function subscribeConfirmation(Request $request)
     {

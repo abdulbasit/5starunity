@@ -35,7 +35,7 @@ Auth::routes();
     Route::get('media-info', 'HomeController@MediaInfo')->name('media-info');
     Route::get('contact-us', 'HomeController@contactUs')->name('contact-us');
     Route::post('send-query', 'HomeController@save_contact_us')->name('send-query');
-    Route::post('subscribe', 'Auth\RegisterController@subscribe')->name('subscribe');
+    Route::get('subscribe/{verification}', 'Auth\RegisterController@subscribe')->name('subscribe');
 
     Route::get('lotteries', 'LotteryController@index');
     Route::get('lottery/detail/{id}', 'LotteryController@detail');

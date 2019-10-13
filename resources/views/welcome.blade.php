@@ -41,6 +41,7 @@
             <div class="section-title">{{ __('content.3steps')}}</div>
             <div class="section-subtitle">
                 <p>
+                    { !! Session::has('message') !!}
                     {{ __('content.3steps_cont1')}}<br />
                 </p>
                 {{-- <br /> --}}
@@ -452,7 +453,7 @@
             </div>
           </div>
         </div>
-
+       
     <script src="{{ asset('frontend/jssor/docs.min.js')}}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{ asset('frontend/jssor/ie10-viewport-bug-workaround.js')}}"></script>
@@ -547,10 +548,8 @@
         })
         .done(function( msg ) {
             $("#email").removeAttr('disabled');
-            
             if(msg=='scuccess')
             {
-                
                 $("#subsMsg").css('color','green');
                 $("#subsMsg").html("{{ __('messages.subscription_thanks')}}")
             }
@@ -561,5 +560,6 @@
             }
         });
     });
+   
 </script>
 @endsection
