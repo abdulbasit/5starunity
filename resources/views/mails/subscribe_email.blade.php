@@ -78,7 +78,7 @@
                                 </tr>
                                 <tr>
                                   <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
-                                    <p>
+                                    <p style="margin-top:0px">
                                         Wir freuen uns ab heute mit Ihnen gemeinsam große Schritte zu erreichen und bitten Sie, uns dabei zu helfen. Haben Sie Kontakt zu     
                                     </p>
                                     <ul>
