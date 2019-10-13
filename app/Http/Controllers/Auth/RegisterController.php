@@ -337,13 +337,13 @@ class RegisterController extends Controller
             $data = array("sender_name"=>$userData->email);
             $emailData = array("to"=>$userData->email,"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
             $this->SubscribeEmail($emailData);
-            $msg = 'scuccess';
+            $status = 'scuccess';
         }
         else
         {
-            $msg = 'error';
+            $status = 'error';
         }
-        return redirect()->back($host)->with('error','Sorry. No Record Found!');
+        return redirect('/');
 
     }
     public function subscribeConfirmation(Request $request)

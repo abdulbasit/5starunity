@@ -51,7 +51,7 @@
                                 </tr>
                                 <tr>
                                   <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;">
-                                    Invitation 
+                                      Herzlich Willkommen 
                                     </span>
                                   </td>
                                 </tr>
@@ -67,8 +67,28 @@
                                 <tr>
                                   <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
                                     <span style="text-align:left">Hi <b> {{$email->sender_name}}</b>,<br /></span>
-                                    Thank you for your interest. You will regularly receive our news. Your 5startUntity team. <br />
+                                    Zuerst möchten wir uns dafür bedanken, dass Sie sich für unsere Community, Partner und Konzepte begeistern und heißen Sie in der Gemeinschaft<br />
                                     </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
+                                    <h1 style="color:green">Willkommen!</h1>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center"> <span style="color:#48545d;font-size:14px;line-height:24px;">
+                                    <p>
+                                        Wir freuen uns ab heute mit Ihnen gemeinsam große Schritte zu erreichen und bitten Sie, uns dabei zu helfen. Haben Sie Kontakt zu     
+                                    </p>
+                                    <ul>
+                                          <li style="list-style:none; text-align:left">-Erfindern,</li>
+                                          <li style="list-style:none; text-align:left">-Erfindern,</li>
+                                          <li style="list-style:none; text-align:left">-StartUp Unternehmen</li>
+                                    </ul>
+                                    <p>
+                                        oder kennen Sie Partner, welche Ihre Produkte als Bereicherung für unsere Community anbieten könnten? 
+                                    </p>
                                   </td>
                                 </tr>
                                 <tr>
@@ -94,6 +114,16 @@
                                 </tr>
                                 <tr>
                                   <td align="center">
+                                    <h1>Folgen Sie uns auf</h1>
+                                    <table border="0">
+                                      <tr>
+                                        <td><a href="https://www.linkedin.com/company/47984332/"><img src="{{ asset('images/img/linkedin.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163"><img src="{{ asset('images/img/facebook.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://twitter.com/5starUnity"><img src="{{ asset('images/img/twitter.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('images/img/instagram.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('images/img/pinterest.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                      </tr>
+                                    </table>
                                     <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">If you did not chagne email address for this account you can ignore this email and the account
                                       will be deleted. <br />
                                       <a href="{{URL::to('unsbscribe?email='.$email->sender_name)}}">Unsbscribe</a>
