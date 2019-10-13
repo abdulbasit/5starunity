@@ -42,7 +42,7 @@
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
                               <tbody>
                                 <tr>
-                                  <td valign="bottom" colspan="2" cellpadding="3">
+                                  <td align="center" valign="bottom" colspan="2" cellpadding="3">
                                     <img alt="5Starunity" width="80" src="{{ asset('frontend/graphics/icons/icon_email.png')}}"/>
                                   </td>
                                 </tr>
@@ -84,10 +84,11 @@
                                     <td align="justify">
                                       <br />
                                       <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
-                                          Durch die Angabe Ihrer E-Mail-Adresse und Anklicken des Buttons „Newsletter Abonnieren“ erklären Sie sich damit einverstanden, dass Ihnen die Firma 5starUnity Europe OÜ regelmäßig Informationen zu folgenden Themen senden darf: Allgemeine Branchen-Informationen, Vorstellung von Produkt- / Geschäftspartnern sowie unterstützten StartUp Unternehmen und allen zur Erfüllung notwendigen Services. 
+                                          Durch die Angabe Ihrer E-Mail-Adresse und Anklicken des Buttons <b>„Newsletter Abonnieren“</b> erklären Sie sich damit einverstanden, dass Ihnen die Firma 5starUnity Europe OÜ regelmäßig Informationen zu folgenden Themen senden darf: Allgemeine Branchen-Informationen, Vorstellung von Produkt- / Geschäftspartnern sowie unterstützten StartUp Unternehmen und allen zur Erfüllung notwendigen Services. 
                                       </span>
+                                      <br />
                                       <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
-                                          Ihre Einwilligung können Sie jederzeit gegenüber unserem Unternehmen widerrufen – Hinweise zum Datenschutz erfahren Sie HIER. 
+                                          <b>Ihre Einwilligung können Sie jederzeit gegenüber unserem Unternehmen widerrufen – Hinweise zum Datenschutz erfahren Sie <a href="{{URL::to('page/data-security')}}">HIER. </b>
 
                                       </span>
                                     </td>
@@ -124,10 +125,7 @@
                                         <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('frontend/img/instagram.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
                                         <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
                                       </tr>
-                                    </table>
-                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
-                                      <a href="{{URL::to('unsbscribe?email='.$email->sender_name)}}">Unsbscribe</a>
-                                    </p>
+                                    </table> 
                                   </td>
                                 </tr>
                               </tbody>

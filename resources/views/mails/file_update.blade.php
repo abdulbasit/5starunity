@@ -42,7 +42,7 @@
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
                               <tbody>
                                 <tr>
-                                  <td valign="bottom" colspan="2" cellpadding="3">
+                                  <td align="center" valign="bottom" colspan="2" cellpadding="3">
                                     <img alt="5Starunity" width="80" src="{{ URL::to(asset('frontend/graphics/icons/icon_email.png'))}}"/>
                                   </td>
                                 </tr>
