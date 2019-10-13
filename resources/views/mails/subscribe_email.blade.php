@@ -117,11 +117,11 @@
                                     <h1>Folgen Sie uns auf</h1>
                                     <table border="0">
                                       <tr>
-                                        <td><a href="https://www.linkedin.com/company/47984332/"><img src="{{ asset('images/img/linkedin.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
-                                        <td><a href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163"><img src="{{ asset('images/img/facebook.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
-                                        <td><a href="https://twitter.com/5starUnity"><img src="{{ asset('images/img/twitter.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
-                                        <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('images/img/instagram.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
-                                        <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('images/img/pinterest.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.linkedin.com/company/47984332/"><img src="{{ asset('frontend/img/linkedin.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163"><img src="{{ asset('frontend/img/facebook.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://twitter.com/5starUnity"><img src="{{ asset('frontend/img/twitter.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('frontend/img/instagram.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="50" width="150" border="0" alt="5Starunity"></a></td>
                                       </tr>
                                     </table>
                                     <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">If you did not chagne email address for this account you can ignore this email and the account
