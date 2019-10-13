@@ -11,21 +11,21 @@
 @section('content')
 <div class="container">
     <div class="">
-            <div class="section-title text-left font-48" style="text-align:center !important">
+            <div class="section-title text-left font-48">
                 <br />
                 <br /><br /><br />
                 Impressum
             </div>
             {{-- <div class="section-title  text-left">Angaben gemäß § 5 TMG</div> --}}
-            <div class="section-title  text-left"  style="text-align:center !important">
+            <div class="section-title  text-left"  >
                 <br />
                 Betreiber der Plattform und zustellfähige Anschrift
             </div>
             <div class="col-xs-12 no-padding">
             <p>
                 5starUnity  Europe OÜ<br />
-                World Trade Center Tallinn Ahtri tn. 8<br />
-                EST - 10151 Tallinn<br />
+                World Trade Center Tallinn <br />
+                Ahtri tn. 8 EST - 10151 Tallinn<br />
                 {{-- Deutschland<br /> --}}
             </p>
             <br />
@@ -56,7 +56,7 @@
     <div class="row profile">
             <br />
             <br />
-            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px; text-align:center !important">
+            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                 Vertretigungsberechtigte Personen
             </div>
             <p>
@@ -66,14 +66,14 @@
                 {{-- <br /> --}}
             </p>
             
-            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px; text-align:center !important">
+            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                     Inhaltliche Verantwortung
             </div>
             <p>
                     Für alle von 5starUnity Europe OÜ eingepflegten Verlosungen der Lottery of Things ist der CEO, Dirk Marras, verantwortlich und unter oben angezeigter Firmenanschrift zu erreichen. Alle Anzeigen / Produkte / Konzepte oder Ähnliches, welche durch bzw. von externen Anbietern zu bedienen sind, stehen in der Verantwortung der jeweiligen Geschäftsführer bzw. durch die in deren Impressum benannten Verantwortlichkeiten. 5starUnity Europe OÜ lehnt jedwede Verantwortung für fremde Texte / Angebote ab.
             </p>
             
-            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px; text-align:center !important">
+            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px; ">
                 Plattform der EU-Kommission
             </div>
             <p>
@@ -82,14 +82,14 @@
                 Wir weisen bei Angelegenheiten, welche Sie als Verbraucher zu klären wissen möchten, durch externe Angebote auf die jeweiligen Stellen des Anbieters hin.
             </p>
             
-            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px; text-align:center !important">
+            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                 Haftungshinweis
             </div>
             <p>
                     Trotz gebührender inhaltlicher Sorgfalt übernimmt 5starUnity Europe OÜ oder deren Verantwortliche keine Haftung für Inhalte externer Links - bei verlinkten Seiten ist ausschließlich deren Betreiber verantwortlich. Diese Domain inkl. allen angeschlossenen Sub-Domains weisen mit Links auf andere Seiten (einschl. Produkte), weshalb folgendes gilt: 5starUnity Europe OÜ erklärt ausdrücklich, keinerlei Einfluss auf Gestaltung, Inhalt oder Zahlungsmodalitäten zu haben und distanziert sich von Inhalten aller verlinkten Seiten.
             </p>
             
-            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px; text-align:center !important">
+            <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                     Copyright / Fotoquellen
             </div>
             <p>

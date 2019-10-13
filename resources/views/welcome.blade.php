@@ -65,7 +65,7 @@
                             </a>
                         </div>
                         <div class="col-md-4 col-sm-4 c_dist">
-                            <a href="#">
+                            <a href="/login">
                             <div class="circle c_nd spendCircle"></div>
                             </a>
                         </div>

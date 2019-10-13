@@ -28,7 +28,7 @@ class BlogController extends Controller
             $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
             ->orderBy('blogs.id', 'DESC')
             ->paginate(15);
-            $categories = Category::where('category_for','blog')->get();
+            $categories = Category::where('category_for','blog')->orderBy('name','ASC')->get();
             return view('blog.index',compact('blogData','categories'));
     }
     public function cat_blogs($cat_id)
