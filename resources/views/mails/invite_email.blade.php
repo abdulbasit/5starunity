@@ -5,7 +5,7 @@
       <tbody>
         <tr>
           <td valign="top">
-            <table class="innermain" cellpadding="0" width="800" cellspacing="0" border="0"
+            <table class="innermain" cellpadding="0" width="580" cellspacing="0" border="0"
             bgcolor="#F4F7FA" align="justify" style="margin:0 auto; table-layout: fixed;">
               <tbody>
                 <!-- START of MAIL Content -->

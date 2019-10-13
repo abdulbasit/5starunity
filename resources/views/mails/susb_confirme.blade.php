@@ -5,7 +5,7 @@
       <tbody>
         <tr>
           <td valign="top">
-            <table class="innermain" cellpadding="0" width="800" cellspacing="0" border="0"
+            <table class="innermain" cellpadding="0" width="580" cellspacing="0" border="0"
             bgcolor="#F4F7FA" align="center" style="margin:0 auto; table-layout: fixed;">
               <tbody>
                 <!-- START of MAIL Content -->
@@ -42,7 +42,7 @@
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
                               <tbody>
                                 <tr>
-                                  <td align="center" valign="bottom" colspan="2" cellpadding="3">
+                                  <td valign="bottom" colspan="2" cellpadding="3">
                                     <img alt="5Starunity" width="80" src="{{ asset('frontend/graphics/icons/icon_email.png')}}"/>
                                   </td>
                                 </tr>
@@ -50,10 +50,9 @@
                                   <td height="30" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px; font-weight:bold">
+                                  <td align="center"> <span style="color:#48545d;font-size:22px;line-height: 24px;; font-weight:bold">
                                       Bestätigung zur Anmeldung
                                     </span>
-
                                   </td>
                                 </tr>
                                 <tr>
@@ -66,58 +65,76 @@
                                   <td height="24" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
-                                    <p>Bestätigung zur Anmeldung,</p>
-                                    <p>
-                                      Sehr geehrter Interessent, Sie haben sich mit {{$email->sender_name}}
-                                    </p>
-                                    <p>
-                                      für unseren Newsletter angemeldet. Es freut uns sehr, dass Sie Neuigkeiten über unsere Community, Partner und Produkte erfahren wollen – Sie sind nur noch einen Schritt von der Anmeldung entfernt; bitte bestätigen Sie Ihre Mailadresse durch klick auf den Button
-                                    </p>
-                                    </span>
+                                    <td height="24" &nbsp;=""></td>
+                                </tr>
+                                <tr>
+                                  <td> <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
+                                    Sehr geehrter Interessent, Sie haben sich mit <b> {{$email->sender_name}}</b>,<br /></span>
+                                    für unseren Newsletter angemeldet. Es freut uns sehr, dass Sie Neuigkeiten über unsere Community, Partner und Produkte erfahren wollen – Sie sind nur noch einen Schritt von der Anmeldung entfernt; bitte bestätigen Sie Ihre Mailadresse durch klick auf den Button<br />
+                                    <br />
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" width="48%" align="center"> <span>
+                                      <a href="{{URL::to('/email/verification/'.$email->verification)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">Newsletter Abonnieren </a>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <br />
+                                      <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
+                                          Durch die Angabe Ihrer E-Mail-Adresse und Anklicken des Buttons „Newsletter Abonnieren“ erklären Sie sich damit einverstanden, dass Ihnen die Firma 5starUnity Europe OÜ regelmäßig Informationen zu folgenden Themen senden darf: Allgemeine Branchen-Informationen, Vorstellung von Produkt- / Geschäftspartnern sowie unterstützten StartUp Unternehmen und allen zur Erfüllung notwendigen Services. 
+                                      </span>
+                                      <span style="color:#48545d;font-size:14px;line-height:24px;text-align:left">
+                                          Ihre Einwilligung können Sie jederzeit gegenüber unserem Unternehmen widerrufen – Hinweise zum Datenschutz erfahren Sie HIER. 
 
-                                  </td>
-                                </tr>
+                                      </span>
+                                    </td>
+                                  </tr>
                                 <tr>
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                   <td valign="top" width="48%" align="center"> <span>
-                                        {{-- <a href="#" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a> --}}
-                                    <a href="{{URL::to('/subscribe/'.$email->verification)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a>
+                                    <a href="{{URL::to('/register?invitee='.$email->verification_code)}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">Verify Email Address</a>
                                     </span>
                                   </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                   <td height="20" &nbsp;=""></td>
                                 </tr>
                                 <tr>
-                                  <td align="justify">
-                                      <p>
-                                        Durch die Angabe Ihrer E-Mail-Adresse und Anklicken des Buttons „Newsletter Abonnieren“ erklären Sie sich damit einverstanden, dass Ihnen die Firma 5starUnity Europe OÜ regelmäßig Informationen zu folgenden Themen senden darf: Allgemeine Branchen-Informationen, Vorstellung von Produkt- / Geschäftspartnern sowie unterstützten StartUp Unternehmen und allen zur Erfüllung notwendigen Services.
-                                      </p>
-                                      <p>
-                                        Ihre Einwilligung können Sie jederzeit gegenüber unserem Unternehmen widerrufen – Hinweise zum Datenschutz erfahren Sie HIER.                                       </p>
+                                  <td align="center">
+                                    {{-- <img src="https://s3.amazonaws.com/app-public/5Starunity-notification/hr.png" width="54" --}}
+                                    {{-- height="2" border="0"> --}}
                                   </td>
                                 </tr>
                                 <tr>
                                   <td height="20" &nbsp;=""></td>
+                                </tr>
+                                <tr>
+                                  <td align="center">
+                                    <h1>Folgen Sie uns auf</h1>
+                                    <table border="0">
+                                      <tr>
+                                        <td><a href="https://www.linkedin.com/company/47984332/"><img src="{{ asset('frontend/img/linkedin.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163"><img src="{{ asset('frontend/img/facebook.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://twitter.com/5starUnity"><img src="{{ asset('frontend/img/twitter.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('frontend/img/instagram.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                        <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                      </tr>
+                                    </table>
+                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
+                                      <a href="{{URL::to('unsbscribe?email='.$email->sender_name)}}">Unsbscribe</a>
+                                    </p>
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
                           </td>
                         </tr>
-                        <tr align="center">
-                            <h1>Folgen Sie uns auf</h1>
-                            <table border="0">
-                              <tr>
-                                <td><a href="https://www.linkedin.com/company/47984332/"><img src="{{ asset('frontend/img/linkedin.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
-                                <td><a href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163"><img src="{{ asset('frontend/img/facebook.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
-                                <td><a href="https://twitter.com/5starUnity"><img src="{{ asset('frontend/img/twitter.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
-                                <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('frontend/img/instagram.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
-                                <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
-                              </tr>
-                            </table>
+                        <tr>
                           <td height="60"></td>
                         </tr>
                       </tbody>
@@ -146,12 +163,13 @@
                           <td height="10">&nbsp;</td>
                         </tr>
                         <tr>
-                           
-                          <td valign="top" align="center"> <span style="font-family: -apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif; color:#9EB0C9; font-size:10px;">
-                            <a href="https://www.5Starunity.com/" target="_blank" style="color:#9EB0C9 !important; text-decoration:none;">
-                              © 5starUnity Europe OÜ <?php echo date("Y") ?><br />
-                              </a> 
-                              Athri tn. 8 | EST-10151 Tallinn | www.5starunity.com
+                          <td valign="top" align="center"> 
+                            <span style="font-family: -apple-system,BlinkMacSystemFont,&#39;Segoe UI&#39;,&#39;Roboto&#39;,&#39;Oxygen&#39;,&#39;Ubuntu&#39;,&#39;Cantarell&#39;,&#39;Fira Sans&#39;,&#39;Droid Sans&#39;,&#39;Helvetica Neue&#39;,sans-serif; color:#9EB0C9; font-size:10px;">
+                                <a href="https://www.5Starunity.com/" target="_blank" style="color:#9EB0C9 !important; text-decoration:none;">
+                                  © 5starUnity Europe OÜ <?php echo date("Y") ?><br />
+                                  </a> 
+                                  Athri tn. 8 | EST-10151 Tallinn | www.5starunity.com
+                              
                           </span>
 
                           </td>

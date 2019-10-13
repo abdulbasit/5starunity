@@ -5,7 +5,7 @@
       <tbody>
         <tr>
           <td valign="top">
-            <table class="innermain" cellpadding="0" width="800" cellspacing="0" border="0"
+            <table class="innermain" cellpadding="0" width="580" cellspacing="0" border="0"
             bgcolor="#F4F7FA" align="center" style="margin:0 auto; table-layout: fixed;">
               <tbody>
                 <!-- START of MAIL Content -->
@@ -124,8 +124,7 @@
                                         <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
                                       </tr>
                                     </table>
-                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">If you did not chagne email address for this account you can ignore this email and the account
-                                      will be deleted. <br />
+                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
                                       <a href="{{URL::to('unsbscribe?email='.$email->sender_name)}}">Unsbscribe</a>
                                     </p>
                                   </td>
