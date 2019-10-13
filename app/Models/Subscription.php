@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Subscription extends Authenticatable
 {
     protected $fillable = [
-        'email','status'
+        'email','status','allow_subscription'
     ];
   
 }

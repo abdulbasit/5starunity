@@ -56,7 +56,8 @@ Auth::routes();
     Route::post('lottery/search', 'LotteryController@search')->name('search');
 
     Route::get('unsbscribe', 'HomeController@unsubscribe')->name('unsbscribe');
-
+    Route::post('subscriptions', 'Auth\RegisterController@subscribeConfirmation')->name('subscriptions');
+    
     //client side routing for logged in user
     Route::group(['middleware' => ['auth:client']], function () {
         Route::get('profile', 'UserController@profile')->name('profile')->middleware('verified');
@@ -92,7 +93,6 @@ Auth::routes();
         Route::get('lots/numbers/{id}', 'WalletController@detail')->name('lots.numbers');
 
         Route::post('send_inivte', 'UserController@sendInivte')->name('send_inivte');
-
 
         Route::get('kalarna', 'WalletController@kalarna')->name('kalarna');
         Route::get('paypal', 'WalletController@paypal')->name('paypal');

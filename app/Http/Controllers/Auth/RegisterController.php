@@ -326,14 +326,16 @@ class RegisterController extends Controller
     }
     public function subscribe(Request $request)
     {
+        
         $email = $request->get('email');
       
-        $userData = Subscription::where('email',$email)->count();
-        if($userData==0)
+        $userData = Subscription::where('email',$email)->first();
+        if(count($userData)==0 && $userData->allow_subscription!="")
         {
             Subscription::create([
                 'email' => $request->get('email'),
-                'status' => '0'
+                'status' => '0',
+                'allow_subscription'=>''
             ]);
             $data = array("sender_name"=>$request->get('email'));
             $emailData = array("to"=>$request->get('email'),"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
@@ -344,5 +346,21 @@ class RegisterController extends Controller
         {
             return 'error';
         }
+    }
+    public function subscribeConfirmation(Request $request)
+    {
+        $email = $request->get('email');
+        $verificatation = md5(Carbon::now());
+        
+            Subscription::create([
+                'email' => $request->get('email'),
+                'status' => '0',
+                'allow_subscription'=>$verificatation
+            ]);
+            
+            $data = array("sender_name"=>$email,"verification"=>$verificatation);
+            $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
+            $this->SubscriptionConfirmEmail($emailData);
+            return 'scuccess';
     }
 }

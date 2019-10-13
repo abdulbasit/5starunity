@@ -542,7 +542,7 @@
         $("#email").attr('disabled','disabled');
         $.ajax({
             method: "POST",
-            url: "{{route('subscribe')}}",
+            url: "{{route('subscriptions')}}",
             data: { "_token": "{{ csrf_token() }}",email: email }
         })
         .done(function( msg ) {

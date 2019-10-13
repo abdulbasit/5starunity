@@ -9,6 +9,7 @@ use App\Mail\DeleteAccountEmail;
 use App\Mail\ApprovedAccountEmail;
 use App\Mail\SubscriptionEmail;
 use App\Mail\CancelDocumentEmail;
+use App\Mail\SubsConfirmEmail;
 trait EmailTrait {
  
     public function sendEmails($mailObj) {
@@ -109,6 +110,20 @@ trait EmailTrait {
             $obj->subject = $param['subject'];
             $obj->receiver = $param['to'];
             $mailObj = new CancelDocumentEmail($obj); 
+            $this->sendEmails($mailObj);
+    }
+    public function SubscriptionConfirmEmail($param)
+    {
+            $regFrom = \Config::get('constants.emailsFrom.'.$param['from_email']);
+            $obj = new \stdClass();
+            foreach($param['email_data'] as $key=>$emailData)
+            {
+                $obj->$key = $emailData;
+            }
+            $obj->sender = $regFrom;
+            $obj->subject = $param['subject'];
+            $obj->receiver = $param['to'];
+            $mailObj = new SubsConfirmEmail($obj); 
             $this->sendEmails($mailObj);
     }
 }
