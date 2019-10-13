@@ -107,7 +107,7 @@
                             </table>
                           </td>
                         </tr>
-                        <tr>
+                        <tr align="center">
                             <h1>Folgen Sie uns auf</h1>
                             <table border="0">
                               <tr>

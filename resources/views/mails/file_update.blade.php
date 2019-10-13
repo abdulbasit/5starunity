@@ -97,7 +97,17 @@
                             </table>
                           </td>
                         </tr>
-                        <tr>
+                        <tr align="center">
+                            <h1>Folgen Sie uns auf</h1>
+                            <table border="0">
+                              <tr>
+                                <td><a href="https://www.linkedin.com/company/47984332/"><img src="{{ asset('frontend/img/linkedin.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://www.facebook.com/pg/5starunity-Europe-O%C3%9C-103240304411163"><img src="{{ asset('frontend/img/facebook.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://twitter.com/5starUnity"><img src="{{ asset('frontend/img/twitter.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://www.instagram.com/5starunity/"><img src="{{ asset('frontend/img/instagram.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                                <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
+                              </tr>
+                            </table>
                           <td height="60"></td>
                         </tr>
                       </tbody>
