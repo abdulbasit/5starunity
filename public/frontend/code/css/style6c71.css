@@ -7172,8 +7172,7 @@ body {
                     max-width: 900px;
                 }
             }
-            
-            .tooltip {
+            /* .tooltip {
                 position: absolute;
                 z-index: 1070;
                 display: block;
@@ -7182,7 +7181,7 @@ body {
                 line-height: 1.4;
                 opacity: 0;
                 filter: alpha(opacity=0);
-            }
+            } */
             
             .tooltip.in {
                 opacity: 0.9;

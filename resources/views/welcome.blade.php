@@ -547,6 +547,7 @@
             data: { "_token": "{{ csrf_token() }}",email: email }
         })
         .done(function( msg ) {
+            $("#email").val("");
             $("#email").removeAttr('disabled');
             if(msg=='scuccess')
             {
@@ -558,6 +559,9 @@
                 $("#subsMsg").css('color','red');
                 $("#subsMsg").html("{{ __('messages.already_exists')}}")
             }
+            setTimeout(function(){
+                $("#subsMsg").css('display',"none");
+            },5000)
         });
     });
    

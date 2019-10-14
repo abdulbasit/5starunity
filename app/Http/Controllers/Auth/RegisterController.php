@@ -212,13 +212,20 @@ class RegisterController extends Controller
         }
         if( $request->get('subscribe', true) ) 
         {
-            Subscription::create([
-                'email' => $request->get('email'),
-                'status' => '0'
-            ]);
-            $data = array("sender_name"=>$request->get('email'));
-            $emailData = array("to"=>$request->get('email'),"from_email"=>"no-reply","subject"=>"","email_data"=>$data);
-            $this->SubscribeEmail($emailData);
+            $email = $request->get('email');
+            $userData = Subscription::where('email',$email)->count();
+            if($userData==0)
+            {
+                Subscription::create([
+                    'email' => $request->get('email'),
+                    'status' => '0',
+                    'allow_subscription'=>$verificatation
+                ]);
+                
+                $data = array("sender_name"=>$email,"verification"=>$verificatation);
+                $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
+                $this->SubscriptionConfirmEmail($emailData);
+            }
         }
 
         //check if user is freferrer then approve its acceptence    
@@ -230,9 +237,6 @@ class RegisterController extends Controller
             $userInvites->reciver_id=$user_id->id;
             $userInvites->save();
         }
-
-        
-        
         $this->mailSend($mailData);
         return redirect()->route('login')->with('info',__('messages.register_success_info'));
     }
@@ -346,7 +350,7 @@ class RegisterController extends Controller
         return redirect('/');
 
     }
-    public function subscribeConfirmation(Request $request)
+    public function subscribeConfirmation( Request $request)
     {
         $email = $request->get('email');
         $verificatation = md5(Carbon::now());

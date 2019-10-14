@@ -18,6 +18,9 @@ return [
     "personal_information"=>"Persönliche Angaben",
     "terms_cond"=>"Allgemeine Nutzungsbedingungen",
     "news-tesxt-1"=>"Neben unseren regelmäßigen Newslettern und diversen Austauschmöglichkeiten in den Social Media Kanälen bieten wir Ihnen an dieser Stelle jederzeit die Chance, sich über aktuelle Themen zu informieren. Sie finden neben grundsätzlichen Neuigkeiten interessanter Branchen auch Berichte über Unternehmungen welche Unterstützung erfahren und erhalten regelmäßige Updates der Geschäftsführer bzw. Gründer / Erfinder.",
-    "news-tesxt-2"=>"Nachstehende Berichte können von registrierten Nutzern unserer Plattform kommentiert werden – bitte achten Sie auf Etikette, allgemeine Nutzungsbedingungen und einen stets freundlichen Umgangston. Unsere Suchfunktion wird Ihnen helfen, Informationen nach Kategorien zu filtern. Sollten auch Sie Autor eines interessanten Artikels sein würde es uns freuen, von Ihnen zu erfahren und diesen ggf. zu veröffentlichen."
+    "news-tesxt-2"=>"Nachstehende Berichte können von registrierten Nutzern unserer Plattform kommentiert werden – bitte achten Sie auf Etikette, allgemeine Nutzungsbedingungen und einen stets freundlichen Umgangston. Unsere Suchfunktion wird Ihnen helfen, Informationen nach Kategorien zu filtern. Sollten auch Sie Autor eines interessanten Artikels sein würde es uns freuen, von Ihnen zu erfahren und diesen ggf. zu veröffentlichen.",
+    "address-proof-help"=>"Ihr Dokument dient zur Verifikation einer ordentlichen Adresse innerhalb der von uns freigegebenen Länder, da nur an diese geliefert werden kann.",
+    "id-front-help"=>"Zur Überprüfung der Volljährigkeit bitten wir Sie ein gültiges Ausweisdokument hochzuladen."
+
 ];
 ?>

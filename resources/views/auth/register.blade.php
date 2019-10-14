@@ -38,6 +38,28 @@ help{
     border-radius: 100px;
     background-color:green
 }
+.wy-tooltip {
+    border: 1px solid #ccc;
+    color: #444;
+    background: #fff;
+    box-shadow: 0 2px 3px #999;
+    position: absolute;
+    padding: 5px;
+    text-align: left;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.tooltipWrap{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 4px;
+    right: -25px;
+}
+.wy-hide {
+    display: none;
+}
 label.error
 {
     right:10px;
@@ -435,7 +457,14 @@ label.error {
                                 <div class="form-file text-center" id="id_prrof">
                                     <input required="required" type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" />
                                     <span id='val2' class="idImg"></span>
-                                    <span id='button2'>{{ __('lables.select_file')}}</span>
+                                    <span id='button2'>{{ __('lables.select_file')}}</span> 
+                                    <span class="tooltipWrap">
+                                        <div class="left">
+                                            <a href="#" title="{{ __('content.address-proof-help')}}" class="tooltip">
+                                                <i class="fa fa-question-circle"></i>
+                                            </a>
+                                        </div>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -446,6 +475,13 @@ label.error {
                                     <input required="required" type="file" name="identity_card_front"  id="identity_card_front" class="custom-file-input form-control" />
                                     <span id='val3' class="idImg1"></span>
                                     <span id='button2'>{{ __('lables.select_file')}}</span>
+                                    <span class="tooltipWrap">
+                                        <div class="left">
+                                            <a href="#" title="{{ __('content.id-front-help')}}" class="tooltip">
+                                                <i class="fa fa-question-circle"></i>
+                                            </a>
+                                        </div>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -456,6 +492,13 @@ label.error {
                                     <input required="required" type="file" name="identity_card_back"  id="identity_card_back" class="custom-file-input form-control" />
                                     <span id='val4' class="idImg2"></span>
                                     <span id='button2'>{{ __('lables.select_file')}}</span>
+                                    <span class="tooltipWrap">
+                                        <div class="left">
+                                            <a href="#" title="{{ __('content.address-proof-help')}}" class="tooltip">
+                                                <i class="fa fa-question-circle"></i>
+                                            </a>
+                                        </div>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -622,7 +665,53 @@ function calculateAge(birthMonth, birthDay, birthYear)
     }
         return calculatedAge;
 }
+$(document).ready(function() {
+    var Delay = 50,
+        ToolTipTimer
+    $('.tooltip').hover(function(e) {
+        // hover over
+        var title = $(this).attr('title');
+        $(this).data('ToolTipText', title).removeAttr('title');
+        $('<div class="wy-tooltip wy-hide"></div>').text(title).appendTo('body');
+        ToolTipTimer = setTimeout(function(e) {
+            $('.wy-tooltip').removeClass('wy-hide').fadeIn('fast');
+        }, Delay);
+    }, function() {
+        // hover out
+        clearTimeout(ToolTipTimer);
+        $(this).attr('title', $(this).data('ToolTipText'));
+        $('.wy-tooltip').remove();
+    }).mousemove(function(e) {
+        // mouse move
+        var pLeft;
+        var pTop;
+        var offset = 10;
+        var CursorX = e.pageX;
+        var CursorY = e.pageY;
+        var WindowWidth = $(window).width();
+        var WindowHeight = $(window).height();
+        var toolTip = $('.wy-tooltip');
+        var TTWidth = toolTip.width();
+        var TTHeight = toolTip.height();
 
+        if (CursorX - offset >= (WindowWidth / 4) * 3) {
+            pLeft = CursorX - TTWidth - offset;
+        } else {
+            pLeft = CursorX + offset;
+        }
+        if (CursorY - offset >= (WindowHeight / 4) * 3) {
+            pTop = CursorY - TTHeight - offset;
+        } else {
+            pTop = CursorY + offset;
+        }
+
+
+        $('.wy-tooltip').css({
+            top: pTop,
+            left: pLeft
+        })
+    });
+});
 </script>
 @endsection
 @endsection
