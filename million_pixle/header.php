@@ -167,8 +167,9 @@ $TMP = array();
 flush();
 
 if($getprocess)
-    print '<script type="text/javascript" src="wz_jsgraphics.js"></script>';
-
+{?>
+    <script type="text/javascript" src="<?php $_SERVER['HTTP_HOST'] ?>/million_pixle/wz_jsgraphics.js"></script>
+<?php }
 ?>
 <script language="JavaScript1.2" type="text/javascript">
     function addBookmark(url,title) {
