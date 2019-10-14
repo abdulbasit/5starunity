@@ -494,7 +494,7 @@ label.error {
                                     <span id='button2'>{{ __('lables.select_file')}}</span>
                                     <span class="tooltipWrap">
                                         <div class="left">
-                                            <a href="#" title="{{ __('content.address-proof-help')}}" class="tooltip">
+                                            <a href="#" title="{{ __('content.id-front-hel')}}" class="tooltip">
                                                 <i class="fa fa-question-circle"></i>
                                             </a>
                                         </div>
