@@ -41,7 +41,6 @@
             <div class="section-title">{{ __('content.3steps')}}</div>
             <div class="section-subtitle">
                 <p>
-                    { !! Session::has('message') !!}
                     {{ __('content.3steps_cont1')}}<br />
                 </p>
                 {{-- <br /> --}}
