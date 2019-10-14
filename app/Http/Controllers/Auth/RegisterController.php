@@ -355,7 +355,7 @@ class RegisterController extends Controller
         $email = $request->get('email');
         $verificatation = md5(Carbon::now());
         $userData = Subscription::where('email',$email)->count();
-        if($userData==0)
+        if($userData==0 && $email!="")
         {
             Subscription::create([
                 'email' => $request->get('email'),
