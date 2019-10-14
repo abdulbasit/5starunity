@@ -89,6 +89,7 @@
                                     <p>
                                         oder kennen Sie Partner, welche Ihre Produkte als Bereicherung für unsere Community anbieten könnten? 
                                     </p>
+                                    <p>Wir freuen uns über jedwede Nachricht von Ihnen und danken im Voraus für Ihre Unterstützung zur Stärkung der Plattform.</p>
                                   </td>
                                 </tr>
                                 <tr>
