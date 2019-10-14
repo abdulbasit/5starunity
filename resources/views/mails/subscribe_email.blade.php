@@ -125,9 +125,9 @@
                                         <td><a href="https://www.pinterest.at/5starUnity/"><img src="{{ asset('frontend/img/pinterest.png')}}"  height="35" width="35" border="0" alt="5Starunity"></a></td>
                                       </tr>
                                     </table>
-                                    <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
+                                    {{-- <p style="color:#a2a2a2; font-size:12px; line-height:17px; font-style:italic;">
                                       <a href="{{URL::to('unsbscribe?email='.$email->sender_name)}}">Newsletter Abmelden</a>
-                                    </p>
+                                    </p> --}}
                                   </td>
                                 </tr>
                               </tbody>
