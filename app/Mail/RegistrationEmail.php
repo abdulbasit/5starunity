@@ -19,7 +19,7 @@ class RegistrationEmail extends Mailable
 
     public function build()
     {
-        return $this->from('admin@xnowad.com',"5Starunity ",$this->email->subject)
+        return $this->from('admin@xnowad.com',"5Starunity Registration")
                     ->view('mails.register_verification')
                     // ->text('mails.demo_plain')
                     ->with(
