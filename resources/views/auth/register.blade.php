@@ -394,12 +394,16 @@ label.error {
                                 <label for="dob" class="form-label">{{ __('lables.country')}} <font color="red"> *</font></label>
                                 <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required" style="margin-bottom:15px">
                                     <option >----{{ __('lables.selct_country')}}----</option>
-                                    <option value="14">Österreich</option>
+                                    {{-- <option value="14">Österreich</option>
                                     <option value="82">Deutschland</option>
-                                    {{-- @foreach($countries as $country)
-                                        
-                                        <option value="{{$country->country->id}}">{{$country->country->name}}</option>
-                                    @endforeach --}}
+                                    <option value="82">Deutschland</option> --}}
+                                    @foreach($countries as $country)       
+                                    @if($country->germ_name=="")
+                                        <option value="{{$country->country_id}}">{{$country->name}}</option>
+                                    @else    
+                                        <option value="{{$country->country_id}}">{{$country->germ_name}}</option>
+                                    @endif
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

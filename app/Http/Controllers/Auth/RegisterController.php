@@ -38,7 +38,7 @@ class RegisterController extends Controller
         
         $page = Page::where('page_slug','terms')->first();
         $invitee =  $request->input('invitee');
-        $countries = AllowedCountry::with('country')->orderBy('id','DESC')->get();
+        $countries = AllowedCountry::join('countries',"country_id","countries.id")->orderBy('name')->get();
         return view('auth/register',compact('countries','invitee','page'));
     }
     public function ajaxStates(Request $request)

@@ -19,7 +19,7 @@ return [
     "select_file"=>"Datei Auswählen",
     "id_front"=>"Ausweis Vorderseite",
     "id_back"=>"Ausweis Rückseite",
-    "address"=>"Adresszusatz",
+    "address"=>"Strasse",
     "selct_country"=>"Land Auswählen",
     "submit"=>"BESTÄTIGEN",
     "next"=>"WEITER",
