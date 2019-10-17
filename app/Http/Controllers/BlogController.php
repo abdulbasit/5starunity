@@ -37,7 +37,7 @@ class BlogController extends Controller
         ->where('cat_id',$cat_id)
         ->orderBy('blogs.id', 'DESC')
         ->paginate(15);
-        $categories = Category::where('category_for','blog')->get();
+        $categories = Category::where('category_for','blog')->orderBy('name','ASC')->get();
         return view('blog.index',compact('blogData','categories','cat_id'));
     }
     public function blogDetail($slug)
