@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this Lottery ?</p>
+                    <p>Are you suer you want to delete this Cuppon ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -118,7 +118,7 @@ $("#delete").click(function(){
 });
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
-    window.location.href = "lottery/delete/"+id;
+    window.location.href = "cuppons/delete/"+id;
 })
 </script>
 @endsection

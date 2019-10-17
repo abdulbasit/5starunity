@@ -222,6 +222,7 @@ Auth::routes();
         Route::get('subscriptions', 'AdminController@subscriber')->name('subscriptions');
         //discount cuppons
         Route::get('cuppons', 'CupponController@index')->name('cuppons');
+        Route::get('cuppons/delete/{id}', 'CupponController@delete')->name('cuppons.delete');
         Route::get('cuppon/create', 'CupponController@create')->name('cuppon.create');
         Route::post('cuppon/save', 'CupponController@save')->name('cuppon.save');
         Route::get('cuppon/edit/{id}', 'CupponController@edit')->name('cuppon.edit');

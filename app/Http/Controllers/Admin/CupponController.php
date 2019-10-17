@@ -63,4 +63,10 @@ class CupponController extends Controller
         $cupponDetial->save();
         return redirect('admin/cuppons');
     }
+    public function delete($id)
+    {
+        $cuppon = DiscountCuppon::find($id);
+        $cuppon->delete();
+        return redirect()->back()->with('success',"Cuppon Deleted Successfully!");
+    }
 }

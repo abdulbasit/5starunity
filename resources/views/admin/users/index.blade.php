@@ -11,7 +11,7 @@
               <div class="card-header">
                 <h4 class="card-title">User Listing</h4>
               </div>
-              <div class="card-content collapse show">
+              <div class="card-content collapse show" style="overflow: auto">
                 <div class="card-body card-dashboard">
                   <table class="table table-striped table-bordered zero-configuration" id="usersT">
                     <thead>
