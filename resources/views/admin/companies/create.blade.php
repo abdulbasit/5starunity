@@ -147,6 +147,9 @@
 @section('script')
 
 <script>
+$("#yes").click(function(){
+    window.location.href = "/admin/company"
+});
     $("#add_type").on('change',function(){
         var type = $(this).val();
        if(type==0)

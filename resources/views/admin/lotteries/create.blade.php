@@ -19,32 +19,35 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/pickers/pickadate/pickadate.css')}}">
 @endsection
 @section('content')
+
+
+
 <div class="content-wrapper">
     <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="form-group">
-                <!-- Modal -->
-                <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header bg-danger white">
-                        <h4 class="modal-title" id="myModalLabel11">Warning!</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Are you suer you want to cancel this ?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
-                        <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
-                    </div>
-                    </div>
+        <div class="form-group">
+            <!-- Modal -->
+            <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header bg-danger white">
+                    <h4 class="modal-title" id="myModalLabel11">Warning!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you suer you want to cancel this ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
+                    <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
                 </div>
                 </div>
             </div>
+            </div>
         </div>
+    </div>
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->

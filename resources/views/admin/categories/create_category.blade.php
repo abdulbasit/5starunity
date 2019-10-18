@@ -89,7 +89,7 @@
 @section('script')
 <script>
     $("#yes").click(function(){
-        window.location.href = "/admin/blog/category"
+        window.location.href = "/admin/categories/{{$categoryFor}}"
     });
 </script>
 @endsection

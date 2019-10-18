@@ -199,6 +199,9 @@
   <script src="{{ asset('app-assets/js/scripts/pickers/dateTime/bootstrap-datetime.js')}}" type="text/javascript"></script>
   <script src="{{ asset('app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js')}}"  type="text/javascript"></script>
 <script>
+$("#yes").click(function(){
+    window.location.href = "/admin/cuppons"
+});
 $("#start_date").change(function(){
      var date = $(this).val();
      var requested_date = Date.parse(date);

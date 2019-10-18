@@ -97,7 +97,7 @@
 </script>
 <script>
 $("#yes").click(function(){
-    window.location.href = "/admin/blog"
+    window.location.href = "/admin/pages"
 });
     $(function(){
           $('#desc').froalaEditor()
@@ -119,10 +119,5 @@ $("#yes").click(function(){
 
 
 
-</script>
-<script>
-    $("#yes").click(function(){
-        window.location.href = "/admin/testimonials"
-    });
 </script>
 @endsection

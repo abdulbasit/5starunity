@@ -1,6 +1,31 @@
 @extends('admin.layouts.apps')
 
 @section('content')
+<div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="form-group">
+        <!-- Modal -->
+        <div class="modal fade text-left" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header bg-danger white">
+                <h4 class="modal-title" id="myModalLabel11">Warning!</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you suer you want to cancel this ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
+                <button type="button" delete-id="" class="btn btn-success" id="yes">Yes</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
         <div class="content-wrapper">
           <div class="content-body">
             <!-- Basic form layout section start -->
@@ -15,7 +40,7 @@
                     <div class="card-content collpase show">
                       <div class="card-body">
                         <form class="form form-horizontal" method="post" action="/admin/category/update/{{$category->id}}">
-                            @csrf
+                          @csrf
                           <div class="form-body">
                             <div class="form-group row">
                                 <label class="col-md-3 label-control" for="projectinput1">Category Name</label>
@@ -41,8 +66,8 @@
                                   </div>
                           </div>
                           <div class="form-actions pull-right">
-                            <button type="button" class="btn btn-warning mr-1">
-                              <i class="ft-x"></i> Cancel
+                             <button type="button" data-toggle="modal" data-backdrop="false" data-target="#info" class="btn btn-warning mr-1">
+                                <i class="ft-x"></i> Cancel
                             </button>
                             <button type="submit" class="btn btn-primary">
                               <i class="fa fa-check-square-o"></i> Save
@@ -59,4 +84,20 @@
             <!-- // Basic form layout section end -->
           </div>
         </div>
+@endsection
+@section('script')
+  <script src="{{ asset('app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js')}}"></script>
+  <script src="{{ asset('app-assets/vendors/js/pickers/dateTime/bootstrap-datetimepicker.min.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/vendors/js/pickers/pickadate/picker.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/vendors/js/pickers/pickadate/picker.date.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/vendors/js/pickers/pickadate/picker.time.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/vendors/js/pickers/pickadate/legacy.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/vendors/js/pickers/daterange/daterangepicker.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/js/scripts/pickers/dateTime/bootstrap-datetime.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js')}}"  type="text/javascript"></script>
+<script>
+  $("#yes").click(function(){
+      window.location.href = "/admin/categories/{{$category->category_for}}"
+  });
+</script>
 @endsection

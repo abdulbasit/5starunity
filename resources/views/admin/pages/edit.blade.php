@@ -129,7 +129,7 @@ $("#yes").click(function(){
 </script>
 <script>
     $("#yes").click(function(){
-        window.location.href = "/admin/testimonials"
+        window.location.href = "/admin/pages"
     });
 </script>
 @endsection
