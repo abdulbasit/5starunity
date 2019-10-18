@@ -20,16 +20,16 @@ class AdminController extends Controller
     {
         // $this->middleware('guest:admin');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
+        $allowedCountries = [];
         $country_list = Country::all();
-        return view('admin.settings.index',compact('country_list'));
+        $allowed_countries  = AllowedCountry::all();
+        foreach($allowed_countries as $country)
+        {
+            $allowedCountries[] = $country->country_id;
+        }
+        return view('admin.settings.index',compact('country_list','allowedCountries'));
     }
     public function saveSettings(Request $request)
     {

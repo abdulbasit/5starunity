@@ -48,10 +48,10 @@
                             <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput4">Allowed Countries </label>
                               <div class="col-md-9">
-                                <select id="country_list" multiple="multiple" style="min-height:200px; overflow-y:scroll" name="country_list[]" class="form-control">
-                                   @foreach($country_list as $country)
-                                    <option value="{{$country->id}}" >{{$country->name}}</option>
-                                    @endforeach
+                                <select id="country_list" multiple="multiple" style="min-height:200px; overflow-y:scroll; padding:0px" name="country_list[]" class="form-control">
+                                  @foreach($country_list as $country)
+                                      <option @if(in_array($country->id, $allowedCountries)) selected @endif style="height:30px; padding-top:5px; padding-bottom:10px; padding-left:10px" value="{{$country->id}}" >{{$country->name}}</option>
+                                  @endforeach
                                 </select>
                               </div>
                             </div>
