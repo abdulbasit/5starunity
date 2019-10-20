@@ -104,6 +104,7 @@ class UserController extends Controller
         
         //update user profile
         $dob =  date('Y-m-d', strtotime($request->get('dob')));
+        $documents = UserDocument::where('user_id',$userId)->orderby('id','desc')->first();
         if($identity_card_front!="")
         {
             $file1 = $identity_card_front; 
@@ -115,6 +116,10 @@ class UserController extends Controller
             $file1->getMimeType();
             $identity_card_front_img = time().'_5star_profile_id_front.'.$file1->getClientOriginalExtension();
             $file1->move($identity_card_front_img_thumbnailPath, $identity_card_front_img);
+            $documents->id_front = $identity_card_front_img;
+            $documents->status='1';
+            $documents->updated_at = Carbon::now();
+            $documents->save();
         }
         if($identity_card_back!="")
         {
@@ -127,35 +132,33 @@ class UserController extends Controller
             $file2->getMimeType();
             $identity_card_back_img = time().'_5star_profile_id_back.'.$file2->getClientOriginalExtension();
             $file2->move($identity_card_back_img_thumbnailPath, $identity_card_back_img);
+            $documents->id_front = $identity_card_back_img;
+            $documents->status='1';
+            $documents->updated_at = Carbon::now();
+            $documents->save();
         }
       
-        $idProofImg = public_path('uploads/users/documents_proofs/res_proof');
-        //delete old files uploaded by user 
-        $deleteDocuments = UserDocument::where('user_id',$userId);
-        $deleteDocuments->delete();
-        //===============================
-        foreach ($identity_card as $identity_proofImage)
+       
+        
+        if($identity_card)
         {
-            $identity_proofImage->getClientOriginalName();
-            $identity_proofImage->getClientOriginalExtension();
-            $identity_proofImage->getRealPath();
-            $identity_proofImage->getSize();
-            $identity_proofImage->getMimeType();
-
-            //Move Uploaded File
-           $id_proofImg = time().'_5star_id_proof.'.$identity_proofImage->getClientOriginalExtension();
-           $identity_proofImage->move($idProofImg, $id_proofImg);
-
-            $product_images = UserDocument::create([
-                "user_id" => $userId,
-                "res_proof"=>$id_proofImg,
-                "id_front"=>$identity_card_front_img,
-                "id_back"=>$identity_card_back_img,
-                "status"=>'1',
-                "type"=>'identity',
-                'updated_at'=>Carbon::now(),
-                'created_at'=>Carbon::now(),
-            ]);
+                $file3 = $identity_card;
+                $idProofImg = public_path('uploads/users/documents_proofs/res_proof');
+                $file3->getClientOriginalName();
+                $file3->getClientOriginalExtension();
+                $file3->getRealPath();
+                $file3->getSize();
+                $file3->getMimeType();
+    
+                //Move Uploaded File
+                // dd($identity_card->getClientOriginalExtension());
+               $id_proofImg = time().'_5star_id_proof.'.$identity_card->getClientOriginalExtension();
+               $file3->move($idProofImg, $id_proofImg);
+    
+               $documents->res_proof = $id_proofImg;
+               $documents->status='1';
+               $documents->updated_at = Carbon::now();
+               $documents->save();
             
         }
         $userData->status='1';
@@ -170,8 +173,8 @@ class UserController extends Controller
         $userProfile->street=$request->get('street');
         $userProfile->house_number=$request->get('house'); 
         $userProfile->save();
-         //save user datta after all processes 
-         $userData->save();
+        //save user datta after all processes 
+        $userData->save();
         
         $this->profileUpdateEmail($emailData);
         return redirect()->route('profile')->with('success','Profile updated Successfully !');

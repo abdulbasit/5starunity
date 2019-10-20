@@ -54,6 +54,7 @@ class UserController extends Controller
     }
     public function userDocuments($id)
     {
+        
         $userDocuments = UserDocument::where('user_id',$id)->orderBy('type', 'asc')->get();
         return view('admin.users.documents',compact('userDocuments'));
     }

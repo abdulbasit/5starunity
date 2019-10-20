@@ -184,7 +184,7 @@ body {
                             </div>
                             <div class="row rowSpacing">
                                 <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.identity_proof')}}</div>
-                                <div class="col-lg-8 col-md-6 col-xs-12"><input type="file" multiple="multiple" name="identity_card[]"  id="identity_card" class="custom-file-input form-control" /></div>
+                                <div class="col-lg-8 col-md-6 col-xs-12"><input type="file" name="identity_card"  id="identity_card" class="custom-file-input form-control" /></div>
                             </div>
                             <div class="row rowSpacing">
                                 <div class="col-lg-4 col-md-4 col-xs-12 pr_heading">{{ __('lables.id_front')}}</div>

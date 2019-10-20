@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this Category ?</p>
+                    <p>Are you sure you want to delete this Category ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>

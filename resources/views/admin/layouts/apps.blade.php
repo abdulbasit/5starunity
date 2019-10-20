@@ -54,7 +54,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                       </li>
                       <li class="nav-item" style="background-color:white; width:100%; text-align:center">
                         <a class="navbar-brand" href="/admin" style="padding-bottom:6px; padding-top:0px">
-                          <img class="brand-logo" alt="5Starunity" src="{{ asset('images/logo-5starunity.png')}}" width="150">
+                          <img class="brand-logo" alt="5STARUNITY O Ü" src="{{ asset('images/logo-5STARUNITY O Ü.png')}}" width="150">
                         </a>
                       </li>
                       <li class="nav-item d-md-none">
@@ -279,7 +279,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                     </li>
                     <li class=" nav-item"><a href="#"><i class="ft-monitor"></i><span class="menu-title" data-i18n="">Users</span></a>
                       <ul class="menu-content">
-                        <li><a class="menu-item" href="{{ route('admin.user.create') }}">Add New User</a></li>
+                        {{-- <li><a class="menu-item" href="{{ route('admin.user.create') }}">Add New User</a></li> --}}
                         <li><a class="menu-item" href="{{ route('admin.users') }}">User Listing</a></li>
                         <li><a class="menu-item" href="{{ route('admin.user.account.delete') }}">Delete Account <br />Requests</a></li>
                         <li><a class="menu-item" href="{{ route('admin.recomandations') }}">Recomandatons</a></li>
@@ -360,7 +360,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     </div>
     <footer class="footer footer-static footer-dark navbar-border">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-            <span class="float-md-left d-block d-md-inline-block">Copyright &copy; <?php echo date('Y'); ?> <a class="text-bold-800 grey darken-2" href="https://5starunity.com"target="_blank"> 5STARUNITY </a>, All rights reserved. </span>
+            <span class="float-md-left d-block d-md-inline-block">Copyright &copy; <?php echo date('Y'); ?> <a class="text-bold-800 grey darken-2" href="https://5STARUNITY O Ü.com"target="_blank"> 5STARUNITY O Ü </a>, All rights reserved. </span>
             <span class="float-md-right d-block d-md-inline-block d-none d-lg-block">Powerd by <a class="text-bold-800 grey darken-2" href="http://xnowad.com">XNOWAD.COM</a></span>
         </p>
     </footer>

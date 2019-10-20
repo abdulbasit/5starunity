@@ -9,7 +9,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">User Listing</h4>
+                <h4 class="card-title">@if(substr(Route::currentRouteAction(), (strpos(Route::currentRouteAction(), '@') + 1) )=="deleteRquest") Delete Account Requests @else User Listing @endif </h4>
               </div>
               <div class="card-content collapse show" style="overflow: auto">
                 <div class="card-body card-dashboard">

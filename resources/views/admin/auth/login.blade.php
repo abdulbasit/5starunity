@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="text-center">
-        <img class="" src="{{ asset('images/logo-5starunity.png')}}">
+        <img class="" src="{{ asset('images/logo-5STARUNITY O Ü.png')}}">
     </div>
     <br />
     <div class="row justify-content-center">

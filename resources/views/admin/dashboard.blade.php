@@ -130,8 +130,8 @@
                                     {{$loteryResult->created_lots}}
                                 </td>
                                 <td align="center" class="text-truncate">
-                                    £ {{number_format($loteryResult->totalClients*$loteryResult->one_lot_amount,2,".",",")}}</td>
-                                <td class="text-truncate">£ {{number_format($loteryResult->lot_amount,2,".",",")}}</td>
+                                    € {{number_format($loteryResult->totalClients*$loteryResult->one_lot_amount,2,".",",")}}</td>
+                                <td class="text-truncate">€ {{number_format($loteryResult->lot_amount,2,".",",")}}</td>
                             </tr>
                             @endforeach 
                         </tbody>

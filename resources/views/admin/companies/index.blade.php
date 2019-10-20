@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this Company ?</p>
+                    <p>Are you sure you want to delete this Company ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -34,7 +34,7 @@
           <div class="col-12">
             <div class="card" style="overflow:auto">
               <div class="card-header">
-                <h4 class="card-title">Comanies Listing
+                <h4 class="card-title">Companies Listing
                 {{-- <a href="lottery/create" class="btn btn-social pull-right navBtn">
                     <span class="ft-plus"></span>
                     <span class="pl-1 pr-1">Create</span>

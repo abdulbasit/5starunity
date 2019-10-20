@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\AllowedCountry;
 use App\Models\ContactUs;
 use App\Models\Subscription;
+use App\Models\Admin;
 use Auth;
 use DB;
 class AdminController extends Controller
@@ -53,5 +54,59 @@ class AdminController extends Controller
     {
         $subscirberList = Subscription::where('status','0') ->groupBy('email')->get();
         return view('admin.users.subscriber',compact('subscirberList'));
+    }
+    public function create()
+    {
+        return view('admin.admins.create');
+    }
+    public function saveAdmin(Request $request)
+    {
+        $checkAdmin = Admin::where('email',$request->get('email'))->count();
+        if($checkAdmin==0)
+        {
+            $password = $password= bcrypt($request->get('password'));
+            Admin::create([
+                "fname"=>$request->get('fname'),
+                "lname"=>$request->get('lname'),
+                "email"=>$request->get('email'),
+                "password"=>$password,
+            ]);
+            return redirect()->back()->with('success','Admin Created ');
+        }
+        else
+        {
+            return redirect()->back()->with('error','Admin Already Exists ');
+        }
+    }
+    public function adminListing()
+    {
+        $admins = Admin::all();
+        return view('admin.admins.admin_listing',compact('admins'));
+    }
+    public function edit($id)
+    {
+        $admin = Admin::find($id);
+        return view('admin.admins.edit',compact('admin'));
+    }
+    public function update($id,Request $request)
+    {
+        $password = $password= bcrypt($request->get('password'));
+        $admin = Admin::find($id);
+
+        $admin->fname=$request->get('fname');
+        $admin->lname=$request->get('lname');
+        $admin->email = $request->get('email');
+        if($request->get('password')!="")
+            $admin->password=$password;
+
+        $admin->save();
+        return redirect()->back()->with('success','Admin Created ');
+    }
+    public function delete($id)
+    {
+        $admin = Admin::find($id);
+        $admin->delete();
+        return redirect()->back()->with('success','Admin Deleted');
+
     }
 }

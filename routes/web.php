@@ -227,4 +227,14 @@ Auth::routes();
         Route::post('cuppon/save', 'CupponController@save')->name('cuppon.save');
         Route::get('cuppon/edit/{id}', 'CupponController@edit')->name('cuppon.edit');
         Route::post('cuppon/update', 'CupponController@update')->name('cuppon.update');
+        
+        ///admin permissions system
+        Route::get('new-admin', 'AdminController@create')->name('new-admin');
+        Route::post('save-admin', 'AdminController@saveAdmin')->name('save-admin');
+        Route::get('listing', 'AdminController@adminListing')->name('listing');
+        Route::get('admin-edit/{id}', 'AdminController@edit')->name('admin-edit');
+        Route::post('update-admin/{id}', 'AdminController@update')->name('update-admin');
+        Route::get('roles', 'PermissionController@createRole')->name('roles');
+        Route::get('role/create', 'PermissionController@createRole')->name('role.create');
+        Route::post('role/save', 'PermissionController@saveRole')->name('role.save');
 });

@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you suer you want to delete this testimonial ?</p>
+                    <p>Are you sure you want to delete this testimonial ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -34,7 +34,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Product Listing</h4>
+                <h4 class="card-title">Donors Listing</h4>
               </div>
               <div class="card-content collapse show">
                 <div class="card-body card-dashboard">

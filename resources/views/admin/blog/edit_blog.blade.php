@@ -26,7 +26,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Are you suer you want to cancel this ?</p>
+                        <p>Are you sure you want to cancel this ?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -52,7 +52,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Are you suer you want to delete this image ?</p>
+                            <p>Are you sure you want to delete this image ?</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>

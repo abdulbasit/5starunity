@@ -44,12 +44,12 @@
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th>Full Name</th>
+                        <th>Name</th>
                         <th>email</th>
-                        <th>Age</th>
-                        <th>Status</th>
-                        <th>Registered at</th>
-                        <th>Option</th>
+                        <th>Function</th>
+                        <th>Company</th>
+                        <th>Comments</th>
+                        <th>Date</th>
                       </tr>
                     </tfoot>
                   </table>
