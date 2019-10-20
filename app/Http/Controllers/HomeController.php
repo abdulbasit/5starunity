@@ -58,9 +58,11 @@ class HomeController extends Controller
     {
         return view('pages.comming_soon');
     }
-    public function partner()
-    {
-        return view('pages.comming_soon');
+    public function partner($page)
+    { 
+        $page = Page::where('page_slug',$page)->first();
+        dd($page);
+        return view('pages.terms',compact('page'));
     }
     public function howitworks()
     {
@@ -72,8 +74,9 @@ class HomeController extends Controller
     }
     public function pages($page)
     {
+        $pageName=$page;
         $page = Page::where('page_slug',$page)->first();
-        return view('pages.terms',compact('page'));
+        return view('pages.terms',compact('page','pageName'));
     }
     public function inventroAcadmy()
     {
