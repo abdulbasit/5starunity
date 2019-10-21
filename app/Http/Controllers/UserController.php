@@ -197,7 +197,7 @@ class UserController extends Controller
         $this->changeEmailSend($mailData);
         Auth::guard('client')->logout();
         return true;
-    }
+    } 
     public function changeEmailSend($mailData)
     {
         try {
@@ -348,6 +348,7 @@ class UserController extends Controller
         $userId = Auth::guard('client')->user()->id;
         $cuppon = DiscountCuppon::find($id);
         $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
+        dd('dddd');
         $cupponCounterCreate = CupponCount::create([
             "cuppon_id"=>$id,
             "counter"=>"",

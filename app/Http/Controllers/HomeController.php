@@ -61,7 +61,6 @@ class HomeController extends Controller
     public function partner($page)
     { 
         $page = Page::where('page_slug',$page)->first();
-        dd($page);
         return view('pages.terms',compact('page'));
     }
     public function howitworks()
