@@ -350,10 +350,10 @@ class UserController extends Controller
         $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
         dd('dddd');
         $cupponCounterCreate = CupponCount::create([
-            "cuppon_id"=>$id,
+            "cuppon_id"=>@$id,
             "counter"=>"",
-            "user_id"=>$userId,
-            "ip_address"=>$this->get_client_ip()
+            "user_id"=>@$userId,
+            "ip_address"=>@$this->get_client_ip()
         ]);
         return view('usr_profile.redirect',compact('cuppon'));
     }
