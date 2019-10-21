@@ -345,6 +345,7 @@ class UserController extends Controller
     }
     public function redirectToUrl($id)
     {
+        dd($id);a
         // $userId = Auth::guard('client')->user()->id;
         // $cuppon = DiscountCuppon::find($id);
         // $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
