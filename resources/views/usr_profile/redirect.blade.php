@@ -2,7 +2,12 @@
 @section('script')
 <script>
     $( document ).ready(function() {
+        var tarea = "{{$cuppon->reference_website}}";
+        if (tarea.indexOf("http://") == 0 || tarea.indexOf("https://") == 0) {
+            alert('dd');
+        }
        setTimeout(function(){
+           
             window.location="/{{$cuppon->reference_website}}"
        },8000)
     });
