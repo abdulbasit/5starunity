@@ -349,12 +349,12 @@ class UserController extends Controller
         // $cuppon = DiscountCuppon::find($id);
         // $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
       
-        $cupponCounterCreate = CupponCount::create([
-            "cuppon_id"=>$id,
-            "counter"=>"",
-            "user_id"=>11,
-            "ip_address"=>$this->get_client_ip()
-        ]);
+        // $cupponCounterCreate = CupponCount::create([
+        //     "cuppon_id"=>$id,
+        //     "counter"=>"",
+        //     "user_id"=>11,
+        //     "ip_address"=>$this->get_client_ip()
+        // ]);
         // return view('usr_profile.redirect',compact('cuppon'));
     }
     function get_client_ip() 
