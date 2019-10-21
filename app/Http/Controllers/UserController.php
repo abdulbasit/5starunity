@@ -345,17 +345,17 @@ class UserController extends Controller
     }
     public function redirectToUrl($id)
     {
-        $userId = Auth::guard('client')->user()->id;
-        $cuppon = DiscountCuppon::find($id);
-        $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
-        // dd($id,$userId,$this->get_client_ip());
-        // $cupponCounterCreate = CupponCount::create([
-        //     "cuppon_id"=>1,
-        //     "counter"=>"1",
-        //     "user_id"=>1,
-        //     "ip_address"=>"sadsa"
-        // ]);
-        return view('usr_profile.redirect',compact('cuppon'));
+        // $userId = Auth::guard('client')->user()->id;
+        // $cuppon = DiscountCuppon::find($id);
+        // $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
+      
+        $cupponCounterCreate = CupponCount::create([
+            "cuppon_id"=>$id,
+            "counter"=>"",
+            "user_id"=>11,
+            "ip_address"=>$this->get_client_ip()
+        ]);
+        // return view('usr_profile.redirect',compact('cuppon'));
     }
     function get_client_ip() 
     {
