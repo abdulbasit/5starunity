@@ -13,7 +13,7 @@ class CupponCount extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'cuppon_id', 'counter', 'user_id','ip_address'
+        'cuppon_id', 'counter', 'user_id','ip_address'
     ];
 
     
