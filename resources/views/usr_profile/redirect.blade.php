@@ -3,6 +3,7 @@
 <script>
     $( document ).ready(function() {
         var tarea = "{{$cuppon->reference_website}}";
+        alert(tarea);
         if (tarea.indexOf("http://") == 0 || tarea.indexOf("https://") == 0) {
             alert('dd');
         }
