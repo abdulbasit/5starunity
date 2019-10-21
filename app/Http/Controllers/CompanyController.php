@@ -42,6 +42,40 @@ class CompanyController extends Controller
         // dd(DB::getQueryLog());
         return view('promotions.index',compact('company','user_id','userInfo','route','category'));
     }
+    public function search(Request $request)
+    {
+        $userId = Auth::guard('client')->user()->id;
+        $userData = User::where('users.id',$userId)->first();
+        $userProfile = UserProfile::with("country_name","state_name")->where('user_id',$userId)->first();
+        $userDocuments = UserDocument::where('user_id',$userId)->get();
+        $userInfo = array("user_data"=>$userData,"user_profile"=>$userProfile,"user_documents"=>$userDocuments);
+        $route='promotions';
+        $user_id = Auth::guard('client')->user()->id;
+        $category = Category::where('category_for','company')->get();
+        DB::enableQueryLog();
+        $company = Company::
+                            with(['company_views'])
+                            ->select('companies.*','company_views.*','companies.id as company_id')
+                            ->selectRaw('COUNT(company_views.company_id) as totalViews')
+                            ->leftjoin('company_views','companies.id','company_id')
+                            ->groupBy('companies.id','company_views.company_id')
+                            ->orderBy('companies.id','desc');
+           
+            if($request->get('category'))
+            {
+                $company = $company->where('category_id',$request->get('category'));
+            }
+            if($request->get('search'))
+            {
+                $company = $company->where('company_name',"LIKE","%{$request->get('search')}%");
+            }
+            // dd($company->toSql());
+            $company = $company->paginate(18);
+        //     $company = $company->get();
+        // dd($company);
+        // // dd(DB::getQueryLog());
+        return view('promotions.index',compact('company','user_id','userInfo','route','category'));
+    }
     public function detail($id)
     {
         $company_detail = Company::where('id',$id)->first();

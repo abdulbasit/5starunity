@@ -71,6 +71,7 @@ Auth::routes();
         Route::get('dashboard', 'UserController@index')->name('dashboard');
         Route::get('user/refer/{filters}', 'UserController@refer')->name('user.refer');
         Route::get('promotions', 'UserController@promotions')->name('promotions');
+        
         Route::get('partners', 'UserController@partners')->name('partners');
         Route::get('partner/redirect/{id}', 'UserController@redirectToUrl')->name('partner.redirect');
         Route::get('recomendations', 'UserController@recomendations')->name('recomendations');
@@ -85,6 +86,7 @@ Auth::routes();
         Route::get('security', 'UserController@security')->name('security');
 
         Route::get('promotions', 'CompanyController@index')->name('promotions');
+        Route::post('promotions/filter', 'CompanyController@search')->name('promotions.filter');
         Route::get('partner/detail/{id}', 'CompanyController@detail')->name('partner.detail');
         Route::get('partner/bonus/{id}', 'CompanyController@bonusTalerAdd')->name('partner.bonus');
         

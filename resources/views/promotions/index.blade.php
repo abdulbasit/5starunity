@@ -66,12 +66,12 @@
                     <br />
                     <div class="row text-center">
                         <button id="recomendationsbtn" type="button" class="btn-green" style="margin-top:-5px; right:0px">
-                            {{ __('lables.recomend') }}
+                             {{ __('lables.recomend') }}
                         </button>
                     </div>
                     <br />
                     <br />
-                    <form action="/lottery/search" method="post">
+                    <form action="/promotions/filter" method="post">
                     @csrf
                     <div class="row" style="margin-bottom:20px">
                         <div class="col-xs-12 col-lg-5 form-group">
@@ -80,9 +80,9 @@
                         <div class="col-xs-12 col-lg-5 form-group">
                             <select name="category" id="category" class="form-control ">
                                 <option value="">Kategorie</option>
-                                {{-- @foreach($category as $proCategory)
+                                @foreach($category as $proCategory)
                                     <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
-                                @endforeach --}}
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-xs-12 col-lg-2 form-group text-cnetr">
