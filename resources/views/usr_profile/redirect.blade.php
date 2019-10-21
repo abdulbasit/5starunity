@@ -6,10 +6,8 @@
         if (tarea.indexOf("http://") == 0 || tarea.indexOf("https://") != 0) {
             tarea = "https://"+tarea
         }
-        alert(tarea);
-       setTimeout(function(){
-           
-            // window.location="/{{$cuppon->reference_website}}"
+       setTimeout(function(){  
+            window.location=tarea;
        },8000)
     });
 </script>
