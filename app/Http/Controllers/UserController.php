@@ -345,11 +345,11 @@ class UserController extends Controller
     }
     public function redirectToUrl($id)
     {
-        dd($id);
+       
         $userId = Auth::guard('client')->user()->id;
         $cuppon = DiscountCuppon::find($id);
         $cupponCounter = CupponCount::where('cuppon_id',$id)->count();
-      
+        dd($cuppon);
         $cupponCounterCreate = CupponCount::create([
             "cuppon_id"=>$id,
             "counter"=>"",
