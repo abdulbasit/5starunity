@@ -3,7 +3,7 @@
 <script>
     $( document ).ready(function() {
        setTimeout(function(){
-            window.location="{{$cuppon->reference_website}}"
+            window.location="/{{$cuppon->reference_website}}"
        },8000)
     });
 </script>
