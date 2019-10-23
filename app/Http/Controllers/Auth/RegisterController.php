@@ -383,6 +383,7 @@ class RegisterController extends Controller
         $verificatation = md5(Carbon::now());
         $email = $request->get('email');
         $userDetail = User::where('email',$email)->first();
+        dd($userDetail);
         if(count($userDetail))
         { 
             $userDetail->reset_password_code = $verificatation;
