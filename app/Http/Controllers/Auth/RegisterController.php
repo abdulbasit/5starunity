@@ -388,7 +388,7 @@ class RegisterController extends Controller
             $userDetail->reset_password_code = $verificatation;
             $userDetail->save();
             $data = array("sender_name"=>$email,"verification"=>$verificatation);
-            $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
+            $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Reset Password Request","email_data"=>$data);
             $this->ResetPasswordmEmail($emailData);
         }
         return redirect()->route('login')->with('success','Password request email sent to your email address!');
