@@ -383,15 +383,19 @@ class RegisterController extends Controller
         $verificatation = md5(Carbon::now());
         $email = $request->get('email');
         $userDetail = User::where('email',$email)->first();
-        if($userDetail->email==$email)
+        if($userDetail)
         { 
             $userDetail->reset_password_code = $verificatation;
             $userDetail->save();
             $data = array("sender_name"=>$email,"verification"=>$verificatation);
             $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Reset Password Request","email_data"=>$data);
             $this->ResetPasswordmEmail($emailData);
+            return redirect()->route('login')->with('success','Password request email sent to your email address!');
         }
-        return redirect()->route('login')->with('success','Password request email sent to your email address!');
+        else
+        {
+            return redirect()->route('login')->with('error','Email not exists!');
+        }
     }
     public function updatePassword($token)
     {
