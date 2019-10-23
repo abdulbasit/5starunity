@@ -396,7 +396,7 @@ class RegisterController extends Controller
     public function updatePassword($token)
     {
         $userDetail = User::where('reset_password_code',$token)->first();
-        if(count($userDetail)>0)
+        if($userDetail->reset_password_code==$token)
         {
             return view('auth/password_change_form',compact('userDetail'));
         }
