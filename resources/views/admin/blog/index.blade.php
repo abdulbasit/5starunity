@@ -128,5 +128,8 @@ $("#yes").click(function(){
     var id = $(this).attr('delete-id');
     window.location.href = "/admin/blog/delete/"+id;
 })
+$(document).ready( function () {
+    $('#usersT').DataTable();
+} );
 </script>
 @endsection

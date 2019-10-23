@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\ProClassification;
 use App\Models\Product_images;
 use DB;
+
 class CategoryController extends Controller
 {
     public function index($categoryFor)

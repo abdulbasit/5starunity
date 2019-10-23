@@ -103,7 +103,8 @@
 @endsection
 @section('script')
 <script>
-
-$("#usersT").DataTable();
+$(document).ready( function () {
+    $('#usersT').DataTable();
+} );
 </script>
 @endsection

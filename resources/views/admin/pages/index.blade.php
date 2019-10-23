@@ -114,5 +114,8 @@
         var id = $(this).attr("delete-id");
         window.location.href = "page/delete/"+id;
     });
+    $(document).ready( function () {
+        $('#usersT').DataTable();
+    });
 </script>
 @endsection

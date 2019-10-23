@@ -127,5 +127,8 @@ $("#yes").click(function(){
     var id = $(this).attr('delete-id');
     window.location.href = "/admin/delete-admin/"+id;
 })
+$(document).ready( function () {
+    $('#usersT').DataTable();
+} );
 </script>
 @endsection

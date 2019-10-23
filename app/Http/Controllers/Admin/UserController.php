@@ -14,9 +14,15 @@ use  App\Models\BlogComment;
 use App\Traits\EmailTrait;
 use Auth;
 use ZipArchive;
+use DataTables;
 class UserController extends Controller
 {
     use EmailTrait;
+    public function ajaxRecords()
+    {
+        $userData = User::with('userProfile')->get();
+        return DataTables::of($userData)->make(true);
+    }
     public function index()
     {
         $userData = User::with('userProfile')->get();

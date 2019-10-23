@@ -106,5 +106,8 @@
         var id = $(this).attr("delete-id");
         window.location.href = "testimonials/delete/"+id;
     });
+    $(document).ready( function () {
+        $('#usersT').DataTable();
+    });
 </script>
 @endsection

@@ -155,6 +155,7 @@ Auth::routes();
         
         Route::get('users', 'UserController@index')->name('users');
         Route::get('user/edit', 'UserController@index')->name('user.edit');
+        Route::get('users/records', 'UserController@ajaxRecords')->name('users.records');
         Route::get('user/create', 'UserController@create')->name('user.create');
         Route::get('user/documents/{id}', 'UserController@userDocuments')->name('user.documents');
         Route::get('user/documents/approve/{id}', 'UserController@approve')->name('user.documents.approve');

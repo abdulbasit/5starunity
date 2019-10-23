@@ -113,6 +113,9 @@ $("#delete").click(function(){
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
     window.location.href = "lottery/delete/"+id;
-})
+});
+$(document).ready( function () {
+    $('#usersT').DataTable();
+} );
 </script>
 @endsection

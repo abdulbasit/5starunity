@@ -130,5 +130,8 @@
         var id = $(this).attr("delete-id");
         window.location.href = "product/delete/"+id;
     });
+    $(document).ready( function () {
+        $('#usersT').DataTable();
+    });
 </script>
 @endsection

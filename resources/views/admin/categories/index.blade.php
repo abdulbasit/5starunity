@@ -124,5 +124,8 @@ $("#yes").click(function(){
     var id = $(this).attr('delete-id');
     window.location.href = "/admin/category/delete/"+id+"/"+"{{$categoryFor}}";
 })
+$(document).ready( function () {
+    $('#usersT').DataTable();
+});
 </script>
 @endsection
