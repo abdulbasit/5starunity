@@ -15,6 +15,7 @@ use App\Models\UserProfile;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Mail\RegistrationEmail;
+use App\Mail\RessetPasswordEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
 use Auth;
@@ -371,7 +372,46 @@ class RegisterController extends Controller
         else 
         {
             return 'error';
+        }        
+    }
+    public function passwordReset()
+    {
+        return view('auth.reset_password');
+    }
+    public function changePassword(Request $request)
+    {
+        $verificatation = md5(Carbon::now());
+        $email = $request->get('email');
+        $userDetail = User::where('email',$email)->first();
+        if(count($userDetail))
+        { 
+            $userDetail->reset_password_code = $verificatation;
+            $userDetail->save();
+            $data = array("sender_name"=>$email,"verification"=>$verificatation);
+            $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
+            $this->ResetPasswordmEmail($emailData);
         }
-            
+        return redirect()->route('login')->with('success','Password request email sent to your email address!');
+    }
+    public function updatePassword($token)
+    {
+        $userDetail = User::where('reset_password_code',$token)->first();
+        if(count($userDetail)>0)
+        {
+            return view('auth/password_change_form',compact('userDetail'));
+        }
+        else
+        {
+            return redirect()->route('login')->with('error','Link expired!');  
+        }
+    }
+    public function editPassword(Request $request)
+    {
+        $password = Hash::make($request->get('password'));
+        $userDetail = User::where('id',$request->get('user_id'))->first();
+        $userDetail->password = $password;
+        $userDetail->reset_password_code = "";
+        $userDetail->save();
+        return redirect()->route('login')->with('success','Password Changed !');
     }
 }

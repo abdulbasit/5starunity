@@ -66,10 +66,10 @@
             </div>
         @endif
         <div class="col-lg-8 col-lg-offset-2">
-                <h2 class="text-center registerHeading">{{ __('Login') }}</h2>
+                <h2 class="text-center registerHeading">{{ __('Reset Password') }}</h2>
             <br />
             <div class="card-body">
-                <form method="POST" action="{{ route('login') }}" id="login">
+                <form method="POST" action="{{ route('change.password') }}" id="login">
                     @csrf
                     <input type="hidden" name="pre-route" id="pre-route" value="{{Session::get('route')}}">
                     <div class="form-group row">
@@ -86,18 +86,6 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-sm-3 col-form-label text-right" style="margin-top:11px">{{ __('lables.password')}}</label>
-                        <div class="col-md-6 col-sm-7">
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    {{ $errors->first('password') }}
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="form-group row">
                     </div>
                     <div class="form-group row mb-0">
                         <div class="row">
@@ -105,17 +93,10 @@
                                 <div class="pull-right" style="width:100%">
                                     <div class="col-md-2 col-sm-3 col-xs-4 pull-right" style="position:relative; right:5px">
                                         <button type="submit" class="btn-green" style="margin-top:-5px; width:150px">
-                                            {{ __('EINLOGGEN') }}
+                                            {{ __('Send') }}
                                         </button>
                                     </div>
-                                    <div class="col-md-5 col-sm-6 col-xs-8 no-padding pull-right">
-                                        <div class="form-check" style="margin-left:10px" id="remember">
-                                            <input style="width:20px; height:20px" class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="remember" style="position: relative; top: -5px; width:auto">
-                                                    {{ __('lables.remember')}}
-                                            </label>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -140,13 +121,13 @@
                 <div class="form-group row exBtns"  style="position:relative; left:4px">
                     <label for="" class="col-md-6 col-sm-6 col-xs-12 col-form-label text-right">
                         {{-- {{ __('Password') }} --}}
-                        Passwort vergessen?
+                        Login
                     </label>
                     <div class="col-md-5 col-sm-4 col-xs-11 no-padding">
                         @if (Route::has('password.request'))
-                            <a class="btn btn-primary" style="width:100%; margin-top:-5px" href="password-reset">
+                            <a class="btn btn-primary" style="width:100%; margin-top:-5px" href="{{ route('login') }}">
                                 {{-- {{ __('Forgot Your Password?') }} --}}
-                                ANFORDERN
+                                Login
                             </a>
                         @endif
                     </div>
