@@ -34,7 +34,6 @@ class HomeController extends Controller
                             ->orderBy('totalClients','desc')
                             ->limit(3)
                             ->get();
-        dd($lotteryData);
         $sliderData = Slider::all();
         $blogData = Blog::select('id','title','short_desc','post_img','created_at','post_name')
         ->orderBy('blogs.id', 'DESC')

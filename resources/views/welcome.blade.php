@@ -168,17 +168,17 @@
                 @foreach($lotteryData as $i=>$lottery)
                     <div class="col-xs-12 col-sm-6 col-lg-4 startup_blok active-yes ">
                         <div class="content_startup_blok current_investment ">
-                            <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
+                            <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lotteryId}}">
                                 <div class="stratup_img lazy" data-src="" title="{{$lottery->name}}" style="overflow:hidden; height:100px">
                                     <img class="img-responsive" src="{{ URL::to('/') }}/uploads/pro_images/{{$lottery->product->product_images[0]->pro_image}}">
                                 </div>
                             </a>
                             <div class="row content_info">
-                                <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lottery_id}}">
+                                <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lotteryId}}">
                                     <h2 class="mb-5px">{{$lottery->name}}</h2>
                                 </a>
                                 <p itemprop="description">
-                                    <a class="lot_desc" href="/lottery/detail/{{$lottery->lottery_id}}" title="{{$lottery->name}}">
+                                    <a class="lot_desc" href="/lottery/detail/{{$lottery->lotteryId}}" title="{{$lottery->name}}">
                                         {{$lottery->description}}
                                     </a>
                                 </p>
@@ -198,17 +198,17 @@
                             <div class="row progress_info nopadding">
                                 <div class="col-xs-12 progress canInvest">
                                         <?php
-                                        $total = $lottery->one_lot_amount*$lottery->getTotalLotsAttribute($lottery->lottery_id);
+                                        $total = $lottery->one_lot_amount*$lottery->getTotalLotsAttribute($lottery->lotteryId);
                                         $progressBar = round($total/$lottery->lot_amount*100,0);
                                         ?>
                                     <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $progressBar ?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $progressBar ?>%"><?php echo $progressBar ?>%</div>
                                 </div>
                                 <div class="col-xs-6 block_details borderRightgrey">
-                                <strong>{{$lottery->getTotalLotsAttribute($lottery->lottery_id)}}</strong>
+                                <strong>{{$lottery->getTotalLotsAttribute($lottery->lotteryId)}}</strong>
                                     {{ __('menu.lots_bought')}}
                                 </div>
                                 <div class="col-xs-6 block_details">
-                                    <strong>{{$lottery->getTotalContestentsAttribute($lottery->lottery_id)}}</strong>{{ __('menu.participants')}}
+                                    <strong>{{$lottery->getTotalContestentsAttribute($lottery->lotteryId)}}</strong>{{ __('menu.participants')}}
                                 </div>
                             </div>
                             <a href="/lottery/detail/{{$lottery->id}}">
