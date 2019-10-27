@@ -289,19 +289,19 @@ function check_class()
 
     var price = $("#pro_price").val();
 
-    if(price=="" || price < 200)
+    if(price=="" || price < 100)
     {
         $("#pro_price").val("");
         $("#pro_price").css('border','solid 1px red');
         $("#product_class").css('color','red');
-        $('#product_class').html('Price must be greater then 200');
+        $('#product_class').html('Price must be greater then 100');
         return false;
     }
 
     $("#pro_price").removeAttr('style');
     $("#product_class").css('color','black');
 
-    if(price>= 200 && price<=1499)
+    if(price>= 100 && price<=1499)
     {
         $('#product_class').html('Product Class: <span class="green">1 </span>, Coins Per lot: <span id="coins" class="green">1</span>');
         $("#class_id").val(1);
