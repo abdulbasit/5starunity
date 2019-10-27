@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container no-padding">
-    <br />
-    <h2 class="text-center registerHeading">{{$page->page_title}}</h2>
+    
+    <h2 class="text-center registerHeading" style="font-weight:bold">{{$page->page_title}}</h2>
     <br />
     <div class="fieldset-content">
         <div class="row">
