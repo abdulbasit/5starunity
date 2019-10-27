@@ -55,7 +55,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                       </li>
                       <li class="nav-item" style="background-color:white; width:100%; text-align:center">
                         <a class="navbar-brand" href="/admin" style="padding-bottom:6px; padding-top:0px">
-                          <img class="brand-logo" alt="5STARUNITY O Ü" src="{{ asset('images/logo-5STARUNITY O Ü.png')}}" width="150">
+                          <img class="brand-logo" alt="5STARUNITY O Ü" src="{{ asset('images/logo-5starunity.png')}}" width="150">
                         </a>
                       </li>
                       <li class="nav-item d-md-none">
@@ -281,6 +281,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                     <li class=" nav-item"><a href="#"><i class="ft-monitor"></i><span class="menu-title" data-i18n="">Users</span></a>
                       <ul class="menu-content">
                         {{-- <li><a class="menu-item" href="{{ route('admin.user.create') }}">Add New User</a></li> --}}
+                        
                         <li><a class="menu-item" href="{{ route('admin.users') }}">User Listing</a></li>
                         <li><a class="menu-item" href="{{ route('admin.user.account.delete') }}">Delete Account <br />Requests</a></li>
                         <li><a class="menu-item" href="{{ route('admin.recomandations') }}">Recomandatons</a></li>
