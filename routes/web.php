@@ -119,7 +119,7 @@ Auth::routes();
         ///////////////////////////////////////////////////////////
     //===============================================================
 
-    Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.','middleware' => ['auth:admin']], function () {
+    Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.','middleware' => ['admin']], function () {
         // Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.','middleware' => ['admin']], function () {
         // Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
             // Route::group(['prefix'=>'admin',  'middleware' => 'admin'], function(){
