@@ -13,16 +13,19 @@ class CupponController extends Controller
 {
     public function index()
     {
+        $this->authorize('list', new DiscountCuppon);
         $allCuppons = DiscountCuppon::all();
         
         return view('admin.cuppons.index',compact('allCuppons'));
     }
     public function create()
     {
+        $this->authorize('add', new DiscountCuppon);
         return view('admin.cuppons.create');
     }
     public function save(Request $request)
-    { 
+    {
+        $this->authorize('add', new DiscountCuppon); 
         $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
         $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
         DiscountCuppon::create([
@@ -41,11 +44,13 @@ class CupponController extends Controller
     }
     public function edit($id)
     { 
+        $this->authorize('edit', new DiscountCuppon);
         $cupponDetial = DiscountCuppon::where('id',$id)->first();
         return view('admin.cuppons.edit',compact('cupponDetial'));
     }
     public function update(Request $request)
     {
+        $this->authorize('edit', new DiscountCuppon);
         $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
         $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
         $id = $request->get('id');
@@ -65,6 +70,7 @@ class CupponController extends Controller
     }
     public function delete($id)
     {
+        $this->authorize('delete', new DiscountCuppon);
         $cuppon = DiscountCuppon::find($id);
         $cuppon->delete();
         return redirect()->back()->with('success',"Cuppon Deleted Successfully!");

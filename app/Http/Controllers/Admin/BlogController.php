@@ -15,11 +15,13 @@ class BlogController extends Controller
 
     public function index()
     {
+        $this->authorize('list', new Blog);
         $blogs = Blog::with('category')->get();
         return view('admin.blog.index',compact('blogs'));
     }
     public function edit($id)
     {
+        $this->authorize('edit', new Blog);
         $category = Category::all();
         $blog = Blog::find($id);
         // dd($blog->title);
@@ -27,6 +29,7 @@ class BlogController extends Controller
     }
     public function create()
     {
+        $this->authorize('add', new Blog);
         $category = Category::all();
         return view('admin.blog.create_blog',compact('category'));
     }
@@ -37,6 +40,7 @@ class BlogController extends Controller
     }
     public function delete($id)
     {
+        $this->authorize('delete', new Blog);
         $blogPost = Blog::where('id',$id);
         $blogPost->delete();
         return redirect('admin/blog');
@@ -78,6 +82,7 @@ class BlogController extends Controller
     }
     public function saveBlog(Request $request)
     {
+        $this->authorize('add', new Blog);
         ini_set('memory_limit', '100192M');
         ini_set("post_max_size","10024M");
         ini_set("upload_max_filesize","20024M");

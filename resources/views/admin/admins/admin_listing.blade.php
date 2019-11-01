@@ -51,7 +51,7 @@
                       <tr>
                         <th>#ID</th>
                         <th>Name</th>
-                        {{-- <th>Status</th> --}}
+                        <th>Role</th>
                         <th>Created at</th>
                         <th>Updated at</th>
                         <th>Action</th>
@@ -66,16 +66,9 @@
                             <td>
                                 {{$admin->fname." ".$admin->lname }}
                             </td>
-                            {{-- <td>
-                                @if($admin->status==0)
-                                    Active
-                                @else
-                                    <span class="badge badge-danger">
-                                        Disabled
-                                    </span>
-                                @endif
-
-                            </td> --}}
+                            <td>
+                                {{$admin->role_name }}
+                            </td>
 
                             <td>{{$admin->created_at}}</td>
                             <td>{{$admin->updated_at}}</td>
@@ -100,7 +93,7 @@
                       <tr>
                         <th>#ID</th>
                         <th> Name</th>
-                        {{-- <th>Status</th> --}}
+                        <th>Role</th>
                         <th>Created at</th>
                         <th>Updated at</th>
                         <th>Action</th>

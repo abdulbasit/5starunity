@@ -8,6 +8,7 @@ use App\Models\AllowedCountry;
 use App\Models\ContactUs;
 use App\Models\Subscription;
 use App\Models\Admin;
+use App\Models\Role;
 use Auth;
 use DB;
 class AdminController extends Controller
@@ -57,7 +58,8 @@ class AdminController extends Controller
     }
     public function create()
     {
-        return view('admin.admins.create');
+        $roles = Role::all();
+        return view('admin.admins.create', compact('roles'));
     }
     public function saveAdmin(Request $request)
     {
@@ -70,6 +72,7 @@ class AdminController extends Controller
                 "lname"=>$request->get('lname'),
                 "email"=>$request->get('email'),
                 "password"=>$password,
+                "role_id"=>$request->get('role'),
             ]);
             return redirect()->back()->with('success','Admin Created ');
         }
@@ -80,13 +83,14 @@ class AdminController extends Controller
     }
     public function adminListing()
     {
-        $admins = Admin::all();
+        $admins = Admin::select('admin_roles.id as role_id','admin_roles.name as role_name','admins.*','admins.id as admin_id')->join('admin_roles','admin_roles.id','=','role_id')->get();
         return view('admin.admins.admin_listing',compact('admins'));
     }
     public function edit($id)
     {
         $admin = Admin::find($id);
-        return view('admin.admins.edit',compact('admin'));
+        $roles = Role::all();
+        return view('admin.admins.edit',compact('admin','roles'));
     }
     public function update($id,Request $request)
     {
@@ -96,6 +100,7 @@ class AdminController extends Controller
         $admin->fname=$request->get('fname');
         $admin->lname=$request->get('lname');
         $admin->email = $request->get('email');
+        $admin->role_id = $request->get('role');
         if($request->get('password')!="")
             $admin->password=$password;
 
@@ -109,4 +114,5 @@ class AdminController extends Controller
         return redirect()->back()->with('success','Admin Deleted');
 
     }
+    
 }

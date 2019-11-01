@@ -67,8 +67,12 @@
                                     Action
                                     </button>
                                     <div class="dropdown-menu arrow " id="options">
-                                        <a class="dropdown-item" href="{{ route('admin.testimonial.edit',$testimonial->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                        <a data-id="{{$testimonial->id}}" onclick="deleteFunction({{$testimonial->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                        @can('edit', new App\Models\Testimonial)
+                                          <a class="dropdown-item" href="{{ route('admin.testimonial.edit',$testimonial->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                        @endcan
+                                        @can('delete', new App\Models\Testimonial)
+                                          <a data-id="{{$testimonial->id}}" onclick="deleteFunction({{$testimonial->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                        @endcan
                                     </div>
                                 </div>
                             </div>

@@ -65,8 +65,10 @@
                                     Action
                                     </button>
                                     <div class="dropdown-menu arrow " id="options">
+                                      @can('delete', new App\Models\Slider)
                                         {{-- <a class="dropdown-item" href="{{ route('admin.testimonial.edit',$sliders->id) }}"><i class="ft-edit green"></i> Edit </a> --}}
                                         <a data-id="{{$sliders->id}}" onclick="deleteFunction({{$sliders->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                      @endcan
                                     </div>
                                 </div>
                             </div>

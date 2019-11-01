@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
-
+use Stripe\Error\Permission;
 class Role extends Model
 {
     protected $table = 'admin_roles';
@@ -20,6 +20,9 @@ class Role extends Model
     // {
     //     return $this->belongsTo('App\Models\ProClassification');
     // }
-
+    public function permissions()
+    {
+        return $this->hasMany(RolePermission::class);
+    }
     protected $dates = ['deleted_at'];
 }

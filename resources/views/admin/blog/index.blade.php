@@ -35,10 +35,12 @@
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title">Blog Listing
-                <a href="blog/create" class="btn btn-social pull-right navBtn">
-                    <span class="ft-plus"></span>
-                    <span class="pl-1 pr-1">Create</span>
-                </a>
+                @can('add', new App\Models\Blog)
+                    <a href="blog/create" class="btn btn-social pull-right navBtn">
+                        <span class="ft-plus"></span>
+                        <span class="pl-1 pr-1">Create</span>
+                    </a>
+                @endcan
                 </h4>
               </div>
               <div class="card-content collapse show">
@@ -87,8 +89,12 @@
                                         Action
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
-                                            <a class="dropdown-item" href="{{ route('admin.blog.edit',$blodData->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                            <a data-id="{{$blodData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                            @can('edit', new App\Models\Blog)
+                                                <a class="dropdown-item" href="{{ route('admin.blog.edit',$blodData->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                            @endcan
+                                            @can('delete', new App\Models\Blog)
+                                                <a data-id="{{$blodData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                            @endcan
                                         </div>
                                     </div>
                                 </div>

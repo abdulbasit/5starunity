@@ -119,8 +119,12 @@ Auth::routes();
         ///////////////////////////////////////////////////////////
     //===============================================================
 
-    Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
+    Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.','middleware' => ['auth:admin']], function () {
+        // Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.','middleware' => ['admin']], function () {
+        // Route::group(['prefix' =>'admin','namespace'=>'Admin','as' => 'admin.'], function () {
+            // Route::group(['prefix'=>'admin',  'middleware' => 'admin'], function(){
         //site settings
+        Route::auth();
         Route::get('settings', 'AdminController@index')->name('settings');
         Route::post('settings/save', 'AdminController@saveSettings')->name('settings.save');
         // Authentication Routes...
@@ -237,10 +241,16 @@ Auth::routes();
         ///admin permissions system
         Route::get('new-admin', 'AdminController@create')->name('new-admin');
         Route::post('save-admin', 'AdminController@saveAdmin')->name('save-admin');
+        Route::get('delete-admin/{id}', 'AdminController@delete')->name('save-admin');
         Route::get('listing', 'AdminController@adminListing')->name('listing');
         Route::get('admin-edit/{id}', 'AdminController@edit')->name('admin-edit');
         Route::post('update-admin/{id}', 'AdminController@update')->name('update-admin');
-        Route::get('roles', 'PermissionController@createRole')->name('roles');
+        Route::get('roles', 'PermissionController@roles')->name('roles');
         Route::get('role/create', 'PermissionController@createRole')->name('role.create');
         Route::post('role/save', 'PermissionController@saveRole')->name('role.save');
+        Route::get('role/edit/{id}', 'PermissionController@editRole')->name('role.edit');
+        Route::post('role/update', 'PermissionController@updateRole')->name('role.update');
+        Route::get('role/delete/{id}', 'PermissionController@deleteRole')->name('role.delete');
+        Route::get('permissions/{role_id}', 'PermissionController@permissions')->name('permissions');
+        Route::post('role/permissions/save', 'PermissionController@saveRolePermission')->name('role.permissions.save');
 });

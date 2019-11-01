@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\User;
 use App\Models\UserProfile;
 use App\Models\LotteryContestent;
 use App\Models\Recomendations;
 use App\Models\Vallet;
 use App\Models\UserDocument;
-use  App\Models\TransLog;
-use  App\Models\BlogComment;
+use App\Models\TransLog;
+use App\Models\BlogComment;
 use App\Traits\EmailTrait;
 use Auth;
 use ZipArchive;
@@ -25,16 +25,19 @@ class UserController extends Controller
     }
     public function index()
     {
+        $this->authorize('list', new User);
         $userData = User::with('userProfile')->get();
         return view('admin.users.index',compact('userData'));
     }
     public function recomandations()
     {
+        $this->authorize('list', new User);
         $userData = Recomendations::all();
         return view('admin.users.recomandatins',compact('userData'));
     }
     public function creditHistory($id,$type="")
     {
+        $this->authorize('list', new User);
         $user_id = $id;
         $creditHistoryData = Vallet::where('user_id',$id)->where('status','approved');
         if($type=='credit')
@@ -50,23 +53,25 @@ class UserController extends Controller
     }
     public function transactionHistory($id)
     {
+        $this->authorize('list', new User);
         $lotterData = LotteryContestent::where('vallet_id',$id)->get();
         return view('admin.users.trans_history',compact('lotterData'));
     }
     public function transLog($id)
     {
+        $this->authorize('list', new User);
         $transLog = TransLog::where('vallet_id',$id)->first();
         return view('admin.users.trans_log',compact('transLog'));
     }
     public function userDocuments($id)
     {
-        
+        $this->authorize('list', new User);
         $userDocuments = UserDocument::where('user_id',$id)->orderBy('type', 'asc')->get();
         return view('admin.users.documents',compact('userDocuments'));
     }
     public function approve($id,Request $request)
     {
-       
+        
         $document_status = UserDocument::where('id',$id)->first();
         $document_status->status ="0";
         $document_status->save();
@@ -126,8 +131,8 @@ class UserController extends Controller
 
     public function update_status($id,$status)
     {
+        $this->authorize('delete', new User);
         $user = User::where('id',$id)->first();
-
         $user->status =$status;
         $user->save();
         if($status=='0')

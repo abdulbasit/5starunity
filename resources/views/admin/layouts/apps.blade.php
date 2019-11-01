@@ -276,12 +276,22 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                       <span>General</span><i class=" ft-minus" data-toggle="tooltip" data-placement="right"
                       data-original-title="General"></i>
                     </li>
+                    
                     <li class=" nav-item"><a href="/admin"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
                     </li>
+                    <li class=" nav-item"><a href="#"><i class="fa fa-cog"></i><span class="menu-title" data-i18n="">Settings</span></a>
+                      <ul class="menu-content">
+                        <li><a class="menu-item" href="{{ route('admin.listing') }}">Admin Listing</a></li>
+                        <li><a class="menu-item" href="{{ route('admin.new-admin') }}">Create Admin</a></li>
+                        
+                          <li><a class="menu-item" href="{{ route('admin.roles') }}">Admin Roles</a></li>
+                        
+                      </ul>
+                    </li>
+                    @can('list', new App\User)
                     <li class=" nav-item"><a href="#"><i class="ft-monitor"></i><span class="menu-title" data-i18n="">Users</span></a>
                       <ul class="menu-content">
                         {{-- <li><a class="menu-item" href="{{ route('admin.user.create') }}">Add New User</a></li> --}}
-                        
                         <li><a class="menu-item" href="{{ route('admin.users') }}">User Listing</a></li>
                         <li><a class="menu-item" href="{{ route('admin.user.account.delete') }}">Delete Account <br />Requests</a></li>
                         <li><a class="menu-item" href="{{ route('admin.recomandations') }}">Recomandatons</a></li>
@@ -289,9 +299,12 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
 
                       </ul>
                     </li>
+                    @endcan
                     <li class=" nav-item"><a href="#"><i class="ft-monitor"></i><span class="menu-title" data-i18n="">Companies</span></a>
                       <ul class="menu-content">
-                          <li><a class="menu-item" href="{{ route('admin.company.create') }}">Create Company</a></li>
+                          @can('add', new App\Models\Company)
+                            <li><a class="menu-item" href="{{ route('admin.company.create') }}">Create Company</a></li>
+                          @endcan
                           <li><a class="menu-item" href="{{ route('admin.company') }}">View Companies</a></li>
                           <li><a class="menu-item" href="{{ route('admin.categories','company') }}">Categories</a></li>
                         </ul>
@@ -299,46 +312,71 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                     <li class=" nav-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Products</span></a>
                       <ul class="menu-content">
                         <li><a class="menu-item" href="{{ route('admin.categories','pro') }}">Categories</a></li>
-                        <li><a class="menu-item" href="{{ route('admin.product.create') }}">Add New Product</a></li>
-                        <li><a class="menu-item" href="{{ route('admin.products') }}">Product Listing</a></li>
+                        @can('add', new App\Models\Product)
+                          <li><a class="menu-item" href="{{ route('admin.product.create') }}">Add New Product</a></li>
+                        @endcan
+                        @can('list', new App\Models\Product)
+                          <li><a class="menu-item" href="{{ route('admin.products') }}">Product Listing</a></li>
+                        @endcan
                       </ul>
                         </li>
                         <li><a class="menu-item" href="#"><i class="ft-layout"></i>Lotteries</a>
                           <ul class="menu-content">
-                            <li><a class="menu-item" href="{{ route('admin.lottery.create') }}">Add New Lottery</a></li>
-                            <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Lottery Listings</a>
-                            </li>
+                            @can('add', new App\Models\Lottery)
+                              <li><a class="menu-item" href="{{ route('admin.lottery.create') }}">Add New Lottery</a></li>
+                            @endcan
+                            @can('list', new App\Models\Lottery)
+                            <li><a class="menu-item" href="{{ route('admin.lotteries') }}">Lottery Listings</a></li>
+                            @endcan
                           </ul>
                         </li>
                         <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Blog</a>
                             <ul class="menu-content">
                                 <li><a class="menu-item" href="{{ route('admin.categories','blog') }}">Categories</a></li>
-                                <li><a class="menu-item" href="{{ route('admin.blog.create') }}">Add New Blog</a></li>
-                                <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
+                                @can('add', new App\Models\Blog)
+                                  <li><a class="menu-item" href="{{ route('admin.blog.create') }}">Add New Blog</a></li>
+                                @endcan
+                                @can('list', new App\Models\Blog)
+                                  <li><a class="menu-item" href="{{ route('admin.blog') }}">Blog Listing</a></li>
+                                @endcan
                             </ul>
                         </li>
                        
                         <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Pages</a>
                             <ul class="menu-content">
-                                <li><a class="menu-item" href="{{ route('admin.pages') }}">Pages Listing</a></li>
-                                <li><a class="menu-item" href="{{ route('admin.page.create') }}">Add New Page</a></li>
+                                @can('list', new App\Models\Page)
+                                  <li><a class="menu-item" href="{{ route('admin.pages') }}">Pages Listing</a></li>
+                                @endcan
+                                @can('add', new App\Models\Page)
+                                  <li><a class="menu-item" href="{{ route('admin.page.create') }}">Add New Page</a></li>
+                                @endcan
                             </ul>
                           </li>
                           <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Donors</a>
                             <ul class="menu-content">
-                              <li><a class="menu-item" href="{{ route('admin.testimonials') }}">Donors Listing</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.testimonials.create') }}">Add Donors</a></li>
+                              @can('list', new App\Models\Testimonial)
+                                <li><a class="menu-item" href="{{ route('admin.testimonials') }}">Donors Listing</a></li>
+                              @endcan
+                              @can('add', new App\Models\Testimonial)
+                                <li><a class="menu-item" href="{{ route('admin.testimonials.create') }}">Add Donors</a></li>
+                              @endcan
                             </ul>
                           </li>
-                          <li><a class="menu-item" href="{{ route('admin.contact-us') }}"><i class="ft-layout"></i>Contact Us Queries</a></li>
+                          @can('list', new App\Models\ContactUs)
+                            <li><a class="menu-item" href="{{ route('admin.contact-us') }}"><i class="ft-layout"></i>Contact Us Queries</a></li>
+                          @endcan
                           <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Sliders</a>
                             <ul class="menu-content">
-                              <li><a class="menu-item" href="{{ route('admin.slider.create') }}">Add New Slider</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.sliders') }}">Slider Listings</a>
+                              @can('add', new App\Models\Slider)
+                                <li><a class="menu-item" href="{{ route('admin.slider.create') }}">Add New Slider</a></li>
+                              @endcan
+                              @can('list', new App\Models\Slider)
+                                <li><a class="menu-item" href="{{ route('admin.sliders') }}">Slider Listings</a>
+                              @endcan  
                             </ul>
                           </li>
                           <li>
@@ -347,9 +385,13 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                           <li>
                             <a class="menu-item" href="#"><i class="ft-layout"></i>Cuppons</a>
                             <ul class="menu-content">
-                              <li><a class="menu-item" href="{{ route('admin.cuppon.create') }}">Create Discount <br />Cuppons</a></li>
-                              <li><a class="menu-item" href="{{ route('admin.cuppons') }}">Cuppons Listing</a>
-                            </ul>
+                              @can('add', new App\Models\DiscountCuppon)
+                                <li><a class="menu-item" href="{{ route('admin.cuppon.create') }}">Create Discount <br />Cuppons</a></li>
+                              @endcan
+                              @can('list', new App\Models\DiscountCuppon)
+                                <li><a class="menu-item" href="{{ route('admin.cuppons') }}">Cuppons Listing</a>
+                              @endcan
+                              </ul>
                           </li>
                       </ul>
                     </li>

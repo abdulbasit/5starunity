@@ -65,13 +65,20 @@
                                     Action
                                     </button>
                                     <div class="dropdown-menu arrow " id="options">
+                                       
                                         @if($user->status=="1" || $user->status=="2")
+                                          @can('delete', new App\User)      
                                             <a class="dropdown-item" href="{{ route('admin.user.status',[$user->id,0]) }}"><i class="fa fa-check"></i> Acitivate </a>
+                                          @endcan  
                                         @elseif($user->status=="3")
+                                          @can('delete', new App\User)    
                                             <a class="dropdown-item" href="{{ route('admin.user.status',[$user->id,4]) }}"><i class="ft-slash red"></i> Remove</a>
+                                          @endcan  
                                         @else
+                                          @can('delete', new App\User)    
                                               <a class="dropdown-item" href="{{ route('admin.user.status',[$user->id,2]) }}"><i class="ft-slash red"></i> Block </a>
-                                          @endif
+                                          @endcan    
+                                        @endif
                                           <a class="dropdown-item" href="{{ route('admin.user.documents',$user->id) }}"><i class="ft-file-text green"></i> Documents  </a>
                                           <a class="dropdown-item" href="{{ route('admin.user.credit.history',$user->id) }}"><i class="fa fa-credit-card"></i> Credit History  </a>
                                     </div>

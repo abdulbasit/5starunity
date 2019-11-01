@@ -5,26 +5,31 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Image;
 use Carbon\Carbon;
+use App\Models\Admin;
 use App\Models\Product;
 use App\Models\Lottery;
 use App\Models\LotteryContestent;
 use Auth;
 use DB;
+use App\User;
 class LottryController extends Controller
 {
 
     public function index()
     {
+        $this->authorize('list', new Lottery);
         $lotteries = Lottery::with('product')->get();
         return view('admin.lotteries.index',compact('lotteries'));
     }
     public function create()
     {
+        $this->authorize('add', new Lottery);
         $products = Product::all();
         return view('admin.lotteries.create',compact('products'));
     }
     public function save(Request $request)
     {
+        $this->authorize('add', new Lottery);
         $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
         $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
         $lottery_id = Lottery::create([
@@ -47,12 +52,14 @@ class LottryController extends Controller
     }
     public function edit($id)
     {
+        $this->authorize('edit', new Lottery);
         $products = Product::all();
         $lottery = Lottery::find($id);
         return view('admin.lotteries.edit',compact('products','lottery'));
     }
     public function update($id,Request $request)
     {
+        $this->authorize('edit', new Lottery);
         $start_date =  date('Y-m-d', strtotime($request->get("start_date")));
         $end_date =  date('Y-m-d', strtotime($request->get("end_date")));
         $lottery = Lottery::find($id);
@@ -73,12 +80,14 @@ class LottryController extends Controller
     }
     public function delete($id,Request $request)
     {
+        $this->authorize('delete', new Lottery);
         $lottery = Lottery::where('id',$id);
         $lottery->delete();
         return redirect('admin/lotteries');
     }
     public function detail($id)
     {
+        $this->authorize('view', new Lottery);
         $lotteryInfo=Lottery::find($id);
         $totalContestents = LotteryContestent::where('lottery_id',$id)->count('id');
         $lotterContestnets = LotteryContestent::select("lottery_contestents.*")->with('user')->where('lottery_id',$id)->groupBy('user_id')

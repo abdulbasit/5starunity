@@ -14,16 +14,18 @@ class SliderController extends Controller
 
     public function index()
     {
+        $this->authorize('list', new Slider);
         $slidersData= Slider::all();
         return view('admin.sliders.index',compact('slidersData'));
     }
     public function create()
     {
+        $this->authorize('add', new Slider);
         return view('admin.sliders.create');
     }
     public function saveSlider(Request $request)
     {
-
+        $this->authorize('edit', new Slider);
         $file = $request->file('image');
         $destinationPath = public_path('uploads/slider/');
         $imageName = time().'_5starunity.'.$file->getClientOriginalExtension();
@@ -40,6 +42,7 @@ class SliderController extends Controller
     }
     public function deleteSlider($id)
     {
+        $this->authorize('delete', new Slider);
         $sliderImage = Slider::where('id',$id);
         $sliderImage->delete();
         return redirect('admin/sliders');

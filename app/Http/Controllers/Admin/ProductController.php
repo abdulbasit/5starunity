@@ -15,16 +15,19 @@ class ProductController extends Controller
 {
     public function index()
     {
+        $this->authorize('list', new Product);
         $products= Product::join('categories','cat_id','categories.id')->get();
         return view('admin.products.index',compact('products'));
     }
     public function create()
     {
+        $this->authorize('add', new Product);
         $category = Category::where("category_for",'pro')->get();
         return view('admin.products.create',compact('category'));
     }
     public function edit($id)
     {
+        $this->authorize('edit', new Product);
         $category = Category::where("category_for",'pro')->get();
         $productInfo = Product::find($id);
         $productImgs = Product_images::where('pro_id',$id)->get();
@@ -32,17 +35,20 @@ class ProductController extends Controller
     }
     public function deletePhoto(Request $request)
     {
+        $this->authorize('delete', new Product);
         $productImage = Product_images::where('id',$request->get('id'));
         $productImage->delete();
     }
     public function delete($id)
     {
+        $this->authorize('delete', new Product);
         $productImage = Product::where('id',$id);
         $productImage->delete();
         return redirect('admin/products');
     }
     public function update($id,Request $request)
     {
+        $this->authorize('edit', new Product);
         $product = Product::find($id);
         $product->pro_name=$request->get("name");
         $product->pro_detail=$request->get("desc");
@@ -94,6 +100,7 @@ class ProductController extends Controller
     }
     public function saveProduct(Request $request)
     {
+        $this->authorize('add', new Product);
         $product_id = Product::create([
             "pro_name" => $request->get("name"),
             "pro_detail"=>$request->get("desc"),

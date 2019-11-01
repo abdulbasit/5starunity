@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to delete this Company ?</p>
+                    <p>Are you sure you want to delete this Role ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -31,14 +31,20 @@
       <!-- Zero configuration table -->
       <section id="configuration">
         <div class="row">
+            @if(Session::has('error'))
+                <p class="alert {{ Session::get('alert-class', 'alert-warning') }}">{{ Session::get('error') }}</p>
+            @endif
+            @if(Session::has('success'))
+                <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+            @endif
           <div class="col-12">
-            <div class="card" style="overflow:auto">
+            <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Companies Listing
-                {{-- <a href="lottery/create" class="btn btn-social pull-right navBtn">
+                <h4 class="card-title">Roles Listing
+                <a href="role/create" class="btn btn-social pull-right navBtn">
                     <span class="ft-plus"></span>
                     <span class="pl-1 pr-1">Create</span>
-                </a> --}}
+                </a>
                 </h4>
               </div>
               <div class="card-content collapse show">
@@ -47,46 +53,21 @@
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Total Views </th>
-                        <th>Views Per user </th>
-                        <th>Duration</th>
-                        <th>Video/Image</th>
-                        <th>Total Amount ( € )</th>
-                        <th>Taler per view </th>
+                        <th>Slug</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($companies as $companyData)
+                        @foreach($role as $RoleData)
                         <tr>
                             <td>
-                                {{-- <a href="lottery/detail/{{$companyData->id}}"> --}}
-                                    {{$companyData->company_name}}
-                                {{-- </a> --}}
+                                <a href="lottery/detail/{{$RoleData->id}}">
+                                    {{$RoleData->name}}
+                                </a>
                             </td>
                             <td>
-                               {{$companyData->company_views}}
+                               {{@$RoleData->slug}}
                             </td>
-                            <td>{{$companyData->company_views_attempt}}</td>
-                            <td>{{$companyData->duration}}</td>
-                            <td>
-                               
-                                @if($companyData->image!="")
-                                    <img src="{{ URL::to('/') }}/uploads/copmany_images/{{@$companyData->image}}" width="50">
-                                @else 
-                                <?php 
-                                if (($pos = strpos($companyData->vidoe, "=")) !== FALSE) 
-                                { 
-                                    @$whatIWant = substr($companyData->vidoe, $pos+1); 
-                                }
-                                @$thumbnail="http://img.youtube.com/vi/".$whatIWant."/maxresdefault.jpg";
-                                ?>
-                                    <img src="{{$thumbnail}}" width="50">
-                                @endif
-                                <?php $videoID[1]=0;?>
-                                </td>
-                            <td>{{$companyData->views_amount}}</td>
-                            <td>{{$companyData->user_amount}}</td>
                             <td>
                                 <div class="col-sm-3 col-6">
                                     <div class="btn-group mr-1 mb-1">
@@ -94,30 +75,21 @@
                                         Action
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
-                                            @can('edit', new App\Models\Company)
-                                              <a class="dropdown-item" href="{{ route('admin.company.edit',$companyData->id) }}"><i class="ft-edit green"></i> Edit </a>
-                                            @endcan
-                                            @can('delete', new App\Models\Company)
-                                            <a data-id="{{$companyData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
-                                            @endcan
+                                            <a class="dropdown-item" href="{{ route('admin.role.edit',$RoleData->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                            <a class="dropdown-item" href="/admin/permissions/{{$RoleData->id}}"><i class="ft-user"></i> Permissions</a>
+                                            <a data-id="{{$RoleData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>                                            
                                         </div>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                        <?php $videoID=""?>
                         @endforeach
                     </tbody>
                     <tfoot>
                       <tr>
-                          <th>Name</th>
-                          <th>Total Views </th>
-                          <th>Views Per user </th>
-                          <th>Duration</th>
-                          <th>Video/Image</th>
-                          <th>Total Amount ( € )</th>
-                          <th>Taler per view </th>
-                          <th>Action</th>
+                        <th>Name</th>
+                        <th>Slug</th>
+                        <th>Action</th>
                       </tr>
                     </tfoot>
                   </table>
@@ -138,7 +110,7 @@ $("#delete").click(function(){
 });
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
-    window.location.href = "company/delete/"+id;
+    window.location.href = "/admin/role/delete/"+id;
 });
 $(document).ready( function () {
     $('#usersT').DataTable();

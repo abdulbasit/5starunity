@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Model\RolePermission;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 class User extends Authenticatable
 {
@@ -20,6 +21,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'role','email_verified_at',
     ];
+   
     public function userProfile()
     {
         return $this->belongsTo('App\Models\UserProfile','id');
@@ -35,6 +37,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
-    ];
+    ];  
     protected $dates = ['deleted_at'];
 }

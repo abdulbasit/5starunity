@@ -14,15 +14,18 @@ class PageController extends Controller
 {
     public function index()
     {
+        $this->authorize('list', new Page);
         $page = Page::all();
         return view('admin.pages.index',compact('page'));
     }
     public function create()
     {
+        $this->authorize('add', new Page);
         return view('admin.pages.create');
     }
     public function save(Request $request)
     {
+        $this->authorize('add', new Page);
         $lottery_id = Page::create([
             "page_name" => $request->get("name"),
             "page_slug" => $this->cleanString($request->get("name")),
@@ -34,11 +37,13 @@ class PageController extends Controller
     }
     public function edit($id)
     {
+        $this->authorize('edit', new Page);
         $page = Page::find($id);
         return view('admin.pages.edit',compact('page'));
     }
     public function update(Request $request)
     {
+        $this->authorize('edit', new Page);
         $id = $request->get("page_id");
         $page = Page::find($id);
         $page->page_name=$request->get("name");
@@ -50,6 +55,7 @@ class PageController extends Controller
     }
     public function delete($id)
     {
+        $this->authorize('delete', new Page);
         $page = Page::where('id',$id);
         $page->delete();
         return redirect('admin/pages');

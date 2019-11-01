@@ -15,26 +15,31 @@ class TestimonialController extends Controller
 
     public function index()
     {
+        $this->authorize('list', new Testimonial);
         $testimonialData= Testimonial::all();
         return view('admin.testimonials.index',compact('testimonialData'));
     }
     public function create()
     {
+        $this->authorize('add', new Testimonial);
         return view('admin.testimonials.create');
     }
     public function edit($id)
     {
+        $this->authorize('edit', new Testimonial);
         $testimonial = Testimonial::find($id);
         return view('admin.testimonials.edit',compact('testimonial'));
     }
     public function delete($id)
     {
+        $this->authorize('delete', new Testimonial);
         $testimonial = Testimonial::where('id',$id);
         $testimonial->delete();
         return redirect('admin/testimonials');
     }
     public function save(Request $request)
     {
+        $this->authorize('add', new Testimonial);
         if($request->file('image')!="")
         {
             $file = $request->file('image');
@@ -64,6 +69,7 @@ class TestimonialController extends Controller
     }
     public function update($id,Request $request)
     {
+        $this->authorize('edit', new Testimonial);
         $testimonial = Testimonial::find($id);
         if($request->file('image')!="")
         {

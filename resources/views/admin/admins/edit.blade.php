@@ -46,6 +46,17 @@
                               </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-md-3 label-control" for="projectinput1">Assign Role</label>
+                                <div class="col-md-9">
+                                  <select id="role" name="role" class="form-control">
+                                      <option  value=""> Selecte Role</option>
+                                    @foreach($roles as $role)
+                                      <option {{old('role_id',$role->id)==$admin->role_id? 'selected':''}} value="{{$role->id}}"> {{$role->name}} </option>
+                                    @endforeach
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                               <label class="col-md-3 label-control" for="projectinput4">Change Password</label>
                               <div class="col-md-7">
                                 <input type="password" id="password" class="form-control" placeholder="" name="password"> 

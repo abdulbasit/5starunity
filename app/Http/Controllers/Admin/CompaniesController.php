@@ -17,6 +17,7 @@ class CompaniesController extends Controller
 {
     public function index()
     {
+        $this->authorize('list', new Company);
         $companies = Company::all();
         return view('admin.companies.index',compact('companies','category'));
     }
@@ -26,11 +27,13 @@ class CompaniesController extends Controller
     }
     public function create()
     {
+        $this->authorize('add', new Company);
         $category = Category::where('category_for','company')->get();
         return view('admin.companies.create',compact('category'));
     }
     public function save(Request $request)
     {
+        $this->authorize('add', new Company);
         if($request->file('image')!="")
         {
             $file = $request->file('image');
@@ -63,12 +66,14 @@ class CompaniesController extends Controller
     }
     public function edit($id)
     {
+        $this->authorize('edit', new Company);
         $category = Category::where('category_for','company')->get();
         $company = Company::find($id);
         return view('admin.companies.edit',compact('company','category'));
     }
     public function saveEdits(Request $request)
     {
+        $this->authorize('edit', new Company);
         $company_id = $request->get('company_id');
         $companyUpdate = Company::find($company_id);
 
@@ -99,6 +104,7 @@ class CompaniesController extends Controller
     }
     public function delete($id)
     {
+        $this->authorize('delete', new Company);
         $company = Company::find($id);
         $company->delete();
         return redirect('admin/company')->with('success',"Company Deleted Successfully ");   

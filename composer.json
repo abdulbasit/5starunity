@@ -16,7 +16,8 @@
         "laravel/tinker": "^1.0",
         "paypal/rest-api-sdk-php": "^1.14",
         "spatie/laravel-cookie-consent": "^2.6",
-        "waavi/translation": "2.3.x"
+        "waavi/translation": "2.3.x",
+        "yajra/laravel-datatables-oracle": "~8.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
