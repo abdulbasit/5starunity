@@ -16,7 +16,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        dd(Auth::user());
+        // dd(Auth::user());
         $date = Carbon::today()->subDays(15); // last 15 days lotteries 
         $totalUsers = User::count();
         $Ttallotteries = LotteryContestent::where('created_at', '>=', $date)->count();
