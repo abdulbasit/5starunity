@@ -12,6 +12,10 @@ use Auth;
 use DB;
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index()
     {
         $this->authorize('list', new Page);

@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use Route;
-
+use App\Models\Admin;
 class AdminLoginController extends Controller
 {
 
@@ -28,11 +28,14 @@ class AdminLoginController extends Controller
         'password' => 'required'
       ]);
 
+      // $user = Admin::where("email",$request->email)->where('password',$request->password)
+      // ->first();
+      // dd($user);
       // Attempt to log the user in
 
       if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
         // if successful, then redirect to their intended location
-        // Auth::admin(Auth::guard('admin')->user());
+        // dd(Auth::admin(Auth::guard('admin')->user()));
         
         return redirect()->intended(route('admin.dashboard'));
       }

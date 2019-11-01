@@ -18,6 +18,10 @@ use DataTables;
 class UserController extends Controller
 {
     use EmailTrait;
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function ajaxRecords()
     {
         $userData = User::with('userProfile')->get();

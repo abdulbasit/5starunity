@@ -20,7 +20,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('guest:admin');
+        $this->middleware('auth:admin');
     }
     public function index()
     {

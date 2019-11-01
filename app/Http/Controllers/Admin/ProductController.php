@@ -13,6 +13,10 @@ use App\Models\Product_images;
 use DB;
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index()
     {
         $this->authorize('list', new Product);

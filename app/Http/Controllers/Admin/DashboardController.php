@@ -6,13 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Lottery;
-use App\Models\User;
+use App\User;
 use App\Models\LotteryContestent;
 use Auth;
 use DB;
 use Carbon\Carbon;
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
 
     public function index()
     {

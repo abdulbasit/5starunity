@@ -13,6 +13,10 @@ use DB;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index($categoryFor)
     {
         $category = Category::where('category_for',$categoryFor)->get();

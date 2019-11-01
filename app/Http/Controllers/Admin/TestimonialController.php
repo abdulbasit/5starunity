@@ -12,7 +12,10 @@ use App\Models\Testimonial;
 use App\Models\Product_images;
 class TestimonialController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index()
     {
         $this->authorize('list', new Testimonial);
