@@ -82,7 +82,7 @@
                         </div>
                         <div class="card-content collpase show">
                             <div class="card-body">
-                                <form class="form form-horizontal" method="post" action="/admin/product/update/{{$productInfo->id}}" enctype="multipart/form-data">
+                                <form class="form form-horizontal" method="post" action="/admin/product/update/" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-body">
