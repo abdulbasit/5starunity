@@ -31,6 +31,7 @@ class ProductController extends Controller
     }
     public function edit($id)
     {
+        dd($id);
         // $this->authorize('edit', new Product);
         $category = Category::where("category_for",'pro')->get();
         $productInfo = Product::find($id);
