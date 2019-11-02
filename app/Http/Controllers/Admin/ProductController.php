@@ -32,10 +32,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         // dd($id);
-        // $this->authorize('edit', new Product);
+        $this->authorize('edit', new Product);
         $category = Category::where("category_for",'pro')->get();
         $productInfo = Product::where("id",$id)->first();
-        dd($productInfo);
+        // dd($productInfo);
         $productImgs = Product_images::where('pro_id',$id)->get();
         return view('admin.products.edit',compact('productInfo','productImgs','category'));
     }
