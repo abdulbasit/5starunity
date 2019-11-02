@@ -173,7 +173,7 @@
                 <br />
                 <br />
                 <p class="product-description">
-                    {{$lotteryData->description}}
+                    {!! html_entity_decode($lotteryData->description) !!}
                 </p>
             </div>
         </div>
