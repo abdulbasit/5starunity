@@ -82,7 +82,7 @@
                         </div>
                         <div class="card-content collpase show">
                             <div class="card-body">
-                                <form class="form form-horizontal" method="post" action="/admin/product/update/" enctype="multipart/form-data">
+                                <form class="form form-horizontal" method="post" action="/admin/product/update/{{$productInfo->id}}" enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-body">
@@ -92,8 +92,7 @@
                                             <div class="col-md-9">
                                                 <select id="category" name="category" class="form-control">
                                                     @foreach($category as $cat)
-                                                    {{-- {{old('cat_id',$productInfo->cat_id)==$cat->id? 'selected':''}} --}}
-                                                        <option  value="{{$cat->id}}">{{$cat->name}}</option>
+                                                        <option {{old('cat_id',$productInfo->cat_id)==$cat->id? 'selected':''}} value="{{$cat->id}}">{{$cat->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
