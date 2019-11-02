@@ -84,7 +84,7 @@
                                     </button>
                                     <div class="dropdown-menu arrow " id="options">
                                         @can('edit', new App\Models\Product)
-                                        <a class="dropdown-item" href="{{ route('admin.product.edit',$product->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                        <a class="dropdown-item" href="{{ route('admin.product.edit',$product->pro_id) }}"><i class="ft-edit green"></i> Edit </a>
                                         @endcan
                                         @can('delete', new App\Models\Product)
                                         <a data-id="{{$product->id}}" onclick="deleteFunction({{$product->id}})"  id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>

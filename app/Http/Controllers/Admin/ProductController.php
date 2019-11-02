@@ -20,7 +20,7 @@ class ProductController extends Controller
     public function index()
     {
         $this->authorize('list', new Product);
-        $products= Product::join('categories','cat_id','categories.id')->get();
+        $products = Product::select('categories.id as cat_id','categories.name','products.id as pro_id','products.*')->join('categories','cat_id','categories.id')->get();
         return view('admin.products.index',compact('products'));
     }
     public function create()
