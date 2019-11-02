@@ -92,7 +92,8 @@
                                             <div class="col-md-9">
                                                 <select id="category" name="category" class="form-control">
                                                     @foreach($category as $cat)
-                                                        <option {{old('cat_id',$productInfo->cat_id)==$cat->id? 'selected':''}} value="{{$cat->id}}">{{$cat->name}}</option>
+                                                    {{-- {{old('cat_id',$productInfo->cat_id)==$cat->id? 'selected':''}} --}}
+                                                        <option  value="{{$cat->id}}">{{$cat->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
