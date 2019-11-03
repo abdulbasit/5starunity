@@ -83,7 +83,7 @@ class AdminController extends Controller
     }
     public function adminListing()
     {
-        $admins = Admin::select('admin_roles.id as role_id','admin_roles.name as role_name','admins.*','admins.id as admin_id')->join('admin_roles','admin_roles.id','=','role_id')->get();
+        $admins = Admin::select('admin_roles.id as role_id','admin_roles.name as role_name','admins.*','admins.id as admin_id')->leftjoin('admin_roles','admin_roles.id','=','role_id')->get();
         return view('admin.admins.admin_listing',compact('admins'));
     }
     public function edit($id)
