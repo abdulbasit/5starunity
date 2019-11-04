@@ -179,7 +179,7 @@
                                 </a>
                                 <p itemprop="description">
                                     <a class="lot_desc" href="/lottery/detail/{{$lottery->lotteryId}}" title="{{$lottery->name}}">
-                                        {{$lottery->description}}
+                                        {!! html_entity_decode($lottery->description) !!}
                                     </a>
                                 </p>
                                 <span class="typeStartupBg"><span></span></span>

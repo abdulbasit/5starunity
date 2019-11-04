@@ -253,4 +253,12 @@ Auth::routes();
         Route::get('role/delete/{id}', 'PermissionController@deleteRole')->name('role.delete');
         Route::get('permissions/{role_id}', 'PermissionController@permissions')->name('permissions');
         Route::post('role/permissions/save', 'PermissionController@saveRolePermission')->name('role.permissions.save');
+
+        // Routes for promotions partners
+        Route::get('promotions', 'PromotionsPartnerController@index')->name('promotions');
+        Route::get('promotions/create', 'PromotionsPartnerController@create')->name('promotions.create');
+        Route::post('promotions/save', 'PromotionsPartnerController@save')->name('promotions.save');
+        Route::get('promotions/edit/{id}', 'PromotionsPartnerController@edit')->name('promotions.edit');
+        Route::post('promotions/photo/delete', 'PromotionsPartnerController@deletePhoto')->name('promotions.photo.delete');
+        Route::post('promotions/update/{id}', 'PromotionsPartnerController@update')->name('promotions.update');
 });
