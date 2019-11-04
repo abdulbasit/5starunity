@@ -17,6 +17,34 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+.btn-green
+{
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 1000px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    right: 0;
+}
+.btn-green:hover
+{
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 1000px;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    right: 0;
+}
 </style>
 @endsection
 <div class="container no-padding">
@@ -34,8 +62,37 @@
                         </a>
                     </div>
                 @endif
-                <div class="container" style=" border:solid 4px #ccc">
-                    @if($pageName=='promotions')
+                @if($pageName=='promotions')
+                    <form action="/page/promotions" method="get">
+                        {{-- @csrf --}}
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-1 form-group"></div>
+                            <div class="col-xs-12 col-lg-4 form-group">
+                                <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="{{ __('lables.placehoder_search')}}" style="margin:0px">
+                            </div>
+                            <div class="col-xs-12 col-lg-4 form-group">
+                                <select name="category" id="category" class="form-control ">
+                                    <option value="">{{ __('lables.lottery_category_dropdown')}}</option>
+                                    @foreach($categories as $proCategory)
+                                        <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-lg-3 form-group text-left">
+                                <button type="submit" class="btn-green" style="margin-top:-2px;  @if (request()->has('search') || request()->has('category')) float:left @else float:right @endif">
+                                    {{ __('lables.search')}}
+                                </button>
+                                @if (request()->has('search') || request()->has('category')) 
+                                    <a href="/page/promotions" class="btn-red" style="margin-top:-2px; float:right; padding-left:10px; padding-top:5px; color:red">
+                                        {{-- {{ __('lables.search')}} --}}
+                                        <i class="fa fa-eraser" aria-hidden="true"></i>
+                                        Clear Filter
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                    <div class="container" style=" border:solid 4px #ccc">
                         @foreach($promotionsResult as $key =>$promotions)
                             <div class="row" style="border-bottom:solid 1px #ccc; margin-bottom: 10px ">
                                 <div class="col-md-3" style="padding:0px">
@@ -121,9 +178,8 @@
                                 </div>
                             </div>    
                         @endforeach
-                    @endif
-
-                </div>
+                    </div>
+                 @endif
                 {!!$page->botton_content!!}
             </div>
         </div>

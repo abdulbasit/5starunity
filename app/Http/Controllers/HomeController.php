@@ -72,15 +72,38 @@ class HomeController extends Controller
     {
         return view('pages.impresum');
     }
-    public function pages($page)
+    public function pages($page,Request $request)
     {
         $promotionsResult='';
+        $categories='';
         $pageName=$page;
         $page = Page::where('page_slug',$page)->first();
         if($pageName=='promotions')
-            $promotionsResult = PromotionPartner::all();
-        return view('pages.terms',compact('page','pageName','promotionsResult'));
+        {
+            
+           
+            $categories = Category::where('category_for','promo_partners')->get();
+            $promotionsResult = PromotionPartner::where('name',"!="," ");
+            if ($request->has('search')) 
+            {
+                $keyWord = $request->input('search');
+                if($keyWord!="")
+                    $promotionsResult = $promotionsResult->where('name','like','%'.$keyWord.'%');
+            }
+            // dd($request->has('category'));
+            if ($request->has('category')) 
+            {
+                $category = $request->input('category');
+                if($category!="")
+                    $promotionsResult = $promotionsResult->where('category_id',$category);
+            }
+            // dd($promotionsResult->toSql());
+            $promotionsResult = $promotionsResult->get();
+        }
+            
+        return view('pages.terms',compact('page','pageName','promotionsResult','categories'));
     }
+
     public function inventroAcadmy()
     {
         return view('pages.comming_soon');

@@ -179,7 +179,10 @@
                     <div class="form-group row">
                         <label class="col-md-3 label-control" for="siteurl">Images</label>
                         <div class="col-md-9">
-                            <input type="file" name="images[]" id="images" class="form-control" multiple >
+                            <input type="file" name="images[]" id="images" class="form-control" multiple>
+                            <span style="font-size:12px">
+                                Choose multiple images. (Image should be <b>250 X 200</b>)
+                            </span>
                         </div>
                     </div>
                      <div class="form-group row">
