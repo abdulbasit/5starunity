@@ -2908,7 +2908,7 @@ body {
                     margin-left: 0%;
                 }
                 .addressProof {
-                    width: 230px;
+                    width: 255px;
                     margin-left: -25px !important;
                 }
             }
@@ -18235,7 +18235,7 @@ new comment styles
             }
             
             label {
-                width: 255px
+                width: 286px
             }
             
             .form-file {
