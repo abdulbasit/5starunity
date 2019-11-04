@@ -12,6 +12,7 @@ use App\Models\Page;
 use App\Models\LotteryContestent;
 use App\Models\Blog;
 use App\Models\Testimonial;
+use App\Models\PromotionPartner;
 use App\Models\Slider;
 use App\Models\ContactUs;
 use DB;
@@ -73,9 +74,12 @@ class HomeController extends Controller
     }
     public function pages($page)
     {
+        $promotionsResult='';
         $pageName=$page;
         $page = Page::where('page_slug',$page)->first();
-        return view('pages.terms',compact('page','pageName'));
+        if($pageName=='promotions')
+            $promotionsResult = PromotionPartner::all();
+        return view('pages.terms',compact('page','pageName','promotionsResult'));
     }
     public function inventroAcadmy()
     {

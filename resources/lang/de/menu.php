@@ -2,6 +2,7 @@
 return [
     'lottery_things' => 'LOTTERY OF THINGS',
     'erfinder' => 'ERFINDER / GRÜNDER',
+    'promotions' => 'Kooperationen',
     'partner' => 'PARTNER',
     "more" => "MEHR",
     "how_it_works" => "How It Works",

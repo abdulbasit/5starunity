@@ -62,6 +62,12 @@
                                     {{-- <textarea required="required" id="desc" rows="12" class="form-control" name="desc" placeholder="Provide Complete Description.."></textarea> --}}
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 label-control" for="address">Bottom Content</label>
+                                <div class="col-md-9">
+                                    <textarea id="summernote1" name="content_bottom" placeholder="Page Bottom content....."></textarea>
+                                </div>
+                            </div>
                           </div>
                           <div class="form-actions pull-rigth" >
                               <div class="row" style="float:right">
@@ -90,6 +96,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
 <script>
     $('#summernote').summernote({
+        placeholder: '',
+        tabsize: 2,
+        height: 300
+    });
+    $('#summernote1').summernote({
         placeholder: '',
         tabsize: 2,
         height: 300

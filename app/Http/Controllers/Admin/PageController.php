@@ -34,7 +34,8 @@ class PageController extends Controller
             "page_name" => $request->get("name"),
             "page_slug" => $this->cleanString($request->get("name")),
             "page_title"=>$request->get("title"),
-            "page_content"=>$request->get("content")
+            "page_content"=>$request->get("content"),
+            "botton_content"=>$request->get("content_bottom")
         ]);
 
         return redirect('admin/pages');
@@ -54,6 +55,7 @@ class PageController extends Controller
         $page->page_slug=$request->get("slug");
         $page->page_title = $request->get("title");
         $page->page_content=$request->get("content");
+        $page->botton_content = $request->get("content_bottom");
         $page->save();
         return redirect('admin/pages');
     }
