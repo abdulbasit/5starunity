@@ -401,7 +401,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                                   <li><a class="menu-item" href="{{ route('admin.promotions.create') }}">Create Promotions</a></li>
                                 {{-- @endcan
                                 @can('list', new App\Models\DiscountCuppon) --}}
-                                  <li><a class="menu-item" href="{{ route('admin.promotions') }}">Cuppons Listing</a>
+                                  <li><a class="menu-item" href="{{ route('admin.promotions') }}">Promoions Listing</a>
                                 {{-- @endcan --}}
                                 </ul>
                             </li>
