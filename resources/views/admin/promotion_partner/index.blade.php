@@ -63,16 +63,16 @@
                         @foreach($promotions as $promotionDate)
                         <tr>
                             <td>
-                                <a href="lottery/detail/{{$promotionDate->id}}">
-                                    {{$promotionDate->name}}
+                                <a href="lottery/detail/{{$promotionDate->promotion_id}}">
+                                    {{$promotionDate->promo_name}}
                                 </a>
                             </td>
-                            <td>{{$promotionDate->price}}</td>
+                            <td>€{{$promotionDate->p_price}}</td>
                             <td>
-                               {{$promotionDate->type}}
+                               {{$promotionDate->badge_name}}
                             </td>
-                            <td>{{$promotionDate->discount_amount}}</td>
-                            <td>{{$promotionDate->start_date}}</td>
+                            <td>€{{$promotionDate->d_amount}}</td>
+                            <td>{{$promotionDate->p_start}}</td>
                             <td>{{$promotionDate->end_date}}</td>
                             <td>{{$promotionDate->reference_website}}</td>
                             <td>
@@ -83,10 +83,10 @@
                                         </button>
                                         <div class="dropdown-menu arrow " id="options">
                                             {{-- @can('edit', new App\Models\DiscountCuppon) --}}
-                                              <a class="dropdown-item" href="{{ route('admin.promotions.edit',$promotionDate->id) }}"><i class="ft-edit green"></i> Edit </a>
+                                          <a class="dropdown-item" href="/admin/promotions/edit/{{$promotionDate->promotion_id}}"><i class="ft-edit green"></i> Edit </a>
                                             {{-- @endcan
                                             @can('delete', new App\Models\DiscountCuppon) --}}
-                                              <a data-id="{{$promotionDate->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                              <a data-id="{{$promotionDate->promotion_id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
                                             {{-- @endcan --}}
                                         </div>
                                     </div>

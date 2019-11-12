@@ -7,6 +7,7 @@ use Auth;
 use Image;
 use Carbon\Carbon;
 use App\Models\Category;
+use App\Models\Badge;
 use App\Models\PromotionPartner;
 use App\Models\PromotionImage;
 use DB;
@@ -19,14 +20,25 @@ class PromotionsPartnerController extends Controller
     public function index()
     {
         // $this->authorize('list', new Product);
-        $promotions = PromotionPartner::select('categories.id as cat_id','categories.name','promotion_partners.id as promotion_id','promotion_partners.*')->join('categories','category_id','categories.id')->get();
+        $promotions = PromotionPartner::select('categories.id as cat_id','categories.name',
+                                        'promotion_partners.id as promotion_id',
+                                        'promotion_partners.price as p_price',
+                                        'promotion_partners.discount_amount as d_amount',
+                                        'promotion_partners.start_date as p_start',
+                                        'promotion_partners.end_date','promotion_partners.reference_website',
+                                        'promotion_partners.name as promo_name','badges.*',
+                                        'badges.name as badge_name','badges.id as badge_id')
+                                        ->join('categories','category_id','categories.id')
+                                        ->leftjoin('badges','badges.id','promotion_partners.type')
+                                        ->get();
         return view('admin.promotion_partner.index',compact('promotions'));
     }
     public function create()
     {
         // $this->authorize('add', new Product);
         $category = Category::where("category_for",'promo_partners')->get();
-        return view('admin.promotion_partner.create',compact('category'));
+        $badges= Badge::all();
+        return view('admin.promotion_partner.create',compact('category','badges'));
     }
     public function save(Request $request)
     {
@@ -79,7 +91,8 @@ class PromotionsPartnerController extends Controller
         $category = Category::where("category_for",'promo_partners')->get();
         $promoInfo = PromotionPartner::where("id",$id)->first();
         $promoImgs = PromotionImage::where('promotinos_id',$id)->get();
-        return view('admin.promotion_partner.edit',compact('promoInfo','promoImgs','category'));
+        $badges= Badge::all();
+        return view('admin.promotion_partner.edit',compact('promoInfo','promoImgs','category','badges'));
     }
     public function deletePhoto(Request $request)
     {

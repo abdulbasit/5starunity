@@ -123,9 +123,10 @@
                         <label class="col-md-3 label-control" for="type">Discount Type</label>
                         <div class="col-md-9">
                             <select name="type" id="type" class="form-control" >
-                                <option {{old('type',$promoInfo->type)=="percentage"? 'selected':''}} value="percentage"> Percentage </option>
-                                <option {{old('type',$promoInfo->type)=="fixed"? 'selected':''}} value="fixed"> fixed </option>
-                            </select>    
+                                @foreach($badges as $badge)
+                                    <option {{old('type',$badge->id)==$promoInfo->type? 'selected':''}} value="{{$badge->id}}"> {{$badge->name}} </option>
+                                @endforeach
+                            </select> 
                         </div>
                     </div> 
                     <div class="form-group row">

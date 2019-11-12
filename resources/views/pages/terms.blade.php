@@ -11,8 +11,8 @@
     width: auto;
     position: absolute;
     top: 0px;
-    background-color: red;
-    color: white;
+    /* background-color: red; */
+    color: black;
     right: 0;
     padding-left: 5px;
     padding-right: 5px;
@@ -82,7 +82,7 @@
                                 <button type="submit" class="btn-green" style="margin-top:-2px;  @if (request()->has('search') || request()->has('category')) float:left @else float:right @endif">
                                     {{ __('lables.search')}}
                                 </button>
-                                @if (request()->has('search') || request()->has('category')) 
+                                @if (request()->has('search') || request()->has('category') || request()->has('cate')) 
                                     <a href="/page/promotions" class="btn-red" style="margin-top:-2px; float:right; padding-left:10px; padding-top:5px; color:red">
                                         {{-- {{ __('lables.search')}} --}}
                                         <i class="fa fa-eraser" aria-hidden="true"></i>
@@ -97,57 +97,55 @@
                         @foreach($promotionsResult as $key =>$promotions)
                             <div class="row" style="border-bottom:solid 1px #ccc; margin-bottom: 10px ">
                                 <div class="col-md-3" style="padding:0px">
-                                    <div id="myCarousel{{$promotions->id}}" class="carousel slide" data-ride="carousel" style="width:250px">
+                                    <div id="myCarousel{{$promotions->promotion_id}}" class="carousel slide" data-ride="carousel" style="width:250px">
                                         <!-- Indicators -->
                                         <ol class="carousel-indicators">
                                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                             <li data-target="#myCarousel" data-slide-to="1"></li>
                                             <li data-target="#myCarousel" data-slide-to="2"></li>
                                         </ol>
-                                    
                                         <!-- Wrapper for slides -->
                                         <div class="carousel-inner">
-                                            @foreach($promotions->product_images as $keys => $images)
+                                            @foreach(App\Models\PromotionPartner::images($promotions->promotion_id) as $keys => $images)
                                                 <div class="item @if($keys==0)active @endif">
-                                                {{-- <img style="margin:5px" width="100" class="rounded" src="{{$images->image}}"> --}}
                                                     <img src="{{ URL::to('/') }}/uploads/promo_images/{{$images->image}}" alt="Los Angeles" style="width:100%;">
                                                 </div>
                                             @endforeach
                                         </div>
                                     
                                         <!-- Left and right controls -->
-                                        <a class="left carousel-control" href="#myCarousel{{$promotions->id}}" data-slide="prev">
+                                        <a class="left carousel-control" href="#myCarousel{{$promotions->promotion_id}}" data-slide="prev">
                                             <span class="glyphicon glyphicon-chevron-left"></span>
                                             <span class="sr-only">Previous</span>
                                         </a>
-                                        <a class="right carousel-control" href="#myCarousel{{$promotions->id}}" data-slide="next">
+                                        <a class="right carousel-control" href="#myCarousel{{$promotions->promotion_id}}" data-slide="next">
                                             <span class="glyphicon glyphicon-chevron-right"></span>
                                             <span class="sr-only">Next</span>
                                         </a>
                                     </div>
                                 </div>    
                                 <div class="col-md-7">
-                                    <h4><b>{{$promotions->name}}</b></h4>
+                                    <h4><b>{{$promotions->promo_name}}</b></h4>
                                     <p>{{$promotions->short_description}}</p>
                                     
                                 </div>
                                 <div class="col-md-2">
-                                    <div class="badge_amount">{{$promotions->discount_amount}} @if($promotions->type=='percentage') % @endif</div>
+                                    <div class="badge_amount"><a href="{{Request::url().'?cate='.$promotions->badge_id}}">{{$promotions->d_amount}} @if($promotions->badge_type=='percentage') % @endif</a></div>
                                     @if($key==0)
                                         <div style="height:180px; border-left:solid 1px #ccc; position:relative; top:-2px; padding-top:30px; text-align:center; font-weight:bold; font-size:14px">
                                             <p style="color:red; float:left; width:100%; line-height:17px">
                                                 <span style="width:100%; float:left; text-align:center">Orignal Price</span>
                                                 <span style=" text-decoration: line-through; width:100%; float:left; text-align:center">
-                                                    {{$promotions->price}} €
+                                                    {{$promotions->p_price}} €
                                                 </span>
                                             </p>
                                             <p style="color:green; float:left; width:100%; line-height:17px">
                                                 <span style="width:100%; float:left; text-align:center">Special Price</span>
                                                 <span style="  width:100%; float:left; text-align:center">
                                                     @if($promotions->type=='percentage')
-                                                        {{round($promotions->price - ($promotions->price * ($promotions->discount_amount/100)),2)}} €
+                                                        {{round($promotions->p_price - ($promotions->p_price * ($promotions->p_price/100)),2)}} €
                                                     @else
-                                                        {{$promotions->price-$promotions->discount_amount}}
+                                                        {{$promotions->p_price-$promotions->d_amount}}
                                                         
                                                     @endif
                                                 </span>
@@ -159,16 +157,16 @@
                                         <p style="color:red; float:left; width:100%; line-height:17px">
                                             <span style="width:100%; float:left; text-align:center">Orignal Price</span>
                                             <span style=" text-decoration: line-through; width:100%; float:left; text-align:center">
-                                                {{$promotions->price}} €
+                                                {{$promotions->p_price}} €
                                             </span>
                                         </p>
                                         <p style="color:green; float:left; width:100%; line-height:17px">
                                             <span style="width:100%; float:left; text-align:center">Orignal Price</span>
                                             <span style="  width:100%; float:left; text-align:center">
-                                                @if($promotions->type=='percentage')
-                                                    {{round($promotions->price - ($promotions->price * ($promotions->discount_amount/100)),2)}} €
+                                                @if($promotions->badge_type=='percentage')
+                                                    {{round($promotions->p_price - ($promotions->p_price * ($promotions->d_amount/100)),2)}} €
                                                 @else
-                                                    {{$promotions->price-$promotions->discount_amount}}
+                                                    {{$promotions->p_price-$promotions->d_amount}}
                                                     
                                                 @endif
                                             </span>
@@ -181,7 +179,7 @@
                         @endforeach
                     </div>
                  @endif
-                {!!$page->botton_content!!}
+                {{-- {!!$page->botton_content!!} --}}
             </div>
         </div>
     </div>

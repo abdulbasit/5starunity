@@ -105,8 +105,9 @@
                         <label class="col-md-3 label-control" for="type">Discount Type</label>
                         <div class="col-md-9">
                             <select name="type" id="type" class="form-control" >
-                                <option value="percentage"> Percentage </option>
-                                <option value="fixed"> fixed </option>
+                                @foreach($badges as $badge)
+                                    <option value="{{$badge->id}}"> {{$badge->name}} </option>
+                                @endforeach
                             </select>    
                         </div>
                     </div> 

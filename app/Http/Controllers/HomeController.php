@@ -83,12 +83,23 @@ class HomeController extends Controller
             
            
             $categories = Category::where('category_for','promo_partners')->get();
-            $promotionsResult = PromotionPartner::where('name',"!="," ");
+            $promotionsResult = PromotionPartner::select('promotion_partners.*','promotion_partners.id as promotion_id',
+                                                        'promotion_partners.price as p_price',
+                                                        'promotion_partners.discount_amount as d_amount',
+                                                        'promotion_partners.start_date as p_start',
+                                                        'promotion_partners.end_date','promotion_partners.reference_website',
+                                                        'promotion_partners.name as promo_name','badges.*','promotion_partners.short_description',
+                                                        'badges.name as badge_name','badges.id as badge_id')->
+                                                        where('promotion_partners.name',"!="," ");
+            if($request->input('cate'))
+            {
+                $promotionsResult = $promotionsResult->where('promotion_partners.type',$request->input('cate'));
+            }
             if ($request->has('search')) 
             {
                 $keyWord = $request->input('search');
                 if($keyWord!="")
-                    $promotionsResult = $promotionsResult->where('name','like','%'.$keyWord.'%');
+                    $promotionsResult = $promotionsResult->where('promotion_partners.name','like','%'.$keyWord.'%');
             }
             // dd($request->has('category'));
             if ($request->has('category')) 
@@ -97,8 +108,11 @@ class HomeController extends Controller
                 if($category!="")
                     $promotionsResult = $promotionsResult->where('category_id',$category);
             }
+            
             // dd($promotionsResult->toSql());
+            $promotionsResult=$promotionsResult->join('badges','badges.id','promotion_partners.type');
             $promotionsResult = $promotionsResult->get();
+            // dd($promotionsResult);
         }
             
         return view('pages.terms',compact('page','pageName','promotionsResult','categories'));
