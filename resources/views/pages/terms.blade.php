@@ -16,6 +16,7 @@
     right: 0;
     padding-left: 5px;
     padding-right: 5px;
+    z-index: 1000;
 }
 .btn-green
 {
