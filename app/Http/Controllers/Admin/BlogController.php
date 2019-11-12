@@ -19,7 +19,7 @@ class BlogController extends Controller
     public function index()
     {
         $this->authorize('list', new Blog);
-        $blogs = Blog::with('category')->get();
+        $blogs = Blog::with('category')->orderBy('id','desc')->get();
         return view('admin.blog.index',compact('blogs'));
     }
     public function edit($id)

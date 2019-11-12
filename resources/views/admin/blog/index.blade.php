@@ -93,11 +93,14 @@
                                                 <a class="dropdown-item" href="{{ route('admin.blog.edit',$blodData->id) }}"><i class="ft-edit green"></i> Edit </a>
                                             @endcan
                                             @can('delete', new App\Models\Blog)
-                                                <a data-id="{{$blodData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                                <a data-id="{{$blodData->id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item delete" href="#"><i class="ft-slash red"></i> Delete</a>
                                             @endcan
                                         </div>
                                     </div>
                                 </div>
+                                {{-- <button data-id="{{$blodData->id}}" class="btn btn-default delete" data-href="/delete.php?id=54" data-toggle="modal" data-target="#confirm-delete">
+                                    Delete record #54
+                                </button> --}}
                             </td>
                         </tr>
                         @endforeach
@@ -126,10 +129,11 @@
 @endsection
 @section('script')
 <script>
-$("#delete").click(function(){
+$(".delete").click(function(){
     var id = $(this).attr('data-id');
     $("#yes").attr('delete-id',id);
-});
+})
+    
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
     window.location.href = "/admin/blog/delete/"+id;
