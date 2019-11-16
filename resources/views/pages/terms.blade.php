@@ -64,8 +64,8 @@
     margin-top: -2px;
     float: left;
     padding-left: 10px;
-    color: red;
-    border: solid 1px;
+    color: black;
+    border: solid 1px #ccc;
     border-radius: 1000px;
     padding-right: 10px;
     padding-top: 4px;
