@@ -63,9 +63,9 @@
                         @foreach($promotions as $promotionDate)
                         <tr>
                             <td>
-                                <a href="lottery/detail/{{$promotionDate->promotion_id}}">
+                                {{-- <a href="lottery/detail/{{$promotionDate->promotion_id}}"> --}}
                                     {{$promotionDate->promo_name}}
-                                </a>
+                                {{-- </a> --}}
                             </td>
                             <td>€{{$promotionDate->p_price}}</td>
                             <td>
