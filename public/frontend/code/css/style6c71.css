@@ -3257,7 +3257,7 @@ body {
                 width: 100%;
                 height: 35px;
                 padding: 6px 12px;
-                font-size: 15px;
+                /* font-size: 15px; */
                 line-height: 1.42857143;
                 color: rgba(46, 46, 46, .8);
                 background-color: #fff;
@@ -56197,7 +56197,7 @@ new comment styles
             input[type='text'],
             input[type='password'],
             input[type='number'] {
-                font-size: 15px;
+                /* font-size: 15px; */
                 width: 100%;
                 /* height: 50px; */
                 /* padding-right: 40px; */
