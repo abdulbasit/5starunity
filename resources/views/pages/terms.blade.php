@@ -71,7 +71,8 @@
     padding-top: 4px;
     padding-bottom: 4px; 
     text-decoration:none;
-    margin-left:50px
+    margin-left:50px;
+    text-transform: uppercase;
 }
 .back-btn:hover{
     margin-top: -2px;
@@ -85,7 +86,8 @@
     padding-bottom: 4px; 
     background-color:red; 
     color:white; 
-    text-decoration:none   
+    text-decoration:none;
+    text-transform: uppercase;
 }
 </style>
 @endsection
