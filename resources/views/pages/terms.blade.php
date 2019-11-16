@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </form>
-                    <br />
+                    <br /><br /><br />
                     <div class="container" style=" border:solid 4px #ccc">
                         @foreach($promotionsResult as $key =>$promotions)
                             <div class="row" style="border-bottom:solid 1px #ccc; margin-bottom: 10px ">
