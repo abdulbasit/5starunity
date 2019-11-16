@@ -79,7 +79,8 @@ return [
     'subscribe_news_letter'=>"Newsletter abbonnieren",
     'you_earn'=>"HOLEN SIE SICH",
     "send"=>"ÜBERMITTELN",
-    'complete_name'=>"Vor- & Nachname"
+    'complete_name'=>"Vor- & Nachname",
+    "you_pay"=>"Ihre Spezialpreis"
 ]
 ?>
  

@@ -70,7 +70,7 @@
         <div class="col-md-12">
             <div class="card">
             <div class="card-header">
-                <h4 class="card-title" id="horz-layout-basic">Create New Promotions Partner</h4>
+                <h4 class="card-title" id="horz-layout-basic">Create New Cooperation Partner</h4>
                 <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
             </div>
             <div class="card-content collpase show">
@@ -114,7 +114,7 @@
                     <div class="form-group row">
                         <label class="col-md-3 label-control" for="amount">Discount Amount</label>
                         <div class="col-md-9">
-                            <input required="required" type="text" id="dis_amount" class="form-control" placeholder="Discount Amount"  name="dis_amount">
+                            <input required="required" readonly type="text" id="dis_amount" class="form-control" placeholder="Discount Amount"  name="dis_amount" value="0">
                         </div>
                     </div> 
                     <div class="form-group row">

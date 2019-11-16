@@ -3259,7 +3259,7 @@ body {
                 padding: 6px 12px;
                 font-size: 15px;
                 line-height: 1.42857143;
-                color: #555555;
+                color: rgba(46, 46, 46, .8);
                 background-color: #fff;
                 background-image: none;
                 border: 1px solid #ccc;

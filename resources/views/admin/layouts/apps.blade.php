@@ -394,15 +394,15 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
                               </ul>
                           </li>
                           <li>
-                              <a class="menu-item" href="#"><i class="ft-layout"></i>Promotion Partners</a>
+                              <a class="menu-item" href="#"><i class="ft-layout"></i>Cooperation</a>
                               <ul class="menu-content">
                                 {{-- @can('add', new App\Models\DiscountCuppon) --}}
                                   <li><a class="menu-item" href="{{ route('admin.categories','promo_partners') }}">Categories</a></li>
                                   <li><a class="menu-item" href="{{ route('admin.badges') }}">Badges</a></li>
-                                  <li><a class="menu-item" href="{{ route('admin.promotions.create') }}">Create Promotions</a></li>
+                                  <li><a class="menu-item" href="{{ route('admin.promotions.create') }}">Create Cooperation</a></li>
                                 {{-- @endcan
                                 @can('list', new App\Models\DiscountCuppon) --}}
-                                  <li><a class="menu-item" href="{{ route('admin.promotions') }}">Promoions Listing</a>
+                                  <li><a class="menu-item" href="{{ route('admin.promotions') }}">Cooperation Listing</a>
                                 {{-- @endcan --}}
                                 </ul>
                             </li>
