@@ -82,7 +82,7 @@ class HomeController extends Controller
         {
             
            
-            $categories = Category::where('category_for','promo_partners')->get();
+            $categories = Category::where('category_for','promo_partners')->orderby('name','asc')->get();
             $promotionsResult = PromotionPartner::select('promotion_partners.*','promotion_partners.id as promotion_id',
                                                         'promotion_partners.price as p_price',
                                                         'promotion_partners.discount_amount as d_amount',
