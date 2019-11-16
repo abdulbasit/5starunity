@@ -80,7 +80,8 @@ return [
     'you_earn'=>"HOLEN SIE SICH",
     "send"=>"ÜBERMITTELN",
     'complete_name'=>"Vor- & Nachname",
-    "you_pay"=>"Ihre Spezialpreis"
+    "you_pay"=>"Ihre Spezialpreis",
+    "remove_filters"=>"Zurück"
 ]
 ?>
  

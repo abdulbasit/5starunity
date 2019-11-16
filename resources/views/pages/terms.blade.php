@@ -93,17 +93,26 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-xs-12 col-lg-3 form-group text-left">
-                                <button type="submit" class="btn-green" style="margin-top:-2px;  @if (request()->has('search') || request()->has('category')) float:left @else float:right @endif">
+                            @if (request()->has('search') || request()->has('category') || request()->has('cate')) 
+                            <a href="/page/promotions" class="btn-red" style="    margin-top: -2px;
+                            float: left;
+                            padding-left: 10px;
+                            color: red;
+                            border: solid 1px;
+                            border-radius: 1000px;
+                            padding-right: 10px;
+                            padding-top: 4px;
+                            padding-bottom: 4px; background-color:red; color:white; text-decoration:none">
+                                {{-- {{ __('lables.search')}} --}}
+                                {{-- <i class="fa fa-eraser" aria-hidden="true"></i> --}}
+                                {{ __('lables.remove_filters')}}
+                            </a>
+                        @endif
+                            <div class="col-xs-12 col-lg-3 form-group text-left pull-left" style="width:203px; float:left; padding:0px">
+                                <button type="submit" class="btn-green" style="margin-top:-2px; float:right">
                                     {{ __('lables.search')}}
                                 </button>
-                                @if (request()->has('search') || request()->has('category') || request()->has('cate')) 
-                                    <a href="/page/promotions" class="btn-red" style="margin-top:-2px; float:right; padding-left:10px; padding-top:5px; color:red">
-                                        {{-- {{ __('lables.search')}} --}}
-                                        <i class="fa fa-eraser" aria-hidden="true"></i>
-                                        Clear Filter
-                                    </a>
-                                @endif
+                               
                             </div>
                         </div>
                     </form>
