@@ -159,7 +159,7 @@
                                                     {{$promotions->p_price}} €
                                                 </span>
                                             </p> --}}
-                                            <p style="color:green; float:left; width:100%; line-height:17px; margin-top:15px;">
+                                            <p style="color:green; float:left; width:100%; line-height:17px; position:relative; top:15px">
                                                 <span style="width:100%; float:left; text-align:center">{{ __('lables.you_pay')}}</span>
                                                 <span style="  width:100%; float:left; text-align:center">
                                                     {{-- @if($promotions->type=='percentage')
@@ -172,7 +172,7 @@
                                                     {{-- @endif --}}
                                                 </span>
                                             </p>
-                                            <a style="position:relative; left:10px; top:30px; background-color:green; color:white; text-decoration:none; " href="{{$promotions->reference_website}}" class="btn-green">Click Here </a>
+                                            <a style="position:relative; left:10px; top:40px; background-color:green; color:white; text-decoration:none; " href="{{$promotions->reference_website}}" class="btn-green">Click Here </a>
                                         </div>
                                     @else
                                         <div style="height:180px; border-left:solid 1px #ccc; position:relative; top:-5px; padding-top:30px; text-align:center; font-weight:bold; font-size:14px">
