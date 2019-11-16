@@ -59,6 +59,34 @@
     position: relative;
     right: 0;
 }
+.back-btn
+{
+    margin-top: -2px;
+    float: left;
+    padding-left: 10px;
+    color: red;
+    border: solid 1px;
+    border-radius: 1000px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px; 
+    text-decoration:none;
+    margin-left:50px
+}
+.back-btn:hover{
+    margin-top: -2px;
+    float: left;
+    padding-left: 10px;
+    color: red;
+    border: solid 1px;
+    border-radius: 1000px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px; 
+    background-color:red; 
+    color:white; 
+    text-decoration:none   
+}
 </style>
 @endsection
 <div class="container no-padding">
@@ -94,21 +122,13 @@
                                 </select>
                             </div>
                             @if (request()->has('search') || request()->has('category') || request()->has('cate')) 
-                            <a href="/page/promotions" class="btn-red" style="    margin-top: -2px;
-                            float: left;
-                            padding-left: 10px;
-                            color: red;
-                            border: solid 1px;
-                            border-radius: 1000px;
-                            padding-right: 10px;
-                            padding-top: 4px;
-                            padding-bottom: 4px; background-color:red; color:white; text-decoration:none">
+                            <a href="/page/promotions" class="back-btn">
                                 {{-- {{ __('lables.search')}} --}}
                                 {{-- <i class="fa fa-eraser" aria-hidden="true"></i> --}}
                                 {{ __('lables.remove_filters')}}
                             </a>
                         @endif
-                            <div class="col-xs-12 col-lg-3 form-group text-left pull-left" style="width:203px; float:left; padding:0px">
+                            <div class="col-xs-12 col-lg-3 form-group text-left pull-left" style="width:150px; float:left; padding:0px">
                                 <button type="submit" class="btn-green" style="margin-top:-2px; float:right">
                                     {{ __('lables.search')}}
                                 </button>
