@@ -77,7 +77,7 @@
                     </div>
                 @endif
                 @if($pageName=='promotions')
-                <br />
+                <br /> <br />
                     <form action="/page/promotions" method="get">
                         {{-- @csrf --}}
                         <div class="row">
