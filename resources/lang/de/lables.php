@@ -81,7 +81,8 @@ return [
     "send"=>"ÜBERMITTELN",
     'complete_name'=>"Vor- & Nachname",
     "you_pay"=>"Ihre Spezialpreis",
-    "remove_filters"=>"Zurück"
+    "remove_filters"=>"Zurück",
+    "click_here"=>"zum Angebot"
 ]
 ?>
  

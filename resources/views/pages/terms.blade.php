@@ -181,7 +181,7 @@
                                                     {{-- @endif --}}
                                                 </span>
                                             </p>
-                                            <a style="position:relative; left:10px; top:70px; background-color:green; color:white; text-decoration:none; " href="{{$promotions->reference_website}}" class="btn-green">Click Here </a>
+                                            <a style="position:relative; left:10px; top:70px; background-color:green; color:white; text-decoration:none; " href="{{$promotions->reference_website}}" class="btn-green">{{ __('lables.click_here')}} </a>
                                         </div>
                                     @else
                                         <div style="height:180px; border-left:solid 1px #ccc; position:relative; top:-5px; padding-top:30px; text-align:center; font-weight:bold; font-size:14px">
