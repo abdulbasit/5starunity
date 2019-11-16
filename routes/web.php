@@ -259,7 +259,7 @@ Auth::routes();
         Route::get('promotions/create', 'PromotionsPartnerController@create')->name('promotions.create');
         Route::post('promotions/save', 'PromotionsPartnerController@save')->name('promotions.save');
         Route::get('promotions/edit/{id}', 'PromotionsPartnerController@edit')->name('promotions.edit');
-        Route::post('promotions/photo/delete', 'PromotionsPartnerController@deletePhoto')->name('promotions.photo.delete');
+        Route::get('promotions/delete/{id}', 'PromotionsPartnerController@delete')->name('promotions.photo.delete');
         Route::post('promotions/update/{id}', 'PromotionsPartnerController@update')->name('promotions.update');
 
         //Routes for badges
@@ -268,5 +268,6 @@ Auth::routes();
         Route::post('badge/save', 'BadgeController@save')->name('coopration.save');
         Route::post('badge/update/{id}', 'BadgeController@update')->name('coopration.update');
         Route::get('badge/edit/{id}', 'BadgeController@edit');
+        
 
 });

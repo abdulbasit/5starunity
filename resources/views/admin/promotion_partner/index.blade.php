@@ -16,7 +16,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to delete this Cuppon ?</p>
+                    <p>Are you sure you want to delete this Cooperation ?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn grey btn-danger" data-dismiss="modal">No</button>
@@ -86,7 +86,7 @@
                                           <a class="dropdown-item" href="/admin/promotions/edit/{{$promotionDate->promotion_id}}"><i class="ft-edit green"></i> Edit </a>
                                             {{-- @endcan
                                             @can('delete', new App\Models\DiscountCuppon) --}}
-                                              <a data-id="{{$promotionDate->promotion_id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item" href="#"><i class="ft-slash red"></i> Delete</a>
+                                              <a data-id="{{$promotionDate->promotion_id}}" id="delete" data-toggle="modal" data-backdrop="false" data-target="#info" class="dropdown-item delete" href="#"><i class="ft-slash red"></i> Delete</a>
                                             {{-- @endcan --}}
                                         </div>
                                     </div>
@@ -119,13 +119,13 @@
 @endsection
 @section('script')
 <script>
-$("#delete").click(function(){
+$(".delete").click(function(){
     var id = $(this).attr('data-id');
     $("#yes").attr('delete-id',id);
-});
+})
 $("#yes").click(function(){
     var id = $(this).attr('delete-id');
-    window.location.href = "cuppons/delete/"+id;
+    window.location.href = "/admin/promotions/delete/"+id;
 });
 $(document).ready( function () {
     $('#usersT').DataTable();

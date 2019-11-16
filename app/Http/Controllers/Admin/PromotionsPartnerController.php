@@ -102,10 +102,10 @@ class PromotionsPartnerController extends Controller
     }
     public function delete($id)
     {
-        $this->authorize('delete', new Product);
-        $productImage = Product::where('id',$id);
-        $productImage->delete();
-        return redirect('admin/products');
+        // $this->authorize('delete', new Product);
+        $PromotionPartner = PromotionPartner::where('id',$id);
+        $PromotionPartner->delete();
+        return redirect('admin/promotions');
     }
     public function update($id,Request $request)
     {
