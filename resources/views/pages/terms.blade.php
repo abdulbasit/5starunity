@@ -203,7 +203,7 @@
                                                 € {{$promotions->p_price}}
                                             </span>
                                         </p>
-                                        <a target="_blank" style="position:relative; left:10px; top:30px; background-color:green; color:white; text-decoration:none;" href="{{$promotions->reference_website}}" class="btn-green">Click Here </a>
+                                        <a target="_blank" style="position:relative; left:10px; top:30px; background-color:green; color:white; text-decoration:none;" href="{{$promotions->reference_website}}" class="btn-green">{{ __('lables.click_here')}}</a>
                                     </div>                                    
                                     @endcan
                                 </div>
