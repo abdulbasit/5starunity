@@ -174,7 +174,7 @@
                                         </a>
                                     </div>
                                 </div>    
-                                <div class="col-md-7">
+                                <div class="col-md-7" style="padding-left:40px">
                                     <h4><b>{{$promotions->promo_name}}</b></h4>
                                     <p>{{$promotions->short_description}}</p>
                                     
