@@ -50,9 +50,9 @@
                     <thead>
                       <tr>
                         <th>Name</th>
-                        <th>Orignal Price</th>
+                        {{-- <th>Orignal Price</th> --}}
                         <th>Type</th>
-                        <th>Amount</th>
+                        <th>Label</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Website </th>
@@ -67,9 +67,9 @@
                                     {{$promotionDate->promo_name}}
                                 {{-- </a> --}}
                             </td>
-                            <td>€{{$promotionDate->p_price}}</td>
+                            {{-- <td>€{{$promotionDate->p_price}}</td> --}}
                             <td>
-                               {{$promotionDate->badge_name}}
+                               {{$promotionDate->type}}
                             </td>
                             <td>€{{$promotionDate->d_amount}}</td>
                             <td>{{$promotionDate->p_start}}</td>
@@ -98,9 +98,9 @@
                     <tfoot>
                       <tr>
                         <th>Name</th>
-                        <th>Orignal Price</th>
+                        {{-- <th>Orignal Price</th> --}}
                         <th>Type</th>
-                        <th>Amount</th>
+                        <th>Label</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Website </th>

@@ -26,10 +26,9 @@ class PromotionsPartnerController extends Controller
                                         'promotion_partners.discount_amount as d_amount',
                                         'promotion_partners.start_date as p_start',
                                         'promotion_partners.end_date','promotion_partners.reference_website',
-                                        'promotion_partners.name as promo_name','badges.*',
-                                        'badges.name as badge_name','badges.id as badge_id')
+                                        'promotion_partners.name as promo_name')
                                         ->join('categories','category_id','categories.id')
-                                        ->leftjoin('badges','badges.id','promotion_partners.type')
+                                        // ->leftjoin('badges','badges.id','promotion_partners.type')
                                         ->get();
         return view('admin.promotion_partner.index',compact('promotions'));
     }
