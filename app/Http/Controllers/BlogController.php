@@ -48,7 +48,7 @@ class BlogController extends Controller
         $id = $id[$offest];
         Session::flash('route', 'article/'.$slug);
         $blogPostData = Blog::with('blog_comments','user')->find($id);
-        $categories = Category::where('category_for','blog')->get();
+        $categories = Category::where('category_for','blog')->orderBy('name','asc')->get();
         $commentsData = array_reverse(array_sort($blogPostData->blog_comments));
 
         return view('blog.detail',compact('blogPostData','commentsData','categories'));
