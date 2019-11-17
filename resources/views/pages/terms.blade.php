@@ -147,7 +147,7 @@
                         @foreach($promotionsResult as $key =>$promotions)
                             <div class="row" style="margin-bottom: 10px; border:solid 4px #ccc">
                                 <div class="col-md-3" style="padding:0px">
-                                    <div id="myCarousel{{$promotions->promotion_id}}" class="carousel slide" data-ride="carousel" style="width:175px">
+                                    <div id="myCarousel{{$promotions->promotion_id}}" class="carousel slide" data-ride="carousel" style="width:225px">
                                         <!-- Indicators -->
                                         <ol class="carousel-indicators">
                                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -180,12 +180,6 @@
                                     
                                 </div>
                                 <div class="col-md-2">
-
-                                    {{-- @if($promotions->badge_type=='percentage') --}}
-                                    {{-- <div class="badge_amount_green">{{$promotions->type}}</div> --}}
-                                    {{-- @else
-                                        <div class="badge_amount_green"><a style="color:white; text-decoration:none" href="{{Request::url().'?cate='.$promotions->badge_id}}">@if($promotions->badge_type=='fixed') €€€ @endif  @if($promotions->badge_type=='percentage') %%% @endif</a></div>
-                                    @endif --}}
                                     @if($key==0)
                                         <div style="height:180px; border-left:solid 1px #ccc; position:relative; top:-2px; padding-top:30px; text-align:center; font-weight:bold; font-size:14px; padding-top:10px">
                                             <p style="float:left; width:100%; line-height:17px; position:relative; top:35px">
