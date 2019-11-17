@@ -73,7 +73,7 @@ return [
     'my_views'=>"MEINE ANSICHTEN",
     'view_now'=> "BONUS TALER pro Ansicht",
     'lot_per_amount'=>"Benötigte Taler pro Los",
-    'taler_rquired'=>"Benötigte Taler gemäß gewünschter Anzahl",
+    'taler_rquired'=>"TALER GEMÄSS ANZAHL IHRER LOSE",
     'total_donation'=>"insgesamt vergebene Lose",
     'enter_number_of_lots'=>"Anzahl der Lose",
     'subscribe_news_letter'=>"Newsletter abbonnieren",
