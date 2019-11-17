@@ -182,54 +182,29 @@
                                 <div class="col-md-2">
 
                                     {{-- @if($promotions->badge_type=='percentage') --}}
-                                    <div class="badge_amount_green">{{$promotions->type}}</div>
+                                    {{-- <div class="badge_amount_green">{{$promotions->type}}</div> --}}
                                     {{-- @else
                                         <div class="badge_amount_green"><a style="color:white; text-decoration:none" href="{{Request::url().'?cate='.$promotions->badge_id}}">@if($promotions->badge_type=='fixed') €€€ @endif  @if($promotions->badge_type=='percentage') %%% @endif</a></div>
                                     @endif --}}
                                     @if($key==0)
                                         <div style="height:180px; border-left:solid 1px #ccc; position:relative; top:-2px; padding-top:30px; text-align:center; font-weight:bold; font-size:14px; padding-top:10px">
-                                            {{-- <p style="color:red; float:left; width:100%; line-height:17px">
-                                                <span style="width:100%; float:left; text-align:center">Orignal Price</span>
-                                                <span style=" text-decoration: line-through; width:100%; float:left; text-align:center">
-                                                    {{$promotions->p_price}} €
+                                            <p style="float:left; width:100%; line-height:17px; position:relative; top:35px">
+                                                <span style="width:100%; float:left; text-align:center; font-weight:normal">Ihr Vorteil</span>
+                                                <span style="  width:100%; float:left; text-align:center; margin-top:10px">
+                                                    {{$promotions->type}}
                                                 </span>
-                                            </p> --}}
-                                            {{-- <p style="color:green; float:left; width:100%; line-height:17px; position:relative; top:35px">
-                                                <span style="width:100%; float:left; text-align:center">{{ __('lables.you_pay')}}</span>
-                                                <span style="  width:100%; float:left; text-align:center">
-                                                    @if($promotions->type=='percentage')
-                                                        {{round($promotions->p_price - ($promotions->p_price * ($promotions->p_price/100)),2)}} €
-                                                    @else
-                                                        {{$promotions->p_price-$promotions->d_amount}} --}}
-
-                                                        {{-- € {{$promotions->p_price}} --}}
-                                                        
-                                                    {{-- @endif
-                                                </span>
-                                            </p>  --}}
-                                            <a style="position:relative; left:10px; top:70px; background-color:green; color:white; text-decoration:none; " href="{{$promotions->reference_website}}" class="btn-green">{{ __('lables.to_offer')}} </a>
+                                            </p>
+                                            <a style="position:relative; left:10px; top:70px; background-color:green; color:white; text-decoration:none; " href="{{$promotions->reference_website}}" class="btn-green">{{ __('lables.click_here')}} </a>
                                         </div>
                                     @else
                                         <div style="height:180px; border-left:solid 1px #ccc; position:relative; top:-5px; padding-top:30px; text-align:center; font-weight:bold; font-size:14px">
-                                        {{-- <p style="color:red; float:left; width:100%; line-height:17px">
-                                            <span style="width:100%; float:left; text-align:center">Orignal Price</span>
-                                            <span style=" text-decoration: line-through; width:100%; float:left; text-align:center">
-                                                {{$promotions->p_price}} €
+                                        <p style="float:left; width:100%; line-height:17px; margin-top:15px">
+                                            <span style="width:100%; float:left; text-align:center; font-weight:normal">Ihr Vorteil</span>
+                                            <span style="width:100%; float:left; text-align:center; margin-top:10px">
+                                                {{$promotions->type}}
                                             </span>
-                                        </p> --}}
-                                        {{-- <p style="color:green; float:left; width:100%; line-height:17px; margin-top:15px">
-                                            <span style="width:100%; float:left; text-align:center">{{ __('lables.you_pay')}}</span>
-                                            <span style="  width:100%; float:left; text-align:center">
-                                                @if($promotions->badge_type=='percentage')
-                                                    {{round($promotions->p_price - ($promotions->p_price * ($promotions->d_amount/100)),2)}} €
-                                                @else
-                                                    {{$promotions->p_price-$promotions->d_amount}}
-                                                    
-                                                @endif
-                                                € {{$promotions->p_price}}
-                                            </span>
-                                        </p> --}}
-                                        <a target="_blank" style="position:relative; left:10px; top:30px; background-color:green; color:white; text-decoration:none;" href="{{$promotions->reference_website}}" class="btn-green">{{ __('lables.to_offer')}}</a>
+                                        </p>
+                                        <a target="_blank" style="position:relative; left:10px; top:30px; background-color:green; color:white; text-decoration:none;" href="{{$promotions->reference_website}}" class="btn-green">{{ __('lables.click_here')}}</a>
                                     </div>                                    
                                     @endcan
                                 </div>
