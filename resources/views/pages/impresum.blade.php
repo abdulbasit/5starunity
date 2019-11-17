@@ -25,7 +25,7 @@
             <p>
                 5starUnity  Europe OÜ<br />
                 World Trade Center Tallinn <br />
-                Ahtri tn. 8 EST - 10151 Tallinn<br />
+                Ahtri tn. 8 <br />EST - 10151 Tallinn<br />
                 {{-- Deutschland<br /> --}}
             </p>
             <br />
