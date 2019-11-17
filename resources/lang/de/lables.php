@@ -82,7 +82,10 @@ return [
     'complete_name'=>"Vor- & Nachname",
     "you_pay"=>"Ihre Spezialpreis",
     "remove_filters"=>"Zurück",
-    "click_here"=>"zum Angebot"
+    "click_here"=>"zum Angebot",
+    'cooperation_search'=>'Kooperationen suchen',
+    'cooperation_category_placholder'=>"Suche nach Kategorie",
+    'to_offer'=>"Ihr Vorteil"
 ]
 ?>
  

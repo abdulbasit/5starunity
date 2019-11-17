@@ -261,6 +261,7 @@ Auth::routes();
         Route::get('promotions/edit/{id}', 'PromotionsPartnerController@edit')->name('promotions.edit');
         Route::get('promotions/delete/{id}', 'PromotionsPartnerController@delete')->name('promotions.photo.delete');
         Route::post('promotions/update/{id}', 'PromotionsPartnerController@update')->name('promotions.update');
+        Route::post('promotions/photo/delete', 'PromotionsPartnerController@deletePhoto')->name('promotions.photo.delete');
 
         //Routes for badges
         Route::get('badges', 'BadgeController@index')->name('badges');

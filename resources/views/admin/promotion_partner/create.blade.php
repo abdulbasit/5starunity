@@ -102,13 +102,14 @@
                         </div>
                     </div> 
                     <div class="form-group row">
-                        <label class="col-md-3 label-control" for="type">Discount Type</label>
+                        <label class="col-md-3 label-control" for="type">Badge</label>
                         <div class="col-md-9">
-                            <select name="type" id="type" class="form-control" >
+                                <input required="required" type="text" id="type" class="form-control" placeholder="Badge" name="type">
+                            {{-- <select name="type" id="type" class="form-control" >
                                 @foreach($badges as $badge)
                                     <option value="{{$badge->id}}"> {{$badge->name}} </option>
                                 @endforeach
-                            </select>    
+                            </select>     --}}
                         </div>
                     </div> 
                     <div class="form-group row">

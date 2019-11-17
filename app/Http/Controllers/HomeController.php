@@ -88,9 +88,8 @@ class HomeController extends Controller
                                                         'promotion_partners.discount_amount as d_amount',
                                                         'promotion_partners.start_date as p_start',
                                                         'promotion_partners.end_date','promotion_partners.reference_website',
-                                                        'promotion_partners.name as promo_name','badges.*','promotion_partners.short_description',
-                                                        'badges.name as badge_name','badges.id as badge_id')->
-                                                        where('promotion_partners.name',"!="," ");
+                                                        'promotion_partners.name as promo_name','promotion_partners.short_description')
+                                                        ->where('promotion_partners.name',"!="," ");
             if($request->input('cate'))
             {
                 $promotionsResult = $promotionsResult->where('promotion_partners.type',$request->input('cate'));
@@ -110,7 +109,7 @@ class HomeController extends Controller
             }
             
             // dd($promotionsResult->toSql());
-            $promotionsResult=$promotionsResult->join('badges','badges.id','promotion_partners.type');
+            // $promotionsResult=$promotionsResult->leftjoin('badges','badges.id','promotion_partners.type');
             $promotionsResult = $promotionsResult->get();
             // dd($promotionsResult);
         }

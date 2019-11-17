@@ -113,28 +113,29 @@
                             <input required="required" type="text" id="name" class="form-control" placeholder="Promotion Title"  name="name" value="{{$promoInfo->name}}">
                         </div>
                     </div> 
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="col-md-3 label-control" for="amount"> Orignal Price</label>
                         <div class="col-md-9">
                             <input required="required" type="text" id="amount" class="form-control" placeholder="Promotion Amount"  name="amount" value="{{$promoInfo->price}}">
                         </div>
-                    </div> 
+                    </div>  --}}
                     <div class="form-group row">
-                        <label class="col-md-3 label-control" for="type">Discount Type</label>
+                        <label class="col-md-3 label-control" for="type">Badge</label>
                         <div class="col-md-9">
-                            <select name="type" id="type" class="form-control" >
+                            <input required="required" type="text" id="type" class="form-control" placeholder="Discount Type" name="type" value="{{$promoInfo->type}}">
+                            {{-- <select name="type" id="type" class="form-control" >
                                 @foreach($badges as $badge)
                                     <option {{old('type',$badge->id)==$promoInfo->type? 'selected':''}} value="{{$badge->id}}"> {{$badge->name}} </option>
                                 @endforeach
-                            </select> 
+                            </select>  --}}
                         </div>
                     </div> 
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="col-md-3 label-control" for="amount">Discount Amount</label>
                         <div class="col-md-9">
                             <input readonly required="required" type="text" id="dis_amount" class="form-control" placeholder="Discount Amount"  name="dis_amount"  value="{{$promoInfo->discount_amount}}">
                         </div>
-                    </div> 
+                    </div>  --}}
                     <div class="form-group row">
                         <label class="col-md-3 label-control" for="start_date">Start Date</label>
                         <div class="input-group col-md-9">
