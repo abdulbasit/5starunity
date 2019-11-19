@@ -29,7 +29,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-xs-12 col-lg-1 form-group"></div>
-                        <div class="col-xs-12 col-lg-4 form-group">
+                        <div class="col-xs-12 col-lg-5 form-group">
                             <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="{{ __('lables.placehoder_search')}}">
                         </div>
                         <div class="col-xs-12 col-lg-4 form-group">
@@ -61,7 +61,7 @@
                                 </a>
                                 <div class="row content_info">
                                     <a itemprop="url" title="{{$lottery->name}}" href="/lottery/detail/{{$lottery->lotteryId}}">
-                                        <h2 class="mb-5px">{{$lottery->name}}{{$lottery->lotteryId}}</h2>
+                                        <h2 class="mb-5px">{{$lottery->name}}</h2>
                                     </a>
                                     <p itemprop="description">
                                         <a class="lot_desc" href="/lottery/detail/{{$lottery->lotteryId}}" title="{{$lottery->name}}">

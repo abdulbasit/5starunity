@@ -85,7 +85,8 @@ return [
     "click_here"=>"zum Angebot",
     'cooperation_search'=>'Kooperationen suchen',
     'cooperation_category_placholder'=>"Suche nach Kategorie",
-    'to_offer'=>"Ihr Vorteil"
+    'to_offer'=>"Ihr Vorteil",
+    "already_registered"=>"E-Mail-Adresse registriert"
 ]
 ?>
  

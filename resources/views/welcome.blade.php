@@ -426,8 +426,8 @@
             </div>
         </div>
     </div>
-        <div class="modal fade  modal-sm col-lg-offset-2 col-sm-offset-2" id="donorModal" role="dialog">
-          <div class="modal-dialog">
+    <div style="margin:auto" class="modal fade  modal-sm col-lg-offset-2 col-sm-offset-2" id="donorModal" role="dialog">
+        <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">

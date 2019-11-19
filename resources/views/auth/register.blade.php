@@ -394,9 +394,9 @@ label.error {
                                 <label for="dob" class="form-label">{{ __('lables.country')}} <font color="red"> *</font></label>
                                 <select name="country" id="country" onchange="getCountrySates()" class="form-control" required="required" style="margin-bottom:15px">
                                     <option >----{{ __('lables.selct_country')}}----</option>
-                                    {{-- <option value="14">Österreich</option>
-                                    <option value="82">Deutschland</option>
-                                    <option value="82">Deutschland</option> --}}
+                                    {{-- <option value="82">Deutschland</option>
+                                    <option value="14">Österreich</option>
+                                    <option value="212">Schweiz</option> --}}
                                     @foreach($countries as $country)       
                                     @if($country->germ_name=="")
                                         <option value="{{$country->country_id}}">{{$country->name}}</option>
@@ -598,7 +598,7 @@ function check_email()
             {
                 $("#email").addClass('error');
                 $("#email-error").css('display','block');
-                $("#email-error").html('email already register');
+                $("#email-error").html('{{ __('lables.already_registered')}}');
                 $(".actions ul li:nth-child(2) a").removeAttr('href');
                 return false;
             }

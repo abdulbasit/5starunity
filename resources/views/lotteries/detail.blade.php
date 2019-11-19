@@ -97,10 +97,11 @@
                 }
                 else
                 {
+                    $("#errorBox").modal();
                     $("#bonus_taler").val(obj.bonus_use);
                     $("#bonusAmount").val(obj.amount);
                     $("#errorLots").css('color','red');
-                    $("#errorLots").html(obj.message+"<br /> "+obj.bonus_taler);
+                    // $("#errorLots").html(obj.message+"<br /> "+obj.bonus_taler);
                 }
             });
         }
@@ -179,7 +180,27 @@
         </div>
     </div>
 </div>
-<div id="myModal" class="modal fade" role="dialog">
+<div style="margin:auto" class="modal fade  modal-md col-lg-offset-2 col-sm-offset-2" id="errorBox" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button style="margin-top: -50px;" type="button" class="close" data-dismiss="modal">&times;</button>
+            <div style="margin-top:40px" class="section-title">{{__('messages.insuficcian_balance_heading')}}</div>
+          </div>
+          <div class="modal-body" id="donor_content">
+            <p>Leider haben Sie zu wenig 5starUnity-Taler, Bonus-Taler oder Team-Spenden!</p>
+            <p style="margin-top:30px">Bitte schauen Sie im internen Bereich, ob Sie Promotions-Taler erhalten können, laden Sie Freunde in unsere Community ein oder tätigen Sie eine Spende für den 5starUnity e.V. - wir danken Ihnen für Ihre bisherige Treue, übermittelten Spenden und dafür, dass Sie gemeinsam mit Vielen unsere Community stärken.</p>
+            <p style="margin-top:30px"><font color="orange">Spenden</font> können mit Betätigung des Buttons jederzeit durchgeführt werden.</p>
+            <a href="/wallet?action=purchase">
+                <div class="circle c_nd spendCircle" style="height: 200px; width: 200px; margin: auto;"></div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+<div  style="margin:auto"  id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
