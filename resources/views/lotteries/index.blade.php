@@ -39,7 +39,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-xs-12 col-lg-2 form-group text-right" style="width:170px">
+                            <div class="col-xs-12 col-lg-2 form-group text-right" style="width:165px">
                                 <button type="submit" class="btn-green" style="margin-top:-2px">
                                     {{ __('lables.search')}}
                                 </button>
