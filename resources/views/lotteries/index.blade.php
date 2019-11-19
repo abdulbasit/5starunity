@@ -13,11 +13,9 @@
 @endsection
 @section('content')
 <section class="homepage-popular-startups">
-        <div class="container-fluid">
-
+        <div class="container">
             <div class="section-title padding-title"> {{ __('content.favt_products')}} </div>
         </div>
-
         <div class="ps_parent_circles">
             <div class="ps_circles">
                 <i class="fa fa-circle circle" data-position="1"></i>
@@ -27,23 +25,25 @@
         <div class="container listing_container" id="list_startups">
                 <form action="/lottery/search" method="post">
                     @csrf
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-1 form-group"></div>
-                        <div class="col-xs-12 col-lg-5 form-group">
-                            <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="{{ __('lables.placehoder_search')}}">
-                        </div>
-                        <div class="col-xs-12 col-lg-4 form-group">
-                            <select name="category" id="category" class="form-control ">
-                                <option value="">{{ __('lables.lottery_category_dropdown')}}</option>
-                                @foreach($category as $proCategory)
-                                    <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-xs-12 col-lg-2 form-group text-cnetr">
-                            <button type="submit" class="btn-green" style="margin-top:-2px">
-                                {{ __('lables.search')}}
-                            </button>
+                    <div class="container">
+                        <div class="row">
+                            {{-- <div class="col-xs-12 col-lg-1 form-group"></div> --}}
+                            <div class="col-xs-12 col-lg-5 form-group">
+                                <input type="text" value="{{request()->search}}" class="form-control " name="search" id="search" placeholder="{{ __('lables.placehoder_search')}}">
+                            </div>
+                            <div class="col-xs-12 col-lg-5 form-group">
+                                <select name="category" id="category" class="form-control ">
+                                    <option value="">{{ __('lables.lottery_category_dropdown')}}</option>
+                                    @foreach($category as $proCategory)
+                                        <option {{ $proCategory->id == request()->category ? 'selected="selected"' : '' }} value="{{$proCategory->id}}">{{$proCategory->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-lg-2 form-group text-right">
+                                <button type="submit" class="btn-green" style="margin-top:-2px">
+                                    {{ __('lables.search')}}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>
