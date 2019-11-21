@@ -6,7 +6,7 @@ return [
     'already_exists'=>'Bereits angemeldet',
     'no_data'=>"Kein Eintrag gefunden",
     'delete_account_message'=>"Bitte bestätigen Sie uns, dass die eine Account-Löschung durchführen möchten. Wir weisen nochmals darauf hin, dass keine Wiederherstellung vorgenommen werden kann! ",
-    "insuficcian_balance_heading"=>"zu wenig Taler",
+    "insuficcian_balance_heading"=>" …zu wenig Taler verfügbar",
     ""
 ];
 ?>

@@ -189,9 +189,9 @@
             <div style="margin-top:40px" class="section-title">{{__('messages.insuficcian_balance_heading')}}</div>
           </div>
           <div class="modal-body" id="donor_content">
-            <p>Leider haben Sie zu wenig 5starUnity-Taler, Bonus-Taler oder Team-Spenden!</p>
-            <p style="margin-top:30px">Bitte schauen Sie im internen Bereich, ob Sie Promotions-Taler erhalten können, laden Sie Freunde in unsere Community ein oder tätigen Sie eine Spende für den 5starUnity e.V. - wir danken Ihnen für Ihre bisherige Treue, übermittelten Spenden und dafür, dass Sie gemeinsam mit Vielen unsere Community stärken.</p>
-            <p style="margin-top:30px"><font color="orange">Spenden</font> können mit Betätigung des Buttons jederzeit durchgeführt werden.</p>
+            <p style="text-align:center !important">Leider haben Sie zu wenig 5starUnity-Taler, Bonus-Taler oder Team-Spenden!</p>
+            <p style="margin-top:30px; text-align:center !important">Bitte schauen Sie im internen Bereich, ob Sie Promotions-Taler erhalten können, laden Sie Freunde in unsere Community ein oder tätigen Sie eine Spende für den 5starUnity e.V. - wir danken Ihnen für Ihre bisherige Treue, übermittelten Spenden und dafür, dass Sie gemeinsam mit Vielen unsere Community stärken.</p>
+            <p style="margin-top:30px; text-align:center !important"><font color="orange">Spenden</font> können mit Betätigung des Buttons jederzeit durchgeführt werden.</p>
             <a href="/wallet?action=purchase">
                 <div class="circle c_nd spendCircle" style="height: 200px; width: 200px; margin: auto;"></div>
             </a>
