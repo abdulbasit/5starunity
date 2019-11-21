@@ -3251,10 +3251,11 @@ body {
                 line-height: 1.42857143;
                 color: #555555;
             }
-            #donor_content
-            {
-                text-align:justify !important
+            
+            #donor_content {
+                text-align: justify !important
             }
+            
             .form-control {
                 display: block;
                 width: 100%;
