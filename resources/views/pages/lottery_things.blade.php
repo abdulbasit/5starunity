@@ -164,7 +164,7 @@
                         <h2>{{ __('content.customer_reviews')}} </h2>
                         <p>{{ __('content.customer_reviews_desc')}}</p>
                         <div class="col-xs-12 button-container" style="margin:0px">
-                            <a href="/partner" class="btn layoutV2-btn" style="font-size:14px; margin-top:40px">
+                            <a href="/ceo" class="btn layoutV2-btn" style="font-size:14px; margin-top:40px">
                                 MEINUNGEN UNSERER SPENDER UND PARTNER
                             </a>
                         </div>
