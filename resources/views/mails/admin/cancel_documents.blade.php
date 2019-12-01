@@ -52,7 +52,7 @@
                                 <tr>
                                   <td align="center"> 
                                     <span style="color:#48545d;font-size:22px;line-height: 24px; font-weight:bold">
-                                      Verifikations-Bestätigung
+                                        Fehlerhafte Dokumente
                                     </span>
 
                                   </td>
@@ -68,11 +68,9 @@
                                 </tr>
                                 <tr>
                                   <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
-                                    <p>Lieber Interessent,</p>
-                                    <p>vielen herzlichen Dank für Ihre Bestätigung.</p>
-                                    <p>Ihr persönlicher Account in unserer Community ist nach der Dokumentenverifizierung voll einsatzbereit – Sie können sich jedoch bereits jetzt mit den Funktionen des internen Bereichs vertraut machen. </p>
-                                    </span>
-
+                                    <p>Sehr geehrter Interessent,  </p>
+                                    <p>vielen herzlichen Dank für Ihre Registrierung und das bekundete Interesse an unserer Community –  leider sind die übermittelten Dokumente derzeit noch <font color="red"><b>fehlerhaft.</b></font></p>
+                                    <p><font color="red">{{$email->document_cancel_reason}}</font></p>
                                   </td>
                                 </tr>
                                 <tr>
@@ -80,8 +78,7 @@
                                 </tr>
                                 <tr>
                                   <td valign="top" width="48%" align="center"> <span>
-                                        
-                                    <a href="{{URL::to('/login/')}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">LOGIN</a>
+                                    <a href="{{URL::to('/account-settings/')}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">NEUER UPLOAD</a>
                                     </span>
                                   </td>
                                 </tr>
@@ -90,12 +87,12 @@
                                 </tr>
                                 <tr>
                                   <td align="justify">
-                                      <p>Empfehlen möchten wir Ihnen unsere innovative <a href="{{URL::to('/user/refer/all/')}}"><b>Freunde werben</b></a> Möglichkeit: </p>
+                                      <p>Nach vollständiger Verifizierung stehen Ihnen alle Funktionen zur Verfügung, Sie erhalten diesbezüglich eine Bestätigungsmail. </p>
                                       <p>
-                                        Durch interne Funktionen Einladungen versenden und nach erfolgter Registrierung bei jeder Spende Ihres Bekannten doppelt partizipieren! Wir belohnen Sie mit zusätzlichen Talern und S-PAY, welche Ihrerseits frei eingesetzt werden können.
+                                        Wir danken für Ihr Verständnis, dass ohne eine vollständige Verifizierung kein Zugang zum internen Bereich stattfinden kann; bei Herausforderungen hilft Ihnen gerne unser Support-Team unter: 
                                       </p>
-                                      <p style="font-weight:bold">
-                                        Starten Sie noch <font color="red">heute</font> Ihren Team-Aufbau.  
+                                      <p style="text-align:center; color:red">
+                                        <font color="red">service@5starunity.com</font>
                                       </p>
                                   </td>
                                 </tr>

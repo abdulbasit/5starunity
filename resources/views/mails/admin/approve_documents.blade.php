@@ -52,7 +52,7 @@
                                 <tr>
                                   <td align="center"> 
                                     <span style="color:#48545d;font-size:22px;line-height: 24px; font-weight:bold">
-                                      Verifikations-Bestätigung
+                                        Dokumente verifiziert
                                     </span>
 
                                   </td>
@@ -68,11 +68,10 @@
                                 </tr>
                                 <tr>
                                   <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
-                                    <p>Lieber Interessent,</p>
-                                    <p>vielen herzlichen Dank für Ihre Bestätigung.</p>
-                                    <p>Ihr persönlicher Account in unserer Community ist nach der Dokumentenverifizierung voll einsatzbereit – Sie können sich jedoch bereits jetzt mit den Funktionen des internen Bereichs vertraut machen. </p>
-                                    </span>
-
+                                    <p>Liebes Mitglied, </p>
+                                    <p>vielen herzlichen Dank für Ihre Teilnahme an unserer Community –  übermittelte Dokumente verifizierten Ihren Account vollständig.</p>
+                                    <p style="text-align:center; font-weight:bold">Herzlichen Glückwunsch</p>
+                                    <p>Sie sind nun ein Teil unserer außerordentlichen Gemeinschaft, lassen Sie uns diese stärken! </p>
                                   </td>
                                 </tr>
                                 <tr>
@@ -80,7 +79,7 @@
                                 </tr>
                                 <tr>
                                   <td valign="top" width="48%" align="center"> <span>
-                                        
+                                        {{-- <a href="#" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a> --}}
                                     <a href="{{URL::to('/login/')}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">LOGIN</a>
                                     </span>
                                   </td>
@@ -90,12 +89,12 @@
                                 </tr>
                                 <tr>
                                   <td align="justify">
-                                      <p>Empfehlen möchten wir Ihnen unsere innovative <a href="{{URL::to('/user/refer/all/')}}"><b>Freunde werben</b></a> Möglichkeit: </p>
+                                      <p>Nun stehen Ihnen alle Funktionen zur Verfügung, Ihre Spende nehmen wir gerne <a href="{{URL::to('/wallet?action=purchase')}}"><b>HIER</b></a> entgegen. </p>
                                       <p>
-                                        Durch interne Funktionen Einladungen versenden und nach erfolgter Registrierung bei jeder Spende Ihres Bekannten doppelt partizipieren! Wir belohnen Sie mit zusätzlichen Talern und S-PAY, welche Ihrerseits frei eingesetzt werden können.
+                                        Nach einem bestätigten Spendeneingang können Sie die 5starUnity-Taler, welche wir Ihnen für Ihre Großzügigkeit schenken, frei nutzen und bspw. in Lose der Lottery of Things eintauschen. 
                                       </p>
-                                      <p style="font-weight:bold">
-                                        Starten Sie noch <font color="red">heute</font> Ihren Team-Aufbau.  
+                                      <p >
+                                        Starten Sie noch <font color="red"><b>heute</b></font> Ihren Team-Aufbau und partizipieren an Spenden direkter Freunde. 
                                       </p>
                                   </td>
                                 </tr>

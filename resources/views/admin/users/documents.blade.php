@@ -139,6 +139,7 @@
 @section('script')
 <script>
     $("#yes").click(function (){
+       
         $("#notes").attr('readonly');
         var id = $("#dId").val();
         var notes = $("#notes").val();

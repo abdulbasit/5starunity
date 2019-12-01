@@ -6,11 +6,11 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CancelDocumentEmail extends Mailable
+class DocumentsCancelEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email;
+    public $email;  
 
     public function __construct($email)
     {
@@ -30,5 +30,9 @@ class CancelDocumentEmail extends Mailable
                             'testVarOne' => '1',
                             'testVarTwo' => '2',
                       ]);
+                    //   ->attach(public_path('/images').'/demo.jpg', [
+                    //           'as' => 'demo.jpg',
+                    //           'mime' => 'image/jpeg',
+                    //   ]);
     }
 }

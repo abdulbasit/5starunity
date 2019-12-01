@@ -12,6 +12,7 @@ use App\Mail\CancelDocumentEmail;
 use App\Mail\RessetPasswordEmail;
 use App\Mail\SubsConfirmEmail;
 use App\Mail\VerifyRegistrationEmail;
+use App\Mail\DcomnetsApproveEmail;
 trait EmailTrait {
  
     public function sendEmails($mailObj) {
@@ -156,6 +157,36 @@ trait EmailTrait {
         $obj->subject = $param['subject'];
         $obj->receiver = $param['to'];
         $mailObj = new VerifyRegistrationEmail($obj); 
+        $this->sendEmails($mailObj);
+    }
+    public function ApproveDocuments($param)
+    {
+       
+        $regFrom = \Config::get('constants.emailsFrom.'.$param['from_email']);
+        $obj = new \stdClass();
+        foreach($param['email_data'] as $key=>$emailData)
+        {
+            $obj->$key = $emailData;
+        }
+        $obj->sender = $regFrom;
+        $obj->subject = $param['subject'];
+        $obj->receiver = $param['to'];
+        $mailObj = new DcomnetsApproveEmail($obj); 
+        $this->sendEmails($mailObj);
+    }
+    public function CancelDocuments($param)
+    {
+       
+        $regFrom = \Config::get('constants.emailsFrom.'.$param['from_email']);
+        $obj = new \stdClass();
+        foreach($param['email_data'] as $key=>$emailData)
+        {
+            $obj->$key = $emailData;
+        }
+        $obj->sender = $regFrom;
+        $obj->subject = $param['subject'];
+        $obj->receiver = $param['to'];
+        $mailObj = new DocumentsCancelEmail($obj); 
         $this->sendEmails($mailObj);
     }
 }

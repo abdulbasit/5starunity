@@ -79,14 +79,21 @@ class UserController extends Controller
         $document_status = UserDocument::where('id',$id)->first();
         $document_status->status ="0";
         $document_status->save();
+        $userData = User::where('id',$document_status->user_id)->first();
+        $email = $userData->email;
+        $data = array("sender_name"=>$email);
+        $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Registrierung 5Starunity- Fehlerhafte Dokumente","email_data"=>$data);
+        $this->ApproveDocuments($emailData);
+
         return redirect('admin/user/documents/'.$document_status->user_id);
     }
     public function cancel($id,Request $request)
     {
-        error_reporting(E_ALL);
+        
         $document_status = UserDocument::where('id',$id)->first();
         $document_status->status ="1";
         $document_status->notes = $request->get('notes');
+        
         $data = array("sender_name"=>$document_status->user->name,'document_cancel_reason'=>$request->get('notes'));
         $emailData = array("to"=>$document_status->user->email,"from_email"=>"no-reply","subject"=>"Account Canceled","email_data"=>$data);
         $this->CancelDocumentAdminEmail($emailData);

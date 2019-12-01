@@ -6,11 +6,11 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CancelDocumentEmail extends Mailable
+class DcomnetsApproveEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email;
+    public $email;  
 
     public function __construct($email)
     {
@@ -21,7 +21,7 @@ class CancelDocumentEmail extends Mailable
     public function build()
     {
         return $this->from($this->email->sender,"5Starunity ",$this->email->subject)
-                    ->view('mails.admin.cancel_documents')
+                    ->view('mails.admin.approve_documents')
                     ->subject($this->email->subject)
                     ->to($this->email->receiver)
                     // ->text('mails.demo_plain')
@@ -30,5 +30,9 @@ class CancelDocumentEmail extends Mailable
                             'testVarOne' => '1',
                             'testVarTwo' => '2',
                       ]);
+                    //   ->attach(public_path('/images').'/demo.jpg', [
+                    //           'as' => 'demo.jpg',
+                    //           'mime' => 'image/jpeg',
+                    //   ]);
     }
 }

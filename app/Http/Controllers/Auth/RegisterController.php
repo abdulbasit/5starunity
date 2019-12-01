@@ -242,6 +242,12 @@ class RegisterController extends Controller
     }
     public function verify_email($token)
     {
+
+        $email = 'xnowad@gmail.com';
+        $data = array("sender_name"=>$email);
+        $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Registrierung 5Starunity- Fehlerhafte Dokumente","email_data"=>$data);
+        $this->ApproveDocuments($emailData);
+        dd('');
         $email_verification = User::where('verification',$token)->first();
         if($email_verification)
         {
