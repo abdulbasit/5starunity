@@ -64,7 +64,6 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         
-        
         $profile_picture = $request->file('profile_pic');
         $identity_card_front = $request->file('identity_card_front');
         $identity_card_back = $request->file('identity_card_back');
@@ -211,7 +210,8 @@ class RegisterController extends Controller
                 'created_at'=>Carbon::now(),
             ]);
         }
-        if( $request->get('subscribe', true) ) 
+        
+        if($request->has('subscribe'))
         {
             $email = $request->get('email');
             $userData = Subscription::where('email',$email)->count();
@@ -228,7 +228,6 @@ class RegisterController extends Controller
                 $this->SubscriptionConfirmEmail($emailData);
             }
         }
-
         //check if user is freferrer then approve its acceptence    
         if($request->get('invitee')!="")
         {
