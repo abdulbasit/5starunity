@@ -22,6 +22,9 @@ Auth::routes();
 
     // Password Reset Routes...
     Route::get('password-reset', 'Auth\RegisterController@passwordReset');
+    
+    Route::get('subscription/rerun', 'Auth\RegisterController@rerunSubscription')->name('subscription.rerun');
+
     Route::post('change/password', 'Auth\RegisterController@changePassword')->name('change.password');
     Route::get('update/password/{token}', 'Auth\RegisterController@updatePassword')->name('update.password');
     Route::post('edit/password', 'Auth\RegisterController@editPassword')->name('edit.password');

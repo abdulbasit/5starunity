@@ -417,4 +417,29 @@ class RegisterController extends Controller
         $userDetail->save();
         return redirect()->route('login')->with('success','Password Changed !');
     }
+    public function rerunSubscription()
+    {
+       $subs = Subscription::where('allow_subscription','!=','')->where('mail_counter','0')->get();
+       $date2=date_create( Carbon::now());
+       $end_date = Carbon::now(); 
+       $verificatation = md5(Carbon::now());
+       foreach($subs as $pendingEmails)
+       {
+            $date1=date_create($pendingEmails->updated_at);
+            $diff=date_diff($date1,$date2);
+            
+            if($diff->format("%a") >= 30)
+            {
+                $email = $pendingEmails->email;
+
+                $pendingEmails->mail_counter=1;
+                $pendingEmails->allow_subscription=$verificatation;
+                $pendingEmails->save();
+
+                $data = array("sender_name"=>$email,"verification"=>$verificatation);
+                $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
+                $this->SubscriptionConfirmEmail($emailData);
+            }
+       }
+    }
 }
