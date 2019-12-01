@@ -6,7 +6,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class VerifyRegistrationEmail extends Mailable
+class SubscriptionEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -15,16 +15,24 @@ class VerifyRegistrationEmail extends Mailable
     public function __construct($email)
     {
         $this->email = $email;
+        // dd($email->subject);
     }
 
     public function build()
     {
-        return $this->from('admin@xnowad.com',"5Starunity Registration")
+        return $this->from($this->email->sender,"5Starunity ",$this->email->subject)
                     ->view('mails.register_verify')
+                    ->subject($this->email->subject)
+                    ->to($this->email->receiver)
+                    // ->text('mails.demo_plain')
                     ->with(
                       [
-                        'testVarOne' => '1',
-                        'testVarTwo' => '2',
+                            'testVarOne' => '1',
+                            'testVarTwo' => '2',
                       ]);
+                    //   ->attach(public_path('/images').'/demo.jpg', [
+                    //           'as' => 'demo.jpg',
+                    //           'mime' => 'image/jpeg',
+                    //   ]);
     }
 }
