@@ -69,8 +69,7 @@
                                 <tr>
                                   <td align="justify"> <span style="color:#48545d;font-size:14px;line-height:24px;">
                                     <p>Lieber Interessent,</p>
-                                    <p>Sicherheit steht bei uns an vorderster Stelle, weshalb wir Sie bitten die angegebene E-Mail-Adresse zu bestätigen.
-                                    Nach komplett erfolgreicher Verifizierung steht Ihnen die uneingeschränkte Nutzung des internen Bereiches offen.</p>
+                                    <p>Sicherheit steht bei uns an vorderster Stelle, weshalb wir Sie bitten die angegebene E-Mail-Adresse zu bestätigen. Nach komplett erfolgreicher Verifizierung, welche bei Hochladung korrekter Dateien innerhalb 48h durchgeführt sein sollte, steht Ihnen die uneingeschränkte Nutzung des internen Bereiches offen.</p>
                                     </span>
 
                                   </td>
@@ -90,17 +89,13 @@
                                 </tr>
                                 <tr>
                                   <td align="justify">
-                                      <p>Wir möchten Sie nochmals auf unsere allgemeinen Nutzungsbedingungen aufmerksam machen und
-                                            danken bereits im Voraus für Ihr Vertrauen, Ihre Unterstützungen und verbleiben,</p>
+                                      <p>Wir möchten an dieser Stelle nochmals auf unsere allgemeinen <a href="https://5starunity.com/page/terms"><b>Nutzungsbedingungen</b></a> sowie die <a href="https://5starunity.com/page/data-security"><b>Datenschutzerklärung</b></a> aufmerksam machen und danken bereits im Voraus für Ihr Vertrauen und Ihre Unterstützung. </p>
                                       <p>
-                                            mit herzlichem Gruß<br />
-                                            Ihr 5starUnity Team
+                                        Herzliche Grüße<br />
+                                        Ihr 5starUnity Team
                                       </p>
-                                      <p>
-                                            *Für den unwahrscheinlichen Fall, dass Sie keine Registrierung veranlasst haben bitten wir Sie, diese Mail zu ignorieren.
-                                      </p>
-                                      <p>
-                                            Eine Löschung aller angegebenen Daten des noch zu verifizierenden Accounts findet nach bestimmter Zeit automatisch statt.
+                                      <p style="font-weight:bold">
+                                        Für den unwahrscheinlichen Fall, dass Sie keine Registrierung veranlasst haben bitten wir Sie diese Mail zu ignorieren. Eine Löschung aller eingegebenen Daten findet nach bestimmter Zeit automatisch statt. 
                                       </p>
                                   </td>
                                 </tr>
