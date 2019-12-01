@@ -6,11 +6,11 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SubscriptionEmail extends Mailable
+class VerifyRegistrationEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email;
+    public $email;  
 
     public function __construct($email)
     {

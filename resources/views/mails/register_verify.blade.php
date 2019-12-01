@@ -81,7 +81,7 @@
                                 <tr>
                                   <td valign="top" width="48%" align="center"> <span>
                                         
-                                    <a href="{{URL::to('/login/')}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">JETZT BESTÄTIGEN</a>
+                                    <a href="{{URL::to('/login/')}}" style="display:block; padding:15px 25px; background-color:#0087D1; color:#ffffff; border-radius:3px; text-decoration:none;">LOGIN</a>
                                     </span>
                                   </td>
                                 </tr>
@@ -95,7 +95,7 @@
                                         Durch interne Funktionen Einladungen versenden und nach erfolgter Registrierung bei jeder Spende Ihres Bekannten doppelt partizipieren! Wir belohnen Sie mit zusätzlichen Talern und S-PAY, welche Ihrerseits frei eingesetzt werden können.
                                       </p>
                                       <p style="font-weight:bold">
-                                        Starten Sie noch heute Ihren Team-Aufbau.  
+                                        Starten Sie noch <font color="red">heute</font> Ihren Team-Aufbau.  
                                       </p>
                                   </td>
                                 </tr>

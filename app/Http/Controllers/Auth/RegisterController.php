@@ -242,13 +242,6 @@ class RegisterController extends Controller
     }
     public function verify_email($token)
     {
-
-        $email = "xnowad@gmail.com";
-        $data = array("sender_name"=>$email);
-        $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
-        $this->RegisterVerifiedEmail($emailData);
-
-        dd('');
         $email_verification = User::where('verification',$token)->first();
         if($email_verification)
         {
@@ -258,7 +251,7 @@ class RegisterController extends Controller
 
             $email = $email_verification->email;
             $data = array("sender_name"=>$email);
-            $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Newsletteranmeldung-Bestätigung zur Anmeldung","email_data"=>$data);
+            $emailData = array("to"=>$email,"from_email"=>"no-reply","subject"=>"Herzlich Willkommen bei  der 5Starunity community","email_data"=>$data);
             $this->RegisterVerifiedEmail($emailData);
 
             return redirect()->route('login')->with('success','Email Verified Successfully!');
