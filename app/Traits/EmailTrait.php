@@ -11,6 +11,7 @@ use App\Mail\SubscriptionEmail;
 use App\Mail\CancelDocumentEmail;
 use App\Mail\RessetPasswordEmail;
 use App\Mail\SubsConfirmEmail;
+use App\Mail\VerifyRegistrationEmail;
 trait EmailTrait {
  
     public function sendEmails($mailObj) {
@@ -140,6 +141,21 @@ trait EmailTrait {
         $obj->subject = $param['subject'];
         $obj->receiver = $param['to'];
         $mailObj = new RessetPasswordEmail($obj); 
+        $this->sendEmails($mailObj);
+    }
+    public function RegisterVerifiedEmail($param)
+    {
+       
+        $regFrom = \Config::get('constants.emailsFrom.'.$param['from_email']);
+        $obj = new \stdClass();
+        foreach($param['email_data'] as $key=>$emailData)
+        {
+            $obj->$key = $emailData;
+        }
+        $obj->sender = $regFrom;
+        $obj->subject = $param['subject'];
+        $obj->receiver = $param['to'];
+        $mailObj = new VerifyRegistrationEmail($obj); 
         $this->sendEmails($mailObj);
     }
 }
