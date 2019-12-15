@@ -73,7 +73,7 @@
                             <ul class="nav navbar-nav">
                                 <li  ><a href="/lotter-of-things">{{ __('menu.lottery_things')}}</a></li>
                                 <li  ><a href="/page/promotions">{{ __('menu.promotions')}}</a></li>
-                                <li ><a href="https://advertise.5starunity.com/">{{ __('menu.partner')}}</a></li>
+                                <li ><a href="/page/partner/">{{ __('menu.partner')}}</a></li>
                                 <li class="dropdown" id="bigmenu">
                                     <button style="color:black !important" class="btn btn-default dropdown-toggle menubtn" type="button" data-toggle="dropdown" data-hover="dropdown">{{ __('menu.more')}} <span class="caret"></span></button>
                                     <ul class="dropdown-menu sub_menu">

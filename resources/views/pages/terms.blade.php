@@ -93,10 +93,26 @@
 {
     padding-top:0px
 }
+section.homepage-news{
+    padding-top:23px;
+    padding-left:8px;
+    padding-bottom:0px;
+    border:solid 2px #888;
+    background:none
+}
+h1
+{
+    font-weight: bold;
+    text-align: center
+}
+h3
+{
+    font-weight: bold;
+    text-align: center
+}
 </style>
 @endsection
 <div class="container no-padding">
-    
     <h2 class="text-center registerHeading" style="font-weight:bold">{{$page->page_title}}</h2>
     <br />
     <div class="fieldset-content">
@@ -104,11 +120,93 @@
             <div class="col-xs-12 terms_cond" id="terms">
                 {!!$page->page_content!!}
                 @if($pageName=='partner')
-                    <div class="col-xs-12 button-container" style="margin:0px; margin-top:35px">
-                        <a href="https://advertise.5starunity.com" class="btn layoutV2-btn" style="width:500px">
-                            pix`lMania 
-                        </a>
+                <br />
+                <br />
+                <div class="container">
+                    <div class="row">
+                        <img style="width:100%" src="{{ URL::to('/') }}/uploads/slider/1554483886_5starunity.png">
                     </div>
+                    <br />
+                    <br />
+                    <div class="row" style="text-align:justify; line-height:28px">
+                        Untenstehende Auswahlmöglichkeiten zeigen Ihnen unsere Partner, welche bereits durch Spenden unseren Verein und damit Erfinder, Gründer und StartUp-Unternehmungen unterstützt haben. Klicken Sie sich durch diverse Möglichkeiten, wie Sie z.B. mit einer Spende an den 5starUnity e.V. automatisch an einem kleinen Gewinnspiel teilnehmen und tolle Sachpreise gewinnen könnten – folgen Sie dazu der <b>pix`lMania Lottery!</b>
+                    </div>
+                </div>
+                <br />
+                <br />  
+                
+                <section class="homepage-news">
+                    <div class="container">
+                        <canvas id="hidden-canvas2" style="display:none"></canvas>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/1570525059_5starunity.jpg)" onclick="window.location = 'https://advertise.5starunity.com/';">
+                                        <div class="news-date" style="display: block;">
+                                            <strong>News</strong> | Oct 8, 2019
+                                        </div>
+                                        <div class="news-title" style="display: block;">
+                                            5starUnity startet BETA-Phase<br>
+                                        </div>
+                                        <div class="news-brief news-brief-large" style="display: none;">
+                                            Eine neuartige, innovative Plattform soll Erfindern, Entwicklern und Gründern helfen, ihre Produkte / Konzepte marktreif zu gestalten.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <br />
+                                    <h1>Partner </h1>
+                                    <br />
+                                    <h3>Pix`lMania</h3>
+                                    <br />
+                                    <h3>1</h3>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <br />
+                <br />
+                <section class="homepage-news">
+                    <div class="container">
+                        <canvas id="hidden-canvas2" style="display:none"></canvas>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/1570525059_5starunity.jpg)" onclick="window.location = 'https://advertise.5starunity.com/getp.php?gr=3&pa=2';">
+                                        <div class="news-date" style="display: block;">
+                                            <strong>News</strong> | Oct 8, 2019
+                                        </div>
+                                        <div class="news-title" style="display: block;">
+                                            5starUnity startet BETA-Phase<br>
+                                        </div>
+                                        <div class="news-brief news-brief-large" style="display: none;">
+                                            Eine neuartige, innovative Plattform soll Erfindern, Entwicklern und Gründern helfen, ihre Produkte / Konzepte marktreif zu gestalten.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <br />
+                                    <h1>LOTTO  </h1>
+                                    <br />
+                                    <h3>Pix`lMania</h3>
+                                    <br />
+                                    <h3>1</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(function(){
+            
+                                $(".news-block").hover(function(){
+                                    $(this).find(".news-brief").stop(true, true).fadeIn(300);
+                                    $(this).find('.news-date').css('display','none');
+                                    $(this).find('.news-title').css('display','none');
+                                }, function(){
+                                    $(this).find(".news-brief").stop(true, true).fadeOut(300);
+                                    $(this).find('.news-date').css('display','block');
+                                    $(this).find('.news-title').css('display','block');
+                                });
+                            });
+                        </script>
+                </section>
                 @endif
                 @if($pageName=='promotions')
                 <br /> <br />
@@ -217,5 +315,19 @@
 $('.carousel').carousel({
   interval: 10000
 })
+</script>
+ <script>
+    $(function(){
+
+        $(".news-block").hover(function(){
+            $(this).find(".news-brief").stop(true, true).fadeIn(300);
+            $(this).find('.news-date').css('display','none');
+            $(this).find('.news-title').css('display','none');
+        }, function(){
+            $(this).find(".news-brief").stop(true, true).fadeOut(300);
+            $(this).find('.news-date').css('display','block');
+            $(this).find('.news-title').css('display','block');
+        });
+    });
 </script>
 @endsection
