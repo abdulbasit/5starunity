@@ -53,6 +53,9 @@
                 <p>
                     {{ __('content.3steps_cont3')}}<br />
                 </p>
+                <p>
+                    {{ __('content.3steps_cont4')}}<br />
+                </p>
             </div>
         <div class="container">
             <div class="row">
