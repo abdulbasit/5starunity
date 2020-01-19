@@ -53,6 +53,7 @@
                 <p>
                     {{ __('content.3steps_cont3')}}<br />
                 </p>
+                <br />
                 <p>
                     {{ __('content.3steps_cont4')}}<br />
                 </p>
