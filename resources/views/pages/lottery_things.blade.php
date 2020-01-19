@@ -22,7 +22,7 @@
          <div class="container">
             <div class="checkout-panel text-center">
                 <div class="section-title">
-                        <br />
+                    <br />
                     Mit SPENDEN in die Zukunft tolle Lieblingsprodukte gewinnen
                 </div>
                 <p>Ihre Spenden helfen zukunftsorientierten Unternehmen, Entwicklern und Gründern bspw. in einer StartUp-Phase dabei, diverse Konzepte / Produkte zu gestalten / zu realisieren. Unter der Rubrik GRÜNDER / FÖRDERER informieren wir stets kommunikativ sowie transparent über bereits erfolgte Unterstützungen, welche nur durch Ihre freiwilligen und gütigen Spenden erreicht wurden.</p>

@@ -108,9 +108,7 @@
                             <span class="whyBoxHeading">SICHER</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                            Unser eingetragener Verein dient zur Erfüllung unseres Satzungszweckes, es gehen 100% aller verbleibenden Gewinne (nach positiver Prüfung) an Erfinder,
-                            Gründer und Entwickler - weltweit. Transparent werden wir alle Spender auf diesen Seiten darüber in Kenntnis setzen,
-                            welche Unternehmungen über die Jahre unterstützt wurden
+                            Alle von unserer Community gespendeten Euro gehen zu Gunsten des eingetragenen 5starUnity Vereins und dienen zur Erfüllung des Satzungszweckes: Damit ist sichergestellt, dass 100% aller verbleibenden Gewinne (nach positiver Prüfung) an Erfinder, Gründer und Entwickler – weltweit – zur Verfügung stehen. Transparent werden wir auf dieser Plattform darüber in Kenntnis setzen, welche Unternehmungen über die Jahrzehnte unterstützt wurden und fortlaufend Neuigkeiten veröffentlichen.
                         </div>
                     </div>
                 </div>
@@ -121,10 +119,7 @@
                             <span class="whyBoxHeading">INNOVATIV</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                                Die Expertise des Vorstands sowie eine definierte, einheitliche Bestimmung über Verwendung der zu investierenden Gelder,
-                                garantiert zielgerichtete und innovative Entwicklungen.
-                                Aus den zu erwartenden Rückflüssen können wiederum erneut Hilfesuchenden unter die Arme gegriffen werden;
-                                ein zeitlich erfolgreicher Kreislauf.
+                            Die Expertise des Präsidiums und deren Berater sowie eine definierte Bestimmung über sachgemäße Verwendung der zu investierenden Spenden, garantieren zielgerichtete und innovative Entwicklungen. Aus zu erwartenden Rückflüssen der Teilhaberschaften kann wiederum erneut Hilfesuchenden unter die Arme gegriffen werden; ein zeitlich erfolgreicher Kreislauf. Der Verein strebt keine sogenannten schnellen Exit-Lösungen an sondern versteht sich als langfristiger Partner.
                         </div>
                     </div>
                 </div>
@@ -137,10 +132,7 @@
                             <span class="whyBoxHeading">BEHERZT</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                                Eine generelle Unterstützung für Erfinder, Gründer und Entwickler liegt uns am Herzen und treibt uns an,
-                                hierfür ehrenamtlich innerhalb des Vereines zu Interagieren. Wir würden uns sehr freuen,
-                                wenn Sie uns Ihr Vertrauen schenken und mit Spenden, Sachgütern, Rabatten bzw.
-                                Informationen derartige Vorhaben tatkräftig unterstützen.
+                            Eine generelle Unterstützung für Erfinder, Gründer und Entwickler liegt dem Präsidium und allen Vereins-Gründern am Herzen und treibt jeden von uns an, sich ehrenamtlich innerhalb des Vereins zu engagieren. Das gesamte Präsidium und alle Beteiligten würden sich sehr freuen, wenn Sie unsem Herzensprojekt Vertrauen schenken und aktiv mit Spenden, Sachgütern, Rabatten bzw. Informationen derartige Vorhaben tatkräftig unterstützen.
                         </div>
                     </div>
                 </div>
@@ -151,9 +143,8 @@
                             <span class="whyBoxHeading">ERFOLGREICH</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                            Durch den innovativen Charakter und der Vereinigung diverser Crowdfunding-Aspekte erhalten Sie für jeden gespendeten Euro einen Taler,
-                            welchen Sie nun in diversen Verlosungen der vereinseigenen Lottery of Things einsetzen können.
-                            Wir versichern anwaltlich überprüft, dass jedes Produkt an einen realen Spender übermittelt wird.
+                            Durch den innovativen Charakter und der Vereinigung diverser Aspekte erhalten Sie von der 5starUnity Europe OÜ für jeden gespendeten Euro einen virtuellen Taler im internen Bereich gutgeschrieben, welchen Sie nun in z.B. 
+                            diversen Verlosungen der Community-Internen Lottery of Things oder für Sonderaktionen innerhalb der Gemeinschaft einsetzen können. Wir versichern, dass jedes Produkt an einen realen Spender übermittelt wird – lassen Sie uns gemeinsam wachsen und eine erfolgreiche Community schaffen.
                         </div>
                     </div>
                 </div>

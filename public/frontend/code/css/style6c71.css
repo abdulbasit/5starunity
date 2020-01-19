@@ -55467,7 +55467,7 @@ new comment styles
             .why5starContDesc {
                 display: none;
                 text-align: justify;
-                top: calc(20% - 10px);
+                top: calc(5% - 10px);
                 vertical-align: middle;
                 position: absolute;
                 padding: 10px;
