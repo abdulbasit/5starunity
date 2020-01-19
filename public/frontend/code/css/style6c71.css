@@ -55437,7 +55437,8 @@ new comment styles
                 position: relative;
                 height: 90%;
                 margin-bottom: 40px;
-                border: solid 1px #ccc
+                border: solid 1px #ccc;
+                overflow: auto
             }
             
             .whyBoxHeading {

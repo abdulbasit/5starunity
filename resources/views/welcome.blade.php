@@ -108,7 +108,7 @@
                             <span class="whyBoxHeading">SICHER</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                            Alle von unserer Community gespendeten Euro gehen zu Gunsten des eingetragenen 5starUnity Vereins und dienen zur Erfüllung des Satzungszweckes: Damit ist sichergestellt, dass 100% aller verbleibenden Gewinne (nach positiver Prüfung) an Erfinder, Gründer und Entwickler – weltweit – zur Verfügung stehen. Transparent werden wir auf dieser Plattform darüber in Kenntnis setzen, welche Unternehmungen über die Jahrzehnte unterstützt wurden und fortlaufend Neuigkeiten veröffentlichen.
+                            Alle von unserer Community gespendeten Euro gehen zu Gunsten des eingetragenen 5starUnity Vereins und dienen zur Erfüllung des Satzungszweckes: Damit ist <b>sichergestellt</b>, dass 100% aller verbleibenden Gewinne (nach positiver Prüfung) an Erfinder, Gründer und Entwickler – weltweit – zur Verfügung stehen. Transparent werden wir auf dieser Plattform darüber in Kenntnis setzen, welche Unternehmungen über die Jahrzehnte unterstützt wurden und fortlaufend Neuigkeiten veröffentlichen.
                         </div>
                     </div>
                 </div>
