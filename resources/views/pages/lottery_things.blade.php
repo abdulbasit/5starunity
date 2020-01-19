@@ -25,13 +25,13 @@
                         <br />
                     Mit SPENDEN in die Zukunft tolle Lieblingsprodukte gewinnen
                 </div>
-                <p>Ihre Spenden helfen zukunftsorientierten Unternehmen, Entwicklern und Gründern bspw. in einer StartUp-Phase dabei, diverse Konzepte / Produkte zu gestalten / realisieren. Auf unseren Vorstellungsseiten, die Sie über den oben angezeigten Button ERFINDER / GRÜNDER aufrufen können, informieren wir stets kommunikativ sowie transparent über bereits erfolgte Unterstützungen, welche nur durch Ihre gütigen Spenden erreicht wurden.</p>
+                <p>Ihre Spenden helfen zukunftsorientierten Unternehmen, Entwicklern und Gründern bspw. in einer StartUp-Phase dabei, diverse Konzepte / Produkte zu gestalten / zu realisieren. Unter der Rubrik GRÜNDER / FÖRDERER informieren wir stets kommunikativ sowie transparent über bereits erfolgte Unterstützungen, welche nur durch Ihre freiwilligen und gütigen Spenden erreicht wurden.</p>
                 {{-- <br /> --}}
                 <br />
-                <p>Neben der emotionalen Ehrenerklärung für zukünftige innovative Projekte ist ein weiterer Vorteil Ihrer Spende, dass Sie von unserem eingetragenen Verein mit 5starUnity-Talern belohnt werden und nun danach Möglichkeit besitzen, nachfolgende Sachpreise gewinnen zu können. Fehlt Ihnen ein aktuell beliebtes Produkt freuen wir uns über eine schriftliche Mitteilung und versprechen, dies innerhalb des Vorstandes zeitnah zu thematisieren.</p>
+                <p>Neben der emotionalen Ehrenerklärung für zukünftige innovative Projekte ist ein weiterer Vorteil Ihrer Spende, dass Sie von unserer Sales & Marketing Gesellschaft mit kostenfreien 5starUnity-Talern belohnt werden und die Möglichkeit besitzen, nachfolgende Sachpreise gewinnen zu können. Fehlt Ihnen aktuell ein beliebtes Produkt, freuen wir uns über eine schriftliche Mitteilung. Unsererseits versprechen wir, Intensionen unserer Community innerhalb des Präsidiums / der Geschäftsführung zeitnah zu thematisieren.</p>
                 <br />
                 {{-- <br /> --}}
-                <p>Suchen Sie mit nachstehender Funktion Ihre Lieblingsprodukte und nutzen Sie die vom Verein erhaltenen 5starUnity-Taler, um diese in gültige Lose zu tauschen. In Ihrem persönlichen Nutzerbereich werden alle Informationen dargestellt – wir wünschen Ihnen bereits heute viel Glück bei den anwaltlich überwachten Ziehungen und noch mehr Freude mit unseren tollen Sachpreisen, welche vom Vorstand persönlich überbracht werden.  </p>
+                <p>Suchen Sie mit nachstehender Funktion Ihre Lieblingsprodukte und nutzen Sie erhaltenen 5starUnity-Taler, um diese bspw. in gültige Lose zu tauschen. In Ihrem persönlichen Nutzerbereich werden alle Informationen dargestellt – wir wünschen Ihnen bereits heute viel Glück bei den überwachten Ziehungen und noch mehr Freude mit unseren tollen Sachpreisen.</p>
 
 
                 {{-- <div class="section-title">Aktuellste und beliebteste Produkte unserer Spender</div> --}}
