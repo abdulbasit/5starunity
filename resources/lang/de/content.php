@@ -14,7 +14,7 @@ return [
     "subscribe_btn"=>"Anmelden",
     "customer_reviews"=>"Informieren Sie sich über unsere Partner",
     "customer_reviews_desc"=>"In regelmäßigen Abständen erhalten Sie transparent Daten über Projekte, Meinungen und anstehende Unterstützungen, bleiben Sie mit uns in Kontakt.",
-    "register_heading"=>"Kostenlose Registrierung für Spender",
+    "register_heading"=>"Kostenlose Registrierung zur Teilnahme an unserer Community",
     "accunt_information"=>"Account Informationen",
     "personal_information"=>"Persönliche Angaben",
     "terms_cond"=>"Allgemeine Nutzungsbedingungen",
