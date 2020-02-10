@@ -94,7 +94,7 @@
                                 </li><br />
                                 <li>
                                     <font color="black">
-                                    Designed and Developed by <a href="xnowad.com"><font color="blue">Xnowad.com</font></a>
+                                    Designed and Developed by <a href="https://xnowad.com" target="__blank"><font color="blue">Xnowad.com</font></a>
                                     </font>
                                 </li>
                             </ul>
