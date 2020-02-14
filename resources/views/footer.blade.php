@@ -57,7 +57,7 @@
             <div class="container border">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 BottomText grey_75 text-center">
-                        <a style="text-decoration: none;cursor: default !important;">&copy; <?php echo date('Y') ?> 5starUnity e.V.</a>
+                        <a style="text-decoration: none;cursor: default !important;">&copy;2019 - <?php echo date('Y') ?> 5starUnity e.V.</a>
                         <a href="de/page/business-terms.html">Terms and Conditions</a>
                         <a href="de/page/privacy-policy.html">Privacy Policy</a>
                         <a href="de/page/impressum.html">Legal Notice</a>

@@ -68,7 +68,6 @@
                 Für einzelne Beiträge sind, sofern diese von externen Quellen veröffentlicht werden sollten, die jeweiligen AutorInnen verantwortlich. Der Verantwortungsbereich für angebotene Konzepte / Produkte, welche ggf. im internen Bereich proklamiert werden, liegt beim jeweiligen Unternehmen selbst. 5starUnity Europe OÜ  erteilt ausschließlich die Zustimmung zur Darstellung; es gelten die Allgemeinen Geschäftsbedingungen des jeweiligen externen Anbieters.
                 {{-- <br /> --}}
             </p>
-             <br />
             <br />
             <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                 Inhaltliche Verantwortung
@@ -165,7 +164,7 @@
                     Karl-Schurz-Str. 16<br />
                     DE – 70190 Stuttgart <br />
                 </p>
-                <br />
+                
                 <p>
                     verantwortlich und unter oben angezeigter / n Vereinsanschrift / Kontaktdaten zu erreichen.
                 </p>

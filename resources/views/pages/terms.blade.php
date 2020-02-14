@@ -129,7 +129,7 @@ h3
                     <br />
                     <br />
                     <div class="row" style="text-align:justify; line-height:28px">
-                        Untenstehende Auswahlmöglichkeiten zeigen Ihnen unsere Partner, welche bereits durch Spenden unseren Verein und damit Erfinder, Gründer und StartUp-Unternehmungen unterstützt haben. Klicken Sie sich durch diverse Möglichkeiten, wie Sie z.B. mit einer Spende an den 5starUnity e.V. automatisch an einem kleinen Gewinnspiel teilnehmen und tolle Sachpreise gewinnen könnten – folgen Sie dazu der <b>pix`lMania Lottery!</b>
+                        Nachfolgende Auswahlmöglichkeiten zeigen Ihnen Partner / Community-Mitglieder, welche uns bereits freiwillig in / mit diversen Marketing-Kampagnen unterstützten und damit sekundär  Erfindern, Gründern und StartUp-Unternehmungen helfen. Klicken Sie sich durch die engagierten Beiträge oder nehmen Sie (z.B. mit einer Unterstützung innerhalb der Kampagnen) automatisch an einem kleinen Gewinnspiel teil und wahren Sie die Chance zu helfen und dadurch sogar tolle Sachpreise gewinnen zu können. Nähere Informationen finden Sie mit einem Klick auf das Bild der aktuellen Kampagne! 
                     </div>
                 </div>
                 <br />
@@ -154,9 +154,9 @@ h3
                                 </div>
                                 <div class="col-sm-4">
                                     <br />
-                                    <h1>Partner </h1>
-                                    <br />
-                                    <h3>Pix`lMania</h3>
+                                     <h3>pix`lMania</h3>
+                                    
+                                    <h1>PARTNER </h1>
                                     <br />
                                     <h3>1</h3>
                                 </div>
@@ -184,9 +184,9 @@ h3
                                 </div>
                                 <div class="col-sm-4">
                                     <br />
-                                    <h1>LOTTO  </h1>
-                                    <br />
-                                    <h3>Pix`lMania</h3>
+                                     <h3>pix`lMania</h3>
+                                     <h1>MARKETING  </h1>
+                                   
                                     <br />
                                     <h3>1</h3>
                                 </div>
