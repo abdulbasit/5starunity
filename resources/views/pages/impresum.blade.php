@@ -63,9 +63,9 @@
                 Vertretungsberechtigte Personen
             </div>
             <p>
-                5starunity Europe OÜ  wird gerichtlich und außergerichtlich vertreten durch
+                5starUnity Europe OÜ  wird gerichtlich und außergerichtlich vertreten durch
                 Dirk Marras (CEO - Chief Executive Officer)<br /><br />
-                Für einzelne Beiträge sind, sofern diese von externen Quellen veröffentlicht werden sollten, die jeweiligen AutorInnen verantwortlich. Der Verantwortungsbereich für angebotene Konzepte / Produkte, welche ggf. im internen Bereich proklamiert werden, liegt beim jeweiligen Unternehmen selbst. 5starunity Europe OÜ  erteilt ausschließlich die Zustimmung zur Darstellung; es gelten die Allgemeinen Geschäftsbedingungen des jeweiligen externen Anbieters.
+                Für einzelne Beiträge sind, sofern diese von externen Quellen veröffentlicht werden sollten, die jeweiligen AutorInnen verantwortlich. Der Verantwortungsbereich für angebotene Konzepte / Produkte, welche ggf. im internen Bereich proklamiert werden, liegt beim jeweiligen Unternehmen selbst. 5starUnity Europe OÜ  erteilt ausschließlich die Zustimmung zur Darstellung; es gelten die Allgemeinen Geschäftsbedingungen des jeweiligen externen Anbieters.
                 {{-- <br /> --}}
             </p>
              <br />
@@ -171,7 +171,7 @@
                 </p>
                 <br />
                 <p>
-                    Alle an 5starunity Europe OÜ  übermittelten Berichte, Gründerdarstellungen, Tätigkeitsnachweise usw. finden nach bestem Wissen und Gewissen sowie mit schriftlicher Genehmigung des beschriebenen Unternehmens statt – die jeweiligen Autor-Angaben sind den einzelnen Berichten zu entnehmen. 
+                    Alle an 5starUnity Europe OÜ  übermittelten Berichte, Gründerdarstellungen, Tätigkeitsnachweise usw. finden nach bestem Wissen und Gewissen sowie mit schriftlicher Genehmigung des beschriebenen Unternehmens statt – die jeweiligen Autor-Angaben sind den einzelnen Berichten zu entnehmen. 
                    
                 </p>
                 <br />
@@ -188,20 +188,20 @@
                     </div>
                     <p>
                         Eine von der EU-Kommission im Internet bereitgestellte Plattform zur Online-Streitbeilegung finden Sie hier: <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=DE">Online-Streitbeilegung</a> <br />
-                        5starunity Europe OÜ  nimmt jedoch nicht an dem Verfahren zur alternativen Streitbeilegung teil, da es sich ausschließlich um eine <b>spendenbasierende</b> Plattform handelt.
+                        5starUnity Europe OÜ  nimmt jedoch nicht an dem Verfahren zur alternativen Streitbeilegung teil, da es sich ausschließlich um eine <b>spendenbasierende</b> Plattform handelt.
                         Wir weisen bei Angelegenheiten, welche Sie als Verbraucher zu klären wissen möchten, durch externe Angebote auf die jeweiligen Stellen des Anbieters hin.
                     </p>
                 <div class="section-title text-left " style="float: left; width: 100%; margin-top: 40px;">
                     Haftungshinweis
                 </div>
                 <p>
-                        Trotz gebührender inhaltlicher Sorgfalt übernimmt 5starUnity Europe OÜ oder deren Verantwortliche keine Haftung für Inhalte externer Links - bei verlinkten Seiten ist ausschließlich deren Betreiber verantwortlich. Diese Domain inkl. allen angeschlossenen Sub-Domains weisen mit Links auf andere Seiten (einschl. Produkte), weshalb folgendes gilt: 5starunity Europe OÜ  erklärt ausdrücklich, keinerlei Einfluss auf Gestaltung, Inhalt oder Zahlungsmodalitäten zu haben und distanziert sich von Inhalten aller verlinkten Seiten.
+                        Trotz gebührender inhaltlicher Sorgfalt übernimmt 5starUnity Europe OÜ oder deren Verantwortliche keine Haftung für Inhalte externer Links - bei verlinkten Seiten ist ausschließlich deren Betreiber verantwortlich. Diese Domain inkl. allen angeschlossenen Sub-Domains weisen mit Links auf andere Seiten (einschl. Produkte), weshalb folgendes gilt: 5starUnity Europe OÜ  erklärt ausdrücklich, keinerlei Einfluss auf Gestaltung, Inhalt oder Zahlungsmodalitäten zu haben und distanziert sich von Inhalten aller verlinkten Seiten.
                 </p>
                 <div class="section-title text-left" style="float: left; width: 100%; margin-top: 40px;">
                         Copyright / Fotoquellen
                 </div>
                 <p>
-                    Die Rechte für Texte, Grafiken, Bilder sowie Ton- und/oder Videodokumente liegen, soweit nicht anders vermerkt, bei 5starunity Europe OÜ  - Inhalte Dritter werden als solche gekennzeichnet. Eine Veröffentlichung, Vervielfältigung, Verbreitung, Bearbeitung oder sonstige Nutzung, auch auszugsweise, ist ohne schriftliche Zustimmung untersagt. Folgende Bildrechte wurden ordnungsgemäß erworben bzw. erstellt durch:<br />
+                    Die Rechte für Texte, Grafiken, Bilder sowie Ton- und/oder Videodokumente liegen, soweit nicht anders vermerkt, bei 5starUnity Europe OÜ  - Inhalte Dritter werden als solche gekennzeichnet. Eine Veröffentlichung, Vervielfältigung, Verbreitung, Bearbeitung oder sonstige Nutzung, auch auszugsweise, ist ohne schriftliche Zustimmung untersagt. Folgende Bildrechte wurden ordnungsgemäß erworben bzw. erstellt durch:<br />
                     <br />
                     (-) iStockphoto LP (@pinstock / @RichVintage / @level17 / @filipfoto)<br />
                     (-) Dipl. Grafikdesigner Uwe Bareither<br />
