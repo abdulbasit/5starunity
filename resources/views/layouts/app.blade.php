@@ -249,7 +249,7 @@
                                     <br />
                                     <li>
                                         <font color="black">
-                                            Designed and Developed by <a href="https:://www.xnowad.com" target="_blank"><font color="blue" size="4">Xnowad.com</font></a>
+                                            Designed and Developed by <a href="http://xnowad.com" target="_blank"><font color="blue" size="4">Xnowad.com</font></a>
                                         </font>
                                     </li>
                                 </ul>
