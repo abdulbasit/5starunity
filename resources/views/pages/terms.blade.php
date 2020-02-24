@@ -142,14 +142,13 @@ h3
                                 <div class="col-sm-8">
                                     <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/1570525059_5starunity.jpg)" onclick="window.location = 'https://advertise.5starunity.com/';">
                                         <div class="news-date" style="display: block;">
-                                            <strong>News</strong> | Feb 24, 2020
+                                            <strong>News</strong> | Oct 8, 2019
                                         </div>
                                         <div class="news-title" style="display: block;">
-                                            5starUnity Europe OÜ startet erste Marketing-Kampagne<br>
+                                            5starUnity startet BETA-Phase<br>
                                         </div>
                                         <div class="news-brief news-brief-large" style="display: none;">
-                                            Unterstützen Sie unsere innovative Plattform mit nur 5.- Euro und erhalten Sie eine Chance, dieses tolle Apple iPhone 11 zu gewinnen und nutze die
-100% YEM – CASHBACK Option!
+                                            Eine neuartige, innovative Plattform soll Erfindern, Entwicklern und Gründern helfen, ihre Produkte / Konzepte marktreif zu gestalten.
                                         </div>
                                     </div>
                                 </div>
@@ -173,13 +172,14 @@ h3
                                 <div class="col-sm-8">
                                     <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/1570525059_5starunity.jpg)" onclick="window.location = 'https://advertise.5starunity.com/getp.php?gr=3&pa=2';">
                                         <div class="news-date" style="display: block;">
-                                            <strong>Marketing</strong> | Oct 8, 2019
+                                            <strong>Marketing </strong> | Feb 24, 2020
                                         </div>
                                         <div class="news-title" style="display: block;">
-                                            5starUnity startet BETA-Phase<br>
+                                            5starUnity Europe OÜ startet erste Marketing-Kampagne<br>
                                         </div>
                                         <div class="news-brief news-brief-large" style="display: none;">
-                                            Eine neuartige, innovative Plattform soll Erfindern, Entwicklern und Gründern helfen, ihre Produkte / Konzepte marktreif zu gestalten.
+                                            Unterstützen Sie unsere innovative Plattform mit nur 5.- Euro und erhalten Sie eine Chance, dieses tolle Apple iPhone 11 zu gewinnen und nutze die
+100% YEM – CASHBACK Option!
                                         </div>
                                     </div>
                                 </div>
