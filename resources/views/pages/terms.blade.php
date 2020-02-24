@@ -170,7 +170,7 @@ h3
                         <canvas id="hidden-canvas2" style="display:none"></canvas>
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/1570525059_5starunity.jpg)" onclick="window.location = 'https://advertise.5starunity.com/getp.php?gr=3&pa=2';">
+                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/221322.jpg)" onclick="window.location = 'https://advertise.5starunity.com/getp.php?gr=3&pa=2';">
                                         <div class="news-date" style="display: block;">
                                             <strong>Marketing </strong> | Feb 24, 2020
                                         </div>
