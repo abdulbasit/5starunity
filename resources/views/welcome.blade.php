@@ -132,7 +132,7 @@
                             <span class="whyBoxHeading">BEHERZT</span>
                         </div>
                         <div class="news-brief why5starContDesc">
-                            Eine generelle Unterstützung für Erfinder, Gründer und Entwickler liegt dem Präsidium und allen Vereins-Gründern am Herzen und treibt jeden von uns an, sich ehrenamtlich innerhalb des Vereins zu engagieren. Das gesamte Präsidium und alle Beteiligten würden sich sehr freuen, wenn Sie unsem <b>Herzen</b> Vertrauen schenken und aktiv mit Spenden, Sachgütern, Rabatten bzw. Informationen derartige Vorhaben tatkräftig unterstützen.
+                            Eine generelle Unterstützung für Erfinder, Gründer und Entwickler liegt dem Präsidium und allen Vereins-Gründern am Herzen und treibt jeden von uns an, sich ehrenamtlich innerhalb des Vereins zu engagieren. Das gesamte Präsidium und alle Beteiligten würden sich sehr freuen, wenn Sie unsem <b>Herzens</b>projekt Vertrauen schenken und aktiv mit Spenden, Sachgütern, Rabatten bzw. Informationen derartige Vorhaben tatkräftig unterstützen.
                         </div>
                     </div>
                 </div>
