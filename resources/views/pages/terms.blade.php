@@ -174,7 +174,7 @@ h3
                                         <div class="news-date" style="display: block;">
                                             <strong>Marketing </strong> | Feb 24, 2020
                                         </div>
-                                        <div class="news-title" style="display: block;">
+                                        <div class="news-title" style="display: block;"> 
                                             5starUnity Europe OÜ startet erste Marketing-Kampagne<br>
                                         </div>
                                         <div class="news-brief news-brief-large" style="display: none;">
