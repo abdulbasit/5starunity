@@ -19,6 +19,9 @@ Route::get('news', 'BlogController@index')->name('news');
 Route::get('cat-news/{cat_id}', 'BlogController@cat_blogs')->name('cat-news');
 Auth::routes();
 
+Route::get('pay.php', function () {
+    return view('pay');
+});
 
     // Password Reset Routes...
     Route::get('password-reset', 'Auth\RegisterController@passwordReset');
