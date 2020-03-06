@@ -287,6 +287,7 @@
                     </div>
                 </div>
             </div>
+            
             <script>
                 $(function(){
 
@@ -447,7 +448,67 @@
             </div>
           </div>
         </div>
-       
+          <!-- Modal -->
+          <div class="modal fade bd-example-modal-lg" id="marketing" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="" style="position: relative; z-index: 100;">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="    font-size: 33px; position: absolute; right: -3px; top: -10px;">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body no-padding no-margin">
+                    <section class="homepage-news" style="padding:0px; background-color:#fff">
+                        <div class="">
+                            <canvas id="hidden-canvas2" style="display:none"></canvas>
+                                <div class="row">
+                                    <div class="col-sm-9" style="height:550px">
+                                        <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/221322.jpg); object-fit:contain; background-size: 747px; height: 550px;" onclick="window.location = 'https://advertise.5starunity.com/getp.php?gr=3&pa=2';">
+                                            <div class="news-date" style="display: block;">
+                                                <strong>Marketing </strong> | Feb 24, 2020
+                                            </div>
+                                            <div class="news-title" style="display: block;"> 
+                                                5starUnity Europe OÜ startet erste Marketing-Kampagne<br>
+                                            </div>
+                                            <div class="news-brief news-brief-large" style="display: none;height: 550px;">
+                                                Unterstützen Sie unsere innovative Plattform mit nur 5.- Euro und erhalten Sie eine Chance, dieses tolle Apple iPhone 11 zu gewinnen; nutze zusätzlich die
+    100% YEM – CASHBACK Option!
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 text-center">
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br /><br />
+                                         <h3>pix`lMania</h3>
+                                         <h2>MARKETING  </h2>
+                                       
+                                        <br />
+                                        <h3>1</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                $(function(){
+                
+                                    $(".news-block").hover(function(){
+                                        $(this).find(".news-brief").stop(true, true).fadeIn(300);
+                                        $(this).find('.news-date').css('display','none');
+                                        $(this).find('.news-title').css('display','none');
+                                    }, function(){
+                                        $(this).find(".news-brief").stop(true, true).fadeOut(300);
+                                        $(this).find('.news-date').css('display','block');
+                                        $(this).find('.news-title').css('display','block');
+                                    });
+                                });
+                            </script>
+                    </section>
+                </div>
+              </div>
+            </div>
+          </div> 
     <script src="{{ asset('frontend/jssor/docs.min.js')}}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{{ asset('frontend/jssor/ie10-viewport-bug-workaround.js')}}"></script>
@@ -558,6 +619,8 @@
             },5000)
         });
     });
-   
+    $( document ).ready(function() {
+        $('#marketing').modal('show')
+    });
 </script>
 @endsection

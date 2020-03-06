@@ -140,14 +140,14 @@ h3
                         <canvas id="hidden-canvas2" style="display:none"></canvas>
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/1570525059_5starunity.jpg)" onclick="window.location = 'https://advertise.5starunity.com/';">
+                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/1570525059_5starunity.jpg); object-fit:contain; background-size: 747px; height: 550px;" onclick="window.location = 'https://advertise.5starunity.com/';">
                                         <div class="news-date" style="display: block;">
                                             <strong>News</strong> | Oct 8, 2019
                                         </div>
                                         <div class="news-title" style="display: block;">
                                             5starUnity startet BETA-Phase<br>
                                         </div>
-                                        <div class="news-brief news-brief-large" style="display: none;">
+                                        <div class="news-brief news-brief-large" style="display: none; height: 550px;">
                                             Eine neuartige, innovative Plattform soll Erfindern, Entwicklern und Gründern helfen, ihre Produkte / Konzepte marktreif zu gestalten.
                                         </div>
                                     </div>
@@ -170,14 +170,14 @@ h3
                         <canvas id="hidden-canvas2" style="display:none"></canvas>
                             <div class="row">
                                 <div class="col-sm-8">
-                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/221322.jpg)" onclick="window.location = 'https://advertise.5starunity.com/getp.php?gr=3&pa=2';">
+                                    <div id="news-3" class="news-block news-block-large news-block-image" style="background-image: linear-gradient(rgba(6, 6, 6, 0.69), rgba(87, 87, 90, 0.5)),url(https://5starunity.com/uploads/blog/221322.jpg); object-fit:contain; background-size: 747px; height: 550px;" onclick="window.location = 'https://advertise.5starunity.com/getp.php?gr=3&pa=2';">
                                         <div class="news-date" style="display: block;">
                                             <strong>Marketing </strong> | Feb 24, 2020
                                         </div>
                                         <div class="news-title" style="display: block;"> 
                                             5starUnity Europe OÜ startet erste Marketing-Kampagne<br>
                                         </div>
-                                        <div class="news-brief news-brief-large" style="display: none;">
+                                        <div class="news-brief news-brief-large" style="display: none;height: 550px;">
                                             Unterstützen Sie unsere innovative Plattform mit nur 5.- Euro und erhalten Sie eine Chance, dieses tolle Apple iPhone 11 zu gewinnen; nutze zusätzlich die
 100% YEM – CASHBACK Option!
                                         </div>
