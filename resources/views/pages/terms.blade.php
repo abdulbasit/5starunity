@@ -178,7 +178,7 @@ h3
                                             5starUnity Europe OÜ startet erste Marketing-Kampagne<br>
                                         </div>
                                         <div class="news-brief news-brief-large" style="display: none;height: 550px;">
-                                            Unterstützen Sie unsere innovative Plattform mit nur 5.- Euro und erhalten Sie eine Chance, dieses tolle Apple iPhone 11 zu gewinnen; nutze zusätzlich die
+                                            Unterstützen Sie unsere innovative Plattform mit nur 8.- Euro und erhalten Sie eine Chance, dieses tolle Apple iPhone 11 zu gewinnen; nutze zusätzlich die
 100% YEM – CASHBACK Option!
                                         </div>
                                     </div>
